@@ -1002,17 +1002,17 @@ Common_EventScript_LegendaryFlewAway::
 	end
 
 Script_SetGrayscaleTint::
-	writebytetoaddr GLOBAL_FIELD_TINT_GRAYSCALE, gGlobalFieldTintMode
+	setptr GLOBAL_FIELD_TINT_GRAYSCALE, gGlobalFieldTintMode
 	callnative InitMapView
 	return
 
 Script_SetSepiaTint::
-	writebytetoaddr GLOBAL_FIELD_TINT_SEPIA, gGlobalFieldTintMode
+	setptr GLOBAL_FIELD_TINT_SEPIA, gGlobalFieldTintMode
 	callnative InitMapView
 	return
 
 Script_RemoveTint::
-	writebytetoaddr GLOBAL_FIELD_TINT_NONE, gGlobalFieldTintMode
+	setptr GLOBAL_FIELD_TINT_NONE, gGlobalFieldTintMode
 	callnative InitMapView
 	return
 
