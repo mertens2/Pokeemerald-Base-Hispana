@@ -20,6 +20,7 @@ endif
 
 PREFIX := arm-none-eabi-
 OBJCOPY := $(PREFIX)objcopy
+OBJDUMP := $(PREFIX)objdump
 AS := $(PREFIX)as
 
 LD := $(PREFIX)ld
@@ -27,6 +28,7 @@ LD := $(PREFIX)ld
 # note: the makefile must be set up so MODERNCC is never called
 # if MODERN=0
 MODERNCC := $(PREFIX)gcc
+PATH_MODERNCC := PATH=$(TOOLCHAIN)/bin:PATH $(MODERNCC)
 
 ifeq ($(OS),Windows_NT)
 EXE := .exe
@@ -75,6 +77,7 @@ SHELL := /bin/bash -o pipefail
 
 ELF = $(ROM:.gba=.elf)
 MAP = $(ROM:.gba=.map)
+SYM = $(ROM:.gba=.sym)
 
 C_SUBDIR = src
 GFLIB_SUBDIR = gflib
@@ -103,11 +106,11 @@ OBJ_DIR := $(OBJ_DIR_NAME)
 LIBPATH := -L ../../tools/agbcc/lib
 LIB := $(LIBPATH) -lgcc -lc -L../../libagbsyscall -lagbsyscall
 else
-CC1              = $(shell $(MODERNCC) --print-prog-name=cc1) -quiet
+CC1              = $(shell $(PATH_MODERNCC) --print-prog-name=cc1) -quiet
 override CFLAGS += -mthumb -mthumb-interwork -O2 -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -fno-toplevel-reorder -Wno-pointer-to-int-cast -g
 ROM := $(MODERN_ROM_NAME)
 OBJ_DIR := $(MODERN_OBJ_DIR_NAME)
-LIBPATH := -L "$(dir $(shell $(MODERNCC) -mthumb -print-file-name=libgcc.a))" -L "$(dir $(shell $(MODERNCC) -mthumb -print-file-name=libnosys.a))" -L "$(dir $(shell $(MODERNCC) -mthumb -print-file-name=libc.a))"
+LIBPATH := -L "$(dir $(shell $(PATH_MODERNCC) -mthumb -print-file-name=libgcc.a))" -L "$(dir $(shell $(PATH_MODERNCC) -mthumb -print-file-name=libnosys.a))" -L "$(dir $(shell $(PATH_MODERNCC) -mthumb -print-file-name=libc.a))"
 LIB := $(LIBPATH) -lc -lnosys -lgcc -L../../libagbsyscall -lagbsyscall
 endif
 
@@ -129,6 +132,8 @@ FIX := tools/gbafix/gbafix$(EXE)
 MAPJSON := tools/mapjson/mapjson$(EXE)
 JSONPROC := tools/jsonproc/jsonproc$(EXE)
 
+PERL := perl
+
 TOOLDIRS := $(filter-out tools/agbcc tools/binutils,$(wildcard tools/*))
 TOOLBASE = $(TOOLDIRS:tools/%=%)
 TOOLS = $(foreach tool,$(TOOLBASE),tools/$(tool)/$(tool)$(EXE))
@@ -145,7 +150,7 @@ MAKEFLAGS += --no-print-directory
 # Secondary expansion is required for dependency variables in object rules.
 .SECONDEXPANSION:
 
-.PHONY: all rom clean compare tidy tools mostlyclean clean-tools $(TOOLDIRS) berry_fix libagbsyscall modern tidymodern tidynonmodern
+.PHONY: all rom clean compare tidy tools mostlyclean clean-tools $(TOOLDIRS) libagbsyscall modern tidymodern tidynonmodern
 
 infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
 
@@ -153,7 +158,7 @@ infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst 
 # Disable dependency scanning for clean/tidy/tools
 # Use a separate minimal makefile for speed
 # Since we don't need to reload most of this makefile
-ifeq (,$(filter-out all rom compare modern berry_fix libagbsyscall,$(MAKECMDGOALS)))
+ifeq (,$(filter-out all rom compare modern libagbsyscall syms,$(MAKECMDGOALS)))
 $(call infoshell, $(MAKE) -f make_tools.mk)
 else
 NODEP ?= 1
@@ -164,8 +169,8 @@ ifeq (,$(MAKECMDGOALS))
   SCAN_DEPS ?= 1
 else
   # clean, tidy, tools, mostlyclean, clean-tools, $(TOOLDIRS), tidymodern, tidynonmodern don't even build the ROM
-  # berry_fix and libagbsyscall do their own thing
-  ifeq (,$(filter-out clean tidy tools mostlyclean clean-tools $(TOOLDIRS) tidymodern tidynonmodern berry_fix libagbsyscall,$(MAKECMDGOALS)))
+  # libagbsyscall does its own thing
+  ifeq (,$(filter-out clean tidy tools mostlyclean clean-tools $(TOOLDIRS) tidymodern tidynonmodern libagbsyscall,$(MAKECMDGOALS)))
     SCAN_DEPS ?= 0
   else
     SCAN_DEPS ?= 1
@@ -211,6 +216,8 @@ all: rom
 
 tools: $(TOOLDIRS)
 
+syms: $(SYM)
+
 $(TOOLDIRS):
 	@$(MAKE) -C $@
 
@@ -236,7 +243,6 @@ mostlyclean: tidynonmodern tidymodern
 	rm -f $(DATA_ASM_SUBDIR)/maps/connections.inc $(DATA_ASM_SUBDIR)/maps/events.inc $(DATA_ASM_SUBDIR)/maps/groups.inc $(DATA_ASM_SUBDIR)/maps/headers.inc
 	find $(DATA_ASM_SUBDIR)/maps \( -iname 'connections.inc' -o -iname 'events.inc' -o -iname 'header.inc' \) -exec rm {} +
 	rm -f $(AUTO_GEN_TARGETS)
-	@$(MAKE) clean -C berry_fix
 	@$(MAKE) clean -C libagbsyscall
 
 tidy: tidynonmodern tidymodern
@@ -410,7 +416,7 @@ endif
 $(OBJ_DIR)/ld_script.ld: $(LD_SCRIPT) $(LD_SCRIPT_DEPS)
 	cd $(OBJ_DIR) && sed "s#tools/#../../tools/#g" ../../$(LD_SCRIPT) > ld_script.ld
 
-$(ELF): $(OBJ_DIR)/ld_script.ld $(OBJS) berry_fix libagbsyscall
+$(ELF): $(OBJ_DIR)/ld_script.ld $(OBJS) libagbsyscall
 	@echo "cd $(OBJ_DIR) && $(LD) $(LDFLAGS) -T ld_script.ld -o ../../$@ <objects> <lib>"
 	@cd $(OBJ_DIR) && $(LD) $(LDFLAGS) -T ld_script.ld -o ../../$@ $(OBJS_REL) $(LIB)
 	$(FIX) $@ -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(REVISION) --silent
@@ -421,10 +427,12 @@ $(ROM): $(ELF)
 
 modern: all
 
-berry_fix/berry_fix.gba: berry_fix
-
-berry_fix:
-	@$(MAKE) -C berry_fix COMPARE=$(COMPARE) TOOLCHAIN=$(TOOLCHAIN) MODERN=$(MODERN)
-
 libagbsyscall:
 	@$(MAKE) -C libagbsyscall TOOLCHAIN=$(TOOLCHAIN) MODERN=$(MODERN)
+
+###################
+### Symbol file ###
+###################
+
+$(SYM): $(ELF)
+	$(OBJDUMP) -t $< | sort -u | grep -E "^0[2389]" | $(PERL) -p -e 's/^(\w{8}) (\w).{6} \S+\t(\w{8}) (\S+)$$/\1 \2 \3 \4/g' > $@
