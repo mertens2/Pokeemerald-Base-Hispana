@@ -25,6 +25,7 @@ EWRAM_DATA u16 gSpecialVar_Facing = 0;
 EWRAM_DATA u16 gSpecialVar_MonBoxId = 0;
 EWRAM_DATA u16 gSpecialVar_MonBoxPos = 0;
 EWRAM_DATA static u8 sSpecialFlags[SPECIAL_FLAGS_SIZE] = {0};
+static bool8 IsBattleCafeTrainerAvailable(u32 trainerToday, const u32 trainerYesterday, const u32 allTrainersToday);
 
 #if TESTING
 #define TEST_FLAGS_SIZE     1
@@ -306,4 +307,36 @@ bool8 TrainerFlagGet(u16 id)
     if (!(((*ptr) >> (id & 7)) & 1))
         return FALSE;
     return TRUE;
+}
+
+void RerollBattleCafeTrainers(void) {
+	// VAR_DAILY_CAFE_TRAINERS
+	u8 todaysTrainers[4];
+	u8 i;
+	u8 lastTrainer = 0;
+	
+	
+	for (i=0; i<4; i++){
+		// do {
+			// todaysTrainers[i] = Random() % 15;
+			// if (i!=0)
+				// lastTrainer = todaysTrainers[i-1];
+		// }while (todaysTrainers[i] != gSaveBlock2Ptr->cafeTrainers[i] && (todaysTrainers[i] != lastTrainer));
+		todaysTrainers[i] = i+1;
+	}
+	for (i=0; i<4; i++)
+		gSaveBlock2Ptr->cafeTrainers[i] = todaysTrainers[i];
+}
+
+static bool8 IsBattleCafeTrainerAvailable(u32 trainerToday, const u32 trainerYesterday, const u32 allTrainersToday) { // por hacer wip
+	// u8 i;
+	// for (i=0;i<4;i++)
+	// {
+		// if (allTrainersToday[i] == trainerToday && i != 0)
+			// return FALSE;
+		// if (trainerYesterday[i] == trainerToday)
+			// return FALSE;
+		
+	// }
+	return TRUE;
 }

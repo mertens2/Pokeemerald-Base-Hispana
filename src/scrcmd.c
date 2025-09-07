@@ -58,6 +58,7 @@
 #include "window.h"
 #include "list_menu.h"
 #include "malloc.h"
+#include "quests.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
 
@@ -3230,11 +3231,12 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
         StopScript(ctx);
 }
 
+
 bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
 {
     u8 caseId = ScriptReadByte(ctx);
     u8 questId = VarGet(ScriptReadByte(ctx));
-
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
     switch (caseId)
     {
     case QUEST_MENU_OPEN:
@@ -3242,7 +3244,7 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
         SetQuestMenuActive();
         BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
         QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
-        ScriptContext_Stop();
+        StopScript(ctx);
         break;
     case QUEST_MENU_UNLOCK_QUEST:
         GetSetQuestFlag(questId, FLAG_SET_UNLOCKED);
@@ -3257,7 +3259,7 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
         ResetActiveQuest();
         break;
     case QUEST_MENU_BUFFER_QUEST_NAME:
-            CopyQuestName(gStringVar1, questId);
+        CopyQuestName(gStringVar1, questId);
         break;
     case QUEST_MENU_GET_ACTIVE_QUEST:
         gSpecialVar_Result = GetActiveQuestIndex();
@@ -3279,16 +3281,19 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
     return TRUE;
 }
 
+
 bool8 ScrCmd_namebox(struct ScriptContext *ctx) {
     const u8 *name = (const u8 *)ScriptReadWord(ctx);
 
     if (name == NULL)
         name = (const u8 *)ctx->data[0];
+	Script_RequestEffects(SCREFF_V1);
     ShowFieldName(name);
     return FALSE;
 }
 
 bool8 ScrCmd_hidenamebox(struct ScriptContext *ctx) {
+	Script_RequestEffects(SCREFF_V1);
     if(IsNameboxDisplayed())
         ClearNamebox();
     return FALSE;
@@ -3299,6 +3304,7 @@ void ScrCmd_changeframe(struct ScriptContext *ctx)
 	u8 frameNumber = ScriptReadByte(ctx);
 	
 	frameNumber--;
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 	gSaveBlock2Ptr->optionsWindowFrameType = frameNumber;	
 }
 
@@ -3306,6 +3312,7 @@ bool8 ScrCmd_checkpartytype(struct ScriptContext *ctx)
 {
     u8 i;
     u16 type = ScriptReadHalfword(ctx);
+	Script_RequestEffects(SCREFF_V1);
 
     gSpecialVar_Result = PARTY_SIZE;
     for (i = 0; i < PARTY_SIZE; i++)
@@ -3325,6 +3332,7 @@ bool8 ScrCmd_checkpartytype(struct ScriptContext *ctx)
 
 void ScrCmd_getemptyslot(void)
 {
+	Script_RequestEffects(SCREFF_V1);
 	gSaveBlock1Ptr->Empty = gPlayerParty[1];
 }
 
@@ -3332,6 +3340,7 @@ void ScrCmd_deletepokemon(void)
 {
 	u8 NumberDelete = gSpecialVar_0x8004;
 	u8 i;
+	Script_RequestEffects(SCREFF_SAVE);
 	for(i = 5; i >= NumberDelete; i--)
 	{
 		if(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL))
@@ -3342,6 +3351,7 @@ void ScrCmd_deletepokemon(void)
 void ScrCmd_savepartofteam(void)
 {
 	u8 i;
+	Script_RequestEffects(SCREFF_SAVE);
 	for (i = 0; i < PARTY_SIZE; i++)
         gSaveBlock1Ptr->BossTeam[i] = gPlayerParty[i];
 }
@@ -3349,6 +3359,7 @@ void ScrCmd_savepartofteam(void)
 void ScrCmd_loadpartofteam(void)
 {
 	u8 i;
+	Script_RequestEffects(SCREFF_V1);
 	for(i = 0; !GetMonData(gSaveBlock1Ptr->BossTeam[i], MON_DATA_SPECIES, NULL); i++)
 		gPlayerParty[i] = gSaveBlock1Ptr->BossTeam[i];
 }
@@ -3356,12 +3367,14 @@ void ScrCmd_loadpartofteam(void)
 
 bool8 ScrCmd_showitemdesc(struct ScriptContext *ctx)
 {
+	Script_RequestEffects(SCREFF_V1);
     DrawHeaderBox();
     return FALSE;
 }
 
 bool8 ScrCmd_hideitemdesc(struct ScriptContext *ctx)
 {
+	Script_RequestEffects(SCREFF_V1);
     HideHeaderBox();
     return FALSE;
 }
@@ -3372,6 +3385,7 @@ bool8 ScrCmd_setmonmovevar(struct ScriptContext *ctx)
     u8 slot = ScriptReadByte(ctx);
     u16 move = ScriptReadHalfword(ctx);
 	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	Script_RequestWriteVar(VarGet(move));
 
     ScriptSetMonMoveSlot(partyIndex, VarGet(move), slot);
     return FALSE;

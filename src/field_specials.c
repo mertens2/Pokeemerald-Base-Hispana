@@ -4364,3 +4364,510 @@ void SetHiddenNature(void)
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
+
+bool8 GetSeenMon(void)
+{
+    // return GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_GET_SEEN);
+}
+
+bool8 GetCaughtMon(void)
+{
+    // return GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_GET_CAUGHT);
+}
+
+bool8 SetSeenMon(void)
+{
+    // GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
+}
+
+bool8 SetCaughtMon(void)
+{
+    // GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
+    // GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_CAUGHT);
+}
+
+void ChooseItemFromBag(void)
+{
+    switch (VarGet(VAR_TEMP_1))
+    {
+    case ITEMS_POCKET:
+    case BALLS_POCKET:
+    case TMHM_POCKET:
+    case BERRIES_POCKET:
+    case KEYITEMS_POCKET:
+        GoToBagMenu(ITEMMENULOCATION_CHOOSE_ITEM, VarGet(VAR_TEMP_1), CB2_ReturnToFieldContinueScript);
+    default:
+        break;
+    }
+}
+
+void CheckSpecies(void)
+{
+    u8 i;
+    u16 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (species == gSpecialVar_0x8005)
+            {
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+            else
+            {
+                gSpecialVar_Result = FALSE;
+            }
+        }
+    }
+}
+
+// get position (0 for current, 1 for map) of object event, return to VAR_0x8007, VAR_0x8008
+void GetObjectPosition(void)
+{
+    u16 localId      = gSpecialVar_0x8000;
+    u16 useTemplate  = gSpecialVar_0x8001;
+
+    u16 *x = &gSpecialVar_0x8007;
+    u16 *y = &gSpecialVar_0x8008;
+
+    if (!useTemplate)
+    {
+        /* current position */
+        const u16 objId = GetObjectEventIdByLocalId(localId);
+        const struct ObjectEvent *objEvent = &gObjectEvents[objId];
+        *x = objEvent->currentCoords.x - 7; // subtract out camera size
+        *y = objEvent->currentCoords.y - 7;
+    }
+    else
+    {
+        const struct ObjectEventTemplate *objTemplate =
+            FindObjectEventTemplateByLocalId(localId,
+                    gSaveBlock1Ptr->objectEventTemplates,
+                    gMapHeader.events->objectEventCount);
+        *x = objTemplate->x;
+        *y = objTemplate->y;
+    }
+}
+
+u16 CheckObjectAtXY(void)
+{
+    u16 x = gSpecialVar_0x8005 + 7;
+    u16 y = gSpecialVar_0x8006 + 7;
+    u32 i;
+    
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {        
+        if (gObjectEvents[i].active && gObjectEvents[i].currentCoords.x == x && gObjectEvents[i].currentCoords.y == y)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+u16 GetMetatileIdAt(void) {
+	u16 x = gSpecialVar_0x8005;
+    u16 y = gSpecialVar_0x8006;
+	u16 metatileA = gSpecialVar_0x8007;
+	// gSpecialVar_Result = MapGridGetMetatileIdAt(gSpecialVar_0x8005, gSpecialVar_0x8006);
+	if (metatileA == MapGridGetMetatileIdAt(gSpecialVar_0x8005, gSpecialVar_0x8006)) {
+		return TRUE;
+	}
+	return FALSE;
+}
+
+u16 CheckForMetatiles(u16 x, u16 y, u16 metatileA) {
+	if (metatileA == MapGridGetMetatileIdAt(x, y)) {
+		return TRUE;
+	}
+	return FALSE;
+}
+
+u16 SetHourMinutes(void) {
+	RtcCalcLocalTime();
+	gSpecialVar_0x8005 = Rtc_GetCurrentHour();
+	gSpecialVar_0x8006 = Rtc_GetCurrentMinute();
+}
+
+bool8 CheckForRegielekiPuzzle(void) {
+	if ((MapGridGetMetatileIdAt(5, 11) == METATILE_MirageTower_CoveredTile)  && (MapGridGetMetatileIdAt(5, 12) == METATILE_MirageTower_CoveredTile) && 
+	(MapGridGetMetatileIdAt(9, 11) == METATILE_MirageTower_CoveredTile) && (MapGridGetMetatileIdAt(11, 12) == METATILE_MirageTower_CoveredTile) &&
+	(MapGridGetMetatileIdAt(11, 13) == METATILE_MirageTower_CoveredTile)) {
+		if ((MapGridGetMetatileIdAt(6, 12) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(6, 13) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(8, 11) == METATILE_MirageTower_CoveredTile) ||
+		(MapGridGetMetatileIdAt(8, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(8, 13) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(9, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(9, 13) == METATILE_MirageTower_CoveredTile)
+		||  (MapGridGetMetatileIdAt(12, 11) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(12, 13) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(14, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(14, 11) == METATILE_MirageTower_CoveredTile)
+		|| (MapGridGetMetatileIdAt(14, 13) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(15, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(15, 13) == METATILE_MirageTower_CoveredTile)) {
+			gSpecialVar_Result = FALSE;
+			return gSpecialVar_Result;
+		}
+			gSpecialVar_Result = TRUE;
+			return gSpecialVar_Result;
+	}
+		gSpecialVar_Result = FALSE;
+		return gSpecialVar_Result;
+}
+
+
+// Stores the chosen Pokémon's HP, DEF and SP. DEF IVs in the Buffers 1, 2 and 3.
+void RyuIvCheckerDef(void)
+{
+    u8 HpIv = 0;
+    u8 DefIv = 0;
+    u8 SpDefIv = 0;
+    HpIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV);
+    DefIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV);
+    SpDefIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV);
+	HpIv = GetRealIV(HpIv);
+	DefIv = GetRealIV(DefIv);
+	SpDefIv = GetRealIV(SpDefIv);
+    ConvertIntToDecimalStringN(gStringVar1, HpIv, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(gStringVar2, DefIv, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(gStringVar3, SpDefIv, STR_CONV_MODE_LEADING_ZEROS, 2);
+}
+
+// Stores the chosen Pokémon's ATK, SP. ATK and SPD IVs in the Buffers 1, 2 and 3.
+void RyuIvCheckerOff(void)
+{
+    u8 AtkIv = 0;
+    u8 SpAtkIv = 0;
+    u8 SpeIv = 0;
+    AtkIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV);
+    SpAtkIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV);
+    SpeIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV);
+	AtkIv = GetRealIV(AtkIv);
+	SpAtkIv = GetRealIV(SpAtkIv);
+	SpeIv = GetRealIV(SpeIv);
+    ConvertIntToDecimalStringN(gStringVar1, AtkIv, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(gStringVar2, SpAtkIv, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(gStringVar3, SpeIv, STR_CONV_MODE_LEADING_ZEROS, 2);
+}
+
+// Stores the chosen Pokémon's HP, DEF and SP. DEF EVs in the Buffers 1, 2 and 3.
+void RyuEvCheckerDef(void)
+{
+    u8 HpEv = 0;
+    u8 DefEv = 0;
+    u8 SpDefEv = 0;
+    HpEv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV);
+    DefEv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV);
+    SpDefEv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV);
+    ConvertIntToDecimalStringN(gStringVar1, HpEv, STR_CONV_MODE_LEADING_ZEROS, 3);
+    ConvertIntToDecimalStringN(gStringVar2, DefEv, STR_CONV_MODE_LEADING_ZEROS, 3);
+    ConvertIntToDecimalStringN(gStringVar3, SpDefEv, STR_CONV_MODE_LEADING_ZEROS, 3);
+}
+
+// Stores the chosen Pokémon's ATK, SPD and SP. ATK EVs in the Buffers 1, 2 and 3.
+void RyuEvCheckerOff(void)
+{
+    u8 AtkEv = 0;
+    u8 SpAtkEv = 0;
+    u8 SpeEv = 0;
+    AtkEv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV);
+    SpAtkEv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV);
+    SpeEv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV);
+    ConvertIntToDecimalStringN(gStringVar1, AtkEv, STR_CONV_MODE_LEADING_ZEROS, 3);
+    ConvertIntToDecimalStringN(gStringVar2, SpAtkEv, STR_CONV_MODE_LEADING_ZEROS, 3);
+    ConvertIntToDecimalStringN(gStringVar3, SpeEv, STR_CONV_MODE_LEADING_ZEROS, 3);
+}
+
+// Sets the EVs of a chosen Pokémon's 6 stats to 0.
+void RyuResetEvs(void)
+{
+    u8 ev = 0;
+    PlaySE(SE_EXP_MAX);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV, &ev);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV, &ev);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV, &ev);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV, &ev);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, &ev);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV, &ev);
+}
+
+void RyuSetIvsBad(void)
+{
+	u32 iv;
+	s32 j;
+    PlaySE(SE_EXP_MAX);
+	for (j = 0; j < NUM_STATS; j++){
+		iv = 2;
+		SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + j, &iv);
+	}
+	SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_POWER,&gSpecialVar_0x8006);
+}
+void RyuSetIvsMedium(void)
+{
+	u32 iv;
+	s32 j;	
+    PlaySE(SE_EXP_MAX);
+	for (j = 0; j < NUM_STATS; j++){
+		iv = MAX_PER_STAT_IVS/2+1;
+		SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + j, &iv);
+	}
+	SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_POWER, &gSpecialVar_0x8006);
+}
+void RyuSetIvsPerfect(void)
+{
+	u32 iv;
+	s32 j;
+    PlaySE(SE_EXP_MAX);
+	for (j = 0; j < NUM_STATS; j++){
+		iv = MAX_PER_STAT_IVS;
+		SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + j, &iv);
+	}
+	SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_POWER, &gSpecialVar_0x8006);
+}
+
+void SetTrainerType(void)
+{
+	gSaveBlock1Ptr->trainerType = gSpecialVar_0x8004;
+}
+
+void ShowTrainerType(void)
+{
+	gSpecialVar_Result = gSaveBlock1Ptr->trainerType;
+}
+
+bool8 DoesMonMatch(u32 data, u8 attribute, u16 species){
+	u32 total,num;
+	switch (attribute){
+		case POKEDOKU_ABILITY:
+			if (gBaseStats[species].abilities[0] == data || gBaseStats[species].abilities[1] == data || gBaseStats[species].abilities[2] == data)
+				return TRUE;
+			break;
+		case POKEDOKU_TYPE:
+			if (gBaseStats[species].type1 == data || gBaseStats[species].type2 == data)
+				return TRUE;
+			break;
+		case POKEDOKU_BASE_STAT_TOTAL:
+			total = (gBaseStats[species].baseAttack + gBaseStats[species].baseDefense + gBaseStats[species].baseHP +
+					gBaseStats[species].baseSpAttack + gBaseStats[species].baseSpDefense + gBaseStats[species].baseSpeed);
+			if (total == data)
+				return TRUE;
+			break;
+		case POKEDOKU_DUAL_OR_SINGLE_TYPE:
+			if (data == 0 && gBaseStats[species].type1 == gBaseStats[species].type2)
+				return TRUE;
+			if (data == 1 && gBaseStats[species].type1 != gBaseStats[species].type2)
+				return TRUE;
+			break;
+		// case POKEDOKU_CATEGORY:
+			// if (gPokedexEntries[species].categoryName == gPokedexEntries[data].categoryName)
+				// return TRUE;
+			// break;
+		case POKEDOKU_EGG_GROUP:
+			if (gBaseStats[species].eggGroup1 == data || gBaseStats[species].eggGroup2 == data)
+				return TRUE;
+			break;
+		case POKEDOKU_EVOLINE:
+			num = GetPreEvolution(species);
+			for (total=0;total<EVOS_PER_MON;total++) {
+				if (gEvolutionTable[num][total].targetSpecies == species && data == 0)
+					return TRUE;
+				if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && data == 1)
+					return TRUE;
+				if (gEvolutionTable[num][total].targetSpecies == species && gEvolutionTable[species][total].targetSpecies == SPECIES_NONE && data == 2)
+					return TRUE;
+			}
+			break;
+		case POKEDOKU_EVO_METHOD:
+			for (total=0;total<EVOS_PER_MON;total++) {
+				if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == EVO_ITEM && data == 0)
+					return TRUE;
+				if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == EVO_FRIENDSHIP && data == 1)
+					return TRUE;
+				if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == (EVO_TRADE || EVO_TRADE_ITEM) && data == 2)
+					return TRUE;
+			}
+			break;
+	}
+	return FALSE;
+}
+
+
+u32 GetPokemonAttribute(void){
+	u32 data, random, attribute, species;
+	bool8 check1, check2;
+	attribute = Random() % 2;
+	species = SPECIES_SAWK;
+	// StringExpandPlaceholders(gStringVar4,gSpeciesNames[species]);
+	// gSpecialVar_0x8004 = species;
+	// switch (attribute){
+		// case 0:
+			random = Random() % 3;
+			data = gBaseStats[species].abilities[random];
+			if (data == 0)
+				data = gBaseStats[species].abilities[0];
+			StringExpandPlaceholders(gStringVar1,gAbilityNames[data]);
+			gSpecialVar_0x8000 = data;
+			// break;
+		// case 1:
+		// default:
+			random = Random() % 2;
+			if (random == 0)
+				data = gBaseStats[species].type1;
+			else
+				data = gBaseStats[species].type2;
+			StringExpandPlaceholders(gStringVar2,gTypeNames[data]);
+			// data = (gBaseStats[species].baseAttack + gBaseStats[species].baseDefense + gBaseStats[species].baseHP +
+					// gBaseStats[species].baseSpAttack + gBaseStats[species].baseSpDefense + gBaseStats[species].baseSpeed);
+			gSpecialVar_0x8001 = data;
+			// break;
+	// }
+	species = SPECIES_THROH;
+	check1 = DoesMonMatch(gSpecialVar_0x8000, POKEDOKU_ABILITY, species);
+	check2 = DoesMonMatch(gSpecialVar_0x8001, POKEDOKU_TYPE, species);
+	if (check1 == TRUE && check2 == TRUE)
+		StringExpandPlaceholders(gStringVar3,gSpeciesNames[species]);
+	else
+		StringExpandPlaceholders(gStringVar3,gSpeciesNames[0]);
+	return data;
+}
+
+void SetCustomization(void) {
+	u8 area = gSpecialVar_0x8004;
+	u8 clothing = gSpecialVar_0x8005;
+	switch (area){
+		case 0:
+			ConvertIntToDecimalStringN(gStringVar1, gSaveBlock2Ptr->customization[0], STR_CONV_MODE_LEFT_ALIGN, 5);
+			gSaveBlock2Ptr->customization[0] = clothing;
+			ConvertIntToDecimalStringN(gStringVar2, gSaveBlock2Ptr->customization[0], STR_CONV_MODE_LEFT_ALIGN, 5);
+			break;
+		case 1:
+			ConvertIntToDecimalStringN(gStringVar1, gSaveBlock2Ptr->customization[1], STR_CONV_MODE_LEFT_ALIGN, 5);
+			gSaveBlock2Ptr->customization[1] = clothing;
+			ConvertIntToDecimalStringN(gStringVar2, gSaveBlock2Ptr->customization[1], STR_CONV_MODE_LEFT_ALIGN, 5);
+			break;
+		case 2:
+			ConvertIntToDecimalStringN(gStringVar1, gSaveBlock2Ptr->customization[2], STR_CONV_MODE_LEFT_ALIGN, 5);
+			gSaveBlock2Ptr->customization[2] = clothing;
+			ConvertIntToDecimalStringN(gStringVar2, gSaveBlock2Ptr->customization[2], STR_CONV_MODE_LEFT_ALIGN, 5);
+			break;
+		case 3:
+			ConvertIntToDecimalStringN(gStringVar1, gSaveBlock2Ptr->customization[3], STR_CONV_MODE_LEFT_ALIGN, 5);
+			gSaveBlock2Ptr->customization[3] = clothing;
+			ConvertIntToDecimalStringN(gStringVar2, gSaveBlock2Ptr->customization[3], STR_CONV_MODE_LEFT_ALIGN, 5);
+			break;
+	}
+}
+
+// char GetAbilityList(void){
+	// // u16 abilityList[ABILITIES_COUNT][12];
+	// u16 i;
+	// char dst[ABILITIES_COUNT][12];
+	// for (i=1;i<ABILITIES_COUNT;i++){
+		// StringCopy(abilityList[i], gAbilityNames[i]);
+		// // StringAppend(dst, "$");
+		// // abilityList[i] = gAbilityNames[i] + COMPOUND_STRING("$");
+		// // StringAppend(abilityList[i], COMPOUND_STRING("$"));4566
+	// }
+	// StringCopy(abilityList[ABILITIES_COUNT], "Salir");
+	// return dst;
+// }
+
+// void GetTypeList(void){
+	// u16 i;
+	// char dst[NUMBER_OF_MON_TYPES][12];
+	// for (i=1;i<NUMBER_OF_MON_TYPES;i++){
+		// StringCopy(abilityList[i], gTypeNames[i]);
+		// // StringAppend(dst, "$");
+		// // typeList[i] = gTypeNames[i] COMPOUND_STRING("$");
+	// }
+	// StringCopy(typeList[NUMBER_OF_MON_TYPES], "Salir");
+	// return dst;
+// }
+// #include "data/pokedoku.h"
+
+void BuildMultichoiceGridByString(u8 x, u8 y, u8 defaultChoice, bool8 ignoreBPress, u8 columns, char* choices){
+	// struct MenuAction menuItems[16] = {NULL};
+	// u8 count = 0;
+	// while(count < ARRAY_COUNT(menuItems)){
+		// int len = StringLength(choices);
+		// if(!len) break;
+		// menuItems[count++].text = choices;
+		// choices += len + 1;
+	// }
+	// if(defaultChoice >= count)
+		// defaultChoice = 0;
+	// if (count > 0){
+		// if(columns > 1)
+			// ScriptMenu_MultichoiceGridCustom(x, y, defaultChoice, ignoreBPress, columns, menuItems, count);
+		// else
+			// DrawMultichoiceMenuCustom(x, y, 0, ignoreBPress, defaultChoice, menuItems, count);
+	// }
+}
+
+void DisplayPokedokuList(void){
+	// u16 i;
+
+	// ScriptMenu_MultichoiceGridCustom(0, 0, 0, FALSE, 3, MultichoiceList_Abilities, ARRAY_COUNT(MultichoiceList_Abilities));
+	// VarSet(VAR_TEMP_0, VarGet(VAR_RESULT));
+	// ScriptMenu_MultichoiceGridCustom(0, 0, 0, FALSE, 3, MultichoiceList_Abilities, ARRAY_COUNT(MultichoiceList_Abilities));
+	// VarSet(VAR_TEMP_1, VarGet(VAR_RESULT));
+	// if (VarGet(VAR_TEMP_0) != ABILITIES_COUNT || VarGet(VAR_TEMP_1) != NUMBER_OF_MON_TYPES){
+		// for (i=0;i<NUM_SPECIES;i++){
+			// if (DoesMonMatch(VarGet(VAR_TEMP_0), POKEDOKU_ABILITY, i)){
+				// break;
+			// }
+		// }
+	// }
+	// if (VarGet(VAR_RESULT)==TRUE)
+		// StringExpandPlaceholders(gStringVar3,gSpeciesNames[i]);
+	// else
+		// StringExpandPlaceholders(gStringVar1,gSpeciesNames[0]);
+}
+/*
+enum {
+	// EASY
+	POKEDOKU_TYPE,
+	POKEDOKU_ABILITY,
+	POKEDOKU_EVOLINE,
+	POKEDOKU_SPECIES_FLAG,
+	POKEDOKU_DUAL_OR_SINGLE_TYPE,
+	// MEDIUM
+	POKEDOKU_SIGNATURE_MOVE,
+	POKEDOKU_EVO_METHOD,
+	POKEDOKU_REGION,
+	POKEDOKU_MEGA_FORM,
+	POKEDOKU_REGIONAL_FORM,
+	// HARD
+	POKEDOKU_HIGHEST_STAT,
+	POKEDOKU_BASE_STAT_TOTAL,
+	POKEDOKU_LEARNS_MOVE,
+	POKEDOKU_STRONGEST_STAB,
+	POKEDOKU_CATEGORY,
+	// IMPOSSIBLE
+	POKEDOKU_STAT_NUMBER,
+	POKEDOKU_EV_YIELD,
+	POKEDOKU_HEIGHT,
+	POKEDOKU_WEIGHT,
+	POKEDOKU_EGG_GROUP,
+}
+*/
+
+void DoPoisonEffect(void) {
+	// FldEffPoison_Start2();
+	// ScriptContext_Stop();
+}
+
+void SetCafeTrainersToday(void) // por hacer wip
+{
+	u8 i;
+	for (i=0;i<4;i++){
+		VarSet(VAR_OBJ_GFX_ID_0 + i, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[i]].graphicsId);
+		FlagClear(TRAINER_FLAGS_START + sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[i]].trainerPartyId);
+	}
+}
+
+void GetCafeTrainersBattleText(void) {
+	gSpecialVar_Result = sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].trainerPartyId;
+	StringExpandPlaceholders(gStringVar1, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].introText);
+	StringExpandPlaceholders(gStringVar2, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].lossText);
+}
+
+void GetCafeTrainersAfterBattleData(void) {
+	StringExpandPlaceholders(gStringVar1, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].afterBattleText);
+	StringExpandPlaceholders(gStringVar3, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].afterGiveItemText);
+	gSpecialVar_Result = sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].itemToGiveId;
+}

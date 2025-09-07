@@ -1894,6 +1894,146 @@
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
+    .macro questmenu case:req, questId:req
+    .byte SCR_OP_QUESTMENU
+    .byte \case
+    .byte \questId
+    .endm
+    
+    .macro openquestmenu
+    questmenu 0 0
+    .endm
+	
+	@ Starts displaying a name box containing the specified text. If text is a pointer, then the string at 
+	@ that offset will be loaded and used. If text is script bank 0, then the value of script bank 0 will be treated as 
+	@ a pointer to the text. (You can use loadpointer to place a string pointer in a script bank.)
+	.macro namebox name:req
+	.byte SCR_OP_NAMEBOX
+	.4byte \name
+	.endm
+    
+	@ Closes the current message box.
+	.macro hidenamebox
+	.byte SCR_OP_HIDENAMEBOX
+	.endm
+
+	.macro changeframe frameNumber:req
+	.byte SCR_OP_CHANGEFRAME
+	.2byte \frameNumber
+	.endm
+	
+	.macro checkpartytype type:req
+	.byte SCR_OP_CHECKPARTYTYPE
+	.2byte \type
+	.endm
+	
+	.macro showdescription
+	.byte SCR_OP_SHOWITEMDESC
+	.endm
+
+	.macro showitemdesc
+	setvar VAR_0x8009, 0
+	showdescription
+	.endm
+
+	.macro showberrydesc
+	setvar VAR_0x8009, 1
+	showdescription
+	.endm
+
+	.macro hideitemdesc
+	.byte SCR_OP_HIDEITEMDESC
+	.endm
+	
+	@ Displays a box containing the front sprite for the specified Pokemon species.
+	.macro showmonpicshiny species:req, x:req, y:req, var:req
+	.byte SCR_OP_SHOWMONPICSHINY
+	.2byte \species
+	.byte \x
+	.byte \y
+	.byte \var
+	.endm
+	
+	
+	
+	@ return current (posType = 0) or map (posType = 1) position of object to VAR_0x8007 (x), VAR_0x8008 (y)
+	.macro getobjectxy localId:req, posType:req
+	setvar VAR_0x8000, \localId
+	setvar VAR_0x8001, \posType
+	special GetObjectPosition
+	.endm
+	
+	@ checks if there is any object at a given position
+	.macro checkobjectat x:req, y:req
+	setorcopyvar VAR_0x8005, \x
+	setorcopyvar VAR_0x8006, \y
+	specialvar VAR_RESULT, CheckObjectAtXY
+	.endm
+	
+	.macro getmetatileidat x:req, y:req, metaId:req
+	setorcopyvar VAR_0x8005, \x
+	setorcopyvar VAR_0x8006, \y
+	setorcopyvar VAR_0x8007, \metaId
+	specialvar VAR_RESULT, GetMetatileIdAt
+	.endm
+	
+		@ Calls a script if the Player's Pokedex has seen the specified Pokemon.
+	.macro call_if_mon_seen species:req, script:req
+	setvar VAR_TEMP_1, \species
+	specialvar VAR_RESULT, GetSeenMon
+	compare VAR_RESULT, TRUE
+	call_if TRUE, \script
+	.endm
+
+	@ Calls a script if the Player's Pokedex has recorded the data of the specified Pokemon.
+	.macro call_if_mon_caught species:req, script:req
+	setvar VAR_TEMP_1, \species
+	specialvar VAR_RESULT, GetCaughtMon
+	compare VAR_RESULT, TRUE
+	call_if TRUE, \script
+	.endm
+
+	@ Jumps to a script if the Player's Pokedex has seen the specified Pokemon.
+	.macro goto_if_mon_seen species:req, script:req
+	setvar VAR_TEMP_1, \species
+	specialvar VAR_RESULT, GetSeenMon
+	compare VAR_RESULT, TRUE
+	goto_if TRUE, \script
+	.endm
+
+	@ Jumps to a script if the Player's Pokedex has recorded the data of the specified Pokemon.
+	.macro goto_if_mon_caught species:req, script:req
+	setvar VAR_TEMP_1, \species
+	specialvar VAR_RESULT, GetCaughtMon
+	compare VAR_RESULT, TRUE
+	goto_if TRUE, \script
+	.endm
+
+	@ Replaces the move at 'slot' of the Pokémon in the player's party at 'partyIndex' with the specified move.
+	@ If a value greater than PARTY_SIZE is given for partyIndex it will use the last Pokémon in the party instead.
+	@ Takes a var for the move.
+	.macro setmonmovevar partyIndex:req, slot:req, move:req
+	.byte SCR_OP_SETMONMOVEVAR
+	.byte \partyIndex
+	.byte \slot
+	.2byte \move
+	.endm
+	
+	GET_EVENT_FLAG = 0
+	SET_EVENT_FLAG = 1
+	
+	
+	@ Sets the flag of an object's template, so that if the sprite goes off screen
+	@ they'll be intact when it comes back on screen. if something was gotten, stores it in VAR_RESULT
+	.macro setgetobjectflags localId:req, flagIndex:req, value:req, getOrSet:req 
+	.byte SCR_OP_SETGETOBJECTFLAGS
+	.2byte \localId
+	.byte \flagIndex
+	.byte \value
+	.byte \getOrSet
+	.endm
+	
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -2039,6 +2179,7 @@
 	MSGBOX_AUTOCLOSE = 6
 	MSGBOX_GETPOINTS = 9
 	MSGBOX_POKENAV = 10
+	MSGBOX_INTERRUPT = 11
 
 	YES = 1
 	NO  = 0
