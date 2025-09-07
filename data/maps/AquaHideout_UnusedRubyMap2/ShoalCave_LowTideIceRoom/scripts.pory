@@ -1,0 +1,108 @@
+mapscripts ShoalCave_LowTideIceRoom_MapScripts {
+	MAP_SCRIPT_ON_LOAD : ShoalCave_LowTideIceRoom_MapScriptsOnTransition
+	MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0 : ShoalCave_LowTideIceRoom_MapScriptsOnLoad
+		]
+	MAP_SCRIPT_ON_RESUME : ShoalCave_LowTideIceRoom_MapScriptsOnResume
+}
+
+script ShoalCave_LowTideIceRoom_MapScriptsOnTransition {
+	if (flag(FLAG_REGIDRAGO_DOOR_UNLOCKED)) {
+		setmetatile (3, 2, 0x3A7, FALSE)
+		setmetatile (3, 1, 0x39F, TRUE)
+		setmetatile (2, 1, 0x39E, TRUE)
+		setmetatile (2, 2, 0x3A6, TRUE)
+		setmetatile (4, 1, 0x3A0, TRUE)
+		setmetatile (4, 2, 0x3A1, TRUE)
+		setmetatile (5, 3, METATILE_Cave_SwitchIcePressed, FALSE)
+		setmetatile (3, 7, METATILE_Cave_SwitchIcePressed, FALSE)
+		setmetatile (7, 12, METATILE_Cave_SwitchIcePressed, FALSE)
+		special (DrawWholeMapView)
+	}
+}
+
+script ShoalCave_LowTideIceRoom_MapScriptsOnResume {
+	setstepcallback (STEP_CB_ICE_SWITCH)
+	releaseall
+	end
+}
+
+script ShoalCave_LowTideIceRoom_MapScriptsOnLoad {
+	waitmovement (0)
+	if (flag(FLAG_REGIDRAGO_ALMOST_UNLOCKED) && !flag(FLAG_REGIDRAGO_DEFEATED)) {
+		clearflag(FLAG_ENABLED_PC)
+		setvar (0x8005, SPECIES_REGICE)
+		special (CheckSpecies)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag(FLAG_REGICE_INFLUENCE)
+			msgbox(format("¡La influencia de Regice te permite caminar por el hielo sin preocupaciones!"))
+			checkpartytype (TYPE_FIRE)
+			if (var(VAR_RESULT) == TRUE) {
+				setflag (FLAG_HAS_FIRE_POKEMON)
+				bufferspeciesname (STR_VAR_1, VAR_0x8004)
+				msgbox(format("¡Oh!\p¡Parece que tu {STR_VAR_1} te está prestando su fuerza!\p¡Ahora puedes derretir el hielo con el Botón R!"))
+			}
+			else {
+				clearflag (FLAG_HAS_FIRE_POKEMON)
+			}
+		}
+		else {
+			clearflag (FLAG_REGICE_INFLUENCE)
+		}
+	}
+	elif (flag(FLAG_REGIDRAGO_DEFEATED)) {
+		setvar (0x8005, SPECIES_REGICE)
+		special (CheckSpecies)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag(FLAG_REGICE_INFLUENCE)
+			clearflag (FLAG_HAS_FIRE_POKEMON)
+		}
+	}
+	else {
+		setflag(FLAG_ENABLED_PC)
+		clearflag (FLAG_REGICE_INFLUENCE)
+		clearflag (FLAG_HAS_FIRE_POKEMON)
+	}
+	setvar(VAR_TEMP_0, 1)
+	releaseall
+	end
+}
+
+
+script ShoalCave_LowTideIceRoom_BrailleDoor_One {
+	braillemsgbox(DracoTomb_Braille_First)
+	braillemsgbox(DracoTomb_Braille_Second)
+	releaseall
+	end
+}
+
+script ShoalCave_LowTideIceRoom_BrailleDoor_Two {
+	if (!flag(FLAG_REGIDRAGO_DOOR_UNLOCKED)) {
+		braillemsgbox(DracoTomb_Braille_Third)
+		if (var(VAR_TEMP_1) >= 3) {
+			braillemsgbox(DracoTomb_Braille_Fourth)
+		}
+		else {
+			braillemsgbox(DracoTomb_Braille_OutsideFirstText)
+			braillemsgbox(DracoTomb_Braille_OutsideEast)
+		}
+		releaseall
+		end
+	}
+	else {
+		msgbox(format("Se ha abierto una puerta."))
+	}
+}
+
+
+script ShoalCave_LowTideIceRoom_BrailleClue_EastNorth {
+	braillemsgbox(DracoTomb_Braille_OutsideNorthEight)
+	releaseall
+	end
+}
+
+script ShoalCave_LowTideIceRoom_BrailleClue_Hallway {
+	braillemsgbox(DracoTomb_Braille_OutsideHallway)
+	releaseall
+	end
+}

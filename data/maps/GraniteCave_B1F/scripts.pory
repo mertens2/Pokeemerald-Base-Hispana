@@ -1,0 +1,150 @@
+mapscripts GraniteCave_B1F_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE: CaveHole_CheckFallDownHole
+	MAP_SCRIPT_ON_TRANSITION: GraniteCave_SetFlashLevel
+	MAP_SCRIPT_ON_RESUME: GraniteCave_B1F_SetHoleWarp
+}
+
+script GraniteCave_B1F_SetHoleWarp {
+	setstepcallback (STEP_CB_CRACKED_FLOOR)
+	setholewarp (MAP_GRANITE_CAVE_B2F)
+	end
+}
+
+script GraniteCave_SetFlashLevel {
+	setflashlevel (1)
+	call (CaveHole_FixCrackedGround)
+	end
+}
+
+script GraniteCave_B1F_EventScript_RedRock2 {
+	if (!flag(FLAG_RED_STONES_2)) {
+		msgbox(format("... ¿Oh?\n¡Mira, hay una piedra evolutiva aquí!"))
+		delay (16)
+		msgbox(format(".... ¡MMMMGGGGHHH!"))
+		closemessage
+		setvar (VAR_0x8004, 0) 
+		setvar (VAR_0x8005, 2) 
+		setvar (VAR_0x8006, 2)
+		setvar (VAR_0x8007, 3)
+		special (ShakeCamera)
+		waitstate
+		delay (30)
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		random (4)
+		switch (var(VAR_RESULT)) {
+		case 0:
+			giveitem (ITEM_FIRE_STONE, 1)
+			break
+		case 1:
+			giveitem (ITEM_THUNDER_STONE, 1)
+			break
+		case 2:
+			giveitem (ITEM_SUN_STONE, 1)
+			break
+		case 3:
+			giveitem (ITEM_SHINY_STONE, 1)
+			break
+		case 4:
+			giveitem (ITEM_DAWN_STONE, 1)
+			break
+		default:
+			giveitem (ITEM_FIRE_STONE, 1)
+			break
+		}
+		delay (16)
+		msgbox(format("Parece que otra piedra evolutiva se está formando debajo muy lentamente...\p¡Habrá que volver mañana!"))
+		setflag(FLAG_RED_STONES_2)
+		release
+		end
+	}
+	else {
+		msgbox(format("Parece que otra piedra evolutiva se está formando debajo muy lentamente...\p¡Habrá que volver mañana!"))
+		release
+		end
+	}
+}
+
+script GraniteCave_B1F_EventScript_RedRock3 {
+	if (!flag(FLAG_RED_STONES_3)) {
+		msgbox(format("... ¿Oh?\n¡Mira, hay una piedra evolutiva aquí!"))
+		delay (16)
+		msgbox(format(".... ¡MMMMGGGGHHH!"))
+		setvar (VAR_0x8004, 0) 
+		setvar (VAR_0x8005, 2) 
+		setvar (VAR_0x8006, 2)
+		setvar (VAR_0x8007, 3)
+		special (ShakeCamera)
+		waitstate
+		closemessage
+		delay (30)
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		random (4)
+		switch (var(VAR_RESULT)) {
+		case 0:
+			giveitem (ITEM_FIRE_STONE, 1)
+			break
+		case 1:
+			giveitem (ITEM_THUNDER_STONE, 1)
+			break
+		case 2:
+			giveitem (ITEM_SUN_STONE, 1)
+			break
+		case 3:
+			giveitem (ITEM_SHINY_STONE, 1)
+			break
+		case 4:
+			giveitem (ITEM_DAWN_STONE, 1)
+			break
+		default:
+			giveitem (ITEM_FIRE_STONE, 1)
+			break
+		}
+		delay (16)
+		msgbox(format("... Momento...\p¡Parece que aquí se forman dos piedras evolutivas!"))
+		delay (16)
+		msgbox(format(".... ¡MMMMGGGGHHH!"))
+		setvar (VAR_0x8004, 0) 
+		setvar (VAR_0x8005, 2) 
+		setvar (VAR_0x8006, 5)
+		setvar (VAR_0x8007, 3)
+		special (ShakeCamera)
+		waitstate
+		closemessage
+		delay (30)
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		random (4)
+		switch (var(VAR_RESULT)) {
+		case 0:
+			giveitem (ITEM_FIRE_STONE, 1)
+			break
+		case 1:
+			giveitem (ITEM_THUNDER_STONE, 1)
+			break
+		case 2:
+			giveitem (ITEM_SUN_STONE, 1)
+			break
+		case 3:
+			giveitem (ITEM_SHINY_STONE, 1)
+			break
+		case 4:
+			giveitem (ITEM_DAWN_STONE, 1)
+			break
+		default:
+			giveitem (ITEM_FIRE_STONE, 1)
+			break
+		}
+		delay (16)
+		msgbox(format("Parece que otras piedras evolutivas se están formando debajo muy lentamente...\p¡Habrá que volver mañana!"))
+		setflag(FLAG_RED_STONES_3)
+		release
+		end
+	}
+	else {
+		msgbox(format("Parece que otras piedras evolutivas se están formando debajo muy lentamente...\p¡Habrá que volver mañana!"))
+		release
+		end
+	}
+}

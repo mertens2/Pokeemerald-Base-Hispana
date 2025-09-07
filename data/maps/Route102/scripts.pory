@@ -1,0 +1,556 @@
+
+text Route102_Text_Sigsa {
+	poryswitch(LANGUAGE){
+		EN {
+			"ZIGZA!"
+		}
+		ES {
+			"¡ZIGZA!"
+		}
+	}
+	
+}
+text Route102_Text_Ralts {
+	poryswitch(LANGUAGE){
+		EN {
+			"R-{PAUSE 20}RALTS!"
+		}
+		ES {
+			"¡R-{PAUSE 20}RALTS!"
+		}
+	}
+}
+text Route102_Text_UnRalts {
+	poryswitch(LANGUAGE){
+		EN {
+			format("WOW! A Ralts!\nThese Pokémon are rare, or so I've read.\p"
+			"Well, now to catch it…\nUh…{PAUSE 20} How…?\p"
+			"Em…{PAUSE 20} Z-Zigzagon… {PAUSE 20}Come out now!")
+		}
+		ES {
+			format("¡WOW! ¡Un Ralts!\nEstos son raros, leí en un libro.\p"
+			"Bueno, ahora es tiempo de atraparlo…\nEh…{PAUSE 20} ¿Cómo…?\p"
+			"Em…{PAUSE 20} Z-Zigzagon… ¡Sal de ahí!")
+		}
+	}
+	
+}
+
+text Route102_Text_WallyCommands {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Now, I have to attack, no?\pZigzagoon, Tackle!")
+		}
+		ES {
+			format("Ahora, tengo que atacar, ¿no?\pZigzagoon, ¡Tacleada!")
+		}
+	}
+	
+}
+
+text Route102_Text_PokeballVe {
+	poryswitch(LANGUAGE){
+		EN {
+			format("A-a-a-an-and, uh…!\p"
+			"POKÉBALL, CATCH IT!")
+		}
+		ES {
+			format("¡Y-y-y-y ahora, eh…!\p"
+			"¡POKÉBALL, CAPTÚRALO!")
+		}
+	}
+	
+}
+
+text Route102_Text_WatchMeCatchPokemon {
+	poryswitch(LANGUAGE){
+		EN {
+			format("{PLAYER}…\nPokémon live in tall grass, no?\p"
+			"Please stay with me so I…\n"
+			"…WAHHH-!{PAUSE 20} ")
+		}
+		ES {
+			format("{PLAYER}…\nLos Pokémon viven en el pasto, ¿no?\p"
+			"Por favor quédate así puedo…\n¡…AHHH-!{PAUSE 20} ")
+		}
+	}
+	
+}
+
+text Route102_Text_WallyIDidIt {
+	
+	poryswitch(LANGUAGE){
+		EN {
+			format("I-I did it…\n"
+			"I HAVE A POKÉMON!")
+		}
+		ES {
+			format("L-lo hice…\n"
+			"¡TENGO UN POKÉMON!")
+		}
+	}
+	
+}
+
+text Route102_Text_WallyZigzagoonThanks {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Thanks, Zigzagoon!\nI couldn't have done it without you...\pUh... Return!")
+		}
+		ES {
+			format("¡Gracias, Zigzagoon!\nNo podría haberlo hecho sin ti...\pEh... ¡Regresa!")
+		}
+	}
+	
+}
+
+text Route102_Text_LetsGoBack {
+	poryswitch(LANGUAGE){
+		EN {
+			format("{PLAYER}, I'm so happy!\n"
+			"Let's go back to the Gym!!")
+		}
+		ES {
+			format("¡{PLAYER}, gracias!\n"
+			"¡Volvamos al Gimnasio!")
+		}
+	}
+	
+}
+
+text Route102_Text_ImNotVeryTall {
+	"No…soy tan alto, así que\n"
+	"me hundo en el pasto alto.\p"
+	"Ayúdame… Soy alérgic-\n"
+	"-AAAA…\l"
+	"CHOOO- alégica…"
+}
+
+text Route102_Text_RouteSignOldale {
+	"RUTA 102\n"
+	"{RIGHT_ARROW} PUEBLO OLDALE"
+}
+
+text Route102_Text_RouteSignPetalburg {
+	"RUTA 102\n"
+	"{LEFT_ARROW} CIUDAD PETALBURG"
+}
+
+
+script Route102_EventScript_Boy{
+	faceplayer
+	lock
+	CheckItem(ITEM_GREAT_BALL)
+	if (var(VAR_RESULT) == TRUE){
+		poryswitch(LANGUAGE){
+			EN {
+				msgbox(format("¡Ah!\nYou scared me...\pAccept this and tell nobody I was here!"))
+				message (format("You got a Quick Ball in exchange for the Great Ball!"))
+				giveitem(ITEM_QUICK_BALL)
+				removeitem(ITEM_GREAT_BALL)
+				msgbox(format("A Quick Ball is better if you use it in the first turn.\pGet from behind and catch your prey!"))
+			}
+			ES {
+				msgbox(format("¡Ah!\nMe asustaste...\p¡Acepta este cambio y no le digas a nadie que estaba acá!"))
+				message (format("¡Obtuviste una Veloz Ball a cambio de la Super Ball!"))
+				giveitem(ITEM_QUICK_BALL)
+				removeitem(ITEM_GREAT_BALL)
+				msgbox(format("La Veloz Ball es mejor cuando la usas al inicio de un combate.\p¡Acércate por detrás y atrapa a tu presa!"))
+			}
+		}
+	}
+	else {
+		poryswitch(LANGUAGE){
+			EN {
+				msgbox(format("¡Ah!\nYou scared me...\pIf you had a Great Ball, I'd change it for this Quick Ball..."))
+			}
+			ES {
+				msgbox(format("¡Ah!\n¡Me asustaste!\pTe daría esta Veloz Ball, pero no tienes una Super Ball para darme a cambio..."))
+			}
+		}
+	}
+	closemessage
+	releaseall
+}
+
+
+raw `
+.set LOCALID_RALTS, 9
+.set LOCALID_ZIGZA, 10
+.set LOCALID_BALL, 11
+.set LOCALID_BALL2, 13
+.set LOCALID_WALLY, 14
+
+Route102_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route102_OnFrame
+	.byte 0
+
+Route102_OnFrame::
+	map_script_2 VAR_PETALBURG_CITY_STATE, 2, Route102_WallyTutorial
+	.2byte 0
+
+Route102_EventScript_LittleBoy::
+	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
+	end
+
+Route102_EventScript_RouteSignOldale::
+	msgbox Route102_Text_RouteSignOldale, MSGBOX_SIGN
+	end
+
+Route102_EventScript_RouteSignPetalburg::
+	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
+	end
+
+
+Error::
+	lockall
+	fadescreen FADE_TO_WHITE
+	special DrawWholeMapView
+	fadescreen FADE_FROM_WHITE
+	msgbox NoDeberiasVerlo, MSGBOX_NPC
+	releaseall
+	end
+
+Route102_WallyTutorial::
+	lockall
+	addobject LOCALID_WALLY
+	addobject LOCALID_BALL
+	addobject LOCALID_BALL2
+	addobject LOCALID_RALTS
+	addobject LOCALID_ZIGZA
+	applymovement LOCALID_WALLY, Route102_Movement_WallyTutorialWally
+	applymovement OBJ_EVENT_ID_PLAYER, Route102_Movement_WallyTutorialPlayer
+	waitmovement 0
+	namebox Wally
+	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_INTERRUPT
+	hidenamebox
+	call Route102_EventScript_RaltsAppears
+	msgbox Route102_Text_UnRalts, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	setobjectxy LOCALID_BALL, 3, 6
+	playse SE_BALL
+	delay 16
+	playse SE_BALL_OPEN
+	fadescreen FADE_TO_WHITE
+	delay 16
+	setobjectxy LOCALID_BALL, 10, 7
+	setobjectxy LOCALID_ZIGZA, 3, 6
+	delay 8
+	fadescreen FADE_FROM_WHITE
+	delay 8
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	msgbox Route102_Text_Sigsa, MSGBOX_DEFAULT
+	waitmoncry
+	delay 8
+	namebox Wally
+	msgbox Route102_Text_WallyCommands
+	applymovement LOCALID_WALLY, Route102_Movement_WallyJump
+	waitmovement 0
+	closemessage
+	hidenamebox
+	call Route102_EventScript_ZigzagoonAttacks
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	msgbox Route102_Text_Sigsa, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+	msgbox Route102_Text_Ralts
+	applymovement LOCALID_RALTS, Route102_Movement_RaltsTeleport
+	delay 2
+	fadescreen FADE_TO_WHITE
+	waitmovement 0
+	delay 8
+	setobjectxy LOCALID_RALTS, 5, 6
+	delay 16
+	applymovement LOCALID_RALTS, Route102_Movement_RaltsTeleport2
+	delay 4
+	fadescreen FADE_FROM_WHITE
+	waitmovement 0
+	delay 8
+	call Route102_EventScript_ZigzaSurprise
+	applymovement LOCALID_WALLY, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+	waitmoncry
+	call Route102_EventScript_ZigzaHurt
+	delay 60
+	msgbox Route102_Text_PokeballVe, MSGBOX_DEFAULT
+	closemessage
+	call Route102_EventScript_BallThrow
+	delay 8
+	call Route102_EventScript_BallCatch
+	delay 8
+	applymovement LOCALID_WALLY, Route102_Movement_WallyGrabBall
+	waitmovement 0
+	delay 16
+	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	call Route102_EventScript_BallCatchHide
+	namebox Wally
+	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
+	applymovement LOCALID_WALLY, Route102_Movement_WallyGrabBall
+	waitmovement 0
+	closemessage
+	hidenamebox
+	msgbox Route102_Text_WallyZigzagoonThanks, MSGBOX_DEFAULT
+	namebox Wally
+	fadescreen FADE_TO_WHITE
+	removeobject LOCALID_ZIGZA
+	setobjectxy LOCALID_BALL, 7, 6
+	playse SE_BALL_OPEN
+	delay 8
+	fadescreen FADE_FROM_WHITE
+	waitse
+	closemessage
+	hidenamebox
+	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	call Route102_EventScript_BallZigzaHide
+	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement LOCALID_WALLY
+	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setvar VAR_PETALBURG_CITY_STATE, 3
+	fadedefaultbgm
+	clearflag FLAG_DONT_TRANSITION_MUSIC
+	setvar VAR_PETALBURG_GYM_STATE, 1
+	warp MAP_PETALBURG_CITY_GYM, 4, 108
+	waitstate
+	releaseall
+	end
+
+Route102_Movement_WallyTutorialPlayer:
+	delay_8
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_in_place_faster_right
+	step_end
+
+Route102_Movement_WallyTutorialWally:
+	delay_8
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	delay_16
+	walk_in_place_faster_up
+	delay_16
+	delay_16
+	walk_in_place_faster_right
+	step_end
+
+Route102_Movement_WallyGrabBall:
+	walk_right
+	walk_right
+	step_end
+
+
+Route102_Movement_WallyJump::
+	jump_in_place_right
+	step_end
+
+Route102_EventScript_RaltsAppears::
+	setobjectxy LOCALID_RALTS, 6, 6
+	applymovement LOCALID_RALTS, Route102_Movement_RaltsJump
+	delay 8
+	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+	waitmovement 0
+	msgbox Route102_Text_Ralts, MSGBOX_DEFAULT
+	waitmoncry
+	delay 8
+	playbgm MUS_VS_WILD, FALSE
+	return
+
+
+	
+Route102_EventScript_ZigzaSurprise::
+	applymovement LOCALID_ZIGZA, Common_Movement_ExclamationMark
+	playse SE_PIN
+	return
+
+Route102_EventScript_ZigzaHurt::
+	playse SE_EFFECTIVE
+	applymovement LOCALID_ZIGZA, Route102_Movement_RaltsHurt
+	waitmovement 0
+	return
+
+Route102_EventScript_BallThrow::
+	setobjectxy LOCALID_BALL, 3, 6
+	applymovement LOCALID_BALL, Route102_Movement_BallThrow
+	playse SE_BALL_THROW
+	waitse
+	playse SE_BALL_OPEN
+	removeobject LOCALID_RALTS
+	waitse
+	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+	waitmoncry
+	waitmovement 0
+	setobjectxy LOCALID_BALL, 10, 7
+	setobjectxy LOCALID_BALL2, 5, 6
+	return
+
+Route102_EventScript_BallCatch::
+	playse SE_BALL
+	applymovement LOCALID_BALL2, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_BALL2, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement LOCALID_BALL2, Common_Movement_FaceLeft
+	waitmovement 0
+	waitse
+	applymovement LOCALID_BALL2, Common_Movement_FaceDown
+	waitmovement 0
+	delay 16
+	playse SE_BALL
+	applymovement LOCALID_BALL2, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_BALL2, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement LOCALID_BALL2, Common_Movement_FaceLeft
+	waitmovement 0
+	waitse
+	applymovement LOCALID_BALL2, Common_Movement_FaceDown
+	waitmovement 0
+	delay 16
+	playse SE_BALL
+	applymovement LOCALID_BALL2, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_BALL2, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement LOCALID_BALL2, Common_Movement_FaceLeft
+	waitmovement 0
+	waitse
+	applymovement LOCALID_BALL2, Common_Movement_FaceDown
+	waitmovement 0
+	delay 24
+	playse SE_PIN
+	waitse 
+	delay 10
+	playfanfare MUS_EVOLVED
+	waitfanfare
+	return
+
+Route102_EventScript_BallCatchHide::
+	removeobject LOCALID_BALL2
+	return
+
+
+Route102_EventScript_BallZigzaHide::
+	removeobject LOCALID_BALL
+	removeobject LOCALID_BALL2
+	removeobject LOCALID_RALTS
+	removeobject LOCALID_ZIGZA
+	return
+	
+
+Route102_Movement_BallThrow::
+	disable_jump_landing_ground_effect
+	jump_2_right
+	step_end
+
+Route102_Movement_RaltsTeleport::
+	jump_in_place_left_right
+	set_invisible
+	step_end
+
+Route102_Movement_RaltsTeleport2::
+	set_visible
+	jump_in_place_left_right
+	face_right
+	step_end
+
+Route102_EventScript_ZigzagoonAttacks::
+	applymovement LOCALID_ZIGZA, Route102_Movement_AttackRalts
+	delay 24
+	playse SE_EFFECTIVE
+	applymovement LOCALID_RALTS, Route102_Movement_RaltsHurt
+	waitmovement 0
+	return
+	
+	
+	
+Route102_Movement_AttackRalts::
+	walk_right
+	walk_fast_right
+	walk_faster_right
+	walk_faster_right
+	lock_facing_direction
+	delay_16
+	walk_left
+	unlock_facing_direction
+	step_end
+
+Route102_Movement_RaltsHurt::
+	face_left
+	lock_facing_direction
+	jump_right
+	unlock_facing_direction
+	step_end
+
+Route102_Movement_RaltsJump::
+	jump_in_place_left
+	step_end
+
+Route102_EventScript_Calvin::
+	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
+	setvar VAR_0x8004, TRAINER_CALVIN_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	goto_if_eq VAR_RESULT, FALSE, Route102_EventScript_CalvinTryRegister
+	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
+	release
+	end
+
+Route102_EventScript_CalvinRegisterMatchCall::
+	msgbox Route102_Text_CalvinRegisterShort, MSGBOX_DEFAULT
+	register_matchcall TRAINER_CALVIN_1
+	release
+	end
+
+Route102_EventScript_CalvinTryRegister::
+	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegister
+	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_EventScript_CalvinRegister::
+	msgbox Route102_Text_CalvinRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_CALVIN_1
+	release
+	end
+
+Route102_EventScript_CalvinRematch::
+	trainerbattle_rematch TRAINER_CALVIN_1, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
+	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route102_EventScript_Rick::
+	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
+	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route102_EventScript_Tiana::
+	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
+	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route102_EventScript_Allen::
+	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
+	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+`

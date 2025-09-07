@@ -1,0 +1,183 @@
+mapscripts GraniteCave_SecretRoom1_MapScripts {
+	MAP_SCRIPT_ON_LOAD: GraniteCave_SecretRoom1_Rocks
+	MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: GraniteCave_SecretRoom1_RegisInfluence
+    ]
+}
+
+script GraniteCave_SecretRoom1_RegisInfluence {
+	if (flag(FLAG_REGIELEKI_DEFEATED) && flag(FLAG_REGIDRAGO_DEFEATED)) {
+	setvar (VAR_TEMP_0, 1)
+	}
+	else {
+		msgbox(format("La influencia de Registeel te permite romper las rocas en un santiamén."))
+		closemessage
+		setvar (VAR_TEMP_0, 1)
+	}
+	releaseall
+	end
+}
+
+script GraniteCave_SecretRoom1_Rocks {
+	if (flag(FLAG_REGIDRAGO_ALMOST_UNLOCKED) && !flag(FLAG_REGIDRAGO_DEFEATED)) {
+		setflag (FLAG_TEMP_12)
+		setflag (FLAG_TEMP_11)
+		setflag (FLAG_TEMP_8)
+		setflag (FLAG_TEMP_14)
+		setflag (FLAG_TEMP_15)
+	}
+	elif (flag(FLAG_REGIELEKI_ALMOST_UNLOCKED) && !flag(FLAG_REGIELEKI_DEFEATED)) {
+		setflag (FLAG_TEMP_12)
+		setflag (FLAG_TEMP_3)
+		setflag (FLAG_TEMP_13)
+		setflag (FLAG_TEMP_14)
+		setflag (FLAG_TEMP_16)
+	}
+	if (flag(FLAG_REGIELEKI_DEFEATED) && flag(FLAG_REGIDRAGO_DEFEATED)) {
+		setflag (FLAG_TEMP_12)
+		setflag (FLAG_TEMP_11)
+		setflag (FLAG_TEMP_1)
+		setflag (FLAG_TEMP_5)
+		setflag (FLAG_TEMP_14)
+		setflag (FLAG_TEMP_15)
+		setobjectxyperm (2, 13, 19)
+		releaseall
+		end
+	}
+	release
+	end
+}
+
+script GraniteCave_SecretRoom1_Braille_Face {
+	if (flag(FLAG_REGIDRAGO_ALMOST_UNLOCKED) && !flag(FLAG_REGIDRAGO_DEFEATED)) {
+		braillemsgbox (DracoThunderAltar_Braille_Route125)
+		release
+		end
+	}
+	elif (flag(FLAG_REGIELEKI_ALMOST_UNLOCKED) && !flag(FLAG_REGIELEKI_DEFEATED)) {
+		braillemsgbox (DracoThunderAltar_Braille_Route111)
+		release
+		end
+	}
+	else {
+	braillemsgbox (DracoThunderAltar_Braille_MakeHisFace)
+	release
+	end
+	}
+}
+
+script GraniteCave_SecretRoom1_Braille_Fear {
+	braillemsgbox (DracoThunderAltar_Braille_WeFearedSpeedWeFearedLife)
+	release
+	end
+}
+
+script GraniteCave_SecretRoom1_Braille_Key {
+	braillemsgbox (DracoThunderAltar_Braille_TheKeyIsUnited)
+	release
+	end
+}
+
+script EventScript_RockSmash_Regis_1 {
+	if (flag(FLAG_REGIELEKI_DEFEATED) && flag(FLAG_REGIDRAGO_DEFEATED)) {
+		msgbox(format("El poder de Registeel parece estar siendo limitado por un poder abismal...\pEs incapaz de romper estas rocas..."))
+		releaseall
+		end
+		}
+	elif (flag(FLAG_REGIDRAGO_ALMOST_UNLOCKED) || flag(FLAG_REGIELEKI_ALMOST_UNLOCKED)){
+			msgbox(format("Registeel piensa que hay cosas más importantes que hacer...\pSe rehúsa a alterar el patrón."))
+			releaseall
+			end
+		}
+	else {
+	playse (SE_M_ROCK_THROW)
+	applymovement (VAR_LAST_TALKED, Movement_SmashRock)
+	waitmovement (0)
+	removeobject (VAR_LAST_TALKED)
+	if ((flag(FLAG_TEMP_3) && flag(FLAG_TEMP_12) && flag(FLAG_TEMP_13) && flag(FLAG_TEMP_14) && flag(FLAG_TEMP_16)) &&
+	(!flag(FLAG_TEMP_1) && !flag(FLAG_TEMP_11) && !flag(FLAG_TEMP_7) && !flag(FLAG_TEMP_5) && !flag(FLAG_TEMP_8) &&
+	!flag(FLAG_TEMP_9) && !flag(FLAG_TEMP_15))) {
+		if (flag(FLAG_REGIELEKI_DEFEATED)) {
+			msgbox(format("Regieleki ya ha sido derrotado..."))
+			releaseall
+			end
+		}
+		else {
+		setvar (VAR_MIRAGE_TOWER_STATE, 0)
+		setflag (FLAG_FORCE_MIRAGE_TOWER_VISIBLE)
+		setflag (FLAG_REGIELEKI_ALMOST_UNLOCKED)
+		setvar (VAR_0x8004, 0) 
+		setvar (VAR_0x8005, 2) 
+		setvar (VAR_0x8006, 2)
+		setvar (VAR_0x8007, 3)
+		special (ShakeCamera)
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitstate
+		delay (30)
+		setvar (VAR_0x8004, 2) 
+		setvar (VAR_0x8005, 4) 
+		setvar (VAR_0x8006, 4)
+		setvar (VAR_0x8007, 2)
+		special (ShakeCamera)
+		waitstate
+		delay (30)
+		waitmovement (0)
+		msgbox(format("Una puerta en la lejanía se ha abierto."))
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement (0)
+		msgbox(format("Los mensajes en la pared de ahí parecen haber cambiado."))
+		releaseall
+		end
+		}
+	}
+	elif ((flag(FLAG_TEMP_12) && flag(FLAG_TEMP_11) && flag(FLAG_TEMP_14) &&
+	flag(FLAG_TEMP_15)) && (!flag(FLAG_TEMP_5) && !flag(FLAG_TEMP_9) && !flag(FLAG_TEMP_7) &&
+	!flag(FLAG_TEMP_1) && !flag(FLAG_TEMP_3) && !flag(FLAG_TEMP_13) && !flag(FLAG_TEMP_16))) {
+		if (flag(FLAG_REGIDRAGO_DEFEATED)) {
+			msgbox(format("Regidrago ya ha sido derrotado..."))
+			releaseall
+			end
+		}
+		else {
+		delay (20)
+		setflag (FLAG_REGIDRAGO_ALMOST_UNLOCKED)
+		setvar (VAR_0x8004, 0) 
+		setvar (VAR_0x8005, 2) 
+		setvar (VAR_0x8006, 2)
+		setvar (VAR_0x8007, 3)
+		special (ShakeCamera)
+		waitstate
+		playse (SE_M_ROCK_THROW)
+		applymovement (2, Movement_SmashRock)
+		waitmovement (0)
+		removeobject (2)
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		delay (30)
+		setvar (VAR_0x8004, 2)
+		setvar (VAR_0x8005, 4)
+		setvar (VAR_0x8006, 4)
+		setvar (VAR_0x8007, 2)
+		special (ShakeCamera)
+		waitstate
+		delay (30)
+		msgbox(format("Una puerta en la lejanía se ha abierto."))
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement (0)
+		msgbox(format("Los mensajes en la pared de ahí parecen haber cambiado."))
+		releaseall
+		end
+		}
+		}
+	releaseall
+	end
+	}
+}

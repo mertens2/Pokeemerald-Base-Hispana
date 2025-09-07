@@ -1,0 +1,17 @@
+raw `
+OldaleRuinsInsideF1_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
+	map_script MAP_SCRIPT_ON_TRANSITION, OldaleRuinsInsideF1_FixHoleWarp
+	map_script MAP_SCRIPT_ON_RESUME, OldaleRuinsInsideF1_SetHoleWarp
+	.byte 0
+
+
+OldaleRuinsInsideF1_SetHoleWarp::
+	setstepcallback STEP_CB_CRACKED_FLOOR
+	setholewarp MAP_OLDALE_RUINS_INSIDE_BF1
+	end
+
+OldaleRuinsInsideF1_FixHoleWarp::
+	call CaveHole_FixCrackedGround
+	end
+`

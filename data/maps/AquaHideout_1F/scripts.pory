@@ -1,0 +1,186 @@
+const LOCALID_GRUNT_LEFT  = 1
+const LOCALID_GRUNT_RIGHT = 2
+const LOCALID_GRUNT_UP    = 3
+const LOCALID_DELTA_GRUNT = 4
+
+mapscripts AquaHideout_1F_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_AQUA_HIDEOUT_STATE) >= 1){
+			setobjectxyperm (LOCALID_GRUNT_UP, 23, 2)
+		}
+		return
+	}
+}
+
+script AquaHideout_1F_EventScript_HideoutEntranceGrunts{
+	lock
+	applymovement(LOCALID_GRUNT_LEFT, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_GRUNT_RIGHT, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	namebox(Aqua)
+	if (flag(FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT))
+	{
+		msgbox(format("¿Escuchaste lo que el Jefe está haciendo en Ciudad Slateport?"))
+		msgbox(format("¡Sí! Está yendo a buscar el Submarino…\nEspera a ver la cara del público cuando\lse enteren para quién Devon ha-{PAUSE 20} "), MSGBOX_INTERRUPT)
+		msgbox(format("¡Calla, calla! ¿Quién sabe si alguien nos está escuchando?"))
+	}
+	elif (flag(FLAG_RECEIVED_RED_OR_BLUE_ORB))
+	{
+		msgbox(format("¿Te enteraste?\n¡El Equipo Magma está siendo acorralado en su Base Secreta!\pDeberíamos intentar proteger mejor la nuestra, que muy Secreta no es…"))
+		msgbox(format("Escuché que es otro Equipo como nostros… Uno que ha estado atacando a tanto Aqua como Magma…\p"
+				"Escuché que Shelly los vio, pero que les dijo a los Reclutas que los vieron que cerraran la boca…"))
+		msgbox(format("¡No seas tonto!\nNuestros Admins nunca se dejarían vencer por idiotas así, ¡Nunca!"))
+	}
+	else {
+		msgbox(format("¿Escuchaste lo que el Jefe está haciendo en la Ruta 122?"))
+		msgbox(format("¡Sí!\nPor lo que escuché, está intentando robar un Orbe, pero creo que… ¿Están siendo ayudados por el Equipo Magma?"))
+		msgbox(format("¡No seas tonto!\nNuestro Jefe nunca se juntaría con el idiota de Maxie, ¡Ya no más, al menos!"))
+	}
+	hidenamebox
+	applymovement(LOCALID_GRUNT_LEFT, Common_Movement_WalkInPlaceDown)
+	applymovement(LOCALID_GRUNT_RIGHT, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	namebox(Aqua)
+	msgbox(format("¡E-ey! ¿Estabas escuchando lo que decíamos?"))
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script AquaHideout_1F_EventScript_Grunt1 {
+	lockall
+	faceplayer
+	namebox (Aqua)
+	msgbox(format("M-mis pobres Pokémon…\nEstos desgraciados los dejaron muy lastimados…\pE-estoy tan preocupado por ellos, te prometo que no te haré nada si me ayudas…\p¿Podrías darme algún Revivir para curarlos?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES){
+		hidenamebox
+		checkitem (ITEM_REVIVE)
+		if (var(VAR_RESULT)==TRUE){
+			removeitem(ITEM_REVIVE)
+			playfanfare(MUS_OBTAIN_ITEM)
+			message(format("¡Le diste un Revivir al Recluta!"))
+			waitfanfare
+			waitmessage
+			goto (AquaHideout_1F_EventScript_Grunt1Helped)
+		}
+		checkitem(ITEM_REVIVAL_HERB)
+		if (var(VAR_RESULT)==TRUE){
+			removeitem(ITEM_REVIVAL_HERB)
+			playfanfare(MUS_OBTAIN_ITEM)
+			message(format("¡Le diste una Hierba Revivir al Recluta!"))
+			waitfanfare
+			waitmessage
+			goto (AquaHideout_1F_EventScript_Grunt1Helped)
+		}
+		checkitem(ITEM_MAX_REVIVE)
+		if (var(VAR_RESULT)==TRUE){
+			removeitem(ITEM_MAX_REVIVE)
+			playfanfare(MUS_OBTAIN_ITEM)
+			message(format("¡Le diste un Maxi Revivir al Recluta!"))
+			waitfanfare
+			waitmessage
+			goto (AquaHideout_1F_EventScript_Grunt1Helped)
+		}
+	}
+	namebox (Aqua)
+	msgbox(format("Oh… Está bien…\nM-mis pobres Pokémon.."))
+	hidenamebox
+	closemessage
+	releaseall
+}
+
+script AquaHideout_1F_EventScript_Grunt1Helped {
+	msgbox(format("¡M-muchas gracias!\nAhora podré ir a un Centro Pokémon…"))
+	waitmessage
+	hidenamebox
+	closemessage
+	addvar(VAR_WISHES_FUFILLED, 1)
+	fadescreen (FADE_TO_WHITE)
+	delay (16)
+	removeobject(LOCALID_GRUNT_UP)
+	setflag(FLAG_HELPED_AQUA_GRUNT)
+	fadescreen(FADE_FROM_WHITE)
+	delay (16)
+	call(Script_Wishes)
+	releaseall
+	end
+}
+
+
+script AquaHideout_1F_TriggerLeft {
+	lockall
+	setvar(VAR_AQUA_HIDEOUT_STATE, 2)
+	goto (AquaHideout_1F_Triggers)
+}
+script AquaHideout_1F_TriggerRight {
+	lockall
+	setvar(VAR_AQUA_HIDEOUT_STATE, 3)
+	goto (AquaHideout_1F_Triggers)
+}
+script AquaHideout_1F_Triggers {
+	lockall
+	special (SpawnCameraObject)
+	addobject (3)
+	addobject (4)
+	if (var(VAR_AQUA_HIDEOUT_STATE) == 2){
+		applymovement (OBJ_EVENT_ID_CAMERA, AquaHideout_1F_Movement_PanLeft)
+	}
+	else {
+		applymovement (OBJ_EVENT_ID_CAMERA, AquaHideout_1F_Movement_PanRight)
+	}
+	waitmovement (0)
+	namebox (Delta)
+	msgbox(format("Ahora, sal de mi camino.\nO tendré que usar medidas más drásticas que derrotar a tus Pokémon."))
+	hidenamebox
+	closemessage
+	applymovement (LOCALID_GRUNT_UP, Common_Movement_ExclamationMark)
+	playse (SE_PIN)
+	waitmovement (0)
+	applymovement (LOCALID_GRUNT_UP, AquaHideout_1F_Movement_GetOut)
+	applymovement (LOCALID_DELTA_GRUNT, AquaHideout_1F_Movement_DeltaLeave)
+	waitmovement (0)
+	removeobject (LOCALID_DELTA_GRUNT)
+	setflag (FLAG_DELTA_GRUNT_AQUA_HIDEOUT)
+	setobjectxyperm(LOCALID_GRUNT_UP, 23, 2)
+	if (var(VAR_AQUA_HIDEOUT_STATE) == 2){
+		applymovement (OBJ_EVENT_ID_CAMERA, AquaHideout_1F_Movement_PanLeftDown)
+	}
+	else {
+		applymovement (OBJ_EVENT_ID_CAMERA, AquaHideout_1F_Movement_PanRightDown)
+	}
+	waitmovement (0)
+	special(RemoveCameraObject)
+	setvar(VAR_AQUA_HIDEOUT_STATE, 2)
+	releaseall
+}
+
+movement AquaHideout_1F_Movement_PanLeft {
+	walk_diag_northeast * 9
+}
+
+movement AquaHideout_1F_Movement_PanLeftDown {
+	walk_diag_southwest * 9
+}
+
+movement AquaHideout_1F_Movement_PanRight {
+	walk_diag_northeast * 8
+}
+
+movement AquaHideout_1F_Movement_PanRightDown {
+	walk_diag_southwest * 8
+}
+
+movement AquaHideout_1F_Movement_DeltaLeave {
+	delay_8
+	walk_up
+	delay_8
+	set_invisible
+}
+
+movement AquaHideout_1F_Movement_GetOut {
+	walk_right
+	face_right
+	delay_16
+	face_down
+}

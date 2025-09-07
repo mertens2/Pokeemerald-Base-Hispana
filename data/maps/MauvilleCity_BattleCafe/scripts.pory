@@ -1,0 +1,48 @@
+mapscripts MauvilleCity_BattleCafe_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		special(SetCafeTrainersToday)
+	}
+}
+
+// por hacer wip
+script MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle {
+	special(GetCafeTrainersBattleText)
+	trainerbattle_single(VAR_RESULT, "{STR_VAR_1}", "{STR_VAR_2}")
+	special(GetCafeTrainersAfterBattleData)
+	msgbox(format("{STR_VAR_1}"))
+	if (var(VAR_RESULT) != 0) {
+		giveitem(VAR_RESULT, 1)
+		msgbox(format("{STR_VAR_3}"))
+	}
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_BattleCafe_Scripts_DailyTrainer1 {
+	lockall
+	faceplayer
+	setvar(VAR_0x8000, 0)
+	goto (MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle)
+}
+
+
+script MauvilleCity_BattleCafe_Scripts_DailyTrainer2 {
+	lockall
+	faceplayer
+	setvar(VAR_0x8000, 1)
+	goto (MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle)
+}
+
+script MauvilleCity_BattleCafe_Scripts_DailyTrainer3 {
+	lockall
+	faceplayer
+	setvar(VAR_0x8000, 2)
+	goto (MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle)
+}
+
+script MauvilleCity_BattleCafe_Scripts_DailyTrainer4 {
+	lockall
+	faceplayer
+	setvar(VAR_0x8000, 3)
+	goto (MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle)
+}

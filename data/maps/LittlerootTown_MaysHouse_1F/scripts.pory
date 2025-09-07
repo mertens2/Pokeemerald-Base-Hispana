@@ -1,0 +1,263 @@
+
+text RivalsHouse_1F_Text_LikeChildLikeFather {
+	poryswitch(LANGUAGE) {
+	 EN {
+		 format("My husband's… UGH…\n"
+		"He's likely out, studying\l"
+		"some other big stupid thing…\p"
+		"What a guy, huh…?")
+	 }
+	ES {
+		format("Mi esposo debe… UGH…\n"
+		"Debe estar en el campo\l"
+		"estudiando alguna estupidez…\p"
+		"Que gran tipo, ¿no…?")
+	}
+	}
+}
+
+text RivalsHouse_1F_Text_TooBusyToNoticeVisit {
+poryswitch(LANGUAGE) {
+	 EN {
+		 format("Ah, my {RIVAL}, they must be in their room.")
+	 }
+	ES {
+		format("Ah, mi {RIVAL}, debe estar en su cuarto.")
+	}
+	}
+}
+
+text RivalsHouse_1F_Text_WentOutToRoute103 {
+poryswitch(LANGUAGE) {
+	 EN {
+		 format("Ah, my {RIVAL}, they're at Route 103.\pThey worry me, {PLAYER}, last time they stayed investigating till they passed out.")
+	 }
+	ES {
+		format("Ah, mi {RIVAL}, creo que está\n"
+		"en la Ruta 103 estudiando Pokémon,\l"
+		"así que deberías buscarle, {PLAYER}.\l"
+		"La última vez, se quedó investigando hasta que se desmayó.")
+	}
+	}
+}
+text RivalsHouse_1F_Text_DoYouHavePokemon {
+	poryswitch(LANGUAGE) {
+	 EN {
+		 format("I no shpeek english!")
+	 }
+	ES {
+		format("¡Hoda, veshin{OA}!\p"
+		"¿Ya tienesh Pokémon?")
+	}
+	}
+}
+
+raw `
+.set LOCALID_MOM, 1
+.set LOCALID_RIVAL_MOM, 4
+.set LOCALID_RIVAL, 7
+
+LittlerootTown_MaysHouse_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_MaysHouse_1F_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_MaysHouse_1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_MaysHouse_1F_OnFrame
+	.byte 0
+
+LittlerootTown_MaysHouse_1F_OnLoad:
+	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes
+	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual
+	end
+
+LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes::
+	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
+	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
+	return
+
+LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual
+	return
+
+LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual::
+	setmetatile 6, 7, METATILE_BrendansMaysHouse_BookOnTable, TRUE
+	return
+
+LittlerootTown_MaysHouse_1F_OnTransition:
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV
+	end
+
+LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs::
+	setobjectxyperm LOCALID_MOM, 2, 4
+	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
+	return
+
+LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV::
+	setobjectxyperm LOCALID_MOM, 6, 5
+	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
+	return
+
+LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
+	setobjectxyperm LOCALID_MOM, 1, 8
+	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
+	return
+
+@ Many of the below scripts have no gender check because they assume youre in the correct house
+LittlerootTown_MaysHouse_1F_OnFrame:
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
+	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
+	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
+	.2byte 0
+
+LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock::
+	lockall
+	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
+	applymovement LOCALID_MOM, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
+	waitmovement 0
+	warp MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F, 1, 1
+	waitstate
+	releaseall
+	end
+
+LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs:
+	walk_up
+	step_end
+
+LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
+	lockall
+	setvar VAR_0x8004, LOCALID_MOM
+	setvar VAR_0x8005, FEMALE
+	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
+	end
+
+LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport::
+	lockall
+	setvar VAR_0x8004, FEMALE
+	setvar VAR_0x8005, LOCALID_MOM
+	goto PlayersHouse_1F_EventScript_PetalburgGymReportFemale
+	end
+
+LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
+	lockall
+	playse SE_PIN
+	applymovement LOCALID_RIVAL_MOM, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_RIVAL_MOM, Common_Movement_Delay48
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_RIVAL_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
+	waitmovement 0
+	namebox Marta
+	setvar VAR_LAST_TALKED, LOCALID_RIVAL
+	call EventScript_YoureNewNeighbor_Translated
+	setflag FLAG_MET_RIVAL_MOM
+	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
+	closemessage
+	hidenamebox
+	releaseall
+	end
+
+LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+RivalsHouse_1F_EventScript_RivalMom::
+	lock
+	faceplayer
+	namebox Marta
+	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
+	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
+	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
+	special GetRivalSonDaughterString
+	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+RivalsHouse_1F_EventScript_RivalTooBusy::
+	msgbox RivalsHouse_1F_Text_TooBusyToNoticeVisit, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+RivalsHouse_1F_EventScript_RivalIsOnRoute103::
+	msgbox RivalsHouse_1F_Text_WentOutToRoute103, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+RivalsHouse_1F_EventScript_GoHomeEverySoOften::
+	msgbox RivalsHouse_1F_Text_ShouldGoHomeEverySoOften, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+RivalsHouse_1F_EventScript_RivalSibling::
+	lock
+	faceplayer
+	special GetPlayerBigGuyGirlString
+	msgbox RivalsHouse_1F_Text_DoYouHavePokemon, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom::
+	lockall
+	setvar VAR_0x8004, LOCALID_MOM
+	setvar VAR_0x8005, FEMALE
+	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	goto PlayersHouse_1F_EventScript_MomGoSeeRoom
+	end
+
+
+LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer:
+	walk_in_place_faster_right
+	step_end
+
+LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs::
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit
+	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs
+	waitmovement 0
+	return
+
+
+LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit:
+	delay_16
+	delay_8
+	walk_in_place_faster_right
+	step_end
+
+
+LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs:
+	walk_in_place_faster_up
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
+	.string "Es INCREÍBLE que la gente viaje\n"
+	.string "con Pokémon, pero JAMÁS deberían\l"
+	.string "olvidarse de sus familias, {PLAYER}.\l"
+	.string "Tu padre y mi esposo lo hicieron cuando\l"
+	.string "salieron de viaje, y ahora APENAS\l"
+	.string "pueden concentrarse en sus esposas e\l"
+	.string "hijos…\p"
+	.string "Pero bueno…$"
+
+
+`

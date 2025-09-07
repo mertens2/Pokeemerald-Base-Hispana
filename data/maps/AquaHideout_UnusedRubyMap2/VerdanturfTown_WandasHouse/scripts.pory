@@ -1,0 +1,179 @@
+mapscripts VerdanturfTown_WandasHouse_MapScripts {}
+
+script VerdanturfTown_WandasHouse_EventScript_Wally {
+	lock
+	faceplayer
+	namebox (Wally)
+	if (flag(FLAG_WALLY_SPEECH)) {
+		if (flag(FLAG_BADGE03_GET)) {
+			msgbox(format(""))
+			release
+			end
+		}
+		msgbox(format("Voy a alcanzarte, {PLAYER}. La próxima vez que nos enfrentemos, seré mucho más fuerte."))
+		release
+		end
+	}
+	if (flag(FLAG_BADGE03_GET)) {
+		msgbox(format("Estoy planeando hacer algo. Algo que me hará ser mucho más fuerte, {PLAYER}, pero no voy a decirte qué es.\pParece que eres mucho más fuerte, ¿no?\p"
+		"Pues verás que cuando logre lo que estoy pensando, te lograré sobrepasar."))
+		release
+		end
+	}
+	msgbox(format("{PLAYER}…\pMe… Me habías vencido, pero…\lNo creo estar tan afectado como lo estaba antes.\pDe hecho, creo que esa derrota es lo que necesitaba.\p"
+	"Ahora podré mejorar realmente, y podré esforzarme diez veces más que antes.\pVoy a alcanzarte, {PLAYER}. La próxima vez que nos enfrentemos, seré mucho más fuerte."))
+	hidenamebox
+	closemessage
+	setflag (FLAG_WALLY_SPEECH)
+	release
+	end
+	}
+
+script VerdanturfTown_WandasHouse_EventScript_WallysUncle {
+	lock
+	faceplayer
+	namebox (TioWally)
+	if (flag(FLAG_DEFEATED_WALLY_VICTORY_ROAD)) {
+		msgbox(format("¿Así que Wally ha logrado, sólo por su propia voluntad y determinación, llegar a la Liga Pokémon?\p"
+		"Y yo que le decía que no estaba listo para afrontar el {COLOR BLUE}Desafío de los Gimnasios{COLOR DARK_GRAY}, pero lo completó todo.\p"
+		"Estoy sorprendido, tomando en cuenta que es hijo de mi hermanito menor.\p¡Estoy muy orgulloso de él!"))
+		release
+		end
+	}
+	if (flag(FLAG_DEFEATED_LAVARIDGE_GYM)) {
+		msgbox(format("No puedo creer que se haya ido…\p¡Wally, ¿Dónde estás, mi chiquitín?!\pArgh, ¿¡CÓMO PUDE PERDERLO DE VISTA!?"))
+		release
+		end
+	}
+	msgbox(format("¿Wally?\nAh, está en el cuarto de al lado.\pSu condición ha mejorado bastante, gracias a lo limpio que es el aire por aquí.\p"
+	"Pero quizá, y sólo quizá, sea la influencia de sus Pokémon la que le está dando esperanza y vitalidad…"))
+	closemessage
+	hidenamebox
+	release
+	end
+	}
+
+
+script VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend {
+	namebox (Riley)
+	msgbox(format("¡ROAR!\n¡Soy yo, Riley, el tipo que ayudaste en el túnel!\pEstuve hablando con mi novia, y resulta que a ella también le gusta el hombre que encontré en el túnel.\p"
+	"¡Ahora somos novios los tres!\p¿¡No es eso genial!?\p¡ROOOAARRR!"))
+	closemessage
+	hidenamebox
+	applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+	waitmovement (0)
+	applymovement (6, Common_Movement_FaceLeft)
+	waitmovement (0)
+	playse (SE_CONTEST_HEART)
+	applymovement (VAR_LAST_TALKED, Common_Movement_Heart)
+	waitmovement (0)
+	namebox (Riley)
+	msgbox(format("¡Mi lindo, lindo novio!\n¡Qué lindo es mi novio!"))
+	closemessage
+	hidenamebox
+	playse (SE_CONTEST_HEART)
+	applymovement (6, Common_Movement_Heart)
+	waitmovement (0)
+	namebox (Camilo)
+	msgbox(format("¡A-ay, basta, Riley, que me sonrojo!"))
+	closemessage
+	hidenamebox
+	release
+	end
+	}
+
+script VerdanturfTown_WandasHouse_EventScript_Wanda {
+	lock
+	faceplayer
+	namebox (Wanda)
+	if (flag(FLAG_DEFEATED_LAVARIDGE_GYM)) {
+		msgbox(format("No te preocupes, Wally está bien.\pMe dijo que se iba a ir a Dewford para empezar su {COLOR BLUE}Desafío de los Gimnasios{COLOR DARK_GRAY}."))
+		hidenamebox
+		closemessage
+		release
+		end
+	}
+	if (flag(FLAG_DEFEATED_WALLY_MAUVILLE)) {
+		 msgbox(format("¡Ah! Tú debes de ser {PLAYER}.\pWally no para de hablar de tí y lo mucho que te admira, soy Wanda, su prima.\p"
+		 "Y te debo un agradecimiento, porque gracias a tí, no sólo puedo ahora ver a mi novio cuando quiera, ¡Si no que conocí a otro hombre hermoso con el que salir!\p"
+		 "Amo mucho a mis dos novios, ¡Y es que cómo no amarlos, sólo míralos, musculosos, tiernos y graciosos!\p¡Son los mejores!"))
+		 hidenamebox
+		 closemessage
+		 playse (SE_CONTEST_HEART)
+		 applymovement (VAR_LAST_TALKED, Common_Movement_Heart)
+		 waitmovement (0)
+		 release
+		 end
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+	}
+
+script VerdanturfTown_WandasHouse_EventScript_WallysAunt {
+	lock
+	faceplayer
+	namebox (TiaWally)
+	if (flag(FLAG_DEFEATED_WALLY_VICTORY_ROAD)) {
+		msgbox(format("¿¡QUE WALLY ESTABA EN EVERGRANDE!?\p¡Sus padres estarían sorprendidísimos, nunca se habrían imaginado tal hazaña!"))
+		release
+		end
+	}
+	if (flag(FLAG_DEFEATED_LAVARIDGE_GYM)) {
+		msgbox(format("Ay, Arceus mío…\pMe voy a comprar al Centro Pokémon, y cuando vuelvo, el nuevo novio de mi hija me dice que Wally no está y todos están fuera buscándolo.\p"
+		"Si algo le llegase a pasar… ¡No podría ver a sus padres a la cara nunca más!"))
+		release
+		end
+	}
+	if (flag(FLAG_RUSTURF_TUNNEL_OPENED)) {
+		msgbox(format("¡Es increíble!\pEl novio de mi hija cavó la mayor parte del Túnel Rusturf por su cuenta, ¡Sin máquinas ni nada!\p"
+		"No sólo eso, si no que mi hija es tan encantadora que hasta se consiguió otro novio.\p¿Hay algún límite para lo que mi hija pueda lograr?"))
+	}
+	else {
+		msgbox(format("El novio de mi hija es un constructor reconocido por su amabilidad y gran habilidad natural de liderazgo. ¡Y mi hija lo encantó con su ternura!\p"
+		"¿Hay algún límite para lo que mi hija pueda lograr?"))
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+	}
+
+script VerdanturfTown_WandasHouse_EventScript_Camilo {
+	lock
+	faceplayer
+	namebox (Camilo)
+	checkitem (ITEM_TM45)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox(format("Muchas gracias, {PLAYER}, por ayudarme a dejar el Team Aqua.\pDesde que lo hice, ¡Mi vida ha mejorado!\p"
+		"Ahora tengo un hermosísimo novio y una hermosa novia, ¡Y los amo tanto!"))
+		hidenamebox
+		closemessage
+		playse (SE_CONTEST_HEART)
+		applymovement (VAR_LAST_TALKED, Common_Movement_Heart)
+		waitmovement (0)
+		release
+		end
+	}
+	msgbox(format("H-hola, {PLAYER}, ¿No?\pRealmente lamento todo lo que hice…\pDejé el Team Aqua hace un rato, y el Ex-Jefecito me dio una remuneración por mis\p"
+	"servicios, aunque tambien me dijo que el Team Aqua no era un grupo de ladrones, si no que esa era una imagen pública.\p"
+	"Pero desde que dejé el Team Aqua, ¡Mi vida ha mejorado!\pAhora tengo un hermosísimo novio y una hermosa novia, ¡Y los amo tanto!\pDe todo corazón, {PLAYER}, gracias por todo.\p"
+	"Deberías tener esto como agradecimiento."))
+	hidenamebox
+	giveitem (ITEM_TM45)
+	giveitem (ITEM_TM48)
+	namebox (Camilo)
+	msgbox(format("Es la MT 45 Atracción.\nDebes saber que ahora, se ha descubierto que Pokémon de cualquier género pueden enamorarse con este moviminto,\l"
+	"incluso si es un Pokémon macho con otro Pokémon macho, ¡Funcionará de la misma forma!\p"
+	"¡Es como mi novio, mi novia y yo, a los tres nos gustan tanto chicas como chicos!"))
+	msgbox(format("También, te di la MT 48 Voz Cautivadora. Golpea a ambos oponentes y hace más daño si los rivales están enamorados del usuario.\p"
+	"¡Las voces cautivadoras de mi novio y mi novia siempre hacen que mi corazoncito bisexual salte de amor!"))
+	playse (SE_CONTEST_HEART)
+	applymovement (VAR_LAST_TALKED, Common_Movement_Heart)
+	waitmovement (0)
+	hidenamebox
+	closemessage
+	release
+	end
+}

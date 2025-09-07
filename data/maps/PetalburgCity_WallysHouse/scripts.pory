@@ -1,0 +1,217 @@
+raw `
+.set LOCALID_WALLYS_DAD, 1
+
+PetalburgCity_WallysHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PetalburgCity_WallysHouse_OnFrame
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, PetalburgCity_WallysHouse_OnWarp
+	.byte 0
+
+PetalburgCity_WallysHouse_OnWarp:
+	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther
+	.2byte 0
+
+PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther::
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	turnobject LOCALID_WALLYS_DAD, DIR_WEST
+	end
+
+PetalburgCity_WallysHouse_OnFrame:
+	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_WallysHouse_EventScript_GiveHM03Surf
+	.2byte 0
+
+PetalburgCity_WallysHouse_EventScript_GiveHM03Surf::
+	lockall
+	namebox PapaWally
+	msgbox PetalburgCity_WallysHouse_Text_PleaseExcuseUs, MSGBOX_DEFAULT
+	hidenamebox
+	giveitem ITEM_HM03
+	setflag FLAG_RECEIVED_HM03
+	namebox PapaWally
+	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
+	hidenamebox
+	setvar VAR_PETALBURG_CITY_STATE, 5
+	releaseall
+	end
+
+PetalburgCity_WallysHouse_EventScript_WallysDad::
+	lock
+	faceplayer
+	goto_if_set FLAG_HIDE_WALLY_DEWFORD_TOWN, PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewford
+	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, PetalburgCity_WallysHouse_EventScript_DefeatedWallyInVictoryRoad
+	goto_if_set FLAG_RECEIVED_HM03, PetalburgCity_WallysHouse_EventScript_ReceievedHM03Surf
+	goto_if_set FLAG_THANKED_FOR_PLAYING_WITH_WALLY, PetalburgCity_WallysHouse_EventScript_PlayedWithWally
+	namebox PapaWally
+	msgbox PetalburgCity_WallysHouse_Text_ThanksForPlayingWithWally, MSGBOX_DEFAULT
+	hidenamebox
+	setflag FLAG_THANKED_FOR_PLAYING_WITH_WALLY
+	release
+	end
+
+PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewford::
+	namebox PapaWally
+	msgbox PetalburgCity_WallysHouse_Text_WallyCantGoDewford, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PetalburgCity_WallysHouse_EventScript_ReceievedHM03Surf::
+	namebox PapaWally
+	msgbox PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PetalburgCity_WallysHouse_EventScript_DefeatedWallyInVictoryRoad::
+	namebox PapaWally
+	msgbox PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PetalburgCity_WallysHouse_EventScript_PlayedWithWally::
+	namebox PapaWally
+	msgbox PetalburgCity_WallysHouse_Text_WonderHowWallyIsDoing, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PetalburgCity_WallysHouse_EventScript_WallysMom::
+	lock
+	faceplayer
+	goto_if_set FLAG_HIDE_WALLY_DEWFORD_TOWN, PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewfordMom
+	goto_if_set FLAG_RECEIVED_HM03, PetalburgCity_WallysHouse_EventScript_ReceivedHM03Surf
+	namebox MamaWally
+	msgbox PetalburgCity_WallysHouse_Text_WallyWasReallyHappy, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewfordMom::
+	namebox MamaWally
+	msgbox PetalburgCity_WallysHouse_Text_WallyCanDoAnything, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PetalburgCity_WallysHouse_EventScript_ReceivedHM03Surf::
+	namebox MamaWally
+	msgbox PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+
+PetalburgCity_WallysHouse_Text_WallyCanDoAnything:
+	.string "Entonces… Tenía razón. Wally pudo\n"
+	.string "ganarle a Brawly.\p"
+	.string "Junto con sus Pokémon, seguro fue\n"
+	.string "tarea fácil para él, pero al mismo\l"
+	.string "tiempo, estoy preocupada por su asma…\p"
+	.string "Quisás… Estar con los Pokémon pueda\n"
+	.string "hacer mejorar su condición…\l"
+	.string "Quiero que lo sigas cuidando, que le\l"
+	.string "sigas ayudando, y que lo sigas\l"
+	.string "alentando a que siga sus sueños.$"
+
+PetalburgCity_WallysHouse_Text_WallyCantGoDewford:
+	.string "¿Pueblo Dewford?\p"
+	.string "Pues sí, quizá fue a comprar algo con la\n"
+	.string "familia, aunque raro se me hace que no\l"
+	.string "dijeran nada. Supongo que su condición\l"
+	.string "está tan mejorada que viajar en barco\l"
+	.string "no hizo que se desmayara.\p"
+	.string "Pero, ¿Batalla de Gimnasio?\n"
+	.string "Nah, Wally no puede mantenerse en pie\l"
+	.string "durante un Combate Pokémon.$"
+
+PetalburgCity_WallysHouse_Text_ThanksForPlayingWithWally:
+	.string "Eres…\n"
+	.string "Ah, debes ser {PLAYER}, ¿no?\p"
+	.string "Pues debo agradecerte, porque Wally se\n"
+	.string "ha encariñado mucho contigo, ¡Se\l"
+	.string "emociona tanto al hablar de ti, ja ja!\l"
+	.string "Deberías ver el brillo en sus ojitos\l"
+	.string "cuando te menciona alguien de la\l"
+	.string "familia. Eres realmente especial en su\l"
+	.string "vida, {PLAYER}, por favor, cuídalo\l"
+	.string "mucho, ¿Sí?\p"
+	.string "Él siempre está enfermo, tosiendo\n"
+	.string "mucho, y no ayuda que su asma empeore\l"
+	.string "en lugares que no tienen el aire tan\l"
+	.string "limpio, como aquí. Por eso, lo hemos\l"
+	.string "enviado a Verdanturf, donde el aire\l"
+	.string "limpio lo ayuda a respirar mejor…\p"
+	.string "{PLAYER}…\n"
+	.string "Le importas muchísimo a Wally, así que,\l"
+	.string "cuídate mucho, ¿Sí?\l"
+	.string "No podría soportar que les pasara algo\l"
+	.string "a alguno de los dos…$"
+
+
+PetalburgCity_WallysHouse_Text_WonderHowWallyIsDoing:
+	.string "¿Cómo estará Wally…?\n"
+	.string "Espero que esté tomando sus pastillas\l"
+	.string "y usando regularmente su inhalador…$"
+
+
+PetalburgCity_WallysHouse_Text_PleaseExcuseUs:
+	.string "¡{PLAYER}! Disculpa por haberte\n"
+	.string "traído acá de esa forma, pero tengo\l"
+	.string "que agradecerte por haber ayudado a\l"
+	.string "Wally.\p"
+	.string "Desde que tiene un Pokémon, ha estado\n"
+	.string "actuando mucho más energético… Mucho\l"
+	.string "más saludable…\p"
+	.string "Gracias también por sacarle ese sueño\n"
+	.string "estúpido de batallar con Pokémon, él\l"
+	.string "sabe que no puede por su asma y sus\l"
+	.string "enfermedades constantes…\p"
+	.string "No, disculpa, no es un sueño estúpido,\n"
+	.string "{PLAYER}, amaría verlo feliz siendo\l"
+	.string "un Entrenador, pero ese sueño no es\l"
+	.string "muy realista, ¿No te parece?\p"
+	.string "Pero bueno, ¡Toma esto!$"
+
+PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces:
+	.string "Creo que ya sabes lo que hace, ¿No?$"
+	
+PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon:
+	.string "Wally viene a visitarnos, y estoy\n"
+	.string "emocionado por eso.\p"
+	.string "Extraño a mi hijo demasiado, verlo\n"
+	.string "emocionarse por sus intereses, como\l"
+	.string "los Pokémon, el aprendizaje, pero\l"
+	.string "también tú, {PLAYER}, ¡No puedo\l"
+	.string "esperar a verlo otra vez!$"
+
+PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity:
+	.string "¿Cómo? ¿Que viste a Wally en la Ciudad\n"
+	.string "Evergrande?\p"
+	.string "Que broma tan mala, {PLAYER}, Wally\n"
+	.string "sigue tranqui en la casa de sus\l"
+	.string "familiares en Verdanturf. Ni a\l"
+	.string "visitarnos vino.$"
+
+PetalburgCity_WallysHouse_Text_WallyWasReallyHappy:
+	.string "Wally estaba TAN, TAN contento cuando\n"
+	.string "nos dijo que est{EA} increíble y asombros{OA}\l"
+	.string "chic{OA} le ayudó a capturar un Pokémon…\p"
+	.string "No le había visto así de contento en\n"
+	.string "muchísimo tiempo…\l"
+	.string "Creo que realmente te aprecia,\l"
+	.string "{PLAYER}.$"
+
+PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling:
+	.string "No le digas a mi esposo, pero… Wally se\n"
+	.string "fue de Verdanturf hace un tiempo… Y\l"
+	.string "quería pedirte que POR FAVOR, lo cuides\l"
+	.string "mucho. Wally es muy frágil, y no podría\l"
+	.string "soportar que algo le pasara…\l"
+	.string "Así que quería que lo acompañes en\l"
+	.string "esta aventura suya, para guiarle y\l"
+	.string "apoyarle cuando te necesite, para que\l"
+	.string "vea que si alguien que él quiere tanto\l"
+	.string "confía en él, podrá comenzar a confiar\l"
+	.string "en sus propias capacidades también…$"
+
+`

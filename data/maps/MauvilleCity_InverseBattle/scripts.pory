@@ -1,0 +1,177 @@
+mapscripts MauvilleCity_InverseBattle_MapScripts {}
+
+
+script MauvilleCity_InverseBattle_Scripts_Psychic {
+	lockall
+	msgbox(format("¡Hola, bienvenid{OA}!\p¡Este es el Torneo de Batallas Inversas!\p¿Necesitas algo?"))
+	dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Solitario", "Con Amigos", "¿Qué es esto?", "Nada, disculpe")
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(format("Ah, ¡Así que jugarás sol{OA}!\NEstá bien, probarás suerte contra nuestros competidores.\p"
+			"¿En qué formato te gustaría participar?"))
+			dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Simples", "Dobles", "1v1", "Nada, disculpe")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					msgbox(format("¡Simples, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					// activar flag B_FLAG_INVERSE_BATTLE
+					break
+				case 1:
+					msgbox(format("¡Dobles, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					// activar flag B_FLAG_INVERSE_BATTLE
+					break
+				case 2:
+					msgbox(format("¡1v1, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					// activar flag B_FLAG_INVERSE_BATTLE
+					break
+				case 3:
+					goto (MauvilleCity_InverseBattle_Scripts_PsychicEnd)
+			}
+		break
+		case 1:
+			msgbox(format("Ah, ¡Así que jugarás con amigos!\NSerá divertido, ¡Ojalá que le ganes!\p"
+			"¿En qué formato te gustaría participar?"))
+			dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Simples", "Dobles", "1v1", "Nada, disculpe")
+			switch (var(VAR_RESULT)) {
+				case 0:
+					msgbox(format("¡Simples, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip 
+					// activar flag B_FLAG_INVERSE_BATTLE
+					break
+				case 1:
+					msgbox(format("¡Dobles, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					// activar flag B_FLAG_INVERSE_BATTLE
+					break
+				case 2:
+					msgbox(format("¡1v1, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					// activar flag B_FLAG_INVERSE_BATTLE
+					break
+				case 3:
+					goto (MauvilleCity_InverseBattle_Scripts_PsychicEnd)
+			}
+			break
+		case 2:
+			msgbox(format("Las Batallas Inversas son creación nuestra, de los Psíquicos. ¡He venido desde Kalos para popularizarlas!\p"
+			"Usando mis poderes, podré invertir las ventajas y desventajas de tipo… ¡Y tranquil{OA}!\p"
+			"¡Las inmunidades no existirán!\nEn resumen: ¡En estas batallas, los Pokémon tipo Fuego serán débiles a ataques tipo Planta!"))
+			msgbox(format("¡Esperamos verte pronto!"))
+			releaseall
+			end
+			break
+		case 3:
+			goto (MauvilleCity_InverseBattle_Scripts_PsychicEnd)
+			
+	}
+}
+
+script MauvilleCity_InverseBattle_Scripts_PsychicEnd {
+	msgbox(format("¡No pasa nada, vuelva pronto!"))
+	closemessage
+	releaseall
+	end
+}
+
+script MauvilleCity_InverseBattle_Scripts_Woman1 {
+	faceplayer
+	lockall
+	if (!checkitem(ITEM_TM49)){
+		msgbox(format("Las recompensas por ganar en estos Torneos son bastante buenas para ser tan baratos…\p"
+		"Mi novia dice que debe ser que a los ganadores adultos los usan-{PAUSE 15} "), MSGBOX_INTERRUPT)
+		playse(SE_PIN)
+		applymovement(4, Common_Movement_ExclamationMark)
+		applymovement(4, Common_Movement_FacePlayer)
+		waitmovement(0)
+		msgbox(format("¡NO DIGAS ESO EN FRENTE DE UN{A} NIÑ{OA}!\p……… {COLOR LIGHT_GRAY SHADOW WHITE}Justo de esta me tenía que enamorar……\p"
+		"{COLOR LIGHT_GRAY SHADOW WHITE}Qué idiota tan linda es…{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\pDiscúlpala, es un poco lenta a veces, pero no es mala.\p"
+		"Ten esto para compensártelo."))
+		giveitem(ITEM_TM49)
+		msgbox(format("Robo es un movimiento que te permite… Robar… Los efectos de los movimientos de Estado que use cualquier Pokémon de la batalla.\p"
+		"¡Perfecto contra Entrenadores que amen boostearse en el primer turno!\pAunque, aquí entre nos… Me gusta usarlo para robarle las Danzas Aleteo a mi novia…"))
+	}
+	else {
+		msgbox(format("¡Disculpa lo de antes! ¡Me refería monetariamente!"))
+	}
+	closemessage
+	releaseall
+	end
+}
+
+script MauvilleCity_InverseBattle_Scripts_Woman2 {
+	faceplayer
+	lockall
+	if (!checkitem(ITEM_TM49)){
+		msgbox(format("Robo es un movimiento que te permite… Robar… Los efectos de los movimientos de Estado que use cualquier Pokémon de la batalla.\p"
+		"¡Perfecto contra Entrenadores que amen boostearse en el primer turno!\pAunque, aquí entre nos… Me gusta usarlo para robarle las Danzas Aleteo a mi novia…"))
+	}
+	else {
+		msgbox(format("Mi novia y yo amamos las Batallas Dobles, así que un lugar así de raro es bueno para variar un poco, ¡Y las recompensas son increíbles!"))
+	}
+	closemessage
+	releaseall
+	end
+}
+
+script MauvilleCity_InverseBattle_Scripts_Man1 {
+	faceplayer
+	lockall
+	msgbox(format("¿¡Batallas Inversas!? ¡Qué locura!\pPobres Pokémon tipo Acero, todas esas Resistencias que tiene…\p"
+	"… Puestas en su contra… ¡Hasta da lástima!"))
+	closemessage
+	releaseall
+	end
+}
+
+script MauvilleCity_InverseBattle_Scripts_Man2 {
+	faceplayer
+	lockall
+	if (setgetobjectflags(VAR_LAST_TALKED, 2, TRUE, GET_EVENT_FLAG)) {
+		poryswitch(LANGUAGE){
+			ES{
+				msgbox (format("Malditos Emolgas…"))
+			}
+			EN{
+				msgbox (format("Arcdarn Emolgas…"))
+			}
+		}
+	}
+	elif (setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, GET_EVENT_FLAG)) {
+		poryswitch(LANGUAGE){
+			ES{
+				msgbox (format("¿Que por qué quiero vengarme de los Emolgas?\p"
+				"¡Porque es difícil derrotarlos con un tipo Tierra! ¡Ese Gimnasio estaba arreglado!"))
+			}
+			EN{
+				msgbox (format("Why do I want revenge against Emolgas?\p"
+				"Why, it's because of that Gym! It was rigged so you couldn't win with your Ground-types!"))
+			}
+		}
+		setgetobjectflags(VAR_LAST_TALKED, 2, TRUE, SET_EVENT_FLAG)
+	}
+	else {
+		poryswitch(LANGUAGE){
+			ES{
+				msgbox(format("¡Vine desde Unova junto a mi Krokorok cuando me enteré de este lugar!\p"
+				"Batallas donde un tipo Tierra tiene ventaja contra un tipo Volador…\p"
+				"¡Al fin me vengaré de los Emolgas!"))
+			}
+			EN{
+				msgbox(format("I came from Unova when I heard of this place!\p"
+				"Battles where a Ground-type has the upper-hand against a Flying-type…\p"
+				"All those Emolgas will finally get it!"))
+			}
+		}
+		setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, SET_EVENT_FLAG)
+	}
+	closemessage
+	releaseall
+	applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+	end
+}
+
+script MauvilleCity_InverseBattle_Scripts_Krokorok {
+	faceplayer
+	lockall
+	playmoncry(SPECIES_KROKOROK, CRY_MODE_NORMAL)
+	msgbox(format("Krooook…"))
+	waitmoncry
+	releaseall
+	end
+}

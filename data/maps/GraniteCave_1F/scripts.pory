@@ -1,0 +1,931 @@
+const  LOCALID_GRUNT_1 = 3
+const  LOCALID_GRUNT_2 = 4
+const  LOCALID_GRUNT_3 = 5
+const  LOCALID_BRAWLY = 6
+
+mapscripts GraniteCave_1F_MapScripts {}
+
+script GraniteCave_1F_EventScript_BlueRock1 {
+	if (!flag(FLAG_BLUE_STONES_1)) {
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("... ¿Oh?\n¡Mira, hay una piedra evolutiva aquí!"))
+				delay (16)
+				msgbox(format(".... ¡MMMMGGGGHHH!"))
+			}
+			EN {
+				msgbox(format("... Oh?\nThere's an Evolution Stone here!"))
+				delay (16)
+				msgbox(format(".... MMMMGGGGHHH!"))
+			}
+		}
+		setvar (VAR_0x8004, 0) 
+		setvar (VAR_0x8005, 2) 
+		setvar (VAR_0x8006, 2)
+		setvar (VAR_0x8007, 3)
+		special (ShakeCamera)
+		waitstate
+		closemessage
+		delay (30)
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		random (4)
+		switch (var(VAR_RESULT)) {
+		case 0:
+			giveitem (ITEM_WATER_STONE, 1)
+			break
+		case 1:
+			giveitem (ITEM_LEAF_STONE, 1)
+			break
+		case 2:
+			giveitem (ITEM_MOON_STONE, 1)
+			break
+		case 3:
+			giveitem (ITEM_DUSK_STONE, 1)
+			break
+		case 4:
+			giveitem (ITEM_ICE_STONE, 1)
+			break
+		default:
+			giveitem (ITEM_WATER_STONE, 1)
+			break
+		}
+		delay (16)
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("Parece que otra piedra evolutiva se está formando debajo muy lentamente...\p¡Habrá que volver mañana!"))
+			}
+			EN {
+				msgbox(format("Seems like another one is slowly forming...\pI'll come back tomorrow!"))
+			}
+		}
+		
+		setflag(FLAG_BLUE_STONES_1)
+		release
+		end
+	}
+	else {
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("Parece que otra piedra evolutiva se está formando debajo muy lentamente...\p¡Habrá que volver mañana!"))
+			}
+			EN {
+				msgbox(format("Seems like another one is slowly forming...\pI'll come back tomorrow!"))
+			}
+		}
+		release
+		end
+	}
+}
+
+script GraniteCave_1F_EventScript_RedRock1 {
+	if (!flag(FLAG_RED_STONES_1)) {
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("... ¿Oh?\n¡Mira, hay una piedra evolutiva aquí!"))
+				delay (16)
+				msgbox(format(".... ¡MMMMGGGGHHH!"))
+			}
+			EN {
+				msgbox(format("... Oh?\nThere's an Evolution Stone here!"))
+				delay (16)
+				msgbox(format(".... MMMMGGGGHHH!"))
+			}
+		}
+		setvar (VAR_0x8004, 0) 
+		setvar (VAR_0x8005, 2) 
+		setvar (VAR_0x8006, 2)
+		setvar (VAR_0x8007, 3)
+		special (ShakeCamera)
+		closemessage
+		waitstate
+		delay (30)
+		playse (SE_PIN)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		random (4)
+		switch (var(VAR_RESULT)) {
+		case 0:
+			giveitem (ITEM_FIRE_STONE, 1)
+			break
+		case 1:
+			giveitem (ITEM_THUNDER_STONE, 1)
+			break
+		case 2:
+			giveitem (ITEM_SUN_STONE, 1)
+			break
+		case 3:
+			giveitem (ITEM_SHINY_STONE, 1)
+			break
+		case 4:
+			giveitem (ITEM_DAWN_STONE, 1)
+			break
+		default:
+			giveitem (ITEM_FIRE_STONE, 1)
+			break
+		}
+		delay (16)
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("Parece que otra piedra evolutiva se está formando debajo muy lentamente...\p¡Habrá que volver mañana!"))
+			}
+			EN {
+				msgbox(format("Seems like another one is slowly forming...\pI'll come back tomorrow!"))
+			}
+		}
+		setflag(FLAG_RED_STONES_1)
+		release
+		end
+	}
+	else {
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("Parece que otra piedra evolutiva se está formando debajo muy lentamente...\p¡Habrá que volver mañana!"))
+			}
+			EN {
+				msgbox(format("Seems like another one is slowly forming...\pI'll come back tomorrow!"))
+			}
+		}
+		release
+		end
+	}
+}
+
+script GraniteCave_1F_EventScript_Hiker {
+	lock
+	faceplayer	
+	msgbox(format("Este lugar ha cambiado mucho con el tiempo, por ejemplo, {COLOR BLUE}ahora el fondo de la cueva es más claro{COLOR DARK_GRAY},"
+	"y también se formaron unas {COLOR RED}Rocas Rojas{COLOR DARK_GRAY} y {COLOR BLUE}Rocas Azules{COLOR DARK_GRAY}, ¡Que forman {COLOR BLUE}Piedras Evolutivas diariamente!{COLOR DARK_GRAY}"))
+	release
+	end
+}
+
+script GraniteCave_1F_Trigger_Top {
+	setvar (VAR_DEWFORD_TOWN_STATE, 5)
+	goto (GraniteCave_1F_EventScript_Grunts)
+}
+
+script GraniteCave_1F_Trigger_Middle {
+	setvar (VAR_DEWFORD_TOWN_STATE, 6)
+	goto (GraniteCave_1F_EventScript_Grunts)
+}
+
+script GraniteCave_1F_Trigger_Bottom {
+	setvar (VAR_DEWFORD_TOWN_STATE, 7)
+	goto (GraniteCave_1F_EventScript_Grunts)
+}
+
+script GraniteCave_1F_EventScript_Grunts {
+	lockall
+	special (SpawnCameraObject)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_WalkInPlaceDown)
+	waitmovement (0)
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¿Entendieron?\pEntramos, buscamos las {COLOR BLUE}Piedras Evolutivas{COLOR DARK_GRAY}, y nos vamos."))
+			hidenamebox
+			closemessage
+			applymovement (LOCALID_GRUNT_3, Common_Movement_WalkInPlaceUp)
+			waitmovement (0)
+			namebox (Aqua)
+			msgbox(format("¿Pero para qué queremos las piedras?"))
+			hidenamebox
+			closemessage
+			applymovement (LOCALID_GRUNT_2, Common_Movement_WalkInPlaceRight)
+			waitmovement (0)
+			namebox (Aqua)
+			msgbox(format("Ay, si eres tarada, ¡Para extraer y usar su {COLOR BLUE}Energía Evolutiva{COLOR DARK_GRAY} como radar, claro está!"))
+			hidenamebox
+			closemessage
+			applymovement (LOCALID_GRUNT_3, Common_Movement_WalkInPlaceUp)
+			waitmovement (0)
+			namebox (Aqua)
+			msgbox(format("¡Ay, bueno, pero no te enojes!"))
+		}
+		EN {
+			msgbox(format("Got it?\pIn, get all the {COLOR BLUE}Evolutionary Stones{COLOR DARK_GRAY}, out."))
+			hidenamebox
+			closemessage
+			applymovement (LOCALID_GRUNT_3, Common_Movement_WalkInPlaceUp)
+			waitmovement (0)
+			namebox (Aqua)
+			msgbox(format("Why do we want them for anyway?"))
+			hidenamebox
+			closemessage
+			applymovement (LOCALID_GRUNT_2, Common_Movement_WalkInPlaceRight)
+			waitmovement (0)
+			namebox (Aqua)
+			msgbox(format("Are you stupid? To extract and use the {COLOR BLUE}Evolutionary Energy{COLOR DARK_GRAY} as a radar, of course!"))
+			hidenamebox
+			closemessage
+			applymovement (LOCALID_GRUNT_3, Common_Movement_WalkInPlaceUp)
+			waitmovement (0)
+			namebox (Aqua)
+			msgbox(format("Don't you yell at me!"))
+		}
+	}
+	
+	hidenamebox
+	closemessage
+	playse (SE_PIN)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_GRUNT_2, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_GRUNT_3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_WalkInPlaceRight)
+	applymovement (LOCALID_GRUNT_2, Common_Movement_WalkInPlaceRight)
+	applymovement (LOCALID_GRUNT_3, Common_Movement_WalkInPlaceRight)
+	waitmovement (0)
+	playbgm (MUS_ENCOUNTER_AQUA, TRUE)
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡Ay, chicas, tenemos visitas!"))
+			hidenamebox
+			closemessage
+			namebox (Aqua)
+			msgbox(format("¿Qué quiere {ELLA} idiota el día de hoy?\pPodemos ofrecerle una amordaza o un cascote en el medio de la frente."))
+			hidenamebox
+			closemessage
+			playse (SE_PIN)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			namebox (Player)
+			msgbox(format("{COLOR BLUE}(¡Mejor me voy!)"))
+		}
+		EN {
+			msgbox(format("Oh, girls, look, a visitor!"))
+			hidenamebox
+			closemessage
+			namebox (Aqua)
+			msgbox(format("What's the idiot's order for today?\pWe have plenty ropes in stock and rocks to throw."))
+			hidenamebox
+			closemessage
+			playse (SE_PIN)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			namebox (Player)
+			msgbox(format("{COLOR BLUE}(I better go!)"))
+		}
+	}
+	
+	hidenamebox
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, GraniteCave_1F_Movement_PlayerEscapes)
+	applymovement (LOCALID_GRUNT_2, GraniteCave_1F_Movement_Grunt2_BlockExit_Top)
+	applymovement (LOCALID_GRUNT_1, GraniteCave_1F_Movement_Grunt1_BlockExit_Top)
+	applymovement (LOCALID_GRUNT_3, GraniteCave_1F_Movement_Grunt3_BlockExit_Top)
+	waitmovement(0)
+	delay (16)
+	playse (SE_PIN)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	waitmovement(0)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¿A dónde crees que vas?"))
+		}
+		EN {
+			msgbox(format("Leaving so soon?"))
+		}
+	}
+	hidenamebox
+	closemessage
+	switch (var(VAR_DEWFORD_TOWN_STATE)){
+		case 5:
+			call (GraniteCave_1F_EventScript_PlayerNoWayOut1)
+		case 6:
+			call (GraniteCave_1F_EventScript_PlayerNoWayOut2)
+		case 7:
+			call (GraniteCave_1F_EventScript_PlayerNoWayOut3)
+		default:
+			call (GraniteCave_1F_EventScript_PlayerNoWayOut1)
+	}
+	setvar (VAR_DEWFORD_TOWN_STATE, 1)
+	namebox (Player)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("{COLOR BLUE}(D-demonios...)"))
+			hidenamebox
+			closemessage
+			namebox(Aqua)
+			msgbox(format("Ahora, ni amordaza ni cascote en la frente, ¡Ahora enfrentarás el poder del {COLOR BLUE}Equipo Aqua{COLOR DARK_GRAY}!"))
+		}
+		EN {
+			msgbox(format("{COLOR BLUE}(D-darn it...)"))
+			hidenamebox
+			closemessage
+			namebox(Aqua)
+			msgbox(format("Now, no ropes nor rocks, now you'll face {COLOR BLUE}Team Aqua{COLOR DARK_GRAY}'s wrath!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	applymovement (LOCALID_GRUNT_1, GraniteCave_1F_Grunt1_Attack_Top)
+	applymovement (LOCALID_GRUNT_2, GraniteCave_1F_Grunt23_Attack_Top)
+	applymovement (LOCALID_GRUNT_3, GraniteCave_1F_Grunt23_Attack_Top)
+	waitmovement (0)
+	delay (16)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
+	waitmovement (0)
+	delay (16)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft)
+	waitmovement (0)
+	delay (16)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+	waitmovement (0)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡Te arrepentirás!"))
+		}
+		EN {
+			msgbox(format("You'll regret existing!"))
+		}
+	}
+	
+	hidenamebox
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	namebox(Aqua)
+	msgbox(GraniteCave_1F_Text_Grunt1_Intro)
+	trainerbattle_no_intro (TRAINER_ANDRES_2, GraniteCave_1F_Text_Grunt1_Defeat)
+	closemessage
+	playse (SE_PIN)
+	applymovement (LOCALID_GRUNT_3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¿¡C-cómo!?"))
+		}
+		EN {
+			msgbox(format("HOW!?"))
+		}
+	}
+	hidenamebox
+	closemessage
+	delay (16)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft)
+	waitmovement (0)
+	namebox(Aqua)
+	msgbox (GraniteCave_1F_Text_Grunt2_Intro)
+	trainerbattle_no_intro (TRAINER_ANDRES_3, GraniteCave_1F_Text_Grunt2_Defeat)
+	playse (SE_PIN)
+	applymovement (LOCALID_GRUNT_2, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡No puede ser!"))
+		}
+		EN {
+			msgbox(format("It can't be!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	delay (16)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+	waitmovement (0)
+	waitmovement (0)
+	delay(12)
+	namebox(Aqua)
+	msgbox(GraniteCave_1F_Text_Grunt3_Intro)
+	trainerbattle_no_intro (TRAINER_ANDRES_4, GraniteCave_1F_Text_Grunt3_Defeat)
+	playse (SE_PIN)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¿A mí también?\p¡Imposible!"))
+		}
+		EN {
+			msgbox(format("Me too?\pImpossible!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	delay (16)
+	applymovement (LOCALID_GRUNT_2, Common_Movement_FaceAwayPlayer)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_FaceAwayPlayer)
+	applymovement (LOCALID_GRUNT_3, Common_Movement_FaceAwayPlayer)
+	waitmovement (0)
+	delay (24)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡No nos dejas otra opción!"))
+		}
+		EN {
+			msgbox(format("No options left!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	applymovement (LOCALID_GRUNT_2, Common_Movement_FacePlayer)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_FacePlayer)
+	applymovement (LOCALID_GRUNT_3, Common_Movement_FacePlayer)
+	waitmovement (0)
+	delay (24)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡Te seguiremos atacando, con nuestros Pokémon más débiles, hasta que tú seas quien se debilite!"))
+		}
+		EN {
+			msgbox(format("We'll use our weak reseve Pokémon, to attack YOU until you faint!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	delay (8)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
+	waitmovement (0)
+	delay (8)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft)
+	waitmovement (0)
+	delay (8)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+	waitmovement (0)
+	namebox(Unknown)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡BASTA!"))
+		}
+		EN {
+			msgbox(format("ENOUGH!"))
+		}
+	}
+	playse (SE_PIN)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_GRUNT_2, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_GRUNT_3, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_FaceDown)
+	applymovement (LOCALID_GRUNT_2, Common_Movement_FaceDown)
+	applymovement (LOCALID_GRUNT_3, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	closemessage
+	hidenamebox
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡¿Quién se atreve a interrumpirnos?!"))
+		}
+		EN {
+			msgbox(format("Who dares interrupt us?!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	delay (20)
+	applymovement (OBJ_EVENT_ID_CAMERA, GraniteCave_1F_Movement_CameraDown)
+	waitmovement (0)
+	playse (SE_DOOR)
+	addobject (LOCALID_BRAWLY)
+	setobjectxy (LOCALID_BRAWLY, 37, 12)
+	delay (48)
+	namebox(Brawly)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("Les dije, basta."))
+		}
+		EN {
+			msgbox(format("I said, enough."))
+		}
+	}
+	hidenamebox
+	closemessage
+	delay (20)
+	savebgm (MUS_DUMMY)
+	fadedefaultbgm
+	applymovement (LOCALID_GRUNT_3, Common_Movement_WalkInPlaceDown)
+	waitmovement (0)
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡E-e-e-es Brawly, el {COLOR BLUE}Líder del Gimnasio{COLOR DARK_GRAY}!"))
+			hidenamebox
+			closemessage
+			delay (16)
+			applymovement (LOCALID_GRUNT_2, Common_Movement_WalkInPlaceDown)
+			waitmovement (0)
+			namebox (Aqua)
+			msgbox(format("¿Y-y-y él qué hace aquí?\pCreí que los Líderes de Gimnasio no salían..."))
+		}
+		EN {
+			msgbox(format("I-i-i-it's Brawly, the {COLOR BLUE}Gym Leader{COLOR DARK_GRAY}!"))
+			hidenamebox
+			closemessage
+			delay (16)
+			applymovement (LOCALID_GRUNT_2, Common_Movement_WalkInPlaceDown)
+			waitmovement (0)
+			namebox (Aqua)
+			msgbox(format("W-w-why's he here?\pGym Leaders never touch grass, but I guess there's no grass to touch in this Town..."))
+		}
+	}
+	hidenamebox
+	closemessage
+	delay (16)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_WalkInPlaceDown)
+	waitmovement (0)
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡N-no importa qué haga aquí, lo derrotaremos!"))
+			hidenamebox
+			closemessage
+			namebox(Brawly)
+			msgbox(format("Parece que no van a retirarse, ¿Will ya?\p¡Entonces tendré que obligarlas!"))
+		}
+		EN {
+			msgbox(format("N-no matter! He will lose!"))
+			hidenamebox
+			closemessage
+			namebox(Brawly)
+			msgbox(format("Not backing down, are ya?\pThen I'll have to make ya!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	applymovement (OBJ_EVENT_ID_CAMERA, GraniteCave_1F_Movement_BrawlyUp2)
+	applymovement (LOCALID_BRAWLY, GraniteCave_1F_Movement_BrawlyUp2)
+	delay (20)
+	fadescreen (FADE_TO_BLACK)
+	delay (16)
+	waitmovement (0)
+	namebox(Brawly)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡Hariyama, usa Tambor, y luego Machada!"))
+			hidenamebox
+			playmoncry (SPECIES_HARIYAMA, CRY_MODE_NORMAL)
+			msgbox(format("¡HHYYAAAA!"))
+		}
+		EN {
+			msgbox(format("Hariyama, use Belly Drum and Arm Thrust!"))
+			hidenamebox
+			playmoncry (SPECIES_HARIYAMA, CRY_MODE_NORMAL)
+			msgbox(format("HHYYAAAA!"))
+		}
+	}
+	waitmoncry
+	closemessage
+	playse (SE_SUPER_EFFECTIVE)
+	waitse
+	applymovement (OBJ_EVENT_ID_CAMERA, GraniteCave_1F_Movement_BrawlyDown2)
+	applymovement (LOCALID_BRAWLY, GraniteCave_1F_Movement_BrawlyDown2)
+	delay (20)
+	fadescreen (FADE_FROM_BLACK)
+	delay (16)
+	waitmovement (0)
+	playse (SE_PIN)
+	applymovement (LOCALID_GRUNT_1, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_GRUNT_2, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_GRUNT_3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡N-N-NO!\n¡Nuestras reservas!\p¡Acabó con 12 Pokémon de un sólo movimiento!"))
+			hidenamebox
+			closemessage
+			delay (16)
+			namebox(Brawly)
+			msgbox(format("¡What a waste!\nNi siquiera necesitaba usar Tambor. Bueno, ladies, si me hacen el honor de no volver a verlas en este Pueblo, se los agradecería enormemente."))
+		}
+		EN {
+			msgbox(format("N-N-NO!\nOur reserves!\p11 Pokémon out with a single move!"))
+			hidenamebox
+			closemessage
+			delay (16)
+			namebox(Brawly)
+			msgbox(format("What a waste!\nDidn't even need the setup. Well, ladies, if you can do me the favor of leaving this Town and never coming back, I'd be greatful."))
+		}
+	}
+	
+	hidenamebox
+	closemessage
+	delay (16)
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡M-maldita sea!\p¡Esto no es lo último que verán de nosotras!"))
+			hidenamebox
+			closemessage
+			namebox(Brawly)
+			msgbox(format("Ah, ¿Quieren más?\pNo sabía que disfrutaban tanto la humillación, deberían ver a un psicólogo por eso, el masoquismo no les hará nada bien."))
+			hidenamebox
+			closemessage
+			delay (16)
+			namebox (Aqua)
+			msgbox(format("¡M-maldito!"))
+		}
+		EN {
+			msgbox(format("D-darnit!\pYou didn't see the last of us!"))
+			hidenamebox
+			closemessage
+			namebox(Brawly)
+			msgbox(format("Ah, you want more?\pDidn't know you were into humilliation, go see a therapist and leave this Town alone."))
+			hidenamebox
+			closemessage
+			delay (16)
+			namebox (Aqua)
+			msgbox(format("Tch!"))
+		}
+	}
+	
+	hidenamebox
+	closemessage
+	applymovement (LOCALID_BRAWLY, GraniteCave_1F_Movement_BrawlyMove)
+	applymovement (LOCALID_GRUNT_1, GraniteCave_1F_Movement_Grunt1_Escape)
+	applymovement (LOCALID_GRUNT_3, GraniteCave_1F_Movement_Grunt2_Escape)
+	applymovement (LOCALID_GRUNT_2, GraniteCave_1F_Movement_Grunt3_Escape)
+	delay (28)
+	fadescreen (FADE_TO_BLACK)
+	waitmovement (0)
+	setobjectxy (LOCALID_GRUNT_1, 9, 9)
+	setobjectxy (LOCALID_GRUNT_2, 9, 10)
+	setobjectxy (LOCALID_GRUNT_3, 9, 11)
+	playse (SE_DOOR)
+	delay(16)
+	fadescreen (FADE_FROM_BLACK)
+	delay(20)
+	namebox(Brawly)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡Ah, mantenerme todo serio e intimidante es complicado!"))
+		}
+		EN {
+			msgbox(format("Ah, man, acting all serious and intimidating sure is hard!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	applymovement(LOCALID_BRAWLY, Common_Movement_FacePlayer)
+	waitmovement (0)
+	delay (16)
+	applymovement (OBJ_EVENT_ID_CAMERA, GraniteCave_1F_Movement_BrawlyWalkPlayer)
+	applymovement (LOCALID_BRAWLY, GraniteCave_1F_Movement_BrawlyWalkPlayer)
+	waitmovement (0)
+	namebox(Brawly)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¿Estás bien, amig{OA}?\n¿Esas locas no te hicieron nada, no?"))
+			hidenamebox
+			closemessage
+			delay (8)
+			namebox(Brawly)
+			msgbox(format("¡Hell yeah, llegué justo a tiempo!\pAunque, estoy seguro que las habrías derrotado si no jugaban sucio.\pDespués de todo, tú solit{OA} derrotaste a sus Pokémon fuertes, ¿Me equivoco?"))
+		}
+		EN {
+			msgbox(format("You good, buddy? They didn't hurt you, did they?"))
+			hidenamebox
+			closemessage
+			delay (8)
+			namebox(Brawly)
+			msgbox(format("Hell yeah, I was just in time!\pTho you would've defeated them if they didn't play dirty. You defeated their strongest Pokémon after all, am I wrong?"))
+		}
+	}
+	
+	hidenamebox
+	closemessage
+	delay (16)
+	applymovement(LOCALID_BRAWLY, Common_Movement_FaceAwayPlayer)
+	waitmovement (0)
+	delay (32)
+	applymovement(LOCALID_BRAWLY, Common_Movement_FacePlayer)
+	waitmovement (0)
+	namebox(Brawly)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("Anyway, ¡Te estaré esperando en el Gimnasio, dude!\p¡No puedo esperar a batallar contra tí!"))
+		}
+		EN {
+			msgbox(format("Anyway, I'll be at the Gym, dude!\pCan't wait to battle ya!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	applymovement (LOCALID_BRAWLY, GraniteCave_1F_Movement_BrawlyOut)
+	waitmovement (0)
+	removeobject (LOCALID_GRUNT_1)
+	removeobject (LOCALID_GRUNT_2)
+	removeobject (LOCALID_GRUNT_3)
+	removeobject (LOCALID_BRAWLY)
+	playse (SE_DOOR)
+	setflag (FLAG_GRANITE_GRUNTS)
+	setvar (VAR_DEWFORD_TOWN_STATE, 2)
+	special (RemoveCameraObject)
+	release
+	end
+}
+
+script GraniteCave_1F_EventScript_PlayerNoWayOut1 {
+	applymovement (OBJ_EVENT_ID_PLAYER, GraniteCave_1F_Movement_PlayerNoWayOut)
+	waitmovement(0)
+}
+script GraniteCave_1F_EventScript_PlayerNoWayOut2 {
+	applymovement (OBJ_EVENT_ID_PLAYER, GraniteCave_1F_Movement_PlayerNoWayOut2)
+	waitmovement(0)
+}
+script GraniteCave_1F_EventScript_PlayerNoWayOut3 {
+	applymovement (OBJ_EVENT_ID_PLAYER, GraniteCave_1F_Movement_PlayerNoWayOut3)
+	waitmovement(0)
+}
+
+movement GraniteCave_1F_Movement_BrawlyOut {
+	walk_down * 3
+}
+movement GraniteCave_1F_Movement_BrawlyWalkPlayer {
+	walk_right * 2
+	walk_up * 3
+}
+
+movement GraniteCave_1F_Movement_BrawlyMove {
+	walk_left * 2
+	face_right
+}
+
+movement GraniteCave_1F_Movement_BrawlyUp2 {
+	walk_slow_up * 2
+}
+
+movement GraniteCave_1F_Movement_Grunt1_Escape {
+	walk_down * 2
+}
+
+movement GraniteCave_1F_Movement_Grunt2_Escape {
+	delay_8
+	walk_down 
+	walk_left
+	walk_down
+}
+
+
+movement GraniteCave_1F_Movement_Grunt3_Escape {
+	delay_16
+	delay_16
+	walk_down 
+	walk_right
+	walk_down
+}
+
+
+movement GraniteCave_1F_Movement_BrawlyDown2 {
+	walk_slow_down * 2
+	delay_16
+	delay_8
+	walk_in_place_slow_up
+}
+
+
+text GraniteCave_1F_Text_Grunt1_Intro {
+	poryswitch(LANGUAGE){
+		ES {
+			"¡Vas a caer!"
+		}
+		EN {
+			"You're going down!"
+		}
+	}
+	
+}
+
+text GraniteCave_1F_Text_Grunt2_Intro {
+	poryswitch(LANGUAGE){
+		ES {
+			"¡Pues yo no me dejaré ganar!"
+		}
+		EN {
+			"Not letting you win!"
+		}
+	}
+	
+}
+
+text GraniteCave_1F_Text_Grunt3_Intro {
+	poryswitch(LANGUAGE){
+		ES {
+			"¡Inúitles!\n¡Ya verás!"
+		}
+		EN {
+			"You useless bunch!\nI'll teach you!"
+		}
+	}
+	
+}
+
+text GraniteCave_1F_Text_Grunt1_Defeat {
+	"!?"
+	
+}
+
+text GraniteCave_1F_Text_Grunt2_Defeat {
+	poryswitch(LANGUAGE){
+		ES {
+			"¡Imposible!\n¡También fui derrotada!"
+		}
+		EN {
+			"Impossible!\nI was bested too!"
+		}
+	}
+}
+
+text GraniteCave_1F_Text_Grunt3_Defeat {
+	poryswitch(LANGUAGE){
+		ES {
+			"Entendería que derrotes a esas\ndos tontas, ¿¡Pero a mí!?"
+		}
+		EN {
+			"I see how you defeated\nthose morons, but me too!?"
+		}
+	}
+}
+
+movement GraniteCave_1F_Movement_PlayerEscapes {
+	lock_facing_direction
+	walk_right
+	unlock_facing_direction
+	player_run_left * 2
+	player_run_down
+}
+
+movement GraniteCave_1F_Movement_PlayerBacksDown {
+	lock_facing_direction
+	walk_slow_up
+}
+
+movement GraniteCave_1F_Movement_PlayerNoWayOut {
+	lock_facing_direction
+	walk_slow_up
+	walk_in_place_slow_up
+	delay_16
+	walk_in_place_slow_down
+}
+
+movement GraniteCave_1F_Movement_PlayerNoWayOut2 {
+	lock_facing_direction
+	walk_slow_up * 2
+	walk_in_place_slow_down
+	walk_in_place_slow_up
+	delay_16
+	walk_in_place_slow_down
+}
+
+movement GraniteCave_1F_Movement_PlayerNoWayOut3 {
+	lock_facing_direction
+	walk_slow_up * 3
+	walk_in_place_slow_down
+	walk_in_place_slow_up
+	delay_16
+	walk_in_place_slow_down
+}
+
+movement GraniteCave_1F_Grunt1_Attack_Top {
+	walk_faster_up * 3
+}
+
+movement GraniteCave_1F_Grunt23_Attack_Top {
+	walk_faster_up * 4
+	face_player
+}
+
+movement GraniteCave_1F_Movement_Grunt2_BlockExit_Top {
+	delay_16
+	walk_faster_down
+	walk_faster_right
+	walk_faster_down
+	walk_faster_right * 5
+	walk_faster_down * 2
+	walk_faster_right
+	face_up
+}
+
+movement GraniteCave_1F_Movement_CameraDown {
+	walk_slow_down * 4
+}
+
+movement GraniteCave_1F_Movement_Grunt1_BlockExit_Top {
+	walk_faster_down * 3
+	walk_faster_right * 5
+	walk_faster_down * 2
+	walk_faster_right * 2
+	face_up
+}
+
+movement GraniteCave_1F_Movement_Grunt3_BlockExit_Top {
+	walk_faster_down
+	walk_faster_right * 5
+	walk_faster_down * 2
+	walk_faster_right * 3
+	face_up
+}
+

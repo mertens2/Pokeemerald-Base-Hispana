@@ -1,0 +1,73 @@
+mapscripts LittlerootTown_MLMHouse_MapScripts {}
+
+script MLMHouse_EventScript_FatMan {
+	questmenu (QUEST_MENU_CHECK_UNLOCKED SIDE_QUEST_3)
+    lockall
+	faceplayer
+	namebox (Alex)
+	// if (var(VAR_RESULT) == TRUE){
+		// if (var(VAR_MISTERIO) >= 3) { 
+			// questmenu (QUEST_MENU_CHECK_COMPLETE SIDE_QUEST_3)
+			// if (var(VAR_RESULT) == TRUE){
+				// msgbox(format("¡Hola, {PLAYER}!\pEntonces… ¿Era un {COLOR RED}Zoroark{COLOR DARK_GRAY}?\pNunca había escuchado hablar de ese Pokémon…"))
+			// }
+			// if (!flag(FLAG_ALEX)){
+				// msgbox(format("¡Hola, {PLAYER}! ¿Cómo está todo el tema de la…?\p… … … … … … … …\pYa veo… Encontraste un libro que habla de aquel día…\pEres un{A} niñ{OA} inteligente, ¿Lo sabías, {PLAYER}?\lEstoy orgulloso de la persona en la que te has convertido.\pPues… Mucho no puedo decirte acerca de eso, pero puedo decirte que lo que atacó la Villa era un {COLOR RED}Pokémon sin forma{COLOR DARK_GRAY}, que logramos derrotar con la ayuda de nuestros Pokémon.\p… … … … … … … … … … … …\pMucho yo… No sé sobre Pokémon de otras regiones, pero sí que se… Que si le preguntas a otra gente sobre esto, podrán darte más información."))
+				// msgbox(format("Creo… Que es hora que hables con el Profesor Birch sobre esto…\pPorque puedo ver que tú serás capaz de resolver este miterio…"))
+				// addvar (VAR_MISTERIO, 1)
+				// setflag (FLAG_ALEX)
+			// }
+			// else {
+				// msgbox(format("… … … … … … … … … … … …\pMucho yo… No sé sobre Pokémon de otras regiones, pero sí que se… Que si le preguntas a otra gente sobre esto, podrán darte más información."))
+			// }
+		// }
+		// else {
+			// if (!flag(FLAG_ALEX)){
+				// msgbox(format("¡Hola, {PLAYER}! ¿Cómo está todo el tema de la…?\p… … … … … … … …\pYa veo… Encontraste un libro que habla de aquel día…\pPues… Mucho no puedo decirte acerca de eso, pero puedo decirte que lo que atacó la Villa era un {COLOR RED}Pokémon sin forma{COLOR DARK_GRAY}, que logramos derrotar con la ayuda de nuestros Pokémon.\p… … … … … … … … … … … …\pMucho yo… No sé sobre Pokémon de otras regiones, pero sí que se… Que si le preguntas a otra gente sobre esto, podrán darte más información."))
+				// addvar (VAR_MISTERIO, 1)
+				// setflag (FLAG_ALEX)
+			// }
+			// else {
+				// msgbox(format("… … … … … … … … … … … …\pMucho yo… No sé sobre Pokémon de otras regiones, pero sí que se… Que si le preguntas a otra gente sobre esto, podrán darte más información."))
+			// }
+		// }
+	// }
+	// else {
+	poryswitch(LANGUAGE) {
+		ES {
+			msgbox(format("¡Hola, {PLAYER}! ¿Cómo está todo el tema de la mudanza?\pEs bueno ver a tus padres en Hoenn otra vez.\pMi marido, ellos, y yo éramos los mejores amigos. Nos divertíamos tanto…"))
+		}
+		EN {
+			msgbox(format("¡Hola, {PLAYER}! How's the moving going?\pIt's good to have you parents back in Hoenn.\pWe used to be friends, them, my husband and I. We all had so much fun…"))
+		}
+	}
+		
+		// }
+		
+		
+	hidenamebox
+    releaseall
+}
+
+script MLMHouse_EventScript_Daughter {
+    lockall
+	faceplayer
+	namebox (Esmeralda)
+	poryswitch(LANGUAGE) {
+		ES {
+			msgbox(format("¡Hola! ¡Encantada!\p¿Ya has conocido a los Chimecho de mis papás? ¡Los han tenido desde que eran Chingling!\pMe pregunto… ¿Porqué ambos tienen uno?\lQuizás… ¡Fue una declaración de amor!\l¿O quizás de lealtad?\p¡AH, ME INTRIGA LA RESPUESTA!"))
+		}
+		EN {
+			msgbox(format("¡Hola! ¡Encantada!\pHave you met my dads' Chimecho? They've had them since they were kids!\pI wonder… Why do both have one?\lMaybe… It was a love confession!\lOr maybe a loyalty promise?\pAH, I'M SO INTRIGUED!"))
+		}
+	}
+    hidenamebox
+	releaseall
+}
+
+script MLMHouse_EventScript_Chimecho {
+	lockall
+	faceplayer
+	playmoncry (SPECIES_CHIMECHO, CRY_MODE_NORMAL)
+	releaseall
+}

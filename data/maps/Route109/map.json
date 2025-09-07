@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_SLATEPORT_CITY",
-      "offset": 0,
+      "offset": 4,
       "direction": "up"
     },
     {
@@ -26,9 +26,8 @@
   ],
   "object_events": [
     {
-      "local_id": "LOCALID_ROUTE109_BOAT",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
-      "x": 21,
+      "x": 25,
       "y": 26,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -40,9 +39,8 @@
       "flag": "FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT"
     },
     {
-      "local_id": "LOCALID_ROUTE109_BRINEY",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 21,
+      "x": 25,
       "y": 24,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -55,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
-      "x": 12,
+      "x": 16,
       "y": 36,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -68,7 +66,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
-      "x": 25,
+      "x": 29,
       "y": 39,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
@@ -81,8 +79,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 15,
-      "y": 17,
+      "x": 17,
+      "y": 19,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -94,7 +92,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 24,
+      "x": 28,
       "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -107,7 +105,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
-      "x": 19,
+      "x": 23,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -120,7 +118,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
-      "x": 22,
+      "x": 26,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
@@ -133,7 +131,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 11,
+      "x": 15,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -146,21 +144,21 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 27,
+      "x": 31,
       "y": 46,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
+      "trainer_sight_or_berry_tree_id": "ITEM_PP_MAX",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_109_PP_UP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
-      "x": 29,
-      "y": 32,
+      "x": 33,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 0,
@@ -172,8 +170,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
-      "x": 28,
-      "y": 31,
+      "x": 32,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
@@ -185,7 +183,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 21,
+      "x": 25,
       "y": 56,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -198,7 +196,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
-      "x": 24,
+      "x": 28,
       "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -211,7 +209,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
-      "x": 25,
+      "x": 29,
       "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -224,7 +222,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 30,
+      "x": 34,
       "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -237,7 +235,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "x": 8,
+      "x": 12,
       "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -250,7 +248,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
-      "x": 9,
+      "x": 13,
       "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -263,7 +261,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 33,
+      "x": 37,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -276,7 +274,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_2",
-      "x": 32,
+      "x": 36,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -289,7 +287,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
-      "x": 17,
+      "x": 21,
       "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
@@ -302,7 +300,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
-      "x": 27,
+      "x": 31,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
@@ -315,20 +313,20 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 25,
+      "x": 29,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "trainer_sight_or_berry_tree_id": "ITEM_SUPER_POTION",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_109_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 17,
+      "x": 21,
       "y": 56,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
@@ -342,26 +340,63 @@
   ],
   "warp_events": [
     {
-      "x": 12,
-      "y": 5,
+      "x": 19,
+      "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ROUTE109_SEASHORE_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 46,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE108",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 8,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE108",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 8,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE108",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 8,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE108",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 8,
+      "y": 50,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE108",
+      "dest_warp_id": "5"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 15,
-      "y": 5,
+      "x": 34,
+      "y": 0,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route109_EventScript_SeashoreHouseSign"
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Route109_EventScript_SlateportSign"
     },
     {
       "type": "sign",
-      "x": 29,
+      "x": 15,
       "y": 10,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -369,51 +404,67 @@
     },
     {
       "type": "hidden_item",
-      "x": 16,
-      "y": 23,
+      "x": 18,
+      "y": 7,
       "elevation": 3,
       "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE"
     },
     {
       "type": "hidden_item",
-      "x": 33,
-      "y": 5,
+      "x": 28,
+      "y": 22,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1"
     },
     {
       "type": "hidden_item",
-      "x": 9,
-      "y": 10,
+      "x": 31,
+      "y": 13,
       "elevation": 3,
       "item": "ITEM_GREAT_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL"
     },
     {
       "type": "hidden_item",
-      "x": 28,
-      "y": 20,
+      "x": 35,
+      "y": 14,
       "elevation": 3,
       "item": "ITEM_ETHER",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_ETHER"
     },
     {
       "type": "hidden_item",
-      "x": 13,
-      "y": 16,
+      "x": 20,
+      "y": 21,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2"
     },
     {
       "type": "hidden_item",
-      "x": 8,
+      "x": 12,
       "y": 42,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 0,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Route109_EventScript_SlateportSign"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Route109_EventScript_SeashoreHouseSign"
     }
   ]
 }

@@ -563,3 +563,36 @@ gSpecials::
 	def_special EnterCode
 	def_special GetCodeFeedback
 	def_special SetHiddenNature
+	def_special GetSeenMon
+	def_special GetCaughtMon
+	def_special SetSeenMon
+	def_special SetCaughtMon
+	def_special FossilOpenBagMenu
+	def_special ChooseItemFromBag
+	def_special TakeAwayItemsAndBerries
+	def_special GiveBackItemsAndBerries
+	def_special CheckSpecies
+	def_special GetObjectPosition
+	def_special CheckObjectAtXY
+	def_special GetMetatileIdAt
+	def_special CheckForRegielekiPuzzle
+	def_special CheckForMetatiles
+	def_special SetHourMinutes
+	def_special RyuIvCheckerDef
+	def_special RyuIvCheckerOff
+	def_special RyuEvCheckerDef
+	def_special RyuEvCheckerOff
+	def_special RyuResetEvs
+	def_special RyuSetIvsBad
+	def_special RyuSetIvsMedium
+	def_special RyuSetIvsPerfect
+	def_special SetTrainerType
+	def_special ShowTrainerType
+	def_special GetPokemonAttribute
+	def_special DoesMonMatch
+	def_special SetCustomization
+	def_special DisplayPokedokuList
+	def_special DoPoisonEffect
+	def_special SetCafeTrainersToday
+	def_special GetCafeTrainersBattleText
+	def_special GetCafeTrainersAfterBattleData

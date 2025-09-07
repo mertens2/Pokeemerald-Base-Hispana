@@ -1,0 +1,681 @@
+const  LOCALID_WANDAS_BF = 1
+const  LOCALID_BRINEY = 5
+const  LOCALID_GRUNT = 6
+const  LOCALID_PEEKO = 7
+const  LOCALID_WANDA = 10
+
+mapscripts RusturfTunnel_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_RUSTURF_TUNNEL_STATE) == 2) {
+            setobjectxyperm (LOCALID_PEEKO, 13, 4)
+            setobjectxyperm (LOCALID_GRUNT, 13, 5)
+            }
+        }
+	MAP_SCRIPT_ON_FRAME_TABLE [
+     VAR_RUSTURF_TUNNEL_STATE, 4: RusturfTunnel_EventScript_ClearTunnelScene
+     VAR_RUSTURF_TUNNEL_STATE, 5: RusturfTunnel_EventScript_ClearTunnelScene 
+     ]
+}
+
+
+
+script RusturfTunnel_EventScript_Wanda {
+	lock
+	faceplayer
+	msgbox (format("Mi novio estaba cavando este túnel por su cuenta, pero hubo un derrumbe que lastimó sus manos y no puede seguir cavando."))
+	closemessage
+	applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+	waitmovement (0)
+	release
+	end
+}
+
+script RusturfTunnel_EventScript_WandasBoyfriend {
+	lock
+	faceplayer
+	msgbox (format("¡ARGH! {PAUSE 2}¡ROAR!\p¡Ese lindo hombre me detuvo cuando estaba tan cerca………!\pY ahora, un derrumbe me lastimó las manos.\pQuiero llegar con mi novia para hablarle de él."))
+	closemessage
+	applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+	waitmovement (0)
+	release
+	end
+}
+
+script RusturfTunnel_EventScript_ClearTunnelScene {
+    lockall
+    switch (var(VAR_TEMP_1)) {
+        case 1: 
+            call (RusturfTunnel_EventScript_FaceWandasBoyfriend1)
+        case 2: 
+            call (RusturfTunnel_EventScript_FaceWandasBoyfriend2)
+        case 3: 
+            call (RusturfTunnel_EventScript_FaceWandasBoyfriend3)
+        }
+    call (RusturfTunnel_EventScript_WandasBoyfriendNotice)
+    namebox (Riley)
+    msgbox(format("¡ROAR!\nE-eh, quiero decir, {PAUSE 2}¡wow!\p¡Destruíste esa roca que bloqueaba el camino! {PAUSE 2}¡Ni mis enormes músculos de constructor podían destruírla!\pComo agradecimiento de crear un atajo para ver a mi novia, ten esto."))
+    hidenamebox
+    switch (var(VAR_TEMP_1)) {
+        case 2:
+        case 3:
+            closemessage
+            applymovement (LOCALID_WANDAS_BF, RusturfTunnel_Movement_WandasBoyfriendApproachPlayer)
+            waitmovement (0)
+    }
+    giveitem (ITEM_AGGRONITE)
+    namebox(Riley)
+    msgbox(format("¡Es una Aggronita!\pEsa es una megapiedra que puede hacer {COLOR BLUE}megaevolucionar a un Aggron{COLOR DARK_GRAY}.\p¡Gracias a tí podré hablar y ver a mi novia cuando quiera!"))
+    setflag (FLAG_RECEIVED_HM04)
+    closemessage
+    hidenamebox
+    switch (var(VAR_TEMP_1)) {
+        case 1:
+            call (RusturfTunnel_EventScript_BoyfriendApproachWanda1)
+        case 2:
+            call (RusturfTunnel_EventScript_BoyfriendApproachWanda2)
+        case 3:
+            call (RusturfTunnel_EventScript_BoyfriendApproachWanda3)
+    }
+    namebox(Riley)
+    msgbox(format("¡Amor! {PAUSE 2}¡Hola!\nNnn… {PAUSE 2}¡ROOOAARR! {PAUSE 2}¡Estoy tan feliz!"))
+    hidenamebox
+    namebox(Wanda)
+    msgbox(format("¡Oh, Riley, amor mío!\nAl fin nos vemos otra vez."))
+    hidenamebox
+    namebox(Riley)
+    msgbox(format("¡Amorcito!\nLa cosa más maravillosa ha pasado, no lo creerás.\p¡Alguien más ha reconocido el esfuerzo que hice para mantener estos músculos!"))
+    hidenamebox
+    namebox(Wanda)
+    msgbox(format("¡Qué cosa tan maravillosa, mi amor!\p¡Podemos hablar más de esa persona en mi casa!\pMe gustaría conocer gente nueva que reconozca el trabajo duro."))
+    hidenamebox
+    switch (var(VAR_TEMP_1)) {
+        case 1:
+            call (RusturfTunnel_EventScript_WandaAndBoyfriendExit1)
+        case 2:
+        case 3:
+            call (RusturfTunnel_EventScript_WandaAndBoyfriendExit)
+    }
+    call (RusturfTunnel_EventScript_SetRusturfTunnelOpen)
+    releaseall
+    end
+}
+
+script RusturfTunnel_EventScript_BoyfriendApproachWanda1 {
+    applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PlayerWatchBoyfriend1)
+    applymovement (LOCALID_WANDAS_BF, RusturfTunnel_Movement_BoyfriendApproachWanda1)
+    waitmovement (0)
+    return
+}
+
+script RusturfTunnel_EventScript_BoyfriendApproachWanda2 {
+	applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PlayerWatchBoyfriend)
+	applymovement (LOCALID_WANDAS_BF, RusturfTunnel_Movement_BoyfriendApproachWanda)
+	waitmovement (0)
+	applymovement (LOCALID_WANDA, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement (0)
+	return
+}
+
+script RusturfTunnel_EventScript_BoyfriendApproachWanda3 {
+	applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PlayerWatchBoyfriend)
+	applymovement (LOCALID_WANDAS_BF, RusturfTunnel_Movement_BoyfriendApproachWanda)
+	waitmovement (0)
+	applymovement (LOCALID_WANDA, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement (0)
+	return
+}
+
+script RusturfTunnel_EventScript_FaceWandasBoyfriend1 {
+	applymovement (LOCALID_WANDAS_BF, Common_Movement_WalkInPlaceFasterUp)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement (0)
+	return
+}
+
+script RusturfTunnel_EventScript_FaceWandasBoyfriend2 {
+	applymovement (LOCALID_WANDAS_BF, RusturfTunnel_Movement_BoyfriendFaceRight)
+	waitmovement (0)
+	return
+}
+
+script RusturfTunnel_EventScript_FaceWandasBoyfriend3 {
+	return
+    }
+
+script RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer {
+	closemessage
+	applymovement (LOCALID_WANDAS_BF, RusturfTunnel_Movement_WandasBoyfriendApproachPlayer)
+	waitmovement (0)
+	return
+}
+
+script RusturfTunnel_EventScript_WandaAndBoyfriendExit1 {
+	applymovement (LOCALID_WANDA, RusturfTunnel_Movement_WandaExit1)
+	applymovement (LOCALID_WANDAS_BF, RusturfTunnel_Movement_WandasBoyfriendExit1)
+	waitmovement (0)
+    removeobject (LOCALID_WANDA)
+    removeobject (LOCALID_WANDAS_BF)
+    playse (SE_EXIT)
+	return
+}
+
+script RusturfTunnel_EventScript_WandaAndBoyfriendExit {
+	applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PlayerWatchWandaExit)
+	applymovement (LOCALID_WANDA, RusturfTunnel_Movement_WandaExit)
+	applymovement (LOCALID_WANDAS_BF, RusturfTunnel_Movement_WandasBoyfriendExit)
+    waitmovement (0)
+    removeobject (LOCALID_WANDA)
+    removeobject (LOCALID_WANDAS_BF)
+    setflag (FLAG_HIDE_RUSTURF_TUNNEL_WANDAS_BOYFRIEND)
+    setflag (FLAG_HIDE_RUSTURF_TUNNEL_WANDA)
+    playse (SE_EXIT)
+	return
+}
+
+script RusturfTunnel_EventScript_WandasBoyfriendNotice {
+	playse (SE_PIN)
+	applymovement (LOCALID_WANDAS_BF, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_WANDAS_BF, Common_Movement_Delay48)
+	waitmovement (0)
+	return
+}
+
+movement RusturfTunnel_Movement_WandaExit1 {
+	walk_right * 4
+	walk_down * 7
+}
+
+movement RusturfTunnel_Movement_WandaExit {
+	walk_right * 4
+	walk_down * 7
+}
+
+movement RusturfTunnel_Movement_PlayerWatchWandaExit {
+	delay_8
+	walk_in_place_faster_up
+	delay_16 * 2
+	walk_in_place_faster_right
+	}
+
+movement RusturfTunnel_Movement_PlayerWatchBoyfriend1 {
+	walk_left
+	walk_in_place_faster_right
+	}
+
+movement RusturfTunnel_Movement_PlayerWatchBoyfriend {
+	walk_right
+	walk_in_place_faster_left
+	}
+
+movement RusturfTunnel_Movement_BoyfriendFaceRight {
+	walk_up
+	walk_in_place_faster_right
+	}
+
+movement RusturfTunnel_Movement_WandasBoyfriendExit1 {
+	walk_right * 5
+	walk_down * 7
+	}
+
+movement RusturfTunnel_Movement_WandasBoyfriendExit {
+	walk_up
+	walk_right * 4
+	walk_down * 7
+	}
+
+movement RusturfTunnel_Movement_WandasBoyfriendApproachPlayer {
+	walk_right
+	}
+
+movement RusturfTunnel_Movement_BoyfriendApproachWanda1 {
+	walk_in_place_fast_up * 2
+	walk_fast_up
+	walk_fast_right
+	}
+
+movement RusturfTunnel_Movement_BoyfriendApproachWanda {
+	walk_in_place_fast_right * 2
+	walk_fast_right
+	walk_in_place_faster_up
+	}
+
+script RusturfTunnel_EventScript_TunnelBlockagePos1 {
+	setvar (VAR_TEMP_1, 1)
+	end
+    }
+
+script RusturfTunnel_EventScript_TunnelBlockagePos2 {
+	setvar (VAR_TEMP_1, 2)
+	end
+    }
+
+script RusturfTunnel_EventScript_TunnelBlockagePos3 {
+	setvar (VAR_TEMP_1, 3)
+	end
+    }
+
+script RusturfTunnel_EventScript_Peeko {
+	lock
+	faceplayer
+	waitse
+	playmoncry (SPECIES_WINGULL, CRY_MODE_NORMAL)
+	msgbox(format("Pii pihyoh..."))
+	waitmoncry
+	release
+	end
+}
+
+script RusturfTunnel_EventScript_GruntEscape {
+		applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PushPlayerAsideForGrunt)
+		applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntEscape)
+		waitmovement(0)
+		namebox(Unknown)
+		poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡No te preocupes, yo lo detengo aquí!"))
+			closemessage
+			addobject (LOCALID_BRINEY)
+			hidenamebox
+			namebox(Aqua)
+			msgbox(format("¡N-NO!\n¡ROAR!"))
+		}
+		EN {
+			msgbox(format("Don't worry, I'm stopping him from here!"))
+			closemessage
+			addobject (LOCALID_BRINEY)
+			hidenamebox
+			namebox(Aqua)
+			msgbox(format("N-NO!\nROAR!"))
+		}
+		}
+		hidenamebox
+		closemessage
+		delay (32)
+		applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PlayerPursue)
+		waitmovement (0)
+		applymovement (LOCALID_GRUNT, Common_Movement_FacePlayer)
+		namebox(Aqua)
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("¡A-ARGH!\p¡B-Bueno, si tanto quieren sus Partes, derrótame!"))
+			}
+			EN {
+				msgbox(format("A-ARGH!\pW-well if you want the Goods so bad, defeat me!!"))
+			}
+		}
+		trainerbattle_no_intro (TRAINER_GRUNT_RUSTURF_TUNNEL, RusturfTunnel_Text_GruntDefeat2)
+		if (var(VAR_EVIL_TEAM_SIDE) > 2) {
+			savepartofteam
+			special (LoadPlayerParty)
+			loadpartofteam
+			special (GiveBackItemsAndBerries)
+			clearflag (FLAG_STARTED_BOSS)
+			namebox(Aqua)
+				poryswitch(LANGUAGE){
+				ES {
+					msgbox(format("¡N-NO!\n¡No puede ser!\l¡ARGH! {PAUSE 2}¡Aquí tienes denuevo tus inútiles Pokémon!"))
+					hidenamebox
+					message (format("¡Te han devuelto la mochila!"))
+				}
+				EN {
+					msgbox(format("N-NO!\nIt can't be!\lARGH! {PAUSE 2}Here, have your stupid Pokémon back!"))
+					hidenamebox
+					message (format("You recovered the Bag!"))
+				}
+			}
+			
+		}
+		namebox(Aqua)
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("¡A-ARGH! {PAUSE 2}¡ROAR! {PAUSE 2}¡NOO!\p¡Tch, aquí tienen las partes!\n... ... ... Ya voy fallando dos misiones en un día.\p"
+					"Y eso que ninguna debía recurrir a la violencia de este modo."))
+			}
+			EN {
+				msgbox(format("A-ARGH! {PAUSE 2}ROAR! {PAUSE 2}NOO!\pTch, here, have the Goods!\n... ... ... I've already failed twice in a day.\p"
+					"I wasn't even supposed to resort to violence like this."))
+			}
+		}
+		
+		
+		hidenamebox
+		giveitem (ITEM_DEVON_PARTS, 1)
+		closemessage
+		applymovement (LOCALID_GRUNT, Common_Movement_FaceDown)
+		waitmovement (0)
+		delay (16)
+		namebox(Aqua)
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("………\pEsta………\nNo fue una experiencia que quiera que se repita."))
+				hidenamebox
+				applymovement (LOCALID_GRUNT, Common_Movement_WalkInPlaceDown)
+				waitmovement (0)
+				delay (16)
+				namebox(Aqua)
+				msgbox(format("………\pEsto que hice………\nMe uní a este Equipo para evitar ser un ladrón, y aún así..."))
+				hidenamebox
+				closemessage
+				delay (16)
+				applymovement (LOCALID_BRINEY, RusturfTunnel_Movement_BrineyMove)
+				waitmovement (0)
+				applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntRegrets)
+				waitmovement (0)
+				namebox(Aqua)
+				msgbox(format("………\pYo………\nLo lamento, señor.\pNo. Lo que hice no tiene perdón.\p………\pDebería disculparme con el hombre que asusté antes, y decirle…"))
+			}
+			EN {
+				msgbox(format("………\pThis………\nIsn't something I want to experience again."))
+				hidenamebox
+				applymovement (LOCALID_GRUNT, Common_Movement_WalkInPlaceDown)
+				waitmovement (0)
+				delay (16)
+				namebox(Aqua)
+				msgbox(format("………\pWhat I did today………\nI joined Team Aqua to not become a thief, and yet..."))
+				hidenamebox
+				closemessage
+				delay (16)
+				applymovement (LOCALID_BRINEY, RusturfTunnel_Movement_BrineyMove)
+				waitmovement (0)
+				applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntRegrets)
+				waitmovement (0)
+				namebox(Aqua)
+				msgbox(format("………\pI………\nI'm so, so sorry, sir.\pNo. What I did is unforgivable.\p………\pI should also apologize to the man I scared, and tell him…"))
+			}
+		}
+		hidenamebox
+		closemessage
+		applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntExit)
+		applymovement (LOCALID_BRINEY, Common_Movement_FaceDown)
+		waitmovement(0)
+		playse (SE_EXIT)
+		removeobject (LOCALID_GRUNT)
+		delay (50)
+		applymovement (LOCALID_PEEKO, RusturfTunnel_Movement_ApproachPeeko1)
+		waitmovement (0)
+		playmoncry (SPECIES_WINGULL, CRY_MODE_NORMAL)
+		waitmoncry
+		playse (SE_PIN)
+		applymovement (LOCALID_BRINEY, Common_Movement_ExclamationMark)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		applymovement (LOCALID_BRINEY, Common_Movement_FaceUp)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement (0)
+		delay (8)
+		namebox (Briney)
+		msgbox(format("Wing Wingull..."))
+		hidenamebox
+		applymovement (LOCALID_BRINEY, RusturfTunnel_Movement_BrineyApproachPeeko1)
+		waitmovement (0)
+		namebox (Briney)
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox(format("¡Oh, Peeko!\n¡Te extrañé tanto, mi chiquito!"))
+				hidenamebox
+				applymovement (LOCALID_BRINEY, Common_Movement_FacePlayer)
+				waitmovement (0)
+				namebox (Briney)
+				msgbox(format("¡Muchísimas gracias!\nPeeko, vamos a casa."))
+			}
+			EN {
+				msgbox(format("Oh, Peeko!\nI missed you so much, my baby!"))
+				hidenamebox
+				applymovement (LOCALID_BRINEY, Common_Movement_FacePlayer)
+				waitmovement (0)
+				namebox (Briney)
+				msgbox(format("Thank you so much!\nPeeko, let's go back home."))
+			}
+		}
+		closemessage
+		hidenamebox
+		playmoncry (SPECIES_WINGULL, CRY_MODE_NORMAL)
+		waitbuttonpress
+		waitmoncry
+		applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PlayerMoveAsideForBriney)
+		applymovement (LOCALID_BRINEY, RusturfTunnel_Movement_BrineyExit)
+		applymovement (LOCALID_PEEKO, RusturfTunnel_Movement_PeekoExit)
+		waitmovement(0)
+		removeobject (LOCALID_PEEKO)
+		removeobject (LOCALID_BRINEY)
+		playse (SE_EXIT)
+		clearflag (FLAG_DEVON_GOODS_STOLEN)
+		setflag (FLAG_RECOVERED_DEVON_GOODS)
+		setvar (VAR_RUSTBORO_CITY_STATE, 4)
+		setvar (VAR_BRINEY_HOUSE_STATE, 1)
+		setflag (FLAG_HIDE_ROUTE_116_MR_BRINEY)
+		return
+}
+
+script RusturfTunnel_EventScript_Grunt {
+	lock
+	faceplayer
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	if (var(VAR_EVIL_TEAM_SIDE) < 3) {
+		namebox(Aqua)
+		poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡Argh, esto no lo pensé bien!\p¡Eres tú!\nAntes estabas por dejarme llevar los planos, luego me derrotaste, ¿Y ahora qué? ¿Vas a burlarte de que terminé en esta situación?"))
+			hidenamebox
+			msgbox(format("¿Qué harás?"))
+			dynmultichoice(25, 5, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Ver qué pasa", "¡Atacarlo!")
+		}
+		EN {
+			msgbox(format("Argh, I didn't think this through!\pOh, it's you!\nYou almost let me take the blueprints, but then you attacked me.\pAnd now what? Are you gonna make fun of me for getting into this mess?"))
+			hidenamebox
+			msgbox(format("What will you do?"))
+			dynmultichoice(25, 5, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "See what happens", "Attack!")
+		}
+	}
+		
+		if (var(VAR_RESULT) == 0){
+			subvar(VAR_EVIL_TEAM_SIDE, 1)
+			namebox(Aqua)
+			poryswitch(LANGUAGE){
+				ES {
+					msgbox (format("No comprendo.\pEl {COLOR BLUE}Jefecito{COLOR DARK_GRAY} me dijo que sería tarea fácil, {PAUSE 2}¡Pero no lo es!\p¡ARGH! {PAUSE 2}¡ROAR!\p¡Me voy, esto es demasiado!"))
+				}
+				EN {
+					msgbox (format("I don't get it.\pThe {COLOR BLUE}Boss{COLOR DARK_GRAY} this'd be easy, {PAUSE 2}but far from it!\pARGH! {PAUSE 2}ROAR!\pToo much for my noggin, I'm leaving!!"))
+
+				}
+			}
+			hidenamebox
+			closemessage
+			playse (SE_PIN)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+			waitmovement (0)
+			applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntNervous)
+			waitmovement (0)
+			playbgm (MUS_HELP, FALSE)
+			call (RusturfTunnel_EventScript_GruntEscape)
+			releaseall
+			end
+		}
+		else {
+			 addvar(VAR_EVIL_TEAM_SIDE, 1)
+		}
+		
+	}
+	trainerbattle_no_intro (TRAINER_GRUNT_RUSTURF_TUNNEL, RusturfTunnel_Text_GruntDefeat)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox (format("No comprendo.\pEl {COLOR BLUE}Jefecito{COLOR DARK_GRAY} me dijo que sería tarea fácil, {PAUSE 2}¡Pero no lo es!\p¡ARGH! {PAUSE 2}¡ROAR!\p¡Tendré que hacer esto con trucos sucios!"))
+		}
+		EN {
+			msgbox (format("I don't get it.\pThe {COLOR BLUE}Boss{COLOR DARK_GRAY} this'd be easy, {PAUSE 2}but far from it!\pARGH! {PAUSE 2}ROAR!\pToo much for my noggin, I'm using my dirtiest tricks!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	playse (SE_PIN)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+	waitmovement (0)
+	special (HealPlayerParty)
+	setflag (FLAG_STARTED_BOSS)
+	special (TakeAwayItemsAndBerries)
+	special (SavePlayerParty)
+	deletepokemon (1)
+	poryswitch(LANGUAGE){
+		ES {
+			message (format("¡Te han robado la mochila!\n¡Ahora sólo podrás usar el Pokémon que tenías a mano!"))
+		}
+		EN {
+			message (format("Your Bag was stolen!\pYou can only use the first Pokémon in your Party now!"))
+		}
+	}
+	waitmessage
+	closemessage
+	applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntNervous)
+	waitmovement (0)
+	playbgm (MUS_HELP, FALSE)
+	namebox(Aqua)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox(format("¡NO IMPORTA NADA, YO ME VOY!"))
+		}
+		EN {
+			msgbox(format("FUDGE THIS, I'M LEAVING!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	call (RusturfTunnel_EventScript_GruntEscape)  
+	releaseall
+	end
+}
+
+text RusturfTunnel_Text_GruntDefeat2 {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡ARGH! {PAUSE 2}¡ROAR!\p¡DÉJAME GANARTE!")
+		}
+		EN {
+			format("ARGH! {PAUSE 2}ROAR!\pLET ME HAVE THIS!")
+		}
+	}
+}
+
+movement RusturfTunnel_Movement_ApproachPeeko1 {
+    walk_left * 9
+    walk_down * 2
+}
+
+movement RusturfTunnel_Movement_GruntExit {
+    walk_down
+    walk_down
+}
+
+movement RusturfTunnel_Movement_GruntNervous {
+    walk_in_place_fast_right
+    delay_4
+    walk_in_place_fast_left
+    delay_4
+    walk_in_place_fast_right
+    delay_4
+    walk_in_place_fast_left
+    delay_16
+    delay_8
+    delay_4
+    jump_in_place_left
+    jump_in_place_left
+}
+
+movement RusturfTunnel_Movement_PushPlayerAsideForGrunt {
+	face_down
+	lock_facing_direction
+	walk_up
+	unlock_facing_direction
+	walk_in_place_faster_left
+}
+
+movement RusturfTunnel_Movement_PlayerMoveAsideForBriney {
+	walk_right
+	walk_in_place_faster_down
+}
+
+movement RusturfTunnel_Movement_GruntEscape {
+	walk_fast_left * 9
+    walk_fast_down * 4
+	}
+movement RusturfTunnel_Movement_PlayerPursue {
+    walk_fast_down
+    walk_fast_left * 8
+    walk_fast_down * 3
+}
+
+movement RusturfTunnel_Movement_BrineyMove {
+    face_right
+    lock_facing_direction
+    walk_left
+    unlock_facing_direction
+}
+movement RusturfTunnel_Movement_GruntRegrets {
+    walk_down
+    delay_16
+    delay_16
+    walk_in_place_left
+}
+
+movement RusturfTunnel_Movement_BrineyApproachPeeko1 {
+	walk_fast_up * 3
+    walk_fast_right
+    walk_in_place_fast_up
+}
+
+movement RusturfTunnel_Movement_BrineyExit {
+	walk_down * 3
+	set_invisible
+}
+
+movement RusturfTunnel_Movement_PeekoExit {
+	walk_down * 4
+	set_invisible
+}
+
+script RusturfTunnel_EventScript_Mike {
+	trainerbattle_single (TRAINER_MIKE_2, RusturfTunnel_Text_MikeIntro, RusturfTunnel_Text_MikeDefeat)
+	msgbox (format("¡Esta cueva es muy pequeña!"))
+	end
+    }
+
+
+text RusturfTunnel_Text_GruntDefeat {
+    poryswitch(LANGUAGE){
+		ES {
+			format("¡ARGH! {PAUSE 2}¡ROAR!")
+		}
+		EN {
+			format("ARGH! {PAUSE 2}ROAR!")
+		}
+	}
+}
+
+
+
+text RusturfTunnel_Text_MikeIntro {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Si un hombre que está en las montañas se llama montañero, {PAUSE 2}¿Porqué los Pokémon de montañas no se llaman montañokes?")
+		}
+		EN {
+			format("If a mountain-lover man is a Hiker, {PAUSE 2}Are mountain-lover Pokémon called Hikemon?")
+		}
+	}
+}
+
+text RusturfTunnel_Text_MikeDefeat {
+    poryswitch(LANGUAGE){
+		ES {
+			format("Mis montañokes...")
+		}
+		EN {
+			format("My Hikemon...")
+		}
+	}
+}
+

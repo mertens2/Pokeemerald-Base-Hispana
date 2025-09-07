@@ -1,0 +1,230 @@
+const LOCALID_DELTA = 9
+
+mapscripts AquaHideout_B1F_MapScripts
+{
+	MAP_SCRIPT_ON_RESUME {
+		// if (flag(FLAG_SYS_CTRL_OBJ_DELETE)){
+			// specialvar (VAR_RESULT, GetBattleOutcome)
+			// if (var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+				// call (Common_EventScript_NopReturn)
+				// removeobject (VAR_LAST_TALKED)
+				// return
+			// }
+		// }
+		return
+	}
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_AQUA_HIDEOUT_STATE) == 4){
+			setobjectxyperm(LOCALID_DELTA, 32, 21)
+			setobjectxyperm(1, 32, 20)
+			setobjectxyperm(4, 31, 21)
+		}
+		if (var(VAR_AQUA_HIDEOUT_STATE) == 3){
+			setobjectxyperm(LOCALID_DELTA, 32, 20)
+		}
+		// AquaHideout_B1F_OnTransition
+		// if (flag(FLAG_TEMP_0)){
+			// call (AquaHideout_B1F_EventScript_ShowElectrode1)
+		// }
+		// if (flag(FLAG_TEMP_1)){
+			// call (AquaHideout_B1F_EventScript_ShowElectrode2)
+		// }
+		return
+	}
+	
+}
+
+script AquaHideout_B1F_EventScript_Trigger {
+	poryswitch(LANGUAGE){
+		ES{
+			namebox (Aqua)
+			msgbox (format("¡N-{PAUSE 5}No!\nMe derrotó usando un solo Pokémon…"))
+			namebox (Delta)
+			msgbox (format("Tsk.\n¿Es todo este Equipo igual de patético?"))
+		}
+		EN {
+			namebox (Aqua)
+			msgbox (format("¡N-{PAUSE 5}No!\nShe defeated me using a single Pokémon…"))
+			namebox (Delta)
+			msgbox (format("Tsk.\nIs this whole Team this pathetic?"))
+		}
+	}
+	hidenamebox
+	closemessage
+	applymovement (LOCALID_DELTA, AquaHideout_B1F_Movement_LeavesFirstRoom)
+	waitmovement (0)
+	setobjectxyperm (LOCALID_DELTA, 32, 20)
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("¡Tengo que avisarle a Matt!"))
+		}
+		EN {
+			msgbox (format("I gotta tell Matt about 'em!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	setvar (VAR_AQUA_HIDEOUT_STATE, 3)
+	releaseall
+	end
+}
+
+script AquaHideout_B1F_EventScript_Electrode1 {
+	call (AquaHideout_B1F_EventScript_Electrodes)
+	if (var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		removeobject(VAR_LAST_TALKED)
+		setflag (FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1)
+		goto (Common_EventScript_RemoveStaticPokemon)
+	}
+	release
+	end
+}
+
+script AquaHideout_B1F_EventScript_Electrodes {
+	lock
+	faceplayer
+	setwildbattle (SPECIES_ELECTRODE, 30)
+	waitse
+	playmoncry (SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER)
+	delay (40)
+	waitmoncry
+	// setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	dowildbattle
+	// clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	specialvar (VAR_RESULT, GetBattleOutcome)
+	return
+}
+
+script AquaHideout_B1F_EventScript_Electrode2 {
+	call (AquaHideout_B1F_EventScript_Electrodes)
+	if (var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		removeobject(VAR_LAST_TALKED)
+		setflag (FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2)
+		goto (Common_EventScript_RemoveStaticPokemon)
+	}
+	release
+	end
+}
+
+script AquaHideout_B1F_EventScript_Grunt3 {
+	lockall
+	faceplayer
+	namebox (Aqua)
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("Normalmente, te atacaría, pero ya no tengo Pokémon…\p¡Igual! ¡Todo estará bien!\nLe avisé a nuestro {COLOR BLUE}Administrador Matt{COLOR DARK_GRAY} sobre esta intrusa…\p¡El poder que él posee es abismal!"))
+		}
+		EN{
+			msgbox (format("Usually, I'd attack you, but I ain't got no Pokémon left…\pWhatever! It'll be fine!\nTold our {COLOR BLUE}Admin Matt{COLOR DARK_GRAY} 'bout that indtruder…\pHis power is abyssmal!"))
+		}	
+	}
+	hidenamebox
+	closemessage
+	releaseall
+	end
+}
+
+script AquaHideout_B1F_EventScript_Grunt5 {
+	lockall
+	if (var(VAR_AQUA_HIDEOUT_STATE) == 3){
+		goto (AquaHideout_B1F_EventScript_Delta2)
+	}
+	else {
+		faceplayer
+		namebox (Aqua)
+		poryswitch(LANGUAGE){
+			ES {
+				msgbox (format("Tomó todo lo que teníamos, hasta los más débiles, pero parece que logramos detenerla…\p¡Estos idiotas no son tan invencibles como creíamos!"))
+			}
+			EN {
+				msgbox (format("It took everything we had, even our weakest Pokémon, but we defeated 'er…\pThese dumbaxes ain't unstoppable after all!"))
+			}
+		}
+		hidenamebox
+		closemessage
+	}
+}
+
+script AquaHideout_B1F_EventScript_Delta {
+	lockall
+	if (var(VAR_AQUA_HIDEOUT_STATE) == 3){
+		goto (AquaHideout_B1F_EventScript_Delta2)
+	}
+}
+script AquaHideout_B1F_EventScript_Delta2 {
+	applymovement (1, AquaHideout_B1F_Movement_AquaWin1)
+	applymovement (4, AquaHideout_B1F_Movement_AquaWin2)
+	applymovement (LOCALID_DELTA, AquaHideout_B1F_Movement_DeltaDefeat)
+	waitmovement (0)
+	namebox (Delta)poryswitch(LANGUAGE){
+		ES {
+			msgbox (format("Dejen de engañarse, los tres sabemos que no podrán derrot-{PAUSE 50} "), MSGBOX_INTERRUPT)
+			fadescreen (FADE_TO_BLACK)
+			delay (16)
+			namebox (Aqua)
+			msgbox (format("¡Usa {COLOR LIGHT_BLUE}Granizo{COLOR DARK_GRAY}!"))
+			msgbox (format("¡Y tú, usa {COLOR LIGHT_BLUE}Rayo Hielo{COLOR DARK_GRAY}!"))
+		}
+		EN {
+			msgbox (format("Stop fooling yourselves, all three of us know well that you can't with-{PAUSE 50} "), MSGBOX_INTERRUPT)
+			fadescreen (FADE_TO_BLACK)
+			delay (16)
+			namebox (Aqua)
+			msgbox (format("Use {COLOR LIGHT_BLUE}Hail{COLOR DARK_GRAY}!"))
+			msgbox (format("And you, use {COLOR LIGHT_BLUE}Ice Beam{COLOR DARK_GRAY}!"))
+		}
+	}
+	hidenamebox
+	closemessage
+	playse(SE_M_ICY_WIND)
+	waitse
+	playse(SE_SUPER_EFFECTIVE)
+	waitse
+	playse(SE_FAINT)
+	waitse
+	fadescreen (FADE_FROM_BLACK)
+	delay (16)
+	playse (SE_PIN)
+	applymovement (LOCALID_DELTA, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	namebox (Delta)
+	poryswitch(LANGUAGE){
+		ES {
+			msgbox (format("M-me han… Derrotado."))
+		}
+		EN {
+			msgbox (format("Defeated…"))
+		}
+	}
+	setvar(VAR_AQUA_HIDEOUT_STATE, 4)
+	hidenamebox
+	closemessage
+	releaseall
+	end
+}
+
+movement AquaHideout_B1F_Movement_DeltaDefeat {
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	delay_8
+	walk_in_place_left
+	walk_in_place_up
+}
+
+movement AquaHideout_B1F_Movement_AquaWin1 {
+	walk_faster_down * 2
+}
+
+movement AquaHideout_B1F_Movement_AquaWin2 {
+	walk_faster_down * 2
+	walk_in_place_fast_right
+}
+
+movement AquaHideout_B1F_Movement_LeavesFirstRoom {
+	walk_down
+	walk_right * 8
+	walk_up * 7
+	set_invisible
+}

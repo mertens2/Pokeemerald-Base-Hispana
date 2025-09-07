@@ -1,0 +1,197 @@
+raw `
+.set LOCALID_RIVAL, 1
+
+LittlerootTown_MaysHouse_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_MaysHouse_2F_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_MaysHouse_2F_OnWarp
+	.byte 0
+
+LittlerootTown_MaysHouse_2F_OnTransition:
+	call_if_lt VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_CheckSetReadyToMeetMay
+	call_if_ge VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
+	call SecretBase_EventScript_SetDecorationFlags
+	setvar VAR_SECRET_BASE_INITIALIZED, 0
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos::
+	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
+	goto_if_ge VAR_BIRCH_LAB_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	goto LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
+
+LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	setobjectxyperm LOCALID_RIVAL, 8, 2
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_Ret::
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_CheckSetReadyToMeetMay::
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, LittlerootTown_MaysHouse_2F_EventScript_SetReadyToMeetMay
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_SetReadyToMeetMay::
+	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
+	return
+
+LittlerootTown_MaysHouse_2F_OnWarp:
+	map_script_2 VAR_SECRET_BASE_INITIALIZED, 0, LittlerootTown_MaysHouse_2F_EventScript_CheckInitDecor
+	.2byte 0
+
+LittlerootTown_MaysHouse_2F_EventScript_CheckInitDecor::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, SecretBase_EventScript_InitDecorations
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_RivalsPokeBall::
+	lockall
+	msgbox RivalsHouse_2F_Text_ItsRivalsPokeBall, MSGBOX_DEFAULT
+	releaseall
+	end
+
+RivalsHouse_2F_EventScript_Rival::
+	lockall
+	goto_if_set FLAG_MET_RIVAL_LILYCOVE, RivalsHouse_2F_EventScript_RivalPostLilycove
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, RivalsHouse_2F_EventScript_May
+	goto_if_eq VAR_RESULT, FEMALE, RivalsHouse_2F_EventScript_Brendan
+	end
+
+RivalsHouse_2F_EventScript_May::
+	namebox Rival
+	msgbox RivalsHouse_2F_Text_MayGettingReady, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	releaseall
+	end
+
+RivalsHouse_2F_EventScript_Brendan::
+	namebox Rival
+	msgbox RivalsHouse_2F_Text_BrendanGettingReady, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	releaseall
+	end
+
+RivalsHouse_2F_EventScript_RivalPostLilycove::
+	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
+	waitmovement 0
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, RivalsHouse_2F_EventScript_MayPostLilycove
+	call_if_eq VAR_RESULT, FEMALE, RivalsHouse_2F_EventScript_BrendanPostLilycove
+	setflag FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE
+	releaseall
+	end
+
+RivalsHouse_2F_EventScript_MayPostLilycove::
+	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE, RivalsHouse_2F_EventScript_MayWhereShouldIGoNext
+	msgbox RivalsHouse_2F_Text_MayJustCheckingMyPokedex, MSGBOX_DEFAULT
+	return
+
+RivalsHouse_2F_EventScript_BrendanPostLilycove::
+	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE, RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext
+	msgbox RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex, MSGBOX_DEFAULT
+	return
+
+RivalsHouse_2F_EventScript_MayWhereShouldIGoNext::
+	msgbox RivalsHouse_2F_Text_MayWhereShouldIGoNext, MSGBOX_DEFAULT
+	return
+
+RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext::
+	msgbox RivalsHouse_2F_Text_BrendanWhereShouldIGoNext, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_PC::
+	lockall
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, LittlerootTown_MaysHouse_2F_EventScript_CheckRivalsPC
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_MaysHouse_2F_EventScript_CheckPlayersPC
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_CheckRivalsPC::
+	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_CheckPlayersPC::
+	setvar VAR_0x8004, PC_LOCATION_MAYS_HOUSE
+	special DoPCTurnOnEffect
+	playse SE_PC_ON
+	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
+	special BedroomPC
+	waitstate
+	releaseall
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
+	setvar VAR_0x8004, PC_LOCATION_MAYS_HOUSE
+	playse SE_PC_OFF
+	special DoPCTurnOffEffect
+	releaseall
+	end
+
+RivalsHouse_2F_Text_MayGettingReady:
+	.string "¡Pokémon curado!\n"
+	.string "¡Pokéballs listas y…!$"
+
+RivalsHouse_2F_Text_BrendanGettingReady:
+	.string "Mis Pokémon están curados…\n"
+	.string "Mis Pokéball listas y mi…$"
+
+RivalsHouse_2F_Text_ItsRivalsPokeBall:
+	.string "¡Es la Pokéball de {RIVAL}!\p"
+	.string "Mejor la dejo ahí.$"
+
+RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
+	.string "¡Ah!\n"
+	.string "{PLAYER}, hola!\p"
+	.string "Yo… Em………\p"
+	.string "Estoy arrepentida por la forma en la\n"
+	.string "que te traté……\l"
+	.string "Te veía como un enemig{OA}, pero tuve que\l"
+	.string "haberte tratado como un aliad{OA}…\p"
+	.string "Así que, perdón, {PLAYER}. No volveré\n"
+	.string "a tratarte así…\p"
+	.string "… … … … … … … … … … … … … … … … … … … … … … …\n"
+	.string "… … … … … … … … … … … … … … … … … … … … … … …\l"
+	.string "Quería también decirte…\p"
+	.string "Que aún estoy intentando actualizar mi\n"
+	.string "Pokédex… Y quería que\l"
+	.string "intercambiáramos datos de la Pokédex,\l"
+	.string "si eso te parece bien…$"
+
+RivalsHouse_2F_Text_MayWhereShouldIGoNext:
+	.string "Tantas… Entradas nuevas\n"
+	.string "en mi Pokédex se han llenado…\p"
+	.string "Me pregunto… ¿Dónde debería buscar\n"
+	.string "más Pokémon ahora?$"
+
+RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
+	.string "{RIVAL}: ¡Ah, in-\n"
+	.string "{PLAYER}, hola!\p"
+	.string "Yo… Em………\p"
+	.string "Estoy arrepentido por la forma en la\n"
+	.string "que te traté……\l"
+	.string "Te veía como un enemig{OA}, pero tuve que\l"
+	.string "haberte tratado como un aliad{OA}…\p"
+	.string "Así que, perdón, {PLAYER}. No volveré\n"
+	.string "a tratarte así…\p"
+	.string "… … … … … … … … … … … … … … … … … … … … … … …\n"
+	.string "… … … … … … … … … … … … … … … … … … … … … … …\l"
+	.string "Quería también decirte…\p"
+	.string "Que aún estoy intentando actualizar mi\n"
+	.string "Pokédex… Y quería que\l"
+	.string "intercambiáramos datos de la Pokédex,\l"
+	.string "si eso te parece bien…$"
+
+RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
+	.string "{RIVAL}: Tantas… Entradas nuevas\n"
+	.string "en mi Pokédex se han llenado…\p"
+	.string "Me pregunto… ¿Dónde debería buscar\n"
+	.string "más Pokémon ahora?$"
+`

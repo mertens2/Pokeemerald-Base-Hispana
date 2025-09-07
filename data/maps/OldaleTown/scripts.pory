@@ -1,0 +1,198 @@
+
+text OldaleTown_Text_SavingMyProgress {
+	poryswitch(LANGUAGE){
+		EN {
+			format("I want to level up my team faster…\p"
+			"I'm changing the settings to\n"
+			"“Training Mode”.")
+		}ES {
+			format("Quiero entrenar a mis Pokémon\n"
+			"un poquito más rápido…\p"
+			"Estoy cambiando las opciones a\n"
+			"“Modo Entrenamiento”.")
+		}
+	}
+
+}
+
+
+text OldaleTown_Text_IWorkAtPokemonMart {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Hi!\nI work in Hoenn's last Pokémon Mart. Take this as a prmo gift!")
+		}ES {
+			format("¡Hola! ¡Trabajo en la última Tienda Pokémon, y me gustaría darte esto!")
+		}
+	}
+}
+
+text OldaleTown_Text_PotionExplanation {
+	poryswitch(LANGUAGE){
+		EN {
+			format("It's a free Potion!\p"
+			"Hope you come by to our Mart.")
+		}ES {
+			format("¡Es una Poción de cortesía!\p"
+			"Espero que eso haga que quieras comprar en nuestra tienda.")
+		}
+	}
+
+}
+
+text OldaleTown_Text_WaitDontComeInHere {
+	poryswitch(LANGUAGE){
+		EN {
+			format("NOOOOOO!\nYou can't come in, you'll ruin everything")
+		}ES {
+			format("¡NOOOOOO! ¡BASTA!\p"
+			"¡¡Vas a arruinar todo si pasas!")
+		}
+	}
+
+}
+
+text OldaleTown_Text_DiscoveredFootprints {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Go away! You'll ruin everything!")
+		}ES {
+			format("¡Vas a arruinar\n"
+			"todo si pasas!")
+		}
+	}
+
+}
+
+text OldaleTown_Text_FinishedSketchingFootprints {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Just a Ralts…")
+		}ES {
+			format("Pues… Sólo era un Ralts…")	
+		}
+	}
+
+}
+
+
+text OldaleTown_Text_TownSign {
+	poryswitch(LANGUAGE){
+		EN {
+			format("{COLOR LIGHT_GREEN SHADOW GREEN} OLDALE TOWN\n"
+			"{COLOR DARK_GRAY SHADOW LIGHT_GRAY} “In touch with old traditions.”")
+		}ES {
+			format("{COLOR LIGHT_GREEN SHADOW GREEN} PUEBLO OLDALE\n"
+			"{COLOR DARK_GRAY SHADOW LIGHT_GRAY} “En contacto con nuestras tradiciones.”")
+		}
+	}
+
+}
+
+raw `
+.set LOCALID_MART_EMPLOYEE, 2
+.set LOCALID_FOOTPRINTS_MAN, 3
+
+OldaleTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
+	.byte 0
+
+OldaleTown_OnTransition:
+	setflag FLAG_VISITED_OLDALE_TOWN
+	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
+	end
+
+OldaleTown_EventScript_BlockWestEntrance::
+	setobjectxyperm LOCALID_FOOTPRINTS_MAN, 4, 13
+	setobjectmovementtype LOCALID_FOOTPRINTS_MAN, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+OldaleTown_EventScript_TownSign::
+	msgbox OldaleTown_Text_TownSign, MSGBOX_SIGN
+	end
+
+OldaleTown_EventScript_Girl::
+	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
+	end
+
+OldaleTown_EventScript_MartEmployee::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_ExplainPotion
+	goto_if_set FLAG_TEMP_1, OldaleTown_EventScript_ExplainPotion
+	setflag FLAG_TEMP_1
+	msgbox OldaleTown_Text_IWorkAtPokemonMart, MSGBOX_DEFAULT
+	closemessage
+	goto OldaleTown_EventScript_GoToMartSouth
+	end
+
+OldaleTown_EventScript_GoToMartSouth::
+	goto OldaleTown_EventScript_ExplainPokemonMart
+	end
+
+OldaleTown_EventScript_ExplainPokemonMart::
+	giveitem ITEM_POTION
+	goto_if_eq VAR_RESULT, FALSE, OldaleTown_EventScript_BagIsFull
+	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_POTION_OLDALE
+	fadedefaultbgm
+	release
+	end
+
+OldaleTown_EventScript_ExplainPotion::
+	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_EventScript_BagIsFull::
+	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+	fadedefaultbgm
+	release
+	end
+
+OldaleTown_EventScript_FootprintsMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_NotBlockingPath
+	msgbox OldaleTown_Text_DiscoveredFootprints, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FOOTPRINTS_MAN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+OldaleTown_EventScript_BlockedPath::
+	lockall
+	applymovement LOCALID_FOOTPRINTS_MAN, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox OldaleTown_Text_WaitDontComeInHere, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FOOTPRINTS_MAN, Common_Movement_FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerStepBack
+	waitmovement 0
+	releaseall
+	end
+
+OldaleTown_EventScript_NotBlockingPath::
+	msgbox OldaleTown_Text_FinishedSketchingFootprints, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_Movement_PlayerStepBack:
+	delay_8
+	walk_right
+	step_end
+
+OldaleTown_Movement_BackUp:
+	walk_fast_up
+	walk_in_place_faster_left
+	lock_facing_direction
+	walk_right
+	unlock_facing_direction
+	step_end
+
+OldaleTown_Movement_ReturnToOriginalPosition:
+	walk_down
+	walk_left
+	step_end
+
+`

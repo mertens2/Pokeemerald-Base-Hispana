@@ -1,0 +1,17 @@
+raw `
+OldaleTown_House1_MapScripts::
+	.byte 0
+
+OldaleTown_House1_EventScript_Woman::
+	msgbox OldaleTown_House1_Text_LeftPokemonGoesOutFirst, MSGBOX_NPC
+	end
+
+OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
+	.string "Cuando un Pokémon tiene equipado el\n"
+	.string "Repartir Experiencia, recibirá\l"
+	.string "el {COLOR BLUE}triple de puntos de experiencia{COLOR DARK_GRAY}\l"
+	.string "que recibiría normalmente, esto\l"
+	.string "para entrenarlo más rápidamente.\p"
+	.string "Aunque no sé dónde se consigue eso.$"
+
+`

@@ -1,0 +1,247 @@
+mapscripts MirageTower_SecretRoomRegieleki_MapScripts {
+		MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: MirageTower_SecretRoomRegieleki_RegisInfluence
+    ]
+}
+
+script MirageTower_SecretRoomRegieleki_RegisInfluence {
+	if (flag(FLAG_REGIELEKI_DEFEATED)) {
+		setflag(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV)
+		setweather(WEATHER_NONE)
+		doweather
+		setvar (VAR_TEMP_0, 1)
+	}
+	elif (flag(FLAG_REGIELEKI_UNLOCKED)){
+		setflag(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV)
+		setweather(WEATHER_NONE)
+		doweather
+		setvar (VAR_TEMP_0, 1)
+	}
+	else {
+		setflag(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV)
+		setvar (0x8005, SPECIES_REGIROCK)
+		special (CheckSpecies)
+		if (var(VAR_RESULT) == 0){
+		setvar (VAR_TEMP_0, 1)
+		releaseall
+		end
+		}
+		msgbox(format("La influencia de Regirock te permite caminar y la fuerza de Registeel, romper las rocas."))
+		closemessage
+		setvar (VAR_TEMP_0, 1)
+	}
+	releaseall
+	end
+}
+
+script MirageTower_SecretRoomRegieleki_Regieleki {
+	if (flag(FLAG_DAILY_REGIELEKI)) {
+		msgbox(format("Regieleki parece muy cansado para pelear...\p¡Vuelve mañana!"))
+		releaseall
+		end
+	}
+	elif (flag(FLAG_REGIELEKI_UNLOCKED)) {
+		msgbox(format("¡Re re re re gigigigi!"))
+		closemessage
+		delay (16)
+		msgbox(format("¡Regieleki parece recuperado!"))
+		playmoncry (SPECIES_REGIELEKI, CRY_MODE_NORMAL)
+		msgbox(format("¡Regi! ¡Eleeeeekiiiii!"))
+		waitmoncry
+		closemessage
+		setwildbattle (SPECIES_REGIELEKI, 50, ITEM_AIR_BALLOON)
+		special (StartRegiBattle)
+		waitstate
+		specialvar (VAR_RESULT, GetBattleOutcome)
+		switch (var(VAR_RESULT)) {
+		case B_OUTCOME_CAUGHT:
+			removeobject (1)
+			setflag(FLAG_REGIELEKI_DEFEATED)
+			msgbox(format("¡Regieleki te estará por siempre agradecido!"))
+			break
+		case B_OUTCOME_WON:
+			setflag(FLAG_DAILY_REGIELEKI)
+			msgbox(format("¡A Regieleki le encantó combatir contigo!\p¡Seguro mañana querrá tener otra batalla!"))
+			break
+		case B_OUTCOME_RAN:
+		case B_OUTCOME_PLAYER_TELEPORTED:
+			msgbox(format("Regieleki parece decepcionado..."))
+			break
+		}
+		releaseall
+		end
+	}
+	elif (flag(FLAG_REGIELEKI_DEFEATED)) {
+		msgbox(format("Si ves esto, avisa al creador del juego. Esto no tendría que ocurrir. Dale al creador las circumstancias en las que"
+		"esto ocurrió para encontrar una solución. Lamento las molestias."))
+		releaseall
+		end
+	}
+	else {
+		msgbox(format("R...eg....iii...."))
+		closemessage
+		releaseall
+		end
+	}
+}
+
+script MirageTower_SecretRoomRegieleki_Braille_1 {
+	braillemsgbox (ThunderTomb_Braille_First)
+	releaseall
+	end
+}
+
+script MirageTower_SecretRoomRegieleki_Braille_2 {
+	braillemsgbox (ThunderTomb_Braille_Second)
+	releaseall
+	end
+}
+
+script MirageTower_SecretRoomRegieleki_Braille_3 {
+	braillemsgbox (ThunderTomb_Braille_Third)
+	releaseall
+	end
+}
+
+script MirageTower_SecretRoomRegieleki_Braille_4 {
+	braillemsgbox (ThunderTomb_Braille_Fourth)
+	releaseall
+	end
+}
+
+script MirageTower_SecretRoomRegieleki_Braille_Message {
+	braillemsgbox (ThunderTomb_Braille_Stop)
+	delay (8)
+	braillemsgbox (ThunderTomb_Braille_Order)
+	delay (8)
+	braillemsgbox (ThunderTomb_Braille_Stop)
+	releaseall
+	end
+}
+
+script EventScript_RockSmash_Regieleki {
+	if (flag(FLAG_REGIELEKI_DEFEATED)) {
+		msgbox(format("Registeel parece desinteresado en estas rocas..."))
+		releaseall
+		end
+		}
+	elif (flag(FLAG_REGIELEKI_UNLOCKED)){
+			msgbox(format("Registeel piensa que hay cosas más importantes que hacer...\pSe rehúsa a alterar el patrón."))
+			releaseall
+			end
+		}
+	else {
+	playse (SE_M_ROCK_THROW)
+	applymovement (VAR_LAST_TALKED, Movement_SmashRock)
+	waitmovement (0)
+	removeobject (VAR_LAST_TALKED)
+	if ((flag(FLAG_TEMP_1) && flag(FLAG_TEMP_2) && flag(FLAG_TEMP_3) && flag(FLAG_TEMP_5) && flag(FLAG_TEMP_7) &&
+	flag(FLAG_TEMP_9) && flag(FLAG_TEMP_D) && flag(FLAG_TEMP_E) && flag(FLAG_TEMP_11) && flag(FLAG_TEMP_15)) &&
+	(!flag(FLAG_TEMP_A) && !flag(FLAG_TEMP_4) && !flag(FLAG_TEMP_B) && !flag(FLAG_TEMP_C) && !flag(FLAG_TEMP_13) &&
+	!flag(FLAG_TEMP_14) && !flag(FLAG_TEMP_6) && !flag(FLAG_TEMP_16) && !flag(FLAG_TEMP_8) && !flag(FLAG_TEMP_F) &&
+	!flag(FLAG_TEMP_10) && !flag(FLAG_TEMP_17) && !flag(FLAG_TEMP_18)))  {
+		if (flag(FLAG_REGIELEKI_DEFEATED)) {
+			msgbox(format("Regieleki ya ha sido derrotado..."))
+			releaseall
+			end
+		}
+		else {
+			setvar (VAR_0x8004, 0)
+			setvar (VAR_0x8005, 2)
+			setvar (VAR_0x8006, 2)
+			setvar (VAR_0x8007, 3)
+			special (ShakeCamera)
+			playse (SE_PIN)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+			waitstate
+			delay (30)
+			setvar (VAR_0x8004, 2)
+			setvar (VAR_0x8005, 4)
+			setvar (VAR_0x8006, 4)
+			setvar (VAR_0x8007, 2)
+			special (ShakeCamera)
+			waitstate
+			delay (30)
+			waitmovement (0)
+			setflag (FLAG_REGIELEKI_UNLOCKED)
+			setweather (WEATHER_NONE)
+			doweather
+			delay (50)
+			msgbox (format("Parece que el clima se ha calmado..."))
+			playmoncry (SPECIES_REGIELEKI, CRY_MODE_NORMAL)
+			msgbox (format("¡Regi! ¡Eleeeeekiiiii!"))
+			waitmoncry
+			closemessage
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+			waitmovement (0)
+			msgbox (format("¡Parece que Regieleki ya se siente mejor!\p¡Debe querer agradecerte con un combate!"))
+			releaseall
+			end
+		}
+	}
+	elif ((!flag(FLAG_TEMP_1) && !flag(FLAG_TEMP_2) && !flag(FLAG_TEMP_3) && !flag(FLAG_TEMP_5) && !flag(FLAG_TEMP_7) &&
+	!flag(FLAG_TEMP_9) && !flag(FLAG_TEMP_D) && flag(FLAG_TEMP_E) && !flag(FLAG_TEMP_11) && !flag(FLAG_TEMP_15)) &&
+	(flag(FLAG_TEMP_A) && flag(FLAG_TEMP_4) && flag(FLAG_TEMP_B) && flag(FLAG_TEMP_C) && flag(FLAG_TEMP_13) &&
+	flag(FLAG_TEMP_14) && flag(FLAG_TEMP_6) && flag(FLAG_TEMP_16) && flag(FLAG_TEMP_8) && flag(FLAG_TEMP_F) &&
+	flag(FLAG_TEMP_10) && flag(FLAG_TEMP_17) && flag(FLAG_TEMP_18))) {
+		if (flag(FLAG_REGIELEKI_DEFEATED)) {
+			msgbox(format("Regieleki ya ha sido derrotado..."))
+			releaseall
+			end
+		}
+		else {
+			setvar (VAR_0x8004, 0)
+			setvar (VAR_0x8005, 2)
+			setvar (VAR_0x8006, 2)
+			setvar (VAR_0x8007, 3)
+			special (ShakeCamera)
+			playse (SE_PIN)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+			waitstate
+			delay (30)
+			setvar (VAR_0x8004, 2)
+			setvar (VAR_0x8005, 4)
+			setvar (VAR_0x8006, 4)
+			setvar (VAR_0x8007, 2)
+			special (ShakeCamera)
+			waitstate
+			delay (30)
+			waitmovement (0)
+			setflag (FLAG_REGIELEKI_UNLOCKED)
+			setweather (WEATHER_NONE)
+			doweather
+			delay (50)
+			msgbox (format("Parece que el clima se ha calmado..."))
+			playmoncry (SPECIES_REGIELEKI, CRY_MODE_NORMAL)
+			msgbox (format("¡Regi! ¡Eleeeeekiiiii!"))
+			waitmoncry
+			closemessage
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+			waitmovement (0)
+			msgbox (format("¡Parece que Regieleki ya se siente mejor!\p¡Debe querer agradecerte con un combate!"))
+			releaseall
+			end
+		}
+		}
+	releaseall
+	end
+	}
+}
+ 
+script MirageTower_SecretRoomRegieleki_PushBack {
+		setvar (0x8005, SPECIES_REGIROCK)
+		special (CheckSpecies)
+		if (var(VAR_RESULT) == 0){
+		msgbox(format("¡La tormenta de arena te empuja hacia atrás!"))
+		applymovement (OBJ_EVENT_ID_PLAYER, MirageTower_SecretRoomRegieleki_MoveBack)
+		waitmovement (0)
+		releaseall
+		end
+		}
+}
+
+movement MirageTower_SecretRoomRegieleki_MoveBack {
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+}

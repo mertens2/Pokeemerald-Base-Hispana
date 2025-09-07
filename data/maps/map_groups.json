@@ -27,6 +27,7 @@
     "gMapGroup_Dungeons",
     "gMapGroup_IndoorDynamic",
     "gMapGroup_SpecialArea",
+    "gMapGroup_IndoorRoute104Prototype",
     "gMapGroup_IndoorRoute109",
     "gMapGroup_IndoorRoute110",
     "gMapGroup_IndoorRoute113",
@@ -51,6 +52,7 @@
     "FallarborTown",
     "VerdanturfTown",
     "PacifidlogTown",
+    "OldaleRuins",
     "Route101",
     "Route102",
     "Route103",
@@ -91,14 +93,17 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125"
+    "Underwater_Route125",
+    "Ciudaddeprueba",
+    "Route104North"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
     "LittlerootTown_BrendansHouse_2F",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
-    "LittlerootTown_ProfessorBirchsLab"
+    "LittlerootTown_ProfessorBirchsLab",
+    "LittlerootTown_MLMHouse"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -187,7 +192,12 @@
     "MauvilleCity_House2",
     "MauvilleCity_PokemonCenter_1F",
     "MauvilleCity_PokemonCenter_2F",
-    "MauvilleCity_Mart"
+    "MauvilleCity_Mart",
+    "MauvilleCity_F1",
+    "MauvilleCity_Inside",
+    "MauvilleCity_InverseBattle",
+    "MauvilleCity_BattleCafe",
+    "MauvilleCity_Middle"
   ],
   "gMapGroup_IndoorRustboro": [
     "RustboroCity_DevonCorp_1F",
@@ -229,6 +239,7 @@
     "LilycoveCity_ContestHall",
     "LilycoveCity_PokemonCenter_1F",
     "LilycoveCity_PokemonCenter_2F",
+    "LilycoveCity_UnusedMart",
     "LilycoveCity_PokemonTrainerFanClub",
     "LilycoveCity_Harbor",
     "LilycoveCity_MoveDeletersHouse",
@@ -257,7 +268,8 @@
     "MossdeepCity_SpaceCenter_1F",
     "MossdeepCity_SpaceCenter_2F",
     "MossdeepCity_GameCorner_1F",
-    "MossdeepCity_GameCorner_B1F"
+    "MossdeepCity_GameCorner_B1F",
+    "MossdeepCity_House5"
   ],
   "gMapGroup_IndoorSootopolis": [
     "SootopolisCity_Gym_1F",
@@ -295,7 +307,8 @@
   ],
   "gMapGroup_IndoorRoute104": [
     "Route104_MrBrineysHouse",
-    "Route104_PrettyPetalFlowerShop"
+    "Route104_PrettyPetalFlowerShop",
+    "MiniSafariMiddle"
   ],
   "gMapGroup_IndoorRoute111": [
     "Route111_WinstrateFamilysHouse",
@@ -317,9 +330,14 @@
     "Route117_PokemonDayCare"
   ],
   "gMapGroup_IndoorRoute121": [
-    "Route121_SafariZoneEntrance"
+    "Route121_SafariZoneEntrance",
+    "SafariZone_SpecialArea"
   ],
   "gMapGroup_Dungeons": [
+    "OldaleRuinsInsideF1",
+    "OldaleRuinsInsideBF1",
+    "OldaleRuinsInsideBF2",
+    "OldaleRuinsLegendaryRoom",
     "MeteorFalls_1F_1R",
     "MeteorFalls_1F_2R",
     "MeteorFalls_B1F_1R",
@@ -359,6 +377,9 @@
     "SeafloorCavern_Room9",
     "CaveOfOrigin_Entrance",
     "CaveOfOrigin_1F",
+    "CaveOfOrigin_UnusedRubySapphireMap1",
+    "CaveOfOrigin_UnusedRubySapphireMap2",
+    "CaveOfOrigin_UnusedRubySapphireMap3",
     "CaveOfOrigin_B1F",
     "VictoryRoad_1F",
     "VictoryRoad_B1F",
@@ -391,6 +412,9 @@
     "SealedChamber_OuterRoom",
     "SealedChamber_InnerRoom",
     "ScorchedSlab",
+    "AquaHideout_UnusedRubyMap1",
+    "AquaHideout_UnusedRubyMap2",
+    "AquaHideout_UnusedRubyMap3",
     "SkyPillar_Entrance",
     "SkyPillar_Outside",
     "SkyPillar_1F",
@@ -421,7 +445,11 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "GraniteCave_SecretRoom1",
+    "MirageTower_SecretRoom",
+    "MirageTower_SecretRoomRegieleki",
+    "ShoalCave_LowTideIceRoom_DragoTomb"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -453,6 +481,12 @@
     "RecordCorner",
     "BattleColosseum_4P",
     "ContestHall",
+    "UnusedContestHall1",
+    "UnusedContestHall2",
+    "UnusedContestHall3",
+    "UnusedContestHall4",
+    "UnusedContestHall5",
+    "UnusedContestHall6",
     "ContestHallBeauty",
     "ContestHallTough",
     "ContestHallCool",
@@ -569,7 +603,13 @@
     "NavelRock_Down10",
     "NavelRock_Down11",
     "NavelRock_Bottom",
-    "TrainerHill_Elevator"
+    "TrainerHill_Elevator",
+    "NewMap1",
+    "MiniSafariCave"
+  ],
+  "gMapGroup_IndoorRoute104Prototype": [
+    "Route104_Prototype",
+    "Route104_PrototypePrettyPetalFlowerShop"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"
@@ -586,8 +626,8 @@
     "Route110_TrickHousePuzzle6",
     "Route110_TrickHousePuzzle7",
     "Route110_TrickHousePuzzle8",
-    "Route110_SeasideCyclingRoadSouthEntrance",
-    "Route110_SeasideCyclingRoadNorthEntrance"
+    "Route110_SeasideCyclingRoadNorthEntrance",
+    "Route110_SeasideCyclingRoadSouthEntrance"
   ],
   "gMapGroup_IndoorRoute113": [
     "Route113_GlassWorkshop"
@@ -602,72 +642,5 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
-  ],
-  "connections_include_order": [
-    "LittlerootTown",
-    "OldaleTown",
-    "DewfordTown",
-    "LavaridgeTown",
-    "FallarborTown",
-    "VerdanturfTown",
-    "PacifidlogTown",
-    "PetalburgCity",
-    "SlateportCity",
-    "MauvilleCity",
-    "RustboroCity",
-    "FortreeCity",
-    "LilycoveCity",
-    "MossdeepCity",
-    "SootopolisCity",
-    "EverGrandeCity",
-    "Route101",
-    "Route102",
-    "Route103",
-    "Route104",
-    "Route105",
-    "Route106",
-    "Route107",
-    "Route108",
-    "Route109",
-    "Route110",
-    "Route111",
-    "Route112",
-    "Route113",
-    "Route114",
-    "Route115",
-    "Route116",
-    "Route117",
-    "Route118",
-    "Route119",
-    "Route120",
-    "Route121",
-    "Route122",
-    "Route123",
-    "Route124",
-    "Route125",
-    "Route126",
-    "Route127",
-    "Route128",
-    "Route129",
-    "Route130",
-    "Route131",
-    "Route132",
-    "Route133",
-    "Route134",
-    "Underwater_Route105",
-    "Underwater_Route124",
-    "Underwater_Route125",
-    "Underwater_Route126",
-    "Underwater_Route127",
-    "Underwater_Route128",
-    "Underwater_Route129",
-    "SafariZone_Northwest",
-    "SafariZone_North",
-    "SafariZone_Southwest",
-    "SafariZone_South",
-    "SafariZone_Northeast",
-    "SafariZone_Southeast",
-    "BattleFrontier_OutsideWest",
-    "BattleFrontier_OutsideEast"
   ]
 }

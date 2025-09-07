@@ -1,0 +1,53 @@
+raw `
+MagmaHideout_2F_1R_MapScripts::
+	.byte 0
+
+MagmaHideout_2F_1R_EventScript_Grunt14::
+	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_14, MagmaHideout_2F_1R_Text_Grunt14Intro, MagmaHideout_2F_1R_Text_Grunt14Defeat
+	msgbox MagmaHideout_2F_1R_Text_Grunt14PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MagmaHideout_2F_1R_EventScript_Grunt3::
+	msgbox MagmaHideout_2F_1R_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MagmaHideout_2F_1R_EventScript_Grunt4::
+	msgbox MagmaHideout_2F_1R_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MagmaHideout_2F_1R_EventScript_Grunt5::
+	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_5, MagmaHideout_2F_1R_Text_Grunt5Intro, MagmaHideout_2F_1R_Text_Grunt5Defeat
+	msgbox MagmaHideout_2F_1R_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MagmaHideout_2F_1R_Text_Grunt14Intro:
+	.string "Objetivo en mira.\n"
+	.string "Protoolo de ataque activado.$"
+
+MagmaHideout_2F_1R_Text_Grunt14Defeat:
+	.string "N-no… Maxie…$"
+
+MagmaHideout_2F_1R_Text_Grunt14PostBattle:
+	.string "He fracasado.\n"
+	.string "En alejarte a tí, y en alejar a\lesos de la División Delta.$"
+
+MagmaHideout_2F_1R_Text_Grunt3PostBattle:
+	.string "¡Lo logramos! ¡Estas dos!\n¡Las capturamos!\p"
+	.string "¿Obtendremos algún aumento…?$"
+
+MagmaHideout_2F_1R_Text_Grunt4PostBattle:
+	.string "Ya no tengo Pokémon.\p"
+	.string "¿Qué hacemos cuando dejen de\n"
+	.string "hacerse las derrotadas?$"
+
+MagmaHideout_2F_1R_Text_Grunt5Intro:
+	.string "¡No voy a dejarte pasar!\n"
+	.string "¡Te derrotaré!$"
+
+MagmaHideout_2F_1R_Text_Grunt5Defeat:
+	.string "Em…$"
+
+MagmaHideout_2F_1R_Text_Grunt5PostBattle:
+	.string "Bueno, está bien… Te dejo…$"
+
+`

@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE112",
-      "offset": 60,
+      "offset": 59,
       "direction": "down"
     },
     {
@@ -214,8 +214,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 7,
-      "y": 6,
+      "x": 10,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
       "movement_range_x": 1,
@@ -227,8 +227,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 7,
-      "y": 13,
+      "x": 10,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
       "movement_range_x": 1,
@@ -450,8 +450,8 @@
       "x": 22,
       "y": 5,
       "elevation": 3,
-      "item": "ITEM_TM_DOUBLE_TEAM",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM"
+      "item": "ITEM_TM32",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_TM32"
     },
     {
       "type": "hidden_item",

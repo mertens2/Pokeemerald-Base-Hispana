@@ -1,0 +1,154 @@
+
+text PlayersHouse_2F_Text_ClockIsStopped {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Debería poner en marcha este reloj!")
+		}
+		EN {
+			format("I should set up this clock!")
+		}
+	}
+	
+}
+
+text PlayersHouse_2F_Text_HowDoYouLikeYourRoom {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡{PLAYER}! ¿Te gusta tu nuevo cuarto?\p"
+			"¡Pues recuerda que debes quitar tus objetos de la PC!")
+		}
+		EN {
+			format("{PLAYER}! Do you like your new room?\p"
+			"Don't forget to take out your Potion!")
+		}
+	}
+	
+}
+
+
+text Common_Text_LookCloserAtMap {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("La hermosa Hoenn.")
+		}
+		EN {
+			format("The beautiful region of Hoenn.")
+		}
+	}
+	
+}
+
+text PlayersHouse_2F_Text_ItsAGameCube {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Es una Nintendo GameCube.\p"
+			"Una Game Boy Advance está\n"
+			"conectada con Pokémon Box RZ.")
+		}
+		EN {
+			format("A Nintendo GameCube.\p"
+			"A Game Boy Advance is connected\n"
+			"to Pokémon Box RS.")
+		}
+	}	
+}
+
+raw `
+.set LOCALID_RIVAL, 1
+
+LittlerootTown_BrendansHouse_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_2F_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_BrendansHouse_2F_OnWarp
+	.byte 0
+
+LittlerootTown_BrendansHouse_2F_OnTransition:
+	call_if_lt VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan
+	call_if_ge VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
+	call SecretBase_EventScript_SetDecorationFlags
+	setvar VAR_SECRET_BASE_INITIALIZED, 0
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos::
+	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
+	goto_if_ge VAR_BIRCH_LAB_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_Ret
+	goto LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
+
+LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos::
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_Ret
+	@ Odd that the MaysHouse equivalent was used below instead
+	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	setobjectxyperm LOCALID_RIVAL, 0, 2
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_Ret::
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan::
+	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
+	return
+
+LittlerootTown_BrendansHouse_2F_OnWarp:
+	map_script_2 VAR_SECRET_BASE_INITIALIZED, 0, LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor
+	.2byte 0
+
+LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor::
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, SecretBase_EventScript_InitDecorations
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall::
+	lockall
+	msgbox RivalsHouse_2F_Text_ItsRivalsPokeBall, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_PC::
+	lockall
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC::
+	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
+	special DoPCTurnOnEffect
+	playse SE_PC_ON
+	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
+	special BedroomPC
+	waitstate
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
+	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
+	playse SE_PC_OFF
+	special DoPCTurnOffEffect
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
+	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Notebook::
+	lockall
+	call EventScript_RunningShoesManualTranslated
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_GameCube::
+	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+	end
+
+
+
+`

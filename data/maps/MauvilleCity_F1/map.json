@@ -1,0 +1,62 @@
+{
+  "id": "MAP_MAUVILLE_CITY_F1",
+  "name": "MauvilleCity_F1",
+  "layout": "LAYOUT_MAUVILLE_CITY_F1",
+  "music": "MUS_RUSTBORO",
+  "region_map_section": "MAPSEC_MAUVILLE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE110",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE118",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE117",
+      "offset": 2,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE111",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 16,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_F1",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

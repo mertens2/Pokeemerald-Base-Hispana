@@ -1,0 +1,20 @@
+mapscripts MirageTower_SecretRoom_MapScripts {
+	MAP_SCRIPT_ON_LOAD : MirageTower_SecretRoom_OnLoad
+}
+
+script MirageTower_SecretRoom_OnLoad {
+	if (!flag(FLAG_REGIELEKI_DEFEATED)) {
+		clearflag(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV)
+		setmetatile (5, 2, 0x211, TRUE)
+		setmetatile (5, 1, 0x219, TRUE)
+		special (DrawWholeMapView)
+	}
+	releaseall
+	end
+}
+
+script MirageTower_SecretRoom_Braille {
+	braillemsgbox(ThunderTomb_Braille_Route111)
+	releaseall
+	end
+}

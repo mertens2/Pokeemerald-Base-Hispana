@@ -1,0 +1,493 @@
+const STEEL_OPTION = 0
+const ICE_OPTION = 1
+const FAIRY_OPTION = 2
+const STRONG_OPTION = 3
+const CUTE_OPTION = 4
+const ALL_OPTION = 5
+
+mapscripts LavaridgeTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+		setflag(FLAG_VISITED_LAVARIDGE_TOWN)
+		if (flag(FLAG_WHITEOUT_TO_LAVARIDGE)){
+			clearflag (FLAG_WHITEOUT_TO_LAVARIDGE)
+		}
+		if (flag(FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY)){
+			clearflag (FLAG_HIDE_MT_CHIMNEY_TRAINERS)
+		}
+		
+		if (var(VAR_LAVARIDGE_TOWN_STATE) == 1){
+			setflag (FLAG_HIDE_MAP_NAME_POPUP)
+		}
+	}
+    
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_LAVARIDGE_TOWN_STATE, 1 {
+			lockall
+			fadeoutbgm (0)
+			
+			fadescreen(FADE_TO_WHITE)
+			poryswitch(LANGUAGE){
+				EN {
+					msgbox(format("{TEXT_SPEED 4}{PLAYER} felt something in {ELLA} hand.\p{TEXT_SPEED 8}{ElLa} checked what it was, and…{PAUSE 12}"), MSGBOX_INTERRUPT)
+				}
+				ES {
+					msgbox(format("{TEXT_SPEED 4}{PLAYER} sintió algo en la mano.\p{TEXT_SPEED 8}Miró lo que era, y…{PAUSE 12}"), MSGBOX_INTERRUPT)
+				}
+			}
+			closemessage
+			fadescreen(FADE_FROM_WHITE)
+			giveitem(ITEM_GO_GOGGLES)
+			closemessage
+			poryswitch(LANGUAGE){
+				EN {
+					msgbox(format("For some reason…\nIt felt like you've always had it…"))
+				}
+				ES {
+					msgbox(format("Por alguna razón…\nSe sintió como si siempre las hubieses tenido…"))
+				}
+			}
+			closemessage
+			fadeinbgm (0)
+			setvar(VAR_LAVARIDGE_TOWN_STATE, 2)
+			release
+			return
+		}
+    ]
+}
+
+
+
+script LavaridgeTown_EventScript_EggWoman {
+	lock
+	faceplayer
+	if (flag(FLAG_RECEIVED_LAVARIDGE_EGG)){
+		poryswitch(LANGUAGE){
+			EN {
+				msgbox(format("If you want more Pokémon Eggs, the neighboring Daycare is the place to go…!\pThe caretaker is a friend of mine, she'll be so happy to give you any she finds!"))
+			}
+			ES {
+				msgbox(format("Si quieres más Huevos Pokémon para cuidar, habrán en la Guardería a veces…\p¡La cuidadora es mi amiga, seguro te dejará cuidarlo si encuentra alguno!"))
+			}
+		}
+		release
+		end
+	}
+	poryswitch(LANGUAGE){
+		EN {
+			msgbox(format("Hi, young'n. I can see you're a formidable trainer.\pWould you like to take care of one of these Eggs we found at the Daycare? We have one too many…"), MSGBOX_YESNO) 
+		}
+		ES {
+			msgbox(format("Hola, joven… Se ve que eres un{A} Entrenador{A} muy fuerte…\p¿Te gustaría cuidar uno de los Huevos que encontramos en la Guardería?"), MSGBOX_YESNO)
+		}
+	}
+	if (var(VAR_RESULT) == NO){
+		poryswitch(LANGUAGE){
+			EN {
+				msgbox(format("However you want dear… We can manage…"), MSGBOX_YESNO) 
+			}
+			ES {
+				msgbox(format("Como quieras entonces… Podemos cuidarlo mi esposo y yo…"))
+			}
+		}
+		release
+		end
+	}
+	getpartysize
+	if (var(VAR_RESULT)== PARTY_SIZE){
+		poryswitch(LANGUAGE){
+			EN {
+				msgbox(format("Oh… You don't have room…"), MSGBOX_YESNO) 
+			}
+			ES {
+				msgbox(format("Oh… No tienes espacio…"))
+			}
+		}
+		release
+		end
+	}
+	poryswitch(LANGUAGE){
+		EN {
+			msgbox(format("Hmmm… I do wonder…\pWhat kind of Pokémon do you like?"), MSGBOX_YESNO) 
+		}
+		ES {
+			msgbox(format("Me pregunto…\p¿Qué Pokémon te gustan más?"))
+		}
+	}
+	random(100)
+	if (var(VAR_RESULT) < 14){
+		setflag(FLAG_SHINY_CREATION)
+	}
+	else {
+		setflag(FLAG_NO_SHINIES)
+	}
+	poryswitch(LANGUAGE){
+		EN {
+			dynmultichoice(25, 4, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Resilient", "Cold", "Magical", "Strong", "Cute", "Any and All!")
+			}
+		ES {
+			dynmultichoice(25, 4, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Resistentes", "Fríos", "Mágicos", "Fuertes", "Lindos", "¡Todos!")
+		}
+	}
+	if (var(VAR_RESULT) == ALL_OPTION){
+		random(6)
+	}
+	//especies posibles:
+	//resistentes: meowth galar, pawniard (espadasagrada), honedge, ferroseed, munchlax, beldum, bonsly
+	//frios: 	   darumaka galar (flarembestida), vulpix alola, snom, spheal, vanillite, smoochum(espealgo), snover
+	//magicos: 	   igglybuff, cleffa, swirlix(espealgo), spritsee(espealgo), asurill, togepi, mime jr
+	//fuertes: 	   riolu, tyrogue, elekid (mov esp: pikaturbo), magby(mov esp: flarembestida), pichu (mov esp: salpikasurf), munchlax, toxel
+	//lindos: 	   pichu (salpikasurf), wynaut, budew, chingling, happiny, mantyke, togepi
+	switch(var(VAR_RESULT)){
+		case STEEL_OPTION:
+			random(7)
+			switch(var(VAR_RESULT)){
+				case 0:
+					giveegg(SPECIES_MEOWTH_GALARIAN)	
+				break
+				case 1:
+					giveegg(SPECIES_PAWNIARD)
+					setmonmove(8, 1,  MOVE_SACRED_SWORD)
+				break
+				case 2:
+					giveegg(SPECIES_HONEDGE)	
+				break
+				case 3:
+					giveegg(SPECIES_FERROSEED)
+				break
+				case 4:
+					giveegg(SPECIES_MUNCHLAX)	
+				break
+				case 5:
+					giveegg(SPECIES_BELDUM)
+				break
+				case 6:
+					giveegg(SPECIES_BONSLY)					
+				break
+			}
+			setmonmove(8, 0,MOVE_SHIFT_GEAR)
+		break
+		case ICE_OPTION:
+			random(7)
+			
+			switch(var(VAR_RESULT)){
+				case 0:
+					giveegg(SPECIES_DARUMAKA_GALARIAN)
+					setmonmove(8, 1,  MOVE_SIZZLY_SLIDE)					
+				break
+				case 1:
+					giveegg(SPECIES_VULPIX_ALOLAN)	
+				break
+				case 2:
+					giveegg(SPECIES_SNOM)	
+				break
+				case 3:
+					giveegg(SPECIES_SPHEAL)
+				break
+				case 4:
+					giveegg(SPECIES_VANILLITE)	
+				break
+				case 5:
+					giveegg(SPECIES_SMOOCHUM)
+					setmonmove(8, 1,  MOVE_GLITZY_GLOW)
+				break
+				case 6:
+					giveegg(SPECIES_SNOVER)	
+				break
+			}
+			setmonmove(8, 0,MOVE_FREEZY_FROST)
+		break
+		case FAIRY_OPTION:
+			random(7)
+			switch(var(VAR_RESULT)){
+				case 0:
+					giveegg(SPECIES_IGGLYBUFF)	
+				break
+				case 1:
+					giveegg(SPECIES_CLEFFA)
+				break
+				case 2:
+					giveegg(SPECIES_SWIRLIX)
+					setmonmove(8, 1,  MOVE_GLITZY_GLOW)
+				break
+				case 3:
+					giveegg(SPECIES_SPRITZEE)
+					setmonmove(8, 1,  MOVE_GLITZY_GLOW)
+				break
+				case 4:
+					giveegg(SPECIES_AZURILL)
+				break
+				case 5:
+					giveegg(SPECIES_TOGEPI)
+				break
+				case 6:
+					giveegg(SPECIES_MIME_JR)
+				break
+			}
+			setmonmove(8, 0,MOVE_SPARKLY_SWIRL)
+			break
+		case STRONG_OPTION:
+			random(7)
+			switch (var(VAR_RESULT)){
+				case 0:
+					giveegg(SPECIES_RIOLU)
+				break
+				case 1:
+					giveegg(SPECIES_TYROGUE)
+				break
+				case 2:
+					giveegg(SPECIES_ELEKID)
+					setmonmove(8, 1,  MOVE_ZIPPY_ZAP)
+				break
+				case 3:
+					giveegg(SPECIES_MAGBY)
+					setmonmove(8, 1,  MOVE_SIZZLY_SLIDE)
+				break
+				case 4:
+					giveegg(SPECIES_PICHU)
+					setmonmove(8, 1,  MOVE_SPLISHY_SPLASH)
+				break
+				case 5:
+					giveegg(SPECIES_MUNCHLAX)
+				break
+				case 6:
+					giveegg(SPECIES_TOXEL)
+				break
+			}
+			setmonmove(8, 0,MOVE_NO_RETREAT)
+			break
+		case CUTE_OPTION:
+			random(7)
+			switch(var(VAR_RESULT)){
+				case 0:
+					giveegg(SPECIES_PICHU)
+					setmonmove(8, 1,  MOVE_SPLISHY_SPLASH)
+				break
+				case 1:
+					giveegg(SPECIES_WYNAUT)
+					setmonmove(8, 1,MOVE_COPYCAT)
+				break
+				case 2:
+					giveegg(SPECIES_BUDEW)
+				break
+				case 3:
+					giveegg(SPECIES_CHINGLING)
+					// setmonmove(8, 1,MOVE_A)					
+				break
+				case 4:
+					giveegg(SPECIES_HAPPINY)	
+				break
+				case 5:
+					giveegg(SPECIES_MANTYKE)	
+				break
+				case 6:
+					giveegg(SPECIES_TOGEPI)	
+				break
+			}
+			random(4)
+			switch(var(VAR_RESULT)){
+				case 0:
+					setmonmove(8, 0,MOVE_BOUNCY_BUBBLE)	
+				break
+				case 1:
+					setmonmove(8, 0,MOVE_BADDY_BAD)
+				break
+				case 2:
+					setmonmove(8, 0,MOVE_GLITZY_GLOW)
+				break
+				case 3:
+					setmonmove(8, 0,MOVE_SAPPY_SEED)
+				break
+			}
+		break
+	}
+	setflag(FLAG_RECEIVED_LAVARIDGE_EGG)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("¡{PLAYER} recibió el Huevo Extraño!"))
+	waitfanfare
+	clearflag(FLAG_SHINY_CREATION)
+	clearflag(FLAG_NO_SHINIES)
+	msgbox(format("¡Cuida bien de él, joven!"))
+	release
+}
+
+
+raw `
+
+LavaridgeTown_EventScript_HotSpringsTrigger::
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_eq VAR_RESULT, DIR_SOUTH, LavaridgeTown_EventScript_EnteredHotSprings
+	end
+
+LavaridgeTown_EventScript_EnteredHotSprings::
+	incrementgamestat GAME_STAT_ENTERED_HOT_SPRINGS
+	end
+
+LavaridgeTown_EventScript_ExpertM::
+	msgbox LavaridgeTown_Text_HotSpringsNeverRunDry, MSGBOX_NPC
+	end
+
+LavaridgeTown_EventScript_OldMan::
+	msgbox LavaridgeTown_Text_PokemonNippedBackside, MSGBOX_SIGN
+	setmonmove 8, 0, MOVE_BADDY_BAD
+	end
+
+LavaridgeTown_EventScript_Twin::
+	msgbox LavaridgeTown_Text_BatheInHotSpringsEveryDay, MSGBOX_NPC
+	end
+
+LavaridgeTown_EventScript_HotSpringsOldWoman1::
+	msgbox LavaridgeTown_Text_IfPokemonInHotSprings, MSGBOX_NPC
+	end
+
+LavaridgeTown_EventScript_HotSpringsOldWoman2::
+	msgbox LavaridgeTown_Text_HotSpringsClaims, MSGBOX_NPC
+	end
+
+LavaridgeTown_EventScript_ExpertF::
+	msgbox LavaridgeTown_Text_OhYouLikeHotSprings, MSGBOX_NPC
+	end
+
+LavaridgeTown_EventScript_TownSign::
+	msgbox LavaridgeTown_Text_TownSign, MSGBOX_SIGN
+	end
+
+LavaridgeTown_EventScript_GymSign::
+	msgbox LavaridgeTown_Text_GymSign, MSGBOX_SIGN
+	end
+
+LavaridgeTown_EventScript_HerbShopSign::
+	msgbox LavaridgeTown_Text_HerbShopSign, MSGBOX_SIGN
+	end
+
+LavaridgeTown_Text_MayNiceBadgesTakeThis:
+	.string "MAY: {PLAYER}{KUN}! Long time no see!\p"
+	.string "Oh? While I visited the hot springs,\n"
+	.string "you got the LAVARIDGE GYM BADGE.\p"
+	.string "You must have collected\n"
+	.string "good POKéMON…\l"
+	.string "No, I believe you raised some.\p"
+	.string "I guess it would be okay for you to\n"
+	.string "have this.$"
+
+LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
+	.string "MAY: With those GO-GOGGLES, you'll\n"
+	.string "have no trouble getting through the\l"
+	.string "desert near ROUTE 111.\p"
+	.string "But, wow, {PLAYER}{KUN}…\n"
+	.string "Challenging GYMS…\p"
+	.string "You're trying hard because you don't\n"
+	.string "want to lose to me, I bet!\p"
+	.string "{PLAYER}{KUN}, I think I should challenge\n"
+	.string "your dad in PETALBURG GYM.\p"
+	.string "See you again!$"
+
+LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
+	.string "BRENDAN: {PLAYER}, hey, it's been a while.\n"
+	.string "How's it going?\p"
+	.string "Hmm…\n"
+	.string "That's a decent collection of BADGES.\p"
+	.string "All right, then.\n"
+	.string "You may as well have this.$"
+
+LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
+	.string "BRENDAN: Keep those with you if you're\n"
+	.string "planning on going into that desert near\l"
+	.string "ROUTE 111.\p"
+	.string "There should be some POKéMON that\n"
+	.string "are exclusively desert-dwellers.\l"
+	.string "You might look around for those.\p"
+	.string "As for me…\n"
+	.string "I'm considering challenging NORMAN,\l"
+	.string "the GYM LEADER of PETALBURG.\p"
+	.string "Unlike you, {PLAYER}, your dad looks like\n"
+	.string "he really is tough.\p"
+	.string "See you around!$"
+
+LavaridgeTown_Text_HaveEggWillYouTakeIt:
+	.string "I have here an EGG.\p"
+	.string "I'd hoped to hatch it by covering it in\n"
+	.string "hot sand by the hot springs.\l"
+	.string "But that doesn't seem to be enough…\p"
+	.string "I've heard it would be best if it were\n"
+	.string "kept together with POKéMON and\l"
+	.string "carried about.\p"
+	.string "You are a TRAINER, yes?\n"
+	.string "And your POKéMON radiate vitality.\p"
+	.string "So, what say you?\n"
+	.string "Will you take this EGG to hatch?$"
+
+LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg:
+	.string "Good! I hope you'll walk plenty with\n"
+	.string "this here EGG!$"
+
+LavaridgeTown_Text_ReceivedTheEgg:
+	.string "{PLAYER} received the EGG.$"
+
+LavaridgeTown_Text_NoRoomForThisEgg:
+	.string "Oh? You've too many POKéMON.\n"
+	.string "There's no room for this EGG…$"
+
+LavaridgeTown_Text_AsYouWishThen:
+	.string "As you wish, then…\p"
+	.string "If you have a change of heart about\n"
+	.string "hatching this EGG, I will be here.$"
+
+LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare:
+	.string "Every so often, an EGG will be found at\n"
+	.string "the POKéMON DAY CARE.\p"
+	.string "Or at least that's how the rumor goes.$"
+
+LavaridgeTown_Text_HotSpringsNeverRunDry:
+	.string "We draw as much hot water as we need,\n"
+	.string "and yet the hot springs never run dry.\p"
+	.string "Isn't it magical?\p"
+	.string "These hot springs appear near active\n"
+	.string "volcanoes. Veins of water under the\l"
+	.string "ground are heated by magma to well up\l"
+	.string "as hot springs.$"
+
+LavaridgeTown_Text_PokemonNippedBackside:
+	.string "Being buried in this hot sand is…\n"
+	.string "Sigh…\p"
+	.string "So warm and heavenly…\p"
+	.string "Eh? Gyaah! Ouch!\p"
+	.string "A POKéMON nipped my backside!$"
+
+LavaridgeTown_Text_OhYouLikeHotSprings:
+	.string "Oh, you like hot springs, do you?\p"
+	.string "That's surprising for one as young\n"
+	.string "as you.$"
+
+LavaridgeTown_Text_BatheInHotSpringsEveryDay:
+	.string "I bathe in the hot springs every day.\p"
+	.string "I want to become a beautiful and strong\n"
+	.string "GYM LEADER like FLANNERY.$"
+
+LavaridgeTown_Text_IfPokemonInHotSprings:
+	.string "If people put POKéMON in hot springs,\n"
+	.string "it might be seriously strange.\p"
+	.string "Why, it might be an electric bath, or\n"
+	.string "a bubble bath, or even a lava bath…$"
+
+LavaridgeTown_Text_HotSpringsClaims:
+	.string "They're claiming that these hot springs\n"
+	.string "are good for calming nervous tension,\l"
+	.string "relieving aching muscles, solving\l"
+	.string "romantic problems, and attracting\l"
+	.string "money…$"
+
+LavaridgeTown_Text_TownSign:
+	.string "LAVARIDGE TOWN\p"
+	.string "“POKéMON CENTER HOT SPRINGS\n"
+	.string "An excellent place for relaxing!”$"
+
+LavaridgeTown_Text_GymSign:
+	.string "LAVARIDGE TOWN POKéMON GYM\n"
+	.string "LEADER: FLANNERY\l"
+	.string "“One with a fiery passion that burns!”$"
+
+LavaridgeTown_Text_HerbShopSign:
+	.string "POKéMON HERB SHOP\n"
+	.string "“Bitter taste--better cure!”$"
+
+`

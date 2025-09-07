@@ -1,0 +1,531 @@
+
+text RustboroCity_Gym_Text_RoxannePreRematch {
+	format("ROXANNE: I'm so glad to see you again.\n"
+	 "I'm ROXANNE, the GYM LEADER here.\p"
+	 "I'm sure we've both experienced many\n"
+	 "battles since we last met.\p"
+	 "I would like to see how much better\n"
+	 "we've become. Let us battle!")
+}
+
+text RustboroCity_Gym_Text_RoxanneRematchDefeat {
+	format("Grr…\n"
+	 "Again, I have lost…")
+}
+
+text RustboroCity_Gym_Text_RoxannePostRematch {
+	format("ROXANNE: I still have much to learn\n"
+	 "when it comes to battling POKéMON.\p"
+	 "That awareness makes me love battling\n"
+	 "all that much more!")
+}
+
+text RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons {
+	format("ROXANNE: I'm so glad to see you again.\n"
+	 "I'm ROXANNE, the GYM LEADER here.\p"
+	 "I'm sure we've both experienced many\n"
+	 "battles since we last met.\p"
+	 "I would like to see how much better\n"
+	 "we've become…\p"
+	 "Oh, no…\n"
+	 "You only have one POKéMON with you?\p"
+	 "Please return with at least one more\n"
+	 "POKéMON.")
+}
+
+
+text RustboroCity_Gym_WaitYouCant {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Alto! ¡No puedes pasar así!")
+		}
+		EN {
+			format("Wait! You can't go like this")
+		}
+	}
+}
+text RustboroCity_Gym_ForThisGym {
+	poryswitch(LANGUAGE){
+		ES {
+			format("En este Gimnasio, está prohibido llevar más de 3 Pokémon.\p"
+			 "Además, no podrás usar el {COLOR RED}Sistema de Almacenamiento Portátil{COLOR DARK_GRAY} dentro del Gimnasio.\p"
+			 "¡Pero cada Gimnasio es diferente!")
+		}
+		EN {
+			format("In this Gym, it's forbidden to use more than 3 Pokémon in battle.\p"
+			 "In addition, the {COLOR RED}Portable PC{COLOR DARK_GRAY} is also turned off.\p"
+			 "But each Gym has it's set of rules!")
+		}
+	}	
+}
+
+text RustboroCity_Gym_Text_GymGuidePostVictory {
+	poryswitch(LANGUAGE){
+		EN {
+			format("What an amazing battle!")
+		}
+		ES {
+			format("¡Esa batalla fue increíble!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_JoshIntro {
+	poryswitch(LANGUAGE){
+		EN {
+			format("I'll show you what power looks like!")
+		}
+		ES {
+			format("¡Te mostraré un gran poder!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_JoshDefeat {
+	format("…")
+}
+
+text RustboroCity_Gym_Text_JoshPostBattle {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Such a long way to go!")
+		}
+		ES {
+			format("¡Aún me falta mucho!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_TommyIntro {
+	poryswitch(LANGUAGE){
+		EN {
+			format("If you can't beat me,\n"
+			 "You'll never beat Roxanne!")
+		}
+		ES {
+			format("Si no me puedes vencer,\n"
+			 "¡Olvídate de ganarle a Roxanne!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_TommyDefeat {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Wow! Some potential you got there!")
+		}
+		ES {
+			format("¡Wow! ¡Tienes potencial!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_TommyPostBattle {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Roxanne's power surpasses me by miles!")
+		}
+		ES {
+			format("Roxanne sobrepasa mi poder por kilómetros.\p"
+			 "¡Mejor ten cuidado!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_MarcIntro {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Did you know?\p"
+			 "Using Camouflage here turns you into a Rock-Type!")
+		}
+		ES {
+			format("¿Sabías qué?\p"
+			 "¡Usar Camuflaje en este Gimnasio te convierte en Tipo Roca!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_MarcDefeat {
+	poryswitch(LANGUAGE){
+		EN {
+			format("Did you know?\n"
+			 "Now I'll have to clean the house without my wifey's help!")
+		}
+		ES {
+			format("¿Sabías qué?\n"
+			 "¡Ahora tendré que limpiar la casa sin ayuda de mi mujer!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_MarcPostBattle {
+	poryswitch(LANGUAGE){
+		EN {
+			format("I shouldn't have told my wifey I'd do all the housecleaning if I lost!")
+		}
+		ES {
+	
+			format("¡No tuve que apostar hacer quehaceres con mi mujer si mantenía una racha!")
+		}
+	}
+
+}
+
+text RustboroCity_Gym_Text_RoxanneIntro {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Hola, soy Roxanne, la {COLOR RED}Líder del Gimnasio{COLOR DARK_GRAY} de esta ciudad.\NPrepárate...\p"
+	 "¡Vas a enfrentarte ahora, a la chica prodigio de Ciudad Rustboro!")
+		}
+		EN {
+			format("Hi, I'm Roxanne, the {COLOR RED}Gym Leader{COLOR DARK_GRAY} of this city.\NGet ready, now...\p"
+			 "You're about to face the prodigy of Rustboro City!")
+		}
+	}
+	
+}
+
+text RustboroCity_Gym_Text_RoxanneDefeat {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Así que…\n"
+			 "Perdí…\p"
+			 "Ni años de estudio de los combates\N"
+			 "pude ganarte.\p"
+			 "¡Acepto mi derrota humildemente!\N"
+			 "¡Eres increíble, {PLAYER}!")
+		}
+		EN {
+			format("So…\n"
+			 "I lost…\p"
+			 "Not even with my years of study\n"
+			 "of battles I could win.\pI humbly accept my defeat!\n"
+			 "You're one of a kind, {PLAYER}!")
+		}
+	}
+	
+}
+
+text RustboroCity_Gym_Text_ReceivedStoneBadge {
+	poryswitch(LANGUAGE){
+		ES {
+			format("{PLAYER} recibió la\n"
+	 "{COLOR RED}Medalla Piedra{COLOR DARK_GRAY} de Roxanne.")
+		}
+		EN {
+			format("{PLAYER} was given the\n"
+	 "{COLOR RED}Stone Badge{COLOR DARK_GRAY} by Roxanne.")
+		}
+	}
+	
+}
+
+text RustboroCity_Gym_Text_StoneBadgeInfoTakeThis {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Esa es una Medalla de Gimnasio,\n"
+			"aunque seguro ya las conoces.\p"
+			"Por favor, toma esto como premio.")
+		}
+		EN {
+			format("That's a Gym Badge, but you already knew that.\p"
+			"Please take this as a reward.")
+		}
+	}
+	
+}
+
+text RustboroCity_Gym_Text_ExplainRockTomb {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Es la {COLOR BLUE}Máquina Técnica 39{COLOR DARK_GRAY}, Antiaéreo!\n"
+			 "Antiaéreo es un movimiento tipo Roca\l"
+			 "que causa que el rival {COLOR BLUE}pierda el tipo\l"
+			 "Volador hasta que sea reemplazado{COLOR DARK_GRAY}.\p"
+			 "¡Recuerda que las MTs no se gastan!")
+		}
+		EN {
+			format("That's {COLOR BLUE}TM 39{COLOR DARK_GRAY}, Smack Down!\n"
+			 "Smack Down is a Rock-Type move that {COLOR BLUE}grounds any Pokémon that isn't in contact with the floor until it's switched out{COLOR DARK_GRAY}.\p"
+			 "Remember TMs are infinite!")
+		}
+	}
+	
+}
+
+text RustboroCity_Gym_Text_RoxannePostBattle {
+	format("Te recomendaría visitar otros\n"
+	 "Gimnasios, y ganar.\p"
+	 "Con tu poder, lograrás todo.")
+}
+
+text RustboroCity_Gym_Text_GymStatue {
+	format("Gimnasio Pokémon Rustboro\pVencedores del Gimnasio:\n"
+	 "{RIVAL}\n"
+	 "Leaf")
+}
+
+text RustboroCity_Gym_Text_GymStatueCertified {
+	format("Gimnasio Pokémon Rustboro\pVencedores del Gimnasio:\n"
+	 "{RIVAL}\n"
+	 "Leaf\l"
+	 "{PLAYER}")
+}
+
+text RustboroCity_Gym_Text_RoxanneRegisterCall {
+	format("… … … … … …\n"
+	 "… … … … … ¡BIP!\p"
+	 "Ah, hola, ¿{PLAYER}?\n"
+	 "Soy Roxanne, del Gimnasio Rustboro.\p"
+	 "Escuché de Brawly que eres más fuerte.\p"
+	 "Te prometo que mejoraré mi Gimnasio,\n"
+	 "para que puedas volver a enfrentame.\p"
+	 "¡Espero te emocione como a mí!\p"
+	 "… … … … … …\n"
+	 "… … … … … ¡Click!")
+}
+
+text RustboroCity_Gym_Text_RegisteredRoxanne {
+	format("Roxanne registrada.")
+}
+
+raw `
+.set LOCALID_HINT_GUY, 4
+RustboroCity_Gym_MapScripts::
+	.byte 0
+
+RustboroCity_Gym_EventScript_Roxanne::
+	namebox Roxanne
+	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
+	hidenamebox
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
+	checkitem ITEM_TM39
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_Gym_EventScript_GiveRockTomb
+	namebox Roxanne
+	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+RustboroCity_Gym_Trigger_Nada::
+	setflag FLAG_TEMP_1
+	release
+	end
+RustboroCity_Gym_Trigger_Clear_Down::
+	clearflag FLAG_TEMP_1
+	setflag FLAG_ENABLED_PC
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_Gym_PlayerWalkDown
+	waitmovement 0
+	release
+	end
+RustboroCity_Gym_Trigger_Clear_Left::
+	clearflag FLAG_TEMP_1
+	setflag FLAG_ENABLED_PC
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_Gym_PlayerWalkLeft
+	waitmovement 0
+	release
+	end
+RustboroCity_Gym_Trigger_Clear_Right::
+	clearflag FLAG_TEMP_1
+	setflag FLAG_ENABLED_PC
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_Gym_PlayerWalkRight1
+	waitmovement 0
+	release
+	end
+RustboroCity_Gym_Trigger_Up1::
+	goto_if_set FLAG_TEMP_1, RustboroCity_Gym_Trigger_Clear_Down
+	clearflag FLAG_ENABLED_PC
+	getpartysize
+	goto_if_lt VAR_RESULT, 4, RustboroCity_Gym_Trigger_Nada
+	lockall
+	playse SE_PIN
+	applymovement LOCALID_HINT_GUY, Common_Movement_FaceUp
+	applymovement LOCALID_HINT_GUY, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox RustboroCity_Gym_WaitYouCant
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_Gym_PlayerWalkDown
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	setflag FLAG_ENABLED_PC
+	goto RustboroCity_Gym_EventScript_GymGuide2
+	end
+	
+RustboroCity_Gym_PlayerWalkDown:
+	walk_down
+	step_end
+RustboroCity_Gym_PlayerWalkRight:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+RustboroCity_Gym_PlayerWalkRight1:
+	walk_right
+	step_end
+RustboroCity_Gym_PlayerWalkLeft:
+	walk_left
+	step_end
+
+
+RustboroCity_Gym_Trigger_Left::
+	goto_if_set FLAG_TEMP_1, RustboroCity_Gym_Trigger_Clear_Right
+	clearflag FLAG_ENABLED_PC
+	getpartysize
+	goto_if_lt VAR_RESULT, 4, RustboroCity_Gym_Trigger_Nada
+	lockall
+	applymovement LOCALID_HINT_GUY, Common_Movement_FaceLeft
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_HINT_GUY, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox RustboroCity_Gym_WaitYouCant
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_Gym_PlayerWalkRight
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	setflag FLAG_ENABLED_PC
+	goto RustboroCity_Gym_EventScript_GymGuide2
+	end 
+
+RustboroCity_Gym_Trigger_Right::
+	goto_if_set FLAG_TEMP_1, RustboroCity_Gym_Trigger_Clear_Left
+	clearflag FLAG_ENABLED_PC
+	getpartysize
+	goto_if_lt VAR_RESULT, 4, RustboroCity_Gym_Trigger_Nada
+	lockall
+	applymovement LOCALID_HINT_GUY, Common_Movement_FaceRight
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_HINT_GUY, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox RustboroCity_Gym_WaitYouCant
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_Gym_PlayerWalkLeft
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	setflag FLAG_ENABLED_PC
+	goto RustboroCity_Gym_EventScript_GymGuide2
+	end
+
+
+RustboroCity_Gym_EventScript_RoxanneDefeated::
+	setflag FLAG_ENABLED_PC
+	message RustboroCity_Gym_Text_ReceivedStoneBadge
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_RUSTBORO_GYM
+	setflag FLAG_BADGE01_GET
+	setvar VAR_RUSTBORO_CITY_STATE, 1
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	setvar VAR_0x8008, 1
+	call Common_EventScript_SetGymTrainers
+	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	goto RustboroCity_Gym_EventScript_GiveRockTomb
+	end
+
+RustboroCity_Gym_EventScript_GiveRockTomb::
+	giveitem ITEM_TM39
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_Gym_EventScript_RoxanneRematch::
+	trainerbattle_rematch_double TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
+	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	end
+
+RustboroCity_Gym_EventScript_Josh::
+	trainerbattle_single TRAINER_JOSH, RustboroCity_Gym_Text_JoshIntro, RustboroCity_Gym_Text_JoshDefeat
+	msgbox RustboroCity_Gym_Text_JoshPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+RustboroCity_Gym_EventScript_Tommy::
+	trainerbattle_single TRAINER_TOMMY, RustboroCity_Gym_Text_TommyIntro, RustboroCity_Gym_Text_TommyDefeat
+	msgbox RustboroCity_Gym_Text_TommyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+RustboroCity_Gym_EventScript_Marc::
+	trainerbattle_single TRAINER_MARC, RustboroCity_Gym_Text_MarcIntro, RustboroCity_Gym_Text_MarcDefeat
+	msgbox RustboroCity_Gym_Text_MarcPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+RustboroCity_Gym_EventScript_GymGuide::
+	lockall
+	faceplayer
+RustboroCity_Gym_EventScript_GymGuide2::
+	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
+	msgbox RustboroCity_Gym_ForThisGym
+	applymovement LOCALID_HINT_GUY, Common_Movement_FaceOriginalDirection
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_GymGuidePostVictory::
+	msgbox RustboroCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_Gym_EventScript_LeftGymStatue::
+	lockall
+	goto_if_set FLAG_BADGE01_GET, RustboroCity_Gym_EventScript_GymStatueCertified
+	goto RustboroCity_Gym_EventScript_GymStatue
+	end
+
+RustboroCity_Gym_EventScript_RightGymStatue::
+	lockall
+	goto_if_set FLAG_BADGE01_GET, RustboroCity_Gym_EventScript_GymStatueCertified
+	goto RustboroCity_Gym_EventScript_GymStatue
+	end
+
+RustboroCity_Gym_EventScript_GymStatueCertified::
+	msgbox RustboroCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_GymStatue::
+	msgbox RustboroCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_RegisterRoxanne::
+	lockall
+	pokenavcall RustboroCity_Gym_Text_RoxanneRegisterCall
+	waitmessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox RustboroCity_Gym_Text_RegisteredRoxanne, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	setflag FLAG_ENABLE_ROXANNE_MATCH_CALL
+	clearflag FLAG_ENABLE_ROXANNE_FIRST_CALL
+	releaseall
+	end
+
+
+`

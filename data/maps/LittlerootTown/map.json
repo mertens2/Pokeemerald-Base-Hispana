@@ -21,9 +21,8 @@
   ],
   "object_events": [
     {
-      "local_id": "LOCALID_LITTLEROOT_TWIN",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 16,
+      "x": 18,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -36,7 +35,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 12,
+      "x": 14,
       "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -49,7 +48,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 14,
+      "x": 16,
       "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -61,9 +60,8 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_LITTLEROOT_MOM",
       "graphics_id": "OBJ_EVENT_GFX_MOM",
-      "x": 5,
+      "x": 6,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -76,8 +74,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
-      "x": 2,
-      "y": 10,
+      "x": 3,
+      "y": 11,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -89,8 +87,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
-      "x": 11,
-      "y": 10,
+      "x": 13,
+      "y": 11,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -101,9 +99,8 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK"
     },
     {
-      "local_id": "LOCALID_LITTLEROOT_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 13,
+      "x": 15,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -115,9 +112,8 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_RIVAL"
     },
     {
-      "local_id": "LOCALID_LITTLEROOT_BIRCH",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 14,
+      "x": 16,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -131,32 +127,39 @@
   ],
   "warp_events": [
     {
-      "x": 14,
+      "x": 16,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 5,
+      "x": 6,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 7,
-      "y": 16,
+      "x": 8,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_MLMHOUSE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 10,
-      "y": 1,
+      "x": 13,
+      "y": 2,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "0",
@@ -164,8 +167,8 @@
     },
     {
       "type": "trigger",
-      "x": 11,
-      "y": 1,
+      "x": 14,
+      "y": 2,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "0",
@@ -173,8 +176,8 @@
     },
     {
       "type": "trigger",
-      "x": 11,
-      "y": 1,
+      "x": 14,
+      "y": 2,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "1",
@@ -182,7 +185,7 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 11,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -191,7 +194,7 @@
     },
     {
       "type": "trigger",
-      "x": 9,
+      "x": 10,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -200,7 +203,7 @@
     },
     {
       "type": "trigger",
-      "x": 10,
+      "x": 13,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -209,64 +212,62 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 12,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger3"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 2,
-      "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
-      "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger0"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 2,
-      "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
-      "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger1"
     }
   ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 15,
-      "y": 13,
+      "x": 19,
+      "y": 15,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "LittlerootTown_EventScript_TownSign"
     },
     {
       "type": "sign",
-      "x": 6,
-      "y": 17,
+      "x": 7,
+      "y": 24,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "LittlerootTown_EventScript_BirchsLabSign"
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 9,
       "y": 8,
       "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "LittlerootTown_EventScript_BrendansHouseSign"
     },
     {
       "type": "sign",
-      "x": 12,
+      "x": 14,
       "y": 8,
       "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "LittlerootTown_EventScript_MaysHouseSign"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "LittlerootTown_EventScript_MLMSign"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "LittlerootTown_EventScript_TownSign"
     }
   ]
 }

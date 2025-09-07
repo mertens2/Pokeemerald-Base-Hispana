@@ -67,7 +67,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 12,
-      "y": 5,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -80,7 +80,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 13,
-      "y": 5,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -93,7 +93,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 14,
-      "y": 5,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -164,9 +164,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_FOCUS_PUNCH",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM01",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH"
+      "flag": "FLAG_ITEM_ROUTE_115_TM01"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -262,7 +262,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 15,
-      "y": 7,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -274,8 +274,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 10,
-      "y": 7,
+      "x": 11,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -307,7 +307,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
+      "trainer_sight_or_berry_tree_id": "ITEM_PP_MAX",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_115_PP_UP"
     },
@@ -348,7 +348,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "secret_base",

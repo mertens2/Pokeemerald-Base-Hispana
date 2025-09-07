@@ -1,0 +1,766 @@
+
+script PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText {
+	namebox (Aqua)
+	if (var(VAR_EVIL_TEAM_SIDE) < 3) {
+		poryswitch(LANGUAGE) {
+			ES{
+				msgbox(format("Con alguien tan fuerte como tú, ¡Seríamos diez veces más imparables!\pEspero que recapacites... Tienes tiempo, aún hay cosas por hacer en Rustboro…"))
+			}
+			EN{
+				msgbox(format("With someone as strong as you, we'd be unstoppable tenfold!\pYou've got time to come to your senses... After all, we have business left in Rustboro…"))
+			}
+		}
+		return
+	}
+	msgbox(PetalburgWoods_Text_YouveGotSomeNerve)
+	hidenamebox
+	return
+}
+
+script PetalburgWoods_EventScript_GetInvolved {
+	closemessage
+	hidenamebox
+	poryswitch(LANGUAGE) {
+		ES{
+			msgbox(format("¿Quieres involucrarte?"), MSGBOX_YESNO)
+		}
+		EN {
+			msgbox(format("Do you want to get involved?"), MSGBOX_YESNO)
+		}
+	}
+	namebox (Aqua)
+	if ((var(VAR_RESULT) == YES)) {
+		setvar (VAR_EVIL_TEAM_SIDE, 3)
+		msgbox (PetalburgWoods_Text_NoOneCrossesTeamAqua)
+	}
+	else {
+		setvar (VAR_EVIL_TEAM_SIDE, 2)
+		poryswitch(LANGUAGE) {
+			ES{
+				msgbox(format("¡Jojojo!\p¡Parece que nadie va a ayudarte después de todo!"))
+				namebox (EmpleadoDevon)
+				msgbox(format("¿¡PERO QÚE HACES!?\p¡ESTO ES IMPORTANTE!\p¡ATACA, ATACA, ATACA!"))
+				namebox (Player)
+				msgbox(format("{COLOR BLUE}(Parece que no me queda de otra, este loco no me dejará ignorarlo...)\p(Pero... Tampoco parece que el Recluta se olvidará de esto.){COLOR DARK_GRAY}"))
+			}
+			EN{
+				msgbox(format("Hohoho!\pLooks like nobody's saving you after all!"))
+				namebox (EmpleadoDevon)
+				msgbox(format("WHAT ARE YOU DOING!?\pTHIS IS BIG!\pATTACK, ATTACK, ATTACK!"))
+				namebox (Player)
+				msgbox(format("{COLOR BLUE}(Seems like I don't have a choice, this crazy man won't let me ignore him...)\p(But... It seems that Grunt won't forget this anyway.){COLOR DARK_GRAY}"))
+			}
+		}
+		closemessage
+		hidenamebox
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
+		waitmovement (0)
+		applymovement (3, Common_Movement_QuestionMark)
+		waitmovement (0)
+		namebox (Aqua)
+		poryswitch(LANGUAGE) {
+			ES{
+				msgbox(format("¡Pero decídete, niñ{OA}!\p¿Estás con nosotros o no?\p¡Quizá una golpiza te haga decidirte!"))
+			}
+			EN{
+				msgbox(format("Yo! Get it together, kid!\pYou with us or not?\pMaybe a good beatdown will help you decide!"))
+			}
+		}
+	}
+	return
+}
+
+text PetalburgWoods_Text_NotAOneToBeFound {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("No encuentro ni uno...")
+		}
+		EN{
+			format("Not-a one to be found...")
+		}
+	}
+}
+
+text PetalburgWoods_Text_HaveYouSeenShroomish {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¡Hola! ¿Has visto al Pokémon “Shroomish” por aquí?\p"
+		"¡Amo a ese Pokémon!\n¡Oh, y escuché que “Morellul” suele aparecer de noche!")
+		}
+		EN{
+			format("Oh, hiya! Have you seen this “Shroomish” Pokémon?\p"
+		"I love that Pokémon!\nAnd I heard a so-called “Morellul” comes out at night!")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_IWasGoingToAmbushYou {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¿Porqué estás escapando de mí?\n"
+			"¡Ya dame los {COLOR BLUE}Planos{COLOR DARK_GRAY} y déjame terminar\l"
+			"esta misión!")
+		}
+		EN{
+			format("Why are you running away now?\n"
+			"Gimme those stupid {COLOR BLUE}Blueprints{COLOR DARK_GRAY} and lemme finish this assignment!")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_HandOverThosePapers {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¿Así que es eso, eh?\n"
+			"¿La Gran Corporación Devon se arrepintió?\p"
+			"¡No me importa, ya dame esos Planos!")
+		}
+		EN{
+			format("So that's it, eh?\n"
+			"The Great Devon Corp. is backing down?\p"
+			"I don't care! Give me those Blueprints!")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_YouHaveToHelpMe {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¡AAAAAAHHHHH!\p"
+			"¡SIRVE DE ALGO Y AYÚDAME!")
+		}
+		EN{
+			format("AHHHH!\pDO SOMETHING, HELP ME!")
+		}
+	}
+}
+
+	
+
+text PetalburgWoods_Text_NoOneCrossesTeamAqua {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("Ojojojojo, ¿Así que vas a protegerlo,\n"
+			"no? ¡Pues contra el poderoso {COLOR LIGHT_BLUE}{SHADOW BLUE}Equipo Aqua{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} no podrás!")
+		}
+		EN{
+			format("Ohohohoho, so you're his bodyguard, now?\n"
+			"Too bad! 'Cause against the mighty {COLOR LIGHT_BLUE}{SHADOW BLUE}Team Aqua{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} you cannot win!")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_YoureKiddingMe {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¡I-imposible!\n"
+			"¡Sí que pudiste!")
+		}
+		EN{
+			format("I-impossible!\n"
+			"You did win!")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_YouveGotSomeNerve {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¡ARGH!\p"
+			"¡Eres un{A} estúpid{OA} por meterte con el grandioso Equipo Aqua!\p"
+			"Pero no importa, después de todo, no es lo único que el Equipo Aqua necesita de Rustboro………")
+		}
+		EN{
+			format("ARGH!\p"
+			"You're an idiot for meddling with the mighty Team Aqua!\p"
+			"But who gives a darn? There's still business left for us in Rustboro………")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_ThatWasAwfullyClose {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("Fiu…\n"
+			"Eso estuvo demasiado cerca…\l"
+			"¡Pero bueno, gracias de todas formas!\p¡Ten esto!")
+		}
+		EN{
+			format("Ufff…\n"
+			"Awfully close, that was…\l"
+			"But anyway, thanks for that!\pTake this!")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro {
+	"…………………………………"
+}
+
+text PetalburgWoods_Text_ICantBeWastingTime {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¡UN MONENTO, YA SÉ LO QUE QUIEREN!\p"
+			"¡DEBO CUIDARLAS O SERÁN ROBADAS!")
+		}
+		EN{
+			format("WAIT, I KNOW WHAT THEY'RE AFTER!\pI NEED TO PROTECT THEM OR STOLEN, THEY'LL BE!")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_YoureLoadedWithItems {
+	"De alguna forma no tienes espacio."
+}
+
+text PetalburgWoods_Text_GoBugPokemonTeam {
+	"¡AL ESCONDERME EN EL ARBOL,\n"
+	"PUDE ATRAPAR MUCHOS BICHOS!\p"
+	"¡GO, GO, GO!\n"
+	"¡MI MONOTYPE BICHO!"
+}
+
+text PetalburgWoods_Text_ICouldntWin {
+	"Incluso con tantos,\n"
+	"no pude ganar…"
+}
+
+text PetalburgWoods_Text_ImOutOfPokeBalls {
+	"Pokéballs. Necesito."
+}
+
+text PetalburgWoods_Text_InstantlyPopularWithBugPokemon {
+	"Si llevas tus Pokémon al colegio,\n"
+	"¡Te harás muy popular!"
+}
+
+text PetalburgWoods_Text_CantBePopularIfILose {
+	"Pero si pierdo me odiarán."
+}
+
+text PetalburgWoods_Text_PeopleRespectYou {
+	"Si tienes un tipo Bicho grande,\n"
+	"la gente se interesará en ti.\p"
+	"Al menos eso dijo mi papá."
+}
+
+text PetalburgWoods_Text_IWantRematch1 {
+	"¡QUIERO LA REVANCHA!\p"
+	"¡TE DIRÉ CUANDO HAYAN CRECIDO!"
+}
+
+text PetalburgWoods_Text_IWantRematch2 {
+	"¡QUIERO LA REVANCHA!\p"
+	"¡TE DIRÉ CUANDO HAYAN CRECIDO!"
+}
+
+text PetalburgWoods_Text_MyPokemonHaveGrown {
+	"Mis Bichos ahora son grandes.\n"
+	"Todo-digo todas me amarán."
+}
+
+text PetalburgWoods_Text_CantBePopularIfLose {
+	"Mis bichos no fueron lo\n"
+	"suficientemente fuertes para\l"
+	"impresionarte."
+}
+
+text PetalburgWoods_Text_IveBeenTrainingHard {
+	"Los Pokémon fuertes impresionan\n"
+	"a los-las chicas, ¿no?\l"
+	"Entrené mucho para eso."
+}
+
+text PetalburgWoods_Text_StayOutOfTallGrass {
+	"¡Che, vos!\n"
+	"¿Están bien tus Pokes?\p"
+	"Si no es asi, esquivá el pasto."
+}
+
+text PetalburgWoods_Text_HiddenItemsExplanation {
+	"Aveces, hay Pokémon raros\n"
+	"que aparecen al {COLOR RED}encadenar{COLOR DARK_GRAY}\l"
+	"Pokemon salvajes.\p"
+	"Por ejemplo, estoy buscando un Phantum."
+}
+
+text PetalburgWoods_Text_TryUsingThisItem {
+	"¡Ah, genial!\n"
+	"¡Es la {COLOR GREEN}Medalla de Rustboro{COLOR DARK_GRAY}!\p"
+	"¡Esta es una tienda especial!"
+}
+
+text PetalburgWoods_Text_MiracleSeedExplanation {
+	"¡Vuelva pronto!"
+}
+
+text PetalburgWoods_Text_TrainerTipsExperience {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¡PISTAS PARA ENTRENADORES!\p"
+			"¡No subestimes el poder de los Pokémon de Tipo Bicho!\p"
+			"¡Algunos pueden ponerte en un aprieto, sobretodo si usas un Tipo Hada!\p"
+			"¡No olvides que también son inmunes a la confusión!")
+		}
+		EN{
+			format("TRAINER TIPS!\p"
+			"Don't underestimate the poweress of Bug-Types!\p"
+			"Some can put you in a pinch, specially if you're using a Fairy-Type!\p"
+			"Don't forget their immunity to the confusion status!")
+		}
+	}
+	
+}
+
+text PetalburgWoods_Text_TrainerTipsPP {
+	poryswitch(LANGUAGE) {
+		ES{
+			format("¡PISTAS PARA ENTRENADORES!\p"
+			"Los Pokémon a la noche son de más alto nivel.\pSi buscas agregar algo a tu Equipo a último momento, ¡Busca de noche!")
+		}
+		EN{
+			format("TRAINER TIPS!\p"
+			"At night, higher-level Pokémon lurk.\pIf you want a last-minute Team member, search at night!")
+		}
+	}
+	
+}
+
+raw `
+.set LOCALID_GRUNT, 3
+.set LOCALID_DEVON_EMPLOYEE, 4
+
+PetalburgWoods_MapScripts::
+	.byte 0
+
+PetalburgWoods_EventScript_DevonResearcherLeft::
+	lockall
+	call PetalburgWoods_EventScript_DevonResearcherIntro
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherApproachPlayerLeft
+	waitmovement 0
+	namebox Unknown
+	msgbox PetalburgWoods_Text_HaveYouSeenShroomish, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaEntrance
+	waitmovement 0
+	namebox Unknown
+	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
+	hidenamebox
+	closemessage
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaApproachResearcherLeft
+	waitmovement 0
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	namebox Unknown
+	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerLeft
+	waitmovement 0
+	namebox EmpleadoDevon
+	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaApproachPlayer
+	waitmovement 0
+	call PetalburgWoods_EventScript_GetInvolved
+	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaBackOff
+	waitmovement 0
+	call PetalburgWoods_EventScript_DevonResearcherPostBattle
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgWoods_Movement_WatchResearcherLeave
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherExitLeft
+	waitmovement 0
+	goto PetalburgWoods_EventScript_RemoveDevonResearcher
+	end
+
+PetalburgWoods_EventScript_DevonResearcherCenter::
+	lockall
+	call PetalburgWoods_EventScript_DevonResearcherIntro
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherApproachPlayerCenter
+	waitmovement 0
+	msgbox PetalburgWoods_Text_HaveYouSeenShroomish, MSGBOX_DEFAULT
+	closemessage
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaEntrance
+	waitmovement 0
+	namebox Unknown
+	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaApproachResearcherCenter
+	waitmovement 0
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	namebox Unknown
+	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerCenter
+	waitmovement 0
+	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaApproachPlayer
+	waitmovement 0
+	call PetalburgWoods_EventScript_GetInvolved
+	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaBackOff
+	waitmovement 0
+	call PetalburgWoods_EventScript_DevonResearcherPostBattle
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgWoods_Movement_WatchResearcherLeave
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherExitLeft
+	waitmovement 0
+	goto PetalburgWoods_EventScript_RemoveDevonResearcher
+	end
+
+PetalburgWoods_EventScript_DevonResearcherRight::
+	lockall
+	call PetalburgWoods_EventScript_DevonResearcherIntro
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherApproachPlayerRight
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	msgbox PetalburgWoods_Text_HaveYouSeenShroomish, MSGBOX_DEFAULT
+	closemessage
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaEntrance
+	waitmovement 0
+	namebox Unknown
+	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaApproachResearcherRight
+	waitmovement 0
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	namebox Unknown
+	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerRight
+	waitmovement 0
+	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaApproachPlayer
+	call PetalburgWoods_EventScript_GetInvolved
+	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaBackOff
+	waitmovement 0
+	call PetalburgWoods_EventScript_DevonResearcherPostBattle
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgWoods_Movement_WatchResearcherLeave
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherExitRight
+	waitmovement 0
+	goto PetalburgWoods_EventScript_RemoveDevonResearcher
+	end
+
+PetalburgWoods_EventScript_DevonResearcherIntro::
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherLookAround
+	waitmovement 0
+	namebox Unknown
+	msgbox PetalburgWoods_Text_NotAOneToBeFound, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	return
+
+PetalburgWoods_EventScript_DevonResearcherPostBattle::
+	call PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText
+	closemessage
+	hidenamebox
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaRunAway
+	waitmovement 0
+	removeobject LOCALID_GRUNT
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	namebox EmpleadoDevon
+	msgbox PetalburgWoods_Text_ThatWasAwfullyClose, MSGBOX_DEFAULT
+	hidenamebox
+	giveitem ITEM_GREAT_BALL
+	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_BagFull
+	goto PetalburgWoods_EventScript_DevonResearcherFinish
+	end
+
+PetalburgWoods_EventScript_BagFull::
+	msgbox PetalburgWoods_Text_YoureLoadedWithItems, MSGBOX_DEFAULT
+	goto PetalburgWoods_EventScript_DevonResearcherFinish
+	end
+
+PetalburgWoods_EventScript_DevonResearcherFinish::
+	namebox EmpleadoDevon
+	msgbox PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherStartExit
+	waitmovement 0
+	namebox EmpleadoDevon
+	msgbox PetalburgWoods_Text_ICantBeWastingTime, MSGBOX_DEFAULT
+	hidenamebox
+	closemessage
+	return
+
+PetalburgWoods_EventScript_RemoveDevonResearcher::
+	removeobject LOCALID_DEVON_EMPLOYEE
+	setvar VAR_PETALBURG_WOODS_STATE, 1
+	releaseall
+	end
+
+PetalburgWoods_Movement_DevonResearcherLookAround:
+	face_up
+	delay_16
+	delay_4
+	face_right
+	delay_16
+	delay_8
+	face_left
+	delay_16
+	delay_8
+	face_down
+	delay_16
+	face_right
+	delay_16
+	delay_8
+	face_up
+	delay_16
+	step_end
+
+PetalburgWoods_Movement_DevonResearcherExitLeft:
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+PetalburgWoods_Movement_DevonResearcherApproachPlayerLeft:
+	delay_16
+	face_player
+	walk_up
+	walk_right
+	walk_right
+	step_end
+
+PetalburgWoods_Movement_DevonResearcherApproachPlayerRight:
+	delay_16
+	face_player
+	walk_down
+	walk_right
+	walk_right
+	step_end
+PetalburgWoods_Movement_DevonResearcherApproachPlayerCenter:
+	delay_16
+	face_player
+	walk_right
+	walk_right
+	step_end
+
+PetalburgWoods_Movement_DevonResearcherExitRight:
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+PetalburgWoods_Movement_WatchResearcherLeave:
+	delay_16
+	delay_16
+	walk_in_place_faster_left
+	step_end
+
+PetalburgWoods_Movement_DevonResearcherFleeToPlayerLeft:
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_in_place_faster_left
+	step_end
+
+PetalburgWoods_Movement_DevonResearcherFleeToPlayerCenter:
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_in_place_faster_left
+	step_end
+
+PetalburgWoods_Movement_DevonResearcherFleeToPlayerRight:
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_in_place_faster_left
+	step_end
+
+PetalburgWoods_Movement_DevonResearcherStartExit:
+	walk_in_place_faster_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_up
+	step_end
+
+PetalburgWoods_Movement_AquaApproachResearcherLeft:
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+PetalburgWoods_Movement_AquaBackOff:
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	step_end
+
+PetalburgWoods_Movement_AquaRunAway:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	delay_16
+	delay_16
+	step_end
+
+PetalburgWoods_Movement_AquaApproachResearcherRight:
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+PetalburgWoods_Movement_AquaApproachResearcherCenter:
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+PetalburgWoods_Movement_AquaEntrance:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+PetalburgWoods_Movement_AquaApproachPlayer:
+	walk_right
+	step_end
+
+PetalburgWoods_EventScript_Boy1::
+	msgbox PetalburgWoods_Text_StayOutOfTallGrass, MSGBOX_NPC
+	end
+
+PetalburgWoods_EventScript_Boy2::
+	msgbox PetalburgWoods_Text_HiddenItemsExplanation, MSGBOX_NPC
+	end
+
+PetalburgWoods_EventScript_Girl::
+	lockall
+	faceplayer
+	msgbox PetalburgWoods_Text_TryUsingThisItem, MSGBOX_DEFAULT
+	pokemart PetalburgWoods_SpecialMart
+	msgbox PetalburgWoods_Text_MiracleSeedExplanation, MSGBOX_DEFAULT
+	releaseall
+	end
+
+.align 2
+PetalburgWoods_SpecialMart:
+	.2byte ITEM_MIRACLE_SEED
+	.2byte ITEM_MYSTIC_WATER
+	.2byte ITEM_CHARCOAL
+    .2byte ITEM_BLACK_BELT
+    .2byte ITEM_HARD_STONE
+    .2byte ITEM_DRAGON_FANG
+    .2byte ITEM_SILK_SCARF
+    .2byte ITEM_MAGNET
+    .2byte ITEM_NEVER_MELT_ICE
+    .2byte ITEM_POISON_BARB
+    .2byte ITEM_SHARP_BEAK
+    .2byte ITEM_SOFT_SAND
+    .2byte ITEM_TWISTED_SPOON
+    .2byte ITEM_SILVER_POWDER
+    .2byte ITEM_SPELL_TAG
+    .2byte ITEM_BLACK_GLASSES
+    .2byte ITEM_METAL_COAT
+	.2byte ITEM_NONE
+	release
+	end
+
+PetalburgWoods_EventScript_ExplainMiracleSeed::
+	msgbox PetalburgWoods_Text_MiracleSeedExplanation, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_EventScript_Sign1::
+	msgbox PetalburgWoods_Text_TrainerTipsExperience, MSGBOX_SIGN
+	end
+
+PetalburgWoods_EventScript_Sign2::
+	msgbox PetalburgWoods_Text_TrainerTipsPP, MSGBOX_SIGN
+	end
+
+PetalburgWoods_EventScript_Lyle::
+	trainerbattle_single TRAINER_LYLE, PetalburgWoods_Text_GoBugPokemonTeam, PetalburgWoods_Text_ICouldntWin
+	msgbox PetalburgWoods_Text_ImOutOfPokeBalls, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgWoods_EventScript_James::
+	trainerbattle_single TRAINER_JAMES_1, PetalburgWoods_Text_InstantlyPopularWithBugPokemon, PetalburgWoods_Text_CantBePopularIfILose, PetalburgWoods_EventScript_TryRegisterJames
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, PetalburgWoods_EventScript_JamesRematch
+	setvar VAR_0x8004, TRAINER_JAMES_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_TryRegisterJames2
+	msgbox PetalburgWoods_Text_PeopleRespectYou, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_EventScript_TryRegisterJames::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_HAS_MATCH_CALL, PetalburgWoods_EventScript_RegisterJames
+	release
+	end
+
+PetalburgWoods_EventScript_RegisterJames::
+	msgbox PetalburgWoods_Text_IWantRematch1, MSGBOX_DEFAULT
+	register_matchcall TRAINER_JAMES_1
+	release
+	end
+
+PetalburgWoods_EventScript_TryRegisterJames2::
+	goto_if_set FLAG_HAS_MATCH_CALL, PetalburgWoods_EventScript_RegisterJames2
+	msgbox PetalburgWoods_Text_PeopleRespectYou, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_EventScript_RegisterJames2::
+	msgbox PetalburgWoods_Text_IWantRematch2, MSGBOX_DEFAULT
+	register_matchcall TRAINER_JAMES_1
+	release
+	end
+
+PetalburgWoods_EventScript_JamesRematch::
+	trainerbattle_rematch TRAINER_JAMES_1, PetalburgWoods_Text_MyPokemonHaveGrown, PetalburgWoods_Text_CantBePopularIfLose
+	msgbox PetalburgWoods_Text_IveBeenTrainingHard, MSGBOX_AUTOCLOSE
+	end
+
+
+`

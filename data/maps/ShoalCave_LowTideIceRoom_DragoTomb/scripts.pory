@@ -1,0 +1,41 @@
+mapscripts ShoalCave_LowTideIceRoom_DragoTomb_MapScripts {}
+
+script ShoalCave_LowTideIceRoom_DragoTomb_Regidrago {
+	if (flag(FLAG_REGIDRAGO_UNLOCKED)) {
+		playmoncry (SPECIES_REGIDRAGO, CRY_MODE_NORMAL)
+		msgbox(format("¡Regii! ¡Gooooooo!"))
+		waitmoncry
+		closemessage
+		setwildbattle (SPECIES_REGIDRAGO, 50, ITEM_AIR_BALLOON)
+		special (StartRegiBattle)
+		waitstate
+		specialvar (VAR_RESULT, GetBattleOutcome)
+		switch (var(VAR_RESULT)) {
+		case B_OUTCOME_CAUGHT:
+			removeobject (1)
+			setflag(FLAG_REGIDRAGO_DEFEATED)
+			msgbox(format("¡Regidrago te estará por siempre agradecido!"))
+			break
+		case B_OUTCOME_WON:
+			setflag(FLAG_DAILY_REGIDRAGO)
+			msgbox(format("¡A Regidrago le encantó combatir contigo!\p¡Seguro mañana querrá tener otra batalla!"))
+			break
+		case B_OUTCOME_RAN:
+		case B_OUTCOME_PLAYER_TELEPORTED:
+			msgbox(format("Regidrago parece decepcionado..."))
+			break
+		}
+	}
+	else {
+		msgbox(format("............."))
+		msgbox(format("Parece que Regidrago está sumido en un letargo a causa del mal clima..."))
+		releaseall
+		end
+	}
+}
+
+script ShoalCave_LowTideIceRoom_DragoTomb_Braille_1 {
+}
+
+script ShoalCave_LowTideIceRoom_DragoTomb_Braille_2 {
+}
