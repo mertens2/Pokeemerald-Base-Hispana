@@ -3229,3 +3229,150 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
     if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         StopScript(ctx);
 }
+
+bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
+{
+    u8 caseId = ScriptReadByte(ctx);
+    u8 questId = VarGet(ScriptReadByte(ctx));
+
+    switch (caseId)
+    {
+    case QUEST_MENU_OPEN:
+    default:
+        SetQuestMenuActive();
+        BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
+        QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        ScriptContext_Stop();
+        break;
+    case QUEST_MENU_UNLOCK_QUEST:
+        GetSetQuestFlag(questId, FLAG_SET_UNLOCKED);
+        break;
+    case QUEST_MENU_COMPLETE_QUEST:
+        GetSetQuestFlag(questId, FLAG_SET_COMPLETED);
+        break;
+    case QUEST_MENU_SET_ACTIVE:
+        SetActiveQuest(questId);
+        break;
+    case QUEST_MENU_RESET_ACTIVE:
+        ResetActiveQuest();
+        break;
+    case QUEST_MENU_BUFFER_QUEST_NAME:
+            CopyQuestName(gStringVar1, questId);
+        break;
+    case QUEST_MENU_GET_ACTIVE_QUEST:
+        gSpecialVar_Result = GetActiveQuestIndex();
+        break;
+    case QUEST_MENU_CHECK_UNLOCKED:
+        if (GetSetQuestFlag(questId, FLAG_GET_UNLOCKED))
+            gSpecialVar_Result = TRUE;
+        else
+            gSpecialVar_Result = FALSE;
+        break;
+    case QUEST_MENU_CHECK_COMPLETE:
+        if (GetSetQuestFlag(questId, FLAG_GET_COMPLETED))
+            gSpecialVar_Result = TRUE;
+        else
+            gSpecialVar_Result = FALSE;
+        break;
+    }
+    
+    return TRUE;
+}
+
+bool8 ScrCmd_namebox(struct ScriptContext *ctx) {
+    const u8 *name = (const u8 *)ScriptReadWord(ctx);
+
+    if (name == NULL)
+        name = (const u8 *)ctx->data[0];
+    ShowFieldName(name);
+    return FALSE;
+}
+
+bool8 ScrCmd_hidenamebox(struct ScriptContext *ctx) {
+    if(IsNameboxDisplayed())
+        ClearNamebox();
+    return FALSE;
+}
+
+void ScrCmd_changeframe(struct ScriptContext *ctx)
+{
+	u8 frameNumber = ScriptReadByte(ctx);
+	
+	frameNumber--;
+	gSaveBlock2Ptr->optionsWindowFrameType = frameNumber;	
+}
+
+bool8 ScrCmd_checkpartytype(struct ScriptContext *ctx)
+{
+    u8 i;
+    u16 type = ScriptReadHalfword(ctx);
+
+    gSpecialVar_Result = PARTY_SIZE;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        if (!species)
+            break;
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonIsType(species, type) == TRUE)
+        {
+            gSpecialVar_Result = i;
+            gSpecialVar_0x8004 = species;
+            break;
+        }
+    }
+    return FALSE;
+}
+
+void ScrCmd_getemptyslot(void)
+{
+	gSaveBlock1Ptr->Empty = gPlayerParty[1];
+}
+
+void ScrCmd_deletepokemon(void)
+{
+	u8 NumberDelete = gSpecialVar_0x8004;
+	u8 i;
+	for(i = 5; i >= NumberDelete; i--)
+	{
+		if(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL))
+			gPlayerParty[i] = gSaveBlock1Ptr->Empty;
+	}
+}
+
+void ScrCmd_savepartofteam(void)
+{
+	u8 i;
+	for (i = 0; i < PARTY_SIZE; i++)
+        gSaveBlock1Ptr->BossTeam[i] = gPlayerParty[i];
+}
+
+void ScrCmd_loadpartofteam(void)
+{
+	u8 i;
+	for(i = 0; !GetMonData(gSaveBlock1Ptr->BossTeam[i], MON_DATA_SPECIES, NULL); i++)
+		gPlayerParty[i] = gSaveBlock1Ptr->BossTeam[i];
+}
+
+
+bool8 ScrCmd_showitemdesc(struct ScriptContext *ctx)
+{
+    DrawHeaderBox();
+    return FALSE;
+}
+
+bool8 ScrCmd_hideitemdesc(struct ScriptContext *ctx)
+{
+    HideHeaderBox();
+    return FALSE;
+}
+
+bool8 ScrCmd_setmonmovevar(struct ScriptContext *ctx)
+{
+    u8 partyIndex = ScriptReadByte(ctx);
+    u8 slot = ScriptReadByte(ctx);
+    u16 move = ScriptReadHalfword(ctx);
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    ScriptSetMonMoveSlot(partyIndex, VarGet(move), slot);
+    return FALSE;
+}
