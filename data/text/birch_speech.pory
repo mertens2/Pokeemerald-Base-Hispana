@@ -1,0 +1,163 @@
+text gText_Birch_Welcome {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Hola! Me llamo Birch.\pPero todos me conocen como Profesor.\p")
+		}
+		EN {
+			format("Hi! My name's Birch.\pBut everyone knows me as Professor.\p")
+		}
+	}
+}
+
+text gText_Birch_Pokemon {
+	"\p"
+}
+
+text gText_Birch_Pronouns {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿Cómo te gustaría que\nse refiriesen a tí?")
+		}
+		EN {
+			format("What pronouns would\nyou want to go by?")
+		}
+	}
+}
+
+text gText_Birch_MainSpeech {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Me apasionan…\nPor eso, he dedicado mi vida a estudiarlos a fondo…\p¡Pero suficiente de mí!\p")
+		}
+		EN {
+			format("I love them with all my heart…\pThat's why I've dedicated my life to study their every aspect…\pBut enough of me!\p")
+		}
+	}
+}
+
+text gText_Birch_AndYouAre {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿A quién te pareces más?\p")
+		}
+		EN {
+			format("Who are you more like?\p")
+		}
+	}
+}
+
+text gText_Birch_BoyOrGirl {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿A Brendan o May?")
+		}
+		EN {
+			format("Brendan? Or perhaps May?")
+		}
+	}
+}
+
+text gText_Birch_WhatsYourName {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Genial!\n¿Qué nombre te gustaría usar?")
+		}
+		EN {
+			format("Great!\nWhat do you want to go by?")
+		}
+	}
+}
+
+text gText_Birch_SoItsPlayer {
+	poryswitch(LANGUAGE){
+		ES {
+			"¿{PLAYER}?"
+		}
+		EN {
+			"{PLAYER}?"
+		}
+	}
+	
+}
+
+text gText_Birch_YourePlayer {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Perfecto! ¡Eres {PLAYER}, y te mudaste aquí desde Johto!\p")
+		}
+		EN {
+			format("Perfect! You're {PLAYER}, who moved here from Johto!\p")
+		}
+	}
+}
+
+text gText_Birch_AreYouReady {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Tu propia aventura comenzará.\nConocerás personas, Pokémon, e historias de lo más variadas…\p"
+			"¡Adéntrate ahora, al Mundo Pokémon!\p")
+		}
+		EN {
+			format("Your very own journey will start.\nYou'll meet people, Pokémon and the most diverse stories…\p"
+			"Go now, then! To the World of Pokémon!\p")
+		}
+	}
+}
+
+text gText_Birch_YouCantBirch {
+	poryswitch(LANGUAGE){
+		ES {
+			format("N-no…\pEse… Ese es MI nombre…\pElige otro nombre.")
+		}
+		EN {
+			format("N-no…\pThat… That's MY name…\pGet your own name.")
+		}
+	}
+}
+
+text gText_Birch_WaitYoureG {
+	poryswitch(LANGUAGE){
+		ES {
+			format("E-eres… ¿{PLAYER}?\p¡Genial, yo soy bi!\pPero ahora, por favor, escribe un nombre…\p"
+			"A menos que quieras que te digan así.\p¿Quieres llamarte {PLAYER}?")
+		}
+		EN {
+			format("Y-{PAUSE 8}you're… {PLAYER}?\pThat's great! I'm bi!\pReally though, choose an ACTUAL name…\p"
+			"Unless you want everyone to call you that.\pYou want your name to be {PLAYER}?")
+		}
+	}
+		
+}
+
+text gText_Birch_TheSameAsDaughter {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Ah, igual que mi hija entonces!\pEspero no confunda…\n¿{PLAYER} te parece bien?")
+		}
+		EN {
+			format("Ah, just like my daughter, then!\pHope it's not too confusing…\nIs {PLAYER} alright?")
+		}
+	}
+}
+
+text gText_Birch_TheSameAsSon {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Ah, igual que mi hijo entonces!\pEspero no confunda…\n¿{PLAYER} te parece bien?")
+		}
+		EN {
+			format("Ah, just like my son, then!\pHope it's not too confusing…\nIs {PLAYER} alright?")
+		}
+	}
+}
+
+text gText_Birch_NotVeryOriginal {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Ah, ¡{PLAYER}, entonces!\p¿No estamos muy originales hoy, eh?\p¿{PLAYER} te parece bien?")
+		}
+		EN {
+			format("Ah, {PLAYER}, then!\pNot very original, are we?\pSo, is {PLAYER} alright?")
+		}
+	}
+}

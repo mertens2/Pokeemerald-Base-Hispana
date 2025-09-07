@@ -61,9 +61,11 @@
 #include "quests.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "field_name_box.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
+static bool8 MonIsType(u16 species, u16 type);
 
 EWRAM_DATA const u8 *gRamScriptRetAddr = NULL;
 static EWRAM_DATA u32 sAddressOffset = 0; // For relative addressing in vgoto etc., used by saved scripts (e.g. Mystery Event)
@@ -3308,6 +3310,15 @@ void ScrCmd_changeframe(struct ScriptContext *ctx)
 	gSaveBlock2Ptr->optionsWindowFrameType = frameNumber;	
 }
 
+static bool8 MonIsType(u16 species, u16 type) {
+	u8 i;
+	for (i=0; i<4; i++){
+		if (gSpeciesInfo[species].types[i] == type)
+			return TRUE;
+	}
+	return FALSE;
+}
+
 bool8 ScrCmd_checkpartytype(struct ScriptContext *ctx)
 {
     u8 i;
@@ -3332,7 +3343,7 @@ bool8 ScrCmd_checkpartytype(struct ScriptContext *ctx)
 
 void ScrCmd_getemptyslot(void)
 {
-	Script_RequestEffects(SCREFF_V1);
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 	gSaveBlock1Ptr->Empty = gPlayerParty[1];
 }
 
@@ -3340,7 +3351,7 @@ void ScrCmd_deletepokemon(void)
 {
 	u8 NumberDelete = gSpecialVar_0x8004;
 	u8 i;
-	Script_RequestEffects(SCREFF_SAVE);
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 	for(i = 5; i >= NumberDelete; i--)
 	{
 		if(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL))
@@ -3351,7 +3362,7 @@ void ScrCmd_deletepokemon(void)
 void ScrCmd_savepartofteam(void)
 {
 	u8 i;
-	Script_RequestEffects(SCREFF_SAVE);
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 	for (i = 0; i < PARTY_SIZE; i++)
         gSaveBlock1Ptr->BossTeam[i] = gPlayerParty[i];
 }
@@ -3359,25 +3370,41 @@ void ScrCmd_savepartofteam(void)
 void ScrCmd_loadpartofteam(void)
 {
 	u8 i;
-	Script_RequestEffects(SCREFF_V1);
-	for(i = 0; !GetMonData(gSaveBlock1Ptr->BossTeam[i], MON_DATA_SPECIES, NULL); i++)
-		gPlayerParty[i] = gSaveBlock1Ptr->BossTeam[i];
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	for(i = 0; i < PARTY_SIZE; i++){
+		struct Pokemon mon = gSaveBlock1Ptr->BossTeam[i];
+		// struct Pokemon mon2 = &gSaveBlock1Ptr->BossTeam[i];
+		if (GetMonData(&mon, MON_DATA_SPECIES, NULL))
+			break;
+		gPlayerParty[i] = mon;
+	}
 }
 
-
-bool8 ScrCmd_showitemdesc(struct ScriptContext *ctx)
+bool8 ScrCmd_setgetobjectflags(struct ScriptContext *ctx)
 {
-	Script_RequestEffects(SCREFF_V1);
-    DrawHeaderBox();
+    u16 localId  = VarGet(ScriptReadHalfword(ctx));
+    u8 flagIndex = ScriptReadByte(ctx);
+    u8 value 	 = ScriptReadByte(ctx);
+    u8 getOrSet  = ScriptReadByte(ctx);
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	
+	SetGetObjEventTemplateFlagData(localId, flagIndex, value, getOrSet);
     return FALSE;
 }
 
-bool8 ScrCmd_hideitemdesc(struct ScriptContext *ctx)
-{
-	Script_RequestEffects(SCREFF_V1);
-    HideHeaderBox();
-    return FALSE;
-}
+// bool8 ScrCmd_showitemdesc(struct ScriptContext *ctx)
+// {
+	// Script_RequestEffects(SCREFF_V1);
+    // DrawHeaderBox();
+    // return FALSE;
+// }
+
+// bool8 ScrCmd_hideitemdesc(struct ScriptContext *ctx)
+// {
+	// Script_RequestEffects(SCREFF_V1);
+    // HideHeaderBox();
+    // return FALSE;
+// }
 
 bool8 ScrCmd_setmonmovevar(struct ScriptContext *ctx)
 {
@@ -3388,5 +3415,16 @@ bool8 ScrCmd_setmonmovevar(struct ScriptContext *ctx)
 	Script_RequestWriteVar(VarGet(move));
 
     ScriptSetMonMoveSlot(partyIndex, VarGet(move), slot);
+    return FALSE;
+}
+
+bool8 ScrCmd_showmonpicshiny(struct ScriptContext *ctx)
+{
+    // u16 species = VarGet(ScriptReadHalfword(ctx));
+    // u8 x = ScriptReadByte(ctx);
+    // u8 y = ScriptReadByte(ctx);
+    // u8 var = ScriptReadByte(ctx);
+
+    // ScriptMenu_ShowPokemonPic(species, var, x, y);
     return FALSE;
 }

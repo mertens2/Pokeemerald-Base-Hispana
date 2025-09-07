@@ -3667,3 +3667,31 @@ bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
     SetTimeOfDay(ScriptReadByte(ctx));
     return FALSE;
 }
+
+// 8 temporal flags  for every object event in the map. they get overwritten with 0 when the map reloads.
+void SetGetObjEventTemplateFlagData(u8 localId, u8 flagIndex, u8 value, u8 getOrSet)
+{
+	s32 i;
+    struct ObjectEventTemplate *savObjTemplates = gSaveBlock1Ptr->objectEventTemplates;
+    
+	flagIndex = 1 << (flagIndex - 1); // si flagIndex=1, moverá el 0000 0001 0 veces a la izq. si fuese 8, moverá el 0000 0001 7 veces y será 1000 0000
+    
+	for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
+    {
+        struct ObjectEventTemplate *objectEventTemplate = &savObjTemplates[i];
+        if (objectEventTemplate->localId == localId) // if the object is the one we're looking for
+        {
+			if (getOrSet == 1) { // if 1, set instead of get
+				if (value == TRUE)
+					objectEventTemplate->eventFlags |= flagIndex; // sets the flag to 1
+				else
+					objectEventTemplate->eventFlags &= (~flagIndex); // sets the flag to 0
+			}
+			else 
+				gSpecialVar_Result = objectEventTemplate->eventFlags & flagIndex; // gets the flag
+			// return;
+        }
+    }
+    
+    // return -1;  //failure
+}

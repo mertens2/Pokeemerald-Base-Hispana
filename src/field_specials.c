@@ -72,6 +72,10 @@
 #include "palette.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "pokedex.h"
+#include "item.h"
+#include "item_menu.h"
+#include "battle_util.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -156,6 +160,221 @@ static const u8 sText_99TimesPlus[] = _("más de 99");
 static const u8 sText_1MinutePlus[] = _("más de 1 min");
 static const u8 sText_SpaceSeconds[] = _(" segundos");
 static const u8 sText_SpaceTimes[] = _(" veces");
+
+enum {
+	CAFE_TRAINER_HIKER = 0,
+	CAFE_TRAINER_ACE_TRAINER_1,
+	CAFE_TRAINER_ACE_TRAINER_2,
+	CAFE_TRAINER_EV_TRAIN_MEN,
+	CAFE_TRAINER_WIVES,
+	CAFE_TRAINER_TV,
+	CAFE_TRAINER_RIVAL,
+	CAFE_TRAINER_WALLY_SISTER,
+	CAFE_TRAINER_POLY_1,
+	CAFE_TRAINER_POLY_2,
+	CAFE_TRAINER_OLD_LADY,
+	CAFE_TRAINER_OLD_MAN,
+	CAFE_TRAINER_BEAUTY,
+	CAFE_TRAINER_PARASOL_LADY,
+	CAFE_TRAINER_LASS,
+	CAFE_TRAINER_ROXANNE,
+	CAFE_TRAINER_BRAWLY,
+	CAFE_TRAINER_WATTSON,
+	CAFE_TRAINER_FLANNERY,
+	CAFE_TRAINER_NORMAN,
+	CAFE_TRAINER_TATE_LIZA,
+	CAFE_TRAINER_JUAN,
+	CAFE_TRAINER_SIDNEY,
+	CAFE_TRAINER_PHOEBE,
+	CAFE_TRAINER_GLACIA,
+	CAFE_TRAINER_DRAKE,
+	CAFE_TRAINER_WALLACE,
+	CAFE_TRAINER_BIRCH,
+	CAFE_TRAINER_WALLY,
+	CAFE_TRAINER_EVIL_TEAM_LEADERS,
+	CAFE_TRAINER_EVIL_TEAM_ADMINS_M,
+	CAFE_TRAINER_EVIL_TEAM_ADMINS_F,
+};
+
+
+#define BATTLE_CAFE_SPECIAL_TRAINERS_START CAFE_TRAINER_ROXANNE
+#define CAFE_TRAINER_COUNT CAFE_TRAINER_EVIL_TEAM_ADMINS_F
+
+struct CafeTrainer {
+	u16 graphicsId;
+	u16 trainerPartyId;
+	const u8 *introText;
+	const u8 *lossText;
+	const u8 *afterBattleText;
+	u16 itemToGiveId;
+	const u8 *afterGiveItemText;
+};
+
+
+const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
+{
+	[CAFE_TRAINER_HIKER] = {
+		.graphicsId = OBJ_EVENT_GFX_HIKER,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_POKE_BALL,
+		
+	},
+	[CAFE_TRAINER_ACE_TRAINER_1] = {
+		.graphicsId = OBJ_EVENT_GFX_MAN_3,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_NONE,
+		
+	}, 
+	[CAFE_TRAINER_ACE_TRAINER_2] = {
+		.graphicsId = OBJ_EVENT_GFX_WOMAN_3,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_NONE,
+		
+	},
+	[CAFE_TRAINER_EV_TRAIN_MEN]  =  {
+		.graphicsId = OBJ_EVENT_GFX_BLACK_BELT,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_PROTEIN,
+		
+	},
+	[CAFE_TRAINER_WIVES]         =  {
+		.graphicsId = OBJ_EVENT_GFX_WOMAN_1,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_NONE,
+		
+	},
+	[CAFE_TRAINER_TV] =  {
+		.graphicsId = OBJ_EVENT_GFX_REPORTER_F,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_NONE,
+		
+	},
+	[CAFE_TRAINER_RIVAL]         =  {
+		.graphicsId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_NONE,
+		
+	},
+	[CAFE_TRAINER_WALLY_SISTER] =  {
+		.graphicsId = OBJ_EVENT_GFX_WOMAN_2,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_ULTRA_BALL,
+		
+	},
+	[CAFE_TRAINER_POLY_1] =  {
+		.graphicsId = OBJ_EVENT_GFX_BLACK_BELT,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_DUSK_BALL,
+	},
+	[CAFE_TRAINER_POLY_2] =  {
+		.graphicsId = OBJ_EVENT_GFX_AQUA_MEMBER_M,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_DIVE_BALL,
+		
+	},
+	[CAFE_TRAINER_OLD_LADY]      =  {
+		.graphicsId = OBJ_EVENT_GFX_EXPERT_F,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_OLD_GATEAU,
+		
+	},
+	[CAFE_TRAINER_OLD_MAN]       =  {
+		.graphicsId = OBJ_EVENT_GFX_EXPERT_M,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_OLD_GATEAU,
+		
+	},
+	[CAFE_TRAINER_BEAUTY]        =  {
+		.graphicsId = OBJ_EVENT_GFX_BEAUTY,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_BOTTLE_CAP,
+		
+	},
+	[CAFE_TRAINER_PARASOL_LADY]  =  {
+		.graphicsId = OBJ_EVENT_GFX_WOMAN_4,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_BOTTLE_CAP,
+		
+	},
+	[CAFE_TRAINER_LASS]          =  {
+		.graphicsId = OBJ_EVENT_GFX_LASS,
+		.trainerPartyId = TRAINER_DUSTY_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_BOTTLE_CAP,
+		
+	},
+	[CAFE_TRAINER_ROXANNE]       =  {
+		.graphicsId = OBJ_EVENT_GFX_ROXANNE,
+		.trainerPartyId = TRAINER_ROXANNE_1,
+		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
+		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
+		.afterBattleText = (const u8[]) _("¡Ten esto!"),
+		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.itemToGiveId = ITEM_GOLD_BOTTLE_CAP,
+		
+	}, // por hacer wip
+};
+
+extern const struct CafeTrainer sCafeTrainers[];
 
 void Special_ShowDiploma(void)
 {
@@ -4365,36 +4584,15 @@ void SetHiddenNature(void)
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
-bool8 GetSeenMon(void)
-{
-    // return GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_GET_SEEN);
-}
-
-bool8 GetCaughtMon(void)
-{
-    // return GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_GET_CAUGHT);
-}
-
-bool8 SetSeenMon(void)
-{
-    // GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
-}
-
-bool8 SetCaughtMon(void)
-{
-    // GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
-    // GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_CAUGHT);
-}
-
 void ChooseItemFromBag(void)
 {
     switch (VarGet(VAR_TEMP_1))
     {
-    case ITEMS_POCKET:
-    case BALLS_POCKET:
-    case TMHM_POCKET:
-    case BERRIES_POCKET:
-    case KEYITEMS_POCKET:
+    case POCKET_ITEMS:
+    case POCKET_POKE_BALLS:
+    case POCKET_TM_HM:
+    case POCKET_BERRIES:
+    case POCKET_KEY_ITEMS:
         GoToBagMenu(ITEMMENULOCATION_CHOOSE_ITEM, VarGet(VAR_TEMP_1), CB2_ReturnToFieldContinueScript);
     default:
         break;
@@ -4425,47 +4623,7 @@ void CheckSpecies(void)
     }
 }
 
-// get position (0 for current, 1 for map) of object event, return to VAR_0x8007, VAR_0x8008
-void GetObjectPosition(void)
-{
-    u16 localId      = gSpecialVar_0x8000;
-    u16 useTemplate  = gSpecialVar_0x8001;
 
-    u16 *x = &gSpecialVar_0x8007;
-    u16 *y = &gSpecialVar_0x8008;
-
-    if (!useTemplate)
-    {
-        /* current position */
-        const u16 objId = GetObjectEventIdByLocalId(localId);
-        const struct ObjectEvent *objEvent = &gObjectEvents[objId];
-        *x = objEvent->currentCoords.x - 7; // subtract out camera size
-        *y = objEvent->currentCoords.y - 7;
-    }
-    else
-    {
-        const struct ObjectEventTemplate *objTemplate =
-            FindObjectEventTemplateByLocalId(localId,
-                    gSaveBlock1Ptr->objectEventTemplates,
-                    gMapHeader.events->objectEventCount);
-        *x = objTemplate->x;
-        *y = objTemplate->y;
-    }
-}
-
-u16 CheckObjectAtXY(void)
-{
-    u16 x = gSpecialVar_0x8005 + 7;
-    u16 y = gSpecialVar_0x8006 + 7;
-    u32 i;
-    
-    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
-    {        
-        if (gObjectEvents[i].active && gObjectEvents[i].currentCoords.x == x && gObjectEvents[i].currentCoords.y == y)
-            return TRUE;
-    }
-    return FALSE;
-}
 
 u16 GetMetatileIdAt(void) {
 	u16 x = gSpecialVar_0x8005;
@@ -4485,28 +4643,29 @@ u16 CheckForMetatiles(u16 x, u16 y, u16 metatileA) {
 	return FALSE;
 }
 
-u16 SetHourMinutes(void) {
-	RtcCalcLocalTime();
-	gSpecialVar_0x8005 = Rtc_GetCurrentHour();
-	gSpecialVar_0x8006 = Rtc_GetCurrentMinute();
-}
+// u16 SetHourMinutes(void) {
+	// RtcCalcLocalTime();
+	// gSpecialVar_0x8005 = Rtc_GetCurrentHour();
+	// gSpecialVar_0x8006 = Rtc_GetCurrentMinute();
+// }
 
 bool8 CheckForRegielekiPuzzle(void) {
-	if ((MapGridGetMetatileIdAt(5, 11) == METATILE_MirageTower_CoveredTile)  && (MapGridGetMetatileIdAt(5, 12) == METATILE_MirageTower_CoveredTile) && 
-	(MapGridGetMetatileIdAt(9, 11) == METATILE_MirageTower_CoveredTile) && (MapGridGetMetatileIdAt(11, 12) == METATILE_MirageTower_CoveredTile) &&
-	(MapGridGetMetatileIdAt(11, 13) == METATILE_MirageTower_CoveredTile)) {
-		if ((MapGridGetMetatileIdAt(6, 12) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(6, 13) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(8, 11) == METATILE_MirageTower_CoveredTile) ||
-		(MapGridGetMetatileIdAt(8, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(8, 13) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(9, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(9, 13) == METATILE_MirageTower_CoveredTile)
-		||  (MapGridGetMetatileIdAt(12, 11) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(12, 13) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(14, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(14, 11) == METATILE_MirageTower_CoveredTile)
-		|| (MapGridGetMetatileIdAt(14, 13) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(15, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(15, 13) == METATILE_MirageTower_CoveredTile)) {
-			gSpecialVar_Result = FALSE;
-			return gSpecialVar_Result;
-		}
-			gSpecialVar_Result = TRUE;
-			return gSpecialVar_Result;
-	}
-		gSpecialVar_Result = FALSE;
-		return gSpecialVar_Result;
+	// if ((MapGridGetMetatileIdAt(5, 11) == METATILE_MirageTower_CoveredTile)  && (MapGridGetMetatileIdAt(5, 12) == METATILE_MirageTower_CoveredTile) && 
+	// (MapGridGetMetatileIdAt(9, 11) == METATILE_MirageTower_CoveredTile) && (MapGridGetMetatileIdAt(11, 12) == METATILE_MirageTower_CoveredTile) &&
+	// (MapGridGetMetatileIdAt(11, 13) == METATILE_MirageTower_CoveredTile)) {
+		// if ((MapGridGetMetatileIdAt(6, 12) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(6, 13) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(8, 11) == METATILE_MirageTower_CoveredTile) ||
+		// (MapGridGetMetatileIdAt(8, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(8, 13) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(9, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(9, 13) == METATILE_MirageTower_CoveredTile)
+		// ||  (MapGridGetMetatileIdAt(12, 11) == METATILE_MirageTower_CoveredTile) || (MapGridGetMetatileIdAt(12, 13) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(14, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(14, 11) == METATILE_MirageTower_CoveredTile)
+		// || (MapGridGetMetatileIdAt(14, 13) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(15, 12) == METATILE_MirageTower_CoveredTile) ||  (MapGridGetMetatileIdAt(15, 13) == METATILE_MirageTower_CoveredTile)) {
+			// gSpecialVar_Result = FALSE;
+			// return gSpecialVar_Result;
+		// }
+			// gSpecialVar_Result = TRUE;
+			// return gSpecialVar_Result;
+	// }
+		// gSpecialVar_Result = FALSE;
+		// return gSpecialVar_Result;
+	return FALSE;
 }
 
 
@@ -4630,99 +4789,99 @@ void ShowTrainerType(void)
 }
 
 bool8 DoesMonMatch(u32 data, u8 attribute, u16 species){
-	u32 total,num;
-	switch (attribute){
-		case POKEDOKU_ABILITY:
-			if (gBaseStats[species].abilities[0] == data || gBaseStats[species].abilities[1] == data || gBaseStats[species].abilities[2] == data)
-				return TRUE;
-			break;
-		case POKEDOKU_TYPE:
-			if (gBaseStats[species].type1 == data || gBaseStats[species].type2 == data)
-				return TRUE;
-			break;
-		case POKEDOKU_BASE_STAT_TOTAL:
-			total = (gBaseStats[species].baseAttack + gBaseStats[species].baseDefense + gBaseStats[species].baseHP +
-					gBaseStats[species].baseSpAttack + gBaseStats[species].baseSpDefense + gBaseStats[species].baseSpeed);
-			if (total == data)
-				return TRUE;
-			break;
-		case POKEDOKU_DUAL_OR_SINGLE_TYPE:
-			if (data == 0 && gBaseStats[species].type1 == gBaseStats[species].type2)
-				return TRUE;
-			if (data == 1 && gBaseStats[species].type1 != gBaseStats[species].type2)
-				return TRUE;
-			break;
-		// case POKEDOKU_CATEGORY:
-			// if (gPokedexEntries[species].categoryName == gPokedexEntries[data].categoryName)
+	// u32 total,num;
+	// switch (attribute){
+		// case POKEDOKU_ABILITY:
+			// if (gBaseStats[species].abilities[0] == data || gBaseStats[species].abilities[1] == data || gBaseStats[species].abilities[2] == data)
 				// return TRUE;
 			// break;
-		case POKEDOKU_EGG_GROUP:
-			if (gBaseStats[species].eggGroup1 == data || gBaseStats[species].eggGroup2 == data)
-				return TRUE;
-			break;
-		case POKEDOKU_EVOLINE:
-			num = GetPreEvolution(species);
-			for (total=0;total<EVOS_PER_MON;total++) {
-				if (gEvolutionTable[num][total].targetSpecies == species && data == 0)
-					return TRUE;
-				if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && data == 1)
-					return TRUE;
-				if (gEvolutionTable[num][total].targetSpecies == species && gEvolutionTable[species][total].targetSpecies == SPECIES_NONE && data == 2)
-					return TRUE;
-			}
-			break;
-		case POKEDOKU_EVO_METHOD:
-			for (total=0;total<EVOS_PER_MON;total++) {
-				if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == EVO_ITEM && data == 0)
-					return TRUE;
-				if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == EVO_FRIENDSHIP && data == 1)
-					return TRUE;
-				if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == (EVO_TRADE || EVO_TRADE_ITEM) && data == 2)
-					return TRUE;
-			}
-			break;
-	}
+		// case POKEDOKU_TYPE:
+			// if (gBaseStats[species].type1 == data || gBaseStats[species].type2 == data)
+				// return TRUE;
+			// break;
+		// case POKEDOKU_BASE_STAT_TOTAL:
+			// total = (gBaseStats[species].baseAttack + gBaseStats[species].baseDefense + gBaseStats[species].baseHP +
+					// gBaseStats[species].baseSpAttack + gBaseStats[species].baseSpDefense + gBaseStats[species].baseSpeed);
+			// if (total == data)
+				// return TRUE;
+			// break;
+		// case POKEDOKU_DUAL_OR_SINGLE_TYPE:
+			// if (data == 0 && gBaseStats[species].type1 == gBaseStats[species].type2)
+				// return TRUE;
+			// if (data == 1 && gBaseStats[species].type1 != gBaseStats[species].type2)
+				// return TRUE;
+			// break;
+		// // case POKEDOKU_CATEGORY:
+			// // if (gPokedexEntries[species].categoryName == gPokedexEntries[data].categoryName)
+				// // return TRUE;
+			// // break;
+		// case POKEDOKU_EGG_GROUP:
+			// if (gBaseStats[species].eggGroup1 == data || gBaseStats[species].eggGroup2 == data)
+				// return TRUE;
+			// break;
+		// case POKEDOKU_EVOLINE:
+			// num = GetPreEvolution(species);
+			// for (total=0;total<EVOS_PER_MON;total++) {
+				// if (gEvolutionTable[num][total].targetSpecies == species && data == 0)
+					// return TRUE;
+				// if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && data == 1)
+					// return TRUE;
+				// if (gEvolutionTable[num][total].targetSpecies == species && gEvolutionTable[species][total].targetSpecies == SPECIES_NONE && data == 2)
+					// return TRUE;
+			// }
+			// break;
+		// case POKEDOKU_EVO_METHOD:
+			// for (total=0;total<EVOS_PER_MON;total++) {
+				// if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == EVO_ITEM && data == 0)
+					// return TRUE;
+				// if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == EVO_FRIENDSHIP && data == 1)
+					// return TRUE;
+				// if (gEvolutionTable[species][total].targetSpecies != SPECIES_NONE && gEvolutionTable[species][total].method == (EVO_TRADE || EVO_TRADE_ITEM) && data == 2)
+					// return TRUE;
+			// }
+			// break;
+	// }
 	return FALSE;
 }
 
 
 u32 GetPokemonAttribute(void){
-	u32 data, random, attribute, species;
-	bool8 check1, check2;
-	attribute = Random() % 2;
-	species = SPECIES_SAWK;
-	// StringExpandPlaceholders(gStringVar4,gSpeciesNames[species]);
-	// gSpecialVar_0x8004 = species;
-	// switch (attribute){
-		// case 0:
-			random = Random() % 3;
-			data = gBaseStats[species].abilities[random];
-			if (data == 0)
-				data = gBaseStats[species].abilities[0];
-			StringExpandPlaceholders(gStringVar1,gAbilityNames[data]);
-			gSpecialVar_0x8000 = data;
-			// break;
-		// case 1:
-		// default:
-			random = Random() % 2;
-			if (random == 0)
-				data = gBaseStats[species].type1;
-			else
-				data = gBaseStats[species].type2;
-			StringExpandPlaceholders(gStringVar2,gTypeNames[data]);
-			// data = (gBaseStats[species].baseAttack + gBaseStats[species].baseDefense + gBaseStats[species].baseHP +
-					// gBaseStats[species].baseSpAttack + gBaseStats[species].baseSpDefense + gBaseStats[species].baseSpeed);
-			gSpecialVar_0x8001 = data;
-			// break;
-	// }
-	species = SPECIES_THROH;
-	check1 = DoesMonMatch(gSpecialVar_0x8000, POKEDOKU_ABILITY, species);
-	check2 = DoesMonMatch(gSpecialVar_0x8001, POKEDOKU_TYPE, species);
-	if (check1 == TRUE && check2 == TRUE)
-		StringExpandPlaceholders(gStringVar3,gSpeciesNames[species]);
-	else
-		StringExpandPlaceholders(gStringVar3,gSpeciesNames[0]);
-	return data;
+	// u32 data, random, attribute, species;
+	// bool8 check1, check2;
+	// attribute = Random() % 2;
+	// species = SPECIES_SAWK;
+	// // StringExpandPlaceholders(gStringVar4,gSpeciesNames[species]);
+	// // gSpecialVar_0x8004 = species;
+	// // switch (attribute){
+		// // case 0:
+			// random = Random() % 3;
+			// data = gBaseStats[species].abilities[random];
+			// if (data == 0)
+				// data = gBaseStats[species].abilities[0];
+			// StringExpandPlaceholders(gStringVar1,gAbilityNames[data]);
+			// gSpecialVar_0x8000 = data;
+			// // break;
+		// // case 1:
+		// // default:
+			// random = Random() % 2;
+			// if (random == 0)
+				// data = gBaseStats[species].type1;
+			// else
+				// data = gBaseStats[species].type2;
+			// StringExpandPlaceholders(gStringVar2,gTypeNames[data]);
+			// // data = (gBaseStats[species].baseAttack + gBaseStats[species].baseDefense + gBaseStats[species].baseHP +
+					// // gBaseStats[species].baseSpAttack + gBaseStats[species].baseSpDefense + gBaseStats[species].baseSpeed);
+			// gSpecialVar_0x8001 = data;
+			// // break;
+	// // }
+	// species = SPECIES_THROH;
+	// check1 = DoesMonMatch(gSpecialVar_0x8000, POKEDOKU_ABILITY, species);
+	// check2 = DoesMonMatch(gSpecialVar_0x8001, POKEDOKU_TYPE, species);
+	// if (check1 == TRUE && check2 == TRUE)
+		// StringExpandPlaceholders(gStringVar3,GetSpeciesName(species));
+	// else
+		// StringExpandPlaceholders(gStringVar3,GetSpeciesName(0));
+	return 0;
 }
 
 void SetCustomization(void) {
@@ -4855,12 +5014,15 @@ void SetCafeTrainersToday(void) // por hacer wip
 {
 	u8 i;
 	for (i=0;i<4;i++){
+		u8 *ptr = GetTrainerFlagPointer(sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[i]].trainerPartyId);
+		if (ptr)
+			*ptr &= ~(1 << (sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[i]].trainerPartyId & 7));
 		VarSet(VAR_OBJ_GFX_ID_0 + i, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[i]].graphicsId);
-		FlagClear(TRAINER_FLAGS_START + sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[i]].trainerPartyId);
+		// FlagClear(TRAINER_FLAGS_START + sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[i]].trainerPartyId);
 	}
 }
 
-void GetCafeTrainersBattleText(void) {
+void DoCafeTrainerBattle(void) {
 	gSpecialVar_Result = sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].trainerPartyId;
 	StringExpandPlaceholders(gStringVar1, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].introText);
 	StringExpandPlaceholders(gStringVar2, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].lossText);

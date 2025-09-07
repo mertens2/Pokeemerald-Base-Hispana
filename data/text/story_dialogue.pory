@@ -1,0 +1,986 @@
+// common text
+text Common_Text_Suspense {
+	"{TEXT_SPEED 5}…………………………\n…………………………\l…………………………"
+}
+
+text Common_Text_Realization {
+	"{TEXT_SPEED 2}…………………………\n{PLAY_SE SE_PIN}……!"
+}
+
+// text Common_Text_
+
+
+// slateport city text
+text SlateportCity_SternsShipyard_1F_Text_CantMakeHeadsOrTails {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Umm… If this goes here, and that\n"
+			"goes over there…\p"
+			"Then where does this thing go?\n"
+			"Arghh! This man and his doctor handwriting!")
+		}
+		ES{
+			format("A ver… Si esto va aquí y aquello va allá…\p"
+			"¿Dónde va esto entonces?\n¡Ahhh! ¡Ese tipo y su letra de doctor!")
+		}
+	}
+}
+
+
+text SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Hm?\nHi, I'm Dock Muéllez.\p"
+			"Captain Stern commissioned me to design a ferry.\p"
+			"Oh! That there…\nAren't those some Devon Goods?\p"
+			"Must be for him, the guy really needs them, couldn't stop mumbling about it.\p"
+			"Wanna go give them to him? He must be on the Oceanic Museum searching for inspiration.")
+		}
+		ES{
+			format("¿Eh?\nAh, hola, soy Dock Muéllez.\p"
+			"El Capitán Stern me ha encargado que diseñe un ferry.\p"
+			"Oh, eso de ahí…\n¿Son las Partes Devon?\p"
+			"Deben ser para él. El tipo las NECESITA, no paraba de murmurarlo.\p"
+			"¿Puedes ir a buscarlo? Creo que andaba por el Museo Océanico buscando inspiración.")
+		}
+	}
+}
+
+
+text SlateportCity_SternsShipyard_1F_Text_CouldYouFindStern {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Hm? “Where could Captain Stern have gone off to?”\p"
+			"He's probably at the Museum, can you go and deliver that parcel to him?")
+		}
+		ES{
+			format("¿Que adónde puede haber ido el Capitán?\p"
+			"Debe estar en el Museo, ¿Puedes ir entregarle ese paquete?")
+		}
+	}
+}
+
+
+text SlateportCity_SternsShipyard_1F_Text_CouldUseAdviceFromVeteran {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Shipbuilding is an art.\p"
+			"A lot of things can't be figured out just by calculating.\p"
+			"I really could use advice from a hot veteran who knows his way round the seas…")
+		}
+		ES{
+			format("Construir barcos es todo un arte.\p"
+			"Hay mucho que no se resolver con cálculos.\p"
+			"Cómo me gustaría que algún lindo lobo de mar me aconsejase…")
+		}
+	}
+}
+
+
+text SlateportCity_SternsShipyard_1F_Text_BrineyJoinedUs {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Hi! Mr. Briney's joined us to lend us his help.\p"
+			"Thanks to the veteran sailor, the ferry is steadily coming together.")
+		}
+		ES{
+			format("¡Hola! El Señor Briney se ha unido a nosotros.\p"
+			"Gracias a su valiosísima ayuda, nuestro proyecto de ferry empieza a tomar forma.")
+		}
+	}
+}
+
+
+text SlateportCity_SternsShipyard_1F_Text_FerryIsReady {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("The ferry is finally ready!\pThe new S.S. Tidal is truly a marvel\n"
+			"of technology!\p"
+			"But, I get the feeling that we can\n"
+			"make something even better.\p"
+			"You know, there's never an end to\n"
+			"technology's march.")
+		}
+		ES{
+			format("¡El ferry está listo!\p"
+			"¡El nuevo S.S. MAREA es toda una maravilla tecnológica!\p"
+			"Sin embargo, creo que aún podemos mejorar el diseño.\p"
+			"¡Ya sabes que el avance de la ciencia es imparable!")
+		}
+	}
+}
+
+
+text SlateportCity_SternsShipyard_1F_Text_DecidedToHelpDock {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("MR. BRINEY: Ah, {PLAYER}{KUN}!\n"
+			"It's been too long!\p"
+			"Aye, since I met you, this old sea dog's\n"
+			"been feeling frisky!\p"
+			"So I've decided to help DOCK make\n"
+			"a ferry.\p"
+			"Aye, after all, a ferry would be able\n"
+			"to carry a lot of people.\p"
+			"But, you know, that DOCK is really\n"
+			"something special.\p"
+			"With his knack for technology and\n"
+			"my experience, I'm sure that we can\l"
+			"build one great ship, aye!")
+		}
+		ES{
+			format("¡Anda, {PLAYER}{KUN}!\n¡Cuánto tiempo!\p"
+			"Desde que te conocí, me he\n"
+			"sentido la mar de inquieto.\p"
+			"Así que he decidido ayudar a\n"
+			"MUÉLLEZ a construir el ferry.\p"
+			"¡Imagina cuánta gente podría\n"
+			"transportar en cada viaje!\p"
+			"¿Sabes? Este MUÉLLEZ es\n"
+			"un tipo especial de verdad.\p"
+			"Uniendo sus conocimientos\n"
+			"y mi experiencia, haremos\l"
+			"un gran barco, ¡ya lo creo!")
+		}
+	}
+}
+
+
+text SlateportCity_SternsShipyard_1F_Text_SeaIsLikeLivingThing {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("The seasons, the weather, where\n"
+			"the moon sits in the sky…\p"
+			"These and other conditions make\n"
+			"the sea change its expression.\p"
+			"That's right!\n"
+			"The sea is like a living thing!")
+		}
+		ES{
+			format("Las estaciones, el tiempo,\n"
+			"la posición de la Luna…\p"
+			"El estado del mar se ve afectado\n"
+			"por todo esto y mucho más.\p"
+			"¡Exactamente!\n"
+			"¡El mar tiene vida!")
+		}
+	}
+}
+
+
+text SlateportCity_SternsShipyard_1F_Text_GetSeasickEasily {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("I get seasick real easily.\n"
+				"So I get to help out here instead.")
+		}
+		ES{
+				format("Me entra mareo con nada…, así que\n"
+				"me han destinado a este puesto.")
+		}
+	}
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_ShouldI {
+	format("{COLOR BLUE}(¿Debería dárselas...?)\p(Supongo que no hay de otra, dejando dudas de lado.){COLOR DARK_GRAY}")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_WeCantDoThat {
+	format("¡Tienes sólo un Pokémon!\p¡No podemos atacar a alguien así!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_WeCantBeatUp {
+	format("¿Lo habrá hecho a propósito?\n¿Para que no l{OA} ataquen?\p¡Arceus, ¿qué pensará el Jefe?!\n¡Esas Partes son nuestras!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_BeReady {
+	format("Okay, Stern, cálmate. Todo estará bien...")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts {
+	format("Ah, hola, ¿Eres {ELLA} repartidor{A}?\n"
+	"Puedes dejarme las Partes por ahí, este lugar es peligroso ahora.")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts {
+	format("{COLOR LIGHT_GRAY SHADOW WHITE}¿Cómo era? Ah, sí, ok. {COLOR DARK_GRAY SHADOW LIGHT_GRAY}\p¡Alto ahí, señores!\n"
+	"¡Nos llevaremos esas Partes!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou {
+	format("¡Oh! ¡Eh! ¿Qué?\n"
+	"¿Q-quiénes son?")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua {
+	format("¡Somos el Equipo Aqua!\p"
+	"¡Y nuestro Jefe nos envió a buscar esas Partes!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat {
+	format("¡Aaaahh!\n"
+	"¡Me ganó un{A} niñ{OA}!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious {
+	format("¿Porqué tenía que pasar esto…?\n"
+	"El Jefe no estará complacido…")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis {
+	format("¡Pedazo de idiota!\n"
+	"¡Se suponía que atacáramos juntos!\p"
+	"¡Ven conmigo, aún con esos Pokémon débiles de tus reservas seremos más fuertes!")
+}
+text SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis2 {
+	format("¡Prerárate!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat {
+	format("Recluta 1: ¡¿QUÉ?!\n"
+	"Recluta 2: ¡Ja! El problema\lno era yo.")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_MeddlingKid {
+	format("¿Ahora qué? Se supone que las Partes\n"
+	"son nuestras, ¡Esto es injusto!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong {
+	format("Sabía que no se podía confiar en Stern, ¿pero en ustedes?\p"
+	"¡No pensé que perderían ante un{A} niñ{OA}!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_ArchieWarning {
+	format("¡Escúchame bien, vamos a cambiar el mundo!\p"
+	"¡Yo, {COLOR BLUE}el Líder del Equipo{COLOR DARK_GRAY},\n"
+	"{COLOR BLUE}el Grandioso Archie{COLOR DARK_GRAY}, te lo aseguro!")
+}
+text SlateportCity_OceanicMuseum_2F_Text_ArchieWarning2 {
+	format("En pocos años, llegaremos {COLOR BLUE}a un punto sin retorno{COLOR DARK_GRAY}, uno donde nuestras acciones dejarán este mundo inhabitable.\p"
+	"Todos aquí en Slateport lo saben, ¡Pero mi Equipo Aqua salvará el mundo!\p"
+	"Tengo que admitirlo…\pTienes agallas por meterte con nosotros, ¡Pero para la próxima, te dejaré naufragando!")
+}
+text SlateportCity_OceanicMuseum_2F_Text_ArchieWereLeaving {
+	format("¡Ahora, ustedes dos!\n¡Nos vamos!\p"
+	"Díganle a todos que nos vamos a las aguas termales, lo merecen.\p"
+	"Algo me dice que ya recuperaremos las Partes.")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs {
+	format("Ese {COLOR BLUE}Equipo Aqua{COLOR DARK_GRAY}… …\n"
+	"¡Entrar a la fuerza y atacar a un{A} niñ{OA}!\p"
+	"No puedo creer que esta ciudad esté tan de acuerdo con criminales que dicen “ayudar,”\l"
+	"¡Cuando en verdad son un peligro!\p"
+	"Pero bueno, ¡Me llevaré las Partes, gracias!")
+}
+
+text SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo {
+	format("Estas Partes son necesarias para la construcción de un {COLOR BLUE}submarino{COLOR DARK_GRAY} que inventé…")
+}
+	
+
+//mauville
+
+text MauvilleCity_Text_UncleHesTooPeppy {
+	format("Mi Wally se emociona mucho, gracias a\n"
+	"los Pokémon.\p"
+	"Me parece que es mucha emoción…")
+}
+
+text MauvilleCity_Text_WallyWantToChallengeGym {
+	format("¡Ay, porfa, Tío, déjame tomar el {COLOR BLUE}Desafío\n"
+	"de los Gimnasios{COLOR DARK_GRAY}, ya soy muy fuerte!\p"
+	"¡Ralts y yo aprendimos técnicas súper\n"
+	"fuertes!")
+}
+
+text MauvilleCity_Text_UncleYourePushingIt {
+	format("Wally, Wally, tranquilo.\p"
+	"¿No te estás precipitando?{PAUSE 2} Entiendo\n"
+	"que se hayan fortalecido, pero los\l"
+	"{COLOR BLUE}Líderes de Gimnasio{COLOR DARK_GRAY} son MUY fuertes…")
+}
+
+text MauvilleCity_Text_WallyWeCanBeatAnyone {
+	format("¡No me estoy precipitando, Tío!\p"
+	"Si Ralts me ayuda, {PAUSE 5}¡Podré vencer a\n"
+	"cualquier rival!")
+}
+
+text MauvilleCity_Text_WallyWillYouBattleMe {
+	format("Ah, {PAUSE 2}¡{PLAYER}, {PLAYER}!\p"
+	"¡Hace tanto que no te veo, amig{OA}!\p"
+	"¡{PLAYER}, {PLAYER}, quiero\n"
+	"mostrarte lo fuerte que me he vuelto!\l"
+	"Mi Ralts hasta ha aprendido muchos\l"
+	"ataques nuevos, {PLAYER}.\p"
+	"¿Te gustaría combatir conmigo,\n"
+	"{PLAYER}, por favor?")
+}
+
+text MauvilleCity_Text_WallyMyUncleWontKnowImStrong {
+	format("Pero… {PAUSE 5}Pero si no combatimos, mi Tío no\n"
+	"me dejará combatir en los Gimnasios…")
+}
+
+text MauvilleCity_Text_UncleCanYouBattleWally {
+	format("{PLAYER}, {PAUSE 2}¿Verdad?\p"
+	"Wally te admira muchísimo, y no querrá\n"
+	"irse de aquí hasta que tengan una\l"
+	"batalla, así que, por favor, por su bien\l"
+	"y por el mío, {PAUSE 2}¿Podrías hacerlo?")
+}
+
+text MauvilleCity_Text_WallyPleaseBattleMe {
+	format("¡Porfa, {PLAYER}, porfa!")
+}
+
+text MauvilleCity_Text_WallyHereICome {
+	format("Gracias, muchas gracias.\p"
+	"-inhala-, -suspira-… Entonces…\p"
+	"¡{PLAYER}, t-{PAUSE 1}te desafío a una {PLAY_SE SE_PIN}Batalla\n"
+	"Pokémon!{WAIT_SE}")
+}
+
+text MauvilleCity_Text_WallyDefeat {
+	format("Wally: … {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
+	"… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
+	"Perdí…\pY en frente de {PLAYER}…")
+}
+
+text MauvilleCity_Text_WallyIllGoBackToVerdanturf {
+	format("T-{PAUSE 2}tío… {PAUSE 5}Q-{PAUSE 2}quiero… Ir a Verdanturf…\p"
+	"… … … … …")
+}
+
+text MauvilleCity_Text_ThankYouNotEnoughToBattle {
+	format("… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
+	"G-{PAUSE 2}gr…{PAUSE 2}{TEXT_SPEED 2}gra…{PAUSE 2}gracias, {PLAYER}…\p"
+	"{TEXT_SPEED 0}Y-{PAUSE 2}yo… {PAUSE 5}R-{PAUSE 2}realme… {PAUSE 5}…{PAUSE 1}…{PAUSE 1}…{PAUSE 1}… {PAUSE 5}{TEXT_SPEED 2}Aprecio\n"
+	"que… {PAUSE 5}{TEXT_SPEED 2}Te hayas tomado el tiempo de\l"
+	"{TEXT_SPEED 0}enseñarme que ser Entrenador se trata\l"
+	"de mucho más que subir unos niveles…\p"
+	"Necesito…\n"
+	"… {PAUSE 5}…\l"
+	"… {PAUSE 5}{TEXT_SPEED 3}Talento, {PAUSE 2}¿Verdad?")
+}
+
+text MauvilleCity_Text_UncleNoNeedToBeDown {
+	format("¿Ves, Wally? Tu padre tiene razón.\p"
+	"No puedes con esto, es demasiado para tí.\p"
+	"No quiero que seguir perdiendo de lastime aún más.\p"
+	"Deja esta locura de ser Entrenador, Wally.")
+}
+	
+text MauvilleCity_Text_WallyNoNeedTo {
+	format("{TEXT_SPEED 2}Iré solo a Verdanturf.\pNecesito pensar, Tío.")
+}
+
+text MauvilleCity_Text_WallysUncleItsOkay {
+	format("Está bien, Wally.\nCuídate mucho.")
+}
+
+text MauvilleCity_Text_UncleVisitUsSometime {
+	format("… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
+	"Esto es lo que temíamos, {PLAYER}, Wally no soporta la derrota…\p"
+	"… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
+	"Espero que esto al menos le ayude a despertarse.\N"
+	"Ahora dejará esto de lado, y la derrota no lo lastimará más. Gracias, {PLAYER}.")
+}
+
+text MauvilleCity_Text_WallyPokenavCall {
+	format("… … … … … …\n"
+	"… … … … … {PAUSE 2}¡Biip!\p"
+	"Wally: ¡H-{PAUSE 2}hola, {PLAYER}!\p"
+	"Q-{PAUSE 2}quería decirte que mi Tío me compró un PokéNav.\p"
+	"Ahora podré hablar contigo un poco más seguido.\p"
+	"C-{PAUSE 2}c-{PAUSE 2}c-{PAUSE 2}c-{PAUSE 2}claro, s-{PAUSE 2}si eso n-{PAUSE 2}no te parece m-{PAUSE 2}molesto…\p"
+	"…\p"
+	"¿Te parece bien?\N"
+	"¡Genial!\p"
+	"¡Hablamos luego, {PLAYER}!\p"
+	"… … … … … …\n"
+	"… … … … … {PAUSE 2}¡Click!", maxLineLength=32)
+}
+
+text MauvilleCity_Text_RegisteredWally {
+	format("Has añadido a Wally\n"
+	"al PokéNav.")
+}
+
+text MauvilleCity_Text_ScottAParentShould {
+	format("Oiga, con el debido respeto,\n{COLOR LIGHT_GRAY SHADOW WHITE}osea, ninguno,{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\N"
+		   "¿Quién se cree usted para hablarle así a UN NIÑO? ¿Sobretodo su propio sobrino?\p"
+		   "No quiero faltar el respeto, sir, pero un tío debería apoyar a su sobrino, no tirarlo abajo del modo que lo hizo.")
+}
+
+text MauvilleCity_Text_AndWhoAreYou {
+	format("¿Y quién es usted para decirme cómo tratar a mi sobrino?")
+}
+
+text MauvilleCity_Text_ImScott {
+	format("¿Yo?\pI'm Scott, el {COLOR BLUE}inventor de las Tiendas Batalla{COLOR DARK_GRAY}.\p"
+			"Ah, y más importante para usted, un{COLOR BLUE} antiguo Alto Mando de Hoenn{COLOR DARK_GRAY}.")
+}
+
+text MauvilleCity_Text_AndWhyDoICare {
+	format("¿Y eso por qué me tiene que importar a mí?")
+}
+
+text MauvilleCity_Text_ScottDefendsWally {
+	format("Porque digamos que viví lo mismo que Wally, y por experiencia le digo que tratar de “proteger” a un familiar del fracaso…\p"
+			"… Lo lastimará más que la más aplastante derrota. ¿Acaba de perder y usted le dice que no sirve para esto?\p"
+			"¿Qué clase de adulto cree que eso ayudará a su sobrino?")
+}
+
+text MauvilleCity_Text_YouDontUnderstand {
+	format("Usted no lo entiende, Wally es… “Especial,” no podemos dejarlo sin supervisión.\p"
+			"Y veo que no cambiaré su parecer, así que me voy.")
+}
+
+text MauvilleCity_Text_Although {
+	format("… … … … … Aunque…\p"
+			"… Se ve bastante feliz junto a los Pokémon…\p"
+			"Debería hablar con su padre sobre esto, y detenrlo de…")
+}
+
+text MauvilleCity_Text_ScottBadFamily {
+	format("Lo peor de los familiares como él, es que vienen de un lugar de preocupación.\p"
+			"Don't wanna assume, pero parece que su padre es peor…")
+}
+
+text MauvilleCity_Text_ScottYoureTheRealDeal {
+	format("Anyways…\p"
+			"Parece que en serio eres buen{OA} en esto, ¿y buen{A} amig{OA}, también?\p"
+			"Espero sigas mejorando, ¡Estaré esperando ver en quién se convierten ambos!")
+}
+
+
+// ruta 112
+
+text Route112_Text_LeaderGoingToAwakenThing {
+	format("Ey, lindo, ¿En serio {COLOR BLUE}nuestro Líder va a despertar a {TEXT_SPEED 2}ESA cosa{COLOR DARK_GRAY}?")
+}
+
+text Route112_Text_YeahWeNeedMeteorite {
+	format("Sí, amor. Pero necesitamos el Meteorito.")
+}
+
+text Route112_Text_OhThatsWhyCrewWentToFallarbor {
+	format("Por eso se fueron a Fallarbor, supongo.")
+}
+
+text Route112_Text_CantLetAnyonePassUntilTheyreBack {
+	format("Sí, llegamos un poco tarde, pero con algo de suerte, nadie pasó.\pNo dejaremos pasar a nadie desde ahora.")
+}
+
+text Route112_Text_AreYouChallengingUs {
+	format("¿Qué pasa? ¿Nos estás retando?")
+}
+
+text Route112_Text_WerePlentyStrong {
+	format("Somos fuertes, no te lo recomiendo... ¡Nuestros Pokémon son nivel 45!")
+}
+
+text Route112_Text_WhatWhereAreYou {
+	format("¿¡QUÉ!?\n¿¡A dónde te vas!?\p¡Vas a dormir en el sillón, pedazo de cobarde!")
+}
+
+text Route112_Text_HeyDontGoThere {
+	format("¡Y tú!\p¿¡Qué crees que estás-!?")
+}
+
+text Route112_Text_WeToldYou {
+	format("Deberías habernos creído. Ahora vete. No molestes.")
+}
+
+text Route112_Text_WeCanDoBetter {
+	format("Y eso que ni trajimos nuestros Pokémon más fuertes.")
+}
+
+// mt chimney
+
+text MtChimney_Text_MaxieFreakOut {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("What do you mean that you don't have it?\pWHERE IS IT, THEN!?")
+		}
+		ES{
+			format("¿Cómo que no lo tienen?\p¿¡DÓNDE ESTÁ, ENTONCES!?")
+		}
+	}
+}
+
+text MtChimney_Text_TabithaWeDontKnow {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("W-{PAUSE 8}we don't know, boss! I-{PAUSE 8}t just never came through!")
+		}
+		ES{
+			format("¡N-{PAUSE 8}no sabemos, Señor! ¡N-{PAUSE 8}nunca nos llegó!")
+		}
+	}
+}
+
+text MtChimney_Text_CourtneySolution {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Boss. We have to search for a solution. Currently thinking of one.")
+		}
+		ES{
+			format("Señor. Debemos buscar una solución. Actualmente lo estoy haciendo.")
+		}
+	}
+}
+
+text MtChimney_Text_MaxieFreakOut2 {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("No, no, no, {SHAKE_SCREEN 4 4 2 3} NO!\pNEITHER OF YOU {SHAKE_SCREEN 1 1 3 0}GET IT!\pYou all FAILED. And this machine… I don't think it can even turn on…\p"
+			"So even if you H{SHAKE_SCREEN 3 4 2 2}ADN'T FAILED, we would still be at a loss.\p……………\n…………\p{COLOR BLUE}(I just keep failing, no matter {COLOR RED}what I do{COLOR BLUE}, don't I?)")
+		}
+		ES{
+			format("¡No, no, no, {SHAKE_SCREEN 4 4 2 3}NO!\p¡NINGUNO {SHAKE_SCREEN 1 1 3 0}ENTIENDE!\pME FALLARON. Y esta máquina… No creo que funcione…\p"
+			"Así que aunque no hubieran {SHAKE_SCREEN 3 4 2 2}FRACASADO, aún perderíamos.\p……………\n…………\p{COLOR BLUE}(Sigo fallando, {COLOR RED}sin importar qué haga{COLOR BLUE}, ¿No?)")
+		}
+	}
+}
+
+text MtChimney_Text_MaxieNoticePlayer {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("No, no, no, {SHAKE_SCREEN 4 4 3 3} NO!\pNEITHER OF YOU {SHAKE_SCREEN 1 1 2 0}GET IT!\pYou all FAILED. And this machine… I don't think it can even turn on…\p"
+			"So even if you H{SHAKE_SCREEN 3 4 2 3}ADN'T FAILED, we would still be at a loss.\p……………\n…………\p{COLOR BLUE}(I just keep failing, no matter {COLOR RED}what I do{COLOR BLUE}, don't I?)")
+		}
+		ES{
+			format("Y por si no fuera ya demasiado…\n¿Quién dejó pasar a est{EA} niñ{OA}?\p¡Les dije que evacúen el lugar!\pNo importa, me ocuparé de esto yo.")
+		}
+	}
+}
+
+text MtChimney_Text_ArchieAsIf {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{SHAKE_SCREEN 2 3 2 1}As if!")
+		}
+		ES{
+			format("{SHAKE_SCREEN 2 3 2 1}¡Como si te fuera a dejar!")
+		}
+	}
+}
+
+text MtChimney_Text_MaxieDefeat {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("I've been defeated!?\pME, the great Maxie!?")
+		}
+		ES{
+			format("¡¿Qué?!\p¡¿Me han derrotado, al gran Maxie!?")
+		}
+	}
+}
+
+text MtChimney_Text_ArchieKnewYouCould {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{SHAKE_SCREEN 2 3 2 1}Knew you could do it!")
+		}
+		ES{
+			format("{SHAKE_SCREEN 2 3 2 1}¡Sabía que podías!")
+		}
+	}
+}
+
+text MtChimney_Text_ArchieBattleWithPlayer {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{PLAYER}! Let me join you to defeat Maxie!\pI won't let an adult attack a kid like this!")
+		}
+		ES{
+			format("¡{PLAYER}! ¡Unamos fuerzas y derrotemos a Maxie!\p¡No dejaré que un adulto ataque así a un{A} niñ{OA}!")
+		}
+	}
+}
+
+
+text MtChimney_Text_DeltaPlan1 {
+	format("¿Tienes todo?")
+}
+
+text MtChimney_Text_DeltaPlan2 {
+	format("Sí, quédate aquí mientras la reprogramo.")
+}
+
+text MtChimney_Text_DeltaYouCantPass {
+	format("Ni lo pienses.\nNo puedes pasar. Punto final.")
+}
+
+text MtChimney_Text_DeltaWereDoneHere {
+	format("¿Un{A} intrus{OA}?\nQué ternura.\pVámonos, ya terminamos.")
+}
+
+text MtChimney_Text_MaxieArrive {
+	format("¡Entren todos! ¡A sus posiciones!")
+}
+
+text MtChimney_Text_MaxieWhoAreYou {
+	format("¿¡Y tú quién eres!?\pPareces un{A} Entrenador{A}. Supongo no te irás hasta que te derrote,\N¡Te arrepentirás de encontrarte con {COLOR BLUE}Maxie{COLOR DARK_GRAY},{COLOR BLUE} el Líder del Equipo Magma{COLOR DARK_GRAY}!")
+}
+
+text MtChimney_Text_MagmaGruntMaxieLost1 {
+	format("¿Nuestro Líder perdió?")
+}
+
+text MtChimney_Text_MagmaGruntMaxieLost2 {
+	format("Le dije que trajera su Equipo principal...")
+}
+
+text MtChimney_Text_MaxieIllSucceedAnyways {
+	format("Seguro crees que venir aquí cambió algo, {PAUSE 30}¡Pero no es así!\p¡Con este Meteorito..!")
+}
+
+text MtChimney_Text_MaxieMachineNotWork {
+	format("¡Pero!\p¡L-la máquina! ¡Alguien la arruinó!")
+}
+
+text MtChimney_Text_ArchieArrives {
+	format("¡Bua-jajaja! ¿¡Quién lo diría!?\p¡No tuvimos ni que hacer nada!")
+}
+
+text MtChimney_Text_ArchieTellsGrunts {
+	format("¡Óiganme! ¡Vamos a las aguas termales, marineros!\pest{EA} pequeñ{OA} percebe está de nuestro lado e hizo el trabajo por nosotros.")
+}
+
+text MtChimney_Text_WeLoveYouArchie {
+	format("¡Eres genial, Jefecito!\p¡Te amamos, Archie!")
+}
+
+// meteor falls 1f
+
+text MeteorFalls_1F_1R_Text_AndThatsWhy {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("And that's why… Once they appear…\pYou'll comply.")
+		}
+		ES{
+			format("Y es por eso… Cuando lleguen…\pHarás lo que te digan.")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_Understood {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Understood, Mister!\pI hope they don't realize…")
+		}
+		ES{
+			format("¡Entendido, Señor!\pEspero no lo noten…")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_FamiliarVoice {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{COLOR_PLAYER}(That voice…)\n(… Is… {COLOR_RIVAL}He{COLOR_PLAYER} here?)")
+		}
+		ES{
+			format("{COLOR_PLAYER}(Esa voz…)\n(… ¿Será que… Es {COLOR_RIVAL}él{COLOR_PLAYER}…?)")
+		}
+	}
+}
+
+// text MeteorFalls_1F_1R_Text_FamiliarVoice {
+	// poryswitch(LANGUAGE) {
+		// EN{
+			// format("{COLOR_PLAYER}(That voice…)\n(… Is… {COLOR_RIVAL}He{COLOR_PLAYER} here?)")
+		// }
+		// ES{
+			// format("{COLOR_PLAYER}(Esa voz…)\n(… ¿Será que… Es {COLOR_RIVAL}él{COLOR_PLAYER}…?)")
+		// }
+	// }
+// }
+
+// text MeteorFalls_1F_1R_Text_FamiliarVoice {
+	// poryswitch(LANGUAGE) {
+		// EN{
+			// format("{COLOR_PLAYER}(That voice…)\n(… Is… {COLOR_RIVAL}He{COLOR_PLAYER} here?)")
+		// }
+		// ES{
+			// format("{COLOR_PLAYER}(Esa voz…)\n(… ¿Será que… Es {COLOR_RIVAL}él{COLOR_PLAYER}…?)")
+		// }
+	// }
+// }
+
+
+text MeteorFalls_1F_1R_Text_WithThisMeteorite{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Give up the Meteorite!\nWith it, there, at Mt. Chimney…")
+		}
+		ES{
+			format("¡Entregue el meteorito!\nCon él, en el Monte Chimney…")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_ThisIsAllIHave{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("N-no…! This is all I have!")
+		}
+		ES{
+			format("¡N-no…! ¡Esto es todo lo que tengo!")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_PlayerWhatDoIDo{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{COLOR_PLAYER}(What do I do now?)")
+		}
+		ES{
+			format("{COLOR_PLAYER}(¿Y qué hago yo ahora?)")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_PlayerRightHelp{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{COLOR_PLAYER}(Right! I can't leave him like this, can I?)")
+		}
+		ES{
+			format("{COLOR_PLAYER}(¡Claro! No puedo abandonarlo así, ¿Verdad?)")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_PlayerRightJustWatch{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{COLOR_PLAYER}(Right! It's not my place, is it?)")
+		}
+		ES{
+			format("{COLOR_PLAYER} (¡Claro! No es mi lugar, ¿Verdad?)")
+		}
+	}
+}
+			
+text MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma{
+	poryswitch(LANGUAGE) {
+		EN{
+		format("Whose child is this? Are you the brat that's been"
+		"messing with Team Aqua?\p¡Verás qué gran poder poseemos en el Equipo Magma!")
+		}
+		ES{
+		format("¿Y est{EA} niñ{OA}?\n¿No serás tú {ELLA} que estuvo derrotando al"
+		"Equipo Aqua?\p¡Verás qué gran poder poseemos en el Equipo Magma!")
+		}
+	}
+}
+
+// text MeteorFalls_1F_1R_Text_FreedomOfChoice{
+	// poryswitch(LANGUAGE) {
+		// EN{
+		// format("{COLOR_PLAYER}(im killing myself )")
+		// }
+		// ES{
+		// format("¿Y est{EA} niñ{OA}?\n¿No serás tú {ELLA} que estuvo derrotando al"
+		// "Equipo Aqua?\p¡Verás qué gran poder poseemos en el Equipo Magma!")
+		// }
+	// }
+// }
+
+text MeteorFalls_1F_1R_Text_HoldItRightThereMagma{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Hold it right there, Team Magma!\p{COLOR BLUE}(Hehe… Always wanted to say that…){COLOR DARK_GRAY}\p"
+			"Abandon this planet at once!")
+		}
+		ES{
+			format("¡Alto ahí, Equipo Magma!\p{COLOR BLUE}(Jeje… Siempre quise decir eso…){COLOR DARK_GRAY}\p"
+			"¡Abandonen el planeta!")
+		}
+	}
+}
+
+
+text MeteorFalls_1F_1R_Text_MagmaConfusion {
+	format("???????????????????????????????")
+}
+
+text MeteorFalls_1F_1R_Text_GotCarriedAway{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Um… Got carried away…\pEhem……\nY'all really thought you could get away without us sayin' nothin'?")
+		}
+		ES{
+			format("Em… Creo que me pasé…\pEjem……\n¿Creyeron que podrían salirse con la suya sin que les digamos nada?")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_WhatIsThisChild{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("H-{PAUSE 5}huh?\p{PAUSE 10}WHAT EVEN IS THIS CHILD!?")
+		}
+		ES{
+			format("Q-{PAUSE 5} eh?\p{PAUSE 10}¿¡PERO Y EST{EA} {ITOITA} QUÉ ES!?")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_WhatIsThisYOU{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Oh my myths, you are STUPID!\pI keep telling you, a Special Attacking Ursaring is NOT. GOING. TO. WORK!\p"
+			"And a Nidoking… With all four moves being Earthquake? HOW do you even do that?")
+		}
+		ES{
+			format("¡Mítico mío, eres IDIOTA!\pTe vivo diciendo, un Ursaring Atacante Especial ¡NO. VA. A. FUNCIONAR!\p"
+			"¿Y cómo hiciste para que tu Nidoking conozca Terremoto cuatro veces?")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_ShutUp{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("SHUT UP! SHUT UP!\pFirst of all, this Nidoking was {COLOR RED}Mr. Maxie's gift{COLOR DARK_GRAY}.\NSecond of all,"
+			" MY URSARING WILL PAY OFF. I GUARANTEE YOU.")
+		}
+		ES{
+			format("¡CÁLLATE! ¡CÁLLATE!\pPrimero que nada, este Nidoking me lo dio el {COLOR RED}Señor Maxie{COLOR DARK_GRAY}.\NSegundo que nada,"
+			" ¡MI URSARING VA A FUNCIONAR, TE LO ASEGURO!")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Too late, Team Aqua!\pThe Meteorite is in our possesion!\pWhy don't you all come to Mt Chimney to stop us?")
+		}
+		ES{
+			format("¡Muy tarde, Equipo Aqua!\p¡El Meteorito es nuestro!\p¿Por qué no se vienen al Monte Chimney"
+			"e intentan detenernos?")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_ArchieHelpedBeforeNotNow{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("You. I met back you in Slateport, didn't I?\p"
+			"Look. I don't get you.\nAt least once you helped us…\pBut now? Now you're siding with THEM?\p"
+			"Look. Think what ya want of me, but I'm not aggressive. Neither am I stupid. But that Team Magma"
+			"is a real danger.\pAs long as you don't mess with us, and you do anything against them, I don't care what you do.\p"
+			"But you make a wrong step with us… And you'll end up wishing you sank into the ocean on your way to Slateport…")
+		}
+		ES{
+			format("Tú. Tú eres {ELLA} {GENDER} que ví en Slateport, ¿verdad?\pLa verdad no te comprendo.\n"
+			"Al menos una vez, nos ayudaste, ¿Verdad?\p¿Y ahora estás de SU lado?\p"
+			"Mira. Piensa lo que quieras, pero no soy agresivo. No soy idiota. Ese Eqipo Magma es un peligro.\p"
+			"Mientras no interfieras, y ayudes a acabar con el Equipo Magma, no me importa lo que hagas.\p"
+			"Pero te metes en nuestro camino… Y preferirás haberte ahogado en el océano de camino a Slateport…")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_ArchieHelpedBothTimes{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("You. I met back you in Slateport, didn't I?\N"
+			"Seems like we're on the same ship.\pDon't try to hide it.\n"
+			"I saw you taking that Meteorite when nobody was looking. You better keep that ship afloat, matey.\p"
+			"Let's go to Mt Chimney together, I'm dying to see {COLOR RED}Maxie's{COLOR DARK_GRAY} face"
+			"when he finds out.")
+		}
+		ES{
+			format("Tú. Tú eres {ELLA} que ví en Slateport, ¿verdad?\pParece que estamos en el mismo barco.\n"
+			"Je, no lo escondas. Te vi robarte el Meteorito en ese descuido. Más te vale no bajarte de esa nave.\p"
+			"Vayamos todos al Monte Chimney… Me muero de ganas de ver la cara de {COLOR RED}Maxie{COLOR DARK_GRAY}"
+			"cuando se entere.")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_ArchieNeverHelped{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("You. I met back you in Slateport, didn't I?\p"
+			"You must be one of them, or are you just plain old stupid?\p"
+			"Think what you want of me, but I'm not one to act without thinking. But that Team Magma"
+			"is a real danger.\p"
+			"If you take even one wrong step with us… I can't promise any Pokémon Center will save your Team…")
+		}
+		ES{
+			format("Tú. Tú eres {ELLA} {GENDER} que ví en Slateport, ¿verdad?\pLa verdad no te comprendo.\n"
+			"¿Eres infiltrad{OA} del Equipo Magma, verdad?\p¿O simplemente eres idiota?"
+			"Mira. Piensa lo que quieras, pero no actúo sin pensar. Ese Eqipo Magma es un peligro.\p"
+			"Y si te metes en nuestro camino… No prometo que haya Centro Pokémon capaz de salvar a tus compañeros…")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_MeetProfCozmo{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("I… I'm Cozmo…\nI'm a Professor…\p"
+			"H-{PAUSE 8}he told me…{PAUSE 16} T-{PAUSE 8}t-{PAUSE 8}he Team Magma Grunt, I mean!\p"
+			"He tricked me…{PAUSE 16} And now the Meteorite is gone.\pWhat would they even need it for?")
+		}
+		ES{
+			format("Soy… Cozmo…\nSoy un Profesor Pokémon…\p"
+			"É-{PAUSE 8}él dijo…{PAUSE 16} ¡C-{PAUSE 8}cl-{PAUSE 8}claro que hablo de ese Recluta!\p"
+			"Me engañó…{PAUSE 16} Y se llevó el Meteorito.\p¿Para qué lo querrán?")
+		}
+		
+	}
+}
+
+text MeteorFalls_1F_1R_Text_ProfCozmoGiveMeteorite{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Y-{PAUSE 8}you have it?\p{COLOR BLUE}(This isn't good…){COLOR DARK_GRAY}\pT-{PAUSE 8}that's great!\N"
+			"Why don't we go to my lab?")
+		}
+		ES{
+			format("¿L-{PAUSE 8}lo tienes?\p{COLOR BLUE}(Esto es terrible…){COLOR DARK_GRAY}\p¡Q-{PAUSE 8}qué bien!\N"
+			"¿Vamos a mi laboratorio?")
+		}
+		
+	}
+}
+
+text MeteorFalls_1F_1R_Text_ProfCozmoGetItBack{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Y-{PAUSE 8}you'll get it back?\pThat's great!\NJust, please be careful…")
+		}
+		ES{
+			format("¿L-{PAUSE 8}lo recuperarás?\p¡Qué alivio!\nPor favor, ten cuidado con ellos…")
+		}
+	}
+}
+
+
+text MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("That “Team Magma”… The Distorsion World do they want at Chimney?")
+		}
+		ES{
+			format("Ese tal “Equipo Magma”… ¿Qué Giratinas querrán en el Monte Chimney?")
+		}
+	}
+}
+
+
+raw `
+
+`

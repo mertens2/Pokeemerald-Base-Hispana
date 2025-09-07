@@ -20,6 +20,11 @@
 #include "constants/moves.h"
 #include "constants/item_effects.h"
 #include "constants/hold_effects.h"
+#include "item_icon.h"
+#include "pokemon_summary_screen.h"
+#include "menu.h"
+#include "party_menu.h"
+#include "overworld.h"
 
 #define DUMMY_PC_BAG_POCKET                 \
 {                                           \
@@ -33,8 +38,13 @@ static bool32 CheckPyramidBagHasSpace(u16 itemId, u16 count);
 static const u8 *GetItemPluralName(u16);
 static bool32 DoesItemHavePluralName(u16);
 static void NONNULL BagPocket_CompactItems(struct BagPocket *pocket);
+// static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash);
+// static void DestroyItemIconSprite(void);
 
 EWRAM_DATA struct BagPocket gBagPockets[POCKETS_COUNT] = {0};
+// EWRAM_DATA static u8 sHeaderBoxWindowId = 0;
+// EWRAM_DATA u8 sItemIconSpriteId = 0;
+// EWRAM_DATA u8 sItemIconSpriteId2 = 0;
 
 #include "data/pokemon/item_effects.h"
 #include "data/items.h"
@@ -940,4 +950,57 @@ bool32 IsHoldEffectChoice(enum ItemHoldEffect holdEffect)
     return holdEffect == HOLD_EFFECT_CHOICE_BAND
         || holdEffect == HOLD_EFFECT_CHOICE_SCARF
         || holdEffect == HOLD_EFFECT_CHOICE_SPECS;
+}
+
+
+void TakeAwayItemsAndBerries(void)
+{
+	// if(IsBagPocketNonEmpty(POCKET_ITEMS))
+	// {
+		// u16 i;
+		// for(i = 0; i < gBagPockets[POCKET_ITEMS].capacity; i++)
+		// {
+			// if(gBagPockets[POCKET_ITEMS].itemSlots[i].itemId != ITEM_NONE)
+			// {
+				// Items[i][0] = gBagPockets[POCKET_ITEMS].itemSlots[i].itemId;
+				// Items[i][1] = GetBagItemQuantity(&gBagPockets[POCKET_ITEMS].itemSlots[i].quantity);
+			// }
+		// }
+		// ClearItemSlots(gBagPockets[POCKET_ITEMS].itemSlots, gBagPockets[POCKET_ITEMS].capacity);
+	// }
+	// if(IsBagPocketNonEmpty(POCKET_BERRIES))
+	// {
+		// u16 j;
+		// for(j = 0; j < gBagPockets[POCKET_BERRIES].capacity; j++)
+		// {
+			// if(gBagPockets[POCKET_BERRIES].itemSlots[j].itemId != ITEM_NONE)
+			// {
+				// Berries[j][0] = gBagPockets[POCKET_BERRIES].itemSlots[j].itemId;
+				// Berries[j][1] = GetBagItemQuantity(&gBagPockets[POCKET_BERRIES].itemSlots[j].quantity);
+			// }
+		// }
+		// ClearItemSlots(gBagPockets[POCKET_BERRIES].itemSlots, gBagPockets[POCKET_BERRIES].capacity);
+	// }
+}
+
+void GiveBackItemsAndBerries(void)
+{
+	// u16 i = 0;
+	// while(Items[i][0])
+	// {
+		// gBagPockets[POCKET_ITEMS].itemSlots[i].itemId = Items[i][0];
+		// SetBagItemQuantity(&gBagPockets[POCKET_ITEMS].itemSlots[i].quantity, Items[i][1]);
+		// Items[i][0], Items[i][1] = 0;
+		// i++;
+	// }
+	
+	// i = 0;
+	
+	// while(Berries[i][0])
+	// {
+		// gBagPockets[POCKET_BERRIES].itemSlots[i].itemId = Berries[i][0];
+		// SetBagItemQuantity(&gBagPockets[POCKET_BERRIES].itemSlots[i].quantity, Berries[i][1]);
+		// Berries[i][0], Berries[i][1] = 0;
+		// i++;
+	// }
 }

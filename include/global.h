@@ -47,6 +47,9 @@
 #define INCBIN_COMP INCBIN
 #endif // IDE support
 
+//tx_registered_items_menu
+#define REGISTERED_ITEMS_MAX 10
+
 #define ARRAY_COUNT(array) (size_t)(sizeof(array) / sizeof((array)[0]))
 
 // GameFreak used a macro called "NELEMS", as evidenced by
@@ -232,6 +235,11 @@ struct NPCFollower
     u16 graphicsId;
     u16 flags;
     u8 battlePartner; // If you have more than 255 total battle partners defined, change this to a u16
+};
+
+struct RegisteredItemSlot
+{
+    u16 itemId;
 };
 
 #include "constants/items.h"
@@ -561,6 +569,8 @@ struct RankingHall2P
 
 struct SaveBlock2
 {
+			 u8 _saveSentinel;
+			 u16 saveVersion;
     /*0x00*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
     /*0x08*/ u8 playerGender; // MALE, FEMALE
     /*0x09*/ u8 specialSaveWarpFlags;
@@ -570,12 +580,19 @@ struct SaveBlock2
     /*0x11*/ u8 playTimeSeconds;
     /*0x12*/ u8 playTimeVBlanks;
     /*0x13*/ u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
-    /*0x14*/ u16 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
+    /*0x14*/ u16 optionsTextSpeed:2; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
              u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
              u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
              u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
              u16 regionMapZoom:1; // whether the map is zoomed in
+             u16 optionsUnitSystem:1;   //tx_optionsPlus
+             u16 optionsHpBarSpeed:4;   //tx_optionsPlus
+             u16 optionsExpBarSpeed:4;  //tx_optionsPlus
+			 u16 optionsShinyOdds:3;
+			 u16 optionsDifficulty:3;
+			 u16 optionsTextSkip:2;
+			 u8 customization[5];
              //u16 padding1:4;
              //u16 padding2;
     /*0x18*/ struct Pokedex pokedex;
@@ -601,6 +618,8 @@ struct SaveBlock2
     /*0x0F2C*/ u8 unlockedQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 completedQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 activeQuest;
+			   u8 playerPronouns; //pronombres duh
+			   u8 cafeTrainers[4];
 }; 
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
@@ -1160,6 +1179,12 @@ struct SaveBlock1
     /*0x3???*/ struct TrainerHillSave trainerHill;
 #endif //FREE_TRAINER_HILL
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
+			   u8 trainerType;
+			   u8 registeredItemLastSelected:4; //max 16 items
+               u8 registeredItemListCount:4;
+               struct RegisteredItemSlot registeredItems[REGISTERED_ITEMS_MAX];
+			   struct Pokemon Empty;
+			   struct Pokemon BossTeam[PARTY_SIZE - 1];
     // sizeof: 0x3???
 };
 

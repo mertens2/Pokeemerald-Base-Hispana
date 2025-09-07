@@ -1,0 +1,99 @@
+text gText_ObtainedTheItem {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Obtuviste una unidad de\n{STR_VAR_2}!")
+		}
+		EN {
+			
+			format("Obtained the {STR_VAR_2}!")
+		}
+	}
+}
+
+text gText_TheBagIsFull {
+	poryswitch(LANGUAGE){
+		ES {
+			format("La Mochila está llena…")
+		}
+		EN {
+			format("The BAG is full…")
+		}
+	}
+}
+
+text gText_PutItemInPocket {
+	poryswitch(LANGUAGE){
+		ES {
+			format("{PLAYER} puso {STR_VAR_2} en el bolsillo {STR_VAR_3}.")
+		}
+		EN {
+			format("{PLAYER} put away the {STR_VAR_2} in the {STR_VAR_3} POCKET.")
+		}
+	}
+}
+
+text gText_PlayerFoundOneItem {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡{PLAYER} encontró una unidad de\n{STR_VAR_2}!")
+		}
+		EN {
+			format("{PLAYER} found one {STR_VAR_2}!")
+		}
+	}
+}
+
+text gText_TooBadBagIsFull {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Qué mal! La Mochila está llena…")
+		}
+		EN {
+			format("Too bad! The BAG is full…")
+		}
+	}
+}
+
+text gText_PlayerPutItemInBag {
+	poryswitch(LANGUAGE){
+		ES {
+			format("{PLAYER} guardó {STR_VAR_2} en la Mochila.")
+		}
+		EN {
+			format("{PLAYER} put away the {STR_VAR_2} in the BAG.")
+		}
+	}
+}
+
+text gText_ObtainedTheDecor {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Conseguiste una unidad de {STR_VAR_2}!")
+		}
+		EN {
+			format("Obtained the {STR_VAR_2}!")
+		}
+	}
+}
+
+text gText_NoRoomLeftForAnother {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Mala suerte! ¡Ya no hay espacio para\nmás {STR_VAR_2}!")
+		}
+		EN {
+			format("Too bad! There's no room left for another {STR_VAR_2}…")
+		}
+	}
+}
+
+text gText_TheDecorWasTransferredToThePC {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡{STR_VAR_2} fue transferido al PC!")
+		}
+		EN {
+			format("The {STR_VAR_2} was transferred to the PC.")
+		}
+	}
+}

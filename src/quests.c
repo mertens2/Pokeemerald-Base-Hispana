@@ -686,12 +686,12 @@ static bool8 QuestMenu_LoadGraphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(sQuestMenuTilemap, sBg1TilemapBuffer);
+            // LZDecompressWram(sQuestMenuTilemap, sBg1TilemapBuffer);
             sStateDataPtr->data[0]++;
         }
         break;
     case 2:
-        LoadCompressedPalette(sQuestMenuBgPals, 0x00, 0x60);
+        // LoadCompressedPalette(sQuestMenuBgPals, 0x00, 0x60);
         sStateDataPtr->data[0]++;
         break;
     case 3:

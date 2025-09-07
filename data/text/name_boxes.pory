@@ -1,0 +1,225 @@
+text Unknown {
+	format("{COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}???")
+}
+text Birch {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Profesor Birch")
+		EN:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Professor Birch")
+	}
+}
+text BirchEng {
+	format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Professor Birch")
+}
+
+text EmpleadoDevon {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Empleado Devon")
+		EN:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Devon Employee")
+	}
+}
+text Norman {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Papá")
+		EN:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Dad")
+	}
+}
+
+text Mama {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR LIGHT_RED}{SHADOW RED}Mamá")
+		EN:format("{COLOR LIGHT_RED}{SHADOW RED}Mom")
+	}
+}
+
+text Marta {
+	format("{COLOR LIGHT_RED}{SHADOW RED}Marta")
+}
+text Rival {
+	format("{COLOR_RIVAL}{RIVAL}")
+}
+text Roxanne {
+	format("{COLOR RED}Roxanne")
+}
+text Brawly {
+	format("{COLOR BLUE}Brawly")
+}
+text Wattson {
+	format("{COLOR BLUE}Wattson")
+}
+text Flannery {
+	format("{COLOR RED}Flannery")
+}
+text Winona {
+	format("{COLOR RED}Winona")
+}
+text Tate {
+	format("{COLOR BLUE}Tate")
+}
+text Liza {
+	format("{COLOR RED}Liza")
+}
+text Juan {
+	format("{COLOR BLUE}Juan")
+}
+text Player {
+	format("{COLOR_PLAYER}{PLAYER}")
+}
+text Archie {
+	format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Archie")
+}
+text Aqua {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR BLUE}Recluta Aqua")
+		EN:format("{COLOR BLUE}Aqua Grunt")
+	}
+}
+text Magma {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR RED}Recluta Magma")
+		EN:format("{COLOR RED}Magma Grunt")
+	}
+}
+text Maxie {
+	format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Maxie")
+}
+text Shelly {
+	format("{COLOR LIGHT_RED}{SHADOW RED}Shelly")
+}
+text Matt {
+	format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Matt")
+}
+text Courtney {
+	format("{COLOR LIGHT_RED}{SHADOW RED}Courtney")
+}
+text Tabitha {
+	format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Tabitha")
+}
+text Steven {
+	format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Steven")
+}
+text Wallace {
+	format("{COLOR LIGHT_GREEN}{SHADOW GREEN}Wallace")
+}
+text Wally {
+	format("{COLOR LIGHT_GREEN}{SHADOW GREEN}Wally")
+}
+text Phoebe {
+	format("{COLOR RED}{SHADOW LIGHT_RED}Phoebe")
+}
+text Glacia {
+	format("{COLOR RED}{SHADOW LIGHT_RED}Glacia")
+}
+text Drake {
+	format("{COLOR BLUE}{SHADOW LIGHT_BLUE}Drake")
+}
+text Sidney {
+	format("{COLOR BLUE}{SHADOW LIGHT_BLUE}Sidney")
+}
+text CampeonaLeaf {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR LIGHT_RED}{SHADOW RED}Campeona Leaf")
+		EN:format("{COLOR LIGHT_RED}{SHADOW RED}Champion Leaf")
+	}
+}
+text Leaf {
+	format("{COLOR LIGHT_RED}{SHADOW RED}Leaf")
+}
+text PapaWally {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR BLUE}Papá de Wally")
+		EN:format("{COLOR BLUE}Wally's Dad")
+	}
+}
+text TioWally {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR BLUE}Tío de Wally")
+		EN:format("{COLOR BLUE}Wally's Uncle")
+	}
+}
+text MamaWally {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR RED}Mamá de Wally")
+		EN:format("{COLOR RED}Wally's Mom")
+	}
+}
+text TiaWally {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR RED}Tía de Wally")
+		EN:format("{COLOR RED}Wally's Aunt")
+	}
+}
+text Cientifico {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR BLUE}Científico")
+		EN:format("{COLOR BLUE}Scientist")
+	}
+}
+text Alex {
+	format("{COLOR BLUE}Alex")
+}
+text Esmeralda {
+	format("{COLOR RED}Esmeralda")
+}
+text NoDeberiasVerlo {
+	format("No tendrías que poder ver esto.\n"
+	 "Si ves este mensaje, contacta al\l"
+	 "desarrollador y dile cómo y porqué\l"
+	 "este evento se mostró.")
+}
+text Riley {
+	format("{COLOR BLUE}Riley")
+}
+text Wanda {
+	format("{COLOR RED}Wanda")
+}
+text Camilo {
+	format("{COLOR BLUE}Camilo")
+}
+text Stern {
+	format("{COLOR BLUE}Stern")
+}
+text Briney {
+	format("{COLOR BLUE}Briney")
+}
+text Scott {
+	format("{COLOR GREEN}Scott")
+}
+text Carlos {
+	format("{COLOR BLUE}Carlos")
+}
+text RecoveredItems {
+	poryswitch(LANGUAGE){
+		ES:format("¡Has recuperado tus objetos!")
+		EN:format("You've recovered your items!")
+	}
+}
+text RecoveredPokemon {
+	poryswitch(LANGUAGE){
+		ES:format("¡Has recuperado tus Pokémon!")
+		EN:format("You've recovered your Pokémon!")
+	}
+}
+text RecoveredPokemonAndItems {
+	poryswitch(LANGUAGE){
+		ES:format("¡Has recuperado tus Pokémon y objetos!")
+		EN:format("You've recovered both your items and your Pokémon!")
+	}
+}
+text Chico {
+	format("{COLOR BLUE}Bully")
+}
+text Gabby {
+	format("{COLOR RED}Gabby")
+}
+text Ty {
+	format("{COLOR BLUE}Ty")
+}
+text Delta {
+	format("{COLOR GREEN}Delta")
+}
+text Entrevistador {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR BLUE}Entrevistador")
+		EN:format("{COLOR BLUE}Interviewer")
+	}
+} 

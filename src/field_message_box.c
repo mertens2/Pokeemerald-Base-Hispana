@@ -7,6 +7,7 @@
 #include "field_message_box.h"
 #include "text_window.h"
 #include "script.h"
+#include "field_name_box.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 EWRAM_DATA u8 gWalkAwayFromSignpostTimer = 0;

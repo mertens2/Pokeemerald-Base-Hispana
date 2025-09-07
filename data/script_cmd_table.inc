@@ -256,8 +256,6 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_HIDENAMEBOX 					ScrCmd_hidenamebox,                 requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_CHANGEFRAME 					ScrCmd_changeframe,                 requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_CHECKPARTYTYPE 				ScrCmd_checkpartytype,              requests_effects=1  @ 0xe5
-	script_cmd_table_entry SCR_OP_SHOWITEMDESC 					ScrCmd_showitemdesc,                requests_effects=1  @ 0xe5
-	script_cmd_table_entry SCR_OP_HIDEITEMDESC 					ScrCmd_hideitemdesc,                requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_SHOWMONPICSHINY 				ScrCmd_showmonpicshiny,             requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_SETMONMOVEVAR					ScrCmd_setmonmovevar,               requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_SETGETOBJECTFLAGS				ScrCmd_setgetobjectflags,           requests_effects=1  @ 0xe5
