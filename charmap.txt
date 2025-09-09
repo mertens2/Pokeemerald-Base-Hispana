@@ -160,6 +160,7 @@ EMOJI_DIZZYEGG = F7
 TALL_PLUS   = FC 0C FB
 '$'         = FF
 
+
 @ Hiragana
 'あ' = 01
 'い' = 02
@@ -364,6 +365,22 @@ EA            = FD 14
 COLOR_PLAYER  = FD 15
 COLOR_RIVAL   = FD 16
 
+@ semántica del género del rival
+AO            = FD 17
+ARIVAL        = FD 18
+LAEL          = FD 19
+LaEl          = FD 1A
+ITARIVAL      = FD 1B
+ITAITO        = FD 1C
+AE            = FD 1D
+ElElla        = FD 1E
+ELELLA        = FD 1F
+EllaEl        = FD 20
+ELLAEL        = FD 21
+
+@ variable de genero customizable
+GENDER        = FD 22
+
 @ battle string placeholders
 
 B_BUFF1 = FD 00
@@ -472,6 +489,9 @@ JPN = FC 15
 ENG = FC 16
 PAUSE_MUSIC = FC 17
 RESUME_MUSIC = FC 18
+TEXT_SPEED = FC 19
+SHAKE_SCREEN = FC 1A
+FLASH = FC 1B
 
 @ fonts
 

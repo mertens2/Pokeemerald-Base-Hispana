@@ -11,11 +11,11 @@ OldaleTown_House2_EventScript_Man::
 	end
 
 OldaleTown_House2_Text_PokemonLevelUp:
-	.string "¡Hola! ¿Sabías que los Pokémon\n"
-	.string "tienen diferencias de género?$"
+	.string "Cuando los POKéMON luchan,\n"
+	.string "suben de nivel y se hacen más fuertes.$"
 
 OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon:
-	.string "Si tu Pokémon se sobrepasa de nivel,\n"
-	.string "podría llegar a no obedecerte.$"
+	.string "Si los POKéMON que tienes se vuelven\n"
+	.string "más fuertes, podrás viajar más lejos.$"
 
 `

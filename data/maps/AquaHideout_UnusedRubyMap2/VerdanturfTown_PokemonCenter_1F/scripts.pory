@@ -1,5 +1,5 @@
 raw `
-.set LOCALID_NURSE, 1
+@ .set LOCALID_NURSE, 1
 
 VerdanturfTown_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VerdanturfTown_PokemonCenter_1F_OnTransition

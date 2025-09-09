@@ -1,7 +1,4 @@
 raw `
-.set LOCALID_BRINEY, 11
-.set LOCALID_WANDAS_BF_OUTSIDE, 21
-
 Route116_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route116_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route116_OnLoad
@@ -16,7 +13,7 @@ Route116_OnTransition:
 	end
 
 Route116_EventScript_SetWandasBoyfriendPos::
-	setobjectxyperm LOCALID_WANDAS_BF_OUTSIDE, 38, 10
+	setobjectxyperm LOCALID_ROUTE116_WANDAS_BF, 38, 10
 	return
 
 Route116_OnLoad:
@@ -52,9 +49,6 @@ Route116_EventScript_DevonEmployee::
 	faceplayer
 	goto_if_set FLAG_MET_DEVON_EMPLOYEE, Route116_EventScript_TryGiveRepeatBallAgain
 	msgbox Route116_Text_ThankYouTokenOfAppreciation, MSGBOX_DEFAULT
-	namebox Stern
-	msgbox Route116_Text_ThankYouTokenOfAppreciation2, MSGBOX_DEFAULT
-	hidenamebox
 	goto Route116_EventScript_GiveRepeatBall
 	end
 
@@ -62,15 +56,14 @@ Route116_EventScript_GiveRepeatBall::
 	setflag FLAG_MET_DEVON_EMPLOYEE
 	giveitem ITEM_REPEAT_BALL
 	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_NoRoomForRepeatBall
-	namebox Stern
 	msgbox Route116_Text_NewBallAvailableAtMart, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
 	call_if_eq VAR_FACING, DIR_NORTH, Route116_EventScript_DevonEmployeeExit
 	call_if_eq VAR_FACING, DIR_SOUTH, Route116_EventScript_DevonEmployeeExit
 	call_if_eq VAR_FACING, DIR_WEST, Route116_EventScript_DevonEmployeeExit
 	call_if_eq VAR_FACING, DIR_EAST, Route116_EventScript_DevonEmployeeExitEast
 	removeobject VAR_LAST_TALKED
+	clearflag FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE
 	setflag FLAG_RECEIVED_REPEAT_BALL
 	release
 	end
@@ -149,8 +142,8 @@ Route116_EventScript_Briney::
 
 Route116_EventScript_BrineyTrigger::
 	lockall
-	applymovement LOCALID_BRINEY, Common_Movement_WalkInPlaceFasterRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_ROUTE116_BRINEY, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox Route116_Text_ScoundrelMadeOffWithPeeko, MSGBOX_DEFAULT
 	setvar VAR_ROUTE116_STATE, 2
@@ -160,39 +153,36 @@ Route116_EventScript_BrineyTrigger::
 Route116_EventScript_GlassesMan::
 	lock
 	faceplayer
-	goto_if_set FLAG_WISH_1, Route116_EventScript_GlassesManDone
 	checkitem ITEM_BLACK_GLASSES
-	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_PlayerHasThem
+	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_PlayerHasGlasses
+	specialvar VAR_RESULT, FoundBlackGlasses
+	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_FoundGlassesNotOnPlayer
 	msgbox Route116_Text_CanYouHelpMeFindGlasses, MSGBOX_DEFAULT
 	release
 	end
-Route116_EventScript_GlassesManDone::
-	msgbox Route116_Text_GlassesThanks
-	release
-	end
-Route116_EventScript_PlayerHasThem::
-	removeitem ITEM_BLACK_GLASSES
-	playse SE_PIN
-	applymovement VAR_LAST_TALKED, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox Route116_Text_HasThem
-	addvar VAR_WISHES_FUFILLED, 1
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceAwayPlayer
-	waitmovement 0
-	pike_flashscreen
-	waitstate
-	call Script_Wishes
+
+Route116_EventScript_FoundGlassesNotOnPlayer::
+	msgbox Route116_Text_CantFindGlassesNotHere, MSGBOX_DEFAULT
+	closemessage
 	goto Route116_EventScript_GlassesManExit
+	end
+
+Route116_EventScript_PlayerHasGlasses::
+	msgbox Route116_Text_CanYouHelpMeFindGlasses, MSGBOX_DEFAULT
+	msgbox Route116_Text_MayISeeThoseGlasses, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, FoundBlackGlasses
+	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_FoundGlassesOnPlayer
+	msgbox Route116_Text_NotWhatImLookingFor, MSGBOX_DEFAULT
 	release
 	end
 
-
-Route116_Text_HasThem:
-	.string "¡L-l-los!\n¡Los tienes!\p¡Gracias!$"
-
+Route116_EventScript_FoundGlassesOnPlayer::
+	msgbox Route116_Text_NotWhatImLookingForMaybeTheyArentHere, MSGBOX_DEFAULT
+	closemessage
+	goto Route116_EventScript_GlassesManExit
+	end
 
 Route116_EventScript_GlassesManExit::
-	setflag FLAG_HIDE_ROUTE_116_DROPPED_GLASSES_MAN
 	delay 20
 	call_if_eq VAR_FACING, DIR_NORTH, Route116_EventScript_GlassesManExitNormal
 	call_if_eq VAR_FACING, DIR_SOUTH, Route116_EventScript_GlassesManExitNormal
@@ -245,6 +235,47 @@ Route116_EventScript_Joey::
 Route116_EventScript_Jose::
 	trainerbattle_single TRAINER_JOSE, Route116_Text_JoseIntro, Route116_Text_JoseDefeat
 	msgbox Route116_Text_JosePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route116_EventScript_Jerry::
+	trainerbattle_single TRAINER_JERRY_1, Route116_Text_JerryIntro, Route116_Text_JerryDefeat, Route116_EventScript_TryRegisterJerryAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_RematchJerry
+	setvar VAR_0x8004, TRAINER_JERRY_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_TryRegisterJerry
+	msgbox Route116_Text_JerryPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route116_EventScript_TryRegisterJerryAfterBattle::
+	goto_if_set FLAG_HAS_MATCH_CALL, Route116_EventScript_RegisterJerryAfterBattle
+	release
+	end
+
+Route116_EventScript_RegisterJerryAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	msgbox Route116_Text_JerryRegister2, MSGBOX_DEFAULT
+	register_matchcall TRAINER_JERRY_1
+	release
+	end
+
+Route116_EventScript_TryRegisterJerry::
+	goto_if_set FLAG_HAS_MATCH_CALL, Route116_EventScript_RegisterJerry
+	msgbox Route116_Text_JerryPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route116_EventScript_RegisterJerry::
+	msgbox Route116_Text_JerryRegister1, MSGBOX_DEFAULT
+	register_matchcall TRAINER_JERRY_1
+	release
+	end
+
+Route116_EventScript_RematchJerry::
+	trainerbattle_rematch TRAINER_JERRY_1, Route116_Text_JerryRematchIntro, Route116_Text_JerryRematchDefeat
+	msgbox Route116_Text_JerryPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Clark::
@@ -319,70 +350,124 @@ Route116_EventScript_Johnson::
 	end
 
 Route116_Text_ScoundrelMadeOffWithPeeko:
-	.string "¿Qué voy a hacer ahora?\n¡Se llevaron a mi Peeko!\p"
-	.string "¡BUUUAAAAAA! ¡PEEEEEKOOOOOO!$"
+	.string "Oooooh… ¿Y ahora qué hago?\p"
+	.string "Estaba paseando con mi PEEKO cuando\n"
+	.string "un gamberro con muy mala pinta se\l"
+	.string "abalanzó sobre nosotros.\p"
+	.string "¡Ese desgraciado se largó con mi\n"
+	.string "PEEKO precioso!\p"
+	.string "¡Buaaaaaaaaa! ¡PEEKO, vuelve!$"
 
 Route116_Text_WantToDigTunnel:
-	.string "Nnn… ¡Roar!\p"
-	.string "¡Quiero cavar! ¡AAAARRGGHH!$"
+	.string "Cavando, me paso el día cavando…\p"
+	.string "¡Cavo que te cavo para acabar el túnel!$"
 
 Route116_Text_DiggingTunnelWhenGoonOrderedMeOut:
-	.string "Nnn… ¡Roar!\n"
-	.string "¿Y ahora qué?\p"
-	.string "Estaba cavando en ese túnel\ncon nada más que mis grandes\lmúsculos cuando un estúpido me\ldijo que me fuera y me llevara\lmis músculos conmigo.\p"
-	.string "¡GROOAAARRR!\n¡Odio a ese idiota!$"
+	.string "Cavando, me paso el día cavando…\n"
+	.string "¿Qué pasa aquí?\p"
+	.string "¡Estaba excavando el túnel con mis\n"
+	.string "propias manitas cuando un matón\l"
+	.string "me echó de allí!\p"
+	.string "Ese túnel está repleto de POKéMON\n"
+	.string "que reaccionan muy mal a los ruidos\l"
+	.string "fuertes. Se puede armar la gorda.\p"
+	.string "Por eso no usamos maquinaria pesada\n"
+	.string "para excavar el túnel…\p"
+	.string "Me preocupa que ese golfo haga alguna\n"
+	.string "tontería y los POKéMON se alboroten.$"
 
 Route116_Text_GoonHightailedItOutOfTunnel:
-	.string "Nnn… ¡Roar!\p"
-	.string "¡Ese idiota dijo que si tenía\ncuidado podía usar mis\lhermosos músculos para cavar!\p"
-	.string "¡Nadie había reconocido lo\nmucho que me esforcé en tener\lmis músculos así de tonificados!\p"
-	.string "¡Me hizo sentir cosas!\n¡Debo habarle a mi novia de\llo mucho que me gusta él!\p¡GROOOAARRR!$"
+	.string "Cavando, me paso el día cavando…\p"
+	.string "Ese matón de pacotilla ha salido por\n"
+	.string "patas del túnel. ¡Puedo seguir cavando!$"
 
 Route116_Text_ThankYouTokenOfAppreciation:
-	.string "¡Ah, me ayudaste de nuevo!\n¡Déjame entonces presentarme!\p¡Soy {COLOR BLUE}El Capitán Stern{COLOR DARK_GRAY}, aunque\nnadie sabe esto aparte de tí ahora.$"
-	
-Route116_Text_ThankYouTokenOfAppreciation2:
-	.string "Te pedirán que me lleves un paquete a\nSlaterport luego, porque yo\lusualmente estoy allí.\pEsto es porque quiero asegurarme\nde que el paquete que me entregarán\les el que yo encargué.\p"
-	.string "Pero bueno, toma esto:$"
-
-
-Route116_Text_GlassesThanks:
-	.string "¡Muchísimas gracias!$"
-
+	.string "¡Anda, si eres tú!\p"
+	.string "¡Recuerdo bien que no sólo me ayudaste\n"
+	.string "en el BOSQUE PETALIA, sino que también\l"
+	.string "recuperaste el paquete que me robaron\l"
+	.string "y además lo llevaste a CIUDAD PORTUAL!\p"
+	.string "Además, el CAP. BABOR nos informó\n"
+	.string "de que lo había recibido sin problemas.\p"
+	.string "¡Muchas, muchísimas gracias!\p"
+	.string "¡Vamos, si pudiera, me hacía una\n"
+	.string "camiseta con tu nombre para que\l"
+	.string "todos supieran qué grande eres!\p"
+	.string "¡Sí, eres genial, y yo te traigo\n"
+	.string "buenísimas noticias!\p"
+	.string "Nuestra empresa acaba de crear un\n"
+	.string "nuevo tipo de POKé BALL.\p"
+	.string "Queremos darte esta muestra en\n"
+	.string "reconocimiento a tu gran ayuda.$"
 
 Route116_Text_NewBallAvailableAtMart:
-	.string "¡Hasta luego!$"
+	.string "Nuestra nueva POKé BALL estará a la\n"
+	.string "venta en la TIENDA POKéMON de\l"
+	.string "CIUDAD FÉRRICA.\p"
+	.string "¡Pruébala lo antes posible!\n"
+	.string "¡Hasta la próxima!$"
 
 Route116_Text_BagIsJamPacked:
-	.string "Oh, no hay espacio.$"
+	.string "La MOCHILA está a reventar de cosas.\n"
+	.string "No puedo darte esta ACOPIO BALL.$"
 
 Route116_Text_TokenOfAppreciation:
-	.string "Esto es porque quiero asegurarme\nde que el paquete que me entregarán\les el que yo encargué.\p"
-	.string "Pero bueno, toma esto:$"
+	.string "Como agradecimiento por haber\n"
+	.string "entregado el paquete, quiero regalarte\l"
+	.string "un nuevo tipo de POKé BALL.\l"
+	.string "¡Ideal para los grandes ENTRENADORES!$"
 
 Route116_Text_CanYouHelpMeFindGlasses:
-	.string "Mis lentes…\n"
-	.string "¿Me ayudas a buscarlos?$"
+	.string "Se me han caído las gafas…\n"
+	.string "¿Me ayudas a buscarlas?$"
+
+Route116_Text_MayISeeThoseGlasses:
+	.string "Esas gafas…\n"
+	.string "¿Puedo verlas un momento?$"
+
+Route116_Text_NotWhatImLookingForMaybeTheyArentHere:
+	.string "Mmmm…\n"
+	.string "Son unas GAFAS de SOL.\l"
+	.string "No son las que busco…\p"
+	.string "Puede que mis gafas no estén\n"
+	.string "por aquí después de todo.$"
+
+Route116_Text_CantFindGlassesNotHere:
+	.string "Mmmm…\n"
+	.string "No puedo encontrar mis gafas…\l"
+	.string "Puede que no estén por aquí.$"
+
+Route116_Text_NotWhatImLookingFor:
+	.string "Mmmm…\n"
+	.string "Son unas GAFAS de SOL.\l"
+	.string "No son las que busco…$"
 
 Route116_Text_RouteSignRustboro:
 	.string "RUTA 116\n"
-	.string "{LEFT_ARROW} CIUDAD RUSTBORO$"
+	.string "{LEFT_ARROW} CIUDAD FÉRRICA$"
 
 Route116_Text_RusturfTunnelSign:
-	.string "TÚNEL RUSTURF\n"
-	.string "“Uniendo a Rustboro y Verdanturf.\p"
-	.string "El proyecto fue cancelado.”$"
+	.string "TÚNEL FERVERGAL\n"
+	.string "“Conecta CIUDAD FÉRRICA y VERDEGAL.\p"
+	.string "El proyecto de construcción del\n"
+	.string "túnel ha sido cancelado.”$"
 
 Route116_Text_TunnelersRestHouse:
-	.string "LA CASA DEL CREA-TÚNELES$"
+	.string "POSADA del TUNELERO$"
 
 Route116_Text_TrainerTipsBToStopEvolution:
-	.string "PISTAS PARA ENTRENADORES\p"
-	.string "Las Máquinas Ocultas, o MOs,\nahora sólo requieren que tengas\luna medalla específica.\p"
-	.string "¡No a los Escalvos MO!$"
+	.string "PISTAS para ENTRENADORES\p"
+	.string "Si quieres evitar que un POKéMON\n"
+	.string "evolucione, pulsa el Botón B cuando\l"
+	.string "vaya a hacerlo.\p"
+	.string "Esto se llama anula-evolución.$"
 
 Route116_Text_TrainerTipsBagHasPockets:
-	.string "PISTAS PARA ENTRENADORES\p"
-	.string "Puedes ver quiénes aprenden\ncada MT o MO en el Estuche MT.$"
+	.string "PISTAS para ENTRENADORES\p"
+	.string "En la MOCHILA hay varios BOLSILLOS.\p"
+	.string "Los objetos se guardan en el BOLSILLO\n"
+	.string "correspondiente automáticamente.\p"
+	.string "Todo ENTRENADOR tiene que contar\n"
+	.string "con su propia MOCHILA.$"
 
 `

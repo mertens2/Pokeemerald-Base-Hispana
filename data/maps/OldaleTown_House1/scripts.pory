@@ -7,11 +7,11 @@ OldaleTown_House1_EventScript_Woman::
 	end
 
 OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
-	.string "Cuando un Pokémon tiene equipado el\n"
-	.string "Repartir Experiencia, recibirá\l"
-	.string "el {COLOR BLUE}triple de puntos de experiencia{COLOR DARK_GRAY}\l"
-	.string "que recibiría normalmente, esto\l"
-	.string "para entrenarlo más rápidamente.\p"
-	.string "Aunque no sé dónde se consigue eso.$"
+	.string "Cuando empieza un combate POKéMON,\n"
+	.string "el que está a la izquierda de la lista\l"
+	.string "sale a luchar primero.\p"
+	.string "Así que, cuando tengas varios POKéMON\n"
+	.string "en tu equipo, prueba a cambiar el orden.\p"
+	.string "En algunos casos, podría darte ventaja.$"
 
 `

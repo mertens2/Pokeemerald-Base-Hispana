@@ -20,25 +20,20 @@
     },
     {
       "map": "MAP_MAUVILLE_CITY",
-      "offset": 1,
+      "offset": 0,
       "direction": "left"
     },
     {
       "map": "MAP_ROUTE123",
       "offset": 0,
       "direction": "right"
-    },
-    {
-      "map": "MAP_MAUVILLE_CITY_F1",
-      "offset": 0,
-      "direction": "left"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 44,
-      "y": 4,
+      "x": 35,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -50,8 +45,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 45,
-      "y": 4,
+      "x": 36,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -63,8 +58,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 43,
-      "y": 4,
+      "x": 37,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -88,6 +83,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ROUTE118_GABBY_1",
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
       "x": 33,
       "y": 8,
@@ -101,6 +97,7 @@
       "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_1"
     },
     {
+      "local_id": "LOCALID_ROUTE118_TY_1",
       "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
       "x": 34,
       "y": 8,
@@ -127,6 +124,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ROUTE118_GABBY_2",
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
       "x": 33,
       "y": 8,
@@ -140,6 +138,7 @@
       "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_2"
     },
     {
+      "local_id": "LOCALID_ROUTE118_TY_2",
       "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
       "x": 34,
       "y": 8,
@@ -153,6 +152,7 @@
       "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_2"
     },
     {
+      "local_id": "LOCALID_ROUTE118_GABBY_3",
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
       "x": 33,
       "y": 8,
@@ -166,6 +166,7 @@
       "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_3"
     },
     {
+      "local_id": "LOCALID_ROUTE118_TY_3",
       "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
       "x": 34,
       "y": 8,
@@ -270,6 +271,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ROUTE118_STEVEN",
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
       "x": 44,
       "y": 7,
@@ -284,8 +286,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 67,
-      "y": 20,
+      "x": 69,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -311,8 +313,8 @@
   ],
   "warp_events": [
     {
-      "x": 31,
-      "y": 4,
+      "x": 42,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": "0"
@@ -394,14 +396,14 @@
     },
     {
       "type": "secret_base",
-      "x": 41,
+      "x": 47,
       "y": 5,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE1_3"
     },
     {
       "type": "secret_base",
-      "x": 40,
+      "x": 46,
       "y": 5,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE2_1"

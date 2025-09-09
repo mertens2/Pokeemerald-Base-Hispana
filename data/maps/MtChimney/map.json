@@ -12,9 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_MT_CHIMNEY_ARCHIE",
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
       "x": 24,
       "y": 19,
@@ -28,6 +29,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
     },
     {
+      "local_id": "LOCALID_MT_CHIMNEY_MAXIE",
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
       "x": 13,
       "y": 6,
@@ -41,6 +43,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
+      "local_id": "LOCALID_MT_CHIMNEY_TABITHA",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 12,
       "y": 11,
@@ -48,13 +51,13 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "MtChimney_EventScript_Tabitha",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 32,
       "y": 5,
       "elevation": 3,
@@ -93,7 +96,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 29,
       "y": 5,
       "elevation": 3,
@@ -106,7 +109,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 31,
       "y": 12,
       "elevation": 3,
@@ -145,7 +148,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SHARPEDO",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 23,
       "y": 19,
       "elevation": 3,
@@ -154,11 +157,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Sharpedo",
+      "script": "MtChimney_EventScript_AquaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KROKOROK",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 23,
       "y": 18,
       "elevation": 3,
@@ -167,7 +170,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Krokorok",
+      "script": "MtChimney_EventScript_MagmaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
@@ -193,11 +196,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Poochyena",
+      "script": "MtChimney_EventScript_MagmaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAGCARGO",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 22,
       "y": 19,
       "elevation": 3,
@@ -206,7 +209,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Magcargo",
+      "script": "MtChimney_EventScript_MagmaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
@@ -223,7 +226,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 21,
       "y": 19,
       "elevation": 3,
@@ -236,7 +239,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PELIPPER",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 30,
       "y": 12,
       "elevation": 3,
@@ -245,11 +248,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Pelipper",
+      "script": "MtChimney_EventScript_AquaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KROKOROK",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 29,
       "y": 12,
       "elevation": 3,
@@ -258,11 +261,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Krokorok",
+      "script": "MtChimney_EventScript_MagmaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_QWILFISH",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 30,
       "y": 5,
       "elevation": 3,
@@ -271,11 +274,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Qwilfish",
+      "script": "MtChimney_EventScript_AquaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAGCARGO",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 31,
       "y": 5,
       "elevation": 3,
@@ -284,10 +287,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Magcargo",
+      "script": "MtChimney_EventScript_MagmaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
+      "local_id": "LOCALID_MT_CHIMNEY_MAGMA_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 9,
       "y": 16,
@@ -301,7 +305,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_QWILFISH",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 20,
       "y": 39,
       "elevation": 3,
@@ -310,11 +314,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Poochyena",
+      "script": "MtChimney_EventScript_AquaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KROKOROK",
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
       "x": 21,
       "y": 39,
       "elevation": 3,
@@ -323,7 +327,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MtChimney_EventScript_Krokorok",
+      "script": "MtChimney_EventScript_MagmaPoochyena",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
     },
     {
@@ -379,6 +383,7 @@
       "flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS"
     },
     {
+      "local_id": "LOCALID_MT_CHIMNEY_MAGMA_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
       "x": 13,
       "y": 16,
@@ -403,58 +408,6 @@
       "trainer_sight_or_berry_tree_id": "6",
       "script": "MtChimney_EventScript_Sawyer",
       "flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
-      "x": 9,
-      "y": 11,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_WINONA",
-      "x": 40,
-      "y": 0,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_WINONA",
-      "x": 40,
-      "y": 1,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GROUDON_FRONT",
-      "x": 41,
-      "y": 1,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
     }
   ],
   "warp_events": [
@@ -487,35 +440,7 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 12,
-      "elevation": 0,
-      "var": "VAR_MT_CHIMNEY_STATE",
-      "var_value": "0",
-      "script": "MtChimney_EventScript_Trigger2"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 12,
-      "elevation": 0,
-      "var": "VAR_MT_CHIMNEY_STATE",
-      "var_value": "0",
-      "script": "MtChimney_EventScript_Trigger1"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_MT_CHIMNEY_STATE",
-      "var_value": "10",
-      "script": "MtChimney_EventScript_Trigger3"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

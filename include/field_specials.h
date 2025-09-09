@@ -36,5 +36,14 @@ void PreparePartyForSkyBattle(void);
 void GetObjectPosition(u16*, u16*, u32, u32);
 bool32 CheckObjectAtXY(u32, u32);
 bool32 CheckPartyHasSpecies(u32);
+void ShakeCameraScript(u16 horPan, u16 verPan, u16 num, u16 delayShake, u16 shouldPlaySE);
+enum {
+	YELL_NONE = 0,
+	YELL_LIGHT,
+	YELL_NORMAL,
+	YELL_HEAVY,
+	YELL_AGGRESSIVE,
+	YELL_STRENGTH
+};
 
 #endif // GUARD_FIELD_SPECIALS_H

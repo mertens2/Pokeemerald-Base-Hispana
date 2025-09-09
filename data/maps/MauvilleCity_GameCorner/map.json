@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -176,20 +176,18 @@
       "x": 11,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_map": "MAP_MAUVILLE_CITY",
       "dest_warp_id": "5"
     },
     {
       "x": 12,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_map": "MAP_MAUVILLE_CITY",
       "dest_warp_id": "5"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

@@ -1,117 +1,12 @@
-
-script Route101_EventScript_HelpMe {
-	poryswitch(LANGUAGE){
-		ES{
-			msgbox(format("¡ALGUIEN, {SHAKE_SCREEN 3 3 2 3}AYÚDEME!"))
-		}
-		EN{
-			msgbox(format("SOMEBODY, {SHAKE_SCREEN 3 3 2 3}HELP ME!"))
-		}
-	}
-	return
-}
-
-script Route101_EventScript_Youngster {
-	poryswitch(LANGUAGE){
-		ES{
-			msgbox(format("Es raro pensar en cómo cambian las cosas, ¿No te parece?\pHace mucho, ¡Solíamos temer a los Pokémon!\N¿Te imaginas temerle a un Ralts? ¡JAJAJA!"))
-		}
-		EN{
-			msgbox(format("Weird to think about much things change, huh?\pLike, long ago, we used to fear Pokémon!\NCan you imagine fearing a RALTS!? Couldn't be me, HAHAHA!"))
-		}
-	}
-	return
-}
-
-script Route101_EventScript_PleaseHelp {
-	poryswitch(LANGUAGE){
-		ES{
-			msgbox(format("¡Tú, ayúdame, soy alérgico a este Pokémon, y olvidé mi EPI-Pen!\p¡Usa las PokéBall que están en mi maletín!"))
-		}
-		EN{
-			msgbox(format("He-help me, I'm allergic to Zigzagoon! And of course I had to forget my EPI-Pen!\pGrab a Ball from the case!"))
-		}
-	}
-	return
-}
-
-script Route101_EventScript_DontLeaveMe {
-	poryswitch(LANGUAGE){
-		ES{
-			msgbox(format("{SHAKE_SCREEN 3 3 2 3}¡No me dejes así!"))
-		}
-		EN{
-			msgbox(format("{SHAKE_SCREEN 3 3 2 3}Don't leave me like this!"))
-		}
-	}
-	return
-}
-
-script Route101_EventScript_YouSavedMe {
-	poryswitch(LANGUAGE){
-		ES{
-			namebox (Unknown)
-			msgbox (format("¡UFF! {SHAKE_SCREEN 2 3 2 1}¡MUCHÍSIMAS GRACIAS!\p"
-					"Eso estuvo cerca…\nEstaba estudiando los Pokémon de esta ruta, y me atacó un Zigzagoon…\p"
-					"¡Por cierto, yo soy el {COLOR BLUE}Profesor Birch{COLOR DARK_GRAY}!"))
-			hidenamebox
-			namebox (Birch)
-			msgbox (format("¡Encantado!\nTe invito a mi Laboratorio para charlar más."))
-			hidenamebox
-		}
-		EN{
-			namebox (Unknown)
-			msgbox (format("PUFF! {SHAKE_SCREEN 2 3 2 1}THANK YOU SO MUCH!\p"
-					"That was close…\nI was studying the Pokémon here, and then that Zigzagoon…\p"
-					"Anyway, I'm {COLOR BLUE}Professor Birch{COLOR DARK_GRAY}!"))
-			hidenamebox
-			namebox (Birch)
-			msgbox (format("Glad to meet you!\nLet's go to my Lab to talk more."))
-			hidenamebox
-		}
-	}
-	return
-}
 raw `
-.set LOCALID_BIRCH, 2
-.set LOCALID_ZIGZAGOON, 4
-
 Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, Route101_OnResume
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_OnFrame
 	.byte 0
 
-Route101_OnResume:
-	special GetDayOrNight
-	goto_if_eq VAR_RESULT, 1, Route101_OnResume_Night
-	goto_if_eq VAR_RESULT, 0, Route101_OnResume_Day
-	end
-	
-Route101_OnResume_Night:
-	setvar VAR_DAYNIGHT, 1
-	end
-	
-Route101_OnResume_Day:
-	setvar VAR_DAYNIGHT, 0
-	end
-
 Route101_OnTransition:
-	special GetDayOrNight
-	goto_if_eq VAR_RESULT, 1, Route101_OnTransition_Night
-	goto_if_eq VAR_RESULT, 0, Route101_OnTransition_Day
-	end
-	
-Route101_OnTransition_Night:
-	setvar VAR_DAYNIGHT, 1
 	call ProfBirch_EventScript_UpdateLocation
 	end
-
-Route101_OnTransition_Day:
-	setvar VAR_DAYNIGHT, 0
-	call ProfBirch_EventScript_UpdateLocation
-	end
-
 
 Route101_OnFrame:
 	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_HideMapNamePopup
@@ -125,61 +20,51 @@ Route101_EventScript_HideMapNamePopup::
 Route101_EventScript_StartBirchRescue::
 	lockall
 	playbgm MUS_HELP, TRUE
-	namebox Unknown
-	call Route101_EventScript_HelpMe
+	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
-	setobjectxy LOCALID_BIRCH, 0, 16
-	setobjectxy LOCALID_ZIGZAGOON, 0, 17
-	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_EnterScene
-	applymovement LOCALID_BIRCH, Route101_Movement_BirchRunAway1
-	applymovement LOCALID_ZIGZAGOON, Route101_Movement_ZigzagoonChase1
+	setobjectxy LOCALID_ROUTE101_BIRCH, 0, 15
+	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 0, 16
+	applymovement LOCALID_PLAYER, Route101_Movement_EnterScene
+	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchRunAway1
+	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonChase1
 	waitmovement 0
-	applymovement LOCALID_ZIGZAGOON, Route101_Movement_ZigzagoonChaseInCircles
-	applymovement LOCALID_BIRCH, Route101_Movement_BirchRunInCircles
+	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonChaseInCircles
+	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchRunInCircles
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_ROUTE101_BIRCH, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	applymovement LOCALID_ZIGZAGOON, Route101_Movement_ZigzagoonFaceBirch
-	applymovement LOCALID_BIRCH, Route101_Movement_BirchFaceZigzagoon
+	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonFaceBirch
+	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchFaceZigzagoon
 	waitmovement 0
-	namebox Unknown
-	call Route101_EventScript_PleaseHelp
+	msgbox Route101_Text_PleaseHelp, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
 	setvar VAR_ROUTE101_STATE, 2
 	releaseall
 	end
 
 Route101_EventScript_PreventExitSouth::
 	lockall
-	namebox Unknown
-	call Route101_EventScript_DontLeaveMe
-	hidenamebox
+	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitSouth
+	applymovement LOCALID_PLAYER, Route101_Movement_PreventExitSouth
 	waitmovement 0
 	releaseall
 	end
 
 Route101_EventScript_PreventExitWest::
 	lockall
-	namebox Unknown
-	call Route101_EventScript_DontLeaveMe
+	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
-	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitWest
+	applymovement LOCALID_PLAYER, Route101_Movement_PreventExitWest
 	waitmovement 0
 	releaseall
 	end
 
 Route101_EventScript_PreventExitNorth::
 	lockall
-	namebox Unknown
-	call Route101_EventScript_DontLeaveMe
+	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
-	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitNorth
+	applymovement LOCALID_PLAYER, Route101_Movement_PreventExitNorth
 	waitmovement 0
 	releaseall
 	end
@@ -199,7 +84,7 @@ Route101_Movement_PreventExitNorth:
 Route101_Movement_ZigzagoonChaseInCircles:
 	walk_fast_up
 	walk_fast_up
-	walk_fast_right
+	walk_fast_up
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -238,6 +123,9 @@ Route101_Movement_ZigzagoonChase1:
 	walk_fast_up
 	step_end
 
+@ Leftover data? This command is unused.
+	step_end
+
 Route101_Movement_ZigzagoonFaceBirch:
 	walk_in_place_fast_left
 	walk_in_place_fast_left
@@ -250,12 +138,12 @@ Route101_Movement_EnterScene:
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
-	walk_fast_left
+	walk_in_place_faster_left
 	step_end
 
 Route101_Movement_BirchRunInCircles:
 	walk_fast_up
-	walk_fast_right
+	walk_fast_up
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -302,40 +190,10 @@ Route101_Movement_BirchFaceZigzagoon:
 	walk_in_place_fast_right
 	step_end
 
-Route101_Movement_PokemonEscape:
-	walk_in_place_fast_left
-	delay_8
-	walk_in_place_fast_right
-	delay_8
-	walk_in_place_fast_left
-	delay_8
-	walk_in_place_fast_right
-	delay_8
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_left
-	walk_fast_right
-	set_invisible
-	step_end
-
-
-Route101_EventScript_Night::
-	msgbox Route101_Text_TakeTiredPokemonToPokeCenter2, MSGBOX_NPC
-	setwildbattle SPECIES_SNORLAX, 95, ITEM_LEFTOVERS
-	dowildbattle
-	giveitem ITEM_LEFTOVERS, 10
-	clearflag FLAG_EVENTOMISTERIOSO1
+Route101_EventScript_Youngster::
+	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
 	end
+
 Route101_EventScript_Boy::
 	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
 	end
@@ -350,30 +208,22 @@ Route101_EventScript_BirchsBag::
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RESCUED_BIRCH
 	fadescreen FADE_TO_BLACK
-	setobjectxy OBJ_EVENT_ID_PLAYER, 7, 15
-	applymovement LOCALID_ZIGZAGOON, Common_Movement_WalkInPlaceFasterRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	removeobject LOCALID_ROUTE101_ZIGZAGOON
+	setobjectxy LOCALID_PLAYER, 6, 13
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	special ChooseStarter
 	waitstate
-	playse SE_PIN
-	applymovement LOCALID_ZIGZAGOON, Common_Movement_ExclamationMark
+	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchApproachPlayer
 	waitmovement 0
-	applymovement LOCALID_ZIGZAGOON, Route101_Movement_PokemonEscape
-	waitmovement 0
-	applymovement LOCALID_BIRCH, Route101_Movement_BirchApproachPlayer
-	waitmovement 0
-	call Route101_EventScript_YouSavedMe
+	msgbox Route101_Text_YouSavedMe, MSGBOX_DEFAULT
 	special HealPlayerParty
-	removeobject LOCALID_ZIGZAGOON
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
 	setvar VAR_BIRCH_LAB_STATE, 2
 	setvar VAR_ROUTE101_STATE, 3
-	setvar VAR_OLDALE_TOWN_STATE, 1
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	getemptyslot
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom
 	call_if_eq VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom
@@ -394,18 +244,46 @@ Route101_Movement_BirchApproachPlayer:
 	walk_right
 	step_end
 
+Route101_Text_HelpMe:
+	.string "¡Socorro! ¡Ayuda!$"
 
+Route101_Text_PleaseHelp:
+	.string "¡Oye! ¡Sí, tú!\n"
+	.string "¡Ayúdame, por favor!\p"
+	.string "¡En mi MOCHILA hay POKé BALLS!\n"
+	.string "¡Usa una!$"
 
-Route101_Text_TakeTiredPokemonToPokeCenter2:
-	.string "¡{STR_VAR_1}!$"
+Route101_Text_DontLeaveMe:
+	.string "Pe-pero… ¡¿adónde vas?!\n"
+	.string "¡¡¡No me dejes así!!!$"
+
+Route101_Text_YouSavedMe:
+	.string "PROF. ABEDUL: Uf…\p"
+	.string "Estaba en la zona de hierba alta\n"
+	.string "estudiando POKéMON salvajes\l"
+	.string "cuando me atacó uno…\p"
+	.string "Me has salvado.\n"
+	.string "¡Muchísimas gracias!\p"
+	.string "¡Anda!\p"
+	.string "¡Si eres {PLAYER}{KUN}!\p"
+	.string "Éste no es lugar para charlas, así que\n"
+	.string "vente conmigo a mi LABORATORIO\l"
+	.string "POKéMON, ¿vale?$"
+
+Route101_Text_TakeTiredPokemonToPokeCenter:
+	.string "Si tus POKéMON están cansados,\n"
+	.string "llévalos a un CENTRO POKéMON.\p"
+	.string "Hay un CENTRO POKéMON en PUEBLO\n"
+	.string "ESCASO, muy cerca de aquí.$"
+
 Route101_Text_WildPokemonInTallGrass:
-	.string "Los Pokémon salvajes te atacarán\n"
-	.string "sin pensar en la hierba alta.\p"
-	.string "¡Ten cuidado en las Rutas!$"
+	.string "Los POKéMON salvajes te atacarán\n"
+	.string "en las zonas de hierba alta.\p"
+	.string "Si quieres atrapar POKéMON, ve donde\n"
+	.string "haya hierba alta y busca.$"
 
 Route101_Text_RouteSign:
-	.string "{COLOR LIGHT_RED SHADOW RED}RUTA 101{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\n"
-	.string "{UP_ARROW} {COLOR LIGHT_GREEN SHADOW GREEN}PUEBLO OLDALE{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\l"
-	.string "{DOWN_ARROW} {COLOR LIGHT_GREEN SHADOW GREEN}VILLA LITTLEROOT{COLOR DARK_GRAY SHADOW LIGHT_GRAY}$"
+	.string "RUTA 101\n"
+	.string "{UP_ARROW} PUEBLO ESCASO$"
 
 `

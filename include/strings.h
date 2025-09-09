@@ -17,17 +17,29 @@ extern const u8 gText_ExpandedPlaceholder_Groudon[];
 extern const u8 gText_ExpandedPlaceholder_Brendan[];
 extern const u8 gText_ExpandedPlaceholder_May[];
 // Género
-extern const u8 gText_ExpandedPlaceholder_O[];
-extern const u8 gText_ExpandedPlaceholder_A[];
-extern const u8 gText_ExpandedPlaceholder_E[];
-extern const u8 gText_ExpandedPlaceholder_EL[];
-extern const u8 gText_ExpandedPlaceholder_LA[];
-extern const u8 gText_ExpandedPlaceholder_El[];
-extern const u8 gText_ExpandedPlaceholder_La[];
-extern const u8 gText_ExpandedPlaceholder_ITA[];
-extern const u8 gText_ExpandedPlaceholder_ITO[];
-extern const u8 gText_ExpandedPlaceholder_COLOR_MALE[];
-extern const u8 gText_ExpandedPlaceholder_COLOR_FEMALE[];
+extern const u8 gText_ExpandedPlaceholder_O[]; // _("o");
+extern const u8 gText_ExpandedPlaceholder_A[]; // _("a");
+extern const u8 gText_ExpandedPlaceholder_E[]; // _("e");
+extern const u8 gText_ExpandedPlaceholder_EL[]; // _("el");
+extern const u8 gText_ExpandedPlaceholder_LA[]; // _("la");
+extern const u8 gText_ExpandedPlaceholder_LE[]; // _("le");
+extern const u8 gText_ExpandedPlaceholder_El[]; // _("El");
+extern const u8 gText_ExpandedPlaceholder_La[]; // _("La");
+extern const u8 gText_ExpandedPlaceholder_Le[]; // _("Le");
+extern const u8 gText_ExpandedPlaceholder_ITA[]; // _("ita");
+extern const u8 gText_ExpandedPlaceholder_ITO[]; // _("ito");
+extern const u8 gText_ExpandedPlaceholder_ITE[]; // _("ite");
+extern const u8 gText_ExpandedPlaceholder_COLOR_MALE[]; // _("{COLOR BLUE}");
+extern const u8 gText_ExpandedPlaceholder_COLOR_FEMALE[]; // _("{COLOR RED}");
+extern const u8 gText_ExpandedPlaceholder_COLOR_NON_BINARY[]; // _("{COLOR GREEN}");
+extern const u8 gText_ExpandedPlaceholder_EL2[]; // _("él");
+extern const u8 gText_ExpandedPlaceholder_ELLA[]; // _("ella");
+extern const u8 gText_ExpandedPlaceholder_ELLE[]; // _("elle");
+extern const u8 gText_ExpandedPlaceholder_El2[]; // _("Él");
+extern const u8 gText_ExpandedPlaceholder_Ella[]; // _("Ella");
+extern const u8 gText_ExpandedPlaceholder_Elle[]; // _("Elle");
+extern const u8 gText_Birch_AskPronouns[]; // _("Elle");
+
 
 extern const u8 gText_FromSpace[];
 

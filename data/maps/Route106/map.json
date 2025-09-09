@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_DEWFORD_TOWN",
-      "offset": 55,
+      "offset": 60,
       "direction": "down"
     }
   ],
@@ -53,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 53,
+      "x": 51,
       "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -79,8 +79,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 33,
-      "y": 12,
+      "x": 29,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -93,16 +93,14 @@
   ],
   "warp_events": [
     {
-      "x": 49,
+      "x": 48,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_GRANITE_CAVE_1F",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",
@@ -130,7 +128,7 @@
     },
     {
       "type": "sign",
-      "x": 58,
+      "x": 59,
       "y": 13,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

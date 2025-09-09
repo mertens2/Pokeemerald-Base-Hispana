@@ -19,12 +19,10 @@ OldaleTown_Mart_Pokemart_Basic:
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
-	.2byte ITEM_NONE
-	release
-	end
+	pokemartlistend
 
 OldaleTown_Mart_ExpandedItems::
-	pokemart 0
+	pokemart OldaleTown_Mart_Pokemart_Expanded
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
@@ -36,9 +34,7 @@ OldaleTown_Mart_Pokemart_Expanded:
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
-	.2byte ITEM_NONE
-	release
-	end
+	pokemartlistend
 
 OldaleTown_Mart_EventScript_Woman::
 	lock
@@ -58,25 +54,17 @@ OldaleTown_Mart_EventScript_Boy::
 	end
 
 OldaleTown_Mart_Text_PokeBallsAreSoldOut:
-	.string "La mayoría de las Tiendas Pokémon\n"
-	.string "eran parejas de casados que habían\l"
-	.string "abierto el establecimiento con sus\l"
-	.string "propias manos. Este es el último.\p"
-	.string "Uno vende objetos como Pokéballs y\n"
-	.string "objetos curativos, mientras que otro\l"
-	.string "vende objetos que sirven para\l"
-	.string "atrapar y entrenar a tus Pokémon.\l"
-	.string "¡Ahora están en el Centro Pokémon!$"
+	.string "No puedo comprar POKé BALLS…\n"
+	.string "El encargado dice que están agotadas.$"
 
 OldaleTown_Mart_Text_ImGoingToBuyPokeBalls:
-	.string "¿Sabías que esta es la última\ntienda de Hoenn, sin contar el\lCentro Comercial?\p"
-	.string "Esto es debido a que las Tiendas\ny los Centros Pokémon se han\lcombinado en uno solo.$"
+	.string "¡Voy a comprar un buen montón de POKé\n"
+	.string "BALLS para cazar cantidad de POKéMON!$"
 
 OldaleTown_Mart_Text_RestoreHPWithPotion:
-	.string "Los objetos que encuentres en una\n"
-	.string "Centro o Tienda cambiarán por la\l"
-	.string "cantidad de Medallas que poseas, ¡Pero\l"
-	.string "escuché que hay una Floristería con\l"
-	.string "bayas, y cambian sus reservas también!$"
+	.string "Si dañan a un POKéMON, éste pierde PS,\n"
+	.string "se debilita y no puede seguir luchando.\p"
+	.string "Para evitar que se debilite, restaura\n"
+	.string "sus PS con una POCIÓN.$"
 
 `

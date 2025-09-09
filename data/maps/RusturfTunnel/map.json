@@ -12,9 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_RUSTURF_TUNNEL_WANDAS_BF",
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 23,
       "y": 5,
@@ -49,8 +50,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "RusturfTunnel_EventScript_ItemPokeBall",
+      "trainer_sight_or_berry_tree_id": "ITEM_POKE_BALL",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL"
     },
     {
@@ -67,11 +68,12 @@
       "flag": "FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER"
     },
     {
+      "local_id": "LOCALID_RUSTURF_TUNNEL_BRINEY",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 4,
-      "y": 10,
+      "x": 5,
+      "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -80,8 +82,9 @@
       "flag": "FLAG_HIDE_RUSTURF_TUNNEL_BRINEY"
     },
     {
+      "local_id": "LOCALID_RUSTURF_TUNNEL_GRUNT",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 15,
+      "x": 14,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -93,8 +96,9 @@
       "flag": "FLAG_HIDE_RUSTURF_TUNNEL_AQUA_GRUNT"
     },
     {
+      "local_id": "LOCALID_RUSTURF_TUNNEL_PEEKO",
       "graphics_id": "OBJ_EVENT_GFX_WINGULL",
-      "x": 15,
+      "x": 14,
       "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -132,6 +136,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_RUSTURF_TUNNEL_WANDA",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 25,
       "y": 4,
@@ -158,7 +163,7 @@
       "y": 16,
       "elevation": 3,
       "dest_map": "MAP_VERDANTURF_TOWN",
-      "dest_warp_id": "3"
+      "dest_warp_id": "4"
     },
     {
       "x": 18,
@@ -174,16 +179,34 @@
       "x": 23,
       "y": 4,
       "elevation": 3,
-      "var": "0",
+      "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
       "script": "RusturfTunnel_EventScript_TunnelBlockagePos1"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_RUSTURF_TUNNEL_STATE",
+      "var_value": "2",
+      "script": "RusturfTunnel_EventScript_AquaGruntBackUp"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_RUSTURF_TUNNEL_STATE",
+      "var_value": "2",
+      "script": "RusturfTunnel_EventScript_AquaGruntBackUp"
     },
     {
       "type": "trigger",
       "x": 25,
       "y": 4,
       "elevation": 3,
-      "var": "0",
+      "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
       "script": "RusturfTunnel_EventScript_TunnelBlockagePos2"
     },
@@ -192,7 +215,7 @@
       "x": 25,
       "y": 5,
       "elevation": 3,
-      "var": "0",
+      "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
       "script": "RusturfTunnel_EventScript_TunnelBlockagePos3"
     }

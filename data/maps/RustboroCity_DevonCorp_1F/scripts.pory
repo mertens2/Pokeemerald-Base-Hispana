@@ -1,6 +1,4 @@
 raw `
-.set LOCALID_STAIR_GUARD, 2
-
 RustboroCity_DevonCorp_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_DevonCorp_1F_OnTransition
 	.byte 0
@@ -10,8 +8,8 @@ RustboroCity_DevonCorp_1F_OnTransition:
 	end
 
 RustboroCity_DevonCorp_1F_EventScript_BlockStairs::
-	setobjectxyperm LOCALID_STAIR_GUARD, 14, 2
-	setobjectmovementtype LOCALID_STAIR_GUARD, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm LOCALID_DEVON_CORP_STAIR_GUARD, 14, 2
+	setobjectmovementtype LOCALID_DEVON_CORP_STAIR_GUARD, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 RustboroCity_DevonCorp_1F_EventScript_Employee::
@@ -82,56 +80,67 @@ RustboroCity_DevonCorp_1F_EventScript_ProductsDisplay::
 	end
 
 RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp:
-	.string "¡Bienvenid{0A} a Devon!$"
+	.string "Buenos días. Estás en DEVON S.A.\p"
+	.string "Somos los orgullosos fabricantes\n"
+	.string "de miles de objetos y medicinas\l"
+	.string "que hacen la vida más fácil.$"
 
 RustboroCity_DevonCorp_1F_Text_StaffGotRobbed:
-	.string "Uno de nuestros miembros dejo que\n"
-	.string "un estúpido le robara estúpidamente.$"
+	.string "Uno de nuestros científicos se ha\n"
+	.string "dejado robar un paquete de lo más\l"
+	.string "importante.$"
 
 RustboroCity_DevonCorp_1F_Text_ThoseShoesAreOurProduct:
-	.string "¡Ey, ese Sistema de\n"
-	.string "Almacenamiento portátil!\n"
-	.string "¡Es nuestra última invención!\p"
-	.string "Me enorgullece ver que lo usen.$"
+	.string "Eh, esas DEPORTIVAS las hemos\n"
+	.string "fabricado nosotros.\p"
+	.string "¡Siempre es un placer ver a uno\n"
+	.string "de nuestros clientes!$"
 
 RustboroCity_DevonCorp_1F_Text_RobberWasntVeryBright:
-	.string "Las {COLOR BLUE}Partes robadas{COLOR DARK_GRAY}…\p"
-	.string "Son importantes, pero no son algo\n"
-	.string "que cualquiera pueda usar.\p"
-	.string "O bien el ladrón es idiota,\n"
-	.string "o hay algo que no sepamos sobre él.$"
+	.string "Ese paquete que han robado…\p"
+	.string "es muy importante, cierto, pero no es\n"
+	.string "algo que pueda usar cualquiera.\p"
+	.string "En mi opinión, ese ladrón no era\n"
+	.string "muy listo que digamos…$"
 
 RustboroCity_DevonCorp_1F_Text_SoundsLikeStolenGoodsRecovered:
-	.string "Las Partes fueron recuperadas.$"
+	.string "Parece que alguien ha recuperado\n"
+	.string "las PIEZAS DEVON que robaron.$"
 
 RustboroCity_DevonCorp_1F_Text_OnlyAuthorizedPeopleEnter:
-	.string "Sólo personal autorizado. Vete.$"
+	.string "Lo siento, sólo el personal autorizado\n"
+	.string "puede entrar aquí.$"
 
 RustboroCity_DevonCorp_1F_Text_HowCouldWeGetRobbed:
-	.string "Ese estúpido debería ser despedido.$"
+	.string "¿Cómo hemos podido ser tan tontos…?\n"
+	.string "¡¿Cómo nos hemos dejado robar?!$"
 
 RustboroCity_DevonCorp_1F_Text_YoureAlwaysWelcomeHere:
-	.string "¡Bienvenid{OA}!$"
+	.string "¡Anda, hola!\n"
+	.string "¡Tenerte aquí es siempre un placer!$"
 
 RustboroCity_DevonCorp_1F_Text_RocksMetalDisplay:
-	.string "Unas placas metálicas que detallan\n"
-	.string "la historia de la compañía.\p"
-	.string "“Al principio, Devon era una compañía\n"
-	.string "de extracción de rocas preciosas,\l"
-	.string "siguiendo a eso, se convirtió en una\l"
-	.string "productora de aleaciones de metal.”\p"
-	.string "“Poco a poco, el negocio se fue\n"
-	.string "expandiendo dando lugar a la productora\l"
-	.string "de tecnología líden en Hoenn\l"
-	.string "que es hoy en día.”$"
+	.string "En la urna de cristal se exponen\n"
+	.string "muestras de rocas y metales.\p"
+	.string "Hay un cartel con algo escrito…\p"
+	.string "“DEVON S.A. se dedicaba en sus\n"
+	.string "inicios a extraer rocas de canteras.”\p"
+	.string "“También producía hierro a partir de\n"
+	.string "las limaduras que había en la arena.”\p"
+	.string "“A pesar de tan humildes orígenes,\n"
+	.string "DEVON logró crecer como empresa.”\p"
+	.string "“DEVON fabrica en la actualidad una\n"
+	.string "amplia gama de productos industriales.”$"
 
 RustboroCity_DevonCorp_1F_Text_ProductDisplay:
-	.string "Unas placas metálicas que detallan\n"
-	.string "la historia de la compañía.\p"
-	.string "“Además de proveer tecnología de\l"
-	.string "primera categoría, Devon también posee\n"
-	.string "monopolio de farmacéutica y arquitectura\l"
-	.string "en Hoenn, teniendo así el poder de\l"
-	.string "crear cualquier proyecto imaginable.”$"
+	.string "En la urna de cristal se exponen\n"
+	.string "prototipos y productos de prueba.\p"
+	.string "Hay un cartel con algo escrito…\p"
+	.string "“Además de productos industriales,\n"
+	.string "DEVON comercializa artículos varios\l"
+	.string "e incluso productos farmacéuticos.”\p"
+	.string "“Desde hace poco, DEVON también vende\n"
+	.string "artículos para ENTRENADORES POKéMON,\l"
+	.string "como POKé BALLS y POKéNAVEGADORES.”$"
 
 `

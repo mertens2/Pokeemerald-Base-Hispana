@@ -1,5 +1,5 @@
 raw `
-.set LOCALID_GRUNT, 1
+@ .set LOCALID_GRUNT, 1
 
 SeafloorCavern_Entrance_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, SeafloorCavern_Entrance_OnResume

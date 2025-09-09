@@ -1,731 +1,4 @@
-text PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("¡Ah, {PLAYER}, hola, hij{OA}!\p"
-			"¿Ya terminaron con la mudanza? Yo aún tengo algunas cosas que resolver en el Gimnasio.\p"
-			"¡Oh! ¿Un Pokémon? ¡Me llena de orgullo verte, ya tod{OA} grande, y convirtiéndote en un{A} Entrenador{A}!")
-		}
-		EN{
-			format("Ah, {PLAYER}, hi, my little one!\p"
-			"Is the moving done already? I still have business here in the Gym to deal with.\p"
-			"Oh! A Pokémon? Am I proud to see my little one becoming a Trainer!")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_WallyIdLikeAPokemon {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("E-em... -COF, COF-\p¿P-podría darme un Pokémon, señor?")
-		}
-		EN{
-			format("E-em... -COF, COF-\pC-could I get a Pokémon, please?")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_DadOhYoureWallyRight {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("Ah, debes ser Wally, ¿No?")
-		}
-		EN{
-			format("Ah, you must be Wally, right?")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("S-sí, señor. Voy a quedarme con mi familia aquí en Petalburg y quería intentar atrapar un Pokémon-\pS-si no es mucha molestia, claro...")
-		}
-		EN{
-			format("Y-y-y-yessi- yes, sir. I'm staying over with my family in Pëtalburg, and I wanted to try and catch a Pokémon-\pI-if it isn't too much trouble, of course...")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_DadHmISee {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("¡No, ninguno, no te preocupes!")
-		}
-		EN{
-			format("None at all! Don't you worry!")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_DadPlayerGoWithWally {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("… Bien, {PLAYER}, ¿Preparad{OA}?\p"
-			"Hazle caso a tu padre y ve a ayudar a Wally a atrapar un Pokémon…\p"
-			"Dudo que tenga problemas, pero mejor prevenir que lamentar.")
-		}
-		EN{
-			format("… OK, {PLAYER}, ready?\pListen to your Dad and go help Wally catch a 'mon.\pI doubt anything's happening, but better safe than sorry.")
-		}
-	}
-	
-}
-
-
-text PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("Ten, Wally. Te prestaré una de mis criaturas.")
-		}
-		EN{
-			format("Here, Wally. I'm lending you one of my 'mons.")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("¡Muchas gracias, señor!")
-		}
-		EN{
-			format("Thank you so much, sir!")
-		}
-	}
-}
-text PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall2 {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("Y además, toma unas cuantas Pokéball, para que puedas atraparte algunos bichos por tu cuenta luego.")
-		}
-		EN{
-			format("And besides that, take a few extra Balls, to catch yourself some extra creatures on your own.")
-		}
-	}
-	
-}
-
-text PetalburgCity_Gym_Text_WallyOhWowThankYou {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("¡Ahhh! ¡M-muchísimas -COF- gracias!")
-		}
-		EN{
-			format("Ahhhh! Th-thank you! So -COF- much!")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_WouldYouReallyComeWithMe {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("{PLAYER}, ¿En serio me ayudarás?")
-		}
-		EN{
-			format("{PLAYER}, you're really helping me?")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_DadSoDidItWorkOut {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("¿Entonces?")
-		}
-		EN{
-			format("So?")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_WallyThankYouBye {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("¡T-todo salió b-bien, señor!\p"
-			"¡{PLAYER} estuvo cuidándome y -COF COF- n-no había tosido nada mientras estuve ahí! ¡Muchísimas gracias!")
-		}
-		EN{
-			format("Everything went well, sir!\p{PLAYER} watched over me, and I hadn't even -COF COF- coughed at all! I'm so grateful!")
-		}
-	}
-}
-
-text PetalburgCity_Gym_Text_DadGoCollectBadges {
-	poryswitch(LANGUAGE) {
-		ES{
-			format("Bueno, {PLAYER}, déjame contarte algo.\p"
-			"Tienes una increíble capacidad para aprender cuando se trata de Pokémon, y espero que logres aprovechar ese {COLOR BLUE}talento{COLOR DARK_GRAY} tuyo.\p"
-			"Mi gimnasio es más avanzado, por lo que tendrás que derrotar otros 4 gimnasios antes de enfrentarte a mí.\p"
-			"¡Suerte, hij{OA}!")
-		}
-		EN{
-			format("OK, {PLAYER}, let's talk.\p"
-			"When it comes to Pokémon, you have such an easy time learning, and I hope ypu're able to let that {COLOR BLUE}talent{COLOR DARK_GRAY} of yours flourish.\p"
-			"My Gym's more advanced, so you'll have to win 4 Badges before challenging me.\p"
-			"Good luck, my little one!")
-		}
-	}
-	
-}
-
-
-text PetalburgCity_Gym_Text_NormanGoToRustboro {
-	"¿Y? No tengo toda la vida para\n"
-	"esperarte. Ve a Ciudad Rustoboro y\l"
-	"gana la medalla de ahí, ¿okay?\p"
-	"Recuerda que necesitas 4 medallas para\n"
-	"enfrentarte a mí."
-}
-
-text PetalburgCity_Gym_Text_NormanGoToDewford {
-	"Ah, veo que le has ganado a la\n"
-	"Líder de Gimnasio de tipo Roca,\l"
-	"Roxxane, incluso con su regla de sólo\l"
-	"permitir tres Pokémon. ¡Excelente,\l"
-	"sigue así!\p"
-	"Tu siguiente reto está cruzando el mar,\n"
-	"en Ciudad Dewford."
-}
-
-text PetalburgCity_Gym_Text_YouHaveGottenStronger2 {
-	"Perfecto, entonces, ya posees\n"
-	"tres medallas… ¡Tan sólo te falta una\l"
-	"para poder enfrentarte a mí!"
-}
-	
-text PetalburgCity_Gym_Text_YouHaveGottenStronger {
-	"Si me ves, es porque algo falló.\n"
-	"Avisa al creador del hack de\l"
-	"este error para que pueda\l"
-	"solucionarlo."
-}
-
-text PetalburgCity_Gym_Text_NormanIntro {
-	"DAD: Hm…\n"
-	"So, you did get four GYM BADGES.\p"
-	"Fine, as I promised, we will have\n"
-	"a POKéMON battle.\p"
-	"{PLAYER}…\p"
-	"I'm so happy that I can have\n"
-	"a real battle with my own child.\p"
-	"But, a battle is a battle!\p"
-	"I will do everything in my power as\n"
-	"a GYM LEADER to win.\p"
-	"{PLAYER}, you'd better give it your\n"
-	"best shot, too!"
-}
-
-text PetalburgCity_Gym_Text_NormanDefeat {
-	"…\p"
-	"I… I can't…\p"
-	"I can't believe it. {PLAYER}…\p"
-	"I lost to {PLAYER}?\p"
-	"But, rules are rules!\n"
-	"Here, take this."
-}
-
-text PetalburgCity_Gym_Text_ReceivedBalanceBadge {
-	"{PLAYER} received the BALANCE BADGE\n"
-	"from DAD!"
-}
-
-text PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis {
-	"DAD: With that BADGE, the DEFENSE\n"
-	"of all your POKéMON will increase.\p"
-	"POKéMON that know the HM move SURF\n"
-	"will be able to travel over water.\p"
-	"This is my gift to you. {PLAYER}, I'm\n"
-	"sure you can use it correctly."
-}
-
-text PetalburgCity_Gym_Text_ExplainFacade {
-	"DAD: TM42 contains FACADE.\p"
-	"It doubles the power of moves if\n"
-	"the POKéMON is poisoned, paralyzed,\l"
-	"or burned.\p"
-	"It might be able to turn a bad\n"
-	"situation into an advantage."
-}
-
-text PetalburgCity_Gym_Text_DadHappyAndSad {
-	"DAD: As the GYM LEADER, I can't\n"
-	"express how upset I am…\p"
-	"But as a father, it makes me both\n"
-	"happy and a little sad. It's odd…"
-}
-
-text PetalburgCity_Gym_Text_PleaseComeWithMe {
-	"Ah, there you are, {PLAYER}{KUN}!\p"
-	"Please come with me.\n"
-	"I have something I want you to have."
-}
-
-text PetalburgCity_Gym_Text_LetMeBorrowPlayer {
-	"NORMAN, you don't mind, do you?\p"
-	"Let me borrow your {PLAYER}{KUN} for\n"
-	"a minute or two."
-}
-
-text PetalburgCity_Gym_Text_DadGoingToKeepTraining {
-	"DAD: {PLAYER}, you should go visit\n"
-	"your mother every so often.\p"
-	"I'm going to stay here and redouble\n"
-	"my training.\p"
-	"It would bother me as a TRAINER to\n"
-	"not avenge my loss to you, {PLAYER}!"
-}
-
-text PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough {
-	"DAD: {PLAYER}, how are things going?\p"
-	"The world of POKéMON is deep.\p"
-	"I honestly think that no amount of\n"
-	"training would ever be enough."
-}
-
-text PetalburgCity_Gym_Text_GymGuideAdvice {
-	"Hey, how's it going, CHAMPION-\n"
-	"bound {PLAYER}?\p"
-	"The doors in this GYM open when you\n"
-	"beat the awaiting TRAINERS.\p"
-	"Whoops! The doors in this room are\n"
-	"already open, so don't attack me!\p"
-	"The TRAINERS of PETALBURG GYM\n"
-	"use all kinds of items.\p"
-	"The door at the left leads to\n"
-	"the SPEED ROOM.\p"
-	"The door at the right leads to\n"
-	"the ACCURACY ROOM.\p"
-	"The room's name will be on\n"
-	"the door, so choose carefully.\p"
-	"Once you've chosen the door…\n"
-	"Well, hey, go for it!"
-}
-
-text PetalburgCity_Gym_Text_GymGuidePostVictory {
-	"{PLAYER}! Whoa! You've overcome even\n"
-	"your own father!\p"
-	"Like, whoa!\n"
-	"What a stunning turn of events!"
-}
-
-text PetalburgCity_Gym_Text_RandallIntro {
-	"The ability to attack before the\n"
-	"opponent…\p"
-	"Just that alone puts me at a great\n"
-	"advantage, don't you agree?"
-}
-
-text PetalburgCity_Gym_Text_RandallDefeat {
-	"That was a magnificent battle!"
-}
-
-text PetalburgCity_Gym_Text_RandallPostBattle {
-	"Go on to the next room where a new\n"
-	"challenge awaits you.\p"
-	"At the left is the CONFUSION ROOM.\p"
-	"The right door leads to the DEFENSE\n"
-	"ROOM."
-}
-
-text PetalburgCity_Gym_Text_RandallPostBadge {
-	"Whomever you beat, and whomever you\n"
-	"may lose to, you never shirk from\l"
-	"training yourself and your POKéMON.\p"
-	"That's what I think being a\n"
-	"GYM LEADER is all about."
-}
-
-text PetalburgCity_Gym_Text_ParkerIntro {
-	"This is the CONFUSION ROOM.\p"
-	"Let me see how well bonded you are\n"
-	"with your POKéMON!"
-}
-
-text PetalburgCity_Gym_Text_ParkerDefeat {
-	"I couldn't confuse your team enough…\n"
-	"You share a strong bond together."
-}
-
-text PetalburgCity_Gym_Text_ParkerPostBattle {
-	"The next room is the STRENGTH ROOM.\n"
-	"Can you withstand brute force?"
-}
-
-text PetalburgCity_Gym_Text_ParkerPostBadge {
-	"After you beat our LEADER, the\n"
-	"training has become a lot tougher."
-}
-
-text PetalburgCity_Gym_Text_GeorgeIntro {
-	"Just when you think you're going to\n"
-	"win, your opponent restores HP…\p"
-	"Can you just imagine how awful that\n"
-	"must feel?\p"
-	"I'll show you exactly how awful it\n"
-	"feels!"
-}
-
-text PetalburgCity_Gym_Text_GeorgeDefeat {
-	"I couldn't restore HP enough…\n"
-	"What ATTACK power…"
-}
-
-text PetalburgCity_Gym_Text_GeorgePostBattle {
-	"I should have expected no less from\n"
-	"our LEADER's kid.\p"
-	"No, wait! A TRAINER's abilities are\n"
-	"earned only through effort.\p"
-	"I lost because my own efforts\n"
-	"weren't enough.\p"
-	"Go on! The ONE-HIT KO ROOM is next."
-}
-
-text PetalburgCity_Gym_Text_GeorgePostBadge {
-	"I'm going to keep training at GYMS.\n"
-	"One day, I'll become a LEADER."
-}
-
-text PetalburgCity_Gym_Text_BerkeIntro {
-	"I'm not going to take it easy just\n"
-	"because you're our LEADER's kid.\p"
-	"I'll show you how horrid it is for\n"
-	"a POKéMON to take a critical hit!"
-}
-
-text PetalburgCity_Gym_Text_BerkeDefeat {
-	"Your power…\n"
-	"You're the real deal."
-}
-
-text PetalburgCity_Gym_Text_BerkePostBattle {
-	"Your father really is strong.\n"
-	"He's a TRAINER worth my respect.\p"
-	"And, I sense the same glow coming\n"
-	"from you as your father.\p"
-	"I hope that you'll stage a terrific\n"
-	"battle with your father!"
-}
-
-text PetalburgCity_Gym_Text_BerkePostBadge {
-	"Since your dad became the LEADER,\n"
-	"the TRAINERS of PETALBURG CITY have\l"
-	"become a lot tougher."
-}
-
-text PetalburgCity_Gym_Text_MaryIntro {
-	"Giggle…\n"
-	"This is the ACCURACY ROOM.\p"
-	"It's pretty nasty when every attack\n"
-	"lands without fail."
-}
-
-text PetalburgCity_Gym_Text_MaryDefeat {
-	"You were a cut above me…"
-}
-
-text PetalburgCity_Gym_Text_MaryPostBattle {
-	"There are some even stronger\n"
-	"TRAINERS waiting for you.\p"
-	"The left is the DEFENSE ROOM, and\n"
-	"the right is the RECOVERY ROOM.\p"
-	"Your POKéMON's ATTACK power will be\n"
-	"on trial either way."
-}
-
-text PetalburgCity_Gym_Text_MaryPostBadge {
-	"Do you know what we're trying to\n"
-	"achieve as TRAINERS?\p"
-	"We're striving to become soul mates\n"
-	"with our POKéMON."
-}
-
-text PetalburgCity_Gym_Text_AlexiaIntro {
-	"The higher the DEFENSE, the more\n"
-	"reckless I can be in attack."
-}
-
-text PetalburgCity_Gym_Text_AlexiaDefeat {
-	"Our defenses weren't enough…"
-}
-
-text PetalburgCity_Gym_Text_AlexiaPostBattle {
-	"I think you've taught me a valuable\n"
-	"lesson here.\p"
-	"Now, go on! The left door goes to\n"
-	"the STRENGTH ROOM.\p"
-	"The right door opens to\n"
-	"the ONE-HIT KO ROOM.\p"
-	"Both of them have TRAINERS who are\n"
-	"skilled at offense."
-}
-
-text PetalburgCity_Gym_Text_AlexiaPostBadge {
-	"Hi! Have you tried using SURF?"
-}
-
-text PetalburgCity_Gym_Text_JodyIntro {
-	"Our GYM LEADER told us to go all out\n"
-	"and beat you.\p"
-	"Even if you happen to be the\n"
-	"LEADER's kid!"
-}
-
-text PetalburgCity_Gym_Text_JodyDefeat {
-	"But… I went all out!"
-}
-
-text PetalburgCity_Gym_Text_JodyPostBattle {
-	"The way you use your POKéMON…\n"
-	"It's like your father's style.\p"
-	"Go on through! The GYM LEADER, your\n"
-	"father, is waiting!"
-}
-
-text PetalburgCity_Gym_Text_JodyPostBadge {
-	"Sure, it's fine to make your POKéMON\n"
-	"stronger.\p"
-	"But what decides the winner?\p"
-	"Why, it's the feelings TRAINERS have\n"
-	"for their POKéMON."
-}
-
-text PetalburgCity_Gym_Text_DoorAppearsLocked {
-	"This door appears to be locked\n"
-	"right now…"
-}
-
-text PetalburgCity_Gym_Text_EnterSpeedRoom {
-	"“SPEED ROOM,” the sign says.\p"
-	"Do you want to go through?"
-}
-
-text PetalburgCity_Gym_Text_EnterAccuracyRoom {
-	"“ACCURACY ROOM,” the sign says.\p"
-	"Do you want to go through?"
-}
-
-text PetalburgCity_Gym_Text_EnterConfusionRoom {
-	"“CONFUSION ROOM,” the sign says.\p"
-	"Do you want to go through?"
-}
-
-text PetalburgCity_Gym_Text_EnterDefenseRoom {
-	"“DEFENSE ROOM,” the sign says.\p"
-	"Do you want to go through?"
-}
-
-text PetalburgCity_Gym_Text_EnterRecoveryRoom {
-	"“RECOVERY ROOM,” the sign says.\p"
-	"Do you want to go through?"
-}
-
-text PetalburgCity_Gym_Text_EnterStrengthRoom {
-	"“STRENGTH ROOM,” the sign says.\p"
-	"Do you want to go through?"
-}
-
-text PetalburgCity_Gym_Text_EnterOHKORoom {
-	"“ONE-HIT KO ROOM,” the sign says.\p"
-	"Do you want to go through?"
-}
-
-text PetalburgCity_Gym_Text_EnterGymLeadersRoom {
-	"“GYM LEADER'S ROOM\p"
-	"“See for yourself what POKéMON await\n"
-	"you!” the sign says.\p"
-	"Do you want to go through?"
-}
-
-text PetalburgCity_Gym_Text_GymStatue {
-	"PETALBURG CITY POKéMON GYM"
-}
-
-text PetalburgCity_Gym_Text_GymStatueCertified {
-	"PETALBURG CITY POKéMON GYM\p"
-	"NORMAN'S CERTIFIED TRAINERS:\n"
-	"{PLAYER}"
-}
-
-text PetalburgCity_Gym_Text_NormanPreRematch {
-	"DAD: {PLAYER}…\n"
-	"I had a feeling that you would come.\p"
-	"I would never refuse to accept\n"
-	"a challenge from you.\p"
-	"You do understand, don't you?\p"
-	"Inside a GYM, it doesn't matter that\n"
-	"we are a parent and child.\p"
-	"…No, because we are parent and child,\n"
-	"we owe it to each other to do the best\l"
-	"we can. Isn't that right, {PLAYER}?"
-}
-
-text PetalburgCity_Gym_Text_NormanRematchDefeat {
-	"Uh… Haha…\n"
-	"Maybe that was going too hard…"
-}
-
-text PetalburgCity_Gym_Text_NormanPostRematch {
-	"DAD: {PLAYER}…\n"
-	"What is your dream?\p"
-	"My dream…\n"
-	"Hahaha…\l"
-	"It has already come true, actually."
-}
-
-text PetalburgCity_Gym_Text_NormanRematchNeedTwoMons {
-	"DAD: {PLAYER}…\n"
-	"I had a feeling that you would come.\p"
-	"I would never refuse to accept\n"
-	"a challenge from you.\p"
-	"You do understand, don't you?\p"
-	"Inside a GYM, it doesn't matter that\n"
-	"we are a parent and child.\p"
-	"Hm? Wait a second, {PLAYER}.\p"
-	"Do you only have one POKéMON that is\n"
-	"capable of battle?\p"
-	"Sorry, but you'll have to come back\n"
-	"with at least two POKéMON."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_0 {
-	"Sabes, {PLAYER}, no soy exactamente\n"
-	"un buen padre, ni un buen marido,\l"
-	"tampoco.\p"
-	"No paso casi nada de tiempo contigo o\n"
-	"con tu Mamá como debería, pero, creéme,\l"
-	"hago lo mejor que puedo.\p"
-	"He estado tan estresado últimamente,\n"
-	"tan ocupado con cosas que me\l"
-	"encantaría poder discutir contigo, que\l"
-	"no me he dado cuenta hasta que vi lo\l"
-	"mucho que a {RIVAL} le afecta no\l"
-	"ver a su padre casi nunca..."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_1 {
-	"Sólo prométeme, que cuando llegue el\n"
-	"momento de que sepas porqué, me\l"
-	"perdones."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_2 {
-	"Será difícil, pero intentaré lo más que\n"
-	"pueda pasar algo más de tiempo\l"
-	"contigo, a lo mejor pueda ir a verte en\l"
-	"el camino."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_3 {
-	"Pero, ¿sabes?\p"
-	"Estoy muy orgulloso de ti, {PLAYER}.\p"
-	"Mira lo lejos que has llegado en tan\n"
-	"poco tiempo. Mira lo mucho que tú y tus\l"
-	"Pokémon han crecido."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_4 {
-	"Puede que no lo demuestre, pero en\n"
-	"serio, en serio es un honor ser el padre\l"
-	"de un{A} jovencit{OA} tan poderos{OA} como tú,\l"
-	"{PLAYER}."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_5 {
-	"Sabes tanto de Pokémon, que incluso si\n"
-	"no llegases a ganar la Liga Pokémon,\l"
-	"aún podrías tener un trabajo como\l"
-	"Recuerda-Movimientos.\p"
-	"¡No creas que no noté que puedes\n"
-	"ayudar a tus Pokémon a recordar\l"
-	"movimientos que habían olvidado!\p"
-	"Eso habla mucho de tu talento, y de tu\n"
-	"conocimiento, pero, por sobre todo,\l"
-	"habla de lo mucho que te esfuerzas por\l"
-	"mejorar."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_6 {
-	"Es algo que casi nadie puede hacer, e\n"
-	"incluso después de tantos años de\l"
-	"experiencia, ni yo aprendí como.\l"
-	"Y desde que el anterior\l"
-	"Recueda-Movimientos falleció, ya no\l"
-	"hay alguien que ayude a los\l"
-	"Entrenadores de ese modo."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_7 {
-	"Sólo...\p"
-	"No cobres con Escamas Corazón... Ya no\n"
-	"son aceptadas como medio de pago..."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_8 {
-	"Pero también debes saber, que {COLOR BLUE}siempre\n"
-	"podemos aprender nuevas cosas{COLOR DARK_GRAY}, y ser\l"
-	"más fuertes de lo que jamás pensamos.\p"
-	"Por ejemplo, entrenar tan duramente\n"
-	"con mi Slaking lo llevó a aprender\l"
-	"{COLOR RED}Intercambio{COLOR DARK_GRAY}, después de tanto\l"
-	"intentar sobrepasar su Habilidad\l"
-	"desventajosa...\p"
-	"Yo creo, que si te sigues esforzando,\n"
-	"llegarás incluso a ser un Tutor de\l"
-	"Movimientos."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_9 {
-	"Hace poco compré este nuevo libro, y\n"
-	"pensaba dártelo en tu cumpleaños, pero\l"
-	"supongo que es mejor dártelo ahora.\p"
-	"Habla de la Crianza Pokémon, algo que\n"
-	"seguro ya conoces, pero también, va en\l"
-	"mucha profundidad sobre nuevos\l"
-	"descubrimientos sobre Movimientos\l"
-	"Pokémon. Específicamente, sobre\l"
-	"{COLOR BLUE}Movimientos de Nivel 1{COLOR DARK_GRAY}.\p"
-	"Hace tiempo, se creía que los Pokémon\n"
-	"de Nivel 1 sabían Movimientos que\l"
-	"tenían desde que eran un Huevo, pero\l"
-	"hasta hace poco se descubrió que la\l"
-	"familia de los Recuerda-Movimientos\l"
-	"tenía una técnica secreta para ayudar\l"
-	"a los Pokémon a aprender Movimientos\l"
-	"especiales: {COLOR BLUE}Esos son lo que ahora\l"
-	"conocemos como Movimientos de Nivel 1{COLOR DARK_GRAY}."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_10 {
-	"En total honestidad, no lo entiendo\n"
-	"mucho."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_11 {
-	"Pero sé que a tí te encantará tenerlo.\n"
-	"Consíderalo un regalo de compensación\l"
-	"por lo poco que estuve con tu Mamá y\l"
-	"contigo desde que nos mudamos."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_12 {
-	"¡Bueno!\n"
-	"¡Suficiente charla por hoy!\p"
-	"Espero te haya servido de algo.\p"
-	"Y, de nuevo, perdóname."
-}
-
-text PetalburgCity_Gym_EventScript_SeriousTalk_Text_13 {
-	"¡Ahora puedes ayudar a tus Pokémon a\n"
-	"recordar Movimientos de Nivel 1!"
-}
-
 raw `
-.set LOCALID_NORMAN, 1
-.set LOCALID_WALLY, 10
-.set LOCALID_WALLYS_DAD, 11
-.set LOCALID_SPECIAL_NORMAN, 12
-.set LOCALID_SPECIAL_PLAYER, 13
-
 PetalburgCity_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PetalburgCity_Gym_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCity_Gym_OnTransition
@@ -767,20 +40,14 @@ PetalburgCity_Gym_OnTransition:
 	call_if_eq VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_MoveWallyToEntrance
 	call_if_lt VAR_PETALBURG_GYM_STATE, 6, PetalburgCity_Gym_EventScript_MoveNormanToEntrance
 	call_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_CheckNormanForRematch
-	removeobject LOCALID_SPECIAL_NORMAN
-	removeobject LOCALID_SPECIAL_PLAYER
-	checkplayergender
-	compare VAR_RESULT, MALE
-	call_if_eq PetalburgCity_Gym_EventScript_SetSpecialM
-	call_if_ne PetalburgCity_Gym_EventScript_SetSpecialF
 	end
 
 PetalburgCity_Gym_EventScript_MoveWallyToEntrance::
-	setobjectxyperm LOCALID_WALLY, 5, 108
+	setobjectxyperm LOCALID_PETALBURG_GYM_WALLY, 5, 108
 	return
 
 PetalburgCity_Gym_EventScript_MoveNormanToEntrance::
-	setobjectxyperm LOCALID_NORMAN, 4, 107
+	setobjectxyperm LOCALID_PETALBURG_GYM_NORMAN, 4, 107
 	return
 
 PetalburgCity_Gym_EventScript_CheckNormanForRematch::
@@ -788,7 +55,7 @@ PetalburgCity_Gym_EventScript_CheckNormanForRematch::
 	specialvar VAR_RESULT, IsTrainerReadyForRematch
 	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_DontMoveNormanToFront
 	goto_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_Gym_EventScript_DontMoveNormanToFront
-	setobjectxyperm LOCALID_NORMAN, 4, 107
+	setobjectxyperm LOCALID_PETALBURG_GYM_NORMAN, 4, 107
 	return
 
 PetalburgCity_Gym_EventScript_DontMoveNormanToFront::
@@ -800,236 +67,28 @@ PetalburgCity_Gym_OnWarp:
 	.2byte 0
 
 PetalburgCity_Gym_EventScript_TurnPlayerNorth::
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	turnobject LOCALID_PLAYER, DIR_NORTH
 	end
 
 PetalburgCity_Gym_OnFrame:
 	map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial
 	.2byte 0
 
-PetalburgCity_Gym_EventScript_SeriousTalk::
-	special SpawnCameraObject
-	call_if_eq VAR_FACING, DIR_NORTH, PetalburgCity_Gym_EventScript_PlayerOutWay
-	applymovement LOCALID_NORMAN, PetalburgCity_Gym_Movement_NormanSit
-	applymovement OBJ_EVENT_ID_CAMERA, PetalburgCity_Gym_Movement_NormanSit
-	waitmovement 0
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceSlowDown
-	delay 8
-	applymovement LOCALID_NORMAN, Common_Movement_SetInvisible
-	waitmovement 0
-	removeobject LOCALID_NORMAN
-	addobject LOCALID_SPECIAL_NORMAN
-	applymovement LOCALID_SPECIAL_NORMAN, PetalburgCity_Gym_Movement_SeriousTalk_NormanAnimation1
-	waitmovement 0
-	call_if_eq VAR_FACING, DIR_EAST, PetalburgCity_Gym_EventScript_PlayerGoLeft
-	call_if_eq VAR_FACING, DIR_WEST, PetalburgCity_Gym_EventScript_PlayerGoRight
-	call_if_eq VAR_FACING, DIR_NORTH, PetalburgCity_Gym_EventScript_PlayerGoLeft
-	call_if_eq VAR_FACING, DIR_SOUTH, PetalburgCity_Gym_EventScript_PlayerGoLeft
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_SeriousTalk_PlayerPrepare
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceSlowDown
-	delay 8
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_SetInvisible
-	addobject LOCALID_SPECIAL_PLAYER
-	waitmovement 0
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceRight
-	waitmovement 0
-	namebox Norman
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_0
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceUp
-	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_FaceUp
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_1
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceDown
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_2
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceRight
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_3
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceUp
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_4
-	applymovement LOCALID_SPECIAL_NORMAN, PetalburgCity_Gym_Movement_SeriousTalk_NormanAnimation2Right
-	waitmovement 0
-	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_FaceLeft
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_5
-	hidenamebox
-	closemessage
-	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_FaceUp
-	waitmovement 0
-	applymovement LOCALID_SPECIAL_NORMAN, PetalburgCity_Gym_Movement_SeriousTalk_NormanAnimation2Right
-	waitmovement 0
-	delay 24
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceLeft
-	waitmovement 0
-	namebox Norman
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_6
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceUp
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_7
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceRight
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_8
-	closemessage
-	hidenamebox
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceUp
-	waitmovement 0
-	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_FaceLeft
-	waitmovement 0
-	delay 24
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceLeft
-	waitmovement 0
-	delay 24
-	applymovement LOCALID_SPECIAL_NORMAN, PetalburgCity_Gym_Movement_SeriousTalk_NormanAnimation2Left
-	waitmovement 0
-	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_QuestionMark
-	waitmovement 0
-	delay 16
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceRight
-	waitmovement 0
-	namebox Norman
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_9
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceLeft
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_10
-	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceRight
-	waitmovement 0
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_11
-	closemessage
-	hidenamebox
-	removeobject LOCALID_SPECIAL_NORMAN
-	addobject LOCALID_NORMAN
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_12
-	closemessage
-	hidenamebox
-	removeobject LOCALID_SPECIAL_PLAYER
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_SetVisible
-	waitmovement 0
-	playse MUS_OBTAIN_ITEM
-	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_13
-	waitse
-	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-	setflag FLAG_MOVE_RELEARNER_UPGRADE
-	waitmovement 0
-	releaseall
-	return
-
-PetalburgCity_Gym_EventScript_PlayerGoLeft::
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_PlayerGoLeft
-	applymovement OBJ_EVENT_ID_CAMERA, PetalburgCity_Gym_Movement_PlayerGoLeft
-	waitmovement 0
-	return
-
-PetalburgCity_Gym_EventScript_PlayerGoRight::
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_PlayerGoRight
-	applymovement OBJ_EVENT_ID_CAMERA, PetalburgCity_Gym_Movement_PlayerGoRight
-	waitmovement 0
-	return
-
-PetalburgCity_Gym_EventScript_PlayerOutWay::
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_PlayerOutWay
-	waitmovement 0
-	return
-
-PetalburgCity_Gym_Movement_PlayerGoRight:
-	walk_left
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	step_end
-
-PetalburgCity_Gym_Movement_PlayerGoLeft:
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_up
-	step_end
-
-PetalburgCity_Gym_Movement_PlayerOutWay:
-	walk_right
-	walk_up
-	face_left
-	step_end
-
-PetalburgCity_Gym_Movement_NormanSit:
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_in_place_slow_down
-	step_end
-
-PetalburgCity_Gym_EventScript_SetSpecialM::
-	setvar VAR_OBJ_GFX_ID_8, OBJ_EVENT_GFX_BRENDAN_SPECIAL
-	return
-
-PetalburgCity_Gym_EventScript_SetSpecialF::
-	setvar VAR_OBJ_GFX_ID_8, OBJ_EVENT_GFX_MAY_SPECIAL
-	return
-
-PetalburgCity_Gym_Movement_SeriousTalk_PlayerPrepare:
-	walk_up
-	walk_in_place_down
-	step_end
-
-PetalburgCity_Gym_Movement_SeriousTalk_NormanAnimation1:
-	walk_in_place_slow_down
-	walk_in_place_slow_down
-	walk_in_place_slow_down
-	walk_in_place_slow_down
-	walk_in_place_slow_down
-	walk_in_place_slow_down
-	face_down
-	step_end
-
-PetalburgCity_Gym_Movement_SeriousTalk_NormanAnimation2Right:
-	walk_in_place_slow_right
-	walk_in_place_slow_right
-	walk_in_place_slow_right
-	walk_in_place_right
-	face_right
-	step_end
-
-PetalburgCity_Gym_Movement_SeriousTalk_NormanAnimation2Left:
-	walk_in_place_slow_left
-	walk_in_place_slow_left
-	walk_in_place_slow_left
-	walk_in_place_left
-	face_left
-	step_end
-	
-
 PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	lockall
-	namebox Norman
 	msgbox PetalburgCity_Gym_Text_DadSoDidItWorkOut, MSGBOX_DEFAULT
-	namebox Wally
 	msgbox PetalburgCity_Gym_Text_WallyThankYouBye, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyExitGym
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyExitGym
 	waitmovement 0
 	playse SE_EXIT
-	removeobject LOCALID_WALLY
+	removeobject LOCALID_PETALBURG_GYM_WALLY
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLY
 	delay 30
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	namebox Norman
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
-	closemessage
-	hidenamebox
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	releaseall
 	end
@@ -1044,7 +103,6 @@ PetalburgCity_Gym_Movement_WallyExitGym:
 PetalburgCity_Gym_EventScript_Norman::
 	lock
 	faceplayer
-	namebox Norman
 	switch VAR_PETALBURG_GYM_STATE
 	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
 	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge
@@ -1055,7 +113,6 @@ PetalburgCity_Gym_EventScript_Norman::
 	case 8, PetalburgCity_Gym_EventScript_NormanRematch
 	msgbox PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
 	switch VAR_FACING
 	case DIR_SOUTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth
 	case DIR_NORTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialNorth
@@ -1084,34 +141,26 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorialEast::
 	end
 
 PetalburgCity_Gym_EventScript_BeginWallyTutorial::
-	addobject LOCALID_WALLY
+	addobject LOCALID_PETALBURG_GYM_WALLY
 	playse SE_DOOR
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_WallyArriveSouth
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_WallyArriveNorth
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_WallyArriveWestEast
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_WallyArriveWestEast
-	namebox Unknown
 	msgbox PetalburgCity_Gym_Text_WallyIdLikeAPokemon, MSGBOX_DEFAULT
-	namebox Norman
 	msgbox PetalburgCity_Gym_Text_DadOhYoureWallyRight, MSGBOX_DEFAULT
-	namebox Wally
 	msgbox PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon, MSGBOX_DEFAULT
-	namebox Norman
 	msgbox PetalburgCity_Gym_Text_DadHmISee, MSGBOX_DEFAULT
-	hidenamebox
-	closemessage
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_NormanAddressPlayerSouth
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_NormanAddressPlayerNorth
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_NormanAddressPlayerWest
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_NormanAddressPlayerEast
-	namebox Norman
 	msgbox PetalburgCity_Gym_Text_DadPlayerGoWithWally, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_NormanAddressWallySouth
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_NormanAddressWallyNorth
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_NormanAddressWallyWest
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_NormanAddressWallyEast
 	msgbox PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon, MSGBOX_DEFAULT
-	namebox Wally
 	msgbox PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall, MSGBOX_DEFAULT
 	msgbox PetalburgCity_Gym_Text_WallyOhWowThankYou, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_NormanFaceDoorSouth
@@ -1124,14 +173,13 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_WallyFacePlayer
 	msgbox PetalburgCity_Gym_Text_WouldYouReallyComeWithMe, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
 	setflag FLAG_DONT_TRANSITION_MUSIC
 	playbgm MUS_FOLLOW_ME, FALSE
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_ExitGymWithWallySouth
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_ExitGymWithWallyNorth
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_ExitGymWithWallyWest
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_ExitGymWithWallyEast
-	removeobject LOCALID_WALLY
+	removeobject LOCALID_PETALBURG_GYM_WALLY
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
 	setvar VAR_PETALBURG_GYM_STATE, 1
 	setvar VAR_PETALBURG_CITY_STATE, 2
@@ -1139,135 +187,127 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	clearflag FLAG_HIDE_PETALBURG_GYM_WALLY
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
 	special InitBirchState
-	warp MAP_ROUTE102, 0, 9
+	warp MAP_PETALBURG_CITY, 15, 8
 	waitstate
 	release
 	end
 
 PetalburgCity_Gym_EventScript_WallyArriveSouth::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyArrive
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyArrive
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_WallyArriveNorth::
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyArriveNorth
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyArriveNorth
 	waitmovement 0
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_WallyArriveWestEast::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyArrive
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyArrive
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_ExitGymWithWallySouth::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyExitSouthWest
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallySouth
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyExitSouthWest
+	applymovement LOCALID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallySouth
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_ExitGymWithWallyNorth::
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyExitNorth
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallyNorth
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyExitNorth
+	applymovement LOCALID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallyNorth
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_ExitGymWithWallyWest::
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyExitSouthWest
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallyWest
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyExitSouthWest
+	applymovement LOCALID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallyWest
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_ExitGymWithWallyEast::
-	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyExitEast
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallyEast
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyExitEast
+	applymovement LOCALID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallyEast
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanAddressPlayerSouth::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanAddressPlayerNorth::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanAddressPlayerWest::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanAddressPlayerEast::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterLeft
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanAddressWallySouth::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanAddressWallyNorth::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanAddressWallyWest::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanAddressWallyEast::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_WallyFacePlayer::
-	applymovement LOCALID_WALLY, Common_Movement_FacePlayer
+	applymovement LOCALID_PETALBURG_GYM_WALLY, Common_Movement_FacePlayer
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_WallyFaceDown::
-	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_WALLY, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
 PetalburgCity_Gym_EventScript_NormanNoBadges::
 	msgbox PetalburgCity_Gym_Text_NormanGoToRustboro, MSGBOX_DEFAULT
-	closemessage
-	hidenamebox
 	release
 	end
 
 PetalburgCity_Gym_EventScript_NormanOneBadge::
 	msgbox PetalburgCity_Gym_Text_NormanGoToDewford, MSGBOX_DEFAULT
-	closemessage
-	hidenamebox
 	release
 	end
 
 PetalburgCity_Gym_EventScript_NormanTwoBadges::
 	msgbox PetalburgCity_Gym_Text_YouHaveGottenStronger, MSGBOX_DEFAULT
-	closemessage
-	hidenamebox
 	release
 	end
 
 PetalburgCity_Gym_EventScript_NormanThreeBadges::
-	msgbox PetalburgCity_Gym_Text_YouHaveGottenStronger2, MSGBOX_DEFAULT
-	closemessage
-	hidenamebox
+	msgbox PetalburgCity_Gym_Text_YouHaveGottenStronger, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1276,7 +316,7 @@ PetalburgCity_Gym_EventScript_NormanFaceDoorSouth::
 
 @ For all other NormanFaceDoorX, Norman is already facing the door from NormanAddressWallyX
 PetalburgCity_Gym_EventScript_NormanFaceDoorNorth::
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
@@ -1289,8 +329,7 @@ PetalburgCity_Gym_EventScript_NormanFaceDoorEast::
 PetalburgCity_Gym_EventScript_NormanPostBattle::
 	call PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry
 	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_GiveEnigmaBerry
-	checkitem ITEM_TM42
-	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_Gym_EventScript_GiveFacade2
+	goto_if_unset FLAG_RECEIVED_TM_FACADE, PetalburgCity_Gym_EventScript_GiveFacade2
 	goto_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough
 	msgbox PetalburgCity_Gym_Text_DadGoingToKeepTraining, MSGBOX_DEFAULT
 	release
@@ -1352,72 +391,131 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	delay 30
 	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
 	closemessage
-	call PetalburgCity_Gym_EventScript_SeriousTalk
 	delay 40
 	playse SE_DOOR
 	delay 10
-	addobject LOCALID_WALLYS_DAD
-	goto PetalburgCity_Gym_EventScript_WallysDadArrives
+	addobject LOCALID_PETALBURG_GYM_WALLYS_DAD
+	switch VAR_FACING
+	case DIR_NORTH, PetalburgCity_Gym_EventScript_WallysDadArrivesNorth
+	case DIR_WEST, PetalburgCity_Gym_EventScript_WallysDadArrivesWest
+	case DIR_EAST, PetalburgCity_Gym_EventScript_WallysDadArrivesEast
 	end
 
 PetalburgCity_Gym_EventScript_GiveFacade::
-	giveitem ITEM_TM42
+	giveitem ITEM_TM_FACADE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	setflag FLAG_RECEIVED_TM_FACADE
 	msgbox PetalburgCity_Gym_Text_ExplainFacade, MSGBOX_DEFAULT
 	return
 
+PetalburgCity_Gym_EventScript_WallysDadArrivesNorth::
+	setvar VAR_0x8008, 1
+	goto PetalburgCity_Gym_EventScript_WallysDadArrives
+
+PetalburgCity_Gym_EventScript_WallysDadArrivesEast::
+	setvar VAR_0x8008, 2
+	goto PetalburgCity_Gym_EventScript_WallysDadArrives
+
+PetalburgCity_Gym_EventScript_WallysDadArrivesWest::
+	setvar VAR_0x8008, 3
+	goto PetalburgCity_Gym_EventScript_WallysDadArrives
+
 PetalburgCity_Gym_EventScript_WallysDadArrives::
-	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadEnterGym
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadEnterGym
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_WALLYS_DAD, Common_Movement_ExclamationMark
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_WALLYS_DAD, Common_Movement_Delay48
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, Common_Movement_Delay48
 	waitmovement 0
 	delay 10
-	call PetalburgCity_Gym_EventScript_WallysDadApproachPlayerNorth
+	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_WallysDadApproachPlayerNorth
+	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_WallysDadApproachPlayerEast
+	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_WallysDadApproachPlayerWest
 	msgbox PetalburgCity_Gym_Text_PleaseComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	call PetalburgCity_Gym_EventScript_WallysDadFaceNormanNorth
+	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_WallysDadFaceNormanNorth
+	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_WallysDadFaceNormanEast
+	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_WallysDadFaceNormanWest
 	msgbox PetalburgCity_Gym_Text_LetMeBorrowPlayer, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_DONT_TRANSITION_MUSIC
 	playbgm MUS_FOLLOW_ME, FALSE
-	call PetalburgCity_Gym_EventScript_ExitGymWithWallysDadNorth
-	removeobject LOCALID_WALLYS_DAD
+	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_ExitGymWithWallysDadNorth
+	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_ExitGymWithWallysDadEast
+	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_ExitGymWithWallysDadWest
+	removeobject LOCALID_PETALBURG_GYM_WALLYS_DAD
 	setvar VAR_PETALBURG_CITY_STATE, 4
 	clearflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
-	warp MAP_PETALBURG_CITY, 15, 10
+	warp MAP_PETALBURG_CITY, 15, 8
 	waitstate
 	release
 	end
 
 PetalburgCity_Gym_EventScript_WallysDadFaceNormanNorth::
-	applymovement LOCALID_WALLYS_DAD, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
+PetalburgCity_Gym_EventScript_WallysDadFaceNormanEast::
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	return
+
+PetalburgCity_Gym_EventScript_WallysDadFaceNormanWest::
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	return
 
 PetalburgCity_Gym_EventScript_WallysDadApproachPlayerNorth::
-	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadApproachPlayerNorth
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadApproachPlayerNorth
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 
+PetalburgCity_Gym_EventScript_WallysDadApproachPlayerEast::
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadApproachPlayerEast
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	return
+
+PetalburgCity_Gym_EventScript_WallysDadApproachPlayerWest::
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadApproachPlayerWest
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	return
 
 PetalburgCity_Gym_EventScript_ExitGymWithWallysDadNorth::
-	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadExitNorth
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceFasterDown
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallysDadNorth
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadExitNorth
+	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallysDadNorth
 	waitmovement 0
 	return
 
+PetalburgCity_Gym_EventScript_ExitGymWithWallysDadEast::
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadExitEast
+	applymovement LOCALID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallysDadEast
+	waitmovement 0
+	return
+
+PetalburgCity_Gym_EventScript_ExitGymWithWallysDadWest::
+	applymovement LOCALID_PETALBURG_GYM_WALLYS_DAD, PetalburgCity_Gym_Movement_WallysDadExitWest
+	applymovement LOCALID_PLAYER, PetalburgCity_Gym_Movement_PlayerExitWithWallysDadWest
+	waitmovement 0
+	return
 
 PetalburgCity_Gym_Movement_WallysDadExitNorth:
 	walk_down
+	walk_down
+	walk_left
+	walk_left
 	walk_down
 	walk_down
 	walk_in_place_faster_up
@@ -1426,6 +524,33 @@ PetalburgCity_Gym_Movement_WallysDadExitNorth:
 	set_invisible
 	step_end
 
+PetalburgCity_Gym_Movement_WallysDadExitEast:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_in_place_faster_up
+	delay_8
+	walk_in_place_down
+	set_invisible
+	step_end
+
+PetalburgCity_Gym_Movement_WallysDadExitWest:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_in_place_faster_up
+	delay_8
+	walk_in_place_down
+	set_invisible
+	step_end
 
 PetalburgCity_Gym_Movement_PlayerExitWithWallysDadNorth:
 	delay_16
@@ -1437,6 +562,27 @@ PetalburgCity_Gym_Movement_PlayerExitWithWallysDadNorth:
 	walk_down
 	step_end
 
+PetalburgCity_Gym_Movement_PlayerExitWithWallysDadEast:
+	delay_16
+	walk_down
+	walk_down
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCity_Gym_Movement_PlayerExitWithWallysDadWest:
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	step_end
 
 PetalburgCity_Gym_Movement_WallysDadEnterGym:
 	walk_up
@@ -1449,11 +595,42 @@ PetalburgCity_Gym_Movement_WallysDadEnterGym:
 	step_end
 
 PetalburgCity_Gym_Movement_WallysDadApproachPlayerNorth:
+	walk_right
+	walk_right
 	walk_up
 	walk_up
-	walk_in_place_faster_up
+	walk_up
+	walk_in_place_faster_right
 	step_end
 
+PetalburgCity_Gym_Movement_WallysDadApproachPlayerEast:
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+PetalburgCity_Gym_Movement_WallysDadApproachPlayerWest:
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+PetalburgCity_Gym_Movement_Unused:
+	walk_in_place_faster_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_8
+	walk_in_place_faster_down
+	step_end
 
 PetalburgCity_Gym_Movement_WallyArriveNorth:
 	delay_16
@@ -1961,5 +1138,480 @@ PetalburgCity_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
+	.string "PAPÁ: ¿Eh?\p"
+	.string "¡Anda, si es mi {PLAYER}!\n"
+	.string "¿Ya habéis terminado\l"
+	.string "con la mudanza?\p"
+	.string "Me sorprende que hayas\n"
+	.string "llegado aquí sin guía.\p"
+	.string "Ah, claro, estás con un buen\n"
+	.string "POKéMON…\p"
+	.string "Entonces quieres entrenar POKéMON\n"
+	.string "como yo, ¿no, {PLAYER}?\p"
+	.string "¡Maravilloso!\n"
+	.string "¡También es mi mayor deseo!$"
+
+PetalburgCity_Gym_Text_WallyIdLikeAPokemon:
+	.string "Eh… Yo… quisiera conseguir\n"
+	.string "un POKéMON, por favor…$"
+
+PetalburgCity_Gym_Text_DadOhYoureWallyRight:
+	.string "PAPÁ: ¿Cómo? Ah, sí…\n"
+	.string "Tú eres BLASCO, ¿no?$"
+
+PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon:
+	.string "BLASCO: Me voy a quedar con mis\n"
+	.string "parientes en PUEBLO VERDEGAL.\p"
+	.string "Pensé que me sentiría solo allí, así\n"
+	.string "que quiero llevarme un POKéMON.\p"
+	.string "Pero nunca he conseguido atrapar\n"
+	.string "uno, no sé cómo se hace…$"
+
+PetalburgCity_Gym_Text_DadHmISee:
+	.string "PAPÁ: Ya…$"
+
+PetalburgCity_Gym_Text_DadPlayerGoWithWally:
+	.string "PAPÁ: {PLAYER}, lo has oído,\n"
+	.string "¿verdad?\p"
+	.string "Ve con BLASCO y asegúrate\n"
+	.string "de que atrapa un POKéMON.$"
+
+PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon:
+	.string "Ven, BLASCO, te presto mi POKéMON.\p"
+	.string "¡BLASCO recibió un ZIGZAGOON!$"
+
+PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall:
+	.string "BLASCO: ¡Halaaaa!\n"
+	.string "¡Un POKéMON!\p"
+	.string "PAPÁ: También te voy a dar\n"
+	.string "una POKé BALL. ¡Adelante!\p"
+	.string "¡BLASCO recibió una POKé BALL!$"
+
+PetalburgCity_Gym_Text_WallyOhWowThankYou:
+	.string "BLASCO: ¡Guau!\n"
+	.string "¡Gracias!$"
+
+PetalburgCity_Gym_Text_WouldYouReallyComeWithMe:
+	.string "{PLAYER}…\n"
+	.string "¿De verdad que vas a venir conmigo?$"
+
+PetalburgCity_Gym_Text_DadSoDidItWorkOut:
+	.string "PAPÁ: ¿Qué tal os fue?$"
+
+PetalburgCity_Gym_Text_WallyThankYouBye:
+	.string "BLASCO: Gracias, muy bien.\n"
+	.string "Aquí tienes tu POKéMON.\p"
+	.string "{PLAYER}, gracias por acompañarme.\p"
+	.string "Gracias a vosotros dos he\n"
+	.string "logrado atrapar un POKéMON.\p"
+	.string "Prometo cuidarlo muy bien.\p"
+	.string "¡Huy! Mi madre me está esperando,\n"
+	.string "así que me tengo que ir.\p"
+	.string "¡Adiós, {PLAYER}!$"
+
+PetalburgCity_Gym_Text_DadGoCollectBadges:
+	.string "PAPÁ: Muy bien…\p"
+	.string "{PLAYER}, si quieres figurar entre\n"
+	.string "los mejores ENTRENADORES,\l"
+	.string "tendrás que hacer lo siguiente…\p"
+	.string "Ve a CIUDAD FÉRRICA y desafía\n"
+	.string "a la LÍDER de GIMNASIO, PETRA.\p"
+	.string "Después, ve a otros GIMNASIOS\n"
+	.string "POKéMON y derrota a sus LÍDERES.\p"
+	.string "Guarda las MEDALLAS que te den\n"
+	.string "todos ellos, ¿entendido?\p"
+	.string "Como yo también soy un LÍDER \n"
+	.string "de GIMNASIO, nos enfrentaremos\l"
+	.string "algún día, {PLAYER}.\p"
+	.string "Pero eso sólo será cuando seas\n"
+	.string "más fuerte, claro…$"
+
+PetalburgCity_Gym_Text_NormanGoToRustboro:
+	.string "PAPÁ: ¿Y eso?\n"
+	.string "¿No vas a ir al GIMNASIO POKéMON\l"
+	.string "de CIUDAD FÉRRICA?\p"
+	.string "Desafiar a un ENTRENADOR novato\n"
+	.string "no tiene ninguna emoción.\p"
+	.string "{PLAYER}, si quieres desafiarme, primero\n"
+	.string "tendrás que ser mucho más fuerte.\p"
+	.string "Lucharé contigo cuando hayas ganado\n"
+	.string "cuatro MEDALLAS, ¿vale?$"
+
+PetalburgCity_Gym_Text_NormanGoToDewford:
+	.string "PAPÁ: Ya veo… Has vencido a la LÍDER\n"
+	.string "del GIMNASIO de CIUDAD FÉRRICA.\p"
+	.string "Pero quedan muchos ENTRENADORES\n"
+	.string "que son más fuertes que tú, {PLAYER}.\p"
+	.string "Más allá del mar está PUEBLO AZULIZA.\n"
+	.string "El LÍDER del GIMNASIO que hay allí\l"
+	.string "se llama MARCIAL.\p"
+	.string "Deberías lanzarle un desafío.$"
+
+PetalburgCity_Gym_Text_YouHaveGottenStronger:
+	.string "PAPÁ: Mmm… {PLAYER}, te has vuelto\n"
+	.string "bastante más fuerte.\p"
+	.string "Se ve por el número de MEDALLAS\n"
+	.string "que has conseguido.$"
+
+PetalburgCity_Gym_Text_NormanIntro:
+	.string "PAPÁ: Mmm… Así que has conseguido\n"
+	.string "hacerte con las cuatro MEDALLAS.\p"
+	.string "Estupendo. Como te prometí,\n"
+	.string "tendremos un combate POKéMON.\p"
+	.string "{PLAYER}…\p"
+	.string "Estoy tan orgulloso de poder\n"
+	.string "enfrentarme a ti…\p"
+	.string "¡Pero un combate es un combate!\p"
+	.string "Haré todo lo que pueda como\n"
+	.string "LÍDER de GIMNASIO para ganar.\p"
+	.string "{PLAYER}, ¡será mejor que tú\n"
+	.string "también des lo mejor de ti!$"
+
+PetalburgCity_Gym_Text_NormanDefeat:
+	.string "Hala…\p"
+	.string "Increíble…\p"
+	.string "No puedo creérmelo…\p"
+	.string "He perdido contra la sangre\n"
+	.string "de mi sangre… {PLAYER}…\p"
+	.string "Pero las reglas son las reglas.\n"
+	.string "Aquí tienes.$"
+
+PetalburgCity_Gym_Text_ReceivedBalanceBadge:
+	.string "¡{PLAYER} recibió la MEDALLA\n"
+	.string "EQUILIBRIO de PAPÁ!$"
+
+PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
+	.string "PAPÁ: Con esta MEDALLA, la DEFENSA\n"
+	.string "de tus POKéMON aumentará.\p"
+	.string "Los POKéMON que conozcan\n"
+	.string "el movimiento de MO SURF podrán\l"
+	.string "usarlo para desplazarse por el agua.\p"
+	.string "Éste es mi regalo para ti, {PLAYER}.\n"
+	.string "Sé que harás buen uso de él.$"
+
+PetalburgCity_Gym_Text_ExplainFacade:
+	.string "PAPÁ: La MT42 contiene IMAGEN.\p"
+	.string "Duplica la potencia de los\n"
+	.string "movimientos si el POKéMON está\l"
+	.string "envenenado, paralizado o quemado.\p"
+	.string "Puede sacar ventaja de una\n"
+	.string "situación poco favorable.$"
+
+PetalburgCity_Gym_Text_DadHappyAndSad:
+	.string "PAPÁ: Como LÍDER de GIMNASIO,\n"
+	.string "me entristece perder…\p"
+	.string "Pero, como padre, estoy orgulloso\n"
+	.string "y algo triste de ver que ya te has\l"
+	.string "hecho mayor. Es extraño…$"
+
+PetalburgCity_Gym_Text_PleaseComeWithMe:
+	.string "¡Anda, si estás aquí, {PLAYER}{KUN}!\p"
+	.string "Ven conmigo un segundo.\n"
+	.string "Tengo algo para ti.$"
+
+PetalburgCity_Gym_Text_LetMeBorrowPlayer:
+	.string "NORMAN, discúlpanos un momento.\p"
+	.string "Déjame a {PLAYER}{KUN} un rato.\n"
+	.string "Un momento, ¿eh?$"
+
+PetalburgCity_Gym_Text_DadGoingToKeepTraining:
+	.string "PAPÁ: {PLAYER}, no olvides visitar\n"
+	.string "a tu madre de vez en cuando.\p"
+	.string "Yo voy a quedarme aquí\n"
+	.string "para entrenar a conciencia.\p"
+	.string "¡Como ENTRENADOR, necesito\n"
+	.string "tomarme mi revancha, {PLAYER}!$"
+
+PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough:
+	.string "PAPÁ: {PLAYER}, ¿qué tal te está\n"
+	.string "yendo?\p"
+	.string "El mundo de los POKéMON\n"
+	.string "es complejo.\p"
+	.string "Por mucho que te entrenes,\n"
+	.string "nunca terminas de conocerlo…$"
+
+PetalburgCity_Gym_Text_GymGuideAdvice:
+	.string "Eh, ¿cómo lo llevas, {PLAYER}?\n"
+	.string "¿Camino del CAMPEONATO?\p"
+	.string "Las puertas de este GIMNASIO\n"
+	.string "se abren cuando derrotas a los\l"
+	.string "ENTRENADORES del camino.\p"
+	.string "¡Oye, oye! ¡Estas puertas están\n"
+	.string "abiertas! ¡No me ataques!\p"
+	.string "Los ENTRENADORES del GIMNASIO\n"
+	.string "de PETALIA usan toda clase\l"
+	.string "de objetos.\p"
+	.string "La puerta de la izquierda conduce\n"
+	.string "a la SALA de VELOCIDAD.\p"
+	.string "La puerta de la derecha lleva\n"
+	.string "a la SALA de PRECISIÓN.\p"
+	.string "El nombre de la sala está marcado\n"
+	.string "en la puerta. Elige con cuidado.\p"
+	.string "Cuando te hayas decidido\n"
+	.string "por una, ¡ve a por todas!$"
+
+PetalburgCity_Gym_Text_GymGuidePostVictory:
+	.string "¡{PLAYER}! ¡Impresionante!\n"
+	.string "¡Has vencido a tu propio padre!\p"
+	.string "¡Me has dejado con la boca abierta!\n"
+	.string "¡Es un momento emocionante!$"
+
+PetalburgCity_Gym_Text_RandallIntro:
+	.string "La capacidad de atacar antes\n"
+	.string "que tu oponente…\p"
+	.string "Sólo eso constituye una gran\n"
+	.string "ventaja, ¿no crees?$"
+
+PetalburgCity_Gym_Text_RandallDefeat:
+	.string "¡Ha sido un gran combate!$"
+
+PetalburgCity_Gym_Text_RandallPostBattle:
+	.string "Ve a la siguiente sala, donde\n"
+	.string "te aguarda un nuevo desafío.\p"
+	.string "A la izquierda está la SALA\n"
+	.string "de CONFUSIÓN.\p"
+	.string "A la derecha se encuentra\n"
+	.string "la SALA de DEFENSA.$"
+
+PetalburgCity_Gym_Text_RandallPostBadge:
+	.string "Venzas a quien venzas, y te derrote\n"
+	.string "quien te derrote, nunca dejes de\l"
+	.string "entrenarte y entrenar tus POKéMON.\p"
+	.string "Más o menos en eso consiste\n"
+	.string "ser un LÍDER de GIMNASIO.$"
+
+PetalburgCity_Gym_Text_ParkerIntro:
+	.string "Ésta es la SALA de CONFUSIÓN.\p"
+	.string "¡Vamos a comprobar lo bien que\n"
+	.string "te llevas con tus POKéMON!$"
+
+PetalburgCity_Gym_Text_ParkerDefeat:
+	.string "No hay quien confunda a tu equipo…\n"
+	.string "Se nota que estáis unidos a tope.$"
+
+PetalburgCity_Gym_Text_ParkerPostBattle:
+	.string "La siguiente sala es la SALA\n"
+	.string "de FUERZA. ¿Resistirás un combate\l"
+	.string "a la máxima potencia?$"
+
+PetalburgCity_Gym_Text_ParkerPostBadge:
+	.string "Desde que derrotaste a nuestro\n"
+	.string "LÍDER, el entrenamiento se ha\l"
+	.string "vuelto mucho más duro.$"
+
+PetalburgCity_Gym_Text_GeorgeIntro:
+	.string "Justo cuando piensas que vas\n"
+	.string "a ganar, tu rival restaura PS…\p"
+	.string "¿Tienes idea de lo mal que\n"
+	.string "sienta una cosa así?\p"
+	.string "¡Pues ahora mismo lo vas\n"
+	.string "a comprobar!$"
+
+PetalburgCity_Gym_Text_GeorgeDefeat:
+	.string "No conseguí restaurar\n"
+	.string "suficientes PS…\p"
+	.string "Vaya potencia de ATAQUE…$"
+
+PetalburgCity_Gym_Text_GeorgePostBattle:
+	.string "No debería haber esperado\n"
+	.string "menos de alguien como tú.\p"
+	.string "Un momento… Tener un padre\n"
+	.string "ENTRENADOR no basta.\l"
+	.string "¡También hay que esforzarse!\p"
+	.string "Y yo he perdido porque no me\n"
+	.string "he esforzado lo suficiente…\p"
+	.string "¡Adelante! Ahora viene la\n"
+	.string "SALA de K.O. INSTANTÁNEO.$"
+
+PetalburgCity_Gym_Text_GeorgePostBadge:
+	.string "Voy a seguir entrenándome mucho\n"
+	.string "hasta convertirme en un LÍDER\l"
+	.string "de GIMNASIO.$"
+
+PetalburgCity_Gym_Text_BerkeIntro:
+	.string "No voy a ponértelo fácil porque\n"
+	.string "tu padre sea nuestro LÍDER.\p"
+	.string "Te voy a enseñar lo mal que\n"
+	.string "sienta recibir un golpe crítico.$"
+
+PetalburgCity_Gym_Text_BerkeDefeat:
+	.string "Qué fuerza…\n"
+	.string "Eres el no va más.$"
+
+PetalburgCity_Gym_Text_BerkePostBattle:
+	.string "Tu padre es muy fuerte.\n"
+	.string "Es un ENTRENADOR muy respetado.\p"
+	.string "Y tengo la impresión de que\n"
+	.string "llegarás tan lejos como él.\p"
+	.string "¡Espero que ambos entabléis\n"
+	.string "un gran combate!$"
+
+PetalburgCity_Gym_Text_BerkePostBadge:
+	.string "Desde que tu padre es el LÍDER,\n"
+	.string "los ENTRENADORES de CIUDAD\l"
+	.string "PETALIA son mucho más fuertes.$"
+
+PetalburgCity_Gym_Text_MaryIntro:
+	.string "Ji, ji, ji…\n"
+	.string "Ésta es la SALA de PRECISIÓN.\p"
+	.string "A nuestros rivales no les sienta\n"
+	.string "muy bien que todos los ataques\l"
+	.string "den en el blanco.$"
+
+PetalburgCity_Gym_Text_MaryDefeat:
+	.string "Eres muy superior a mí…$"
+
+PetalburgCity_Gym_Text_MaryPostBattle:
+	.string "Hay ENTRENADORES aún\n"
+	.string "más fuertes esperándote.\p"
+	.string "A la izquierda, está la SALA\n"
+	.string "de DEFENSA y, a la derecha,\l"
+	.string "la SALA de RECUPERACIÓN.\p"
+	.string "Cualquiera de las dos pondrá\n"
+	.string "a prueba el poder de ATAQUE\l"
+	.string "de tus POKéMON.$"
+
+PetalburgCity_Gym_Text_MaryPostBadge:
+	.string "¿Sabes lo que los ENTRENADORES\n"
+	.string "queremos conseguir?\p"
+	.string "¡Convertirnos en las almas\n"
+	.string "gemelas de nuestros POKéMON!$"
+
+PetalburgCity_Gym_Text_AlexiaIntro:
+	.string "Cuanto más alta es la DEFENSA,\n"
+	.string "más implacable es mi ataque.$"
+
+PetalburgCity_Gym_Text_AlexiaDefeat:
+	.string "Nuestras defensas no han sido\n"
+	.string "suficientes…$"
+
+PetalburgCity_Gym_Text_AlexiaPostBattle:
+	.string "Creo que me has enseñado\n"
+	.string "una valiosa lección.\p"
+	.string "¡Sigue adelante! La puerta de la\n"
+	.string "izquierda lleva a la SALA de FUERZA.\p"
+	.string "La puerta de la derecha lleva\n"
+	.string "a la SALA de K.O. INSTANTÁNEO.\p"
+	.string "Los ENTRENADORES de ambas\n"
+	.string "salas poseen habilidades ofensivas.$"
+
+PetalburgCity_Gym_Text_AlexiaPostBadge:
+	.string "¡Hola! ¿Has probado a hacer SURF?$"
+
+PetalburgCity_Gym_Text_JodyIntro:
+	.string "El LÍDER de nuestro GIMNASIO\n"
+	.string "nos ha dicho que debemos vencerte.\p"
+	.string "¡Da igual que sea tu padre!$"
+
+PetalburgCity_Gym_Text_JodyDefeat:
+	.string "Pero si… ¡me has vencido!$"
+
+PetalburgCity_Gym_Text_JodyPostBattle:
+	.string "Usas los POKéMON igualito\n"
+	.string "que tu padre.\p"
+	.string "¡Venga! Tu padre, el LÍDER\n"
+	.string "del GIMNASIO, te espera.$"
+
+PetalburgCity_Gym_Text_JodyPostBadge:
+	.string "Sin duda es importante\n"
+	.string "fortalecer tus POKéMON.\p"
+	.string "Pero ¿qué distingue al vencedor?\p"
+	.string "Está claro: los sentimientos que\n"
+	.string "alberga hacia sus POKéMON.$"
+
+PetalburgCity_Gym_Text_DoorAppearsLocked:
+	.string "Parece que esta puerta está cerrada…$"
+
+PetalburgCity_Gym_Text_EnterSpeedRoom:
+	.string "En el cartel pone: “SALA\n"
+	.string "de VELOCIDAD”.\p"
+	.string "¿Quieres entrar?$"
+
+@ Unused
+PetalburgCity_Gym_Text_DoorAppearsLocked2:
+	.string "This door appears to be locked\n"
+	.string "right now…$"
+
+PetalburgCity_Gym_Text_EnterAccuracyRoom:
+	.string "En el cartel pone: “SALA\n"
+	.string "de PRECISIÓN”.\p"
+	.string "¿Quieres entrar?$"
+
+PetalburgCity_Gym_Text_EnterConfusionRoom:
+	.string "En el cartel pone: “SALA\n"
+	.string "de CONFUSIÓN”.\p"
+	.string "¿Quieres entrar?$"
+
+PetalburgCity_Gym_Text_EnterDefenseRoom:
+	.string "En el cartel pone: “SALA\n"
+	.string "de DEFENSA”.\p"
+	.string "¿Quieres entrar?$"
+
+PetalburgCity_Gym_Text_EnterRecoveryRoom:
+	.string "En el cartel pone: “SALA\n"
+	.string "de RECUPERACIÓN”.\p"
+	.string "¿Quieres entrar?$"
+
+PetalburgCity_Gym_Text_EnterStrengthRoom:
+	.string "En el cartel pone: “SALA\n"
+	.string "de FUERZA”.\p"
+	.string "¿Quieres entrar?$"
+
+PetalburgCity_Gym_Text_EnterOHKORoom:
+	.string "En el cartel pone: “SALA\n"
+	.string "de K.O. INSTANTÁNEO”.\p"
+	.string "¿Quieres entrar?$"
+
+PetalburgCity_Gym_Text_EnterGymLeadersRoom:
+	.string "“SALA del LÍDER del GIMNASIO”\p"
+	.string "El cartel dice: “Comprueba por ti\n"
+	.string "mismo qué POKéMON te espera”.\p"
+	.string "¿Quieres entrar?$"
+
+PetalburgCity_Gym_Text_GymStatue:
+	.string "GIMNASIO POKéMON de CIUDAD PETALIA$"
+
+PetalburgCity_Gym_Text_GymStatueCertified:
+	.string "GIMNASIO POKéMON de CIUDAD PETALIA\p"
+	.string "NUEVOS ENTRENADORES CERTIFICADOS:\n"
+	.string "{PLAYER}$"
+
+PetalburgCity_Gym_Text_NormanPreRematch:
+	.string "PAPÁ: {PLAYER}…\n"
+	.string "Ya sabía yo que ibas a venir.\p"
+	.string "Yo siempre estoy dispuesto\n"
+	.string "a aceptar un desafío.\p"
+	.string "Sabes qué quiero decir, ¿verdad?\p"
+	.string "En un GIMNASIO, los lazos familiares\n"
+	.string "que te puedan unir no importan.\p"
+	.string "Es más, precisamente porque soy tu\n"
+	.string "padre, debemos luchar dando lo mejor\l"
+	.string "de nosotros, ¿no crees, {PLAYER}?$"
+
+PetalburgCity_Gym_Text_NormanRematchDefeat:
+	.string "Eh… Ja, ja, ja… Está claro que\n"
+	.string "no te has andado con chiquitas…$"
+
+PetalburgCity_Gym_Text_NormanPostRematch:
+	.string "PAPÁ: {PLAYER}…\n"
+	.string "Dime, ¿cuál es tu sueño?\p"
+	.string "Pues el mío…\n"
+	.string "Ja, ja, ja…\l"
+	.string "¡Justamente acaba de hacerse realidad!$"
+
+PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
+	.string "PAPÁ: {PLAYER}…\n"
+	.string "Ya sabía yo que ibas a venir.\p"
+	.string "Yo siempre estoy dispuesto\n"
+	.string "a aceptar un desafío.\p"
+	.string "Sabes qué quiero decir, ¿verdad?\p"
+	.string "En un GIMNASIO, los lazos familiares\n"
+	.string "que te puedan unir no importan.\p"
+	.string "¿Cómo? Un momento, {PLAYER}.\p"
+	.string "¿Sólo tienes un POKéMON\n"
+	.string "en condiciones de luchar?\p"
+	.string "Lo siento mucho, pero necesitas\n"
+	.string "al menos dos POKéMON.$"
 
 `

@@ -234,6 +234,9 @@
 #define EXT_CTRL_CODE_ENG                    0x16
 #define EXT_CTRL_CODE_PAUSE_MUSIC            0x17
 #define EXT_CTRL_CODE_RESUME_MUSIC           0x18
+#define EXT_CTRL_CODE_TEXT_SPEED	         0x19
+#define EXT_CTRL_CODE_SHAKE_SCREEN	       	 0x1A
+#define EXT_CTRL_CODE_FLASH	         		 0x1B
 
 #define TEXT_COLOR_TRANSPARENT  0x0
 #define TEXT_COLOR_WHITE        0x1
@@ -267,6 +270,8 @@
 #define PLACEHOLDER_ID_KYOGRE        0xC
 #define PLACEHOLDER_ID_GROUDON       0xD
 
+// battle placeholders are located in battle_message.h
+
 // Géneros
 #define PLACEHOLDER_ID_OA            0xE
 #define PLACEHOLDER_ID_A             0xF
@@ -277,8 +282,19 @@
 #define PLACEHOLDER_ID_EA            0x14
 #define PLACEHOLDER_ID_COLOR_PLAYER  0x15
 #define PLACEHOLDER_ID_COLOR_RIVAL   0x16
-
-// battle placeholders are located in battle_message.h
+// Géneros Rival
+#define PLACEHOLDER_ID_AO            0x17
+#define PLACEHOLDER_ID_ARIVAL        0x18
+#define PLACEHOLDER_ID_LAEL          0x19
+#define PLACEHOLDER_ID_LaEl          0x1A
+#define PLACEHOLDER_ID_ITARIVAL      0x1B
+#define PLACEHOLDER_ID_ITAITO        0x1C
+#define PLACEHOLDER_ID_AE            0x1D
+#define PLACEHOLDER_ID_ElElla  		 0x1E
+#define PLACEHOLDER_ID_ELELLA   	 0x1F
+#define PLACEHOLDER_ID_EllaEl  		 0x20
+#define PLACEHOLDER_ID_ELLAEL   	 0x21
+#define PLACEHOLDER_ID_GENDERCUSTOM  0x22
 
 // Hiragana from 0x1-0x50, Katakana from 0x51-0xA0.
 // This excludes Japanese punctuation, which end at 0xB0

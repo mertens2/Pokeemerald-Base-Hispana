@@ -111,7 +111,7 @@ gStdScripts::
 	.4byte Std_MsgboxPokenav           @ MSGBOX_POKENAV
 gStdScripts_End::
 
-	.include "data/maps/PetalburgCity/scripts.inc"
+.include "data/maps/PetalburgCity/scripts.inc"
 	.include "data/maps/SlateportCity/scripts.inc"
 	.include "data/maps/MauvilleCity/scripts.inc"
 	.include "data/maps/RustboroCity/scripts.inc"
@@ -279,6 +279,7 @@ gStdScripts_End::
 	.include "data/maps/LilycoveCity_ContestHall/scripts.inc"
 	.include "data/maps/LilycoveCity_PokemonCenter_1F/scripts.inc"
 	.include "data/maps/LilycoveCity_PokemonCenter_2F/scripts.inc"
+	.include "data/maps/LilycoveCity_UnusedMart/scripts.inc"
 	.include "data/maps/LilycoveCity_PokemonTrainerFanClub/scripts.inc"
 	.include "data/maps/LilycoveCity_Harbor/scripts.inc"
 	.include "data/maps/LilycoveCity_MoveDeletersHouse/scripts.inc"
@@ -387,6 +388,9 @@ gStdScripts_End::
 	.include "data/maps/SeafloorCavern_Room9/scripts.inc"
 	.include "data/maps/CaveOfOrigin_Entrance/scripts.inc"
 	.include "data/maps/CaveOfOrigin_1F/scripts.inc"
+	.include "data/maps/CaveOfOrigin_UnusedRubySapphireMap1/scripts.inc"
+	.include "data/maps/CaveOfOrigin_UnusedRubySapphireMap2/scripts.inc"
+	.include "data/maps/CaveOfOrigin_UnusedRubySapphireMap3/scripts.inc"
 	.include "data/maps/CaveOfOrigin_B1F/scripts.inc"
 	.include "data/maps/VictoryRoad_1F/scripts.inc"
 	.include "data/maps/VictoryRoad_B1F/scripts.inc"
@@ -419,6 +423,9 @@ gStdScripts_End::
 	.include "data/maps/SealedChamber_OuterRoom/scripts.inc"
 	.include "data/maps/SealedChamber_InnerRoom/scripts.inc"
 	.include "data/maps/ScorchedSlab/scripts.inc"
+	.include "data/maps/AquaHideout_UnusedRubyMap1/scripts.inc"
+	.include "data/maps/AquaHideout_UnusedRubyMap2/scripts.inc"
+	.include "data/maps/AquaHideout_UnusedRubyMap3/scripts.inc"
 	.include "data/maps/SkyPillar_Entrance/scripts.inc"
 	.include "data/maps/SkyPillar_Outside/scripts.inc"
 	.include "data/maps/SkyPillar_1F/scripts.inc"
@@ -551,6 +558,8 @@ gStdScripts_End::
 	.include "data/maps/NavelRock_Down11/scripts.inc"
 	.include "data/maps/NavelRock_Bottom/scripts.inc"
 	.include "data/maps/TrainerHill_Elevator/scripts.inc"
+	.include "data/maps/Route104_Prototype/scripts.inc"
+	.include "data/maps/Route104_PrototypePrettyPetalFlowerShop/scripts.inc"
 	.include "data/maps/Route109_SeashoreHouse/scripts.inc"
 	.include "data/maps/Route110_TrickHouseEntrance/scripts.inc"
 	.include "data/maps/Route110_TrickHouseEnd/scripts.inc"
@@ -563,8 +572,8 @@ gStdScripts_End::
 	.include "data/maps/Route110_TrickHousePuzzle6/scripts.inc"
 	.include "data/maps/Route110_TrickHousePuzzle7/scripts.inc"
 	.include "data/maps/Route110_TrickHousePuzzle8/scripts.inc"
-	.include "data/maps/Route110_SeasideCyclingRoadSouthEntrance/scripts.inc"
 	.include "data/maps/Route110_SeasideCyclingRoadNorthEntrance/scripts.inc"
+	.include "data/maps/Route110_SeasideCyclingRoadSouthEntrance/scripts.inc"
 	.include "data/maps/Route113_GlassWorkshop/scripts.inc"
 	.include "data/maps/Route123_BerryMastersHouse/scripts.inc"
 	.include "data/maps/Route119_WeatherInstitute_1F/scripts.inc"
@@ -1176,3 +1185,50 @@ Reject:
 
 Decline:
 	.string "¡Espero que vuelva pronto!$"
+
+
+.include "data/maps/LittlerootTown_MLMHouse/scripts.inc"
+
+	.include "data/maps/Ciudaddeprueba/scripts.inc"
+
+	.include "data/maps/GraniteCave_SecretRoom1/scripts.inc"
+
+	.include "data/maps/MirageTower_SecretRoom/scripts.inc"
+
+	.include "data/maps/MirageTower_SecretRoomRegieleki/scripts.inc"
+
+	.include "data/maps/ShoalCave_LowTideIceRoom_DragoTomb/scripts.inc"
+	
+	.include "data/maps/MiniSafariMiddle/scripts.inc"
+
+	.include "data/maps/NewMap1/scripts.inc"
+
+	.include "data/maps/MiniSafariCave/scripts.inc"
+
+    
+
+	.include "data/maps/OldaleRuins/scripts.inc"
+
+	.include "data/maps/MossdeepCity_House5/scripts.inc"
+
+	.include "data/maps/OldaleRuinsInsideF1/scripts.inc"
+
+	.include "data/maps/OldaleRuinsInsideBF1/scripts.inc"
+
+	.include "data/maps/OldaleRuinsInsideBF2/scripts.inc"
+
+	.include "data/maps/OldaleRuinsLegendaryRoom/scripts.inc"
+
+	.include "data/maps/Route104North/scripts.inc"
+
+	.include "data/maps/SafariZone_SpecialArea/scripts.inc"
+
+	.include "data/maps/MauvilleCity_F1/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside/scripts.inc"
+
+	.include "data/maps/MauvilleCity_InverseBattle/scripts.inc"
+
+	.include "data/maps/MauvilleCity_BattleCafe/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Middle/scripts.inc"

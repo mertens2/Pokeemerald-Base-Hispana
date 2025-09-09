@@ -1,5 +1,5 @@
 raw `
-.set LOCALID_LATI, 2
+@ .set LOCALID_LATI, 2
 
 SouthernIsland_Interior_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, SouthernIsland_Interior_OnResume

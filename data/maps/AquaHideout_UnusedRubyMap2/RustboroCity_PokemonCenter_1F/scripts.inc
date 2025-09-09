@@ -1,0 +1,82 @@
+# 1 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 2 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+@ .set LOCALID_NURSE, 1
+# 3 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 4 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_MapScripts::
+# 5 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_PokemonCenter_1F_OnTransition
+# 6 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+# 7 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	.byte 0
+# 8 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 9 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_OnTransition:
+# 10 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	setrespawn HEAL_LOCATION_RUSTBORO_CITY
+# 11 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	call Common_EventScript_UpdateBrineyLocation
+# 12 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	end
+# 13 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 14 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_EventScript_Nurse::
+# 15 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	setvar VAR_0x800B, LOCALID_NURSE
+# 16 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	call Common_EventScript_PkmnCenterNurse
+# 17 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	waitmessage
+# 18 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	waitbuttonpress
+# 19 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	release
+# 20 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	end
+# 21 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 22 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_EventScript_Man::
+# 23 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	msgbox RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities, MSGBOX_NPC
+# 24 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	end
+# 25 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 26 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_EventScript_Boy::
+# 27 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	msgbox RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon, MSGBOX_NPC
+# 28 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	end
+# 29 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 30 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_EventScript_Girl::
+# 31 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	msgbox RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor, MSGBOX_NPC
+# 32 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	end
+# 33 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 34 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities:
+# 35 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	.string "Mi Pokémon tiene natualeza miedosa,\n¡Pero el de mi amigo tiene\lnaturaleza alegre!$"
+# 36 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 37 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon:
+# 38 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	.string "Se ha descubierto que los Pokémon\nhembra y macho son muy distintos,\l¡Algunos machos no evolucionan!$"
+# 39 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 40 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor:
+# 41 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_PokemonCenter_1F/scripts.pory"
+	.string "Quiero viajar para conocer\ndistintos y nuevos tipos de plantas.$"

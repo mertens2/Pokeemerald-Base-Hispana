@@ -1731,6 +1731,36 @@ void ShakeCamera(void)
     PlaySE(SE_M_STRENGTH);
 }
 
+void ShakeCameraScript(u16 horPan, u16 verPan, u16 num, u16 delayShake, u16 shouldPlaySE)
+{
+	u8 taskId = CreateTask(Task_ShakeCamera, 9);
+    gTasks[taskId].tHorizontalPan = horPan;
+    gTasks[taskId].tDelayCounter = 0;
+    gTasks[taskId].tNumShakes = num;
+    gTasks[taskId].tDelay = delayShake;
+    gTasks[taskId].tVerticalPan = verPan;
+    SetCameraPanningCallback(NULL);
+	switch (shouldPlaySE){
+		case YELL_NONE:
+			break;
+		case YELL_LIGHT:
+			PlaySE(SE_WIN_OPEN);
+			break;
+		case YELL_NORMAL:
+			PlaySE(SE_EFFECTIVE);
+			break;
+		case YELL_HEAVY:
+			PlaySE(SE_M_SELF_DESTRUCT);
+			break;
+		case YELL_AGGRESSIVE:
+			PlaySE(SE_UNLOCK);
+			break;
+		case YELL_STRENGTH:
+			PlaySE(SE_M_STRENGTH);
+			break;
+	}
+}
+
 static void Task_ShakeCamera(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
@@ -5033,3 +5063,4 @@ void GetCafeTrainersAfterBattleData(void) {
 	StringExpandPlaceholders(gStringVar3, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].afterGiveItemText);
 	gSpecialVar_Result = sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].itemToGiveId;
 }
+

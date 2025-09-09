@@ -1,5 +1,5 @@
 raw `
-.set LOCALID_WALLACE, 1
+@ .set LOCALID_WALLACE, 1
 
 SkyPillar_Outside_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Outside_OnTransition

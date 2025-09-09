@@ -1,405 +1,4 @@
-text DewfordTown_Gym_Text_GymGuideAdvice{
-	poryswitch(LANGUAGE){
-		EN {
-		format("Hi, Champ-in-the-making!\p"
-			"There's but one rule to this Gym:\p"
-			"{COLOR BLUE}Defeat the Gym Leader using only the first  Pokémon in your Party{COLOR DARK_GRAY}.\p"
-			"No other weird rules, you can use up all the Items you want.\p"
-			"I'll even heal up you Pokémon right now!")}
-		ES {
-			format("¡Hola, Jóven Promesa!\p"
-			"La única regla en este Gimnasio es simple:\p"
-			"{COLOR BLUE}Derrota al Líder del Gimnasio usando sólo el primer Pokémon de tu Equipo{COLOR DARK_GRAY}.\p"
-			"No hay otra restricción, se te permite usar cuantos objetos quieras.\p"
-			"Incluso, ¡Curaré a tus Pokémon ahora para que no te preocupes por eso!")
-		}
-	}
-}
-		
-text DewfordTown_Gym_Text_GymGuidePostVictory{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Good luck, Champ-in-the-making!")
-		}
-		ES {
-			format("¡Buena suerte, Joven Promesa!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_TakaoIntro{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Power, power, power!\n"
-			"There's power in my veins!")
-		}
-		ES {
-			format("¡Poder, poder, poder!\n"
-			"¡Poder es querer!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_TakaoDefeat{
-	format("Oh…")
-
-}
-
-text DewfordTown_Gym_Text_TakaoPostBattle{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Your power's bigger than mine!\n"
-			"Not that hard, to be quite frank.")
-		}
-		ES {
-			format("¡Tu poder es mayor que el mío!\n"
-			"No me sorprende, honestamente.")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_JocelynIntro{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Let's get this over with.")
-		}
-		ES {
-			format("Terminemos con esto.")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_JocelynDefeat{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Great.")
-		}
-		ES {
-			format("Ah, bien.")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_JocelynPostBattle{
-	poryswitch(LANGUAGE){
-		EN {
-			format("One day, I'll be Champion.\pJust you wait.")
-		}
-		ES {
-			format("Un día, seré la Campeona,\nespera y verás.")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_LauraIntro{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Not my fault if I make you cry!")
-		}
-		ES {
-			format("¡No es mi culpa si te\nhago llorar!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_LauraDefeat{
-	format("¡BUAAAHHHH!")
-}
-
-text DewfordTown_Gym_Text_LauraPostBattle{
-	poryswitch(LANGUAGE){
-		EN {
-			format("The dark's scary…")
-		}
-		ES {
-			format("Me da miedo la oscuridad…")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_LilithIntro{
-	poryswitch(LANGUAGE){
-		EN {
-			format("You a ghost?")
-		}
-		ES {
-			format("¿Eres un fantasma?")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_LilithDefeat{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Kill yourself.")
-		}
-		ES {
-			format("¡No quiero ni ver tu\nespantosa cara!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_LilithPostBattle{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Hope you have the worst of deaths!")
-		}
-		ES {
-			format("¡Espero que tengas un\naccidente fatal!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_BrendenIntro{
-	poryswitch(LANGUAGE){
-		EN {
-			format("I'll show you the power the men who fight the ocean everyday wield!")
-		}
-		ES {
-			format("¡Te mostaré el poder que tienen\nlos hombres que se enfrentan\lal océano a diario!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_BrendenDefeat{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Maybe your power will\ndefeat Brawly.")
-		}
-		ES {
-			format("Interesante. Tu poder\npodrá derrotar a Brawly.")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_BrendenPostBattle{
-	poryswitch(LANGUAGE){
-		EN {
-			format("And I thought that after…\nUm… Taking Brawly so many times…\pMy body wouldn't hurt a bit!\pBut I've never been so full of pain after that crushing defeat!")
-
-		}
-		ES {
-			format("Y yo que creía que después de…\nEm… Aguantar a Brawly tantas veces…\p¡Mi cuerpo no podría sentir\ndolor o cansarse!\p¡Estoy tan cansado y adolorido por\nesa derrota aplastante!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_CristianIntro{
-	poryswitch(LANGUAGE){
-		EN {
-			format("If you want to pass, you'll have to walk over me!")
-		}
-		ES {
-			format("¡Si quieres pasar tendrás que\nderrotarme a mí!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_CristianDefeat{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Already?")
-		}
-		ES {
-			format("¿Ya perdí?")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_CristianPostBattle{
-	poryswitch(LANGUAGE){
-		EN {
-			format("I should do what Brawly says and stop being overconfident.")
-		}
-		ES {
-			format("Debería hacerle caso a Brawly\nde no confiarme de más.")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_BrawlyIntro{
-	poryswitch(LANGUAGE){
-		EN {
-			format("I'm Brawly!\n"
-			"Dewford's Surfing Leader!\p"
-			"In these seas, the waves have made\n"
-			"my body and mind strong,\l"
-			"Inimaginably strong!\p"
-			"So if you wanna beat me, you'll have\n"
-			"to do it using only your most beloved partner!\pJust like me and Makuhita in the waves!")
-		}
-		ES {
-			format("¡Soy Brawly!\n"
-			"¡El Líder surfista de Dewford!\p"
-			"En estos lares, cientos de olas\n"
-			"han fortalecido mi cuerpo y mente,\l"
-			"¡Hasta niveles inimaginables!\p"
-			"Así que si quieres vencerme, ¡Tendrás\n"
-			"que vencerme usando sólo a tu\lcompañero más querido,\ligual que Makuhita y yo en las olas!")
-			
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_BrawlyDefeat{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Yeah! Didn't expect such an overwhelming splashing power!\p"
-			"Let's go!\p"
-			"You deserve this Badge!")
-		}
-		ES {
-			format("¡Yeah! ¡No me esperaba un poder\n"
-			"de salpicadura tan abrumador!\p"
-			"¡Let's go!\p"
-			"¡Mereces esta Medalla!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_ReceivedKnuckleBadge{
-	poryswitch(LANGUAGE){
-		EN {
-			format("{PLAYER} was given the Knuckle Badge.")
-		}
-		ES {
-			format("{PLAYER} recibió la Medalla Puño.")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis{
-	poryswitch(LANGUAGE){
-		EN {
-			format("The Knuckle Badge will let ya train Pokémon up to Level 30.\pAlso, I'll give ya this TM!")
-		}
-		ES {
-			format("La Medalla Puño te permitirá entrenar\na Pokémon de hasta nivel 30.\pAdemás, déjame darte esta MT.")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_ExplainBulkUp{
-	poryswitch(LANGUAGE){
-		EN {
-			format("That TM contains Bulk Up, that raises Defense AND Attack!\p"
-			"… … … … … …")
-		}
-		ES {
-			format("Esa MT contiene el movimiento\nCorpulencia, que sube Ataque y Defensa.\p"
-			"… … … … … …")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_RegisteredBrawly{
-	poryswitch(LANGUAGE){
-		EN {
-			format("Brawly was registered in the PokéNav!")
-		}
-		ES {
-			format("¡Brawly se registró en el PokéNav!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_BrawlyPostBattle{
-	poryswitch(LANGUAGE){
-		EN {
-			format("I can see you becoming the world's greatest!\pThere won't be a wave you can't ride!")
-		}
-		ES {
-			format("¡Puedo verte convirtiéndote\nen lo más grande!\p¡No habrá ola que no puedas montar!")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_GymStatue{
-	poryswitch(LANGUAGE){
-		EN {
-			format("DEWFORD TOWN'S GYM\pRecognized Trainers:\nLeaf\l{RIVAL}")
-		}
-		ES {
-			format("GIMNASIO DEL PUEBLO DEWFORD\pEntrenadores reconocidos:\nLeaf\l{RIVAL}")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_GymStatueCertified{
-	poryswitch(LANGUAGE){
-		EN {
-			format("DEWFORD TOWN'S GYM\pRecognized Trainers:\nLeaf\l{RIVAL}\l{PLAYER}")
-		}
-		ES {
-			format("GIMNASIO DEL PUEBLO DEWFORD\pEntrenadores reconocidos:\nLeaf\l{RIVAL}\l{PLAYER}")
-		}
-	}
-}
-
-text DewfordTown_Gym_Text_BrawlyPreRematch{
-	format("Una nueva era de olas se avecina,\n¡Hora de demostrarme qué\ntan buen{A} surfista eres!")
-}
-
-text DewfordTown_Gym_Text_BrawlyRematchDefeat{
-	format("¡Hell yeah!\n"
-	"¡Sigues mejorando!")
-}
-
-text DewfordTown_Gym_Text_BrawlyPostRematch{
-	format("Las batallas son complicadas,\ny profundas, ¡Tanto como el mar!\p¡Amaría ver el fondo del océano\ny entender a los Pokémon de allí!")
-}
-
-text DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons{
-	format("Una ola se lleva la arena, pero,\nal final, siempre vuelve a la orilla.\p"
-	"Una realidad que el mar me enseñó,\npero una batalla 2vs1 es injusta,\l¡Vuelve con dos compañeros,\ly surfearemos juntos el mar\lde la vida, yeah!")
-}
-
-text DewfordTown_Gym_Text_BrawlyIntro2{
-	format("¡Hell yes!\n¡He estado entrenando\larduamente para este momento!\p¡Luchemos 4vs4!\p¡Ahora presenciarás el poder\nabrumador del Líder surfista!")
-}
-
-text DewfordTown_Gym_Text_BrawlyIntro3{
-	format("¡Hell yes!\n¡He ido al fondo del océano,\la prepararme para este momento!\p¡Two versus Four, let's go!\p¡Ahora presenciarás el poder abrumador\nde quien ha visto el océano!")
-}
-
-text DewfordTown_Gym_Text_BrawlyIntro4{
-	format("¡Wooohhh!\n¡Let's go, bro, four versus six!\p¡Luchemos con el poder abismal\nque mi cuerpo posee!")
-}
-
-text DewfordTown_Gym_Text_BrawlyIntro5{
-	format("¡Wooohhh!\n¡Luchar junto a tí sigue\lsiendo el mejor entrenamiento\lque haya tenido!\p¡La fuerza de mis Pokémon\nte hará naufragar!")
-}
-
-text DewfordTown_Gym_Text_BrawlyIntro6{
-	format("¡Fuck yeah!\p¡Arrasemos con todo lo\nque exista con una ola\labismal de poder Tipo Lucha!\p¡Batallemos, seis contra seis,\nsin objetos, nada!\p¡Verás el tsunami que causa mi poder!")
-}
-
-text DewfordTown_Gym_Text_BrawlyDefeat2{
-	format("¡Aún después de tan duro\nentrenamiento, mi poder sigue sin\lcompararse al tuyo!")
-}
-
-text DewfordTown_Gym_Text_BrawlyDefeat3{
-	format("¡Yeah!\n¡Fuck yeah!\p¡Tal poder me ha empapado!\n¡Luchar contigo es lo mejor!")
-}
-
-text DewfordTown_Gym_Text_BrawlyPostBattle2{
-	format("¡Tu poder no parece tener límites,\namig{OA}, eres increíble!\l¡Aquí algo para que me recuerdes!\p¡Para la próxima no me contendré!")
-}
-
-text DewfordTown_Gym_Text_BrawlyPostBattle3{
-	format("¡Incluso con tales limitaciones,\nme ganaste de nuevo!\p¡You rock, dude, you really do!\n¡Por eso, aquí tienes esto!")
-}
-
-text DewfordTown_Gym_Text_BrawlyPostBattle4{
-	format("¡Nunca he tenido tal batalla!\p¡You fucking rule, dude!\nDéjame darte algo a cambio de\ltal batalla.")
-}
-
-text DewfordTown_Gym_Text_BrawlyPostBattle5{
-	format("¡Son puntos de batalla!\p¡Cámbialos por genialidades en\nel Frente Batalla.\p¡Ojalá nos veamos de nuevo!")
-}
-
 raw `
-.set LOCALID_GUIDE, 5
 DewfordTown_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_Gym_OnTransition
 	.byte 0
@@ -419,21 +18,6 @@ DewfordTown_Gym_EventScript_SetFlashLevel::
 	goto_if_eq VAR_0x8000, 4, DewfordTown_Gym_EventScript_SetFlashLevel3
 	goto_if_eq VAR_0x8000, 5, DewfordTown_Gym_EventScript_SetFlashLevel2
 	goto DewfordTown_Gym_EventScript_SetFlashLevel1
-
-DewfordTown_Gym_EventScript_GymGuideTrigger::
-	setvar VAR_TEMP_0, 1
-	goto_if_defeated TRAINER_BRAWLY_1, DewfordTown_Gym_EventScript_GymGuideTriggerEnd
-	lockall
-	playse SE_PIN
-	applymovement LOCALID_GUIDE, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp
-	waitmovement 0
-	goto DewfordTown_Gym_EventScript_GymGuide2
-	end
-
-DewfordTown_Gym_EventScript_GymGuideTriggerEnd::
-	end
 
 DewfordTown_Gym_EventScript_SetLightsOn::
 	setflashlevel 0
@@ -550,166 +134,15 @@ DewfordTown_Gym_EventScript_StopCountingTrainers::
 	return
 
 DewfordTown_Gym_EventScript_Brawly::
-	lockall
-	faceplayer
-	goto_if_set FLAG_BADGE02_GET, DewfordTown_Gym_EventScript_Brawly_Rematch
-	setflag FLAG_STARTED_BOSS
-	special SavePlayerParty
-	special HealPlayerParty
-	deletepokemon 1
 	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
-	checkitem ITEM_TM08
-	goto_if_eq VAR_RESULT, FALSE, DewfordTown_Gym_EventScript_GiveBulkUp2
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch
+	goto_if_unset FLAG_RECEIVED_TM_BULK_UP, DewfordTown_Gym_EventScript_GiveBulkUp2
 	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-DewfordTown_Gym_EventScript_Brawly_Rematch::
-	lockall
-	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_Brawly_Rematch_2
-	switch VAR_BRAWLY_REMATCH
-	case 0, DewfordTown_Gym_EventScript_Brawly_Rematch_2
-	case 1, DewfordTown_Gym_EventScript_Brawly_Rematch_3
-	case 2, DewfordTown_Gym_EventScript_Brawly_Rematch_4
-	case 3, DewfordTown_Gym_EventScript_Brawly_Rematch_5
-	case 4, DewfordTown_Gym_EventScript_Brawly_Rematch_6
-	case 5, DewfordTown_Gym_EventScript_Brawly_Rematch_7
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
-	setvar VAR_BRAWLY_REMATCH, 1
-	release
-	end
-
-
-DewfordTown_Gym_EventScript_Brawly_Rematch_2:
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-DewfordTown_Gym_EventScript_Brawly_Rematch_3:
-	setflag FLAG_STARTED_BOSS
-	special SavePlayerParty
-	deletepokemon 4
-	trainerbattle_double TRAINER_BRAWLY_2, DewfordTown_Gym_Text_BrawlyIntro2, DewfordTown_Gym_Text_BrawlyDefeat2, DewfordTown_Gym_EventScript_BrawlyNotEnough , DewfordTown_Gym_EventScript_BrawlyDefeated2
-	goto DewfordTown_Gym_EventScript_Brawly_Rematch_2
-	return
-
-DewfordTown_Gym_EventScript_Brawly_Rematch_4:
-	setflag FLAG_STARTED_BOSS
-	special SavePlayerParty
-	deletepokemon 2
-	trainerbattle_double TRAINER_BRAWLY_3, DewfordTown_Gym_Text_BrawlyIntro3, DewfordTown_Gym_Text_BrawlyDefeat2, DewfordTown_Gym_EventScript_BrawlyNotEnough, DewfordTown_Gym_EventScript_BrawlyDefeated2
-	goto DewfordTown_Gym_EventScript_Brawly_Rematch_2
-	return
-
-DewfordTown_Gym_EventScript_Brawly_Rematch_5:
-	setflag FLAG_STARTED_BOSS
-	special SavePlayerParty
-	deletepokemon 4
-	trainerbattle_double TRAINER_BRAWLY_4, DewfordTown_Gym_Text_BrawlyIntro4, DewfordTown_Gym_Text_BrawlyDefeat2, DewfordTown_Gym_EventScript_BrawlyNotEnough, DewfordTown_Gym_EventScript_BrawlyDefeated31
-	goto DewfordTown_Gym_EventScript_Brawly_Rematch_2
-	return
-
-DewfordTown_Gym_EventScript_Brawly_Rematch_6:
-	setflag FLAG_STARTED_BOSS
-	special SavePlayerParty
-	deletepokemon 4
-	trainerbattle_double TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyIntro5, DewfordTown_Gym_Text_BrawlyDefeat2, DewfordTown_Gym_EventScript_BrawlyNotEnough, DewfordTown_Gym_EventScript_BrawlyDefeated3
-	goto DewfordTown_Gym_EventScript_Brawly_Rematch_2
-	return
-
-DewfordTown_Gym_EventScript_Brawly_Rematch_7:
-	setflag FLAG_STARTED_BOSS
-	special TakeAwayItemsAndBerries
-	trainerbattle_double TRAINER_BRAWLY_6, DewfordTown_Gym_Text_BrawlyIntro6, DewfordTown_Gym_Text_BrawlyDefeat3, DewfordTown_Gym_EventScript_BrawlyNotEnough, DewfordTown_Gym_EventScript_BrawlyDefeated4
-	goto DewfordTown_Gym_EventScript_Brawly_Rematch_2
-	return
-
-
-DewfordTown_Gym_EventScript_BrawlyDefeated2::
-	savepartofteam
-	special LoadPlayerParty
-	loadpartofteam
-	addvar VAR_BRAWLY_REMATCH, 1
-	clearflag FLAG_DEFEATED_DEWFORD_GYM
-	clearflag FLAG_STARTED_BOSS
-	message RecoveredPokemon
-	waitmessage
-	delay 32
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle2
-	giveitem ITEM_TM93
-	release
-	end
-
-DewfordTown_Gym_EventScript_BrawlyDefeated3::
-	savepartofteam
-	special LoadPlayerParty
-	loadpartofteam
-	addvar VAR_BRAWLY_REMATCH, 1
-	message RecoveredPokemon
-	waitmessage
-	delay 32
-	clearflag FLAG_DEFEATED_DEWFORD_GYM
-	clearflag FLAG_STARTED_BOSS
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle3
-	giveitem ITEM_TM60
-	release
-	end
-
-DewfordTown_Gym_EventScript_BrawlyDefeated31::
-	savepartofteam
-	special LoadPlayerParty
-	loadpartofteam
-	setvar VAR_BRAWLY_REMATCH, 10
-	message RecoveredPokemon
-	waitmessage
-	delay 32
-	clearflag FLAG_DEFEATED_DEWFORD_GYM
-	clearflag FLAG_STARTED_BOSS
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle3
-	giveitem ITEM_TM60
-	release
-	end
-
-DewfordTown_Gym_EventScript_BrawlyDefeated4::
-	setvar VAR_BRAWLY_REMATCH, 10
-	special GiveBackItemsAndBerries
-	clearflag FLAG_DEFEATED_DEWFORD_GYM
-	clearflag FLAG_STARTED_BOSS
-	message RecoveredItems
-	waitmessage
-	closemessage
-	delay 64
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle4
-	special ShowBattlePointsWindow
-	delay 64
-	setvar VAR_0x8004, 2000
-	special GiveFrontierBattlePoints
-	special UpdateBattlePointsWindow
-	playse SE_SHOP
-	waitse
-	delay 120
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle5
-	special CloseBattlePointsWindow
-	closemessage
-	release
-	end
-
-DewfordTown_Gym_EventScript_BrawlyNotEnough::
-	savepartofteam
-	special LoadPlayerParty
-	loadpartofteam
-	special GiveBackItemsAndBerries
-	clearflag FLAG_DEFEATED_DEWFORD_GYM
-	clearflag FLAG_STARTED_BOSS
-	msgbox DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
 	release
 	end
 
 DewfordTown_Gym_EventScript_BrawlyDefeated::
-	savepartofteam
-	special LoadPlayerParty
-	loadpartofteam
-	clearflag FLAG_STARTED_BOSS
 	call DewfordTown_Gym_EventScript_AnimateFlashFullBrightness
 	message DewfordTown_Gym_Text_ReceivedKnuckleBadge
 	waitmessage
@@ -736,15 +169,17 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	end
 
 DewfordTown_Gym_EventScript_GiveBulkUp::
-	giveitem ITEM_TM08
+	giveitem ITEM_TM_BULK_UP
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_BagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_BULK_UP
 	return
 
 DewfordTown_Gym_EventScript_GiveBulkUp2:
-	giveitem ITEM_TM08
+	giveitem ITEM_TM_BULK_UP
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_BULK_UP
 	release
 	end
 
@@ -814,13 +249,16 @@ DewfordTown_Gym_EventScript_LilithBrightenRoom::
 	end
 
 DewfordTown_Gym_EventScript_GymGuide::
-	lockall
+	lock
 	faceplayer
-DewfordTown_Gym_EventScript_GymGuide2::
+	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
 	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
-	call Common_EventScript_OutOfCenterPartyHeal
+	release
+	end
+
+DewfordTown_Gym_EventScript_GymGuidePostVictory::
 	msgbox DewfordTown_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
-	releaseall
+	release
 	end
 
 DewfordTown_Gym_EventScript_LeftGymStatue::
@@ -845,5 +283,180 @@ DewfordTown_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+DewfordTown_Gym_Text_GymGuideAdvice:
+	.string "Eh, ¿cómo lo llevas, {PLAYER}?\n"
+	.string "¿Camino del CAMPEONATO?\p"
+	.string "MARCIAL, el LÍDER del GIMNASIO\n"
+	.string "de AZULIZA, usa POKéMON de tipo\l"
+	.string "LUCHA.\p"
+	.string "¡Si lo desafías con POKéMON de tipo\n"
+	.string "NORMAL, acabarás mal!\p"
+	.string "Los POKéMON de tipo LUCHA pueden\n"
+	.string "acabar con los POKéMON de tipo NORMAL\l"
+	.string "en un santiamén, así que ten cuidado…\p"
+	.string "Y lo que es aún peor: el GIMNASIO\n"
+	.string "está oscuro como boca de lobo.\p"
+	.string "Pero se irá iluminando a medida\n"
+	.string "que derrotes a los ENTRENADORES\l"
+	.string "que te encuentres en tu camino.\p"
+	.string "Bueno, ¡ve a por él!$"
 
+DewfordTown_Gym_Text_GymGuidePostVictory:
+	.string "¡Guau! ¡Ahora sí que hay luz\n"
+	.string "para dar y tomar!\p"
+	.string "¡Y tu futuro también parece brillante!$"
+
+DewfordTown_Gym_Text_TakaoIntro:
+	.string "¡Querer es poder!\n"
+	.string "¡Quiero derrotarte!$"
+
+DewfordTown_Gym_Text_TakaoDefeat:
+	.string "Tendría que haberlo querido más…$"
+
+DewfordTown_Gym_Text_TakaoPostBattle:
+	.string "Tu ingenio supera mi fuerza bruta.\n"
+	.string "¡Tu técnica es insuperable!$"
+
+DewfordTown_Gym_Text_JocelynIntro:
+	.string "No es necesario molestar a MARCIAL…\p"
+	.string "¡Te voy a aplastar!$"
+
+DewfordTown_Gym_Text_JocelynDefeat:
+	.string "Pero… ¿cómo?\n"
+	.string "¿Cómo he podido perder tan rápido?$"
+
+DewfordTown_Gym_Text_JocelynPostBattle:
+	.string "No me voy a hundir por esto…\n"
+	.string "¡Me motiva para seguir entrenando!\p"
+	.string "Un día seré LÍDER de GIMNASIO…\p"
+	.string "No, ¡seré CAMPEONA de la LIGA\n"
+	.string "POKéMON!$"
+
+DewfordTown_Gym_Text_LauraIntro:
+	.string "¡No me lleves la contraria!\n"
+	.string "¡Vas a perder porque lo digo yo!$"
+
+DewfordTown_Gym_Text_LauraDefeat:
+	.string "¡Buaaaaaa!\n"
+	.string "¡No es justooo!$"
+
+DewfordTown_Gym_Text_LauraPostBattle:
+	.string "Lucho en la oscuridad para quitarme\n"
+	.string "todos los miedos.\p"
+	.string "Pero, al estar tan oscuro, nunca he\n"
+	.string "podido ver la cara de MARCIAL…$"
+
+DewfordTown_Gym_Text_LilithIntro:
+	.string "¡Uaka!…\n"
+	.string "¿Dando tumbos en la oscuridad?$"
+
+DewfordTown_Gym_Text_LilithDefeat:
+	.string "Bah…\n"
+	.string "¡No quiero ni saber tu nombre!$"
+
+DewfordTown_Gym_Text_LilithPostBattle:
+	.string "¡Mereces perderte y acabar otra vez\n"
+	.string "en la entrada!$"
+
+DewfordTown_Gym_Text_BrendenIntro:
+	.string "¡Vas a ver las agallas\n"
+	.string "que tiene un lobo de mar!$"
+
+DewfordTown_Gym_Text_BrendenDefeat:
+	.string "Pero ¿cómo ha pasado?\n"
+	.string "¡Yo nunca pierdo de esta manera!$"
+
+DewfordTown_Gym_Text_BrendenPostBattle:
+	.string "¡Por todos los mares! ¡Mereces conocer\n"
+	.string "a nuestro LIDER de GIMNASIO!$"
+
+DewfordTown_Gym_Text_CristianIntro:
+	.string "¡Si quieres pasar, tendrás que hacerlo\n"
+	.string "por encima de mí!$"
+
+DewfordTown_Gym_Text_CristianDefeat:
+	.string "¡Grrrrr!\n"
+	.string "¡Una derrota humillante!$"
+
+DewfordTown_Gym_Text_CristianPostBattle:
+	.string "¡Me has ganado a mí!\n"
+	.string "¡A por la MEDALLA!$"
+
+DewfordTown_Gym_Text_BrawlyIntro:
+	.string "¡Soy MARCIAL!\n"
+	.string "¡El LÍDER del GIMNASIO de AZULIZA!\p"
+	.string "He templado mi carácter entre las\n"
+	.string "fieras olas de este lugar y me he\l"
+	.string "endurecido en esta oscura cueva.\p"
+	.string "¿Quieres desafiarme?\n"
+	.string "Vamos a ver de qué eres capaz…$"
+
+DewfordTown_Gym_Text_BrawlyDefeat:
+	.string "¡Guau y doble guau! ¡Eres peor que\n"
+	.string "un maremoto! No lo esperaba…\p"
+	.string "¡Estoy hundido en la miseria!\p"
+	.string "De acuerdo. Te la has ganado.\n"
+	.string "¡Toma esta MEDALLA de GIMNASIO!$"
+
+DewfordTown_Gym_Text_ReceivedKnuckleBadge:
+	.string "{PLAYER} recibió la MEDALLA PUÑO\n"
+	.string "de MARCIAL.$"
+
+DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
+	.string "Con la MEDALLA PUÑO te obedecerán\n"
+	.string "todos los POKéMON hasta el nivel 30,\l"
+	.string "incluso los que has intercambiado.\p"
+	.string "Y además podrás usar el movimiento de\n"
+	.string "la MO DESTELLO fuera de los combates.\p"
+	.string "Si quieres, puedes usar también esta\n"
+	.string "MÁQUINA TÉCNICA.$"
+
+DewfordTown_Gym_Text_ExplainBulkUp:
+	.string "La MT08 contiene CORPULENCIA.\p"
+	.string "Es un movimiento que aumenta\n"
+	.string "las habilidades de ATAQUE y DEFENSA.\p"
+	.string "… … … … … …$"
+
+DewfordTown_Gym_Text_RegisteredBrawly:
+	.string "Acabas de registrar a MARCIAL,\n"
+	.string "el LÍDER de GIMNASIO, en el POKéNAV.$"
+
+DewfordTown_Gym_Text_BrawlyPostBattle:
+	.string "¡Puedo ver que tu talento crecerá\n"
+	.string "tanto que dejarás atónitos a todos\l"
+	.string "los ENTRENADORES de HOENN!$"
+
+DewfordTown_Gym_Text_GymStatue:
+	.string "GIMNASIO POKéMON de PUEBLO AZULIZA$"
+
+DewfordTown_Gym_Text_GymStatueCertified:
+	.string "GIMNASIO POKéMON de PUEBLO AZULIZA\p"
+	.string "NUEVOS ENTRENADORES CERTIFICADOS:\n"
+	.string "{PLAYER}$"
+
+DewfordTown_Gym_Text_BrawlyPreRematch:
+	.string "MARCIAL: Una ola puede retroceder,\n"
+	.string "pero siempre acaba en la orilla.\p"
+	.string "Una enorme ola de talento como tú…,\n"
+	.string "¡sabía que no tardaría en volver!\p"
+	.string "¡Muéstrame lo grande que te has hecho!$"
+
+DewfordTown_Gym_Text_BrawlyRematchDefeat:
+	.string "¡Guau!\n"
+	.string "¡Otra vez me has llevado por delante!$"
+
+DewfordTown_Gym_Text_BrawlyPostRematch:
+	.string "MARCIAL: Combatir es algo muy profundo.\n"
+	.string "Nunca acabas de llegar al fondo.\l"
+	.string "¡Igual que el mar de HOENN!$"
+
+DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
+	.string "MARCIAL: Una ola puede retroceder,\n"
+	.string "pero siempre acaba en la orilla.\p"
+	.string "Una enorme ola de talento como tú…,\n"
+	.string "¡sabía que no tardaría en volver!\p"
+	.string "¡Vaya, sólo tienes un POKéMON\n"
+	.string "disponible para luchar!\p"
+	.string "Lo siento, pero tendrás que volver con\n"
+	.string "al menos dos si quieres combatir.$"
 `

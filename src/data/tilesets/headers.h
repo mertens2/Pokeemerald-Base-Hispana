@@ -808,3 +808,149 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+
+const struct Tileset gTileset_Nature =
+{
+	.isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Nature,
+    .palettes = gTilesetPalettes_Nature,
+    .metatiles = gMetatiles_Nature,
+    .metatileAttributes = gMetatileAttributes_Nature,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_NatureAlt =
+{
+	.isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_NatureAlt,
+    .palettes = gTilesetPalettes_NatureAlt,
+    .metatiles = gMetatiles_NatureAlt,
+    .metatileAttributes = gMetatileAttributes_NatureAlt,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PetalburgNew =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PetalburgNew,
+    .palettes = gTilesetPalettes_PetalburgNew,
+    .metatiles = gMetatiles_PetalburgNew,
+    .metatileAttributes = gMetatileAttributes_PetalburgNew,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RustboroNew =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RustboroNew,
+    .palettes = gTilesetPalettes_RustboroNew,
+    .metatiles = gMetatiles_RustboroNew,
+    .metatileAttributes = gMetatileAttributes_RustboroNew,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_DewfordNew =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_DewfordNew,
+    .palettes = gTilesetPalettes_DewfordNew,
+    .metatiles = gMetatiles_DewfordNew,
+    .metatileAttributes = gMetatileAttributes_DewfordNew,
+    .callback = NULL,
+};
+
+
+const struct Tileset gTileset_SlateportNew =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SlateportNew,
+    .palettes = gTilesetPalettes_SlateportNew,
+    .metatiles = gMetatiles_SlateportNew,
+    .metatileAttributes = gMetatileAttributes_SlateportNew,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_SlateportCity =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SlateportCity,
+    .palettes = gTilesetPalettes_SlateportCity,
+    .metatiles = gMetatiles_SlateportCity,
+    .metatileAttributes = gMetatileAttributes_SlateportCity,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Route110 =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Route110,
+    .palettes = gTilesetPalettes_Route110,
+    .metatiles = gMetatiles_Route110,
+    .metatileAttributes = gMetatileAttributes_Route110,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_FallarborNew =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FallarborNew,
+    .palettes = gTilesetPalettes_FallarborNew,
+    .metatiles = gMetatiles_FallarborNew,
+    .metatileAttributes = gMetatileAttributes_FallarborNew,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_NatureBeach =
+{
+	.isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_NatureBeach,
+    .palettes = gTilesetPalettes_NatureBeach,
+    .metatiles = gMetatiles_NatureBeach,
+    .metatileAttributes = gMetatileAttributes_NatureBeach,
+    .callback = NULL,
+};
+
+
+const struct Tileset gTileset_FallarborNew2 =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FallarborNew2,
+    .palettes = gTilesetPalettes_FallarborNew2,
+    .metatiles = gMetatiles_FallarborNew2,
+    .metatileAttributes = gMetatileAttributes_FallarborNew2,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_MauvilleInside =
+{
+	.isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_MauvilleInside,
+    .palettes = gTilesetPalettes_MauvilleInside,
+    .metatiles = gMetatiles_MauvilleInside,
+    .metatileAttributes = gMetatileAttributes_MauvilleInside,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_MauvilleDecor =
+{
+	.isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MauvilleDecor,
+    .palettes = gTilesetPalettes_MauvilleDecor,
+    .metatiles = gMetatiles_MauvilleDecor,
+    .metatileAttributes = gMetatileAttributes_MauvilleDecor,
+    .callback = NULL,
+};

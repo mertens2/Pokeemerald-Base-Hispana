@@ -1,8 +1,8 @@
 raw `
-.set LOCALID_CAPT_STERN, 1
-.set LOCALID_ARCHIE, 2
-.set LOCALID_GRUNT_1, 3
-.set LOCALID_GRUNT_2, 4
+@ .set LOCALID_CAPT_STERN, 1
+@ .set LOCALID_ARCHIE, 2
+@ .set LOCALID_GRUNT_1, 3
+@ .set LOCALID_GRUNT_2, 4
 
 SlateportCity_OceanicMuseum_2F_MapScripts::
 	.byte 0

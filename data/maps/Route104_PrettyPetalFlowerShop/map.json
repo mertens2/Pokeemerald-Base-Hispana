@@ -12,9 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_FLOWER_SHOP_OWNER",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 0,
       "y": 3,
@@ -59,14 +60,14 @@
       "x": 2,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE104NORTH",
+      "dest_map": "MAP_ROUTE104",
       "dest_warp_id": "1"
     },
     {
       "x": 3,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE104NORTH",
+      "dest_map": "MAP_ROUTE104",
       "dest_warp_id": "1"
     }
   ],

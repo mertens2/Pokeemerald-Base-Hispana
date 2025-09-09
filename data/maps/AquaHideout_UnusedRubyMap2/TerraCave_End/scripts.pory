@@ -1,5 +1,5 @@
 raw `
-.set LOCALID_GROUDON, 1
+@ .set LOCALID_GROUDON, 1
 
 TerraCave_End_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, TerraCave_End_OnResume

@@ -1,0 +1,34 @@
+# 1 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+
+# 2 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+RustboroCity_House2_MapScripts::
+# 3 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+	.byte 0
+# 4 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+
+# 5 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+RustboroCity_House2_EventScript_PokefanF::
+# 6 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+	msgbox RustboroCity_House2_Text_TrainerSchoolExcellent, MSGBOX_NPC
+# 7 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+	end
+# 8 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+
+# 9 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+RustboroCity_House2_EventScript_LittleGirl::
+# 10 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+	msgbox RustboroCity_House2_Text_RoxanneKnowsALot, MSGBOX_NPC
+# 11 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+	end
+# 12 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+
+# 13 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+RustboroCity_House2_Text_TrainerSchoolExcellent:
+# 14 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+	.string "La Escuela de Entrenadores es excelente,\n¡Incluso podrían salir Líderes\lde Gimnasio de ahí!$"
+# 15 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+
+# 16 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+RustboroCity_House2_Text_RoxanneKnowsALot:
+# 17 "data/maps/AquaHideout_UnusedRubyMap2/RustboroCity_House2/scripts.pory"
+	.string "¡Roxanne es genial!$"

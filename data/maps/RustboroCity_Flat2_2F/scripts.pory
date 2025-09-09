@@ -11,7 +11,7 @@ RustboroCity_Flat2_2F_EventScript_NinjaBoy::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_PREMIER_BALL_RUSTBORO, RustboroCity_Flat2_2F_EventScript_GavePremierBall
 	msgbox RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt, MSGBOX_DEFAULT
-	giveitem ITEM_QUICK_BALL, 2
+	giveitem ITEM_PREMIER_BALL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_PREMIER_BALL_RUSTBORO
 	release
@@ -23,12 +23,17 @@ RustboroCity_Flat2_2F_EventScript_GavePremierBall::
 	end
 
 RustboroCity_Flat2_2F_Text_DevonWasTinyInOldDays:
-	.string "Cuando era joven, Devor era un pequeño\nnegocio familiar. ¡Cómo pasa el tiempo!$"
+	.string "Hace mucho, mucho tiempo, DEVON no\n"
+	.string "era más que una mini-empresa de nada.$"
 
 RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt:
-	.string "¡Mi papi trabaja en Devon, y le\ndan de estas gratis!\pA mí no me sirven,\n¡Así que toma!$"
+	.string "Mi papá trabaja en DEVON S.A.\p"
+	.string "¡Mi papá ha hecho esto!\n"
+	.string "Pero, como yo no puedo usarlo, te lo doy.$"
 
 RustboroCity_Flat2_2F_Text_GoingToWorkAtDevonToo:
-	.string "¡Ojalá trabaje ahí cuando sea grande!$"
+	.string "Mi papá trabaja en DEVON S.A.\p"
+	.string "Cuando sea mayor, yo también\n"
+	.string "voy a trabajar en DEVON.$"
 
 `

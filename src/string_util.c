@@ -476,69 +476,186 @@ static const u8 *ExpandPlaceholder_KunChan(void)
         return gText_ExpandedPlaceholder_Chan;
 }
 
-//Género
+//Género player
 static const u8 *ExpandPlaceholder_OA(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
+    if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_HE)
         return gText_ExpandedPlaceholder_O;
-    else
+    else if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_SHE)
         return gText_ExpandedPlaceholder_A;
+	else
+		return gText_ExpandedPlaceholder_E;
 }
 
 static const u8 *ExpandPlaceholder_A(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
+	if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_HE)
         return gText_ExpandedPlaceholder_Kun;
-    else
+    else if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_SHE)
         return gText_ExpandedPlaceholder_A;
+	else
+		return gText_ExpandedPlaceholder_E;
 }
 
 static const u8 *ExpandPlaceholder_ElLa(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
+	if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_HE)
         return gText_ExpandedPlaceholder_El;
-    else
+    else if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_SHE)
         return gText_ExpandedPlaceholder_La;
+	else
+		return gText_ExpandedPlaceholder_Le;
 }
 
 static const u8 *ExpandPlaceholder_ELLA(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
+    if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_HE)
         return gText_ExpandedPlaceholder_EL;
-    else
+    else if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_SHE)
         return gText_ExpandedPlaceholder_LA;
+	else
+		return gText_ExpandedPlaceholder_LE;
 }
 
 static const u8 *ExpandPlaceholder_ITA(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
+	if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_HE)
         return gText_ExpandedPlaceholder_Kun;
-    else
+    else if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_SHE)
         return gText_ExpandedPlaceholder_ITA;
+	else
+		return gText_ExpandedPlaceholder_ITE;
 }
 
 static const u8 *ExpandPlaceholder_ITOITA(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
+	
+    if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_HE)
         return gText_ExpandedPlaceholder_ITO;
-    else
+    else if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_SHE)
         return gText_ExpandedPlaceholder_ITA;
+	else
+		return gText_ExpandedPlaceholder_ITE;
 }
 
 static const u8 *ExpandPlaceholder_EA(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
+    if (gSaveBlock2Ptr->playerPronouns != PRONOUNS_SHE)
         return gText_ExpandedPlaceholder_E;
     else
         return gText_ExpandedPlaceholder_A;
 }
 
-static const u8 *ExpandPlaceholder_COLOR_PLAYER(void)
+//Género rival
+static const u8 *ExpandPlaceholder_AO(void)
 {
     if (gSaveBlock2Ptr->playerGender == MALE)
-        return gText_ExpandedPlaceholder_COLOR_MALE;
+        return gText_ExpandedPlaceholder_A;
     else
+        return gText_ExpandedPlaceholder_O;
+}
+
+static const u8 *ExpandPlaceholder_ARIVAL(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_A;
+    else
+        return gText_ExpandedPlaceholder_Kun;
+}
+
+static const u8 *ExpandPlaceholder_LaEl(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_La;
+    else
+        return gText_ExpandedPlaceholder_El;
+}
+
+static const u8 *ExpandPlaceholder_LAEL(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_LA;
+    else
+        return gText_ExpandedPlaceholder_EL;
+}
+
+static const u8 *ExpandPlaceholder_ITARIVAL(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_ITA;
+    else
+        return gText_ExpandedPlaceholder_Kun;
+}
+
+static const u8 *ExpandPlaceholder_ITAITO(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_ITA;
+    else
+        return gText_ExpandedPlaceholder_ITO;
+}
+
+static const u8 *ExpandPlaceholder_AE(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_A;
+    else
+        return gText_ExpandedPlaceholder_E;
+}
+
+static const u8 *ExpandPlaceholder_ElElla(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_El2;
+    else
+        return gText_ExpandedPlaceholder_Ella;
+}
+
+static const u8 *ExpandPlaceholder_ELELLA(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_EL2;
+    else
+        return gText_ExpandedPlaceholder_ELLA;
+}
+
+static const u8 *ExpandPlaceholder_EllaEl(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_Ella;
+    else
+        return gText_ExpandedPlaceholder_El2;
+}
+
+static const u8 *ExpandPlaceholder_ELLAEL(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_ELLA;
+    else
+        return gText_ExpandedPlaceholder_EL2;
+}
+
+static const u8 *ExpandPlaceholder_GENDERCUSTOM(void)
+{
+    if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_HE)
+        return gStringVar1;
+    else if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_SHE)
+        return gStringVar2;
+    else
+        return gStringVar3;
+}
+
+
+
+static const u8 *ExpandPlaceholder_COLOR_PLAYER(void)
+{
+	
+    if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_HE)
+        return gText_ExpandedPlaceholder_COLOR_MALE;
+    else if (gSaveBlock2Ptr->playerPronouns == PRONOUNS_SHE)
         return gText_ExpandedPlaceholder_COLOR_FEMALE;
+	else
+        return gText_ExpandedPlaceholder_COLOR_NON_BINARY;
 }
 
 static const u8 *ExpandPlaceholder_COLOR_RIVAL(void)
@@ -548,6 +665,80 @@ static const u8 *ExpandPlaceholder_COLOR_RIVAL(void)
     else
         return gText_ExpandedPlaceholder_COLOR_MALE;
 }
+
+
+// //Género
+// static const u8 *ExpandPlaceholder_OA(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_O;
+    // else
+        // return gText_ExpandedPlaceholder_A;
+// }
+
+// static const u8 *ExpandPlaceholder_A(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_Kun;
+    // else
+        // return gText_ExpandedPlaceholder_A;
+// }
+
+// static const u8 *ExpandPlaceholder_ElLa(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_El;
+    // else
+        // return gText_ExpandedPlaceholder_La;
+// }
+
+// static const u8 *ExpandPlaceholder_ELLA(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_EL;
+    // else
+        // return gText_ExpandedPlaceholder_LA;
+// }
+
+// static const u8 *ExpandPlaceholder_ITA(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_Kun;
+    // else
+        // return gText_ExpandedPlaceholder_ITA;
+// }
+
+// static const u8 *ExpandPlaceholder_ITOITA(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_ITO;
+    // else
+        // return gText_ExpandedPlaceholder_ITA;
+// }
+
+// static const u8 *ExpandPlaceholder_EA(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_E;
+    // else
+        // return gText_ExpandedPlaceholder_A;
+// }
+
+// static const u8 *ExpandPlaceholder_COLOR_PLAYER(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_COLOR_MALE;
+    // else
+        // return gText_ExpandedPlaceholder_COLOR_FEMALE;
+// }
+
+// static const u8 *ExpandPlaceholder_COLOR_RIVAL(void)
+// {
+    // if (gSaveBlock2Ptr->playerGender == MALE)
+        // return gText_ExpandedPlaceholder_COLOR_FEMALE;
+    // else
+        // return gText_ExpandedPlaceholder_COLOR_MALE;
+// }
 
 static const u8 *ExpandPlaceholder_RivalName(void)
 {
@@ -623,6 +814,18 @@ const u8 *GetExpandedPlaceholder(u32 id)
         [PLACEHOLDER_ID_EA] = ExpandPlaceholder_EA,
         [PLACEHOLDER_ID_COLOR_PLAYER] = ExpandPlaceholder_COLOR_PLAYER,
         [PLACEHOLDER_ID_COLOR_RIVAL] = ExpandPlaceholder_COLOR_RIVAL,
+		[PLACEHOLDER_ID_AO] = ExpandPlaceholder_AO,
+        [PLACEHOLDER_ID_ARIVAL] = ExpandPlaceholder_ARIVAL,
+        [PLACEHOLDER_ID_LAEL] = ExpandPlaceholder_LAEL,
+        [PLACEHOLDER_ID_LaEl] = ExpandPlaceholder_LaEl,
+        [PLACEHOLDER_ID_ITARIVAL] = ExpandPlaceholder_ITARIVAL,
+        [PLACEHOLDER_ID_ITAITO] = ExpandPlaceholder_ITAITO,
+        [PLACEHOLDER_ID_AE] = ExpandPlaceholder_AE,
+        [PLACEHOLDER_ID_ELELLA] = ExpandPlaceholder_ELELLA,
+        [PLACEHOLDER_ID_ElElla] = ExpandPlaceholder_ElElla,
+        [PLACEHOLDER_ID_ELLAEL] = ExpandPlaceholder_ELLAEL,
+        [PLACEHOLDER_ID_EllaEl] = ExpandPlaceholder_EllaEl,
+        [PLACEHOLDER_ID_GENDERCUSTOM] = ExpandPlaceholder_GENDERCUSTOM,
         
     };
 
@@ -791,6 +994,9 @@ u8 GetExtCtrlCodeLength(u8 code)
         [EXT_CTRL_CODE_ENG]                    = 1,
         [EXT_CTRL_CODE_PAUSE_MUSIC]            = 1,
         [EXT_CTRL_CODE_RESUME_MUSIC]           = 1,
+		[EXT_CTRL_CODE_TEXT_SPEED]         	   = 2,
+        [EXT_CTRL_CODE_SHAKE_SCREEN]           = 5,
+        [EXT_CTRL_CODE_FLASH]         	   	   = 2,
     };
 
     u8 length = 0;
@@ -900,6 +1106,76 @@ u8 *StringCopyUppercase(u8 *dest, const u8 *src)
         src++;
     }
 
+    *dest = EOS;
+    return dest;
+}
+
+
+u8 *StringFormat(u8 *dest, u8 num , const u8 *src)
+{
+	u8 line = 1;
+	const u8 lineBreak[] = _("\n");
+	const u8 minusSymbol[] = _("-");
+	const u8 aSimpleSpace[] = _(" ");
+	int i;
+	for (i=0; src[i]!=EOS;i++){
+		if (src[i] == *aSimpleSpace){
+			if (line == 1) {
+				if (src[i+1] != EOS){
+					i++;
+					*dest = src[i];
+					dest++;
+				}
+			}
+			if ((num-line) <= 2){
+				*dest = *lineBreak;
+				dest++;
+				if (src[i+1] != EOS)
+					i++;
+				line = 0;
+			}
+		}
+		else if (src[i+1] == *aSimpleSpace) {
+			if ((num-line) <= 2){
+				*dest = src[i];
+				dest++;
+				*dest = *lineBreak;
+				dest++;
+				if (src[i+1] != EOS)
+					i++;
+				if (src[i+1] != EOS)
+					i++;
+				line = 0;
+			}
+		}
+		else if (src[i] == *lineBreak){
+			if (line != num){
+				*dest = *aSimpleSpace;
+				dest++;
+				if (src[i+1] != EOS)
+					i++;
+			}
+		}
+		else if (line == (num-1)){
+			*dest = *minusSymbol;
+			dest++;
+			*dest = *lineBreak;
+			dest++;
+			line = 0;
+		}
+		*dest = src[i];
+		dest++;
+		line++;
+		/*
+		i should
+		start a for checking for each full word
+		if the word is longer than the max lenght
+		search closest earlier vocal and append a - next to it
+		add a \n too and clean line lenght and word lenght
+		take max size or max number of lines
+		
+		*/
+	}
     *dest = EOS;
     return dest;
 }

@@ -1,8 +1,8 @@
 raw `
-.set LOCALID_TWIN, 2
-.set LOCALID_BULLY_1, 3
-.set LOCALID_BULLY_2, 4
-.set LOCALID_WALLY, 5
+@ .set LOCALID_TWIN, 2
+@ .set LOCALID_BULLY_1, 3
+@ .set LOCALID_BULLY_2, 4
+@ .set LOCALID_WALLY, 5
 
 VerdanturfTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VerdanturfTown_OnTransition

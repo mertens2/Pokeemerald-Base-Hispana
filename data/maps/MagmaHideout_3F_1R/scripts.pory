@@ -1,136 +1,45 @@
-const 	LOCALID_GRUNT_1 = 1
-const 	LOCALID_GRUNT_2 = 3
-const 	LOCALID_DELTA   = 4
+raw `
+MagmaHideout_3F_1R_MapScripts::
+	.byte 0
 
-mapscripts MagmaHideout_3F_1R_MapScripts {
-	MAP_SCRIPT_ON_TRANSITION {
-		if (var(VAR_MAGMA_HIDEOUT_STATE) == 1) {
-			call (MagmaHideout_3F_1R_EventScripts_PrepareMagmaWin)
-			return
-		}
-	}
-}
-
-script MagmaHideout_3F_1R_EventScripts_PrepareMagmaWin {
-	setobjectxyperm (LOCALID_GRUNT_1, 7, 17)
-	setobjectmovementtype (LOCALID_GRUNT_1, MOVEMENT_TYPE_FACE_RIGHT)
-	setobjectxyperm (LOCALID_GRUNT_2, 8, 16)
-	setobjectmovementtype (LOCALID_GRUNT_2, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectxyperm (LOCALID_DELTA, 8, 17)
-	setobjectmovementtype (LOCALID_DELTA, MOVEMENT_TYPE_FACE_LEFT)
-}
-
-script MagmaHideout_3F_1R_EventScript_Grunt9 {
-	lockall
-	namebox (Magma)
-	msgbox (format("¿Un{A} intrus{OA}? ¡Vete de aquí!"))
-	hidenamebox
-	closemessage
-	releaseall
-}
-
-script MagmaHideout_3F_1R_EventScript_Grunt16 {
-	lockall
-	namebox (Magma)
-	msgbox (format("¿No tan fuertes por sí solos, eh?"))
-	hidenamebox
-	closemessage
-	releaseall
-}
-
-script MagmaHideout_3F_1R_EventScripts_Trigger {
-	special (SpawnCameraObject)
-	lockall
-	applymovement (OBJ_EVENT_ID_CAMERA, MagmaHideout_3F_1R_Movement_PanToDrama)
-	waitmovement (0)
-	namebox (Magma)
-	msgbox(format("¡No vas a pasar! ¡Nuestros compañeros ya han detenido a tus amigos, y nosotros te detendremos a tí!"))
-	namebox (Delta)
-	msgbox(format("Dejen de molestar. Necesitamos ese Orbe Rojo que tienen. Entrégenoslo y los dejaremos traquilos."))
-	applymovement (LOCALID_GRUNT_1, Common_Movement_WalkInPlaceFasterLeft)
-	waitmovement (0)
-	namebox (Magma)
-	msgbox(format("¡Silencio! ¡No intentes nada!"))
-	hidenamebox
-	closemessage
-	// msgbox(format("¿Deseas intervenir, ayudando al Equipo Magma?"),MSGBOX_YESNO)
-	// if (var(VAR_RESULT) == YES){
-		// setvar(VAR_MAGMA_HIDEOUT_STATE, 1)
-		// subvar(VAR_EVIL_TEAM_SIDE, 1)
-		// msgbox(format("Si."))
-	// }
-	// else {
-		// setvar(VAR_MAGMA_HIDEOUT_STATE, 1)
-		// addvar(VAR_EVIL_TEAM_SIDE, 1)
-		// msgbox(format("No."))
-	// }
-	applymovement (LOCALID_DELTA, MagmaHideout_3F_1R_Movement_DeltaTryToGetAway1)
-	applymovement (LOCALID_GRUNT_1, MagmaHideout_3F_1R_Movement_Grunt1Stop)
-	applymovement (LOCALID_GRUNT_2, MagmaHideout_3F_1R_Movement_Grunt2Stop)
-	waitmovement (0)
-	namebox (Delta)
-	msgbox(format("Hmmm... Jugaré con ustedes un rato.\pVe, niñ{OA}, continúa con tu misión."))
-	namebox (Magma)
-	msgbox(format("No te hagas la lista. Un empujón, y la División Delta deberá encontrar una nueva miembro."))
-	namebox (Delta)
-	msgbox(format("Las amenasas vacías no te llevarán a-{PAUSE 20} "),MSGBOX_INTERRUPT)
-	hidenamebox
-	closemessage
-	applymovement (LOCALID_DELTA, MagmaHideout_3F_1R_Movement_DeltaTryToGetAway2)
-	applymovement (LOCALID_GRUNT_1, MagmaHideout_3F_1R_Movement_Grunt1Stop2)
-	applymovement (LOCALID_GRUNT_2, MagmaHideout_3F_1R_Movement_Grunt2Stop2)
-	waitmovement (0)
-	namebox (Delta)
-	msgbox(format("..."))
-	hidenamebox
-	closemessage
-	call (MagmaHideout_3F_1R_EventScripts_PrepareMagmaWin)
-	applymovement (OBJ_EVENT_ID_CAMERA, MagmaHideout_3F_1R_Movement_PanFromDrama)
-	waitmovement (0)
-	special(RemoveCameraObject)
-	releaseall
+MagmaHideout_3F_1R_EventScript_Grunt9::
+	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_9, MagmaHideout_3F_1R_Text_Grunt9Intro, MagmaHideout_3F_1R_Text_Grunt9Defeat
+	msgbox MagmaHideout_3F_1R_Text_Grunt9PostBattle, MSGBOX_AUTOCLOSE
 	end
-}
 
-movement MagmaHideout_3F_1R_Movement_PanToDrama {
-	walk_left * 6
-	walk_up
-}
+MagmaHideout_3F_1R_EventScript_Grunt16::
+	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_16, MagmaHideout_3F_1R_Text_Grunt16Intro, MagmaHideout_3F_1R_Text_Grunt16Defeat
+	msgbox MagmaHideout_3F_1R_Text_Grunt16PostBattle, MSGBOX_AUTOCLOSE
+	end
 
-movement MagmaHideout_3F_1R_Movement_PanFromDrama {
-	walk_right * 6
-	walk_down
-}
+MagmaHideout_3F_1R_Text_Grunt9Intro:
+	.string "¿Qué he hecho yo para merecer\n"
+	.string "este puesto de guardia?\p"
+	.string "¡Tengo las orejas ardiendo!$"
 
-movement MagmaHideout_3F_1R_Movement_DeltaTryToGetAway1 {
-	walk_fast_up * 3
-}
+MagmaHideout_3F_1R_Text_Grunt9Defeat:
+	.string "El calor me da flojera…$"
 
-movement MagmaHideout_3F_1R_Movement_Grunt1Stop {
-	walk_faster_left
-	walk_faster_up*4
-	walk_faster_right
-	walk_in_place_faster_down
-}
+MagmaHideout_3F_1R_Text_Grunt9PostBattle:
+	.string "¿Te parece raro que llevemos capuchas\n"
+	.string "en un volcán lleno de lava como éste?$"
 
-movement MagmaHideout_3F_1R_Movement_Grunt2Stop {
-	walk_fast_up * 3
-}
+MagmaHideout_3F_1R_Text_Grunt16Intro:
+	.string "Nos unimos al EQUIPO MAGMA para ayudar\n"
+	.string "a nuestro líder a cumplir su visión.\p"
+	.string "Me da igual si eres del EQUIPO AQUA\n"
+	.string "o sólo estás de paso por aquí.\p"
+	.string "¡Nadie interfiere en nuestros planes\n"
+	.string "y se sale con la suya!$"
 
-movement MagmaHideout_3F_1R_Movement_DeltaTryToGetAway2 {
-	delay_8
-	lock_facing_direction
-	walk_slow_right
-	unlock_facing_direction
-	walk_in_place_up
-	walk_in_place_left
-}
+MagmaHideout_3F_1R_Text_Grunt16Defeat:
+	.string "¡Oh, no!\n"
+	.string "¡Esto no es de recibo!$"
 
-movement MagmaHideout_3F_1R_Movement_Grunt1Stop2 {
-	walk_in_place_down
-}
+MagmaHideout_3F_1R_Text_Grunt16PostBattle:
+	.string "Escúchame bien.\n"
+	.string "¡El EQUIPO MAGMA tiene razón!\p"
+	.string "No hagas ni caso al EQUIPO AQUA.\n"
+	.string "¡Mienten más que hablan!$"
 
-movement MagmaHideout_3F_1R_Movement_Grunt2Stop2 {
-	walk_slow_up
-	walk_in_place_right
-}
+`

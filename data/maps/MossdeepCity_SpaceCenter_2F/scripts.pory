@@ -1,15 +1,4 @@
 raw `
-.set LOCALID_RICH_BOY, 1
-.set LOCALID_GENTLEMAN, 2
-.set LOCALID_SCIENTIST, 3
-.set LOCALID_STEVEN, 4
-@ Grunt names numbered like their Trainer values (which are for the full Space Center)
-.set LOCALID_GRUNT_6, 5
-.set LOCALID_GRUNT_5, 6
-.set LOCALID_GRUNT_7, 7
-.set LOCALID_TABITHA, 8
-.set LOCALID_MAXIE, 9
-
 MossdeepCity_SpaceCenter_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_SpaceCenter_2F_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, MossdeepCity_SpaceCenter_2F_OnFrame
@@ -22,18 +11,18 @@ MossdeepCity_SpaceCenter_2F_OnTransition:
 
 MossdeepCity_SpaceCenter_2F_EventScript_MoveCivilians::
 	clearflag FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER
-	setobjectxyperm LOCALID_SCIENTIST, 5, 3
-	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm LOCALID_RICH_BOY, 3, 2
-	setobjectmovementtype LOCALID_RICH_BOY, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm LOCALID_GENTLEMAN, 1, 3
-	setobjectmovementtype LOCALID_GENTLEMAN, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_SPACE_CENTER_2F_SCIENTIST, 5, 3
+	setobjectmovementtype LOCALID_SPACE_CENTER_2F_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_SPACE_CENTER_2F_RICH_BOY, 3, 2
+	setobjectmovementtype LOCALID_SPACE_CENTER_2F_RICH_BOY, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_SPACE_CENTER_2F_GENTLEMAN, 1, 3
+	setobjectmovementtype LOCALID_SPACE_CENTER_2F_GENTLEMAN, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 MossdeepCity_SpaceCenter_2F_EventScript_MoveDefeatedGrunts::
-	setobjectxyperm LOCALID_GRUNT_6, 11, 2
-	setobjectxyperm LOCALID_GRUNT_7, 15, 2
-	setobjectxyperm LOCALID_GRUNT_5, 13, 4
+	setobjectxyperm LOCALID_SPACE_CENTER_GRUNT_6, 11, 2
+	setobjectxyperm LOCALID_SPACE_CENTER_GRUNT_7, 15, 2
+	setobjectxyperm LOCALID_SPACE_CENTER_GRUNT_5, 13, 4
 	return
 
 MossdeepCity_SpaceCenter_2F_OnFrame:
@@ -42,15 +31,15 @@ MossdeepCity_SpaceCenter_2F_OnFrame:
 
 MossdeepCity_SpaceCenter_2F_EventScript_ThreeMagmaGrunts::
 	playse SE_PIN
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	applymovement LOCALID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
 	msgbox MossdeepCity_SpaceCenter_2F_Text_YoureOutnumberedTakeUsOn, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, MossdeepCity_SpaceCenter_2F_EventScript_BattleThreeMagmaGrunts
 	msgbox MossdeepCity_SpaceCenter_2F_Text_GoodAnswer, MSGBOX_DEFAULT
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_SpaceCenter_2F_Movement_PlayerExit
+	applymovement LOCALID_PLAYER, MossdeepCity_SpaceCenter_2F_Movement_PlayerExit
 	waitmovement 0
 	warp MAP_MOSSDEEP_CITY_SPACE_CENTER_1F, 13, 1
 	waitstate
@@ -64,24 +53,24 @@ MossdeepCity_SpaceCenter_2F_Movement_PlayerExit:
 MossdeepCity_SpaceCenter_2F_EventScript_BattleThreeMagmaGrunts::
 	msgbox MossdeepCity_SpaceCenter_2F_Text_Grunt5Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_5, MossdeepCity_SpaceCenter_2F_Text_Grunt5Defeat
-	applymovement LOCALID_GRUNT_5, MossdeepCity_SpaceCenter_2F_Movement_Grunt5Defeated
+	applymovement LOCALID_SPACE_CENTER_GRUNT_5, MossdeepCity_SpaceCenter_2F_Movement_Grunt5Defeated
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox MossdeepCity_SpaceCenter_2F_Text_Grunt6Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_6, MossdeepCity_SpaceCenter_2F_Text_Grunt6Defeat
-	applymovement LOCALID_GRUNT_6, MossdeepCity_SpaceCenter_2F_Movement_Grunt6Defeated
+	applymovement LOCALID_SPACE_CENTER_GRUNT_6, MossdeepCity_SpaceCenter_2F_Movement_Grunt6Defeated
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox MossdeepCity_SpaceCenter_2F_Text_Grunt7Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_7, MossdeepCity_SpaceCenter_2F_Text_Grunt7Defeat
-	applymovement LOCALID_GRUNT_7, MossdeepCity_SpaceCenter_2F_Movement_Grunt7Defeated
+	applymovement LOCALID_SPACE_CENTER_GRUNT_7, MossdeepCity_SpaceCenter_2F_Movement_Grunt7Defeated
 	waitmovement 0
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 2
-	copyobjectxytoperm LOCALID_GRUNT_6
-	copyobjectxytoperm LOCALID_GRUNT_7
-	copyobjectxytoperm LOCALID_GRUNT_5
+	copyobjectxytoperm LOCALID_SPACE_CENTER_GRUNT_6
+	copyobjectxytoperm LOCALID_SPACE_CENTER_GRUNT_7
+	copyobjectxytoperm LOCALID_SPACE_CENTER_GRUNT_5
 	releaseall
 	end
 
@@ -199,13 +188,13 @@ MossdeepCity_SpaceCenter_2F_EventScript_Steven::
 	playse SE_NOT_EFFECTIVE
 	switch VAR_FACING
 	case DIR_SOUTH, MossdeepCity_SpaceCenter_2F_EventScript_StevenFightMovementSouth
-	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenFight
+	applymovement LOCALID_SPACE_CENTER_2F_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenFight
 	waitmovement 0
 	releaseall
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_StevenFightMovementSouth::
-	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenFightSouth
+	applymovement LOCALID_SPACE_CENTER_2F_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenFightSouth
 	waitmovement 0
 	releaseall
 	end
@@ -258,14 +247,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
 	goto MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt
 
 MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle::
-	special ReducePlayerPartyToSelectedMons
-	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
-	setvar VAR_0x8004, SPECIAL_BATTLE_STEVEN
-	setvar VAR_0x8005, 0
-	special DoSpecialTrainerBattle
-	waitstate
-	frontier_saveparty
-	special LoadPlayerParty
+	multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, TRAINER_TABITHA_MOSSDEEP, MossdeepCity_SpaceCenter_Text_TabithaDefeat, PARTNER_STEVEN
 	switch VAR_RESULT
 	case 1, MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha
 	fadescreen FADE_TO_BLACK
@@ -276,12 +258,12 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFasterLeft
-	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SPACE_CENTER_MAXIE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_SPACE_CENTER_TABITHA, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFasterUp
-	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SPACE_CENTER_MAXIE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_SPACE_CENTER_TABITHA, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	delay 20
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp, MSGBOX_DEFAULT
@@ -293,17 +275,17 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	setflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA
 	setflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA
 	setflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
-	removeobject LOCALID_GRUNT_6
-	removeobject LOCALID_GRUNT_7
-	removeobject LOCALID_GRUNT_5
-	removeobject LOCALID_TABITHA
-	removeobject LOCALID_MAXIE
-	setobjectxy LOCALID_SCIENTIST, 5, 6
-	turnobject LOCALID_SCIENTIST, DIR_SOUTH
-	setobjectxy LOCALID_GENTLEMAN, 11, 8
-	turnobject LOCALID_GENTLEMAN, DIR_NORTH
-	setobjectxy LOCALID_RICH_BOY, 6, 2
-	turnobject LOCALID_RICH_BOY, DIR_NORTH
+	removeobject LOCALID_SPACE_CENTER_GRUNT_6
+	removeobject LOCALID_SPACE_CENTER_GRUNT_7
+	removeobject LOCALID_SPACE_CENTER_GRUNT_5
+	removeobject LOCALID_SPACE_CENTER_TABITHA
+	removeobject LOCALID_SPACE_CENTER_MAXIE
+	setobjectxy LOCALID_SPACE_CENTER_2F_SCIENTIST, 5, 6
+	turnobject LOCALID_SPACE_CENTER_2F_SCIENTIST, DIR_SOUTH
+	setobjectxy LOCALID_SPACE_CENTER_2F_GENTLEMAN, 11, 8
+	turnobject LOCALID_SPACE_CENTER_2F_GENTLEMAN, DIR_NORTH
+	setobjectxy LOCALID_SPACE_CENTER_2F_RICH_BOY, 6, 2
+	turnobject LOCALID_SPACE_CENTER_2F_RICH_BOY, DIR_NORTH
 	call MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayer
 	fadescreen FADE_FROM_BLACK
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome, MSGBOX_DEFAULT
@@ -311,16 +293,19 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_DEFEATED_MAGMA_SPACE_CENTER
 	setflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN
-	removeobject LOCALID_STEVEN
+	removeobject LOCALID_SPACE_CENTER_2F_STEVEN
 	setflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN
 	setvar VAR_STEVENS_HOUSE_STATE, 1
 	setflag FLAG_HIDE_MOSSDEEP_CITY_SCOTT
-	removeobject LOCALID_SCIENTIST
-	setobjectxyperm LOCALID_SCIENTIST, 5, 6
-	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_WANDER_AROUND
-	addobject LOCALID_SCIENTIST
+	removeobject LOCALID_SPACE_CENTER_2F_SCIENTIST
+	setobjectxyperm LOCALID_SPACE_CENTER_2F_SCIENTIST, 5, 6
+	setobjectmovementtype LOCALID_SPACE_CENTER_2F_SCIENTIST, MOVEMENT_TYPE_WANDER_AROUND
+	addobject LOCALID_SPACE_CENTER_2F_SCIENTIST
 	fadescreen FADE_FROM_BLACK
+#ifdef BUGFIX
+	releaseall
+#endif
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayer::
@@ -330,20 +315,12 @@ MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayer::
 	return
 
 MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerSouth::
-	turnobject LOCALID_STEVEN, DIR_NORTH
+	turnobject LOCALID_SPACE_CENTER_2F_STEVEN, DIR_NORTH
 	return
 
 MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerWest::
-	turnobject LOCALID_STEVEN, DIR_EAST
+	turnobject LOCALID_SPACE_CENTER_2F_STEVEN, DIR_EAST
 	return
-
-MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer::
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_MAXIE_MOSSDEEP, 0, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand
-	end
-
-MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer::
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_TABITHA_MOSSDEEP, 0, MossdeepCity_SpaceCenter_Text_TabithaDefeat, MossdeepCity_SpaceCenter_Text_TabithaDefeat
-	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
 	lockall
@@ -366,152 +343,152 @@ MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall::
 	return
 
 MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
-	.string "MOSSDEEP has mainly sunny weather,\n"
-	.string "and its winds are stable.\p"
-	.string "It's an ideal location for launching\n"
-	.string "rockets.$"
+	.string "ALGARIA suele tener buen tiempo\n"
+	.string "y vientos estables.\p"
+	.string "Es el mejor lugar para lanzar cohetes\n"
+	.string "al espacio exterior.$"
 
 MossdeepCity_SpaceCenter_2F_Text_WhyWouldMagmaStealRocketFuel:
-	.string "Why would TEAM MAGMA want to steal\n"
-	.string "our rocket fuel in the first place?$"
+	.string "¿Por qué querrá el EQUIPO MAGMA\n"
+	.string "robar el combustible del cohete?$"
 
 MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
-	.string "If only I was a little younger, I would\n"
-	.string "have liked being an astronaut…\p"
-	.string "No… It's not too late!\n"
-	.string "I can and will try!$"
+	.string "Me hubiera gustado ser astronauta.\n"
+	.string "Si fuera sólo un pelín más joven…\p"
+	.string "Pero no, nunca es demasiado tarde.\n"
+	.string "¡Voy a intentarlo!$"
 
 MossdeepCity_SpaceCenter_2F_Text_MagmaCantGetAwayWithThis:
-	.string "If TEAM MAGMA takes the rocket fuel,\n"
-	.string "I won't be able to go to space!\p"
-	.string "They can't be allowed to get away\n"
-	.string "with such an outrage!$"
+	.string "Si el EQUIPO MAGMA se lleva\n"
+	.string "el combustible, no podré ir al espacio.\p"
+	.string "¡Qué tragedia! ¡Qué ultraje!\n"
+	.string "¡No se puede permitir!$"
 
 MossdeepCity_SpaceCenter_2F_Text_WishOrdinaryPeopleCouldGoIntoSpace:
-	.string "I wish ordinary people could go into\n"
-	.string "space one day…$"
+	.string "Ojalá la gente normal pudiera ir\n"
+	.string "al espacio de excursión…$"
 
 MossdeepCity_SpaceCenter_2F_Text_DoesMagmaWantToGoToSpace:
-	.string "TEAM MAGMA…\n"
-	.string "Do they want to go to space, too?$"
+	.string "¿El EQUIPO MAGMA también\n"
+	.string "quiere ir al espacio exterior?$"
 
 MossdeepCity_SpaceCenter_2F_Text_YoureOutnumberedTakeUsOn:
-	.string "What's wrong with you?\p"
-	.string "You're outnumbered three to one,\n"
-	.string "but you still want to take us on?$"
+	.string "¿De qué vas?\p"
+	.string "¿Te superamos en número\n"
+	.string "y aun así quieres desafiarnos?$"
 
 MossdeepCity_SpaceCenter_2F_Text_GoodAnswer:
-	.string "Good answer!\n"
-	.string "That's what a smart person'll do!$"
+	.string "¡Bien dicho! ¡Así hablan\n"
+	.string "las personas inteligentes!$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt5Intro:
-	.string "A reckless go-getter, are you?\n"
-	.string "Okay, I'll go first!$"
+	.string "¿Te va vivir peligrosamente?\n"
+	.string "¡Pues te vas a enterar!$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt5Defeat:
-	.string "I lost!\n"
-	.string "But!$"
+	.string "¡He perdido!\n"
+	.string "¡Imposible!$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt6Intro:
-	.string "It's too soon to be relieved!\n"
-	.string "I'm up next!$"
+	.string "¡No te creas que puedes\n"
+	.string "escapar! ¡Ahora voy yo!$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt6Defeat:
-	.string "I lost, too!\n"
-	.string "But!$"
+	.string "¡Yo también he perdido!\n"
+	.string "¡Imposible!$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt7Intro:
-	.string "I bet you want to take a break.\n"
-	.string "But I'm not about to let you do that!$"
+	.string "Darías lo que fuera por descansar\n"
+	.string "un rato, ¿eh? ¡Pues se siente!$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt7Defeat:
-	.string "We should've taken a break…\n"
-	.string "That's what we should've done…$"
+	.string "Tendría que haber descansado yo…\n"
+	.string "Ya lo creo…$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt6PostBattle:
-	.string "Three of us here, and look at the sorry\n"
-	.string "mess we got ourselves into.$"
+	.string "No ha servido de nada ser tres.\n"
+	.string "Nos has derrotado miserablemente.$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt7PostBattle:
-	.string "We three losing like this…\n"
-	.string "We look worse than usual by triple!$"
+	.string "Hemos perdido los tres…\n"
+	.string "¡Ha sido una derrota por triplicado!$"
 
 MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle:
-	.string "Are we being useful to our leader\n"
-	.string "at all?$"
+	.string "Somos una vergüenza para el EQUIPO\n"
+	.string "y para nuestro líder.$"
 
 MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou:
-	.string "Hehehe!\p"
-	.string "We come all the way here to get some\n"
-	.string "fuel, and we're interfered with again!\p"
-	.string "If you're going to mess with us too,\n"
-	.string "we'll take care of you at the same time!$"
+	.string "¡Je, je, je!\p"
+	.string "¡Hemos venido hasta aquí en busca\n"
+	.string "del combustible y todo son problemas!\p"
+	.string "¡Si quieres desbaratar nuestros planes,\n"
+	.string "tendremos que darte una lección!$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere:
-	.string "MAXIE: Clear out of the way!\n"
-	.string "Don't you dare interfere!$"
+	.string "MAGNO: ¡Apártate!\n"
+	.string "¡No oses interferir!$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel:
-	.string "STEVEN: TEAM MAGMA…\p"
-	.string "What's the point of stealing rocket\n"
-	.string "fuel?$"
+	.string "MÁXIMO: EQUIPO MAGMA…\p"
+	.string "¿Por qué queréis robar el combustible\n"
+	.string "del cohete?$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano:
-	.string "MAXIE: Fufufu… Since you're so\n"
-	.string "curious, you deserve an explanation.\p"
-	.string "We're going to jettison the entire\n"
-	.string "load into MT. CHIMNEY!\p"
-	.string "With GROUDON gone, we have no need\n"
-	.string "for that slag heap of a mountain!\p"
-	.string "So we'll use the fuel's power to make\n"
-	.string "the volcano erupt!\p"
-	.string "It will be savage!$"
+	.string "MAGNO: Je, je, je… Ya que tanto\n"
+	.string "te interesa, te lo voy a explicar.\p"
+	.string "¡Vamos a echarlo todo, todito,\n"
+	.string "todo en el MONTE CENIZO!\p"
+	.string "¡Ahora que GROUDON ya no está,\n"
+	.string "no necesitamos esa estúpida montaña!\p"
+	.string "¡Vamos a usar el combustible para\n"
+	.string "que el volcán entre en erupción!\p"
+	.string "¡Va a ser bestial!$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle:
-	.string "STEVEN: {PLAYER}{KUN}!\n"
-	.string "You're going to help me?\p"
-	.string "Let's go into battle together!\n"
-	.string "Are you ready?$"
+	.string "MÁXIMO: ¡{PLAYER}{KUN}!\n"
+	.string "¿Me ayudarás?\p"
+	.string "¡Luchemos juntos!\n"
+	.string "¿Estás de acuerdo?$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly:
-	.string "STEVEN: Then, hurry!\n"
-	.string "Get ready quickly!$"
+	.string "MÁXIMO: ¿Cómo que no?\n"
+	.string "¡No hay tiempo que perder!$"
 
 MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
-	.string "All I want…\n"
-	.string "I just want to expand the land mass…$"
+	.string "Mi único objetivo es…\n"
+	.string "expandir la tierra…$"
 
 MossdeepCity_SpaceCenter_Text_TabithaDefeat:
-	.string "I'm with our leader…$"
+	.string "Estoy con nuestro líder…$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided:
-	.string "MAXIE: We failed to make the volcano\n"
-	.string "erupt…\p"
-	.string "We failed to control GROUDON after\n"
-	.string "we had awoken it…\p"
-	.string "Is our goal to expand the land\n"
-	.string "misguided?\p"
-	.string "… … … … … …\n"
-	.string "… … … … … …\p"
-	.string "If…\n"
-	.string "If we, TEAM MAGMA, are wrong…\l"
-	.string "… … … … … …\p"
-	.string "Then might TEAM AQUA's goal to expand\n"
-	.string "the sea also be equally misguided?$"
+	.string "MAGNO: No conseguimos hacer\n"
+	.string "que el volcán entrara en erupción…\p"
+	.string "GROUDON escapó a nuestro control\n"
+	.string "una vez despierto…\p"
+	.string "¿Quizás nuestro objetivo de expandir\n"
+	.string "la tierra es una insensatez?\p"
+	.string "Uf…\n"
+	.string "No sé…\p"
+	.string "Si nosotros…\n"
+	.string "Si el EQUIPO MAGMA se equivoca…\l"
+	.string "Entonces…\p"
+	.string "¿Quizás el deseo del EQUIPO AQUA de\n"
+	.string "expandir el mar también sea una locura?$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp:
-	.string "MAXIE: All right…\n"
-	.string "We will give up on the fuel…\p"
-	.string "There appear to be more important\n"
-	.string "matters that I must examine…$"
+	.string "MAGNO: Muy bien…\n"
+	.string "Renunciaremos al combustible…\p"
+	.string "Parece haber asuntos más importantes\n"
+	.string "que requieren nuestra atención…$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome:
-	.string "STEVEN: Whew, that was too tense.\n"
-	.string "{PLAYER}{KUN}, thank you.\p"
-	.string "I have something to give you as\n"
-	.string "thanks for your support.\p"
-	.string "Please come see me at home\n"
-	.string "after this.\p"
-	.string "Oh, yes, I don't live in RUSTBORO CITY.\n"
-	.string "I live right here on this island.$"
+	.string "MÁXIMO: Uf, ha faltado un pelo.\n"
+	.string "Gracias por tu ayuda, {PLAYER}{KUN}.\p"
+	.string "Quisiera darte algo como muestra\n"
+	.string "de agradecimiento.\p"
+	.string "No dejes de venir a mi casa\n"
+	.string "después.\p"
+	.string "Ah, no, no vivo en CIUDAD FÉRRICA,\n"
+	.string "sino aquí mismo, en la isla.$"
 `

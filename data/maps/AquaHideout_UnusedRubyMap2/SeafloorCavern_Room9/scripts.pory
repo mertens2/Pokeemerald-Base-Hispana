@@ -1,10 +1,10 @@
 raw `
-.set LOCALID_KYOGRE, 1
-.set LOCALID_ARCHIE, 2
-.set LOCALID_MAXIE, 3
-.set LOCALID_GRUNT_1, 4
-.set LOCALID_GRUNT_2, 5
-.set LOCALID_KYOGRE_SLEEPING, 7
+@ .set LOCALID_KYOGRE, 1
+@ .set LOCALID_ARCHIE, 2
+@ .set LOCALID_MAXIE, 3
+@ .set LOCALID_GRUNT_1, 4
+@ .set LOCALID_GRUNT_2, 5
+@ .set LOCALID_KYOGRE_SLEEPING, 7
 
 SeafloorCavern_Room9_MapScripts::
 	.byte 0
