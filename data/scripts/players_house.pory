@@ -1,0 +1,1193 @@
+text PlayersHouse_1F_Text_YouShouldRestABit {
+ poryswitch(LANGUAGE){
+	 ES {
+		format("¿Cómo va todo, amor?\n"
+		"Te ves cansad{OA}.\p"
+		"Descansa un rato, mi vida.")
+	 }
+	 EN {
+		format("How's everything going, sweetie?\n"
+		"You seem tired.\p"
+		"Take a break and eat something, my baby.")
+	 }
+ }
+}
+
+text PlayersHouse_1F_Text_TakeCareHoney {
+	poryswitch(LANGUAGE){
+	 ES {
+		format("¡Cuídate mucho!")
+	 }
+	 EN {
+		format("Take care!")
+	 }
+ }
+}
+
+text PlayersHouse_1F_Text_IsntItNiceInHere {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Qué linda casa.")
+		}
+		EN {
+			format("What a nice house.")
+		}
+	}
+}
+
+text PlayersHouse_1F_Text_MoversPokemonGoSetClock {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Pokémon Movers hacen todo el trabajo, Y LIMPIAN.\pAhora, ve a ajustar el reloj que te compró Papá.")
+		}
+		EN {
+			format("Pokémon Movers does ALL THE CLEANING.\pNow, go set up the clock Dad bought you.")
+		}
+	}
+}
+
+text PlayersHouse_1F_Text_ArentYouInterestedInRoom {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Te dije que hicieras algo, ¿no?")
+		}
+		EN {
+			format("Didn't I tell you to do something?")
+		}
+	}
+	
+}
+
+text PlayersHouse_1F_Text_GoSetTheClock {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("{PLAYER}.\p"
+			"No te vas hasta que ajustes ese reloj.")
+		}
+		EN {
+			format("{PLAYER}.\p"
+			"You're not leaving that room until the clock is set up.")
+		}
+	}
+	
+}
+
+text PlayersHouse_1F_Text_OhComeQuickly {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡{PLAYER}, {PLAYER}!\n"
+			"¡MIRA!")
+		}
+		EN {
+			format("{PLAYER}, {PLAYER}!\n"
+			"LOOK!")
+		}
+	}
+	
+}
+
+text PlayersHouse_1F_Text_MaybeDadWillBeOn {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡UNA ENTREVISTA EN EL GIMNASIO PETALBURG!")
+		}
+		EN {
+			format("IT'S AN INTERVIEW AT PETALBURG GYM!")
+		}
+	}
+}
+
+text PlayersHouse_1F_Text_ReportFromPetalburgGym {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Y bueno, aunque nervioso, ese fue Norman, el gran Líder de Gimnasio!\p"
+			"Ahora seguiremos con nuestra entrevista al nuevo donador de Devon, el señor -BZZT-")
+		}
+		EN {
+			format("And well, although blushing, that was Norman, our great Gym Leader!\p"
+			"Now we'll interview Devon's latest donator, Mr. -BZZT-")
+		}
+	}
+	
+}
+
+
+text PlayersHouse_1F_EventScript_StarterSet_Text_8 {
+	poryswitch(LANGUAGE){
+		ES{
+			format("Ninguna")
+		}
+		EN{
+			format("None of these")
+		}
+	}
+}
+
+script EventScript_RunningShoesManualTranslated {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("¡Es una Guía para Entrenadores!\n“Consejo 1: En cada Centro Pokémon, hay Máquinas Especiales, ¡Y quizá alguien especial también!\p"
+						"¡Habla con todos, interactúa con todo!”\p"
+						"¿Seguir leyendo?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("“Consejo 2: Cada Pokémon puede ser renombrado desde el menú, y también, puedes recordarle Movimientos.”\p¿Seguir leyendo?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					msgbox(format("“Consejo 3: Puedes escapar de un Pokémon tocando R, y lanzar una PokéBall con L.”\pEse es el último consejo útil."))
+					releaseall
+					end
+				}
+			}
+			
+			msgbox (format("Mucho leer por hoy."))
+		}
+		EN{
+			msgbox (format("A Trainer's Guide!\n“First Tip: In each Pokémon Center, there's Self-Trading machines! And you might find special people, too!\p"
+						"Interact with everything and everyone!”\p"
+						"Keep reading?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				msgbox(format("“Second Tip: You can nickname any Pokémon from the Party Menu, but you can also Remind it some Moves.”\pKeep reading?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					msgbox(format("“Third Tip: You can Run Away from a Wild encounter by pressing R, and throw a Ball with L!\pThat's the last useful tip."))
+					releaseall
+					end
+				}
+			}
+	
+			msgbox (format("Too much reading for a day."))
+		}
+	}
+	releaseall
+	end
+}
+	
+
+script EventScript_YoureNewNeighbor_Translated {
+	bufferstring (STR_VAR_1, "chico")
+	bufferstring (STR_VAR_2, "chica")
+	bufferstring (STR_VAR_3, "chique")
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox(format("¡AH! ¿¡QUIÉN ERES!?\pAh, tú eres {ELLA} {GENDER} nuev{OA}, ¿no?"))
+		}
+		EN{
+			msgbox(format("AH! WHO ARE YOU!?\pAh, you're the new kid, right?"))
+		}
+	}
+	call(EventScript_MeetRival)
+	return
+}
+
+script EventScript_MeetRival {
+	playse (SE_EXIT)
+	delay (10)
+	addobject (7)
+	delay (30)
+	playse (SE_PIN)
+	applymovement (7, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (7, Common_Movement_FacePlayer)
+	checkplayergender
+	if (var(VAR_RESULT) == FEMALE) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+		waitmovement (0)
+		playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
+		call (LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer)
+		namebox (Rival)
+		call (RivalsHouse_1F_Text_MayWhoAreYou_Translated)
+		closemessage
+		hidenamebox
+		call (LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs)
+		playse (SE_EXIT)
+		removeobject (7)
+		setflag (FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN)
+		setflag (FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL)
+		clearflag (FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM)
+	}
+	else {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+		playbgm (MUS_ENCOUNTER_MAY, TRUE)
+		applymovement (7, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer)
+		waitmovement (0)
+		namebox (Rival)
+		call (RivalsHouse_1F_Text_MayWhoAreYou_Translated)
+		closemessage
+		hidenamebox
+		call (LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs)
+		playse (SE_EXIT)
+		removeobject (7)
+		setflag (FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY)
+		setflag (FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL)
+		clearflag (FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM)
+	}
+	delay (30)
+	setvar (VAR_LITTLEROOT_RIVAL_STATE, 3)
+	setvar (VAR_LITTLEROOT_TOWN_STATE, 1)
+	savebgm (MUS_DUMMY)
+	fadedefaultbgm
+	return
+}
+script RivalsHouse_1F_Text_MayWhoAreYou_Translated {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox(format("Oh, tú eres… {PLAYER}, ¿Qué haces en mi casa?\p"
+			"… … … … … … … … … … … …\p"
+			"Mhhh… Mi papá dijo que vendrías, {PLAYER}, ¡Y que seamos amigos!\p"
+			"Pero recién nos conocimos hoy, ¿Verdad?\p"
+			"No tengo mucho tiempo de todas formas, {PLAYER}, espero lo entiendas."))
+		}
+		EN{
+			msgbox(format("Oh, you're… {PLAYER}, What're you doing in my house?\p"
+			"… … … … … … … … … … … …\p"
+			"Mhhh… Dad told me you'd come, {PLAYER}, and told me to be friends!\p"
+			"But we just met. Ridiculous, right?\p"
+			"I don't have time anyway, {PLAYER}, hope you understand."))
+		}
+	}
+	return
+}
+script PlayersHouse_1F_EventScript_EnterHouseMovingInTranslation {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("¿No es linda la casa?"))
+			applymovement (VAR_0x8004, Common_Movement_FacePlayer)
+			waitmovement (0)
+			call_if_eq (VAR_0x8005, MALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInMale)
+			call_if_eq (VAR_0x8005, FEMALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale)
+			msgbox (format("Mientras Pokémon Movers termina de acomodar, ¿Porqué no pones en marcha el reloj que te compró Papá?"))
+		}
+		EN{
+			msgbox (format("Isn't this house cute?"))
+			applymovement (VAR_0x8004, Common_Movement_FacePlayer)
+			waitmovement (0)
+			call_if_eq (VAR_0x8005, MALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInMale)
+			call_if_eq (VAR_0x8005, FEMALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale)
+			msgbox (format("While Pokémon Movers finishes setting up the house, why don't you go set up the clock Dad bought for you?"))
+		}
+	}
+	closemessage
+	hidenamebox
+	setvar (VAR_LITTLEROOT_INTRO_STATE, 4)
+	applymovement (OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerWalkIn)
+	applymovement (VAR_0x8004, Common_Movement_WalkInPlaceFasterUp)
+	waitmovement (0)	
+	return
+}
+
+script PlayersHouse_1F_EventScript_MomGoSeeRoomTranslated {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("Haz lo que te digo."))
+		}
+		EN{
+			msgbox (format("Go set up the clock."))
+		}
+	}
+	closemessage
+	hidenamebox
+	applymovement (VAR_0x8004, Common_Movement_WalkInPlaceFasterUp)
+	applymovement (OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_MovePlayerAwayFromDoor)
+	waitmovement (0)
+	return
+}
+
+script PlayersHouse_2F_EventScript_HowDoYouLikeYourRoom {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("¿Te gusta tu cuarto nuevo?\nNo olvides tu Poción en la PC."))
+		}
+		EN{
+			msgbox (format("Do you like your new room?\nDon't forget your Potion in the PC."))
+		}
+	}
+	return
+}
+
+script PlayersHouse_1F_EventScript_MaybeDadWillBeOn {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("¡Ven, rápido, Papá está en la tele!"))
+		}
+		EN{
+			msgbox (format("Come, quick! Dad's on TV!"))
+		}
+	}
+	return
+}
+
+script PlayersHouse_1F_EventScript_ItsOverWeMissedHim {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("Terminó...\pPues bueno, el Profesor me dijo que te preguntara algo.\p¿Cuál región tiene tus Iniciales favoritos?"))
+		}
+		EN{
+			msgbox (format("It's over...\pWell, Professor told me to ask you...\pWhich region has your favorite Starters?"))
+		}
+	}
+	return
+}
+
+script PlayersHouse_1F_EventScript_StarterSet_Translated_11 {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("Está bien. Se lo diré cuanto antes púeda."))
+		}
+		EN{
+			msgbox (format("OK, I'll let him know soon."))
+		}
+	}
+	return
+}
+
+script PlayersHouse_1F_EventScript_StarterSet_13 {
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("¿Entonces quieres a los más difíciles de entrenar?"), MSGBOX_YESNO)
+		}
+		EN{
+			msgbox (format("So you want the ones hardest to train?"), MSGBOX_YESNO)
+		}
+	}
+	compare (VAR_RESULT, 1)
+	goto_if_eq (PlayersHouse_1F_EventScript_StarterSet_15)
+	namebox (Mama)
+	poryswitch(LANGUAGE){
+		ES{
+			msgbox (format("¿Qué región tiene tus Iniciales favoritos?"))
+		}
+		EN{
+			msgbox (format("Which region has your fave Starters?"))
+		}
+	}
+	hidenamebox
+	goto (PlayersHouse_1F_EventScript_StarterSet_2)
+}
+
+
+
+raw `
+@ Local IDs are the same for both players houses
+.set LOCALID_MOM, 1
+.set LOCALID_DAD, 5
+.set LOCALID_MOM_2F, 14
+
+PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet::
+	setvar VAR_LITTLEROOT_INTRO_STATE, 5
+	return
+
+PlayersHouse_1F_EventScript_EnterHouseMovingIn::
+	namebox Mama
+	call PlayersHouse_1F_EventScript_EnterHouseMovingInTranslation
+	releaseall
+	end
+
+PlayersHouse_1F_EventScript_MomFacePlayerMovingInMale::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	return
+
+PlayersHouse_1F_Movement_PlayerWalkIn:
+	walk_up
+	step_end
+
+PlayersHouse_1F_EventScript_MomGoSeeRoom::
+	namebox Mama	
+	call PlayersHouse_1F_EventScript_MomGoSeeRoomTranslated
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_WallClock::
+	lockall
+	setvar VAR_0x8004, MALE
+	goto PlayersHouse_2F_EventScript_WallClock
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_WallClock::
+	lockall
+	setvar VAR_0x8004, FEMALE
+	goto PlayersHouse_2F_EventScript_WallClock
+	end
+
+PlayersHouse_2F_EventScript_WallClock::
+	goto_if_set FLAG_SET_WALL_CLOCK, PlayersHouse_2F_EventScript_CheckWallClock
+	goto PlayersHouse_2F_EventScript_ChoseClock
+	end
+PlayersHouse_1F_Text_ChooseTimeThing:
+	.string "¡AVISO! LEE ESTO CON ATENCIÓN.\n"
+	.string "POR FAVOR, SELECCIONAR SI DESEA\l"
+	.string "CONTINUAR USANDO EL RELOJ DEL\l"
+	.string "JUEGO, O EL RELOJ REAL DE SU\l"
+	.string "DISPOSITIVO.\p"
+	.string "Tenga en cuenta que esta\n"
+	.string "acción no se puede cambiar.$"
+	
+PlayersHouse_1F_Text_ChooseClock:
+	.string "¿Está segur{OA} que quiere\n"
+	.string "usar el reloj falso del\l"
+	.string "juego?$"
+PlayersHouse_1F_Text_ChooseRTC:
+	.string "¿Está segur{OA} que quiere\n"
+	.string "usar el reloj real de\l"
+	.string "su dispositivo?$"
+PlayersHouse_2F_EventScript_ChoseClock::
+	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
+	call PlayersHouse_2F_EventScript_SetWallClock
+	delay 30
+	setflag FLAG_SET_WALL_CLOCK
+	setvar VAR_LITTLEROOT_INTRO_STATE, 6
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_MomComesUpstairsMale
+	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_MomComesUpstairsFemale
+	playse SE_EXIT
+	removeobject VAR_0x8008
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_ChoseRTC::
+	msgbox PlayersHouse_1F_Text_ChooseRTC, MSGBOX_YESNO
+	compare VAR_RESULT, 1
+	goto_if_ne PlayersHouse_2F_EventScript_WallClock
+	closemessage
+	delay 30
+	setflag FLAG_SET_WALL_CLOCK
+	setvar VAR_LITTLEROOT_INTRO_STATE, 6
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_MomComesUpstairsMale
+	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_MomComesUpstairsFemale
+	playse SE_EXIT
+	removeobject VAR_0x8008
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_MomComesUpstairsMale::
+	setvar VAR_0x8008, LOCALID_MOM_2F
+	addobject VAR_0x8008
+	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomEntersMale
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	namebox Mama
+	call PlayersHouse_2F_EventScript_HowDoYouLikeYourRoom
+	closemessage
+	hidenamebox
+	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsMale
+	waitmovement 0
+	return
+
+PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
+	setvar VAR_0x8008, LOCALID_MOM_2F
+	addobject VAR_0x8008
+	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomEntersFemale
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	namebox Mama
+	call PlayersHouse_2F_EventScript_HowDoYouLikeYourRoom
+	closemessage
+	hidenamebox
+	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
+	waitmovement 0
+	return
+
+PlayersHouse_2F_EventScript_CheckWallClock::
+	incrementgamestat GAME_STAT_CHECKED_CLOCK
+	fadescreen FADE_TO_BLACK
+	special Special_ViewWallClock
+	waitstate
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_SetWallClock::
+	fadescreen FADE_TO_BLACK
+	special SetHourMinutes
+	special StartWallClock
+	waitstate
+	return
+
+PlayersHouse_2F_Movement_MomEntersMale:
+	delay_8
+	walk_down
+	walk_in_place_faster_left
+	delay_16
+	delay_8
+	walk_left
+	step_end
+
+PlayersHouse_2F_Movement_MomExitsMale:
+	walk_right
+	walk_up
+	delay_8
+	step_end
+
+PlayersHouse_2F_Movement_MomEntersFemale:
+	delay_8
+	walk_down
+	walk_in_place_faster_right
+	delay_16
+	delay_8
+	walk_right
+	step_end
+
+PlayersHouse_2F_Movement_MomExitsFemale:
+	walk_left
+	walk_up
+	delay_8
+	step_end
+
+PlayersHouse_1F_EventScript_SetWatchedBroadcast::
+	setvar VAR_LITTLEROOT_INTRO_STATE, 7
+	releaseall
+	end
+
+PlayersHouse_1F_EventScript_PetalburgGymReportMale::
+	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymMale
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_INTERVIEWER, FALSE
+	namebox Mama
+	call PlayersHouse_1F_EventScript_MaybeDadWillBeOn
+	closemessage
+	hidenamebox
+	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomMakeRoomToSeeTVMale
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerMoveToTVMale
+	waitmovement 0
+	call PlayersHouse_1F_EventScript_WatchGymBroadcast
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	namebox Mama
+	call PlayersHouse_1F_EventScript_ItsOverWeMissedHim
+	hidenamebox
+	call PlayersHouse_1F_EventScript_StarterSet
+	hidenamebox
+	closemessage
+	setvar VAR_TEMP_1, 1
+	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
+	waitmovement 0
+	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
+	end
+
+PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
+	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymFemale
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_INTERVIEWER, FALSE
+	namebox Mama
+	call PlayersHouse_1F_EventScript_MaybeDadWillBeOn
+	closemessage
+	hidenamebox
+	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomMakeRoomToSeeTVFemale
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerMoveToTVFemale
+	waitmovement 0
+	call PlayersHouse_1F_EventScript_WatchGymBroadcast
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	namebox Mama
+	call PlayersHouse_1F_EventScript_ItsOverWeMissedHim
+	hidenamebox
+	call PlayersHouse_1F_EventScript_StarterSet
+	hidenamebox
+	closemessage
+	setvar VAR_TEMP_1, 1
+	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatFemale
+	waitmovement 0
+	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
+	end
+
+PlayersHouse_1F_EventScript_MomNoticeGymBroadcast::
+	playse SE_PIN
+	applymovement VAR_0x8005, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement VAR_0x8005, Common_Movement_Delay48
+	waitmovement 0
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_OhComeQuickly, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	return
+
+PlayersHouse_1F_EventScript_WatchGymBroadcast::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	namebox Entrevistador
+	msgbox PlayersHouse_1F_Text_ReportFromPetalburgGym, MSGBOX_DEFAULT
+	fadedefaultbgm
+	special TurnOffTVScreen
+	setflag FLAG_SYS_TV_HOME
+	delay 35
+	return
+
+PlayersHouse_1F_EventScript_StarterSet::
+PlayersHouse_1F_EventScript_StarterSet_2:
+	dynmultichoice 25, 4, TRUE, 4, 2, DYN_MULTICHOICE_CB_NONE, PlayersHouse_1F_EventScript_StarterSet_Text_0, PlayersHouse_1F_EventScript_StarterSet_Text_1, PlayersHouse_1F_EventScript_StarterSet_Text_2, PlayersHouse_1F_EventScript_StarterSet_Text_3, PlayersHouse_1F_EventScript_StarterSet_Text_4, PlayersHouse_1F_EventScript_StarterSet_Text_5, PlayersHouse_1F_EventScript_StarterSet_Text_6, PlayersHouse_1F_EventScript_StarterSet_Text_7, PlayersHouse_1F_EventScript_StarterSet_Text_8
+	switch VAR_RESULT
+	case 0, PlayersHouse_1F_EventScript_StarterSet_5
+	case 1, PlayersHouse_1F_EventScript_StarterSet_6
+	case 2, PlayersHouse_1F_EventScript_StarterSet_7
+	case 3, PlayersHouse_1F_EventScript_StarterSet_8
+	case 4, PlayersHouse_1F_EventScript_StarterSet_9
+	case 5, PlayersHouse_1F_EventScript_StarterSet_10
+	case 6, PlayersHouse_1F_EventScript_StarterSet_11
+	case 7, PlayersHouse_1F_EventScript_StarterSet_12
+	case 8, PlayersHouse_1F_EventScript_StarterSet_13
+PlayersHouse_1F_EventScript_StarterSetEnd::
+	namebox Mama
+	call PlayersHouse_1F_EventScript_StarterSet_Translated_11
+	closemessage
+	hidenamebox
+	return
+
+PlayersHouse_1F_EventScript_StarterSet_5:
+	setvar VAR_STARTER_REGION, 1
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+PlayersHouse_1F_EventScript_StarterSet_6:
+	setvar VAR_STARTER_REGION, 2
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+PlayersHouse_1F_EventScript_StarterSet_7:
+	setvar VAR_STARTER_REGION, 3
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+PlayersHouse_1F_EventScript_StarterSet_8:
+	setvar VAR_STARTER_REGION, 4
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+PlayersHouse_1F_EventScript_StarterSet_9:
+	setvar VAR_STARTER_REGION, 5
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+PlayersHouse_1F_EventScript_StarterSet_10:
+	setvar VAR_STARTER_REGION, 6
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+PlayersHouse_1F_EventScript_StarterSet_11:
+	setvar VAR_STARTER_REGION, 7
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+PlayersHouse_1F_EventScript_StarterSet_12:
+	setvar VAR_STARTER_REGION, 8
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+PlayersHouse_1F_EventScript_StarterSet_15:
+	setvar VAR_STARTER_REGION, 9
+	goto PlayersHouse_1F_EventScript_StarterSetEnd
+
+
+PlayersHouse_1F_EventScript_StarterSet_Text_0:
+	.string "Kanto$"
+
+PlayersHouse_1F_EventScript_StarterSet_Text_1:
+	.string "Johto$"
+
+PlayersHouse_1F_EventScript_StarterSet_Text_2:
+	.string "Hoenn$"
+
+PlayersHouse_1F_EventScript_StarterSet_Text_3:
+	.string "Sinnoh$"
+
+PlayersHouse_1F_EventScript_StarterSet_Text_4:
+	.string "Unova$"
+
+PlayersHouse_1F_EventScript_StarterSet_Text_5:
+	.string "Kalos$"
+
+PlayersHouse_1F_EventScript_StarterSet_Text_6:
+	.string "Alola$"
+
+PlayersHouse_1F_EventScript_StarterSet_Text_7:
+	.string "Galar$"
+
+PlayersHouse_1F_Movement_MomApproachDadMale:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_in_place_faster_right
+	step_end
+
+PlayersHouse_1F_Movement_MomApproachDadFemale:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_in_place_faster_left
+	step_end
+
+PlayersHouse_1F_Movement_MomApproachPlayerMale:
+	walk_right
+	step_end
+
+PlayersHouse_1F_Movement_MomApproachPlayerFemale:
+	walk_left
+	step_end
+
+PlayersHouse_1F_Movement_MomNoticesLatiBroadcastMale:
+	walk_in_place_faster_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_in_place_faster_right
+	delay_16
+	delay_16
+	step_end
+
+PlayersHouse_1F_Movement_MomNoticesLatiBroadcastFemale:
+	walk_in_place_faster_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_in_place_faster_left
+	delay_16
+	delay_16
+	step_end
+
+PlayersHouse_1F_Movement_MomApproachPlayerAfterTVMale:
+	walk_up
+	walk_left
+	walk_left
+	step_end
+
+PlayersHouse_1F_Movement_MomApproachPlayerAfterTVFemale:
+	walk_up
+	walk_right
+	walk_right
+	step_end
+
+PlayersHouse_1F_Movement_MomMakeRoomToSeeTVMale:
+	walk_left
+	walk_in_place_faster_right
+	step_end
+
+PlayersHouse_1F_Movement_MomMakeRoomToSeeTVFemale:
+	walk_right
+	walk_in_place_faster_left
+	step_end
+
+PlayersHouse_1F_Movement_MomReturnToSeatMale:
+	walk_left
+	walk_down
+	walk_in_place_faster_right
+	step_end
+
+PlayersHouse_1F_Movement_MomReturnToSeatFemale:
+	walk_right
+	walk_down
+	walk_in_place_faster_left
+	step_end
+
+PlayersHouse_1F_EventScript_Mom::
+	lock
+	faceplayer
+	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
+	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
+	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
+	goto_if_set FLAG_RESCUED_BIRCH, PlayersHouse_1F_EventScript_MomHealsParty
+	goto_if_eq VAR_TEMP_1, 1, PlayersHouse_1F_EventScript_SeeYouHoney
+	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 7, PlayersHouse_1F_EventScript_DidYouMeetProfBirch
+	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
+	release
+	end
+
+PlayersHouse_1F_EventScript_DontPushYourselfTooHard::
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_DontPushYourselfTooHard, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PlayersHouse_1F_EventScript_TryRegisterMom::
+	goto_if_set FLAG_ENABLE_MOM_MATCH_CALL, PlayersHouse_1F_EventScript_CheckGiveAmuletCoin
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_IsThatAPokenav, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PlayersHouse_1F_Text_RegisteredMom, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	setflag FLAG_ENABLE_MOM_MATCH_CALL
+	release
+	end
+
+PlayersHouse_1F_EventScript_CheckGiveAmuletCoin::
+	goto_if_set FLAG_BADGE05_GET, PlayersHouse_1F_EventScript_TryGiveAmuletCoin
+	goto PlayersHouse_1F_EventScript_MomHealsParty
+
+PlayersHouse_1F_EventScript_TryGiveAmuletCoin::
+	goto_if_set FLAG_RECEIVED_AMULET_COIN, PlayersHouse_1F_EventScript_MomHealsParty
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom, MSGBOX_DEFAULT
+	hidenamebox
+	giveitem ITEM_AMULET_COIN, 6
+	giveitem ITEM_CHERISH_BALL, 20
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_DontPushYourselfTooHard, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_AMULET_COIN
+	hidenamebox
+	release
+	end
+
+PlayersHouse_1F_EventScript_MomHealsParty::
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_YouShouldRestABit, MSGBOX_DEFAULT
+	hidenamebox
+	goto PlayersHouse_1F_EventScript_HealParty
+	end
+
+PlayersHouse_1F_EventScript_SeeYouHoney::
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_SeeYouHoney, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PlayersHouse_1F_EventScript_HealParty::
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	incrementgamestat GAME_STAT_RESTED_AT_HOME
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_TakeCareHoney, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PlayersHouse_1F_EventScript_DidYouMeetProfBirch::
+	namebox Mama
+	msgbox PlayersHouse_1F_Text_DidYouMeetProfBirch, MSGBOX_DEFAULT
+	hidenamebox
+	release
+	end
+
+PlayersHouse_1F_EventScript_Vigoroth1::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_VIGOROTH, CRY_MODE_NORMAL
+	msgbox PlayersHouse_1F_Text_Vigoroth1, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+PlayersHouse_1F_EventScript_Vigoroth2::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_VIGOROTH, CRY_MODE_NORMAL
+	msgbox PlayersHouse_1F_Text_Vigoroth2, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+PlayersHouse_1F_Movement_PlayerApproachTVForGymMale:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+PlayersHouse_1F_Movement_PlayerMoveToTVMale:
+	walk_left
+	step_end
+
+PlayersHouse_1F_Movement_PlayerApproachTVForGymFemale:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+PlayersHouse_1F_Movement_PlayerMoveToTVFemale:
+	walk_right
+	step_end
+
+PlayersHouse_1F_Movement_MovePlayerAwayFromDoor:
+	walk_up
+	step_end
+
+PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV::
+	lockall
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, PlayersHouse_1F_EventScript_SetUpObjectEventVarsMale
+	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_1F_EventScript_SetUpObjectEventVarsFemale
+	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_PlayerEnterRoomMale
+	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_PlayerEnterRoomFemale
+	applymovement VAR_0x8009, Common_Movement_FacePlayer
+	waitmovement 0
+	playse SE_PIN
+	applymovement VAR_0x8009, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement VAR_0x8009, Common_Movement_Delay48
+	waitmovement 0
+	delay 20
+	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_DadApproachPlayerMale
+	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_DadApproachPlayerFemale
+	msgbox PlayersHouse_1F_Text_TicketFromBrineyCameForYou, MSGBOX_DEFAULT
+	giveitem ITEM_SS_TICKET
+	msgbox PlayersHouse_1F_Text_PortsInSlateportLilycove, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_MomApproachDadMale
+	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_MomApproachDadFemale
+	msgbox PlayersHouse_1F_Text_BetterGetBackToGym, MSGBOX_DEFAULT
+	closemessage
+	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_DadExitsMale
+	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_DadExitsFemale
+	playse SE_DOOR
+	removeobject VAR_0x8009
+	setflag FLAG_RECEIVED_SS_TICKET
+	delay 30
+	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_MomApproachPlayerMale
+	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_MomApproachPlayerFemale
+	delay 20
+	msgbox PlayersHouse_1F_Text_DadShouldStayLonger, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SYS_TV_LATIAS_LATIOS
+	special TurnOnTVScreen
+	delay 60
+	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_MomNoticesLatiBroadcastMale
+	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_MomNoticesLatiBroadcastFemale
+	msgbox PlayersHouse_1F_Text_IsThatABreakingStory, MSGBOX_DEFAULT
+	closemessage
+	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_PlayerApproachTVForLatiMale
+	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_PlayerApproachTVForLatiFemale
+	msgbox PlayersHouse_1F_Text_LatiEmergencyNewsFlash, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_SYS_TV_LATIAS_LATIOS
+	setflag FLAG_LATIOS_OR_LATIAS_ROAMING
+	special TurnOffTVScreen
+	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVMale
+	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVFemale
+	msgbox PlayersHouse_1F_Text_WhatColorDidTheySay, MSGBOX_DEFAULT
+	multichoice 22, 8, MULTI_TV_LATI, TRUE
+	copyvar VAR_0x8004, VAR_RESULT
+	special InitRoamer
+	copyvar VAR_ROAMER_POKEMON, VAR_RESULT
+	msgbox PlayersHouse_1F_Text_StillUnknownPokemon, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 4
+	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4
+	releaseall
+	end
+
+@ Never called.
+PlayersHouse_1F_EventScript_AirLatiBroadcast::
+	setflag FLAG_SYS_TV_LATIAS_LATIOS
+	return
+
+PlayersHouse_1F_EventScript_SetUpObjectEventVarsMale::
+	setvar VAR_0x8008, MALE
+	setvar VAR_0x8009, LOCALID_DAD
+	setvar VAR_0x800A, LOCALID_MOM
+	return
+
+PlayersHouse_1F_EventScript_SetUpObjectEventVarsFemale::
+	setvar VAR_0x8008, FEMALE
+	setvar VAR_0x8009, LOCALID_DAD
+	setvar VAR_0x800A, LOCALID_MOM
+	return
+
+PlayersHouse_1F_EventScript_DadApproachPlayerMale::
+	applymovement VAR_0x8009, PlayersHouse_1F_Movement_DadApproachPlayerMale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_DadApproachPlayerFemale::
+	applymovement VAR_0x8009, PlayersHouse_1F_Movement_DadApproachPlayerFemale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomApproachDadMale::
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachDadMale
+	waitmovement 0
+	applymovement VAR_0x8009, PlayersHouse_1F_Movement_DadFaceMomMale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomApproachDadFemale::
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachDadFemale
+	waitmovement 0
+	applymovement VAR_0x8009, PlayersHouse_1F_Movement_DadFaceMomFemale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_DadExitsMale::
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
+	applymovement VAR_0x8009, PlayersHouse_1F_Movement_DadExitsMale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_DadExitsFemale::
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit
+	applymovement VAR_0x8009, PlayersHouse_1F_Movement_DadExitsFemale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_PlayerEnterRoomMale::
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerEnterRoomMale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_PlayerEnterRoomFemale::
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerEnterRoomFemale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_PlayerApproachTVForLatiMale::
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForLatiMale
+	waitmovement 0
+	applymovement VAR_0x800A, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_PlayerApproachTVForLatiFemale::
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale
+	waitmovement 0
+	applymovement VAR_0x800A, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomApproachPlayerMale::
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachPlayerMale
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomApproachPlayerFemale::
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachPlayerFemale
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomNoticesLatiBroadcastMale::
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomNoticesLatiBroadcastMale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomNoticesLatiBroadcastFemale::
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomNoticesLatiBroadcastFemale
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVMale::
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachPlayerAfterTVMale
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	return
+
+PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVFemale::
+	applymovement VAR_0x800A, PlayersHouse_1F_Movement_MomApproachPlayerAfterTVFemale
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	return
+
+PlayersHouse_1F_Movement_DadApproachPlayerMale:
+	walk_right
+	walk_right
+	step_end
+
+PlayersHouse_1F_Movement_DadApproachPlayerFemale:
+	walk_left
+	walk_left
+	step_end
+
+PlayersHouse_1F_Movement_DadFaceMomMale:
+	face_left
+	step_end
+
+PlayersHouse_1F_Movement_DadFaceMomFemale:
+	face_right
+	step_end
+
+PlayersHouse_1F_Movement_DadExitsMale:
+	walk_down
+	walk_right
+	walk_down
+	delay_8
+	step_end
+
+PlayersHouse_1F_Movement_DadExitsFemale:
+	walk_down
+	walk_left
+	walk_down
+	delay_8
+	step_end
+
+PlayersHouse_1F_Movement_PlayerEnterRoomMale:
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_faster_left
+	step_end
+
+PlayersHouse_1F_Movement_MomAndPlayerWatchDadExit:
+	delay_8
+	delay_16
+	delay_16
+	walk_in_place_faster_down
+	step_end
+
+PlayersHouse_1F_Movement_PlayerEnterRoomFemale:
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_faster_right
+	step_end
+
+PlayersHouse_1F_Movement_PlayerApproachTVForLatiMale:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_faster_up
+	step_end
+
+PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_faster_up
+	step_end
+
+EventScript_RunningShoesManual::
+	lockall
+	call EventScript_RunningShoesManualTranslated
+	releaseall
+	end
+
+`
