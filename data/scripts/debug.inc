@@ -210,6 +210,17 @@ Debug_ROMSize::
 	.string "ROM size: {STR_VAR_1}MB/32MB.\n"
 	.string "Free space: {STR_VAR_2}MB.$"
 
+Debug_CheckPokemonSize::
+	callnative CheckPokemonSize
+	msgbox Debug_PokemonSize, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_PokemonSize::
+	.string "Box Pokémon size: {STR_VAR_1}.\n"
+	.string "Pokémon size:         {STR_VAR_2}.$"
+
+
 Debug_HatchAnEgg::
 	lockall
 	getpartysize

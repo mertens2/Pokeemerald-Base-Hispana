@@ -366,6 +366,7 @@ extern const u8 PlayersHouse_2F_EventScript_SetWallClock[];
 extern const u8 PlayersHouse_2F_EventScript_CheckWallClock[];
 extern const u8 Debug_CheckSaveBlock[];
 extern const u8 Debug_CheckROMSpace[];
+extern const u8 Debug_CheckPokemonSize[];
 extern const u8 Debug_BoxFilledMessage[];
 extern const u8 Debug_ShowExpansionVersion[];
 extern const u8 Debug_EventScript_EWRAMCounters[];
@@ -628,6 +629,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_ROMInfo2[] =
 {
     { COMPOUND_STRING("Save Block space"),  DebugAction_ExecuteScript, Debug_CheckSaveBlock },
     { COMPOUND_STRING("ROM space"),         DebugAction_ExecuteScript, Debug_CheckROMSpace },
+    { COMPOUND_STRING("Pokémon Size"),      DebugAction_ExecuteScript, Debug_CheckPokemonSize },
     { COMPOUND_STRING("Expansion Version"), DebugAction_ExecuteScript, Debug_ShowExpansionVersion },
     { NULL }
 };
@@ -1459,6 +1461,11 @@ void CheckROMSize(struct ScriptContext *ctx)
     u32 currROMFreeKB = ((const u8 *)ROM_END - __rom_end) / 1024;
     ConvertQ22_10ToDecimalString(gStringVar1, currROMSizeKB, 2, ROUND_CEILING);
     ConvertQ22_10ToDecimalString(gStringVar2, currROMFreeKB, 2, ROUND_FLOOR);
+}
+void CheckPokemonSize(struct ScriptContext *ctx)
+{
+	ConvertIntToDecimalStringN(gStringVar1, sizeof(struct BoxPokemon), STR_CONV_MODE_LEFT_ALIGN, 5);
+	ConvertIntToDecimalStringN(gStringVar2, sizeof(struct Pokemon), STR_CONV_MODE_LEFT_ALIGN, 5);
 }
 
 static void DebugAction_Util_Weather(u8 taskId)
@@ -3922,6 +3929,10 @@ static const u8 *const sSENames[END_SE + 1] =
 SOUND_LIST_SE
 };
 #undef X
+
+
+
+
 
 // *******************************
 // Actions BerryFunctions

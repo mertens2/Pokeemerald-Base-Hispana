@@ -26,7 +26,7 @@
 // Configuración del PC
 #define OW_PC_PRESS_B               GEN_LATEST // En Gen4, presionar B mientras sostienes un Pokémon es equivalente a colocarlo. En Gen3, da el error "¡Estás sosteniendo un Pokémon!"
 #define OW_PC_JAPAN_WALDA_ICONS     TRUE       // En la versión de EE.UU. de Emerald, los íconos de Cruz, Rayo y Plusle para los fondos de Walda quedaron en blanco de la versión japonesa. Configurar esto en TRUE los restaurará.
-#define OW_PC_HEAL                  GEN_LATEST // En Gen8+, los Pokémon no se curan cuando se depositan en el PC.
+#define OW_PC_HEAL                  GEN_3      // En Gen8+, los Pokémon no se curan cuando se depositan en el PC.
 #define OW_PC_MOVE_ORDER            GEN_LATEST // A partir de Gen4, el orden de opciones en el menú del PC cambia.
 #define OW_PC_RELEASE_ITEM          GEN_LATEST // En Gen8+, los Pokémon que se liberan con un objeto en mano lo devuelven a la bolsa.
 
@@ -57,11 +57,11 @@
 #define OW_MON_WANDER_WALK             TRUE       // Si TRUE, los OW de Pokémon con MOVEMENT_TYPE_WANDER andarán en el sitio entre pasos.
 
 // Pokémon seguidores
-#define OW_FOLLOWERS_ENABLED           FALSE      // Habilita Pokémon seguidores, al estilo de HGSS. Requiere OW_POKEMON_OBJECT_EVENTS. ¡Nota que puede ser necesaria una programación adicional para que se soporten completamente!
+#define OW_FOLLOWERS_ENABLED           TRUE       // Habilita Pokémon seguidores, al estilo de HGSS. Requiere OW_POKEMON_OBJECT_EVENTS. ¡Nota que puede ser necesaria una programación adicional para que se soporten completamente!
 #define OW_FOLLOWERS_BOBBING           TRUE       // Si es verdadero, los Pokémon seguidores se moverán hacia arriba y hacia abajo durante sus animaciones de inactividad y caminata.
 #define OW_FOLLOWERS_POKEBALLS         TRUE       // Los seguidores emergerán de la Pokébola en la que están almacenados, en lugar de una Pokébola normal
-#define OW_FOLLOWERS_WEATHER_FORMS     FALSE      // Si TRUE, Castform y Cherrim ganan FORM_CHANGE_OVERWORLD_WEATHER, lo que los hace transformarse según el clima.
-#define OW_FOLLOWERS_COPY_WILD_PKMN    FALSE      // Si TRUE, Pokémon followers que conocen Transformación o tienen Ilusión/Impostor copiarán Pokémon salvajes aleatoriamente.
+#define OW_FOLLOWERS_WEATHER_FORMS     TRUE       // Si TRUE, Castform y Cherrim ganan FORM_CHANGE_OVERWORLD_WEATHER, lo que los hace transformarse según el clima.
+#define OW_FOLLOWERS_COPY_WILD_PKMN    TRUE       // Si TRUE, Pokémon followers que conocen Transformación o tienen Ilusión/Impostor copiarán Pokémon salvajes aleatoriamente.
 #define OW_BATTLE_ONLY_FORMS           TRUE       // Si TRUE, carga sprites de OW para Pokémon que son solo formas de batalla, como las Megas. Requiere OW_POKEMON_OBJECT_EVENTS.
 #define B_FLAG_FOLLOWERS_DISABLED      0          // Habilita / Deshabilita followers por flag. Es útil si quieres deshabilitar followers por un período de tiempo.
 #define OW_FOLLOWERS_SCRIPT_MOVEMENT   TRUE       // TRUE: Colisiones por script esconden al follower, FLAG_SAFE_FOLLOWER_MOVEMENT encendido por defecto.
@@ -108,16 +108,16 @@
 // Flags del mundo exterior
 // Para usar las siguientes características en la programación, reemplaza los 0s con el ID de la flag que le estás asignando.
 // Ejemplo: Reemplaza con FLAG_UNUSED_0x264 para que puedas usar esa flag para activar la característica.
-#define OW_FLAG_PAUSE_TIME          0  // Si esta flag está activada y OW_USE_FAKE_RTC está habilitado, los segundos en el reloj del juego no avanzarán.
-#define OW_FLAG_NO_ENCOUNTER        0  // Si esta flag está activada, los encuentros salvajes estarán deshabilitados.
+#define OW_FLAG_PAUSE_TIME          0  						// Si esta flag está activada y OW_USE_FAKE_RTC está habilitado, los segundos en el reloj del juego no avanzarán.
+#define OW_FLAG_NO_ENCOUNTER        FLAG_SYS_NO_ENCOUNTERS  // Si esta flag está activada, los encuentros salvajes estarán deshabilitados.
 #define OW_FLAG_NO_TRAINER_SEE      0  // Si esta flag está activada, los entrenadores no pelearán con el jugador a menos que se les hable.
-#define OW_FLAG_NO_COLLISION        0  // Si esta flag está activada, el jugador podrá caminar sobre losetas con colisión. Principalmente destinado para fines de depuración.
+#define OW_FLAG_NO_COLLISION        FLAG_SYS_NO_COLLISSION  // Si esta flag está activada, el jugador podrá caminar sobre losetas con colisión. Principalmente destinado para fines de depuración.
 #define OW_FLAG_POKE_RIDER          0  // Su esta flag está activada, el jugador podrá usar Vuelo desde el mapa de la Región del Pokenav y desde el Mapa (objeto) pulsando 'R' en un lugar al que el Vuelo esté habilitado.
 
 #define BATTLE_PYRAMID_RANDOM_ENCOUNTERS    FALSE    // Si se establece en TRUE, los Pokémon de la pirámide de batalla se generarán aleatoriamente en función del desafío de la ronda en lugar de estar codificados en src/data/battle_frontier/battle_pyramid_level_50_wild_mons.h (o open_level_wild_mons.h)
 
 // Configuración de ventanas emergentes del mapa
-#define OW_POPUP_GENERATION        GEN_3    // Diferentes generaciones muestran los nombres de ubicación en las ventanas emergentes del mundo exterior de manera diferente.
+#define OW_POPUP_GENERATION        GEN_5    // Diferentes generaciones muestran los nombres de ubicación en las ventanas emergentes del mundo exterior de manera diferente.
                                             // Solo las opciones actuales son GEN_3 y GEN_5, todas las demás se ajustarán a las ventanas emergentes de Gen3.
 
 // Configuración de ventanas emergentes del mapa Gen5
