@@ -462,6 +462,140 @@ EventScript_EndRockClimb::
 	releaseall
 	end
 
+EventScript_RockSmashFossil::
+	lockall
+	goto_if_unset FLAG_BADGE03_GET, EventScript_CantSmashRock
+	checkpartymove MOVE_ROCK_SMASH
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
+	goto EventScript_CanRockSmashFossil
+	releaseall
+	end
+
+EventScript_CanRockSmashFossil::
+	setfieldeffectargument 0, VAR_RESULT
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
+	msgbox Text_WantToSmash, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	closemessage
+	dofieldeffect FLDEFF_USE_ROCK_SMASH
+	waitstate
+	goto EventScript_SmashRockFossil
+	end
+
+EventScript_SmashRockFossil::
+	applymovement VAR_LAST_TALKED, Movement_SmashRock
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	random 2
+	switch VAR_RESULT
+	case 0, EventScript_SmashRockFossilFound
+	special RockSmashWildEncounter
+	goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
+	waitstate
+	releaseall
+	end
+
+EventScript_SmashRockFossilFound::
+	switch VAR_TEMP_0
+	case ITEM_FOSSILIZED_BIRD, EventScript_SmashRockTopFossilFound
+	case ITEM_FOSSILIZED_FISH, EventScript_SmashRockTopFossilFound
+	case ITEM_FOSSILIZED_DINO, EventScript_SmashRockBottomFossilFound
+	case ITEM_FOSSILIZED_DRAKE, EventScript_SmashRockBottomFossilFound
+EventScript_SmashRockFossilFound2::
+	random 13
+	switch VAR_RESULT
+	case 0, EventScript_SmashRockHelixFound
+	case 1, EventScript_SmashRockDomeFound
+	case 2, EventScript_SmashRockOldAmberFound
+	case 3, EventScript_SmashRockArmorFound
+	case 4, EventScript_SmashRockSkullFound
+	case 5, EventScript_SmashRockCoverFound
+	case 6, EventScript_SmashRockPlumeFound
+	case 7, EventScript_SmashRockJawFound
+	case 8, EventScript_SmashRockSailFound
+	case 9, EventScript_SmashRockBirdFound
+	case 10, EventScript_SmashRockFishFound
+	case 11, EventScript_SmashRockDrakeFound
+	case 12, EventScript_SmashRockDinoFound
+	goto EventScript_EndSmash
+	end
+
+EventScript_SmashRockTopFossilFound:
+	random 3
+	goto_if_ne VAR_RESULT, 0, EventScript_SmashRockFossilFound2
+	random 2
+	switch VAR_RESULT
+	case 0, EventScript_SmashRockDrakeFound
+	case 1, EventScript_SmashRockDinoFound
+
+EventScript_SmashRockBottomFossilFound:
+	random 3
+	goto_if_ne VAR_RESULT, 0, EventScript_SmashRockFossilFound2
+	random 2
+	switch VAR_RESULT
+	case 0, EventScript_SmashRockFishFound
+	case 1, EventScript_SmashRockBirdFound
+
+EventScript_SmashRockHelixFound:
+	giveitem ITEM_HELIX_FOSSIL, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockDomeFound:
+	giveitem ITEM_DOME_FOSSIL, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockOldAmberFound:
+	giveitem ITEM_OLD_AMBER, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockArmorFound:
+	giveitem ITEM_ARMOR_FOSSIL, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockSkullFound:
+	giveitem ITEM_SKULL_FOSSIL, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockCoverFound:
+	giveitem ITEM_COVER_FOSSIL, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockPlumeFound:
+	giveitem ITEM_PLUME_FOSSIL, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockJawFound:
+	giveitem ITEM_JAW_FOSSIL, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockSailFound:
+	giveitem ITEM_SAIL_FOSSIL, 1
+	goto EventScript_EndSmash
+
+EventScript_SmashRockBirdFound:
+	giveitem ITEM_FOSSILIZED_BIRD, 1
+	setvar VAR_TEMP_0, ITEM_FOSSILIZED_BIRD
+	goto EventScript_EndSmash
+
+EventScript_SmashRockFishFound:
+	giveitem ITEM_FOSSILIZED_FISH, 1
+	setvar VAR_TEMP_0, ITEM_FOSSILIZED_FISH
+	goto EventScript_EndSmash
+
+EventScript_SmashRockDrakeFound:
+	giveitem ITEM_FOSSILIZED_DRAKE, 1
+	setvar VAR_TEMP_0, ITEM_FOSSILIZED_DRAKE
+	goto EventScript_EndSmash
+
+EventScript_SmashRockDinoFound:
+	giveitem ITEM_FOSSILIZED_DINO, 1
+	setvar VAR_TEMP_0, ITEM_FOSSILIZED_DINO
+	goto EventScript_EndSmash
+
+
+
 Text_WantToRockClimb:
     .string "The cliff is steep.\n"
     .string "Would you like to use Rock Climb?$"

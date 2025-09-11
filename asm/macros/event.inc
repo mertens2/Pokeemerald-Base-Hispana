@@ -1937,7 +1937,14 @@
 	.endm
 	
 	
-	
+	@ Opens the bag in the specified pocket and lets the Player choose an item.
+	@ This item can be used for scripting purposes and it's stored in VAR_ITEM_ID.
+	.macro chooseitem pocket:req
+	setvar VAR_TEMP_1, \pocket
+	fadescreen FADE_TO_BLACK
+	special ChooseItemFromBag
+	waitstate
+	.endm
 	
 	
 	.macro getmetatileidat x:req, y:req, metaId:req
@@ -2001,6 +2008,14 @@
 	.byte \flagIndex
 	.byte \value
 	.byte \getOrSet
+	.endm
+	
+	@ Checks if at least one Pokemon in the player's party knows the specified move. If so, VAR_RESULT is set to the
+	@ (zero-indexed) slot number of the first Pokemon that knows the move. If not, VAR_RESULT is set to PARTY_SIZE.
+	@ VAR_0x8004 is also set to this Pokemon's species.
+	.macro checkpartymove move:req
+	.byte SCR_OP_CHECKPARTYMOVE
+	.2byte \move
 	.endm
 	
 

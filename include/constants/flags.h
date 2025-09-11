@@ -43,27 +43,27 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
+#define FLAG_NOT_DOUBLE_BIKE 			  	0x20 // Unused Flag
+#define FLAG_NO_SHINIES    	 			  	0x21 // Unused Flag
+#define FLAG_SHINY_CREATION  			  	0x22 // Unused Flag
+#define FLAG_ENABLED_PC      	    	  	0x23 // Unused Flag
+#define FLAG_REGIELEKI_DEFEATED     	  	0x24 // Unused Flag
+#define FLAG_REGIDRAGO_DEFEATED     	  	0x25 // Unused Flag
+#define FLAG_REGIELEKI_ALMOST_UNLOCKED    	0x26 // Unused Flag
+#define FLAG_REGIDRAGO_ALMOST_UNLOCKED    	0x27 // Unused Flag
+#define FLAG_FORCE_LOAD_OFFSCREEN_OBJEV   	0x28 // Unused Flag
+#define FLAG_SMART_WILDS     				0x29 // Unused Flag
+#define FLAG_NO_BAG_USE      				0x2A // Unused Flag
+#define FLAG_NO_CATCHING     				0x2B // Unused Flag
+#define FLAG_SLEEP_CLAUSE    				0x2C // Unused Flag
+#define FLAG_NO_WHITEOUT     				0x2D // Unused Flag
+#define FLAG_ASHS_POKEMON    				0x2E // Unused Flag
+#define FLAG_MINI_SAFARI_PARK_BALL    		0x2F // Unused Flag
+#define FLAG_MINI_SAFARI_NUGGET    			0x30 // Unused Flag
+#define FLAG_REGIELEKI_UNLOCKED    			0x31 // Unused Flag
+#define FLAG_REGIDRAGO_UNLOCKED 			0x32 // Unused Flag
+#define FLAG_UNUSED_0x033    				0x33 // Unused Flag
+#define FLAG_UNUSED_0x034    				0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
@@ -115,10 +115,10 @@
 #define FLAG_MET_TEAM_AQUA_HARBOR            0x61
 #define FLAG_TV_EXPLAINED                    0x62
 #define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0x63
-#define FLAG_MOSSDEEP_GYM_SWITCH_1           0x64 // Leftover from the RS version of Mossdeep Gym, functionally unused
-#define FLAG_MOSSDEEP_GYM_SWITCH_2           0x65 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
+#define FLAG_UNUSED_0x064		           	 0x64 // Leftover from the RS version of Mossdeep Gym, functionally unused
+#define FLAG_UNUSED_0x065		           	 0x65 //
+#define FLAG_UNUSED_0x066		           	 0x66 //
+#define FLAG_UNUSED_0x067		           	 0x67 //
 
 #define FLAG_UNUSED_0x068                    0x68  // Unused Flag
 
@@ -130,7 +130,7 @@
 #define FLAG_RECEIVED_HM_FLY                 0x6E
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
-#define FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE 0x71 // Unused Flag. Used in R/S to indicate whether player defeated or caught Groudon/Kyogre in Cave of Origin.
+#define FLAG_UNUSED_0x071		           	 0x71 // Unused Flag. Used in R/S to indicate whether player defeated or caught Groudon/Kyogre in Cave of Origin.
 #define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
 #define FLAG_RECEIVED_METEORITE              0x73
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
@@ -1383,7 +1383,7 @@
 #define FLAG_SYS_DEXNAV_SEARCHING                   (SYSTEM_FLAGS + 0x21) // Unused Flag
 #define FLAG_SYS_DEXNAV_DETECTOR_MODE               (SYSTEM_FLAGS + 0x22) // Unused Flag
 #define FLAG_SYS_DEXNAV_GET                         (SYSTEM_FLAGS + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
+#define FLAG_SYS_EXP_SHARE                          (SYSTEM_FLAGS + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
 #define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
 #define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
@@ -1567,8 +1567,8 @@
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
-#define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
+#define FLAG_DAILY_REGIELEKI                        (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define FLAG_DAILY_REGIDRAGO                        (DAILY_FLAGS_START + 0x4)  // Unused Flag
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag

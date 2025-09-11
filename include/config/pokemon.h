@@ -37,7 +37,7 @@
 // Configuración específica de especies
 #define P_SHEDINJA_BALL             GEN_LATEST  // Desde Gen 4, Shedinja requiere una Pokébola para su evolución. En Gen 3, Shedinja hereda la Pokébola de Nincada.
 #define P_KADABRA_EVERSTONE         GEN_LATEST  // Desde Gen 4, Kadabra puede evolucionar incluso cuando sostiene un Everstone.
-#define P_SHUCKLE_BERRY_JUICE       GEN_LATEST  // En Gen 2, Shuckle tenía una probabilidad de 1/16 de convertir la Baya que sostiene en Jugo de Baya. Habilitar esto permitirá que Shuckle haga esto con una Baya Oran, que es el sucesor espiritual del artículo Baya.
+#define P_SHUCKLE_BERRY_JUICE       GEN_2       // En Gen 2, Shuckle tenía una probabilidad de 1/16 de convertir la Baya que sostiene en Jugo de Baya. Habilitar esto permitirá que Shuckle haga esto con una Baya Oran, que es el sucesor espiritual del artículo Baya.
 
 //Configuración de gráficos de especies
 #define P_GENDER_DIFFERENCES             TRUE        // Si TRUE, los Pokémon tendrán diferencias gráficas si son hembras. Pokémon como Meowstic no son afectados por esta configuración.
@@ -58,10 +58,10 @@
 #define P_CAN_FORGET_HIDDEN_MOVE         FALSE       // Si está habilitado, los Pokémon pueden olvidar cualquier movimiento, incluso si es un Movimiento Oculto.
 #define P_ASK_MOVE_CONFIRMATION          FALSE       // If FALSE, when a player decides not to learn a Move, the game does not ask the player for confirmation.
 #define P_EGG_CYCLE_LENGTH               GEN_LATEST  // Desde Gen 8, los ciclos de huevo toman la mitad de pasos que antes.
-#define P_ONLY_OBTAINABLE_SHINIES        FALSE       // Si está habilitado, los Pokémon encontrados en la Pirámide de Batalla no serán shiny.
-#define P_NO_SHINIES_WITHOUT_POKEBALLS   FALSE       // Si está habilitado, los Pokémon encontrados cuando el jugador se queda sin Poké Balls no serán shiny.
-#define P_ONLY_OBTAINABLE_SHINIES        FALSE       // If TRUE, Pokémon encountered in the Battle Pyramid or while catching is disabled won't be shiny.
-#define P_SHOW_DYNAMIC_TYPES             FALSE       // Si está habilitado, todos los ataques con tipo dinámico se mostrarán así en combate y en la pantalla de sumario.
+#define P_ONLY_OBTAINABLE_SHINIES        TRUE        // Si está habilitado, los Pokémon encontrados en la Pirámide de Batalla no serán shiny.
+#define P_NO_SHINIES_WITHOUT_POKEBALLS   TRUE        // Si está habilitado, los Pokémon encontrados cuando el jugador se queda sin Poké Balls no serán shiny.
+#define P_ONLY_OBTAINABLE_SHINIES        TRUE        // If TRUE, Pokémon encountered in the Battle Pyramid or while catching is disabled won't be shiny.
+#define P_SHOW_DYNAMIC_TYPES             TRUE       // Si está habilitado, todos los ataques con tipo dinámico se mostrarán así en combate y en la pantalla de sumario.
 
 // Configuración de ayuda de aprendizaje de movimientos
 #define P_LEARNSET_HELPER_TEACHABLE      TRUE        // Si está habilitado, teachable_learnsets.h será poblado por tools/learnset_helpers/teachable.py usando los archivos JSON incluidos basados en las MTs y tutores disponibles.
@@ -70,8 +70,11 @@
 // Configuración de flags
 // Para usar las siguientes características en la programación, reemplaza los 0s con el ID de la flag que le estás asignando.
 // Ejemplo: Reemplaza con FLAG_UNUSED_0x264 para que puedas usar esa flag para activar la característica.
-#define P_FLAG_FORCE_SHINY      0     // Si esta flag está activada, todos los Pokémon salvajes y regalos serán obligatoriamente Shiny.
-#define P_FLAG_FORCE_NO_SHINY   0     // Si esta flag está activada, todos los Pokémon salvajes y regalos serán obligatoriamente NO Shiny.
+#define P_FLAG_FORCE_SHINY      FLAG_SHINY_CREATION  // Si esta flag está activada, todos los Pokémon salvajes y regalos serán obligatoriamente Shiny.
+#define P_FLAG_FORCE_NO_SHINY   FLAG_NO_SHINIES      // Si esta flag está activada, todos los Pokémon salvajes y regalos serán obligatoriamente NO Shiny.
+
+#define P_BUFF_SPECIES          TRUE                 // Si esta opción está activada, los Pokémon estarán buffeados y mejorados para ser más útiles en donde son atrapados
+// #define P_TYPE_MATCHUP_CHANRGS
 
 // Ve aquí si deseas deshabilitar familias específicas de Pokémon.
 #include "config/species_enabled.h"

@@ -63,6 +63,7 @@
 #define GEN_7 6
 #define GEN_8 7
 #define GEN_9 8
+#define GEN_CUSTOM 9
 // Cambiar el valor de GEN_LATEST a una Generación diferente cambiará todas las configuraciones predeterminadas que lo usan a la vez.
 #define GEN_LATEST GEN_9
 
@@ -83,5 +84,5 @@
 // Pantalla de Nombres
 #define AUTO_LOWERCASE_KEYBOARD      GEN_LATEST  // A partir de GEN_6, después de ingresar el primer carácter en mayúsculas, el teclado cambia a letras minúsculas.
 
-#define SAVE_TYPE_ERROR_SCREEN              FALSE   // When enabled, this shows an error message when the game is loaded on a cart without a flash chip or on an emulator with the wrong save type setting instead of crashing.
+#define SAVE_TYPE_ERROR_SCREEN              TRUE   // When enabled, this shows an error message when the game is loaded on a cart without a flash chip or on an emulator with the wrong save type setting instead of crashing.
 #endif // GUARD_CONFIG_GENERAL_H

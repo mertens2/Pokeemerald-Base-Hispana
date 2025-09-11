@@ -11,6 +11,4 @@ CaveOfOrigin_1F_MapScripts::
 # 6 "data/maps/CaveOfOrigin_1F/scripts.pory"
 CaveOfOrigin_1F_OnTransition:
 # 7 "data/maps/CaveOfOrigin_1F/scripts.pory"
-	call_if_set FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE, CaveOfOrigin_EventScript_DisableTriggers
-# 8 "data/maps/CaveOfOrigin_1F/scripts.pory"
 	end

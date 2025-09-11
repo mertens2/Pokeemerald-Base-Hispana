@@ -5,1304 +5,1028 @@ MossdeepCity_Gym_MapScripts::
 # 3 "data/maps/MossdeepCity_Gym/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_Gym_OnTransition
 # 4 "data/maps/MossdeepCity_Gym/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_Gym_OnLoad
-# 5 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.byte 0
+# 5 "data/maps/MossdeepCity_Gym/scripts.pory"
+
 # 6 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 7 "data/maps/MossdeepCity_Gym/scripts.pory"
 @ NOTE: Mossdeep Gym was redesigned between R/S and E. Leftover (and now functionally unused) scripts are commented below
+# 7 "data/maps/MossdeepCity_Gym/scripts.pory"
+
 # 8 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 9 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_OnTransition:
-# 10 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 9 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setflag FLAG_TEMP_HIDE_FOLLOWER @ Hide follower since it can collide with moving statues
+# 10 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
 # 11 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+
 # 12 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 13 "data/maps/MossdeepCity_Gym/scripts.pory"
-@ All the below checks are leftover from RS. FLAG_MOSSDEEP_GYM_SWITCH_X is never set
-# 14 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_OnLoad:
-# 15 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_1, MossdeepCity_Gym_EventScript_SetSwitch1Metatiles
-# 16 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_CheckSwitch2
-# 17 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 18 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 19 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_CheckSwitch2::
-# 20 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_2, MossdeepCity_Gym_EventScript_SetSwitch2Metatiles
-# 21 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_CheckSwitch3
-# 22 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 23 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 24 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_CheckSwitch3::
-# 25 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_3, MossdeepCity_Gym_EventScript_SetSwitch3Metatiles
-# 26 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_CheckSwitch4
-# 27 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 28 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 29 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_CheckSwitch4::
-# 30 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_4, MossdeepCity_Gym_EventScript_SetSwitch4Metatiles
-# 31 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 32 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 33 "data/maps/MossdeepCity_Gym/scripts.pory"
-@ All the below set metatile scripts are leftover from RS and are functionally unused
-# 34 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_SetSwitch1Metatiles::
-# 35 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 5, 5, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
-# 36 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 2, 7, METATILE_RSMossdeepGym_Switch_Down, TRUE
-# 37 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_CheckSwitch2
-# 38 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 39 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 40 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_SetSwitch2Metatiles::
-# 41 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 8, 14, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
-# 42 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 8, 10, METATILE_RSMossdeepGym_Switch_Down, TRUE
-# 43 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_CheckSwitch3
-# 44 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 45 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 46 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_SetSwitch3Metatiles::
-# 47 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 15, 17, METATILE_RSMossdeepGym_RedArrow_Left, FALSE
-# 48 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 17, 15, METATILE_RSMossdeepGym_Switch_Down, TRUE
-# 49 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_CheckSwitch4
-# 50 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 51 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 52 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_SetSwitch4Metatiles::
-# 53 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 1, 23, METATILE_RSMossdeepGym_RedArrow_Up, FALSE
-# 54 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 5, 24, METATILE_RSMossdeepGym_Switch_Down, TRUE
-# 55 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 56 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 57 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_EventScript_TateAndLiza::
-# 58 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 13 "data/maps/MossdeepCity_Gym/scripts.pory"
 	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
-# 59 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 14 "data/maps/MossdeepCity_Gym/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-# 60 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 15 "data/maps/MossdeepCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_TateAndLizaRematch
-# 61 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 16 "data/maps/MossdeepCity_Gym/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_TM_CALM_MIND, MossdeepCity_Gym_EventScript_GiveCalmMind2
-# 62 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 17 "data/maps/MossdeepCity_Gym/scripts.pory"
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT
-# 63 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 18 "data/maps/MossdeepCity_Gym/scripts.pory"
 	release
-# 64 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 19 "data/maps/MossdeepCity_Gym/scripts.pory"
 	end
-# 65 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 20 "data/maps/MossdeepCity_Gym/scripts.pory"
 
-# 66 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 21 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
-# 67 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 22 "data/maps/MossdeepCity_Gym/scripts.pory"
 	message MossdeepCity_Gym_Text_ReceivedMindBadge
-# 68 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 23 "data/maps/MossdeepCity_Gym/scripts.pory"
 	waitmessage
-# 69 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 24 "data/maps/MossdeepCity_Gym/scripts.pory"
 	call Common_EventScript_PlayGymBadgeFanfare
-# 70 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 25 "data/maps/MossdeepCity_Gym/scripts.pory"
 	msgbox MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis, MSGBOX_DEFAULT
-# 71 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 26 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setflag FLAG_DEFEATED_MOSSDEEP_GYM
-# 72 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 27 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setflag FLAG_BADGE07_GET
-# 73 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 28 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setflag FLAG_HIDE_AQUA_HIDEOUT_GRUNTS
-# 74 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 29 "data/maps/MossdeepCity_Gym/scripts.pory"
 	clearflag FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY
-# 75 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 30 "data/maps/MossdeepCity_Gym/scripts.pory"
 	clearflag FLAG_UNKNOWN_0x393
-# 76 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 31 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setvar VAR_0x8008, 7
-# 77 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 32 "data/maps/MossdeepCity_Gym/scripts.pory"
 	call Common_EventScript_SetGymTrainers
-# 78 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 33 "data/maps/MossdeepCity_Gym/scripts.pory"
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
-# 79 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 34 "data/maps/MossdeepCity_Gym/scripts.pory"
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
-# 80 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 35 "data/maps/MossdeepCity_Gym/scripts.pory"
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA
-# 81 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 36 "data/maps/MossdeepCity_Gym/scripts.pory"
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA
-# 82 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 37 "data/maps/MossdeepCity_Gym/scripts.pory"
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN
-# 83 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 38 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setvar VAR_MOSSDEEP_CITY_STATE, 1
-# 84 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 39 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN
-# 85 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 40 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
-# 86 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 41 "data/maps/MossdeepCity_Gym/scripts.pory"
 	call MossdeepCity_Gym_EventScript_GiveCalmMind
-# 87 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 42 "data/maps/MossdeepCity_Gym/scripts.pory"
 	closemessage
-# 88 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 43 "data/maps/MossdeepCity_Gym/scripts.pory"
 	delay 30
-# 89 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 44 "data/maps/MossdeepCity_Gym/scripts.pory"
 	playfanfare MUS_REGISTER_MATCH_CALL
-# 90 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 45 "data/maps/MossdeepCity_Gym/scripts.pory"
 	msgbox MossdeepCity_Gym_Text_RegisteredTateAndLiza, MSGBOX_DEFAULT
-# 91 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 46 "data/maps/MossdeepCity_Gym/scripts.pory"
 	waitfanfare
-# 92 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 47 "data/maps/MossdeepCity_Gym/scripts.pory"
 	closemessage
-# 93 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 48 "data/maps/MossdeepCity_Gym/scripts.pory"
 	delay 30
-# 94 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 49 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setflag FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL
-# 95 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 50 "data/maps/MossdeepCity_Gym/scripts.pory"
 	release
-# 96 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 51 "data/maps/MossdeepCity_Gym/scripts.pory"
 	end
-# 97 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 52 "data/maps/MossdeepCity_Gym/scripts.pory"
 
-# 98 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 53 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_EventScript_GiveCalmMind2::
-# 99 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 54 "data/maps/MossdeepCity_Gym/scripts.pory"
 	giveitem ITEM_TM_CALM_MIND
-# 100 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 55 "data/maps/MossdeepCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-# 101 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 56 "data/maps/MossdeepCity_Gym/scripts.pory"
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
-# 102 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 57 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setflag FLAG_RECEIVED_TM_CALM_MIND
-# 103 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 58 "data/maps/MossdeepCity_Gym/scripts.pory"
 	release
-# 104 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 59 "data/maps/MossdeepCity_Gym/scripts.pory"
 	end
-# 105 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 60 "data/maps/MossdeepCity_Gym/scripts.pory"
 
-# 106 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 61 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_EventScript_GiveCalmMind::
-# 107 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 62 "data/maps/MossdeepCity_Gym/scripts.pory"
 	giveitem ITEM_TM_CALM_MIND
-# 108 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 63 "data/maps/MossdeepCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
-# 109 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 64 "data/maps/MossdeepCity_Gym/scripts.pory"
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
-# 110 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 65 "data/maps/MossdeepCity_Gym/scripts.pory"
 	setflag FLAG_RECEIVED_TM_CALM_MIND
-# 111 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 66 "data/maps/MossdeepCity_Gym/scripts.pory"
 	return
-# 112 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 67 "data/maps/MossdeepCity_Gym/scripts.pory"
 
-# 113 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 68 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_EventScript_TateAndLizaRematch::
-# 114 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 69 "data/maps/MossdeepCity_Gym/scripts.pory"
 	trainerbattle_rematch_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons
-# 115 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 70 "data/maps/MossdeepCity_Gym/scripts.pory"
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
-# 116 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 71 "data/maps/MossdeepCity_Gym/scripts.pory"
 	end
-# 117 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 72 "data/maps/MossdeepCity_Gym/scripts.pory"
 
-# 118 "data/maps/MossdeepCity_Gym/scripts.pory"
-@ All the below switch scripts are leftover from RS and are functionally unused
-# 119 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Switch1::
-# 120 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 73 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_WarpToEntrance::
+# 74 "data/maps/MossdeepCity_Gym/scripts.pory"
 	lockall
+# 75 "data/maps/MossdeepCity_Gym/scripts.pory"
+	warpmossdeepgym MAP_MOSSDEEP_CITY_GYM, 7, 30
+# 76 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitstate
+# 77 "data/maps/MossdeepCity_Gym/scripts.pory"
+	releaseall
+# 78 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 79 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 80 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Preston::
+# 81 "data/maps/MossdeepCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_PRESTON, MossdeepCity_Gym_Text_PrestonIntro, MossdeepCity_Gym_Text_PrestonDefeat
+# 82 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_PrestonPostBattle, MSGBOX_AUTOCLOSE
+# 83 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 84 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 85 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Virgil::
+# 86 "data/maps/MossdeepCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_VIRGIL, MossdeepCity_Gym_Text_VirgilIntro, MossdeepCity_Gym_Text_VirgilDefeat
+# 87 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_VirgilPostBattle, MSGBOX_AUTOCLOSE
+# 88 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 89 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 90 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Blake::
+# 91 "data/maps/MossdeepCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_BLAKE, MossdeepCity_Gym_Text_BlakeIntro, MossdeepCity_Gym_Text_BlakeDefeat
+# 92 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_BlakePostBattle, MSGBOX_AUTOCLOSE
+# 93 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 94 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 95 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Hannah::
+# 96 "data/maps/MossdeepCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_HANNAH, MossdeepCity_Gym_Text_HannahIntro, MossdeepCity_Gym_Text_HannahDefeat
+# 97 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_HannahPostBattle, MSGBOX_AUTOCLOSE
+# 98 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 99 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 100 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Samantha::
+# 101 "data/maps/MossdeepCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_SAMANTHA, MossdeepCity_Gym_Text_SamanthaIntro, MossdeepCity_Gym_Text_SamanthaDefeat
+# 102 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_SamanthaPostBattle, MSGBOX_AUTOCLOSE
+# 103 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 104 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 105 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Maura::
+# 106 "data/maps/MossdeepCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_MAURA, MossdeepCity_Gym_Text_MauraIntro, MossdeepCity_Gym_Text_MauraDefeat
+# 107 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_MauraPostBattle, MSGBOX_AUTOCLOSE
+# 108 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 109 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 110 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Sylvia::
+# 111 "data/maps/MossdeepCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_SYLVIA, MossdeepCity_Gym_Text_SylviaIntro, MossdeepCity_Gym_Text_SylviaDefeat
+# 112 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_SylviaPostBattle, MSGBOX_AUTOCLOSE
+# 113 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 114 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 115 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Nate::
+# 116 "data/maps/MossdeepCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_NATE, MossdeepCity_Gym_Text_NateIntro, MossdeepCity_Gym_Text_NateDefeat
+# 117 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_NatePostBattle, MSGBOX_AUTOCLOSE
+# 118 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 119 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 120 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_Macey::
 # 121 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_1, MossdeepCity_Gym_EventScript_ClearSwitch1
+	trainerbattle_single TRAINER_MACEY, MossdeepCity_Gym_Text_MaceyIntro, MossdeepCity_Gym_Text_MaceyDefeat
 # 122 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setflag FLAG_MOSSDEEP_GYM_SWITCH_1
+	msgbox MossdeepCity_Gym_Text_MaceyPostBattle, MSGBOX_AUTOCLOSE
 # 123 "data/maps/MossdeepCity_Gym/scripts.pory"
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
+	end
 # 124 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+
 # 125 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 5, 5, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
+MossdeepCity_Gym_EventScript_Clifford::
 # 126 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 2, 7, METATILE_RSMossdeepGym_Switch_Down, TRUE
+	trainerbattle_single TRAINER_CLIFFORD, MossdeepCity_Gym_Text_CliffordIntro, MossdeepCity_Gym_Text_CliffordDefeat
 # 127 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
+	msgbox MossdeepCity_Gym_Text_CliffordPostBattle, MSGBOX_AUTOCLOSE
 # 128 "data/maps/MossdeepCity_Gym/scripts.pory"
 	end
 # 129 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 130 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed::
+MossdeepCity_Gym_EventScript_Nicholas::
 # 131 "data/maps/MossdeepCity_Gym/scripts.pory"
-	special DrawWholeMapView
+	trainerbattle_single TRAINER_NICHOLAS, MossdeepCity_Gym_Text_NicholasIntro, MossdeepCity_Gym_Text_NicholasDefeat
 # 132 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_CLICK
+	msgbox MossdeepCity_Gym_Text_NicholasPostBattle, MSGBOX_AUTOCLOSE
 # 133 "data/maps/MossdeepCity_Gym/scripts.pory"
-	releaseall
+	end
 # 134 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+
 # 135 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+MossdeepCity_Gym_EventScript_Kathleen::
 # 136 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_ClearSwitch1::
+	trainerbattle_single TRAINER_KATHLEEN, MossdeepCity_Gym_Text_KathleenIntro, MossdeepCity_Gym_Text_KathleenDefeat
 # 137 "data/maps/MossdeepCity_Gym/scripts.pory"
-	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
+	msgbox MossdeepCity_Gym_Text_KathleenPostBattle, MSGBOX_AUTOCLOSE
 # 138 "data/maps/MossdeepCity_Gym/scripts.pory"
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
+	end
 # 139 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+
 # 140 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 5, 5, METATILE_RSMossdeepGym_RedArrow_Left, FALSE
+MossdeepCity_Gym_EventScript_GymGuide::
 # 141 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 2, 7, METATILE_RSMossdeepGym_Switch_Up, TRUE
+	lock
 # 142 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
+	faceplayer
 # 143 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_GymGuidePostVictory
 # 144 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	msgbox MossdeepCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 # 145 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Switch2::
+	release
 # 146 "data/maps/MossdeepCity_Gym/scripts.pory"
-	lockall
-# 147 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_2, MossdeepCity_Gym_EventScript_ClearSwitch2
-# 148 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setflag FLAG_MOSSDEEP_GYM_SWITCH_2
-# 149 "data/maps/MossdeepCity_Gym/scripts.pory"
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-# 150 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
-# 151 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 8, 14, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
-# 152 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 8, 10, METATILE_RSMossdeepGym_Switch_Down, TRUE
-# 153 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-# 154 "data/maps/MossdeepCity_Gym/scripts.pory"
 	end
-# 155 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 147 "data/maps/MossdeepCity_Gym/scripts.pory"
 
+# 148 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_GymGuidePostVictory::
+# 149 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+# 150 "data/maps/MossdeepCity_Gym/scripts.pory"
+	release
+# 151 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 152 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 153 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_LeftGymStatue::
+# 154 "data/maps/MossdeepCity_Gym/scripts.pory"
+	lockall
+# 155 "data/maps/MossdeepCity_Gym/scripts.pory"
+	goto_if_set FLAG_BADGE07_GET, MossdeepCity_Gym_EventScript_GymStatueCertified
 # 156 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_ClearSwitch2::
+	goto MossdeepCity_Gym_EventScript_GymStatue
 # 157 "data/maps/MossdeepCity_Gym/scripts.pory"
-	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
+	end
 # 158 "data/maps/MossdeepCity_Gym/scripts.pory"
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
+
 # 159 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+MossdeepCity_Gym_EventScript_RightGymStatue::
 # 160 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 8, 14, METATILE_RSMossdeepGym_RedArrow_Down, FALSE
+	lockall
 # 161 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 8, 10, METATILE_RSMossdeepGym_Switch_Up, TRUE
+	goto_if_set FLAG_BADGE07_GET, MossdeepCity_Gym_EventScript_GymStatueCertified
 # 162 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
+	goto MossdeepCity_Gym_EventScript_GymStatue
 # 163 "data/maps/MossdeepCity_Gym/scripts.pory"
 	end
 # 164 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 165 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Switch3::
+MossdeepCity_Gym_EventScript_GymStatueCertified::
 # 166 "data/maps/MossdeepCity_Gym/scripts.pory"
-	lockall
+	msgbox MossdeepCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
 # 167 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_3, MossdeepCity_Gym_EventScript_ClearSwitch3
-# 168 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setflag FLAG_MOSSDEEP_GYM_SWITCH_3
-# 169 "data/maps/MossdeepCity_Gym/scripts.pory"
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-# 170 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
-# 171 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 15, 17, METATILE_RSMossdeepGym_RedArrow_Left, FALSE
-# 172 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 17, 15, METATILE_RSMossdeepGym_Switch_Down, TRUE
-# 173 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-# 174 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 175 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 176 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_ClearSwitch3::
-# 177 "data/maps/MossdeepCity_Gym/scripts.pory"
-	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
-# 178 "data/maps/MossdeepCity_Gym/scripts.pory"
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-# 179 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
-# 180 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 15, 17, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
-# 181 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 17, 15, METATILE_RSMossdeepGym_Switch_Up, TRUE
-# 182 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-# 183 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 184 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 185 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Switch4::
-# 186 "data/maps/MossdeepCity_Gym/scripts.pory"
-	lockall
-# 187 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_4, MossdeepCity_Gym_EventScript_ClearSwitch4
-# 188 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setflag FLAG_MOSSDEEP_GYM_SWITCH_4
-# 189 "data/maps/MossdeepCity_Gym/scripts.pory"
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-# 190 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
-# 191 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 1, 23, METATILE_RSMossdeepGym_RedArrow_Up, FALSE
-# 192 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 5, 24, METATILE_RSMossdeepGym_Switch_Down, TRUE
-# 193 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-# 194 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 195 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 196 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_ClearSwitch4::
-# 197 "data/maps/MossdeepCity_Gym/scripts.pory"
-	clearflag FLAG_MOSSDEEP_GYM_SWITCH_4
-# 198 "data/maps/MossdeepCity_Gym/scripts.pory"
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-# 199 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
-# 200 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 1, 23, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
-# 201 "data/maps/MossdeepCity_Gym/scripts.pory"
-	setmetatile 5, 24, METATILE_RSMossdeepGym_Switch_Up, TRUE
-# 202 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-# 203 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 204 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 205 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_WarpToEntrance::
-# 206 "data/maps/MossdeepCity_Gym/scripts.pory"
-	lockall
-# 207 "data/maps/MossdeepCity_Gym/scripts.pory"
-	warpmossdeepgym MAP_MOSSDEEP_CITY_GYM, 7, 30
-# 208 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitstate
-# 209 "data/maps/MossdeepCity_Gym/scripts.pory"
 	releaseall
+# 168 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 169 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 170 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_GymStatue::
+# 171 "data/maps/MossdeepCity_Gym/scripts.pory"
+	msgbox MossdeepCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
+# 172 "data/maps/MossdeepCity_Gym/scripts.pory"
+	releaseall
+# 173 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 174 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 175 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_YellowFloorSwitch::
+# 176 "data/maps/MossdeepCity_Gym/scripts.pory"
+	playse SE_SWITCH
+# 177 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitse
+# 178 "data/maps/MossdeepCity_Gym/scripts.pory"
+	playse SE_REPEL
+# 179 "data/maps/MossdeepCity_Gym/scripts.pory"
+	initrotatingtilepuzzle FALSE
+# 180 "data/maps/MossdeepCity_Gym/scripts.pory"
+	moverotatingtileobjects 0
+# 181 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitmovement 0
+# 182 "data/maps/MossdeepCity_Gym/scripts.pory"
+	turnrotatingtileobjects
+# 183 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitmovement 0
+# 184 "data/maps/MossdeepCity_Gym/scripts.pory"
+	freerotatingtilepuzzle
+# 185 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 186 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 187 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_BlueFloorSwitch::
+# 188 "data/maps/MossdeepCity_Gym/scripts.pory"
+	playse SE_SWITCH
+# 189 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitse
+# 190 "data/maps/MossdeepCity_Gym/scripts.pory"
+	playse SE_REPEL
+# 191 "data/maps/MossdeepCity_Gym/scripts.pory"
+	initrotatingtilepuzzle FALSE
+# 192 "data/maps/MossdeepCity_Gym/scripts.pory"
+	moverotatingtileobjects 1
+# 193 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitmovement 0
+# 194 "data/maps/MossdeepCity_Gym/scripts.pory"
+	turnrotatingtileobjects
+# 195 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitmovement 0
+# 196 "data/maps/MossdeepCity_Gym/scripts.pory"
+	freerotatingtilepuzzle
+# 197 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
+# 198 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 199 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_EventScript_GreenFloorSwitch::
+# 200 "data/maps/MossdeepCity_Gym/scripts.pory"
+	playse SE_SWITCH
+# 201 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitse
+# 202 "data/maps/MossdeepCity_Gym/scripts.pory"
+	playse SE_REPEL
+# 203 "data/maps/MossdeepCity_Gym/scripts.pory"
+	initrotatingtilepuzzle FALSE
+# 204 "data/maps/MossdeepCity_Gym/scripts.pory"
+	moverotatingtileobjects 2
+# 205 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitmovement 0
+# 206 "data/maps/MossdeepCity_Gym/scripts.pory"
+	turnrotatingtileobjects
+# 207 "data/maps/MossdeepCity_Gym/scripts.pory"
+	waitmovement 0
+# 208 "data/maps/MossdeepCity_Gym/scripts.pory"
+	freerotatingtilepuzzle
+# 209 "data/maps/MossdeepCity_Gym/scripts.pory"
+	end
 # 210 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+
 # 211 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+MossdeepCity_Gym_EventScript_PurpleFloorSwitch::
 # 212 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Preston::
+	playse SE_SWITCH
 # 213 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_PRESTON, MossdeepCity_Gym_Text_PrestonIntro, MossdeepCity_Gym_Text_PrestonDefeat
+	waitse
 # 214 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_PrestonPostBattle, MSGBOX_AUTOCLOSE
+	playse SE_REPEL
 # 215 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	initrotatingtilepuzzle FALSE
 # 216 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	moverotatingtileobjects 3
 # 217 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Virgil::
+	waitmovement 0
 # 218 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_VIRGIL, MossdeepCity_Gym_Text_VirgilIntro, MossdeepCity_Gym_Text_VirgilDefeat
+	turnrotatingtileobjects
 # 219 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_VirgilPostBattle, MSGBOX_AUTOCLOSE
+	waitmovement 0
 # 220 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	freerotatingtilepuzzle
 # 221 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	end
 # 222 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Blake::
+
 # 223 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BLAKE, MossdeepCity_Gym_Text_BlakeIntro, MossdeepCity_Gym_Text_BlakeDefeat
+MossdeepCity_Gym_EventScript_RedFloorSwitch::
 # 224 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_BlakePostBattle, MSGBOX_AUTOCLOSE
+	playse SE_SWITCH
 # 225 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	waitse
 # 226 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	playse SE_REPEL
 # 227 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Hannah::
+	initrotatingtilepuzzle FALSE
 # 228 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_HANNAH, MossdeepCity_Gym_Text_HannahIntro, MossdeepCity_Gym_Text_HannahDefeat
+	moverotatingtileobjects 4
 # 229 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_HannahPostBattle, MSGBOX_AUTOCLOSE
+	waitmovement 0
 # 230 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	turnrotatingtileobjects
 # 231 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	waitmovement 0
 # 232 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Samantha::
+	freerotatingtilepuzzle
 # 233 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_SAMANTHA, MossdeepCity_Gym_Text_SamanthaIntro, MossdeepCity_Gym_Text_SamanthaDefeat
+	end
 # 234 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_SamanthaPostBattle, MSGBOX_AUTOCLOSE
+
 # 235 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+MossdeepCity_Gym_Text_GymGuideAdvice:
 # 236 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "Eh, ¿cómo lo llevas, {PLAYER}?\n"
 # 237 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Maura::
+	.string "¿Camino del CAMPEONATO?\p"
 # 238 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_MAURA, MossdeepCity_Gym_Text_MauraIntro, MossdeepCity_Gym_Text_MauraDefeat
+	.string "Los LÍDERES de este GIMNASIO usan\n"
 # 239 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_MauraPostBattle, MSGBOX_AUTOCLOSE
+	.string "POKéMON de tipo PSÍQUICO.\p"
 # 240 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	.string "Si les atacas con POKéMON de los tipos\n"
 # 241 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "LUCHA o VENENO, te destrozarán.\p"
 # 242 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Sylvia::
+	.string "Además, van a combatirte con ataques\n"
 # 243 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_SYLVIA, MossdeepCity_Gym_Text_SylviaIntro, MossdeepCity_Gym_Text_SylviaDefeat
+	.string "combinados realmente increíbles.\p"
 # 244 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_SylviaPostBattle, MSGBOX_AUTOCLOSE
+	.string "Si quieres ganar, tendrás que mostrar\n"
 # 245 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	.string "que estás muy unido a tus POKéMON.\l"
 # 246 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "¡Adelante!$"
 # 247 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Nate::
+
 # 248 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_NATE, MossdeepCity_Gym_Text_NateIntro, MossdeepCity_Gym_Text_NateDefeat
+MossdeepCity_Gym_Text_GymGuidePostVictory:
 # 249 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_NatePostBattle, MSGBOX_AUTOCLOSE
+	.string "¡Guau, eres sorprendente!\n"
 # 250 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	.string "¡Tú sabes cómo luchar!$"
 # 251 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 252 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Macey::
+MossdeepCity_Gym_Text_PrestonIntro:
 # 253 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_MACEY, MossdeepCity_Gym_Text_MaceyIntro, MossdeepCity_Gym_Text_MaceyDefeat
+	.string "El resultado del combate depende de tu\n"
 # 254 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_MaceyPostBattle, MSGBOX_AUTOCLOSE
+	.string "fuerza de voluntad. ¡Nunca te rindas!$"
 # 255 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+
 # 256 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+MossdeepCity_Gym_Text_PrestonDefeat:
 # 257 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Clifford::
+	.string "¡Mi fuerza de voluntad ha flaqueado!\n"
 # 258 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_CLIFFORD, MossdeepCity_Gym_Text_CliffordIntro, MossdeepCity_Gym_Text_CliffordDefeat
+	.string "¡Y yo he perdido!$"
 # 259 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_CliffordPostBattle, MSGBOX_AUTOCLOSE
-# 260 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 261 "data/maps/MossdeepCity_Gym/scripts.pory"
 
+# 260 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_Text_PrestonPostBattle:
+# 261 "data/maps/MossdeepCity_Gym/scripts.pory"
+	.string "Los indecisos siempre pierden.\n"
 # 262 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Nicholas::
+	.string "Tenlo en cuenta.$"
 # 263 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_NICHOLAS, MossdeepCity_Gym_Text_NicholasIntro, MossdeepCity_Gym_Text_NicholasDefeat
+
 # 264 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_NicholasPostBattle, MSGBOX_AUTOCLOSE
+MossdeepCity_Gym_Text_VirgilIntro:
 # 265 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	.string "¡Demuéstrame lo que vales!$"
 # 266 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 267 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_Kathleen::
+MossdeepCity_Gym_Text_VirgilDefeat:
 # 268 "data/maps/MossdeepCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_KATHLEEN, MossdeepCity_Gym_Text_KathleenIntro, MossdeepCity_Gym_Text_KathleenDefeat
+	.string "¡Tú sí que vales!$"
 # 269 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_KathleenPostBattle, MSGBOX_AUTOCLOSE
+
 # 270 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+MossdeepCity_Gym_Text_VirgilPostBattle:
 # 271 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "Las maravillas humanas de este mundo\n"
 # 272 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_GymGuide::
+	.string "son los LÍDERES de GIMNASIO.\p"
 # 273 "data/maps/MossdeepCity_Gym/scripts.pory"
-	lock
+	.string "Pero es posible que puedas demostrar\n"
 # 274 "data/maps/MossdeepCity_Gym/scripts.pory"
-	faceplayer
+	.string "que vales incluso más que ellos…$"
 # 275 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_GymGuidePostVictory
+
 # 276 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+MossdeepCity_Gym_Text_BlakeIntro:
 # 277 "data/maps/MossdeepCity_Gym/scripts.pory"
-	release
+	.string "Ommmmm… Mira cómo hago levitar\n"
 # 278 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	.string "una POKé BALL por telequinesia.\p"
 # 279 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "Huy, huy, huy…\n"
 # 280 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_GymGuidePostVictory::
+	.string "¡Aaaaaaaaah!\p"
 # 281 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	.string "Ejem… A veces no controlo muy\n"
 # 282 "data/maps/MossdeepCity_Gym/scripts.pory"
-	release
+	.string "bien mis poderes, je, je, je.$"
 # 283 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+
 # 284 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+MossdeepCity_Gym_Text_BlakeDefeat:
 # 285 "data/maps/MossdeepCity_Gym/scripts.pory"
-@ Leftover from RS, functionally unused
+	.string "¡Vaya, mi POKéMON tampoco controla\n"
 # 286 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Movement_WaitAfterSwitchUse:
+	.string "muy bien sus habilidades de combate!$"
 # 287 "data/maps/MossdeepCity_Gym/scripts.pory"
-	delay_16
+
 # 288 "data/maps/MossdeepCity_Gym/scripts.pory"
-	delay_16
+MossdeepCity_Gym_Text_BlakePostBattle:
 # 289 "data/maps/MossdeepCity_Gym/scripts.pory"
-	step_end
+	.string "La POKé BALL de antes pesaba mucho,\n"
 # 290 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "¡pero ya verás con esta pelusa!\p"
 # 291 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_LeftGymStatue::
+	.string "Ommmmm… \p"
 # 292 "data/maps/MossdeepCity_Gym/scripts.pory"
-	lockall
+	.string "¡Que no! ¡Que no he hecho trampa!\n"
 # 293 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_BADGE07_GET, MossdeepCity_Gym_EventScript_GymStatueCertified
+	.string "¡No he soplado, de verdad! Je, je, je.$"
 # 294 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_GymStatue
+
 # 295 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+MossdeepCity_Gym_Text_HannahIntro:
 # 296 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "Cuando pierdas contra mí, no te\n"
 # 297 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_RightGymStatue::
+	.string "deprimas demasiado…\p"
 # 298 "data/maps/MossdeepCity_Gym/scripts.pory"
-	lockall
+	.string "No es que seas débil, ¡es que YO\n"
 # 299 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto_if_set FLAG_BADGE07_GET, MossdeepCity_Gym_EventScript_GymStatueCertified
+	.string "soy superfuerte!$"
 # 300 "data/maps/MossdeepCity_Gym/scripts.pory"
-	goto MossdeepCity_Gym_EventScript_GymStatue
+
 # 301 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+MossdeepCity_Gym_Text_HannahDefeat:
 # 302 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "Ejem… TÚ eres superfuerte…$"
 # 303 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_GymStatueCertified::
+
 # 304 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
+MossdeepCity_Gym_Text_HannahPostBattle:
 # 305 "data/maps/MossdeepCity_Gym/scripts.pory"
-	releaseall
+	.string "Pero no pienso deprimirme por esta\n"
 # 306 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	.string "derrota, voy a entrenarme más.\p"
 # 307 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "¡Hay que pensar de forma positiva! \n"
 # 308 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_GymStatue::
+	.string "¡Y a mí eso se me da requetebién!$"
 # 309 "data/maps/MossdeepCity_Gym/scripts.pory"
-	msgbox MossdeepCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
-# 310 "data/maps/MossdeepCity_Gym/scripts.pory"
-	releaseall
-# 311 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
-# 312 "data/maps/MossdeepCity_Gym/scripts.pory"
 
+# 310 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_Text_SamanthaIntro:
+# 311 "data/maps/MossdeepCity_Gym/scripts.pory"
+	.string "Puedo verlo…\n"
+# 312 "data/maps/MossdeepCity_Gym/scripts.pory"
+	.string "Puedo verlo claro como el agua…\p"
 # 313 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_YellowFloorSwitch::
+	.string "¿Quién vencerá en este combate?\n"
 # 314 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_SWITCH
+	.string "¡No pienso decírtelo!$"
 # 315 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitse
+
 # 316 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_REPEL
+MossdeepCity_Gym_Text_SamanthaDefeat:
 # 317 "data/maps/MossdeepCity_Gym/scripts.pory"
-	initrotatingtilepuzzle FALSE
+	.string "¡Esto no estaba previsto!$"
 # 318 "data/maps/MossdeepCity_Gym/scripts.pory"
-	moverotatingtileobjects 0
+
 # 319 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+MossdeepCity_Gym_Text_SamanthaPostBattle:
 # 320 "data/maps/MossdeepCity_Gym/scripts.pory"
-	turnrotatingtileobjects
+	.string "Puedo ver que librarás un terrible\n"
 # 321 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+	.string "combate con nuestros LÍDERES…\p"
 # 322 "data/maps/MossdeepCity_Gym/scripts.pory"
-	freerotatingtilepuzzle
+	.string "Y ganará…\n"
 # 323 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	.string "¡No pienso decírtelo!$"
 # 324 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 325 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_BlueFloorSwitch::
+MossdeepCity_Gym_Text_MauraIntro:
 # 326 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_SWITCH
+	.string "Has viajado mucho y has vivido\n"
 # 327 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitse
+	.string "todo tipo de experiencias…\p"
 # 328 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_REPEL
+	.string "¡Enséñame ahora qué es lo que\n"
 # 329 "data/maps/MossdeepCity_Gym/scripts.pory"
-	initrotatingtilepuzzle FALSE
+	.string "has aprendido!$"
 # 330 "data/maps/MossdeepCity_Gym/scripts.pory"
-	moverotatingtileobjects 1
+
 # 331 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+MossdeepCity_Gym_Text_MauraDefeat:
 # 332 "data/maps/MossdeepCity_Gym/scripts.pory"
-	turnrotatingtileobjects
+	.string "¡Has viajado por el camino\n"
 # 333 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+	.string "de los grandes!$"
 # 334 "data/maps/MossdeepCity_Gym/scripts.pory"
-	freerotatingtilepuzzle
+
 # 335 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+MossdeepCity_Gym_Text_MauraPostBattle:
 # 336 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "A aquellos que trabajan duro\n"
 # 337 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_GreenFloorSwitch::
+	.string "les aguarda un futuro brillante.\p"
 # 338 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_SWITCH
+	.string "A aquellos que gandulean sólo\n"
 # 339 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitse
+	.string "les esperan bastantes palos…\p"
 # 340 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_REPEL
+	.string "¡Siempre se recoge lo que se siembra!$"
 # 341 "data/maps/MossdeepCity_Gym/scripts.pory"
-	initrotatingtilepuzzle FALSE
+
 # 342 "data/maps/MossdeepCity_Gym/scripts.pory"
-	moverotatingtileobjects 2
+MossdeepCity_Gym_Text_SylviaIntro:
 # 343 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+	.string "¡Pienso ganar este combate\n"
 # 344 "data/maps/MossdeepCity_Gym/scripts.pory"
-	turnrotatingtileobjects
+	.string "cueste lo que cueste!$"
 # 345 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+
 # 346 "data/maps/MossdeepCity_Gym/scripts.pory"
-	freerotatingtilepuzzle
+MossdeepCity_Gym_Text_SylviaDefeat:
 # 347 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+	.string "Tu forma de luchar…\n"
 # 348 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "es aterradora…$"
 # 349 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_PurpleFloorSwitch::
+
 # 350 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_SWITCH
+MossdeepCity_Gym_Text_SylviaPostBattle:
 # 351 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitse
+	.string "¿Cómo osas derrotarme?\p"
 # 352 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_REPEL
+	.string "No será culpa mía si te ocurre\n"
 # 353 "data/maps/MossdeepCity_Gym/scripts.pory"
-	initrotatingtilepuzzle FALSE
+	.string "algo malo muy pronto…$"
 # 354 "data/maps/MossdeepCity_Gym/scripts.pory"
-	moverotatingtileobjects 3
+
 # 355 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+MossdeepCity_Gym_Text_NateIntro:
 # 356 "data/maps/MossdeepCity_Gym/scripts.pory"
-	turnrotatingtileobjects
+	.string "Jo, jo, jo…\p"
 # 357 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+	.string "Será un placer mostrarte lo tenaz\n"
 # 358 "data/maps/MossdeepCity_Gym/scripts.pory"
-	freerotatingtilepuzzle
+	.string "que puede ser el tipo PSÍQUICO.$"
 # 359 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+
 # 360 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+MossdeepCity_Gym_Text_NateDefeat:
 # 361 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_EventScript_RedFloorSwitch::
+	.string "¡Fantástico! ¡Excepcional!\n"
 # 362 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_SWITCH
+	.string "¡Qué estilo de lucha tan magnífico!$"
 # 363 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitse
+
 # 364 "data/maps/MossdeepCity_Gym/scripts.pory"
-	playse SE_REPEL
+MossdeepCity_Gym_Text_NatePostBattle:
 # 365 "data/maps/MossdeepCity_Gym/scripts.pory"
-	initrotatingtilepuzzle FALSE
+	.string "Yo… nunca me dejo achantar por\n"
 # 366 "data/maps/MossdeepCity_Gym/scripts.pory"
-	moverotatingtileobjects 4
+	.string "la derrota…, aunque sea apabullante.$"
 # 367 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+
 # 368 "data/maps/MossdeepCity_Gym/scripts.pory"
-	turnrotatingtileobjects
+MossdeepCity_Gym_Text_KathleenIntro:
 # 369 "data/maps/MossdeepCity_Gym/scripts.pory"
-	waitmovement 0
+	.string "¡Prepárate para pasar más miedo\n"
 # 370 "data/maps/MossdeepCity_Gym/scripts.pory"
-	freerotatingtilepuzzle
+	.string "que en toda tu vida!$"
 # 371 "data/maps/MossdeepCity_Gym/scripts.pory"
-	end
+
 # 372 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+MossdeepCity_Gym_Text_KathleenDefeat:
 # 373 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_GymGuideAdvice:
+	.string "¡Noooo!$"
 # 374 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Eh, ¿cómo lo llevas, {PLAYER}?\n"
+
 # 375 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¿Camino del CAMPEONATO?\p"
+MossdeepCity_Gym_Text_KathleenPostBattle:
 # 376 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Los LÍDERES de este GIMNASIO usan\n"
+	.string "¡Me has dejado temblando!\n"
 # 377 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "POKéMON de tipo PSÍQUICO.\p"
+	.string "¡Aléjate de mí!$"
 # 378 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Si les atacas con POKéMON de los tipos\n"
+
 # 379 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LUCHA o VENENO, te destrozarán.\p"
+MossdeepCity_Gym_Text_CliffordIntro:
 # 380 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Además, van a combatirte con ataques\n"
+	.string "Puede que ya no sea un pimpollo,\n"
 # 381 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "combinados realmente increíbles.\p"
+	.string "pero aún tengo cuerda para rato.$"
 # 382 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Si quieres ganar, tendrás que mostrar\n"
+
 # 383 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "que estás muy unido a tus POKéMON.\l"
+MossdeepCity_Gym_Text_CliffordDefeat:
 # 384 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Adelante!$"
+	.string "¡Ah, esta juventud!\n"
 # 385 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "¡Siempre avasallando!$"
 # 386 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_GymGuidePostVictory:
+
 # 387 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Guau, eres sorprendente!\n"
+MossdeepCity_Gym_Text_CliffordPostBattle:
 # 388 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Tú sabes cómo luchar!$"
+	.string "Me temo que me he dejado arrollar\n"
 # 389 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "por tu imperiosa juventud.$"
 # 390 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_PrestonIntro:
+
 # 391 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "El resultado del combate depende de tu\n"
+MossdeepCity_Gym_Text_MaceyIntro:
 # 392 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "fuerza de voluntad. ¡Nunca te rindas!$"
+	.string "¡No pasarás!\n"
 # 393 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "¡No, si puedo impedirlo!$"
 # 394 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_PrestonDefeat:
+
 # 395 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Mi fuerza de voluntad ha flaqueado!\n"
+MossdeepCity_Gym_Text_MaceyDefeat:
 # 396 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Y yo he perdido!$"
+	.string "¿A quién quieres impresionar\n"
 # 397 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "con esa demostración de fuerza?$"
 # 398 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_PrestonPostBattle:
+
 # 399 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Los indecisos siempre pierden.\n"
+MossdeepCity_Gym_Text_MaceyPostBattle:
 # 400 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Tenlo en cuenta.$"
+	.string "¡Bah! ¡Serás fuerte, pero no tienes\n"
 # 401 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "cualidades para el tipo PSÍQUICO!\p"
 # 402 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_VirgilIntro:
+	.string "¡Tu manera de luchar es brutal!$"
 # 403 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Demuéstrame lo que vales!$"
-# 404 "data/maps/MossdeepCity_Gym/scripts.pory"
 
+# 404 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_Text_NicholasIntro:
 # 405 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_VirgilDefeat:
+	.string "¡Grrrrr! ¡Vas a probar mi jarabe\n"
 # 406 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Tú sí que vales!$"
+	.string "de POKéMON! ¡Prepárate!$"
 # 407 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 408 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_VirgilPostBattle:
+MossdeepCity_Gym_Text_NicholasDefeat:
 # 409 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Las maravillas humanas de este mundo\n"
+	.string "¡Ah!\n"
 # 410 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "son los LÍDERES de GIMNASIO.\p"
+	.string "¡Se acabó lo que se daba!$"
 # 411 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Pero es posible que puedas demostrar\n"
+
 # 412 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "que vales incluso más que ellos…$"
+MossdeepCity_Gym_Text_NicholasPostBattle:
 # 413 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "La próxima vez ya verás…\n"
 # 414 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_BlakeIntro:
+	.string "¡Te daré jarabe de POKéMON del bueno!$"
 # 415 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Ommmmm… Mira cómo hago levitar\n"
+
 # 416 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "una POKé BALL por telequinesia.\p"
+MossdeepCity_Gym_Text_TateAndLizaIntro:
 # 417 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Huy, huy, huy…\n"
+	.string "VITO: Je, je, je, ¿no lo esperabas?\p"
 # 418 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Aaaaaaaaah!\p"
+	.string "LETI: Ji, ji, ji, ¿no lo esperabas?\p"
 # 419 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Ejem… A veces no controlo muy\n"
+	.string "VITO: ¡Somos dos LÍDERES de GIMNASIO!\n"
 # 420 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "bien mis poderes, je, je, je.$"
+	.string "LETI: ¡Somos dos LÍDERES de GIMNASIO!\p"
 # 421 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "VITO: ¡Somos mellizos!\n"
 # 422 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_BlakeDefeat:
+	.string "LETI: ¡Somos mellizos!\p"
 # 423 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Vaya, mi POKéMON tampoco controla\n"
+	.string "VITO: No necesitamos hablar porque…\n"
 # 424 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "muy bien sus habilidades de combate!$"
+	.string "LETI: los dos siempre sabemos lo que…\p"
 # 425 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "VITO: el otro piensa.\n"
 # 426 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_BlakePostBattle:
+	.string "LETI: ¡Es telepatía!\p"
 # 427 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "La POKé BALL de antes pesaba mucho,\n"
+	.string "VITO: Los dos juntos…\n"
 # 428 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡pero ya verás con esta pelusa!\p"
+	.string "LETI: ¡somos invencibles!$"
 # 429 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Ommmmm… \p"
+
 # 430 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Que no! ¡Que no he hecho trampa!\n"
+MossdeepCity_Gym_Text_TateAndLizaDefeat:
 # 431 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡No he soplado, de verdad! Je, je, je.$"
+	.string "VITO: ¡¿Pe-pero…?! Los dos juntos…\n"
 # 432 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "LETI: ¡nos hemos dejado derrotar!\p"
 # 433 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_HannahIntro:
+	.string "VITO: La vida es así. Has ganado…\n"
 # 434 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Cuando pierdas contra mí, no te\n"
+	.string "LETI: Y también te has ganado esto…$"
 # 435 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "deprimas demasiado…\p"
+
 # 436 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "No es que seas débil, ¡es que YO\n"
+MossdeepCity_Gym_Text_ReceivedMindBadge:
 # 437 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "soy superfuerte!$"
+	.string "{PLAYER} recibió la MEDALLA MENTE\n"
 # 438 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "de LETI y VITO.$"
 # 439 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_HannahDefeat:
+
 # 440 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Ejem… TÚ eres superfuerte…$"
+MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
 # 441 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "VITO: La MEDALLA MENTE mejora el\n"
 # 442 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_HannahPostBattle:
+	.string "AT. ESP. y la DEF. ESP. de los POKéMON.\p"
 # 443 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Pero no pienso deprimirme por esta\n"
+	.string "LETI: También te permite usar la MO\n"
 # 444 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "derrota, voy a entrenarme más.\p"
+	.string "BUCEO fuera del combate.\p"
 # 445 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Hay que pensar de forma positiva! \n"
+	.string "VITO: Toma esto también…$"
 # 446 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Y a mí eso se me da requetebién!$"
+
 # 447 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+MossdeepCity_Gym_Text_ExplainCalmMind:
 # 448 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_SamanthaIntro:
+	.string "VITO: La MT04 contiene…\n"
 # 449 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Puedo verlo…\n"
+	.string "LETI: ¡PAZ MENTAL!\p"
 # 450 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Puedo verlo claro como el agua…\p"
+	.string "VITO: Mejora el AT. ESP. y…\n"
 # 451 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¿Quién vencerá en este combate?\n"
+	.string "LETI: ¡también la DEF. ESP.!\p"
 # 452 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡No pienso decírtelo!$"
+	.string "VITO: Es un movimiento perfecto…\n"
 # 453 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "LETI: ¡para los POKéMON PSÍQUICOS!\p"
 # 454 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_SamanthaDefeat:
+	.string "(…)$"
 # 455 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Esto no estaba previsto!$"
+
 # 456 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+MossdeepCity_Gym_Text_RegisteredTateAndLiza:
 # 457 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_SamanthaPostBattle:
+	.string "Acabas de registrar a VITO y LETI, los \n"
 # 458 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Puedo ver que librarás un terrible\n"
+	.string "LÍDERES de GIMNASIO, en el POKéNAV.$"
 # 459 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "combate con nuestros LÍDERES…\p"
+
 # 460 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Y ganará…\n"
+MossdeepCity_Gym_Text_TateAndLizaPostBattle:
 # 461 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡No pienso decírtelo!$"
+	.string "VITO: Parece que el vínculo que te une\n"
 # 462 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "a tus POKéMON es más fuerte\l"
 # 463 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_MauraIntro:
+	.string "que el que nos une como mellizos.\p"
 # 464 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Has viajado mucho y has vivido\n"
+	.string "LETI: ¡Y te harás todavía más fuerte!\n"
 # 465 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "todo tipo de experiencias…\p"
+	.string "Estamos seguros por cómo combates.$"
 # 466 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Enséñame ahora qué es lo que\n"
+
 # 467 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "has aprendido!$"
+MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons:
 # 468 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "VITO: Je, je, je, ¿no lo esperabas?\p"
 # 469 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_MauraDefeat:
+	.string "LETI: ¡Somos dos LÍDERES de GIMNASIO!\p"
 # 470 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Has viajado por el camino\n"
+	.string "VITO: O-oh, sólo tienes un…\n"
 # 471 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "de los grandes!$"
+	.string "LETI: POKéMON para luchar.\p"
 # 472 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "VITO: ¡Así no se puede!\p"
 # 473 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_MauraPostBattle:
+	.string "LETI: Si quieres desafiarnos,\n"
 # 474 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "A aquellos que trabajan duro\n"
+	.string "trae algún POKéMON más.$"
 # 475 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "les aguarda un futuro brillante.\p"
-# 476 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "A aquellos que gandulean sólo\n"
-# 477 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "les esperan bastantes palos…\p"
-# 478 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Siempre se recoge lo que se siembra!$"
-# 479 "data/maps/MossdeepCity_Gym/scripts.pory"
 
+# 476 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_Text_GymStatue:
+# 477 "data/maps/MossdeepCity_Gym/scripts.pory"
+	.string "GIMNASIO POKéMON de CIUDAD ALGARIA$"
+# 478 "data/maps/MossdeepCity_Gym/scripts.pory"
+
+# 479 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_Text_GymStatueCertified:
 # 480 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_SylviaIntro:
+	.string "GIMNASIO POKéMON de CIUDAD ALGARIA\p"
 # 481 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Pienso ganar este combate\n"
+	.string "NUEVOS ENTRENADORES CERTIFICADOS:\n"
 # 482 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "cueste lo que cueste!$"
+	.string "{PLAYER}$"
 # 483 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 484 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_SylviaDefeat:
+MossdeepCity_Gym_Text_TateAndLizaPreRematch:
 # 485 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Tu forma de luchar…\n"
+	.string "VITO: POKéMON por aquí…\n"
 # 486 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "es aterradora…$"
+	.string "LETI: POKéMON por allá…\p"
 # 487 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "VITO: Cambia la composición del equipo…\n"
 # 488 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_SylviaPostBattle:
+	.string "LETI: y cambiarás tu estilo de lucha.\p"
 # 489 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¿Cómo osas derrotarme?\p"
+	.string "VITO: Pero yo…\n"
 # 490 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "No será culpa mía si te ocurre\n"
+	.string "LETI: Pero yo…\p"
 # 491 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "algo malo muy pronto…$"
+	.string "VITO: ¡siempre estaré con LETI!\n"
 # 492 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "LETI: ¡siempre estaré con VITO!\p"
 # 493 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_NateIntro:
+	.string "VITO: Los dos juntos…\n"
 # 494 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Jo, jo, jo…\p"
+	.string "LETI: ¡somos invencibles!$"
 # 495 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Será un placer mostrarte lo tenaz\n"
+
 # 496 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "que puede ser el tipo PSÍQUICO.$"
+MossdeepCity_Gym_Text_TateAndLizaRematchDefeat:
 # 497 "data/maps/MossdeepCity_Gym/scripts.pory"
-
+	.string "VITO: Tus POKéMON y tú…\n"
 # 498 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_NateDefeat:
+	.string "LETI: ¡estáis muy unidos!$"
 # 499 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Fantástico! ¡Excepcional!\n"
-# 500 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Qué estilo de lucha tan magnífico!$"
-# 501 "data/maps/MossdeepCity_Gym/scripts.pory"
 
+# 500 "data/maps/MossdeepCity_Gym/scripts.pory"
+MossdeepCity_Gym_Text_TateAndLizaPostRematch:
+# 501 "data/maps/MossdeepCity_Gym/scripts.pory"
+	.string "VITO: ¡Podrás derrotarnos,\n"
 # 502 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_NatePostBattle:
+	.string "pero nunca achantarnos!\p"
 # 503 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Yo… nunca me dejo achantar por\n"
+	.string "LETI: ¡Porque nos apoyamos\n"
 # 504 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "la derrota…, aunque sea apabullante.$"
+	.string "y animamos mutuamente!$"
 # 505 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 506 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_KathleenIntro:
-# 507 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Prepárate para pasar más miedo\n"
-# 508 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "que en toda tu vida!$"
-# 509 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 510 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_KathleenDefeat:
-# 511 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Noooo!$"
-# 512 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 513 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_KathleenPostBattle:
-# 514 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Me has dejado temblando!\n"
-# 515 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Aléjate de mí!$"
-# 516 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 517 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_CliffordIntro:
-# 518 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Puede que ya no sea un pimpollo,\n"
-# 519 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "pero aún tengo cuerda para rato.$"
-# 520 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 521 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_CliffordDefeat:
-# 522 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Ah, esta juventud!\n"
-# 523 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Siempre avasallando!$"
-# 524 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 525 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_CliffordPostBattle:
-# 526 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Me temo que me he dejado arrollar\n"
-# 527 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "por tu imperiosa juventud.$"
-# 528 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 529 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_MaceyIntro:
-# 530 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡No pasarás!\n"
-# 531 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡No, si puedo impedirlo!$"
-# 532 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 533 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_MaceyDefeat:
-# 534 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¿A quién quieres impresionar\n"
-# 535 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "con esa demostración de fuerza?$"
-# 536 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 537 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_MaceyPostBattle:
-# 538 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Bah! ¡Serás fuerte, pero no tienes\n"
-# 539 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "cualidades para el tipo PSÍQUICO!\p"
-# 540 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Tu manera de luchar es brutal!$"
-# 541 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 542 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_NicholasIntro:
-# 543 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Grrrrr! ¡Vas a probar mi jarabe\n"
-# 544 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "de POKéMON! ¡Prepárate!$"
-# 545 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 546 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_NicholasDefeat:
-# 547 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Ah!\n"
-# 548 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Se acabó lo que se daba!$"
-# 549 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 550 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_NicholasPostBattle:
-# 551 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "La próxima vez ya verás…\n"
-# 552 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "¡Te daré jarabe de POKéMON del bueno!$"
-# 553 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 554 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_TateAndLizaIntro:
-# 555 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Je, je, je, ¿no lo esperabas?\p"
-# 556 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: Ji, ji, ji, ¿no lo esperabas?\p"
-# 557 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: ¡Somos dos LÍDERES de GIMNASIO!\n"
-# 558 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡Somos dos LÍDERES de GIMNASIO!\p"
-# 559 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: ¡Somos mellizos!\n"
-# 560 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡Somos mellizos!\p"
-# 561 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: No necesitamos hablar porque…\n"
-# 562 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: los dos siempre sabemos lo que…\p"
-# 563 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: el otro piensa.\n"
-# 564 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡Es telepatía!\p"
-# 565 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Los dos juntos…\n"
-# 566 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡somos invencibles!$"
-# 567 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 568 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_TateAndLizaDefeat:
-# 569 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: ¡¿Pe-pero…?! Los dos juntos…\n"
-# 570 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡nos hemos dejado derrotar!\p"
-# 571 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: La vida es así. Has ganado…\n"
-# 572 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: Y también te has ganado esto…$"
-# 573 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 574 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_ReceivedMindBadge:
-# 575 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "{PLAYER} recibió la MEDALLA MENTE\n"
-# 576 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "de LETI y VITO.$"
-# 577 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 578 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
-# 579 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: La MEDALLA MENTE mejora el\n"
-# 580 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "AT. ESP. y la DEF. ESP. de los POKéMON.\p"
-# 581 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: También te permite usar la MO\n"
-# 582 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "BUCEO fuera del combate.\p"
-# 583 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Toma esto también…$"
-# 584 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 585 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_ExplainCalmMind:
-# 586 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: La MT04 contiene…\n"
-# 587 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡PAZ MENTAL!\p"
-# 588 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Mejora el AT. ESP. y…\n"
-# 589 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡también la DEF. ESP.!\p"
-# 590 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Es un movimiento perfecto…\n"
-# 591 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡para los POKéMON PSÍQUICOS!\p"
-# 592 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "(…)$"
-# 593 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 594 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_RegisteredTateAndLiza:
-# 595 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Acabas de registrar a VITO y LETI, los \n"
-# 596 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LÍDERES de GIMNASIO, en el POKéNAV.$"
-# 597 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 598 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_TateAndLizaPostBattle:
-# 599 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Parece que el vínculo que te une\n"
-# 600 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "a tus POKéMON es más fuerte\l"
-# 601 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "que el que nos une como mellizos.\p"
-# 602 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡Y te harás todavía más fuerte!\n"
-# 603 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "Estamos seguros por cómo combates.$"
-# 604 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 605 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons:
-# 606 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Je, je, je, ¿no lo esperabas?\p"
-# 607 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡Somos dos LÍDERES de GIMNASIO!\p"
-# 608 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: O-oh, sólo tienes un…\n"
-# 609 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: POKéMON para luchar.\p"
-# 610 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: ¡Así no se puede!\p"
-# 611 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: Si quieres desafiarnos,\n"
-# 612 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "trae algún POKéMON más.$"
-# 613 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 614 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_GymStatue:
-# 615 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "GIMNASIO POKéMON de CIUDAD ALGARIA$"
-# 616 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 617 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_GymStatueCertified:
-# 618 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "GIMNASIO POKéMON de CIUDAD ALGARIA\p"
-# 619 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "NUEVOS ENTRENADORES CERTIFICADOS:\n"
-# 620 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "{PLAYER}$"
-# 621 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 622 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_TateAndLizaPreRematch:
-# 623 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: POKéMON por aquí…\n"
-# 624 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: POKéMON por allá…\p"
-# 625 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Cambia la composición del equipo…\n"
-# 626 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: y cambiarás tu estilo de lucha.\p"
-# 627 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Pero yo…\n"
-# 628 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: Pero yo…\p"
-# 629 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: ¡siempre estaré con LETI!\n"
-# 630 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡siempre estaré con VITO!\p"
-# 631 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Los dos juntos…\n"
-# 632 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡somos invencibles!$"
-# 633 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 634 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_TateAndLizaRematchDefeat:
-# 635 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: Tus POKéMON y tú…\n"
-# 636 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡estáis muy unidos!$"
-# 637 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 638 "data/maps/MossdeepCity_Gym/scripts.pory"
-MossdeepCity_Gym_Text_TateAndLizaPostRematch:
-# 639 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "VITO: ¡Podrás derrotarnos,\n"
-# 640 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "pero nunca achantarnos!\p"
-# 641 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LETI: ¡Porque nos apoyamos\n"
-# 642 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "y animamos mutuamente!$"
-# 643 "data/maps/MossdeepCity_Gym/scripts.pory"
-
-# 644 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
-# 645 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 507 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "VITO: Así que has vuelto…\n"
-# 646 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 508 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "LETI: Ya sabemos por qué…\p"
-# 647 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 509 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "VITO: Quieres luchar con nosotros.\n"
-# 648 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 510 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "LETI: No lo niegues.\p"
-# 649 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 511 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "VITO: Pero…,\n"
-# 650 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 512 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "LETI: si quieres pelea…,\p"
-# 651 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 513 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "VITO: ¡no basta con un POKéMON!\n"
-# 652 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 514 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "LETI: ¡Y sólo tienes uno!\p"
-# 653 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 515 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "VITO: Necesitas…\n"
-# 654 "data/maps/MossdeepCity_Gym/scripts.pory"
+# 516 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "LETI: al menos dos POKéMON.$"

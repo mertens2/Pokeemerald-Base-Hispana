@@ -1,7 +1,7 @@
 # 1 "data/maps/NewMap1/scripts.pory"
 
 # 2 "data/maps/NewMap1/scripts.pory"
-@ .set LOCALID_ATTENDANT, 1
+.set LOCALID_ATTENDANT, 1
 # 3 "data/maps/NewMap1/scripts.pory"
 
 # 4 "data/maps/NewMap1/scripts.pory"

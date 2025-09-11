@@ -259,6 +259,8 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_SHOWMONPICSHINY 				ScrCmd_showmonpicshiny,             requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_SETMONMOVEVAR					ScrCmd_setmonmovevar,               requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_SETGETOBJECTFLAGS				ScrCmd_setgetobjectflags,           requests_effects=1  @ 0xe5
+	script_cmd_table_entry SCR_OP_CHECKPARTYMOVE				ScrCmd_checkpartymove,              requests_effects=1  @ 0xe5
+	
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::

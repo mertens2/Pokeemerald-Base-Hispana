@@ -2605,6 +2605,13 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 }.combinedValue;
             }
             break;
+		case MON_DATA_SPECIES_OR_EGG:
+            retVal = boxMon->species;
+            if (retVal && boxMon->isEgg)
+                retVal = SPECIES_EGG;
+            break;
+
+		break;
 		default:
 			break;
     }

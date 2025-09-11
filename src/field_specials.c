@@ -4673,11 +4673,12 @@ u16 CheckForMetatiles(u16 x, u16 y, u16 metatileA) {
 	return FALSE;
 }
 
-// u16 SetHourMinutes(void) {
-	// RtcCalcLocalTime();
-	// gSpecialVar_0x8005 = Rtc_GetCurrentHour();
-	// gSpecialVar_0x8006 = Rtc_GetCurrentMinute();
-// }
+u16 SetHourMinutes(void) {
+	RtcCalcLocalTime();
+	gSpecialVar_0x8005 = Rtc_GetCurrentHour();
+	gSpecialVar_0x8006 = Rtc_GetCurrentMinute();
+	return FALSE;
+}
 
 bool8 CheckForRegielekiPuzzle(void) {
 	// if ((MapGridGetMetatileIdAt(5, 11) == METATILE_MirageTower_CoveredTile)  && (MapGridGetMetatileIdAt(5, 12) == METATILE_MirageTower_CoveredTile) && 

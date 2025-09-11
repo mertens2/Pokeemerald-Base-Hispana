@@ -10,6 +10,41 @@ text gText_ObtainedTheItem {
 	}
 }
 
+text gText_ObtainedTheItems {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Obtuviste una unidad de\n{STR_VAR_2}!")
+		}
+		EN {
+			
+			format("Obtained the {STR_VAR_2}!")
+		}
+	}
+}
+text gText_PlayerFoundItems {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Encontraste una unidad de\n{STR_VAR_2}!")
+		}
+		EN {
+			
+			format("Found the {STR_VAR_2}!")
+		}
+	}
+}
+
+text gText_PlayerFoundItem {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Encontraste una unidad de\n{STR_VAR_2}!")
+		}
+		EN {
+			
+			format("Found the {STR_VAR_2}!")
+		}
+	}
+}
+
 text gText_TheBagIsFull {
 	poryswitch(LANGUAGE){
 		ES {

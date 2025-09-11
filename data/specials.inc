@@ -590,3 +590,4 @@ gSpecials::
 	def_special SetCafeTrainersToday
 	def_special DoCafeTrainerBattle
 	def_special GetCafeTrainersAfterBattleData
+	def_special SetHourMinutes

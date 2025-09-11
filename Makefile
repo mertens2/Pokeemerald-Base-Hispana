@@ -382,13 +382,13 @@ generated: $(AUTO_GEN_TARGETS)
 
 LANG ?= ES
 
-ifeq ($(LANG),ES)
-override CPPFLAGS += -D GAME_LANGUAGE=LANGUAGE_SPANISH
-data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -s LANGUAGE=ES -fc tools/poryscript/font_config.json -cc tools/poryscript/command_config.json
 
-else
+ifeq ($(LANG),EN)
 override CPPFLAGS += -D GAME_LANGUAGE=LANGUAGE_ENGLISH
 data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -s LANGUAGE=EN -fc tools/poryscript/font_config.json -cc tools/poryscript/command_config.json
+else
+override CPPFLAGS += -D GAME_LANGUAGE=LANGUAGE_SPANISH
+data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -s LANGUAGE=ES -fc tools/poryscript/font_config.json -cc tools/poryscript/command_config.json
 
 endif
 

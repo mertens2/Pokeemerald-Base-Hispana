@@ -1,495 +1,387 @@
-# 1 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 2 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_MapScripts::
-# 3 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_MaysHouse_1F_OnLoad
-# 4 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_MaysHouse_1F_OnTransition
-# 5 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_MaysHouse_1F_OnFrame
-# 6 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.byte 0
-# 7 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 8 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_OnLoad:
-# 9 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes
-# 10 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual
-# 11 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
-# 12 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 13 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes::
-# 14 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
-# 15 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
-# 16 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 17 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 18 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual::
-# 19 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	checkplayergender
-# 20 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual
-# 21 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 22 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 23 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual::
-# 24 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setmetatile 6, 7, METATILE_BrendansMaysHouse_BookOnTable, TRUE
-# 25 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 26 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 27 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_OnTransition:
-# 28 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor
-# 29 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
-# 30 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV
-# 31 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
-# 32 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 33 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs::
-# 34 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 2, 4
-# 35 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-# 36 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 37 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 38 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV::
-# 39 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 6, 5
-# 40 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-# 41 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 42 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 43 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
-# 44 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 1, 8
-# 45 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-# 46 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 47 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 48 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-@ Many of the below scripts have no gender check because they assume youre in the correct house
-# 49 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_OnFrame:
-# 50 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
-# 51 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
-# 52 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
-# 53 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
-# 54 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 # 55 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.2byte 0
+
 # 56 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+.set LOCALID_MOM, 1
 # 57 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock::
+.set LOCALID_RIVAL_MOM, 4
 # 58 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
+.set LOCALID_RIVAL, 7
 # 59 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
+
 # 60 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	closemessage
+LittlerootTown_MaysHouse_1F_MapScripts::
 # 61 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
+	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_MaysHouse_1F_OnLoad
 # 62 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
+	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_MaysHouse_1F_OnTransition
 # 63 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_MaysHouse_1F_OnFrame
 # 64 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	warp MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F, 1, 1
+	.byte 0
 # 65 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitstate
+
 # 66 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	releaseall
+LittlerootTown_MaysHouse_1F_OnLoad:
 # 67 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
+	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes
 # 68 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual
 # 69 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs:
+	end
 # 70 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
+
 # 71 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
+LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes::
 # 72 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
 # 73 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
+	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
 # 74 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
+	return
 # 75 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
+
 # 76 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8005, FEMALE
+LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual::
 # 77 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
+	checkplayergender
 # 78 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual
 # 79 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	return
 # 80 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport::
+
 # 81 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
+LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual::
 # 82 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8004, FEMALE
+	setmetatile 6, 7, METATILE_BrendansMaysHouse_BookOnTable, TRUE
 # 83 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM
+	return
 # 84 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto PlayersHouse_1F_EventScript_PetalburgGymReportFemale
+
 # 85 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
+LittlerootTown_MaysHouse_1F_OnTransition:
 # 86 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor
 # 87 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
 # 88 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV
 # 89 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playse SE_PIN
+	end
 # 90 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_ExclamationMark
+
 # 91 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
+LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs::
 # 92 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_Delay48
+	setobjectxyperm LOCALID_MOM, 2, 4
 # 93 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
+	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
 # 94 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	return
 # 95 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
+
 # 96 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
+LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV::
 # 97 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	special GetRivalSonDaughterString
+	setobjectxyperm LOCALID_MOM, 6, 5
 # 98 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalsHouse_1F_Text_OhYoureTheNewNeighbor, MSGBOX_DEFAULT
+	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
 # 99 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setflag FLAG_MET_RIVAL_MOM
+	return
 # 100 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
+
 # 101 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	releaseall
+LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
 # 102 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
+	setobjectxyperm LOCALID_MOM, 1, 8
 # 103 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
 # 104 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
+	return
 # 105 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_down
+
 # 106 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
+@ Many of the below scripts have no gender check because they assume youre in the correct house
 # 107 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
+LittlerootTown_MaysHouse_1F_OnFrame:
 # 108 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
 # 109 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
 # 110 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
 # 111 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
+	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
 # 112 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 # 113 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_EventScript_RivalMom::
+	.2byte 0
 # 114 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lock
+
 # 115 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	faceplayer
+LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock::
 # 116 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
+	lockall
 # 117 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
+	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 # 118 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
+	closemessage
 # 119 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	special GetRivalSonDaughterString
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
 # 120 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
+	applymovement LOCALID_MOM, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
 # 121 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	release
-# 122 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
-# 123 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 124 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_EventScript_RivalTooBusy::
-# 125 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalsHouse_1F_Text_TooBusyToNoticeVisit, MSGBOX_DEFAULT
-# 126 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	release
-# 127 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
-# 128 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 129 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_EventScript_RivalIsOnRoute103::
-# 130 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalsHouse_1F_Text_WentOutToRoute103, MSGBOX_DEFAULT
-# 131 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	release
-# 132 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
-# 133 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 134 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_EventScript_GoHomeEverySoOften::
-# 135 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalsHouse_1F_Text_ShouldGoHomeEverySoOften, MSGBOX_DEFAULT
-# 136 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	release
-# 137 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
-# 138 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 139 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_EventScript_RivalSibling::
-# 140 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lock
-# 141 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	faceplayer
-# 142 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	special GetPlayerBigGuyGirlString
-# 143 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalsHouse_1F_Text_DoYouHavePokemon, MSGBOX_DEFAULT
-# 144 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	release
-# 145 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
-# 146 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 147 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom::
-# 148 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
-# 149 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
-# 150 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8005, FEMALE
-# 151 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterRight
-# 152 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	waitmovement 0
+# 122 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	warp MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F, 1, 1
+# 123 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	waitstate
+# 124 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	releaseall
+# 125 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	end
+# 126 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 127 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs:
+# 128 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_up
+# 129 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	step_end
+# 130 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 131 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
+# 132 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 133 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_0x8004, LOCALID_MOM
+# 134 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_0x8005, FEMALE
+# 135 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
+# 136 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	end
+# 137 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 138 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport::
+# 139 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 140 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_0x8004, FEMALE
+# 141 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_0x8005, LOCALID_MOM
+# 142 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	goto PlayersHouse_1F_EventScript_PetalburgGymReportFemale
+# 143 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	end
+# 144 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 145 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
+# 146 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 147 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	playse SE_PIN
+# 148 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	applymovement LOCALID_RIVAL_MOM, Common_Movement_ExclamationMark
+# 149 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	waitmovement 0
+# 150 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	applymovement LOCALID_RIVAL_MOM, Common_Movement_Delay48
+# 151 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	waitmovement 0
+# 152 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 # 153 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto PlayersHouse_1F_EventScript_MomGoSeeRoom
+	applymovement LOCALID_RIVAL_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
 # 154 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
+	waitmovement 0
 # 155 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	namebox Marta
 # 156 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MeetRival0::
+	setvar VAR_LAST_TALKED, LOCALID_RIVAL
 # 157 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
+	call EventScript_YoureNewNeighbor_Translated
 # 158 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8008, 0
+	setflag FLAG_MET_RIVAL_MOM
 # 159 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto LittlerootTown_MaysHouse_1F_EventScript_MeetRival
+	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
 # 160 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
+	closemessage
 # 161 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	hidenamebox
 # 162 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MeetRival1::
+	releaseall
 # 163 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
+	end
 # 164 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8008, 1
-# 165 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto LittlerootTown_MaysHouse_1F_EventScript_MeetRival
-# 166 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
-# 167 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
+# 165 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
+# 166 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_down
+# 167 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_left
 # 168 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MeetRival2::
+	walk_left
 # 169 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	lockall
+	walk_left
 # 170 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_0x8008, 2
+	walk_left
 # 171 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	goto LittlerootTown_MaysHouse_1F_EventScript_MeetRival
+	walk_left
 # 172 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	end
+	step_end
 # 173 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 174 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
+RivalsHouse_1F_EventScript_RivalMom::
 # 175 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playse SE_EXIT
+	lock
 # 176 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay 10
+	faceplayer
 # 177 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	addobject LOCALID_RIVALS_HOUSE_1F_RIVAL
+	namebox Marta
 # 178 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay 30
+	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
 # 179 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playse SE_PIN
+	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
 # 180 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_ExclamationMark
+	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
 # 181 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
+	special GetRivalSonDaughterString
 # 182 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_Delay48
+	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
 # 183 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
+	hidenamebox
 # 184 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_ne VAR_0x8008, 1, LittlerootTown_MaysHouse_1F_EventScript_PlayerFaceMay
+	release
 # 185 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAY, TRUE
-# 186 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_0x8008, 0, LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer0
-# 187 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_0x8008, 1, LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer1
-# 188 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_0x8008, 2, LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer2
-# 189 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	msgbox RivalsHouse_1F_Text_MayWhoAreYou, MSGBOX_DEFAULT
-# 190 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	closemessage
-# 191 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_0x8008, 0, LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs0
-# 192 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_0x8008, 1, LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs1
-# 193 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	call_if_eq VAR_0x8008, 2, LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs2
-# 194 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	playse SE_EXIT
-# 195 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	removeobject LOCALID_RIVALS_HOUSE_1F_RIVAL
-# 196 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY
-# 197 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL
-# 198 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
-# 199 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay 30
-# 200 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
-# 201 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	setvar VAR_LITTLEROOT_TOWN_STATE, 1
-# 202 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	savebgm MUS_DUMMY
-# 203 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	fadedefaultbgm
-# 204 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	releaseall
-# 205 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	end
+# 186 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 187 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+RivalsHouse_1F_EventScript_RivalTooBusy::
+# 188 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalsHouse_1F_Text_TooBusyToNoticeVisit, MSGBOX_DEFAULT
+# 189 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	hidenamebox
+# 190 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	release
+# 191 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	end
+# 192 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 193 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+RivalsHouse_1F_EventScript_RivalIsOnRoute103::
+# 194 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalsHouse_1F_Text_WentOutToRoute103, MSGBOX_DEFAULT
+# 195 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	hidenamebox
+# 196 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	release
+# 197 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	end
+# 198 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 199 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+RivalsHouse_1F_EventScript_GoHomeEverySoOften::
+# 200 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	msgbox RivalsHouse_1F_Text_ShouldGoHomeEverySoOften, MSGBOX_DEFAULT
+# 201 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	hidenamebox
+# 202 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	release
+# 203 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	end
+# 204 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 205 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+RivalsHouse_1F_EventScript_RivalSibling::
 # 206 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	lock
 # 207 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_PlayerFaceMay::
+	faceplayer
 # 208 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	special GetPlayerBigGuyGirlString
 # 209 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
+	msgbox RivalsHouse_1F_Text_DoYouHavePokemon, MSGBOX_DEFAULT
 # 210 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
+	release
 # 211 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	end
 # 212 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer0::
-# 213 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer0
-# 214 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
-# 215 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 216 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
+# 213 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom::
+# 214 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	lockall
+# 215 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_0x8004, LOCALID_MOM
+# 216 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	setvar VAR_0x8005, FEMALE
 # 217 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer1::
+	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterRight
 # 218 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer1
-# 219 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	waitmovement 0
+# 219 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	goto PlayersHouse_1F_EventScript_MomGoSeeRoom
 # 220 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
+	end
 # 221 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 222 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer2::
+
 # 223 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer2
+LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer:
 # 224 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
+	walk_in_place_faster_right
 # 225 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
+	step_end
 # 226 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 
 # 227 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer0:
+LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs::
 # 228 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_left
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit
 # 229 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
+	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs
 # 230 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_up
+	waitmovement 0
 # 231 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
+	return
 # 232 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
+
 # 233 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
+
 # 234 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
+LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit:
 # 235 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
+	delay_16
 # 236 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
+	delay_8
 # 237 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer1:
-# 238 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 239 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 240 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 241 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
-# 242 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 243 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer2:
-# 244 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_in_place_faster_right
+# 238 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	step_end
+# 239 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 240 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+
+# 241 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs:
+# 242 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_in_place_faster_up
+# 243 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_up
+# 244 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	walk_up
 # 245 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_right
 # 246 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_up
+	walk_up
 # 247 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_up
 # 248 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -497,312 +389,48 @@ LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer2:
 # 249 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	walk_up
 # 250 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
+	step_end
 # 251 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
+
 # 252 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 253 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs0::
-# 254 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit0
-# 255 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs0
-# 256 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
-# 257 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 258 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 259 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs1::
-# 260 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit1
-# 261 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs1
-# 262 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
-# 263 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 264 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 265 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs2::
-# 266 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit2
-# 267 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs2
-# 268 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	waitmovement 0
-# 269 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	return
-# 270 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 271 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit0:
-# 272 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay_16
-# 273 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay_8
-# 274 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_right
-# 275 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
-# 276 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 277 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit1:
-# 278 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay_16
-# 279 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay_8
-# 280 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_right
-# 281 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay_16
-# 282 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay_16
-# 283 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_up
-# 284 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
-# 285 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 286 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit2:
-# 287 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay_16
-# 288 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	delay_8
-# 289 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_left
-# 290 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
-# 291 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 292 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs0:
-# 293 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_right
-# 294 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_right
-# 295 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_up
-# 296 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 297 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 298 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
-# 299 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 300 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs1:
-# 301 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_right
-# 302 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_right
-# 303 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_up
-# 304 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 305 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 306 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_left
-# 307 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-# 308 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_up
-# 309 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 310 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
-# 311 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 312 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs2:
-# 313 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_left
-# 314 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_left
-# 315 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_in_place_faster_up
-# 316 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 317 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	walk_up
-# 318 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	step_end
-# 319 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 320 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
-# 321 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Hola. ¿Quién eres tú?\p"
-# 322 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ah…\n"
-# 323 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ya…\p"
-# 324 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Tú eres {PLAYER}{KUN} y te acabas\n"
-# 325 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "de mudar aquí al lado! ¿Qué tal?\p"
-# 326 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Nuestro {STR_VAR_1} tiene más\n"
-# 327 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "o menos tu edad.\p"
-# 328 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Se ha emocionado tantísimo cuando\n"
-# 329 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "ha sabido que venías a vivir aquí…\p"
-# 330 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ahora está arriba, creo.$"
-# 331 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 332 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_Text_LikeChildLikeFather:
-# 333 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "De tal padre, tal retoño.\p"
-# 334 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Mi marido está igual de entusiasmado\n"
-# 335 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "por los POKéMON que nuestro retoño!\p"
-# 336 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Cuando no está en su LABORATORIO,\n"
-# 337 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "anda perdido entre las hierbas altas.$"
-# 338 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 339 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_Text_TooBusyToNoticeVisit:
-# 340 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Ay! ¡{RIVAL}!\p"
-# 341 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Estos niños están tan ocupados\n"
-# 342 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "con sus POKéMON que no se acuerdan\l"
-# 343 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "de venir a ver a sus padres, {PLAYER}{KUN}!$"
-# 344 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 345 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_Text_WentOutToRoute103:
-# 346 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Oh, {RIVAL} ha ido a la RUTA 103.\p"
-# 347 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "De tal palo, tal astilla.\n"
-# 348 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "{RIVAL} es incapaz de quedarse\l"
-# 349 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "en casa sin hacer nada.$"
-# 350 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-
-# 351 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
-# 352 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Creo que viajar con POKéMON\n"
-# 353 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "es de lo mejor que hay.\p"
-# 354 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Pero deberías ir a casa alguna vez\n"
-# 355 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "a decir a tu madre que estás bien…\p"
-# 356 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Puede que ella no te lo diga, pero\n"
-# 357 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "estará preocupada por ti, {PLAYER}{KUN}.$"
-# 358 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+# 253 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "Es INCREÍBLE que la gente viaje\n"
+# 254 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "con Pokémon, pero JAMÁS deberían\l"
+# 255 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "olvidarse de sus familias, {PLAYER}.\l"
+# 256 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "Tu padre y mi esposo lo hicieron cuando\l"
+# 257 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "salieron de viaje, y ahora APENAS\l"
+# 258 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "pueden concentrarse en sus esposas e\l"
+# 259 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "hijos…\p"
+# 260 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "Pero bueno…$"
 
-# 359 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_Text_MayWhoAreYou:
-# 360 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¿Eh?\n"
-# 361 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¿Quién…? ¿Quién eres tú?\p"
-# 362 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ah…\n"
-# 363 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ya…\p"
-# 364 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Eres {PLAYER}{KUN}.\n"
-# 365 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Y te acabas de mudar.\p"
-# 366 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Mmm… Yo me llamo AURA.\n"
-# 367 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Encantada!\p"
-# 368 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Yo…\n"
-# 369 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "sueño con hacerme amiga de miles\l"
-# 370 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "de POKéMON de todo el mundo.\p"
-# 371 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "He… oído algo sobre ti, {PLAYER}{KUN}.\n"
-# 372 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Me lo ha dicho mi padre, el PROF. ABEDUL.\p"
-# 373 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Tenía muchas ganas de que nos\n"
-# 374 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "cayéramos bien e hiciéramos amistad.\p"
-# 375 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Qué tontería, ¿no?\n"
-# 376 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Si acabo de conocerte, {PLAYER}{KUN}…\p"
-# 377 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ji, ji, ji…\p"
-# 378 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Ahí va! ¡Se me había olvidado!\p"
-# 379 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Tenía que ir a ayudar a mi padre\n"
-# 380 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "a atrapar POKéMON salvajes!\p"
-# 381 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡{PLAYER}{KUN}, nos vemos luego!$"
-# 382 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+RivalsHouse_1F_Text_LikeChildLikeFather::
+# 2 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "My husband's… UGH…\n"
+	.string "He's likely out, studying\l"
+	.string "some other big stupid thing…\p"
+	.string "What a guy, huh…?$"
 
-# 383 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_Text_BrendanWhoAreYou:
-# 384 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¿Eh?\n"
-# 385 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¿Tú…?\p"
-# 386 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¿Quién eres tú?\p"
-# 387 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ya… Eres {PLAYER}, ¿no?\n"
-# 388 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Y te acabas de mudar, ¿verdad?\p"
-# 389 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Y mi padre, el PROF. ABEDUL,\n"
-# 390 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "me ha dicho que tu padre es un\l"
-# 391 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "LÍDER de GIMNASIO, ¿cierto?\p"
-# 392 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Yo me llamo BRUNO.\n"
-# 393 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Hola, vecina!\p"
-# 394 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¿Y eso? {PLAYER}, ¿no tienes\n"
-# 395 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "ningún POKéMON?\p"
-# 396 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¿Quieres que atrape uno para ti?\p"
-# 397 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Ahí va! ¡Se me había olvidado!\p"
-# 398 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Tengo que ir a ayudar a mi padre\n"
-# 399 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "a atrapar POKéMON salvajes…\p"
-# 400 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Bueno, pues otro día, ¿vale?$"
-# 401 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+RivalsHouse_1F_Text_TooBusyToNoticeVisit::
+# 19 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "Ah, my {RIVAL}, they must be in their\n"
+	.string "room.$"
 
-# 402 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-RivalsHouse_1F_Text_DoYouHavePokemon:
-# 403 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¡Anda, hola!\p"
-# 404 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "¿Ya tienes tu propio POKéMON?$"
+RivalsHouse_1F_Text_WentOutToRoute103::
+# 30 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "Ah, my {RIVAL}, they're at Route\n"
+	.string "103.\p"
+	.string "They worry me, {PLAYER}, last time\n"
+	.string "they stayed investigating till they\l"
+	.string "passed out.$"
+
+RivalsHouse_1F_Text_DoYouHavePokemon::
+# 43 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
+	.string "I no shpeek english!$"

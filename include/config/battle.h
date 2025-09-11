@@ -42,7 +42,7 @@
 #define B_GHOSTS_ESCAPE             GEN_LATEST // En Gen6+, habilidades como Shadow Tag o movimientos como Mean Look fallan contra Pokémon de tipo Fantasma. También pueden escapar de cualquier Batalla Silvestre.
 #define B_PARALYZE_ELECTRIC         GEN_LATEST // En Gen6+, los Pokémon de tipo Eléctrico no pueden ser paralizados.
 #define B_POWDER_GRASS              GEN_LATEST // En Gen6+, los Pokémon de tipo Planta son inmunes a los movimientos de polvo y esporas.
-#define B_UPDATED_TYPE_MATCHUPS     GEN_LATEST // Actualiza las interacciones de tipos. Consulta src/data/types_info.h para detalles.
+#define B_UPDATED_TYPE_MATCHUPS     GEN_CUSTOM // Actualiza las interacciones de tipos. Consulta src/data/types_info.h para detalles. GEN_CUSTOM activa las modificaciones introducidas en Pokémon Bismuto.
 #define B_PRANKSTER_DARK_TYPES      GEN_LATEST // En Gen7+, los movimientos de estado elevados por Prankster no afectan a Pokémon de tipo Sombra.
 #define B_SHEER_COLD_IMMUNITY       GEN_LATEST // En Gen7+, los Pokémon de tipo Hielo son inmunes a Sheer Cold.
 #define B_ROOST_PURE_FLYING         GEN_LATEST // En Gen5+, Roost convierte a los tipos de tipo Volador puros en tipo Normal.
@@ -206,18 +206,18 @@
 #define B_FLAG_BADGE_BOOST_SPDEF    FLAG_BADGE07_GET // Si esta flag está activada y B_BADGE_BOOST == GEN_3, se multiplicará la Defensa Especial del Pokémon por 1,1.
 
 // Otras flags de batalla
-#define B_FLAG_INVERSE_BATTLE       0     // Si esta flag está activada, la efectividad de los tipos en la batalla se invierte. Por ejemplo, fuego es super efectivo contra agua.
-#define B_FLAG_FORCE_DOUBLE_WILD    0     // Si esta flag está activada, todas las batallas salvajes en tierra y en surf serán batallas dobles.
-#define B_SMART_WILD_AI_FLAG        0     // Si no es 0, puedes configurar esta flag en un script para habilitar la IA inteligente de Pokémon salvajes.
-#define B_FLAG_NO_BAG_USE           0     // Si esta flag está activada, la capacidad de usar la bolsa en batalla está desactivada.
-#define B_FLAG_NO_CATCHING          0     // Si esta flag está activada, la capacidad de capturar Pokémon salvajes está desactivada.
-#define B_FLAG_NO_RUNNING           0     // Si esta flag está activada, no se puede escapar de batallas salvajes. Además, hace que Rugido/Torbellino y Teletransporte (con el config en menos de 8ª Gen) fallen.
-#define B_FLAG_AI_VS_AI_BATTLE      0     // Si esta flag está activada, los Pokémon del jugador serán controlados por la IA en las siguientes batallas.
-#define B_FLAG_DYNAMAX_BATTLE       0     // Si esta flag está activada, la habilidad de Dynamax en batalla está habilitada para todos los entrenadores.
-#define B_FLAG_TERA_ORB_CHARGED     0     // Si esta flag está activada, el Tera Orb está cargado. Se activa automáticamente al curar y se borra al Terastalizar una vez configurado.
-#define B_FLAG_TERA_ORB_NO_COST     0     // Si esta flag está activada, el Tera Orb no usa su carga al Terastalizar. En S/V, esto ocurre después de un evento con Terapagos.
-#define B_FLAG_SLEEP_CLAUSE         0     // Si esta flag está activada, clausula de sueño está activada; si el jugador o la IA ha puesto a dormir ya a algún Pokémon, no puede dormir más. IA requiere AI_FLAG_CHECK_BAD_MOVE para entenderlo.
-#define B_FLAG_NO_WHITEOUT          0     // Si esta flag está activada, el jugador no puede perder contra entrenadores. Ten en cuenta que esto no cura a tu equipo automáticamente.
+#define B_FLAG_INVERSE_BATTLE       0     				// Si esta flag está activada, la efectividad de los tipos en la batalla se invierte. Por ejemplo, fuego es super efectivo contra agua.
+#define B_FLAG_FORCE_DOUBLE_WILD    0     				// Si esta flag está activada, todas las batallas salvajes en tierra y en surf serán batallas dobles.
+#define B_SMART_WILD_AI_FLAG        FLAG_SMART_WILDS    // Si no es 0, puedes configurar esta flag en un script para habilitar la IA inteligente de Pokémon salvajes.
+#define B_FLAG_NO_BAG_USE           FLAG_NO_BAG_USE     // Si esta flag está activada, la capacidad de usar la bolsa en batalla está desactivada.
+#define B_FLAG_NO_CATCHING          FLAG_NO_CATCHING    // Si esta flag está activada, la capacidad de capturar Pokémon salvajes está desactivada.
+#define B_FLAG_NO_RUNNING           0     				// Si esta flag está activada, no se puede escapar de batallas salvajes. Además, hace que Rugido/Torbellino y Teletransporte (con el config en menos de 8ª Gen) fallen.
+#define B_FLAG_AI_VS_AI_BATTLE      0     				// Si esta flag está activada, los Pokémon del jugador serán controlados por la IA en las siguientes batallas.
+#define B_FLAG_DYNAMAX_BATTLE       0    				// Si esta flag está activada, la habilidad de Dynamax en batalla está habilitada para todos los entrenadores.
+#define B_FLAG_TERA_ORB_CHARGED     0     				// Si esta flag está activada, el Tera Orb está cargado. Se activa automáticamente al curar y se borra al Terastalizar una vez configurado.
+#define B_FLAG_TERA_ORB_NO_COST     0     				// Si esta flag está activada, el Tera Orb no usa su carga al Terastalizar. En S/V, esto ocurre después de un evento con Terapagos.
+#define B_FLAG_SLEEP_CLAUSE         FLAG_SLEEP_CLAUSE   // Si esta flag está activada, clausula de sueño está activada; si el jugador o la IA ha puesto a dormir ya a algún Pokémon, no puede dormir más. IA requiere AI_FLAG_CHECK_BAD_MOVE para entenderlo.
+#define B_FLAG_NO_WHITEOUT          FLAG_NO_WHITEOUT    // Si esta flag está activada, el jugador no puede perder contra entrenadores. Ten en cuenta que esto no cura a tu equipo automáticamente.
 
 // Configuración de variables
 // Para usar las siguientes características en scripting, reemplaza los 0s con el ID de la variable que le asignas.
@@ -265,20 +265,20 @@
 #define B_SECRET_POWER_ANIMATION    GEN_LATEST // Las animaciones de Daño secreto cambian según el terreno y la generación.
 #define B_NATURE_POWER_MOVES        GEN_LATEST // Adaptación llama a diferentes movimientos según el terreno y la generación. Consulta sNaturePowerMoves.
 #define B_CAMOUFLAGE_TYPES          GEN_LATEST // Camuflaje cambia al usuario a diferentes tipos según el terreno y la generación. Consulta sTerrainToType.
-#define B_NEW_TERRAIN_BACKGROUNDS   FALSE      // Si está habilitado, usa nuevos fondos para los Campos.
+#define B_NEW_TERRAIN_BACKGROUNDS   TRUE       // Si está habilitado, usa nuevos fondos para los Campos.
 
 // Configuración de Interfaz
 #define B_ABILITY_POP_UP            TRUE  // En Gen5+, las habilidades de los Pokémon se muestran en una ventana emergente cuando se activan en batalla.
 #define B_FAST_INTRO_PKMN_TEXT      TRUE  // Si se establece en TRUE, los textos de introducción de la batalla se imprimen al mismo tiempo que la animación de un Pokémon, en lugar de esperar a que termine la animación.
-#define B_FAST_INTRO_NO_SLIDE       FALSE // Si se establece en TRUE, se saltará la animación de deslizamiento que se produce al entrar en combate.
+#define B_FAST_INTRO_NO_SLIDE       TRUE // Si se establece en TRUE, se saltará la animación de deslizamiento que se produce al entrar en combate.
 #define B_FAST_HP_DRAIN             TRUE  // Si se establece en TRUE, las barras de HP se moverán más rápido.
 #define B_FAST_EXP_GROW             TRUE  // Si se establece en TRUE, las barras de EXP se moverán más rápido.
 #define B_SHOW_TARGETS              TRUE  // Si se establece en TRUE, se mostrarán todos los objetivos disponibles para los movimientos que golpean a 2 o 3 Pokémon antes de seleccionar un movimiento.
 #define B_SHOW_CATEGORY_ICON        TRUE  // Si se establece en TRUE, se mostrará un ícono en el resumen que indica la categoría del movimiento.
 #define B_HIDE_HEALTHBOX_IN_ANIMS   TRUE  // Si se establece en TRUE, se ocultan las cajas de salud durante las animaciones de movimiento.
 #define B_WAIT_TIME_MULTIPLIER      16    // Esto determina cuánto duran las pausas de texto en la batalla. En Vanilla es 16. Valores más bajos resultan en batallas más rápidas.
-#define B_QUICK_MOVE_CURSOR_TO_RUN  FALSE // Si se establece en TRUE, presionar B en las opciones de batalla contra un encuentro salvaje moverá el cursor a la opción de huir.
-#define B_RUN_TRAINER_BATTLE                TRUE  // If set to TRUE, players can run from Trainer battles. This is treated as a whiteout.
+#define B_QUICK_MOVE_CURSOR_TO_RUN  TRUE // Si se establece en TRUE, presionar B en las opciones de batalla contra un encuentro salvaje moverá el cursor a la opción de huir.
+#define B_RUN_TRAINER_BATTLE                FALSE  // If set to TRUE, players can run from Trainer battles. This is treated as a whiteout.
 #define B_MOVE_DESCRIPTION_BUTTON   L_BUTTON // Si se establece en un botón diferente a B_LAST_USED_BALL_BUTTON, presionar este botón abrirá el menú de descripción del movimiento.
 #define B_SHOW_USELESS_Z_MOVE_INFO          FALSE // If set to TRUE, Z-moves without additional effects like newer gen status moves will say "no additional effect"
 #define B_ANIMATE_MON_AFTER_KO              TRUE // If set to TRUE, if a Pokémon on the opposite site faints, the non-fainted Pokemon will display a victory animation.

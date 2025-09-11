@@ -1,667 +1,667 @@
 
-// abandoned ship
-text AbandonedShip_Rooms2_1F_Text_DanIntro{
-	poryswitch(LANGUAGE) {
-		EN {
-			format("DAN: While searching for treasures,\n"
-			"we discovered a TRAINER!")
-		}
-		ES {
-			format("DAN: While searching for treasures,\n"
-			"we discovered a TRAINER!")
-		}
-	}
-}
+// // abandoned ship
+// text AbandonedShip_Rooms2_1F_Text_DanIntro{
+	// poryswitch(LANGUAGE) {
+		// EN {
+			// format("DAN: While searching for treasures,\n"
+			// "we discovered a TRAINER!")
+		// }
+		// ES {
+			// format("DAN: While searching for treasures,\n"
+			// "we discovered a TRAINER!")
+		// }
+	// }
+// }
 
-text AbandonedShip_CaptainsOffice_Text_NoSuccessFindingScanner{
-	poryswitch(LANGUAGE) {
-		EN {
-		format("I'm investigating this ship on behalf\n"
-		"of CAPT. STERN.\p"
-		"He also asked me to find a SCANNER,\n"
-		"but I haven't had any success…")
-		}
-	ES {
-		format( "Estoy investigando este barco\n"
-		"en nombre del Capitán Stern.\p"
-		"También me ha pedido que encuentre\n"
-		"un Escáner, pero no lo he visto aún…")
-}
-}
-}
+// text AbandonedShip_CaptainsOffice_Text_NoSuccessFindingScanner{
+	// poryswitch(LANGUAGE) {
+		// EN {
+		// format("I'm investigating this ship on behalf\n"
+		// "of CAPT. STERN.\p"
+		// "He also asked me to find a SCANNER,\n"
+		// "but I haven't had any success…")
+		// }
+	// ES {
+		// format( "Estoy investigando este barco\n"
+		// "en nombre del Capitán Stern.\p"
+		// "También me ha pedido que encuentre\n"
+		// "un Escáner, pero no lo he visto aún…")
+// }
+// }
+// }
 
-text AbandonedShip_CaptainsOffice_Text_OhCanYouDeliverScanner{
-	poryswitch(LANGUAGE) {
-	EN {
-		format("Oh! That's a SCANNER!\p"
-		"Listen, can I get you to deliver that\n"
-		"to CAPT. STERN?\p"
-		"I want to investigate this ship a\n"
-		"little more.")
-	}
-	ES {
-		format( "¡Ahí va! ¡Eso es un Escáner!\p"
-		"Escucha, ¿puedes llevárselo\n"
-		"tú al Capitán Stern?\p"
-		"Todavía no he terminado\n"
-		"de investigar el barco…")
-}
-	}
-}
+// text AbandonedShip_CaptainsOffice_Text_OhCanYouDeliverScanner{
+	// poryswitch(LANGUAGE) {
+	// EN {
+		// format("Oh! That's a SCANNER!\p"
+		// "Listen, can I get you to deliver that\n"
+		// "to CAPT. STERN?\p"
+		// "I want to investigate this ship a\n"
+		// "little more.")
+	// }
+	// ES {
+		// format( "¡Ahí va! ¡Eso es un Escáner!\p"
+		// "Escucha, ¿puedes llevárselo\n"
+		// "tú al Capitán Stern?\p"
+		// "Todavía no he terminado\n"
+		// "de investigar el barco…")
+// }
+	// }
+// }
 
-text AbandonedShip_CaptainsOffice_Text_ThisIsSSCactus{
-	poryswitch(LANGUAGE) {
-	EN {
-		format("This ship is called S.S. CACTUS.\n"
-		"It seems to be from an earlier era.")
-		}
-	ES {
-		format( "Este barco se llama S.S. CACTUS.\n"
-		"Es tan viejo que seguro los Tyrantrum la pilotaban…")
-	}
-}
-}
+// text AbandonedShip_CaptainsOffice_Text_ThisIsSSCactus{
+	// poryswitch(LANGUAGE) {
+	// EN {
+		// format("This ship is called S.S. CACTUS.\n"
+		// "It seems to be from an earlier era.")
+		// }
+	// ES {
+		// format( "Este barco se llama S.S. CACTUS.\n"
+		// "Es tan viejo que seguro los Tyrantrum la pilotaban…")
+	// }
+// }
+// }
 
-text AbandonedShip_Corridors_1F_Text_CharlieIntro{
-	poryswitch(LANGUAGE) {
-	EN {
-		format("What's so funny about having my inner\n"
-		"tube aboard the ship?")
-	}
-	ES {
-		format( "¿Qué? ¿Te hace gracia que lleve\n"
-	"flotador montado en el barco?")
-}
-	}
-}
+// text AbandonedShip_Corridors_1F_Text_CharlieIntro{
+	// poryswitch(LANGUAGE) {
+	// EN {
+		// format("What's so funny about having my inner\n"
+		// "tube aboard the ship?")
+	// }
+	// ES {
+		// format( "¿Qué? ¿Te hace gracia que lleve\n"
+	// "flotador montado en el barco?")
+// }
+	// }
+// }
 
-text AbandonedShip_Corridors_1F_Text_CharlieDefeat{
-	poryswitch(LANGUAGE) {
-	EN {
-		format("Whoa, you overwhelmed me!")
-	}
-	ES {
-		format( "Vaya, me he quedado desinflado…")
-	}
-	}
-}
+// text AbandonedShip_Corridors_1F_Text_CharlieDefeat{
+	// poryswitch(LANGUAGE) {
+	// EN {
+		// format("Whoa, you overwhelmed me!")
+	// }
+	// ES {
+		// format( "Vaya, me he quedado desinflado…")
+	// }
+	// }
+// }
 
-text AbandonedShip_Corridors_1F_Text_CharliePostBattle{
-poryswitch(LANGUAGE) {
-	EN {
-		format("It's not easy throwing POKé BALLS\n"
-	"while hanging on to an inner tube!")
-}
-ES {
-		format( "¡No es fácil lanzar POKé BALLS\n"
-	"cuando llevas un flotador!")
-}
-}
-}
+// text AbandonedShip_Corridors_1F_Text_CharliePostBattle{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("It's not easy throwing POKé BALLS\n"
+	// "while hanging on to an inner tube!")
+// }
+// ES {
+		// format( "¡No es fácil lanzar POKé BALLS\n"
+	// "cuando llevas un flotador!")
+// }
+// }
+// }
 
-text AbandonedShip_Corridors_1F_Text_IsntItFunHere{
-poryswitch(LANGUAGE) {
-	EN {
-		format("Isn't it fun here?\n"
-	"I get excited just being here!")
-}
-ES {
-		format( "¿A que es superdivertido?\n"
-	"¡Me lo paso pipa aquí!")
-}
-}
-}
+// text AbandonedShip_Corridors_1F_Text_IsntItFunHere{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("Isn't it fun here?\n"
+	// "I get excited just being here!")
+// }
+// ES {
+		// format( "¿A que es superdivertido?\n"
+	// "¡Me lo paso pipa aquí!")
+// }
+// }
+// }
 	
-text AbandonedShip_Corridors_B1F_Text_DuncanIntro{
-poryswitch(LANGUAGE) {
-	EN {
-		format("When we go out to sea, we SAILORS\n"
-	"always bring our POKéMON.\l"
-	"How about a quick battle?")
-}
-ES {
-		format( "Cuando salimos al mar, los MARINEROS\n"
-	"siempre llevamos nuestros POKéMON.\l"
-	"¿Te hace un combatito?")
-}
-}
-}
+// text AbandonedShip_Corridors_B1F_Text_DuncanIntro{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("When we go out to sea, we SAILORS\n"
+	// "always bring our POKéMON.\l"
+	// "How about a quick battle?")
+// }
+// ES {
+		// format( "Cuando salimos al mar, los MARINEROS\n"
+	// "siempre llevamos nuestros POKéMON.\l"
+	// "¿Te hace un combatito?")
+// }
+// }
+// }
 
-text AbandonedShip_Corridors_B1F_Text_DuncanDefeat{
-poryswitch(LANGUAGE) {
-	EN {
-		format("Whoops, I'm sunk!")
-}
-ES {
-		format( "Huy, ¡tocado y hundido!")
-}
-}
-}
+// text AbandonedShip_Corridors_B1F_Text_DuncanDefeat{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("Whoops, I'm sunk!")
+// }
+// ES {
+		// format( "Huy, ¡tocado y hundido!")
+// }
+// }
+// }
 
-text AbandonedShip_Corridors_B1F_Text_DuncanPostBattle{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The ship's bottom has sunk into the\n"
-	"depths.\p"
-	"If a POKéMON knew how to go underwater,\n"
-	"we might make some progress…")
-}
-ES {
-		format( "El barco está casi tocando fondo.\p"
-	"Si un POKéMON supiera bucear,\n"
-	"quizás podríamos avanzar…")
-}
-}
-}
+// text AbandonedShip_Corridors_B1F_Text_DuncanPostBattle{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The ship's bottom has sunk into the\n"
+	// "depths.\p"
+	// "If a POKéMON knew how to go underwater,\n"
+	// "we might make some progress…")
+// }
+// ES {
+		// format( "El barco está casi tocando fondo.\p"
+	// "Si un POKéMON supiera bucear,\n"
+	// "quizás podríamos avanzar…")
+// }
+// }
+// }
 
-text AbandonedShip_Corridors_B1F_Text_YayItsAShip{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The depths of the ocean and Devon's greed have taken it all from me.\p"
-	"My family, my hopes, and even my own childhood.\p108 years may pass, and still my soul will continue here to stand.")
-}
-ES {
-		format( "Las profundidades del océano y de la arrogancia de Devon me lo han arrebatado todo.\p"
-		"Mi familia, mis esperanzas, e incluso mi propia infancia.\p108 años pasarán, y aún mi alma este lugar va a rondar.")
-}
-}
-}
+// text AbandonedShip_Corridors_B1F_Text_YayItsAShip{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The depths of the ocean and Devon's greed have taken it all from me.\p"
+	// "My family, my hopes, and even my own childhood.\p108 years may pass, and still my soul will continue here to stand.")
+// }
+// ES {
+		// format( "Las profundidades del océano y de la arrogancia de Devon me lo han arrebatado todo.\p"
+		// "Mi familia, mis esperanzas, e incluso mi propia infancia.\p108 años pasarán, y aún mi alma este lugar va a rondar.")
+// }
+// }
+// }
 
-text AbandonedShip_Corridors_B1F_Text_DoorIsLocked{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The door is locked.\p"
-	"“STORAGE” is painted on the door.")
-}
-ES {
-		format( "La puerta está cerrada.\p"
-	"En la puerta pone “ALMACÉN”.")
-}
-}
-}
+// text AbandonedShip_Corridors_B1F_Text_DoorIsLocked{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The door is locked.\p"
+	// "“STORAGE” is painted on the door.")
+// }
+// ES {
+		// format( "La puerta está cerrada.\p"
+	// "En la puerta pone “ALMACÉN”.")
+// }
+// }
+// }
 
-text AbandonedShip_Corridors_B1F_Text_InsertedStorageKey{
-poryswitch(LANGUAGE) {
-	EN {
-		format("{PLAYER} inserted and turned the\n"
-	"STORAGE KEY.\p"
-	"The inserted KEY stuck fast,\n"
-	"but the door opened.")
-}
-ES {
-		format( "{PLAYER} ha metido la LLAVE ALMACÉN\n"
-	"y la ha hecho girar.\p"
-	"La LLAVE se ha quedado atascada,\n"
-	"pero la puerta se ha abierto.")
-}
-}
-}
+// text AbandonedShip_Corridors_B1F_Text_InsertedStorageKey{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("{PLAYER} inserted and turned the\n"
+	// "STORAGE KEY.\p"
+	// "The inserted KEY stuck fast,\n"
+	// "but the door opened.")
+// }
+// ES {
+		// format( "{PLAYER} ha metido la LLAVE ALMACÉN\n"
+	// "y la ha hecho girar.\p"
+	// "La LLAVE se ha quedado atascada,\n"
+	// "pero la puerta se ha abierto.")
+// }
+// }
+// }
 
-text AbandonedShip_Text_TheDoorIsOpen{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The door is open.")
-}
-ES {
-		format( "La puerta está abierta.")
-}
-}
-}
-
-
-text AbandonedShip_HiddenFloorCorridors_Text_Rm1DoorIsLocked{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The door is locked.\p"
-	"“RM. 1” is painted on the door.")
-}
-ES {
-		format( "La puerta está cerrada.\p"
-	"En la puerta pone “CABINA 1”.")
-}
-}
-}
-
-text AbandonedShip_HiddenFloorCorridors_Text_Rm2DoorIsLocked{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The door is locked.\p"
-	"“RM. 2” is painted on the door.")
-}
-ES {
-		format( "La puerta está cerrada.\p"
-	"En la puerta pone “CABINA 2”.")
-}
-}
-}
-
-text AbandonedShip_HiddenFloorCorridors_Text_Rm4DoorIsLocked{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The door is locked.\p"
-	"“RM. 4” is painted on the door.")
-}
-ES {
-		format( "La puerta está cerrada.\p"
-	"En la puerta pone “CABINA 4”.")
-}
-}
-}
-
-text AbandonedShip_HiddenFloorCorridors_Text_Rm6DoorIsLocked{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The door is locked.\p"
-	"“RM. 6” is painted on the door.")
-}
-ES {
-		format( "La puerta está cerrada.\p"
-	"En la puerta pone “CABINA 6”.")
-}
-}
-}
-
-text AbandonedShip_HiddenFloorCorridors_Text_InsertedKey{
-poryswitch(LANGUAGE) {
-	EN {
-		format("{PLAYER} inserted and turned the\n"
-	"KEY.\p"
-	"The inserted KEY stuck fast,\n"
-	"but the door opened.")
-}
-ES {
-		format( "{PLAYER} ha metido la LLAVE\n"
-	"y la ha hecho girar.\p"
-	"La LLAVE se ha quedado atascada,\n"
-	"pero la puerta se ha abierto.")
-}
-}
-}
+// text AbandonedShip_Text_TheDoorIsOpen{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The door is open.")
+// }
+// ES {
+		// format( "La puerta está abierta.")
+// }
+// }
+// }
 
 
+// text AbandonedShip_HiddenFloorCorridors_Text_Rm1DoorIsLocked{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The door is locked.\p"
+	// "“RM. 1” is painted on the door.")
+// }
+// ES {
+		// format( "La puerta está cerrada.\p"
+	// "En la puerta pone “CABINA 1”.")
+// }
+// }
+// }
 
-text AbandonedShip_HiddenFloorRooms_Text_BrightShinyTrash{
-poryswitch(LANGUAGE) {
-	EN {
-		format("It's bright and shiny!\n"
-	"But it's just trash… Kinda like Pokémon Diamond and Pearl.")
-}
-ES {
-		format( "¡Brilla un montón!\n"
-	"Pero es basura… Se parece bastante a Pokémon Diamante y Perla.")
-}
-}
-}
+// text AbandonedShip_HiddenFloorCorridors_Text_Rm2DoorIsLocked{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The door is locked.\p"
+	// "“RM. 2” is painted on the door.")
+// }
+// ES {
+		// format( "La puerta está cerrada.\p"
+	// "En la puerta pone “CABINA 2”.")
+// }
+// }
+// }
+
+// text AbandonedShip_HiddenFloorCorridors_Text_Rm4DoorIsLocked{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The door is locked.\p"
+	// "“RM. 4” is painted on the door.")
+// }
+// ES {
+		// format( "La puerta está cerrada.\p"
+	// "En la puerta pone “CABINA 4”.")
+// }
+// }
+// }
+
+// text AbandonedShip_HiddenFloorCorridors_Text_Rm6DoorIsLocked{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The door is locked.\p"
+	// "“RM. 6” is painted on the door.")
+// }
+// ES {
+		// format( "La puerta está cerrada.\p"
+	// "En la puerta pone “CABINA 6”.")
+// }
+// }
+// }
+
+// text AbandonedShip_HiddenFloorCorridors_Text_InsertedKey{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("{PLAYER} inserted and turned the\n"
+	// "KEY.\p"
+	// "The inserted KEY stuck fast,\n"
+	// "but the door opened.")
+// }
+// ES {
+		// format( "{PLAYER} ha metido la LLAVE\n"
+	// "y la ha hecho girar.\p"
+	// "La LLAVE se ha quedado atascada,\n"
+	// "pero la puerta se ha abierto.")
+// }
+// }
+// }
+
+
+
+// text AbandonedShip_HiddenFloorRooms_Text_BrightShinyTrash{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("It's bright and shiny!\n"
+	// "But it's just trash… Kinda like Pokémon Diamond and Pearl.")
+// }
+// ES {
+		// format( "¡Brilla un montón!\n"
+	// "Pero es basura… Se parece bastante a Pokémon Diamante y Perla.")
+// }
+// }
+// }
 	
 
 
-// dewford town
+// // dewford town
 
-text DewfordTown_Text_BrineyLandedInSlateportDeliverGoods{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: Ahoy!\n"
-	"We've made land in SLATEPORT!\p"
-	"I suppose you're going to visit CAPT.\n"
-	"STERN and deliver the DEVON GOODS?")
-}
-ES {
-		format( "¡Eh, grumete!\n"
-	"¡Hemos arribado a CIUDAD PORTUAL!\p"
-	"Supongo que vas a visitar al CAP.\n"
-	"BABOR y entregar las PIEZAS DEVON,\l"
-	"¿no es así?")
-}
-}
-}
+// text DewfordTown_Text_BrineyLandedInSlateportDeliverGoods{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("MR. BRINEY: Ahoy!\n"
+	// "We've made land in SLATEPORT!\p"
+	// "I suppose you're going to visit CAPT.\n"
+	// "STERN and deliver the DEVON GOODS?")
+// }
+// ES {
+		// format( "¡Eh, grumete!\n"
+	// "¡Hemos arribado a CIUDAD PORTUAL!\p"
+	// "Supongo que vas a visitar al CAP.\n"
+	// "BABOR y entregar las PIEZAS DEVON,\l"
+	// "¿no es así?")
+// }
+// }
+// }
 
-text Route109_Text_BrineySailToDewfordQuestion{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: I thought you're supposed\n"
-	"to deliver the DEVON GOODS.\p"
-	"Would you like to sail back to\n"
-	"DEWFORD, then?")
-}
-ES {
-		format( "¿No vas a entregar\n"
-	"las PIEZAS DEVON?\p"
-	"¿Quieres volver a AZULIZA?")
-}
-}
-}
+// text Route109_Text_BrineySailToDewfordQuestion{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("MR. BRINEY: I thought you're supposed\n"
+	// "to deliver the DEVON GOODS.\p"
+	// "Would you like to sail back to\n"
+	// "DEWFORD, then?")
+// }
+// ES {
+		// format( "¿No vas a entregar\n"
+	// "las PIEZAS DEVON?\p"
+	// "¿Quieres volver a AZULIZA?")
+// }
+// }
+// }
 
-text Route109_Text_BrineyDewfordItIs{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: DEWFORD it is, then!\p"
-	"Anchors aweigh!\n"
-	"PEEKO, we're setting sail, my darling!")
-}
-	ES {
-		format( "¡Pues rumbo a AZULIZA!\p"
-	"¡Levad anclas!\n"
-	"¡PEEKO, bonito, nos vamos!")
-}
-}
-}
+// text Route109_Text_BrineyDewfordItIs{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("MR. BRINEY: DEWFORD it is, then!\p"
+	// "Anchors aweigh!\n"
+	// "PEEKO, we're setting sail, my darling!")
+// }
+	// ES {
+		// format( "¡Pues rumbo a AZULIZA!\p"
+	// "¡Levad anclas!\n"
+	// "¡PEEKO, bonito, nos vamos!")
+// }
+// }
+// }
 
-text Route109_Text_BrineyDeliverDevonGoods{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: Then you go on and deliver\n"
-	"the DEVON GOODS. I'll be waiting.")
-}
-ES {
-		format( "Pues ve a entregar\n"
-	"las PIEZAS DEVON. Yo te espero.")
-}
-}
-}
+// text Route109_Text_BrineyDeliverDevonGoods{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("MR. BRINEY: Then you go on and deliver\n"
+	// "the DEVON GOODS. I'll be waiting.")
+// }
+// ES {
+		// format( "Pues ve a entregar\n"
+	// "las PIEZAS DEVON. Yo te espero.")
+// }
+// }
+// }
 
-text DewfordTown_Text_BrineyLandedInSlateport{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: Ahoy! We've made land in\n"
-	"SLATEPORT!\p"
-	"You just go on and tell me whenever\n"
-	"you want to set sail again!")
-}
-ES {
-		format( "¡Eh, grumete!\n"
-	"¡Hemos arribado a CIUDAD PORTUAL!\p"
-	"Cuando quieras volver a hacerte\n"
-	"a la mar, me lo dices, ¿eh?")
-}
-}
-}
+// text DewfordTown_Text_BrineyLandedInSlateport{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("MR. BRINEY: Ahoy! We've made land in\n"
+	// "SLATEPORT!\p"
+	// "You just go on and tell me whenever\n"
+	// "you want to set sail again!")
+// }
+// ES {
+		// format( "¡Eh, grumete!\n"
+	// "¡Hemos arribado a CIUDAD PORTUAL!\p"
+	// "Cuando quieras volver a hacerte\n"
+	// "a la mar, me lo dices, ¿eh?")
+// }
+// }
+// }
 
-text Route109_Text_BrineyWhereAreWeBound{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: Ahoy!\n"
-	"For you, I'll go out to sea anytime!\p"
-	"Now, my friend, where are we bound?")
-}
-ES {
-		format( "¡Eh, grumete!\n"
-	"¡Yo levo anclas cuando quieras!\p"
-	"Venga, ¿adónde vamos?")
-}
-}
-}
+// text Route109_Text_BrineyWhereAreWeBound{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("MR. BRINEY: Ahoy!\n"
+	// "For you, I'll go out to sea anytime!\p"
+	// "Now, my friend, where are we bound?")
+// }
+// ES {
+		// format( "¡Eh, grumete!\n"
+	// "¡Yo levo anclas cuando quieras!\p"
+	// "Venga, ¿adónde vamos?")
+// }
+// }
+// }
 
 
-// route 109
+// // route 109
 
-text Route109_Text_BrineyTellMeWhenYouNeedToSail{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: You just tell me whenever\n"
-	"you need to set sail again!")
-}
-ES {
-		format( "Cuando quieras volver\n"
-	"a hacerte a la mar, llámame.")
-}
-}
-}
+// text Route109_Text_BrineyTellMeWhenYouNeedToSail{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("MR. BRINEY: You just tell me whenever\n"
+	// "you need to set sail again!")
+// }
+// ES {
+		// format( "Cuando quieras volver\n"
+	// "a hacerte a la mar, llámame.")
+// }
+// }
+// }
 
-text Route109_Text_ChillAtMyPapasSpot{
-poryswitch(LANGUAGE) {
-	EN {
-		format("Yo, TRAINERS!\n"
-	"Whether you're hot to trot,\l"
-	"or cool cat not,\l"
-	"chill at my papa's spot!")
-}
-ES {
-		format( "¡Entrenadores, aquí!\n"
-	"Ya sean ardientes cual fuego,\l"
-	"o se le den bien cualquier juego,\l"
-	"¡mi papá les romperá los huevos!")
-}
-}
-}
+// text Route109_Text_ChillAtMyPapasSpot{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("Yo, TRAINERS!\n"
+	// "Whether you're hot to trot,\l"
+	// "or cool cat not,\l"
+	// "chill at my papa's spot!")
+// }
+// ES {
+		// format( "¡Entrenadores, aquí!\n"
+	// "Ya sean ardientes cual fuego,\l"
+	// "o se le den bien cualquier juego,\l"
+	// "¡mi papá les romperá los huevos!")
+// }
+// }
+// }
 
-text Route109_Text_LittleKidsDartAround{
-poryswitch(LANGUAGE) {
-	EN {
-		format("Little kids can dart around so quickly…\p"
-	"You don't dare take your eyes off them\n"
-	"for an instant. It's very taxing.\p"
-	"Mine are with my POKéMON, so they\n"
-	"should be okay, but…")
-}
-ES {
-		format( "Los niños pueden perderse de vista\n"
-	"en un segundo…\p"
-	"Tienes que estar siempre pendiente\n"
-	"de ellos. Es agotador.\p"
-	"El mío está con mi POKéMON, así\n"
-	"que debe de estar bien…")
-}
-}
-}
+// text Route109_Text_LittleKidsDartAround{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("Little kids can dart around so quickly…\p"
+	// "You don't dare take your eyes off them\n"
+	// "for an instant. It's very taxing.\p"
+	// "Mine are with my POKéMON, so they\n"
+	// "should be okay, but…")
+// }
+// ES {
+		// format( "Los niños pueden perderse de vista\n"
+	// "en un segundo…\p"
+	// "Tienes que estar siempre pendiente\n"
+	// "de ellos. Es agotador.\p"
+	// "El mío está con mi POKéMON, así\n"
+	// "que debe de estar bien…")
+// }
+// }
+// }
 
-text Route109_Text_SandCastleTakingLongTime{
-poryswitch(LANGUAGE) {
-	EN {
-		format("Our… sand castle's… taking a long time…\n"
-	"to make…\p………… ………… ………… …………")
-}
-ES {
-		format( "Estamos… tardando un montón… en\n"
-	"terminar nuestro… castillo de arena…\p………… ………… ………… …………")
-}
-}
-}
+// text Route109_Text_SandCastleTakingLongTime{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("Our… sand castle's… taking a long time…\n"
+	// "to make…\p………… ………… ………… …………")
+// }
+// ES {
+		// format( "Estamos… tardando un montón… en\n"
+	// "terminar nuestro… castillo de arena…\p………… ………… ………… …………")
+// }
+// }
+// }
 
-text Route109_Text_YouCanHaveThis{
-poryswitch(LANGUAGE) {
-	EN {
-		format("You can have this!")
-}
-ES {
-		format( "¡Toma esto para ti!")
-}
-}
-}
+// text Route109_Text_YouCanHaveThis{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("You can have this!")
+// }
+// ES {
+		// format( "¡Toma esto para ti!")
+// }
+// }
+// }
 
-text Route109_Text_WereGoingToMakeBigCastle{
-poryswitch(LANGUAGE) {
-	EN {
-		format("We'll… use up all the sand for this… sand castle of ours…\pAnd you will be… our servant…")
-	}
-	ES {
-		format("Usaremos… toda la arena para este… castillo de arena…\pTú serás… nuestra servidumbre…")
-	}
-}
-}
+// text Route109_Text_WereGoingToMakeBigCastle{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("We'll… use up all the sand for this… sand castle of ours…\pAnd you will be… our servant…")
+	// }
+	// ES {
+		// format("Usaremos… toda la arena para este… castillo de arena…\pTú serás… nuestra servidumbre…")
+	// }
+// }
+// }
 
-text Route109_Text_ZigzagoonPicksUpLitter{
-poryswitch(LANGUAGE) {
-	EN {
-		format("The water around these parts is clean.\p"
-	"But, I get my ZIGZAGOON to pick up\n"
-	"litter from the shoreline at times.\p"
-	"Dirty water becomes rain and joins our\n"
-	"rivers, which we drink from…\p"
-	"If we pollute the sea, it all comes\n"
-	"back to haunt us eventually.")
-}
-ES {
-		format( "El agua de esta zona está limpia.\p"
-	"Pero, a veces, mi ZIGZAGOON recoge\n"
-	"basura en la orilla…\p"
-	"Cuando el agua sucia se evapora, cae en\n"
-	"forma de lluvia y va a parar a los ríos,\l"
-	"de los que se saca el agua potable.\p"
-	"Si contaminamos el mar, acabamos\n"
-	"pagando el pato nosotros.")
-}
-}
-}
+// text Route109_Text_ZigzagoonPicksUpLitter{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("The water around these parts is clean.\p"
+	// "But, I get my ZIGZAGOON to pick up\n"
+	// "litter from the shoreline at times.\p"
+	// "Dirty water becomes rain and joins our\n"
+	// "rivers, which we drink from…\p"
+	// "If we pollute the sea, it all comes\n"
+	// "back to haunt us eventually.")
+// }
+// ES {
+		// format( "El agua de esta zona está limpia.\p"
+	// "Pero, a veces, mi ZIGZAGOON recoge\n"
+	// "basura en la orilla…\p"
+	// "Cuando el agua sucia se evapora, cae en\n"
+	// "forma de lluvia y va a parar a los ríos,\l"
+	// "de los que se saca el agua potable.\p"
+	// "Si contaminamos el mar, acabamos\n"
+	// "pagando el pato nosotros.")
+// }
+// }
+// }
 
-text Route109_Text_ZigzagoonCry{
-poryswitch(LANGUAGE) {
-	EN {
-		format("ZIGZAGOON: Guguu? :(")
-}
-ES {
-		format( "ZIGZAGOON: ¿Zigzaaa? :(")
-}
-}
-}
+// text Route109_Text_ZigzagoonCry{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("ZIGZAGOON: Guguu? :(")
+// }
+// ES {
+		// format( "ZIGZAGOON: ¿Zigzaaa? :(")
+// }
+// }
+// }
 
-text Route109_Text_SeashoreHouseSign{
-poryswitch(LANGUAGE) {
-	EN {
-		format("SEASHORE HOUSE\p"
-	"“May hot battles rage on hot sands!\n"
-	"The place for hot TRAINERS!”")
-}
-ES {
-		format( "CASA de la PLAYA\p"
-	"“¡Combates al rojo vivo!\n"
-	"¡Sólo para ENTRENADORES apasionados!”")
-}
-}
-}
+// text Route109_Text_SeashoreHouseSign{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("SEASHORE HOUSE\p"
+	// "“May hot battles rage on hot sands!\n"
+	// "The place for hot TRAINERS!”")
+// }
+// ES {
+		// format( "CASA de la PLAYA\p"
+	// "“¡Combates al rojo vivo!\n"
+	// "¡Sólo para ENTRENADORES apasionados!”")
+// }
+// }
+// }
 
-text Route109_Text_TrainerTipsSign{
-poryswitch(LANGUAGE) {
-	EN {
-		format("TRAINER TIPS\p"
-	"POKéMON at the same level may not\n"
-	"always have identical stats.\p"
-	"POKéMON raised by TRAINERS are said\n"
-	"to grow stronger than wild POKéMON.")
-	}
-	ES {
-		format( "PISTAS para ENTRENADORES\p"
-	"POKéMON que tienen el mismo nivel\n"
-	"pueden tener distintas habilidades.\p"
-	"Dicen que los POKéMON entrenados por\n"
-	"ENTRENADORES se vuelven más fuertes\l"
-	"que los POKéMON salvajes.")
-}
-}
-}
+// text Route109_Text_TrainerTipsSign{
+// poryswitch(LANGUAGE) {
+	// EN {
+		// format("TRAINER TIPS\p"
+	// "POKéMON at the same level may not\n"
+	// "always have identical stats.\p"
+	// "POKéMON raised by TRAINERS are said\n"
+	// "to grow stronger than wild POKéMON.")
+	// }
+	// ES {
+		// format( "PISTAS para ENTRENADORES\p"
+	// "POKéMON que tienen el mismo nivel\n"
+	// "pueden tener distintas habilidades.\p"
+	// "Dicen que los POKéMON entrenados por\n"
+	// "ENTRENADORES se vuelven más fuertes\l"
+	// "que los POKéMON salvajes.")
+// }
+// }
+// }
 
-text AbandonedShip_Rooms2_1F_Text_DanDefeat{
-	format("DAN: We couldn't win even though\n"
-	"we worked together…")
-}
+// text AbandonedShip_Rooms2_1F_Text_DanDefeat{
+	// format("DAN: We couldn't win even though\n"
+	// "we worked together…")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_DanPostBattle{
-	format("DAN: We can't find any treasures…\n"
-	"I wonder if someone got them already?")
-}
+// text AbandonedShip_Rooms2_1F_Text_DanPostBattle{
+	// format("DAN: We can't find any treasures…\n"
+	// "I wonder if someone got them already?")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons{
-	format("DAN: You don't even have two POKéMON.\n"
-	"You can't expect to beat us like that.")
-}
+// text AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons{
+	// format("DAN: You don't even have two POKéMON.\n"
+	// "You can't expect to beat us like that.")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraIntro{
-	format("KIRA: Oh?\n"
-	"We were searching for treasures.\l"
-	"But we discovered a TRAINER instead!")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraIntro{
+	// format("KIRA: Oh?\n"
+	// "We were searching for treasures.\l"
+	// "But we discovered a TRAINER instead!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraDefeat{
-	format("KIRA: Ooh, so strong!")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraDefeat{
+	// format("KIRA: Ooh, so strong!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraPostBattle{
-	format("KIRA: Where could the treasures be?\p"
-	"I've already decided what I'm buying\n"
-	"when we find the treasures!")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraPostBattle{
+	// format("KIRA: Where could the treasures be?\p"
+	// "I've already decided what I'm buying\n"
+	// "when we find the treasures!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraNotEnoughMons{
-	format("KIRA: Oh, you don't have two POKéMON?\n"
-	"We'll have to battle some other time!")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraNotEnoughMons{
+	// format("KIRA: Oh, you don't have two POKéMON?\n"
+	// "We'll have to battle some other time!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraRegister{
-	format("KIRA: Oh, you make me so angry!\n"
-	"I'm going to register you for that!")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraRegister{
+	// format("KIRA: Oh, you make me so angry!\n"
+	// "I'm going to register you for that!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_DanRematchIntro{
-	format("DAN: We've been searching for\n"
-	"treasures all this time.\p"
-	"Our POKéMON have grown stronger, too.\n"
-	"Let us show you, okay?")
-}
+// text AbandonedShip_Rooms2_1F_Text_DanRematchIntro{
+	// format("DAN: We've been searching for\n"
+	// "treasures all this time.\p"
+	// "Our POKéMON have grown stronger, too.\n"
+	// "Let us show you, okay?")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_DanRematchDefeat{
-	format("DAN: You're strong, as usual!")
-}
+// text AbandonedShip_Rooms2_1F_Text_DanRematchDefeat{
+	// format("DAN: You're strong, as usual!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_DanPostRematch{
-	format("DAN: We can't find any treasures,\n"
-	"we lose at POKéMON…\p"
-	"I want to go home… But if I say that,\n"
-	"she gets all angry with me…")
-}
+// text AbandonedShip_Rooms2_1F_Text_DanPostRematch{
+	// format("DAN: We can't find any treasures,\n"
+	// "we lose at POKéMON…\p"
+	// "I want to go home… But if I say that,\n"
+	// "she gets all angry with me…")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_DanRematchNotEnoughMons{
-	format("DAN: You don't even have two POKéMON.\n"
-	"You can't expect to beat us like that.")
-}
+// text AbandonedShip_Rooms2_1F_Text_DanRematchNotEnoughMons{
+	// format("DAN: You don't even have two POKéMON.\n"
+	// "You can't expect to beat us like that.")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraRematchIntro{
-	format("KIRA: Oh? We meet again!\p"
-	"Just like us, you still haven't given up\n"
-	"searching for treasures, have you?\p"
-	"Want to make it so the loser has\n"
-	"to give up searching?")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraRematchIntro{
+	// format("KIRA: Oh? We meet again!\p"
+	// "Just like us, you still haven't given up\n"
+	// "searching for treasures, have you?\p"
+	// "Want to make it so the loser has\n"
+	// "to give up searching?")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat{
-	format("KIRA: Oh, we lost again…")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat{
+	// format("KIRA: Oh, we lost again…")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraPostRematch{
-	format("KIRA: We're not leaving until we raise\n"
-	"our POKéMON some more and we find\l"
-	"the treasures here!")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraPostRematch{
+	// format("KIRA: We're not leaving until we raise\n"
+	// "our POKéMON some more and we find\l"
+	// "the treasures here!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons{
-	format("KIRA: Oh, you don't have two POKéMON?\n"
-	"We'll have to battle some other time!")
-}
+// text AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons{
+	// format("KIRA: Oh, you don't have two POKéMON?\n"
+	// "We'll have to battle some other time!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_JaniIntro{
-	format("I'm not good at swimming,\n"
-	"but I am good at battles!")
-}
+// text AbandonedShip_Rooms2_1F_Text_JaniIntro{
+	// format("I'm not good at swimming,\n"
+	// "but I am good at battles!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_JaniDefeat{
-	format("Oops.\n"
-	"That didn't go very well.")
-}
+// text AbandonedShip_Rooms2_1F_Text_JaniDefeat{
+	// format("Oops.\n"
+	// "That didn't go very well.")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_JaniPostBattle{
-	format("Walking around barefoot in this ship\n"
-	"is kind of gross.")
-}
+// text AbandonedShip_Rooms2_1F_Text_JaniPostBattle{
+	// format("Walking around barefoot in this ship\n"
+	// "is kind of gross.")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_GarrisonIntro{
-	format("Strength and compassion…\n"
-	"Those are a TRAINER's treasures!")
-}
+// text AbandonedShip_Rooms2_1F_Text_GarrisonIntro{
+	// format("Strength and compassion…\n"
+	// "Those are a TRAINER's treasures!")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_GarrisonDefeat{
-	format("Ah, there is something about you\n"
-	"that sparkles.")
-}
+// text AbandonedShip_Rooms2_1F_Text_GarrisonDefeat{
+	// format("Ah, there is something about you\n"
+	// "that sparkles.")
+// }
 
-text AbandonedShip_Rooms2_1F_Text_GarrisonPostBattle{
-	format("In a cabin somewhere on board,\n"
-	"I saw something sparkle.")
-}
+// text AbandonedShip_Rooms2_1F_Text_GarrisonPostBattle{
+	// format("In a cabin somewhere on board,\n"
+	// "I saw something sparkle.")
+// }
