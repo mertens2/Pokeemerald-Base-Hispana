@@ -204,7 +204,6 @@ script LittlerootTown_EventScript_GiveRunningShoes {
 			setflag (FLAG_NOT_DOUBLE_BIKE)
 			playfanfare (MUS_OBTAIN_ITEM)
 			waitfanfare
-			setflag (FLAG_RECEIVED_RUNNING_SHOES)
 			namebox (Mama)
 			msgbox (format("Es una Bici Dos-En-Uno, aunque creo que no funciona… ¡Quizá la puedan reparar en la Tienda de Bicis!\p"
 					"… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\n… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
@@ -219,7 +218,6 @@ script LittlerootTown_EventScript_GiveRunningShoes {
 			hidenamebox
 			giveitem (ITEM_MACH_BIKE, 1)
 			setflag (FLAG_NOT_DOUBLE_BIKE)
-			setflag (FLAG_RECEIVED_RUNNING_SHOES)
 			namebox (Mama)
 			msgbox (format("It's a 2-in-1 Bike, but it seems it can't change modes anymore… Maybe the Bike Shop Owner can fix it!\p"
 					"… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\n… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
@@ -970,7 +968,6 @@ LittlerootTown_EventScript_Mom::
 
 LittlerootTown_EventScript_SetReceivedRunningShoes::
 	removeobject LOCALID_MOM
-	setflag FLAG_SYS_B_DASH
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	release
 	end
