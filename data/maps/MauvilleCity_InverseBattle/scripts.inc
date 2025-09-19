@@ -213,7 +213,7 @@ MauvilleCity_InverseBattle_Scripts_Man2::
 # 0 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne MauvilleCity_InverseBattle_Scripts_Man2_3
-# 156 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 151 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Man2_Text_2
 # 161 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	setgetobjectflags VAR_LAST_TALKED, 1, TRUE, SET_EVENT_FLAG
@@ -227,12 +227,12 @@ MauvilleCity_InverseBattle_Scripts_Man2_1:
 	end
 
 MauvilleCity_InverseBattle_Scripts_Man2_2:
-# 131 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 128 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Man2_Text_0
 	goto MauvilleCity_InverseBattle_Scripts_Man2_1
 
 MauvilleCity_InverseBattle_Scripts_Man2_3:
-# 142 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 138 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Man2_Text_1
 # 146 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	setgetobjectflags VAR_LAST_TALKED, 2, TRUE, SET_EVENT_FLAG
@@ -395,24 +395,24 @@ MauvilleCity_InverseBattle_Scripts_Man1_Text_0:
 	.string "lástima!$"
 
 MauvilleCity_InverseBattle_Scripts_Man2_Text_0:
-# 131 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	.string "Arcdarn Emolgas…$"
+# 128 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	.string "Malditos Emolgas…$"
 
 MauvilleCity_InverseBattle_Scripts_Man2_Text_1:
-# 142 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	.string "Why do I want revenge against\n"
+# 138 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	.string "¿Que por qué quiero vengarme de los\n"
 	.string "Emolgas?\p"
-	.string "Why, it's because of that Gym! It was\n"
-	.string "rigged so you couldn't win with your\l"
-	.string "Ground-types!$"
+	.string "¡Porque es difícil derrotarlos con un\n"
+	.string "tipo Tierra! ¡Ese Gimnasio estaba\l"
+	.string "arreglado!$"
 
 MauvilleCity_InverseBattle_Scripts_Man2_Text_2:
-# 156 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	.string "I came from Unova when I heard of this\n"
-	.string "place!\p"
-	.string "Battles where a Ground-type has the\n"
-	.string "upper-hand against a Flying-type…\p"
-	.string "All those Emolgas will finally get it!$"
+# 151 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	.string "¡Vine desde Unova junto a mi Krokorok\n"
+	.string "cuando me enteré de este lugar!\p"
+	.string "Batallas donde un tipo Tierra tiene\n"
+	.string "ventaja contra un tipo Volador…\p"
+	.string "¡Al fin me vengaré de los Emolgas!$"
 
 MauvilleCity_InverseBattle_Scripts_Krokorok_Text_0:
 # 173 "data/maps/MauvilleCity_InverseBattle/scripts.pory"

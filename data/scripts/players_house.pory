@@ -1,3 +1,48 @@
+
+script PlayersHouse_1F_EventScript_WatchGymBroadcast {
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+	waitmovement (0)
+	namebox (Entrevistador)
+	msgbox (PlayersHouse_1F_Text_ReportFromPetalburgGym, MSGBOX_DEFAULT)
+	fadedefaultbgm
+	special (TurnOffTVScreen)
+	setflag (FLAG_SYS_TV_HOME)
+	delay (35)
+	return
+}
+
+script PlayersHouse_1F_EventScript_StarterSet {
+	poryswitch(LANGUAGE){
+		ES{
+			dynmultichoice (25, 4, TRUE, 4, 2, DYN_MULTICHOICE_CB_NONE, "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Ninguno")
+		}
+		EN{
+			dynmultichoice (25, 4, TRUE, 4, 2, DYN_MULTICHOICE_CB_NONE, "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "None of these")
+		}
+	}
+	addvar(VAR_RESULT, 1)
+	if (var(VAR_RESULT) == 9) {
+		goto(PlayersHouse_1F_EventScript_StarterWantHardest)
+	}
+	copyvar(VAR_STARTER_REGION, VAR_RESULT)
+	goto (PlayersHouse_1F_EventScript_StarterSetEnd)
+}
+	
+script PlayersHouse_1F_EventScript_StarterSetEnd {
+	namebox (Mama)
+	call (PlayersHouse_1F_EventScript_StarterSet_TellProfessor)
+	closemessage
+	hidenamebox
+	return
+}
+
+
+script PlayersHouse_1F_EventScript_StarterChoseHardest {
+	setvar(VAR_STARTER_REGION, 9)
+	goto(PlayersHouse_1F_EventScript_StarterSetEnd)
+}
+
+
 text PlayersHouse_1F_Text_YouShouldRestABit {
  poryswitch(LANGUAGE){
 	 ES {
@@ -86,17 +131,6 @@ text PlayersHouse_1F_Text_OhComeQuickly {
 	
 }
 
-text PlayersHouse_1F_Text_MaybeDadWillBeOn {
-	poryswitch(LANGUAGE) {
-		ES {
-			format("¡UNA ENTREVISTA EN EL GIMNASIO PETALBURG!")
-		}
-		EN {
-			format("IT'S AN INTERVIEW AT PETALBURG GYM!")
-		}
-	}
-}
-
 text PlayersHouse_1F_Text_ReportFromPetalburgGym {
 	poryswitch(LANGUAGE) {
 		ES {
@@ -111,17 +145,6 @@ text PlayersHouse_1F_Text_ReportFromPetalburgGym {
 	
 }
 
-
-text PlayersHouse_1F_EventScript_StarterSet_Text_8 {
-	poryswitch(LANGUAGE){
-		ES{
-			format("Ninguna")
-		}
-		EN{
-			format("None of these")
-		}
-	}
-}
 
 script EventScript_RunningShoesManualTranslated {
 	poryswitch(LANGUAGE){
@@ -326,7 +349,7 @@ script PlayersHouse_1F_EventScript_ItsOverWeMissedHim {
 	return
 }
 
-script PlayersHouse_1F_EventScript_StarterSet_Translated_11 {
+script PlayersHouse_1F_EventScript_StarterSet_TellProfessor {
 	poryswitch(LANGUAGE){
 		ES{
 			msgbox (format("Está bien. Se lo diré cuanto antes púeda."))
@@ -338,7 +361,7 @@ script PlayersHouse_1F_EventScript_StarterSet_Translated_11 {
 	return
 }
 
-script PlayersHouse_1F_EventScript_StarterSet_13 {
+script PlayersHouse_1F_EventScript_StarterWantHardest {
 	poryswitch(LANGUAGE){
 		ES{
 			msgbox (format("¿Entonces quieres a los más difíciles de entrenar?"), MSGBOX_YESNO)
@@ -348,7 +371,7 @@ script PlayersHouse_1F_EventScript_StarterSet_13 {
 		}
 	}
 	compare (VAR_RESULT, 1)
-	goto_if_eq (PlayersHouse_1F_EventScript_StarterSet_15)
+	goto_if_eq (PlayersHouse_1F_EventScript_StarterChoseHardest)
 	namebox (Mama)
 	poryswitch(LANGUAGE){
 		ES{
@@ -359,7 +382,7 @@ script PlayersHouse_1F_EventScript_StarterSet_13 {
 		}
 	}
 	hidenamebox
-	goto (PlayersHouse_1F_EventScript_StarterSet_2)
+	goto (PlayersHouse_1F_EventScript_StarterSet)
 }
 
 
@@ -416,6 +439,7 @@ PlayersHouse_2F_EventScript_WallClock::
 	goto_if_set FLAG_SET_WALL_CLOCK, PlayersHouse_2F_EventScript_CheckWallClock
 	goto PlayersHouse_2F_EventScript_ChoseClock
 	end
+
 PlayersHouse_1F_Text_ChooseTimeThing:
 	.string "¡AVISO! LEE ESTO CON ATENCIÓN.\n"
 	.string "POR FAVOR, SELECCIONAR SI DESEA\l"
@@ -433,6 +457,7 @@ PlayersHouse_1F_Text_ChooseRTC:
 	.string "¿Está segur{OA} que quiere\n"
 	.string "usar el reloj real de\l"
 	.string "su dispositivo?$"
+
 PlayersHouse_2F_EventScript_ChoseClock::
 	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call PlayersHouse_2F_EventScript_SetWallClock
@@ -618,98 +643,6 @@ PlayersHouse_1F_EventScript_MomNoticeGymBroadcast::
 	closemessage
 	hidenamebox
 	return
-
-PlayersHouse_1F_EventScript_WatchGymBroadcast::
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	namebox Entrevistador
-	msgbox PlayersHouse_1F_Text_ReportFromPetalburgGym, MSGBOX_DEFAULT
-	fadedefaultbgm
-	special TurnOffTVScreen
-	setflag FLAG_SYS_TV_HOME
-	delay 35
-	return
-
-PlayersHouse_1F_EventScript_StarterSet::
-PlayersHouse_1F_EventScript_StarterSet_2:
-	dynmultichoice 25, 4, TRUE, 4, 2, DYN_MULTICHOICE_CB_NONE, PlayersHouse_1F_EventScript_StarterSet_Text_0, PlayersHouse_1F_EventScript_StarterSet_Text_1, PlayersHouse_1F_EventScript_StarterSet_Text_2, PlayersHouse_1F_EventScript_StarterSet_Text_3, PlayersHouse_1F_EventScript_StarterSet_Text_4, PlayersHouse_1F_EventScript_StarterSet_Text_5, PlayersHouse_1F_EventScript_StarterSet_Text_6, PlayersHouse_1F_EventScript_StarterSet_Text_7, PlayersHouse_1F_EventScript_StarterSet_Text_8
-	switch VAR_RESULT
-	case 0, PlayersHouse_1F_EventScript_StarterSet_5
-	case 1, PlayersHouse_1F_EventScript_StarterSet_6
-	case 2, PlayersHouse_1F_EventScript_StarterSet_7
-	case 3, PlayersHouse_1F_EventScript_StarterSet_8
-	case 4, PlayersHouse_1F_EventScript_StarterSet_9
-	case 5, PlayersHouse_1F_EventScript_StarterSet_10
-	case 6, PlayersHouse_1F_EventScript_StarterSet_11
-	case 7, PlayersHouse_1F_EventScript_StarterSet_12
-	case 8, PlayersHouse_1F_EventScript_StarterSet_13
-PlayersHouse_1F_EventScript_StarterSetEnd::
-	namebox Mama
-	call PlayersHouse_1F_EventScript_StarterSet_Translated_11
-	closemessage
-	hidenamebox
-	return
-
-PlayersHouse_1F_EventScript_StarterSet_5:
-	setvar VAR_STARTER_REGION, 1
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-PlayersHouse_1F_EventScript_StarterSet_6:
-	setvar VAR_STARTER_REGION, 2
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-PlayersHouse_1F_EventScript_StarterSet_7:
-	setvar VAR_STARTER_REGION, 3
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-PlayersHouse_1F_EventScript_StarterSet_8:
-	setvar VAR_STARTER_REGION, 4
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-PlayersHouse_1F_EventScript_StarterSet_9:
-	setvar VAR_STARTER_REGION, 5
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-PlayersHouse_1F_EventScript_StarterSet_10:
-	setvar VAR_STARTER_REGION, 6
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-PlayersHouse_1F_EventScript_StarterSet_11:
-	setvar VAR_STARTER_REGION, 7
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-PlayersHouse_1F_EventScript_StarterSet_12:
-	setvar VAR_STARTER_REGION, 8
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-PlayersHouse_1F_EventScript_StarterSet_15:
-	setvar VAR_STARTER_REGION, 9
-	goto PlayersHouse_1F_EventScript_StarterSetEnd
-
-
-PlayersHouse_1F_EventScript_StarterSet_Text_0:
-	.string "Kanto$"
-
-PlayersHouse_1F_EventScript_StarterSet_Text_1:
-	.string "Johto$"
-
-PlayersHouse_1F_EventScript_StarterSet_Text_2:
-	.string "Hoenn$"
-
-PlayersHouse_1F_EventScript_StarterSet_Text_3:
-	.string "Sinnoh$"
-
-PlayersHouse_1F_EventScript_StarterSet_Text_4:
-	.string "Unova$"
-
-PlayersHouse_1F_EventScript_StarterSet_Text_5:
-	.string "Kalos$"
-
-PlayersHouse_1F_EventScript_StarterSet_Text_6:
-	.string "Alola$"
-
-PlayersHouse_1F_EventScript_StarterSet_Text_7:
-	.string "Galar$"
 
 PlayersHouse_1F_Movement_MomApproachDadMale:
 	walk_up
@@ -902,27 +835,29 @@ PlayersHouse_1F_EventScript_Vigoroth2::
 	end
 
 PlayersHouse_1F_Movement_PlayerApproachTVForGymMale:
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
+	player_run_down
+	player_run_down
+	player_run_left
+	player_run_left
+	player_run_left
+	walk_in_place_faster_left
 	step_end
 
 PlayersHouse_1F_Movement_PlayerMoveToTVMale:
-	walk_left
+	walk_faster_left
 	step_end
 
 PlayersHouse_1F_Movement_PlayerApproachTVForGymFemale:
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
+	player_run_down
+	player_run_down
+	player_run_right
+	player_run_right
+	player_run_right
+	walk_in_place_faster_right
 	step_end
 
 PlayersHouse_1F_Movement_PlayerMoveToTVFemale:
-	walk_right
+	walk_faster_right
 	step_end
 
 PlayersHouse_1F_Movement_MovePlayerAwayFromDoor:

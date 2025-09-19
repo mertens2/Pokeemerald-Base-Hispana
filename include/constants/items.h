@@ -994,10 +994,22 @@
 
 #define ITEM_STRANGE_BALL 828
 
+// giga stones
+
+#define ITEM_GIGA_KANTONITE 	829
+// #define ITEM_GIGA_JOHTONITE 	830 no johtonian mon got a gmax form
+// #define ITEM_GIGA_HOENNITE 	831 no hoennian mon got a gmax form
+// #define ITEM_GIGA_SINNOHITE	832 no sinnohnian mon got a gmax form
+#define ITEM_GIGA_UNOVANITE 	829
+// #define ITEM_GIGA_KALOSITE 	834 no kalosian mon got a gmax form
+#define ITEM_GIGA_GALARITE 		830
+#define ITEM_MELMETALITE 		831
+#define ITEM_URSHIFUNITE_X 		832
+#define ITEM_URSHIFUNITE_Y 		833
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 829
+#define ITEMS_COUNT 834
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

@@ -937,6 +937,7 @@ bool8 ScriptMenu_ShowPokemonPic(u16 species, u8 x, u8 y)
 {
     u8 taskId;
     u8 spriteId;
+    u32 flagValue = VarGet(VAR_TEMP_0);
 
     if (FindTaskIdByFunc(Task_PokemonPicWindow) != TASK_NONE)
     {
@@ -944,7 +945,16 @@ bool8 ScriptMenu_ShowPokemonPic(u16 species, u8 x, u8 y)
     }
     else
     {
-        spriteId = CreateMonSprite_PicBox(species, x * 8 + 40, y * 8 + 40, 0);
+		if (((VarGet(VAR_SHINY_FIRST_CHOICE) < 1 && flagValue == 0) || (VarGet(VAR_SHINY_SECOND_CHOICE) < 1 && flagValue == 1) || (VarGet(VAR_SHINY_THIRD_CHOICE) < 1 && flagValue == 2)))
+		{
+			CalculateShininess(TRUE, METHOD_NONE, flagValue, species, NATURE_BOLD);
+		}
+		if (VarGet(VAR_SHINY_FIRST_CHOICE) == species || VarGet(VAR_SHINY_SECOND_CHOICE) == species || VarGet(VAR_SHINY_THIRD_CHOICE) == species){
+			spriteId = CreateMonSprite_PicBox(species, TRUE, x * 8 + 40, y * 8 + 40, 0);
+		}
+		else {
+			spriteId = CreateMonSprite_PicBox(species, FALSE, x * 8 + 40, y * 8 + 40, 0);
+		}
         taskId = CreateTask(Task_PokemonPicWindow, 0x50);
         gTasks[taskId].tWindowId = CreateWindowFromRect(x, y, 8, 8);
         gTasks[taskId].tState = 0;

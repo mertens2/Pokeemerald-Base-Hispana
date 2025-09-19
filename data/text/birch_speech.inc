@@ -1,7 +1,7 @@
 gText_Birch_Welcome::
 # 1 "data/text/birch_speech.pory"
-	.string "Hi! My name's Birch.\p"
-	.string "But everyone knows me as Professor.\p"
+	.string "¡Hola! Me llamo Birch.\p"
+	.string "Pero todos me conocen como Profesor.\p"
 	.string "$"
 
 gText_Birch_Pokemon::
@@ -10,79 +10,78 @@ gText_Birch_Pokemon::
 
 gText_Birch_Pronouns::
 # 16 "data/text/birch_speech.pory"
-	.string "What pronouns would\n"
-	.string "you want to go by?$"
+	.string "¿Cómo te gustaría que\n"
+	.string "se refiriesen a tí?$"
 
 gText_Birch_MainSpeech::
 # 27 "data/text/birch_speech.pory"
-	.string "I love them with all my heart…\p"
-	.string "That's why I've dedicated my life to\n"
-	.string "study their every aspect…\p"
-	.string "But enough of me!\p"
+	.string "Me apasionan…\n"
+	.string "Por eso, he dedicado mi vida a\l"
+	.string "estudiarlos a fondo…\p"
+	.string "¡Pero suficiente de mí!\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
 # 38 "data/text/birch_speech.pory"
-	.string "Who are you more like?\p"
+	.string "¿A quién te pareces más?\p"
 	.string "$"
 
 gText_Birch_BoyOrGirl::
 # 49 "data/text/birch_speech.pory"
-	.string "Brendan? Or perhaps May?$"
+	.string "¿A Brendan o May?$"
 
 gText_Birch_WhatsYourName::
 # 60 "data/text/birch_speech.pory"
-	.string "Great!\n"
-	.string "What do you want to go by?$"
+	.string "¡Genial!\n"
+	.string "¿Qué nombre te gustaría usar?$"
 
 gText_Birch_SoItsPlayer::
 # 71 "data/text/birch_speech.pory"
-	.string "{PLAYER}?$"
+	.string "¿{PLAYER}?$"
 
 gText_Birch_YourePlayer::
 # 83 "data/text/birch_speech.pory"
-	.string "Perfect! You're {PLAYER}, who moved\n"
-	.string "here from Johto!\p"
+	.string "¡Perfecto! ¡Eres {PLAYER}, y te\n"
+	.string "mudaste aquí desde Johto!\p"
 	.string "$"
 
 gText_Birch_AreYouReady::
 # 94 "data/text/birch_speech.pory"
-	.string "Your very own journey will start.\n"
-	.string "You'll meet people, Pokémon and the\l"
-	.string "most diverse stories…\p"
-	.string "Go now, then! To the World of Pokémon!\p"
+	.string "Tu propia aventura comenzará.\n"
+	.string "Conocerás personas, Pokémon, e\l"
+	.string "historias de lo más variadas…\p"
+	.string "¡Adéntrate ahora, al Mundo Pokémon!\p"
 	.string "$"
 
 gText_Birch_YouCantBirch::
 # 107 "data/text/birch_speech.pory"
 	.string "N-no…\p"
-	.string "That… That's MY name…\p"
-	.string "Get your own name.$"
+	.string "Ese… Ese es MI nombre…\p"
+	.string "Elige otro nombre.$"
 
 gText_Birch_WaitYoureG::
 # 118 "data/text/birch_speech.pory"
-	.string "Y-{PAUSE 8}you're… {PLAYER}?\p"
-	.string "That's great! I'm bi!\p"
-	.string "Really though, choose an ACTUAL\n"
-	.string "name…\p"
-	.string "Unless you want everyone to call you\n"
-	.string "that.\p"
-	.string "You want your name to be {PLAYER}?$"
+	.string "E-eres… ¿{PLAYER}?\p"
+	.string "¡Genial, yo soy bi!\p"
+	.string "Pero ahora, por favor, escribe un\n"
+	.string "nombre…\p"
+	.string "A menos que quieras que te digan así.\p"
+	.string "¿Quieres llamarte {PLAYER}?$"
 
 gText_Birch_TheSameAsDaughter::
 # 132 "data/text/birch_speech.pory"
-	.string "Ah, just like my daughter, then!\p"
-	.string "Hope it's not too confusing…\n"
-	.string "Is {PLAYER} alright?$"
+	.string "¡Ah, igual que mi hija entonces!\p"
+	.string "Espero no confunda…\n"
+	.string "¿{PLAYER} te parece bien?$"
 
 gText_Birch_TheSameAsSon::
 # 143 "data/text/birch_speech.pory"
-	.string "Ah, just like my son, then!\p"
-	.string "Hope it's not too confusing…\n"
-	.string "Is {PLAYER} alright?$"
+	.string "¡Ah, igual que mi hijo entonces!\p"
+	.string "Espero no confunda…\n"
+	.string "¿{PLAYER} te parece bien?$"
 
 gText_Birch_NotVeryOriginal::
 # 154 "data/text/birch_speech.pory"
-	.string "Ah, {PLAYER}, then!\p"
-	.string "Not very original, are we?\p"
-	.string "So, is {PLAYER} alright?$"
+	.string "Ah, ¡{PLAYER}, entonces!\p"
+	.string "¿No estamos muy originales hoy, eh?\p"
+	.string "¿{PLAYER} te parece bien?$"

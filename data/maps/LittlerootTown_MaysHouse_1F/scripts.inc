@@ -413,24 +413,26 @@ RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
 
 RivalsHouse_1F_Text_LikeChildLikeFather::
 # 2 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "My husband's… UGH…\n"
-	.string "He's likely out, studying\l"
-	.string "some other big stupid thing…\p"
-	.string "What a guy, huh…?$"
+	.string "Mi esposo debe… UGH…\n"
+	.string "Debe estar en el campo\l"
+	.string "estudiando alguna estupidez…\p"
+	.string "Que gran tipo, ¿no…?$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit::
 # 19 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ah, my {RIVAL}, they must be in their\n"
-	.string "room.$"
+	.string "Ah, mi {RIVAL}, debe estar en su\n"
+	.string "cuarto.$"
 
 RivalsHouse_1F_Text_WentOutToRoute103::
 # 30 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "Ah, my {RIVAL}, they're at Route\n"
-	.string "103.\p"
-	.string "They worry me, {PLAYER}, last time\n"
-	.string "they stayed investigating till they\l"
-	.string "passed out.$"
+	.string "Ah, mi {RIVAL}, creo que está\n"
+	.string "en la Ruta 103 estudiando Pokémon,\l"
+	.string "así que deberías buscarle,\l"
+	.string "{PLAYER}.\l"
+	.string "La última vez, se quedó investigando\l"
+	.string "hasta que se desmayó.$"
 
 RivalsHouse_1F_Text_DoYouHavePokemon::
 # 43 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	.string "I no shpeek english!$"
+	.string "¡Hoda, veshin{OA}!\p"
+	.string "¿Ya tienesh Pokémon?$"

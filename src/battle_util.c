@@ -3959,10 +3959,11 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_INTREPID_SWORD:
+        case ABILITY_EMERGENCY_EXIT:
             if (!gSpecialStatuses[battler].switchInAbilityDone && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN)
              && !GetBattlerPartyState(battler)->intrepidSwordBoost)
             {
-                if (GetGenConfig(GEN_INTREPID_SWORD) == GEN_9)
+                if (GetGenConfig(GEN_INTREPID_SWORD) == GEN_9 && gLastUsedAbility != ABILITY_EMERGENCY_EXIT)
                     GetBattlerPartyState(battler)->intrepidSwordBoost = TRUE;
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 SET_STATCHANGER(STAT_ATK, 1, FALSE);

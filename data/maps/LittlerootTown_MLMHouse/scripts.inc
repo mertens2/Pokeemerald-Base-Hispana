@@ -11,7 +11,7 @@ MLMHouse_EventScript_FatMan::
 	faceplayer
 # 7 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	namebox Alex
-# 41 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
+# 38 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	msgbox MLMHouse_EventScript_FatMan_Text_0
 # 48 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	hidenamebox
@@ -27,7 +27,7 @@ MLMHouse_EventScript_Daughter::
 	faceplayer
 # 55 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	namebox Esmeralda
-# 61 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
+# 58 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	msgbox MLMHouse_EventScript_Daughter_Text_0
 # 64 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	hidenamebox
@@ -49,20 +49,22 @@ MLMHouse_EventScript_Chimecho::
 
 
 MLMHouse_EventScript_FatMan_Text_0:
-# 41 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
-	.string "¡Hola, {PLAYER}! How's the moving\n"
-	.string "going?\p"
-	.string "It's good to have you parents back in\n"
-	.string "Hoenn.\p"
-	.string "We used to be friends, them, my husband\n"
-	.string "and I. We all had so much fun…$"
+# 38 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
+	.string "¡Hola, {PLAYER}! ¿Cómo está todo el\n"
+	.string "tema de la mudanza?\p"
+	.string "Es bueno ver a tus padres en Hoenn otra\n"
+	.string "vez.\p"
+	.string "Mi marido, ellos, y yo éramos los mejores\n"
+	.string "amigos. Nos divertíamos tanto…$"
 
 MLMHouse_EventScript_Daughter_Text_0:
-# 61 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
+# 58 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	.string "¡Hola! ¡Encantada!\p"
-	.string "Have you met my dads' Chimecho? They've\n"
-	.string "had them since they were kids!\p"
-	.string "I wonder… Why do both have one?\l"
-	.string "Maybe… It was a love confession!\l"
-	.string "Or maybe a loyalty promise?\p"
-	.string "AH, I'M SO INTRIGUED!$"
+	.string "¿Ya has conocido a los Chimecho de mis\n"
+	.string "papás? ¡Los han tenido desde que\l"
+	.string "eran Chingling!\p"
+	.string "Me pregunto… ¿Porqué ambos tienen\n"
+	.string "uno?\l"
+	.string "Quizás… ¡Fue una declaración de amor!\l"
+	.string "¿O quizás de lealtad?\p"
+	.string "¡AH, ME INTRIGA LA RESPUESTA!$"

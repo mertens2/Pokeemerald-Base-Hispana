@@ -191,19 +191,21 @@ PlayersHouse_2F_EventScript_GameCube::
 
 PlayersHouse_2F_Text_ClockIsStopped::
 # 2 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "I should set up this clock!$"
+	.string "¡Debería poner en marcha este reloj!$"
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom::
 # 14 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "{PLAYER}! Do you like your new room?\p"
-	.string "Don't forget to take out your Potion!$"
+	.string "¡{PLAYER}! ¿Te gusta tu nuevo\n"
+	.string "cuarto?\p"
+	.string "¡Pues recuerda que debes quitar tus\n"
+	.string "objetos de la PC!$"
 
 Common_Text_LookCloserAtMap::
 # 29 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "The beautiful region of Hoenn.$"
+	.string "La hermosa Hoenn.$"
 
 PlayersHouse_2F_Text_ItsAGameCube::
 # 41 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "A Nintendo GameCube.\p"
-	.string "A Game Boy Advance is connected\n"
-	.string "to Pokémon Box RS.$"
+	.string "Es una Nintendo GameCube.\p"
+	.string "Una Game Boy Advance está\n"
+	.string "conectada con Pokémon Box RZ.$"

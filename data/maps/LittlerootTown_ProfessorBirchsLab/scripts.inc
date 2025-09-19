@@ -7,9 +7,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister::
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, ProfBirch_EventScript_RatePokedexOrRegister
 # 6 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_BIRCH_LAB_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait
-# 13 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox BirchEng
-# 14 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 9 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	namebox Birch
+# 10 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_Text_0
 # 17 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
@@ -23,15 +23,15 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	lockall
 # 24 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferleadmonspeciesname STR_VAR_1
-# 35 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox BirchEng
-# 36 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 27 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	namebox Birch
+# 28 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent_Text_0
-# 38 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 30 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 39 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 31 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
-# 40 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 32 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	message LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent_Text_1
 # 43 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmessage
@@ -43,27 +43,29 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
-# 68 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_0
-# 69 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
-# 70 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	questmenu QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_1
-# 71 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_QUEST_MENU_GET
-# 72 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 73 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	questmenu QUEST_MENU_SET_ACTIVE SIDE_QUEST_1
-# 74 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	questmenu QUEST_MENU_BUFFER_QUEST_NAME SIDE_QUEST_1
-# 75 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	message LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_1
-# 76 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitfanfare
-# 77 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 52 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	namebox Birch
-# 78 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 53 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_0
+# 54 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	hidenamebox
+# 55 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	questmenu QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_1
+# 56 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setflag FLAG_SYS_QUEST_MENU_GET
+# 57 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 58 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	questmenu QUEST_MENU_SET_ACTIVE SIDE_QUEST_1
+# 59 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	questmenu QUEST_MENU_BUFFER_QUEST_NAME SIDE_QUEST_1
+# 60 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	message LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_1
+# 61 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitfanfare
+# 62 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	namebox Birch
+# 63 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_2
 # 83 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
@@ -81,17 +83,17 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	clearflag FLAG_NO_SHINIES
 # 92 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_SYS_EXP_SHARE
-# 109 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox BirchEng
-# 110 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 95 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	namebox Birch
+# 96 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_0
-# 113 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 99 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
-# 114 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 100 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex
-# 115 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox BirchEng
-# 116 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 101 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	namebox Birch
+# 102 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_1
 # 123 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
@@ -111,9 +113,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	setflag FLAG_QUEST_MENU_ACTIVE
 # 131 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_ENABLED_PC
-# 138 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox BirchEng
-# 139 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 134 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	namebox Birch
+# 135 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_2
 # 142 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
@@ -149,15 +151,15 @@ LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls::
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 # 160 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement 0
-# 172 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 163 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls_Text_0
-# 175 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 166 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
-# 176 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 167 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitem ITEM_POKE_BALL, 10
-# 177 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 168 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	namebox Rival
-# 178 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 169 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls_Text_1
 # 181 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
@@ -173,7 +175,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls::
 LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
 # 190 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 196 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 193 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	message LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex_Text_0
 # 199 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitfanfare
@@ -191,10 +193,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
 
 
 LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait::
-# 216 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox BirchEng
-# 217 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	message LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait_Text_0
+# 212 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	namebox Birch
+# 213 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait_Text_0
 # 220 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	hidenamebox
 # 221 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -1842,92 +1844,93 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "… … … … … Click!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_Text_0:
-# 14 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "How's the adventure going?$"
+# 10 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "¿Cómo va tu aventura?$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent_Text_0:
-# 36 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "So it's true, {PLAYER}, you know so\n"
-	.string "much about Pokémon, {COLOR BLUE}you can know\l"
-	.string "their moves without the Pokédex{COLOR DARK_GRAY}…\p"
-	.string "And as thanks for saving me, here's the\n"
-	.string "Pokémon you chose!$"
+# 28 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Así que es cierto, {PLAYER}, sabes\n"
+	.string "tanto sobre los Pokémon, que {COLOR BLUE}puedes\l"
+	.string "saber sus movimientos sin la Pokédex{COLOR DARK_GRAY}…\p"
+	.string "Ah, ¡Y como me salvaste, te regalaré el\n"
+	.string "Pokémon que elegiste antes!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent_Text_1:
-# 40 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER} recieved a {COLOR LIGHT_RED SHADOW RED}{STR_VAR_1}{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\n"
-	.string "from the Professor!$"
+# 32 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "¡{PLAYER} recibió un {COLOR LIGHT_RED SHADOW RED}{STR_VAR_1}{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\n"
+	.string "de manos del Profesor!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_0:
-# 68 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You know what I think?\n"
-	.string "I think it'll be good learning\l"
-	.string "experience to go battle {RIVAL} in\l"
-	.string "Route 103.$"
+# 53 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "¿Sabes qué creo?\n"
+	.string "Que sería buena idea que vayas a\l"
+	.string "combatir contra {RIVAL} en la Ruta\l"
+	.string "103.\p"
+	.string "¡Seguro les sirve de aprendizaje!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_1:
-# 75 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The Quest {COLOR LIGHT_RED SHADOW RED}“{STR_VAR_1}”{COLOR DARK_GRAY SHADOW LIGHT_GRAY} was\n"
-	.string "unlocked!$"
+# 60 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "La misión {COLOR LIGHT_RED SHADOW RED}“{STR_VAR_1}”{COLOR DARK_GRAY SHADOW LIGHT_GRAY} ha sido\n"
+	.string "desbloqueada!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_2:
-# 78 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "That I gave you is a {COLOR BLUE}Quest{COLOR DARK_GRAY SHADOW LIGHT_GRAY}.\p"
-	.string "If you complete it, you'll be {COLOR LIGHT_RED SHADOW RED}rewarded{COLOR DARK_GRAY SHADOW LIGHT_GRAY},\n"
-	.string "and the quality of the reward depends\l"
-	.string "on the {COLOR LIGHT_RED SHADOW RED}Quest's difficulty{COLOR DARK_GRAY SHADOW LIGHT_GRAY}.\p"
-	.string "This time, the Quest is to go battle\n"
-	.string "{RIVAL} in Route 103.$"
+# 63 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Acabo de darte una {COLOR BLUE}Misión{COLOR DARK_GRAY SHADOW LIGHT_GRAY}.\p"
+	.string "Si la cumples, obtendrás una\n"
+	.string "{COLOR LIGHT_RED SHADOW RED}recompensa{COLOR DARK_GRAY SHADOW LIGHT_GRAY}, que dependerá de la\l"
+	.string "{COLOR LIGHT_RED SHADOW RED}dificultad de la misión{COLOR DARK_GRAY SHADOW LIGHT_GRAY}.\p"
+	.string "Esta vez, la misión es ir a buscar a\n"
+	.string "{RIVAL} en la Ruta 103.$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_0:
-# 110 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER}! Heard you defeated\n"
-	.string "{RIVAL}…!\p"
-	.string "IMPRESSIVE!\n"
-	.string "{RIVAL}'s been helping me out, and\l"
-	.string "even with their experience you\l"
-	.string "defeated them! HA!\p"
-	.string "I'm surprised, {PLAYER}, so take this.$"
+# 96 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "¡{PLAYER}! ¡Escuché que venciste el\n"
+	.string "equipo de {RIVAL}…!\p"
+	.string "¡IMPRESIONANTE!\n"
+	.string "{RIVAL} me ha estado ayudando a\l"
+	.string "investigar, y ¡Aún con su experiencia\l"
+	.string "le has ganado! ¡JA!\p"
+	.string "Me sorprendes, {PLAYER}, así que,\n"
+	.string "toma esto.$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_1:
-# 116 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Oh, something else, {PLAYER}.\p"
-	.string "Many Pokémon have been {COLOR BLUE}migrating to\n"
-	.string "Hoenn{COLOR DARK_GRAY}. I'm investigating why. But I\l"
-	.string "need you both.\p"
-	.string "Because of that, {PLAYER},\n"
-	.string "{RIVAL}, I've given you the\l"
-	.string "{COLOR LIGHT_RED SHADOW RED}National Pokédex{COLOR DARK_GRAY SHADOW LIGHT_GRAY}.\p"
-	.string "If you help me, you'll both be rewarded\n"
-	.string "greatly.\p"
-	.string "And you'll be rewarded right now, too,\n"
-	.string "for the Quest you completed before!$"
+# 102 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Tengo algo que decirte, {PLAYER}.\p"
+	.string "Muchos Pokémon han estado {COLOR BLUE}migrando a\n"
+	.string "Hoenn{COLOR DARK_GRAY}. Y estoy investigando la razón.\l"
+	.string "Pero necesito su ayuda.\p"
+	.string "Por eso, {PLAYER} y {RIVAL}, sus\n"
+	.string "Pokédex\n"
+	.string "tienen acceso al {COLOR LIGHT_RED SHADOW RED}Modo Nacional{COLOR DARK_GRAY SHADOW LIGHT_GRAY}.\p"
+	.string "Si me ayudan, los recompensaré\n"
+	.string "enormemente.\p"
+	.string "¡Además! ¡Por cumplir la misión que te di\n"
+	.string "antes, ten esta recompensa!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_2:
-# 139 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I've given you a few extra Quests. Come\n"
-	.string "back after completing them.$"
+# 135 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Te he dado algunas misiones más. Vuelve\n"
+	.string "conmigo al completarlas.$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls_Text_0:
-# 172 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 163 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}\n"
-	.string "Um!\p"
-	.string "{PLAYER}…{PAUSE 15} Good-{PAUSE 10} good job!\p"
-	.string "You…{PAUSE 15} You're already better at this\n"
-	.string "than…{PAUSE 15} Eh, nothing.\n"
-	.string "Take these PokéBalls.$"
+	.string "¡Eh!\p"
+	.string "{PLAYER}…{PAUSE 15} Bien-{PAUSE 10} ¡bien hecho!\p"
+	.string "Ya…{PAUSE 15} Ya eres mejor que…{PAUSE 15} Eh, nada.\n"
+	.string "Toma estas Pokéball. Te ayudarán.$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls_Text_1:
-# 178 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 169 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}\n"
-	.string "Ah, {PLAYER}, Go on…\l"
-	.string "I…{PAUSE 10}…{PAUSE 10}…{PAUSE 10} Will catch up later…$"
+	.string "Ah, {PLAYER}, adelántate…\l"
+	.string "Yo…{PAUSE 10}…{PAUSE 10}…{PAUSE 10} Te alcanzaré luego…$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex_Text_0:
-# 196 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You've obtained a {COLOR BLUE}Pokédex{COLOR DARK_GRAY}!$"
+# 193 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "¡Te han regalado una {COLOR BLUE}Pokédex{COLOR DARK_GRAY}!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait_Text_0:
-# 217 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Go!\n"
-	.string "Adventures await!$"
+# 213 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "¡Ve!\n"
+	.string "¡Ten aventuras!$"

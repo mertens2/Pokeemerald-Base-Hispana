@@ -2094,6 +2094,13 @@ const u16 gItemIconPalette_JubilifeMuffin[] = INCBIN_U16("graphics/items/icon_pa
 const u32 gItemIcon_PokeshiDoll[] = INCBIN_U32("graphics/items/icons/pokeshi_doll.4bpp.smol");
 const u16 gItemIconPalette_PokeshiDoll[] = INCBIN_U16("graphics/items/icon_palettes/pokeshi_doll.gbapal");
 
+const u32 gItemIcon_GigaStone[] = INCBIN_U32("graphics/items/icons/giga_stone.4bpp.smol");
+const u16 gItemIconPalette_GigaKantonite[] = INCBIN_U16("graphics/items/icon_palettes/giga_kantonite.gbapal");
+const u16 gItemIconPalette_GigaUnovanite[] = INCBIN_U16("graphics/items/icon_palettes/giga_unovanite.gbapal");
+const u16 gItemIconPalette_GigaAlolanite[] = INCBIN_U16("graphics/items/icon_palettes/giga_alolanite.gbapal");
+const u16 gItemIconPalette_GigaGalarite[] = INCBIN_U16("graphics/items/icon_palettes/giga_galarite.gbapal");
+
+
 const u32 gItemIcon_SwapSnack[] = INCBIN_U32("graphics/items/icons/swap_snack.4bpp.smol");
 const u16 gItemIconPalette_SwapSnack[] = INCBIN_U16("graphics/items/icon_palettes/swap_snack.gbapal");
 

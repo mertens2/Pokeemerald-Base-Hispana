@@ -15,6 +15,11 @@
 #define GET_BASE_SPECIES_ID(speciesId) (GetFormSpeciesId(speciesId, 0))
 #define FORM_SPECIES_END (0xffff)
 
+#define METHOD_NONE 0
+#define METHOD_MASUDA_METHOD 1
+#define METHOD_DEXNAV 2
+#define METHOD_CHAIN_FISHING 3
+
 // Property labels for Get(Box)MonData / Set(Box)MonData
 enum MonData {
     MON_DATA_PERSONALITY,
@@ -777,5 +782,6 @@ u8 *GetSavedPlayerPartyCount(void);
 void SavePlayerPartyMon(u32 index, struct Pokemon *mon);
 u32 IsSpeciesOfType(u32 species, u32 type);
 u8 GetRealIV(u8 iv);
+u32 CalculateShininess(bool8 affectsShinyFlags, u8 method, u8 flagAffected, u16 species, u8 nature);
 
 #endif // GUARD_POKEMON_H

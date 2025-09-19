@@ -1777,6 +1777,11 @@ extern const u32 gItemIcon_SwapSnack[];
 extern const u16 gItemIconPalette_SwapSnack[];
 extern const u32 gItemIcon_TwiceSpicedRadish[];
 extern const u16 gItemIconPalette_TwiceSpicedRadish[];
+extern const u32 gItemIcon_GigaStone[];
+extern const u16 gItemIconPalette_GigaKantonite[];
+extern const u16 gItemIconPalette_GigaUnovanite[];
+extern const u16 gItemIconPalette_GigaAlolanite[];
+extern const u16 gItemIconPalette_GigaGalarite[];
 
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u16 gItemIconPalette_ReturnToFieldArrow[];

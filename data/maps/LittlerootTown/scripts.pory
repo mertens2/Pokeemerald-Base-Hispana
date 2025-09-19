@@ -167,14 +167,28 @@ script LittlerootTown_EventScript_FatMan {
 script LittlerootTown_EventScript_Boy {
 	faceplayer
 	lock
-	poryswitch(LANGUAGE){
-		ES{
-			msgbox (format("Ese Profesor. Se la pasa siempre fuera de su casa investigando, ¿Qué no extraña a su familia?"))
-		}
-		EN{
-			msgbox (format("That Proffesor. Always out in field studies, does he not miss his family?"))
+	if (setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, GET_EVENT_FLAG)) {
+		poryswitch(LANGUAGE){
+			ES{
+				msgbox (format("Mira. Entiendo que sea su trabajo, pero la de veces que tuve que escuchar a su hij{AO} llorar porque su padre no está…\pDebería darle vergüenza…"))
+			}
+			EN{
+				msgbox (format("Look. I get that it's his job and all, but all the times I've had to hear his child cry because their dad isn't home…\pHe should be ashamed…"))
+			}
 		}
 	}
+	else {
+		poryswitch(LANGUAGE){
+			ES{
+				msgbox (format("Ese Profesor. Se la pasa siempre fuera de su casa investigando, ¿Qué no extraña a su familia?"))
+			}
+			EN{
+				msgbox (format("That Proffesor. Always out in field studies, does he not miss his family?"))
+			}
+		}
+		setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, SET_EVENT_FLAG)
+	}
+	closemessage
 	release
 	end
 }
@@ -459,9 +473,9 @@ LittlerootTown_Movement_PlayerEnterHouse:
 	step_end
 
 LittlerootTown_Movement_PlayerStepOffTruck:
+	set_visible
 	jump_right
 	delay_8
-	set_visible
 	delay_16
 	delay_16
 	delay_16

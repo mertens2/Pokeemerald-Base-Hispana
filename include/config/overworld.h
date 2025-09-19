@@ -34,7 +34,7 @@
 #define OW_BERRY_MUTATION_CHANCE       25         // Determina el % de probabilidad de una mutación.
 #define OW_BERRY_MOISTURE              FALSE      // Si está habilitado, el riego de las bayas no se trata de regarlas una vez por etapa, sino de mantener el suelo húmedo.
 #define OW_BERRY_ALWAYS_WATERABLE      FALSE      // Si OW_BERRY_MOISTURE está habilitado, esta configuración permite al jugador regar continuamente el suelo; el suelo seco causará una disminución en el Rendimiento de la Baya (como en Gen4). Cuando está desactivado, el suelo solo se puede regar cuando esté seco y el riego aumenta el rendimiento (como en Gen6).
-#define OW_BERRY_MULCH_USAGE           FALSE      // Si está habilitado, el Abono puede usarse en el suelo para fertilizarlo. De lo contrario, se considera inutilizable. ¡Nota que los efectos de humedad solo funcionan con OW_BERRY_MOISTURE habilitado!
+#define OW_BERRY_MULCH_USAGE           TRUE       // Si está habilitado, el Abono puede usarse en el suelo para fertilizarlo. De lo contrario, se considera inutilizable. ¡Nota que los efectos de humedad solo funcionan con OW_BERRY_MOISTURE habilitado!
 #define OW_BERRY_WEEDS                 FALSE      // Si está habilitado, pueden crecer malezas en las plantas de bayas que el jugador debe cuidar. Sin OW_BERRY_MOISTURE, los bonos de desmalezado se redondean hacia abajo.
 #define OW_BERRY_PESTS                 FALSE      // Si está habilitado, pueden aparecer plagas en las plantas de bayas que el jugador debe cuidar. Sin OW_BERRY_MOISTURE, los bonos de plagas se redondean hacia abajo.
 #define OW_BERRY_SIX_STAGES            FALSE      // En XY, las bayas pasan por seis etapas en lugar de cuatro. Este interruptor no afecta el tiempo que tarda un árbol en estar listo para la cosecha. Sin OW_BERRY_MOISTURE, las dos etapas adicionales se cuentan como BERRY_STAGE_TALLER para fines de riego.
@@ -131,12 +131,12 @@
 
 // Configuración
 #define OW_POPUP_BW_COLOR          OW_POPUP_BW_COLOR_BLACK  // B2W2 usan diferentes colores para sus ventanas emergentes del mapa.
-#define OW_POPUP_BW_TIME_MODE      OW_POPUP_BW_TIME_NONE    // Determina qué tipo de hora se muestra.
+#define OW_POPUP_BW_TIME_MODE      OW_POPUP_BW_TIME_24_HR   // Determina qué tipo de hora se muestra.
 #define OW_POPUP_BW_ALPHA_BLEND    FALSE                    // Habilita el mezclado alfa/transparencia para las ventanas emergentes. Principalmente destinado a usarse con la opción de color negro.
 
 // Centro Pokémon
 #define OW_IGNORE_EGGS_ON_HEAL           GEN_LATEST         // En Gen 4+, la enfermera en el Centro Pokémon no cura los Huevos en la máquina de curación.
-#define OW_UNION_DISABLE_CHECK           FALSE              // Si está habilitado, la enfermera no informará de si hay un entrenador esperando en la Sala Unión. Esto hace más rápida la carga del mapa del Centro Pokémon.
+#define OW_UNION_DISABLE_CHECK           TRUE               // Si está habilitado, la enfermera no informará de si hay un entrenador esperando en la Sala Unión. Esto hace más rápida la carga del mapa del Centro Pokémon.
 #define OW_FLAG_MOVE_UNION_ROOM_CHECK    0                  // Si está flag está seteada, el juego solo chequeará si hay jugadores en la Sala Unión cuando se están curando los Pokémon, y no cuando el jugador entra al Centro Pokémon. Esto hace más rápida la carga del mapa del Centro Pokémon. Esto es ignorado si OW_UNION_DISABLE_CHECK es TRUE.
 
 // Berry Blender

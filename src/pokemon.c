@@ -1047,7 +1047,14 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
 
-        if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
+        if ((VarGet(VAR_SHINY_FIRST_CHOICE) == species) || (VarGet(VAR_SHINY_SECOND_CHOICE) == species) || (VarGet(VAR_SHINY_THIRD_CHOICE) == species)){
+				FlagSet(P_FLAG_FORCE_SHINY);
+		}
+		else {
+			FlagClear(P_FLAG_FORCE_SHINY);
+		}
+		
+		if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
         {
             isShiny = FALSE;
         }
@@ -1083,6 +1090,12 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 
             isShiny = GET_SHINY_VALUE(value, personality) < SHINY_ODDS;
         }
+		// if ((VarGet(VAR_SHINY_FIRST_CHOICE) == species) || (VarGet(VAR_SHINY_SECOND_CHOICE) == species) || (VarGet(VAR_SHINY_THIRD_CHOICE) == species)){
+				// FlagClear(P_FLAG_FORCE_SHINY);
+				// VarSet(VAR_SHINY_FIRST_CHOICE, 0);
+				// VarSet(VAR_SHINY_SECOND_CHOICE, 0);
+				// VarSet(VAR_SHINY_THIRD_CHOICE, 0);
+		// }
     }
 
     if (hasFixedPersonality)
@@ -6873,4 +6886,106 @@ u32 IsSpeciesOfType(u32 species, u32 type)
      || gSpeciesInfo[species].types[1] == type)
         return TRUE;
     return FALSE;
+}
+
+u32 CalculateShininess(bool8 affectsShinyFlags, u8 method, u8 flagAffected, u16 species, u8 nature){
+	
+	u32 personality;
+	u32 value;
+	u32 totalRerolls;
+	bool8 keepNature = FALSE;
+	
+	
+	totalRerolls = 1;
+	value = gSaveBlock2Ptr->playerTrainerId[0]
+                 | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+                 | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+                 | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+	
+	
+	
+	switch (method){
+		case METHOD_MASUDA_METHOD:
+			totalRerolls += 6;
+			keepNature = TRUE;
+			break;
+		case METHOD_DEXNAV:
+			if ((gSaveBlock3Ptr->dexNavChain >= 5) && (gSaveBlock3Ptr->dexNavChain <= 9))
+				totalRerolls += 2;
+			else if ((gSaveBlock3Ptr->dexNavChain >= 10) && (gSaveBlock3Ptr->dexNavChain <= 19))
+				totalRerolls += 4;
+			else if ((gSaveBlock3Ptr->dexNavChain >= 20) && (gSaveBlock3Ptr->dexNavChain <= 29))
+				totalRerolls += 6;
+			else if ((gSaveBlock3Ptr->dexNavChain >= 30) && (gSaveBlock3Ptr->dexNavChain <= 39))
+				totalRerolls += 8;
+			else if (gSaveBlock3Ptr->dexNavChain >= 40)
+				totalRerolls += 10;
+			if (gSaveBlock3Ptr->dexNavChain % 5 == 0 && gSaveBlock3Ptr->dexNavChain != 50){
+				totalRerolls *= 2;
+			}
+			break;
+	}
+	
+	if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
+		totalRerolls += I_SHINY_CHARM_ADDITIONAL_ROLLS;
+	
+	// switch (gSaveBlock2Ptr->optionsShinyOdds){
+		// case 0:
+			// totalRerolls *= 1;
+			// break;
+		// case 1:
+			// totalRerolls *= 2;
+			// break;
+		// case 2:
+			// totalRerolls *= 4;
+			// break;
+		// case 3:
+			// totalRerolls *= 8;
+			// break;
+		// default:
+			// totalRerolls *= 2;
+	// }
+	personality = Random32();
+	if (!keepNature){
+		while ((GET_SHINY_VALUE(value, personality)) >= SHINY_ODDS && (totalRerolls > 0))
+		{
+			personality = Random32();
+			totalRerolls--;
+		}
+	}
+	else {
+		while ((nature != GetNatureFromPersonality(personality) || (GET_SHINY_VALUE(value, personality)) >= SHINY_ODDS) && (totalRerolls > 0)){
+			personality = Random32();
+			totalRerolls--;
+		}
+	}
+	
+	if (((GET_SHINY_VALUE(value, personality)) < SHINY_ODDS && affectsShinyFlags) || FlagGet(P_FLAG_FORCE_SHINY)){
+		switch (flagAffected){
+			case 0:
+				VarSet(VAR_SHINY_FIRST_CHOICE, species);
+				break;
+			case 1:
+				VarSet(VAR_SHINY_SECOND_CHOICE, species);
+				break;
+			default:
+				VarSet(VAR_SHINY_THIRD_CHOICE, species);
+				break;
+			
+		}
+	}
+	else if (((GET_SHINY_VALUE(value, personality)) >= SHINY_ODDS && affectsShinyFlags) || FlagGet(FLAG_NO_SHINIES)) {
+		switch (flagAffected){
+			case 0:
+				VarSet(VAR_SHINY_FIRST_CHOICE, species+1);
+				break;
+			case 1:
+				VarSet(VAR_SHINY_SECOND_CHOICE, species+1);
+				break;
+			default:
+				VarSet(VAR_SHINY_THIRD_CHOICE, species+1);
+				break;
+		}
+	}
+	return personality;
 }

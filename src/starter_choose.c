@@ -44,7 +44,7 @@ static void Task_DeclineStarter(u8 taskId);
 static void Task_MoveStarterChooseCursor(u8 taskId);
 static void Task_CreateStarterLabel(u8 taskId);
 static void CreateStarterPokemonLabel(u8 selection);
-static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y);
+static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y, bool8 isShiny);
 static void SpriteCB_SelectionHand(struct Sprite *sprite);
 static void SpriteCB_Pokeball(struct Sprite *sprite);
 static void SpriteCB_StarterPokemon(struct Sprite *sprite);
@@ -116,6 +116,63 @@ static const u16 sStarterMon[STARTER_MON_COUNT] =
     SPECIES_TORCHIC,
     SPECIES_MUDKIP,
 };
+
+static const u16 sStarterMonGen1[STARTER_MON_COUNT] =
+{
+    SPECIES_BULBASAUR,
+    SPECIES_CHARMANDER,
+    SPECIES_SQUIRTLE,
+};
+
+static const u16 sStarterMonGen2[STARTER_MON_COUNT] =
+{
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TOTODILE,
+};
+
+static const u16 sStarterMonGen4[STARTER_MON_COUNT] =
+{
+    SPECIES_TURTWIG,
+    SPECIES_CHIMCHAR,
+    SPECIES_PIPLUP,
+};
+
+static const u16 sStarterMonGen5[STARTER_MON_COUNT] =
+{
+    SPECIES_SNIVY,
+    SPECIES_TEPIG,
+    SPECIES_OSHAWOTT,
+};
+
+static const u16 sStarterMonGen6[STARTER_MON_COUNT] =
+{
+    SPECIES_CHESPIN,
+    SPECIES_FENNEKIN,
+    SPECIES_FROAKIE,
+};
+
+static const u16 sStarterMonGen7[STARTER_MON_COUNT] =
+{
+    SPECIES_ROWLET,
+    SPECIES_LITTEN,
+    SPECIES_POPPLIO,
+};
+
+static const u16 sStarterMonGen8[STARTER_MON_COUNT] =
+{
+    SPECIES_GROOKEY,
+    SPECIES_SCORBUNNY,
+    SPECIES_SOBBLE,
+};
+
+static const u16 sStarterMonHard[STARTER_MON_COUNT] =
+{
+    SPECIES_BELDUM,
+    SPECIES_DEINO,
+    SPECIES_JANGMO_O,
+};
+
 
 static const struct BgTemplate sBgTemplates[3] =
 {
@@ -352,8 +409,43 @@ u16 GetStarterPokemon(u16 chosenStarterId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+	switch (VarGet(VAR_STARTER_REGION)){
+		case 0:
+			return sStarterMon[chosenStarterId];
+			break;
+		case 1:
+			return sStarterMonGen1[chosenStarterId];
+			break;
+		case 2:
+			return sStarterMonGen2[chosenStarterId];
+			break;
+		case 3:
+			return sStarterMon[chosenStarterId];
+			break;
+		case 4:
+			return sStarterMonGen4[chosenStarterId];
+			break;
+		case 5:
+			return sStarterMonGen5[chosenStarterId];
+			break;
+		case 6:
+			return sStarterMonGen6[chosenStarterId];
+			break;
+		case 7:
+			return sStarterMonGen7[chosenStarterId];
+			break;
+		case 8:
+			return sStarterMonGen8[chosenStarterId];
+			break;
+		case 9:
+			return sStarterMonHard[chosenStarterId];
+			break;
+		default:
+			return sStarterMon[chosenStarterId];
+			break;
+	}
 }
+
 
 static void VblankCB_StarterChoose(void)
 {
@@ -494,9 +586,21 @@ static void Task_HandleStarterChooseInput(u8 taskId)
         // Create white circle background
         spriteId = CreateSprite(&sSpriteTemplate_StarterCircle, sPokeballCoords[selection][0], sPokeballCoords[selection][1], 1);
         gTasks[taskId].tCircleSpriteId = spriteId;
-
+		
+		if (((VarGet(VAR_SHINY_FIRST_CHOICE) < 1) && (selection == 0)) || ((VarGet(VAR_SHINY_SECOND_CHOICE) < 1)  && (selection == 1)) || ((VarGet(VAR_SHINY_THIRD_CHOICE) < 1) && (selection) == 2))
+		{
+			CalculateShininess(TRUE, METHOD_NONE, selection, GetStarterPokemon(selection), NATURE_BOLD);
+		}
+		if (FlagGet(FLAG_SHINY_CREATION))
+		{
+			VarSet(VAR_SHINY_FIRST_CHOICE, GetStarterPokemon(selection));
+		}
+		if (((VarGet(VAR_SHINY_FIRST_CHOICE) == GetStarterPokemon(selection)) && (selection == 0)) || ((VarGet(VAR_SHINY_SECOND_CHOICE) == GetStarterPokemon(selection))  && (selection == 1)) || ((VarGet(VAR_SHINY_THIRD_CHOICE) == GetStarterPokemon(selection)) && (selection) == 2))
+			spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection), sPokeballCoords[selection][0], sPokeballCoords[selection][1], TRUE);
+		else
+			spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection), sPokeballCoords[selection][0], sPokeballCoords[selection][1], FALSE);
         // Create Pokémon sprite
-        spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
+        // spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
         gSprites[spriteId].affineAnims = &sAffineAnims_StarterPokemon;
         gSprites[spriteId].callback = SpriteCB_StarterPokemon;
 
@@ -626,11 +730,11 @@ static void Task_CreateStarterLabel(u8 taskId)
     gTasks[taskId].func = Task_HandleStarterChooseInput;
 }
 
-static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y)
+static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y, bool8 isShiny)
 {
     u8 spriteId;
 
-    spriteId = CreateMonPicSprite_Affine(species, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    spriteId = CreateMonPicSprite_Affine(species, isShiny, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     gSprites[spriteId].oam.priority = 0;
     return spriteId;
 }

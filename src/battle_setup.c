@@ -873,6 +873,10 @@ static void CB2_GiveStarter(void)
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE);
+	VarSet(VAR_SHINY_FIRST_CHOICE, 0);
+	VarSet(VAR_SHINY_SECOND_CHOICE, 0);
+	VarSet(VAR_SHINY_THIRD_CHOICE, 0);
+	FlagClear(P_FLAG_FORCE_SHINY);
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);

@@ -9,15 +9,15 @@
 // por lo que Pikachu depende de la configuración de la Gen 1 a pesar de que Pichu sea el miembro más bajo de la cadena evolutiva.
 // Ej: Si P_GEN_2_POKEMON está configurado como FALSE, todos los miembros de la Familia Sneasel serán desactivados
 // (Sneasel + Hisuian, Weavile y Sneasler).
-#define P_GEN_1_POKEMON                  TRUE // Pokémon de la Generación 1 (RGBY)
-#define P_GEN_2_POKEMON                  TRUE // Pokémon de la Generación 2 (GSC)
-#define P_GEN_3_POKEMON                  TRUE // Pokémon de la Generación 3 (RSE, FRLG)
-#define P_GEN_4_POKEMON                  TRUE // Pokémon de la Generación 4 (DPPt, HGSS)
-#define P_GEN_5_POKEMON                  TRUE // Pokémon de la Generación 5 (BW, B2W2)
-#define P_GEN_6_POKEMON                  TRUE // Pokémon de la Generación 6 (XY, ORAS)
-#define P_GEN_7_POKEMON                  TRUE // Pokémon de la Generación 7 (SM, USUM, LGPE)
-#define P_GEN_8_POKEMON                  TRUE // Pokémon de la Generación 8 (SwSh, BDSP, LA)
-#define P_GEN_9_POKEMON                  TRUE // Pokémon de la Generación 9 (SV)
+#define P_GEN_1_POKEMON                  TRUE  // Pokémon de la Generación 1 (RGBY)
+#define P_GEN_2_POKEMON                  TRUE  // Pokémon de la Generación 2 (GSC)
+#define P_GEN_3_POKEMON                  TRUE  // Pokémon de la Generación 3 (RSE, FRLG)
+#define P_GEN_4_POKEMON                  TRUE  // Pokémon de la Generación 4 (DPPt, HGSS)
+#define P_GEN_5_POKEMON                  TRUE  // Pokémon de la Generación 5 (BW, B2W2)
+#define P_GEN_6_POKEMON                  TRUE  // Pokémon de la Generación 6 (XY, ORAS)
+#define P_GEN_7_POKEMON                  TRUE  // Pokémon de la Generación 7 (SM, USUM, LGPE)
+#define P_GEN_8_POKEMON                  TRUE  // Pokémon de la Generación 8 (SwSh, BDSP, LA)
+#define P_GEN_9_POKEMON                  FALSE // Pokémon de la Generación 9 (SV)
 
 // Configurar esto a TRUE añadirá las nuevas evoluciones al Dex Regional.
 #define P_NEW_EVOS_IN_REGIONAL_DEX       TRUE

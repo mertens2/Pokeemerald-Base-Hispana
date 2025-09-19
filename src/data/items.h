@@ -14384,4 +14384,106 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+	
+	[ITEM_GIGA_KANTONITE] =
+    {
+        .name = ITEM_NAME("Giga Kantonita"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Con ella, Pokémon de\n"
+            "Kanto usarán su Giga-\n"
+            "max como una Mega."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_GigaStone,
+        .iconPalette = gItemIconPalette_GigaKantonite,
+    },
+	
+	[ITEM_GIGA_UNOVANITE] =
+    {
+        .name = ITEM_NAME("Giga Unovanita"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Con ella, Pokémon de\n"
+            "Unova usarán su Giga-\n"
+            "max como una Mega."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_GigaStone,
+        .iconPalette = gItemIconPalette_GigaUnovanite,
+    },
+	
+	[ITEM_MELMETALITE] =
+    {
+        .name = ITEM_NAME("Melmetalita"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Con ella, Melmetal\n"
+            "usará su Gigamax\n"
+            "como Mega Evolución."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_GigaStone,
+        .iconPalette = gItemIconPalette_GigaAlolanite,
+    },
+	
+	[ITEM_GIGA_GALARITE] =
+    {
+        .name = ITEM_NAME("Giga Galarita"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Con ella, Pokémon de\n"
+            "Galar usarán su Giga-\n"
+            "max como una Mega."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_GigaStone,
+        .iconPalette = gItemIconPalette_GigaGalarite,
+    },
+	
+	[ITEM_URSHIFUNITE_X] =
+    {
+        .name = ITEM_NAME("Urshifunita X"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Con ella, Urshifu\n"
+            "Fluido usará su\n"
+            "Gigamax como Mega."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_GigaStone,
+        .iconPalette = gItemIconPalette_GigaKantonite,
+    },
+	
+	[ITEM_URSHIFUNITE_Y] =
+    {
+        .name = ITEM_NAME("Urshifunita Y"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Con ella, Urshifu\n"
+            "Brusco usará su\n"
+            "Gigamax como Mega."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_GigaStone,
+        .iconPalette = gItemIconPalette_GigaGalarite,
+    },
 };

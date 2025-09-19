@@ -4,7 +4,7 @@ Unknown::
 
 Birch::
 # 4 "data/text/name_boxes.pory"
-	.string "{COLOR LIGHT_BLUE}{SHADOW BLUE}Professor Birch$"
+	.string "{COLOR LIGHT_BLUE}{SHADOW BLUE}Profesor Birch$"
 
 BirchEng::
 # 10 "data/text/name_boxes.pory"
@@ -12,15 +12,15 @@ BirchEng::
 
 EmpleadoDevon::
 # 14 "data/text/name_boxes.pory"
-	.string "{COLOR LIGHT_BLUE}{SHADOW BLUE}Devon Employee$"
+	.string "{COLOR LIGHT_BLUE}{SHADOW BLUE}Empleado Devon$"
 
 Norman::
 # 20 "data/text/name_boxes.pory"
-	.string "{COLOR LIGHT_BLUE}{SHADOW BLUE}Dad$"
+	.string "{COLOR LIGHT_BLUE}{SHADOW BLUE}Papá$"
 
 Mama::
 # 27 "data/text/name_boxes.pory"
-	.string "{COLOR LIGHT_RED}{SHADOW RED}Mom$"
+	.string "{COLOR LIGHT_RED}{SHADOW RED}Mamá$"
 
 Marta::
 # 34 "data/text/name_boxes.pory"
@@ -72,11 +72,11 @@ Archie::
 
 Aqua::
 # 70 "data/text/name_boxes.pory"
-	.string "{COLOR BLUE}Aqua Grunt$"
+	.string "{COLOR BLUE}Recluta Aqua$"
 
 Magma::
 # 76 "data/text/name_boxes.pory"
-	.string "{COLOR RED}Magma Grunt$"
+	.string "{COLOR RED}Recluta Magma$"
 
 Maxie::
 # 82 "data/text/name_boxes.pory"
@@ -128,7 +128,7 @@ Sidney::
 
 CampeonaLeaf::
 # 118 "data/text/name_boxes.pory"
-	.string "{COLOR LIGHT_RED}{SHADOW RED}Champion Leaf$"
+	.string "{COLOR LIGHT_RED}{SHADOW RED}Campeona Leaf$"
 
 Leaf::
 # 124 "data/text/name_boxes.pory"
@@ -136,23 +136,23 @@ Leaf::
 
 PapaWally::
 # 127 "data/text/name_boxes.pory"
-	.string "{COLOR BLUE}Wally's Dad$"
+	.string "{COLOR BLUE}Papá de Wally$"
 
 TioWally::
 # 133 "data/text/name_boxes.pory"
-	.string "{COLOR BLUE}Wally's Uncle$"
+	.string "{COLOR BLUE}Tío de Wally$"
 
 MamaWally::
 # 139 "data/text/name_boxes.pory"
-	.string "{COLOR RED}Wally's Mom$"
+	.string "{COLOR RED}Mamá de Wally$"
 
 TiaWally::
 # 145 "data/text/name_boxes.pory"
-	.string "{COLOR RED}Wally's Aunt$"
+	.string "{COLOR RED}Tía de Wally$"
 
 Cientifico::
 # 151 "data/text/name_boxes.pory"
-	.string "{COLOR BLUE}Scientist$"
+	.string "{COLOR BLUE}Científico$"
 
 Alex::
 # 157 "data/text/name_boxes.pory"
@@ -199,16 +199,15 @@ Carlos::
 
 RecoveredItems::
 # 190 "data/text/name_boxes.pory"
-	.string "You've recovered your items!$"
+	.string "¡Has recuperado tus objetos!$"
 
 RecoveredPokemon::
 # 196 "data/text/name_boxes.pory"
-	.string "You've recovered your Pokémon!$"
+	.string "¡Has recuperado tus Pokémon!$"
 
 RecoveredPokemonAndItems::
 # 202 "data/text/name_boxes.pory"
-	.string "You've recovered both your items and\n"
-	.string "your Pokémon!$"
+	.string "¡Has recuperado tus Pokémon y objetos!$"
 
 Chico::
 # 208 "data/text/name_boxes.pory"
@@ -228,4 +227,4 @@ Delta::
 
 Entrevistador::
 # 220 "data/text/name_boxes.pory"
-	.string "{COLOR BLUE}Interviewer$"
+	.string "{COLOR BLUE}Entrevistador$"
