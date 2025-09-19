@@ -86,6 +86,7 @@ static const u8 sWindowVerticalScrollSpeeds[] = {
     [OPTIONS_TEXT_SPEED_SLOW] = 1,
     [OPTIONS_TEXT_SPEED_MID] = 2,
     [OPTIONS_TEXT_SPEED_FAST] = 4,
+    [OPTIONS_TEXT_SPEED_FASTER] = 4,
 };
 
 static const struct GlyphWidthFunc sGlyphWidthFuncs[] =
@@ -969,7 +970,7 @@ void DrawDownArrow(u8 windowId, u16 x, u16 y, u8 bgColor, bool32 drawArrow, u8 *
 static u16 RenderText(struct TextPrinter *textPrinter)
 {
     struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
-    u16 currChar;
+    u16 currChar, nextChar;
     s32 width;
     s32 widthHelper;
 	u8 repeats, pans, playStrengthSE, delay, numShakes;
@@ -1892,8 +1893,16 @@ static void DecompressGlyph_Normal(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        glyphs = gFontNormalLatinGlyphs + (0x20 * glyphId);
-        gCurGlyph.width = gFontNormalLatinGlyphWidths[glyphId];
+        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        {
+            glyphs = gFontNormalLatinGlyphs + (0x20 * glyphId);
+            gCurGlyph.width = gFontNormalLatinGlyphWidths[glyphId];
+        }
+        else
+        {
+            glyphs = gFontShortLatinGlyphs + (0x20 * glyphId);
+            gCurGlyph.width = gFontShortLatinGlyphWidths[glyphId];
+        }
 
         if (gCurGlyph.width <= 8)
         {
@@ -1916,8 +1925,12 @@ static u32 GetGlyphWidth_Normal(u16 glyphId, bool32 isJapanese)
 {
     if (isJapanese == TRUE)
         return 8;
-    else
-        return gFontNormalLatinGlyphWidths[glyphId];
+    else {
+        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+            return gFontNormalLatinGlyphWidths[glyphId];
+        else
+            return gFontShortLatinGlyphWidths[glyphId];
+    }
 }
 
 static void DecompressGlyph_Bold(u16 glyphId)

@@ -591,3 +591,4 @@ gSpecials::
 	def_special DoCafeTrainerBattle
 	def_special GetCafeTrainersAfterBattleData
 	def_special SetHourMinutes
+	def_special BufferUnitSystemText

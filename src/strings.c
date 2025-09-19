@@ -207,6 +207,7 @@ const u8 *const gPocketNamesStringsTable[] =
 
 const u8 gText_NumberItem_TMBerry[] = _("Nº{STR_VAR_1}{CLEAR 0x07}{STR_VAR_2}");
 const u8 gText_NumberItem_HM[] = _("{CLEAR_TO 0x11}{STR_VAR_1}{CLEAR 0x05}{STR_VAR_2}");
+
 const u8 gText_ShopBuy[] = _("Comprar");
 const u8 gText_ShopSell[] = _("Vender");
 const u8 gText_ShopQuit[] = _("Salir");
@@ -343,6 +344,13 @@ const u8 gText_ReturnToWaitingRoom[] = _("¿Quieres volver a la sala de espera?"
 const u8 gText_CancelChallenge[] = _("¿Cancelas el desafío?");
 const u8 gText_EscapeFromHere[] = _("¿Quieres escapar de aquí y volver\na {STR_VAR_1}?");
 const u8 gText_ReturnToHealingSpot[] = _("¿Quieres volver al último lugar de\ncura que usaste en {STR_VAR_1}?");
+
+const u8 gText_SizeSlash[] = _("SIZE /");
+const u8 gText_FirmSlash[] = _("FIRM /");
+const u8 gText_Var1DotVar2[] = _("{STR_VAR_1}.{STR_VAR_2}”");
+const u8 gText_Var1DotVar2_Metric[] = _("{STR_VAR_1}.{STR_VAR_2}cm");
+const u8 gText_OptionMenuSave[]  = _("Guardar");
+
 const u8 gText_PauseUntilPress[] = _("{PAUSE_UNTIL_PRESS}");
 const u8 gJPText_AreYouSureYouWantToSpinTradeMon[] = _("{STR_VAR_1}を ぐるぐるこうかんに\nだして よろしいですか？");
 ALIGNED(4) const u8 gText_OnlyPkmnForBattle[] = _("Es el único con el\nque puedes luchar.");
@@ -951,6 +959,7 @@ const u8 gText_BlenderMaxSpeedRecord[] = _("Licuabayas\n¡Récord de velocidad!"
 const u8 gText_234Players[] = _("2 Jugad.\n3 Jugad.\n4 Jugad.");
 const u8 gText_YesNo[] = _("Sí\nNo");
 const u8 gText_SelectorArrow3[] = _("▶");
+
 const u8 gText_Peekaboo[] = _("Bebita linda");
 const u8 gText_CommErrorCheckConnections[] = _("Error de conexión…\nRevisa todas las conexiones, apaga\nla consola y vuelve a encenderla.");
 const u8 gText_CommErrorEllipsis[] = _("Error de conexión…");
@@ -985,6 +994,12 @@ const u8 gText_CopperCard[] = _("Cobre");
 const u8 gText_SilverCard[] = _("Plata");
 const u8 gText_GoldCard[] = _("Oro");
 const u8 gText_Day[] = _("Día");
+const u8 gText_Font[] = _("Fuente");  //tx_optionsPlus
+const u8 gText_OptionMatchCalls[] = _("Llamadas");    //tx_optionsPlus
+const u8 gText_UnitSystemMetric[] = _("Métrico");       //tx_optionsPlus
+const u8 gText_UnitSystemImperial[] = _("Imperial");   //tx_optionsPlus
+const u8 gText_OptionFontEmerald[] = _("Esmeralda");    //tx_optionsPlus
+const u8 gText_OptionFontFireRed[] = _("FRLG");        //tx_optionsPlus
 const u8 gText_Colon3[] = _(":");
 const u8 gText_Confirm2[] = _("¡Ya!");
 const u8 gText_Days[] = _("Días");
