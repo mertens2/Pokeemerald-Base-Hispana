@@ -1,4 +1,8 @@
 raw `
+@ NOTE: Route 104's sail to Dewford script references local IDs from Dewford's map.
+@  These are labeled in DewfordTown/scripts.inc
+.set LOCALID_RIVAL, 34
+
 Route104_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route104_OnFrame
 	map_script MAP_SCRIPT_ON_TRANSITION, Route104_OnTransition
@@ -33,7 +37,7 @@ Route104_EventScript_TrySetRivalPos::
 	goto_if_ge VAR_BOARD_BRINEY_BOAT_STATE, 1, Route104_EventScript_DontSetRivalPos
 	goto_if_set FLAG_MET_RIVAL_RUSTBORO, Route104_EventScript_DontSetRivalPos
 	goto_if_unset FLAG_REGISTER_RIVAL_POKENAV, Route104_EventScript_DontSetRivalPos
-	setobjectxyperm LOCALID_ROUTE104_RIVAL, 17, 52
+	setobjectxyperm LOCALID_RIVAL, 17, 52
 	return
 
 Route104_EventScript_DontSetRivalPos::
@@ -42,7 +46,7 @@ Route104_EventScript_DontSetRivalPos::
 Route104_EventScript_Rival::
 	lockall
 	setvar VAR_0x8008, 1
-	applymovement LOCALID_ROUTE104_RIVAL, Common_Movement_FacePlayer
+	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	goto Route104_EventScript_RivalEncounter
 
@@ -51,22 +55,22 @@ Route104_EventScript_RivalTrigger::
 	setflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 10
-	addobject LOCALID_ROUTE104_RIVAL
+	addobject LOCALID_RIVAL
 	clearflag FLAG_HIDE_ROUTE_104_RIVAL
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerBackUp
+	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerBackUp
 	waitmovement 0
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalExitBrineysCottage
+	applymovement LOCALID_RIVAL, Route104_Movement_RivalExitBrineysCottage
 	waitmovement 0
 	delay 20
 	setvar VAR_0x8008, 0
 	call RustboroCity_EventScript_PlayRivalMusic
 	playse SE_PIN
-	applymovement LOCALID_ROUTE104_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_ROUTE104_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_RIVAL, Common_Movement_Delay48
 	waitmovement 0
 	goto Route104_EventScript_RivalEncounter
 
@@ -104,18 +108,16 @@ Route104_EventScript_MayEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerFaceRival
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalWalkSlowLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerFaceRival
+	applymovement LOCALID_RIVAL, Route104_Movement_RivalWalkSlowLeft
 	msgbox Route104_Text_MayHowsYourPokedex, MSGBOX_DEFAULT
 	closemessage
 	waitmovement 0
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalApproachPlayer
+	applymovement LOCALID_RIVAL, Route104_Movement_RivalApproachPlayer
 	waitmovement 0
-	copyobjectxytoperm LOCALID_ROUTE104_RIVAL
-	msgbox Route104_Text_MayMinesDecentLetsBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleMay
-	msgbox Route104_Text_MayHaventRaisedPokemon, MSGBOX_DEFAULT
-	call Route104_EventScript_RestoreMusic
+	copyobjectxytoperm LOCALID_RIVAL
+	msgbox Route104_Text_MayMinesDecentLetsBattle, MSGBOX_DEFAULT
+	goto Route104_EventScript_BattleMay
 	releaseall
 	end
 
@@ -134,9 +136,8 @@ Route104_Movement_PlayerFaceRival:
 	step_end
 
 Route104_EventScript_MayAskToBattle::
-	msgbox Route104_Text_MayLetsBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleMay
-	msgbox Route104_Text_MayHaventRaisedPokemon, MSGBOX_DEFAULT
+	msgbox Route104_Text_MayLetsBattle, MSGBOX_NPC
+	goto Route104_EventScript_BattleMay
 	releaseall
 	end
 
@@ -190,25 +191,22 @@ Route104_EventScript_BrendanEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerFaceRival
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalWalkSlowLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerFaceRival
+	applymovement LOCALID_RIVAL, Route104_Movement_RivalWalkSlowLeft
 	msgbox Route104_Text_BrendanHowsYourPokedex, MSGBOX_DEFAULT
 	closemessage
 	waitmovement 0
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalApproachPlayer
+	applymovement LOCALID_RIVAL, Route104_Movement_RivalApproachPlayer
 	waitmovement 0
-	copyobjectxytoperm LOCALID_ROUTE104_RIVAL
-	msgbox Route104_Text_BrendanDoingGreatLetsBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleBrendan
-	msgbox Route104_Text_BrendanNoConfidence, MSGBOX_DEFAULT
-	call Route104_EventScript_RestoreMusic
+	copyobjectxytoperm LOCALID_RIVAL
+	msgbox Route104_Text_BrendanDoingGreatLetsBattle, MSGBOX_DEFAULT
+	goto Route104_EventScript_BattleBrendan
 	releaseall
 	end
 
 Route104_EventScript_BrendanAskToBattle::
-	msgbox Route104_Text_BrendanLetsBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleBrendan
-	msgbox Route104_Text_BrendanNoConfidence, MSGBOX_DEFAULT
+	msgbox Route104_Text_MayLetsBattle, MSGBOX_DEFAULT
+	goto Route104_EventScript_BattleBrendan
 	releaseall
 	end
 
@@ -221,7 +219,7 @@ Route104_EventScript_BattleBrendan::
 	end
 
 Route104_EventScript_BrendanDefeated::
-	msgbox Route104_Text_BrendanPostBattle, MSGBOX_DEFAULT
+	msgbox Route104_Text_MayPostBattle, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, Route104_EventScript_RestoreMusic
 	releaseall
 	end
@@ -277,6 +275,11 @@ Route104_EventScript_WhiteHerbFlorist::
 	goto_if_set FLAG_RECEIVED_WHITE_HERB, Route104_EventScript_ReceivedWhiteHerb
 	msgbox Route104_Text_DontNeedThisTakeIt, MSGBOX_DEFAULT
 	giveitem ITEM_WHITE_HERB
+	giveitem ITEM_RED_SCARF
+	giveitem ITEM_BLUE_SCARF
+	giveitem ITEM_PINK_SCARF
+	giveitem ITEM_GREEN_SCARF
+	giveitem ITEM_YELLOW_SCARF
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_WHITE_HERB
 	release
@@ -326,11 +329,11 @@ Route104_EventScript_Woman::
 Route104_EventScript_Boy2::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM_BULLET_SEED, Route104_EventScript_ReceivedBulletSeed
+	checkitem ITEM_TM09
+	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_ReceivedBulletSeed
 	msgbox Route104_Text_LikeFillingMouthWithSeedsTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_BULLET_SEED
+	giveitem ITEM_TM09
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM_BULLET_SEED
 	release
 	end
 
@@ -344,29 +347,30 @@ Route104_EventScript_Girl2::
 	end
 
 Route104_EventScript_SailToDewford::
-	setobjectsubpriority LOCALID_ROUTE104_BRINEY, MAP_ROUTE104, 0
-	setobjectsubpriority LOCALID_PLAYER, MAP_ROUTE104, 0
-	applymovement LOCALID_ROUTE104_BRINEY, Route104_Movement_BrineyBoardBoat
+	setobjectsubpriority LOCALID_BRINEY_R104, MAP_ROUTE104, 0
+	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_ROUTE104, 0
+	applymovement LOCALID_BRINEY_R104, Route104_Movement_BrineyBoardBoat
 	waitmovement 0
-	removeobject LOCALID_ROUTE104_BRINEY
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerBoardBoat
+	removeobject LOCALID_BRINEY_R104
+	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerBoardBoat
 	waitmovement 0
-	hideobjectat LOCALID_PLAYER, MAP_ROUTE104
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
 	call Common_EventScript_PlayBrineysBoatMusic
 	goto_if_set FLAG_ENABLE_NORMAN_MATCH_CALL, Route104_EventScript_SailToDewfordNoCall
 	goto_if_unset FLAG_ENABLE_NORMAN_MATCH_CALL, Route104_EventScript_SailToDewfordDadCalls
 	end
 
 Route104_EventScript_SailToDewfordNoCall::
-	applymovement LOCALID_ROUTE104_BOAT, Route104_Movement_SailToDewford
-	applymovement LOCALID_PLAYER, Route104_Movement_SailToDewford
+	applymovement LOCALID_BOAT_R104, Route104_Movement_SailToDewfordBeforeDadCalls
+	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_SailToDewfordBeforeDadCalls
+	delay 32
+	fadescreen FADE_TO_BLACK
+	warp MAP_DEWFORD_TOWN, 1, 1
 	waitmovement 0
 	goto Route104_EventScript_ArriveInDewford
 
 Route104_EventScript_SailToDewfordDadCalls::
-	applymovement LOCALID_ROUTE104_BOAT, Route104_Movement_SailToDewfordBeforeDadCalls
-	applymovement LOCALID_PLAYER, Route104_Movement_SailToDewfordBeforeDadCalls
-	waitmovement 0
+	fadescreen FADE_TO_BLACK
 	pokenavcall Route104_Text_DadPokenavCall
 	waitmessage
 	delay 30
@@ -376,19 +380,16 @@ Route104_EventScript_SailToDewfordDadCalls::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_NORMAN_MATCH_CALL
-	applymovement LOCALID_PLAYER, Route104_Movement_SailToDewfordAfterDadCalls
-	applymovement LOCALID_ROUTE104_BOAT, Route104_Movement_SailToDewfordAfterDadCalls, MAP_ROUTE104
-	waitmovement LOCALID_ROUTE104_BOAT, MAP_ROUTE104
-	waitmovement 0
+	warp MAP_DEWFORD_TOWN, 19, 7
 	goto Route104_EventScript_ArriveInDewford
 
 Route104_EventScript_ArriveInDewford::
 	delay 50
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerExitBoat
+	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerExitBoat
 	waitmovement 0
 	call Common_EventScript_StopBrineysBoatMusic
-	showobjectat LOCALID_PLAYER, MAP_DEWFORD_TOWN
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerMoveForBriney
+	showobjectat OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerMoveForBriney
 	waitmovement 0
 	setobjectxyperm LOCALID_DEWFORD_BRINEY, 12, 8
 	addobject LOCALID_DEWFORD_BRINEY
@@ -398,11 +399,12 @@ Route104_EventScript_ArriveInDewford::
 	waitmovement 0
 	addobject LOCALID_DEWFORD_BOAT
 	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
+	warp MAP_DEWFORD_TOWN, 12, 8
 	call Common_EventScript_StopBrineysBoatMusic
 	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
-	hideobjectat LOCALID_ROUTE104_BOAT, MAP_ROUTE104
+	hideobjectat LOCALID_BOAT_R104, MAP_ROUTE104
 	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
-	resetobjectsubpriority LOCALID_PLAYER, MAP_ROUTE104
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
 	resetobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN
 	copyobjectxytoperm LOCALID_DEWFORD_BRINEY
 	setvar VAR_BOARD_BRINEY_BOAT_STATE, 0
@@ -421,6 +423,17 @@ Route104_EventScript_LandedInDewford::
 	end
 
 Route104_Movement_SailToDewfordBeforeDadCalls:
+	walk_down
+	walk_down
+	walk_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+Route104_Movement_SailToDewfordBeforeDadCallsOld:
 	walk_down
 	walk_down
 	walk_down
@@ -996,177 +1009,181 @@ Route104_EventScript_Darian::
 	end
 
 Route104_Text_BrineyLivesInSeasideCottage:
-	.string "El SR. ARENQUE vive en esa casita\n"
-	.string "al lado del mar.\p"
-	.string "Solía ser un gran marinero que\n"
-	.string "navegaba contra viento y marea.$"
+	.string "El Sr. Briney solía ser un\nmarinero sin miedo al mar.\lNi la peor tormenta lo asustaba.$"
 
 Route104_Text_WhatsItLikeAtBottomOfSea:
-	.string "El mar…\p"
-	.string "¿Qué habrá en el fondo del mar,\n"
-	.string "matarile, rile, rile?$"
+	.string "El mar, ¿eh?\p"
+	.string "Me pregunto cómo se verá\n"
+	.string "el fondo del mar.$"
 
 Route104_Text_ThrowBallAtWeakenedPokemon:
-	.string "Si vas a lanzar una POKé BALL\n"
-	.string "a un POKéMON salvaje, quítale toda\l"
-	.string "la salud que puedas sin debilitarlo.\p"
-	.string "Es más fácil de atrapar cuando está\n"
-	.string "envenenado, quemado o dormido.$"
+	.string "¿Sabias que hasta hace poco se creía\n"
+	.string "que {COLOR BLUE}los Pokémon sin género no podían\l"
+	.string "usar Atracción{COLOR DARK_GRAY}?\p"
+	.string "Ahora parece tonto creer eso, pero\n"
+	.string "{COLOR BLUE}pueden enamorar a\l"
+	.string "cualquier Pokémon{COLOR DARK_GRAY}.\p"
+	.string "Me pregunto… ¿Qué otros\n"
+	.string "descubrimientos con respecto a los\l"
+	.string "{COLOR BLUE}estados{COLOR DARK_GRAY} se habrá hecho…?$"
 
 Route104_Text_OnlyThrowBallAtWildPokemon:
-	.string "Intentar atrapar el POKéMON de otro\n"
-	.string "ENTRENADOR es igual que robar.\p"
-	.string "Sólo se deben lanzar POKé BALLS\n"
-	.string "a los POKéMON salvajes, no lo olvides.$"
+	.string "Siempre que puedas, usa {COLOR BLUE}Ladrón{COLOR DARK_GRAY} contra\n"
+	.string "sus Pokémon para {COLOR BLUE}robar sus objetos\l"
+	.string "equipados{COLOR DARK_GRAY}, pues nunca sabes cuándo\l"
+	.string "tendrán objetos raros o muy valiosos.$"
 
 Route104_Text_ImNotATrainer:
-	.string "No, yo no soy ninguna ENTRENADORA.\p"
-	.string "Pero es cierto, si dos ENTRENADORES\n"
-	.string "se miran a los ojos, deben combatir.\p"
-	.string "Así que, si no quieres luchar, procura\n"
-	.string "no desafiar a nadie con tu mirada.$"
+	.string "¿Sabías que hay personas que compran\n"
+	.string "objetos valiosos por un alto precio?\p"
+	.string "Esas personas se llaman coleccionistas,\n"
+	.string "y creo que hay 5 en toda Hoenn, así que\l"
+	.string "búscalos bien, ¡Quizá puedas volverte\l"
+	.string "millonari{OA} ese día!$"
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
-	.string "Me encanta llenarme la boca de semillas\n"
-	.string "y luego escupirlas muy rápido.\p"
-	.string "Te voy a dar esto para que lo intentes.\p"
-	.string "Úsalo con un POKéMON para que aprenda\n"
-	.string "a disparar semillas a toda velocidad.$"
+	.string "¡Me encanta ponerme muchas semillas en\n"
+	.string "la boca y escupirlas rápidamente!\p"
+	.string "Mi hermanita bebé se ríe mucho cuando\n"
+	.string "lo hago, así que me grabé en un DVD y se\l"
+	.string "lo enseñé a mi Pokémon de esa forma, y\l"
+	.string "después de eso, ¡Todos querían ese\l"
+	.string "DVD!\p"
+	.string "Toma, acá tienes una muestra.$"
+
 
 Route104_Text_TMsAreOneTimeUse:
-	.string "¡Un consejo!\p"
-	.string "Una MÁQUINA TÉCNICA, o MT,\n"
-	.string "sólo se puede usar una vez.\p"
-	.string "Una vez utilizada, desaparece, así\n"
-	.string "que piensa bien cómo la empleas.$"
+	.string "Me pregunto si podré tener novia\n"
+	.string "gracias a este invento…$"
 
 Route104_Text_DontNeedThisTakeIt:
-	.string "Esta FLORISTERÍA empezó a vender\n"
-	.string "plantas hace poco.\p"
-	.string "Me hizo tanta ilusión que me volví loca\n"
-	.string "comprando. No necesito esta HIERBA\l"
-	.string "BLANCA. ¿Quieres quedártela?$"
+	.string "¡La Floristería tiene una nueva Tienda\n"
+	.string "que te vende diferentes tipos de Baya\l"
+	.string "dependieno de tus Medallas!\p"
+	.string "¡Muy útil sobretodo si te gustan los\n"
+	.string "concursos, o quieres ganar con\l"
+	.string "desventaja de tipos!\p"
+	.string "Como agradecimiento por escuchar,\n"
+	.string "¡Toma estas!$"
+
 
 Route104_Text_FlowerShopSellingSaplings:
-	.string "Esta FLORISTERÍA empezó a vender\n"
-	.string "plantas hace poco.\p"
-	.string "Me hizo tanta ilusión que me volví loca\n"
-	.string "comprando. ¿Qué hago con todo esto?$"
+	.string "¡La Floristería tiene una nueva Tienda\n"
+	.string "que te vende diferentes tipos de Baya\l"
+	.string "dependieno de tus Medallas!\p"
+	.string "¡Muy útil!$"
 
 Route104_Text_MrBrineysCottage:
-	.string "CASA del SR. ARENQUE$"
+	.string "CASA DEL SR. BRINEY$"
 
 Route104_Text_RouteSignPetalburg:
-	.string "RUTA 104\n"
-	.string "{RIGHT_ARROW} CIUDAD PETALIA$"
+	.string "RUTA 1O4\n"
+	.string "{RIGHT_ARROW} CIUDAD PETALBURG$"
 
 Route104_Text_RouteSignRustboro:
-	.string "RUTA 104\n"
-	.string "{UP_ARROW} CIUDAD FÉRRICA$"
+	.string "RUTA 1O4\n"
+	.string "{UP_ARROW} CIUDAD RUSTBORO$"
 
 Route104_Text_PrettyPetalFlowShop:
-	.string "FLORISTERÍA PITIMINÍ$"
+	.string "FLORISTERÍA$"
 
 Route104_Text_TrainerTipsDoubleBattles:
-	.string "PISTAS para ENTRENADORES\p"
-	.string "En la región de HOENN hay dúos de\n"
-	.string "ENTRENADORES que te desafían a\l"
-	.string "COMBATES DOBLES de POKéMON.\p"
-	.string "En un COMBATE DOBLE, el ENTRENADOR\n"
-	.string "debe enviar dos POKéMON: el que está\l"
-	.string "a la izquierda de la lista y el que está\l"
-	.string "arriba del todo. ¡Alinea bien tu equipo!$"
+	.string "¡PISTAS PARA ENTRENADORES!\p"
+	.string "Los Pokémon salvajes de las Rutas\n"
+	.string "cambian dependiendo si es de día o de\l"
+	.string "noche, ¡Intenta revisar cada Ruta\l"
+	.string "durante distintas horas del día!$"
 
 Route104_Text_MayWeShouldRegister:
-	.string "AURA: ¡Oh, hola, {PLAYER}{KUN}!\p"
-	.string "DEVON ha activado la AGENDA\n"
-	.string "del MÓVIL de tu POKéNAV, ¿verdad?\p"
-	.string "¡Deberíamos registrarnos para seguir\n"
-	.string "en contacto!$"
+	.string "Ah, hola, {PLAYER}.\n"
+	.string "¿También te dieron el PC Portátil y el\l"
+	.string "PokéNav?\l"
+	.string "Creí que eran raros de conseguir…\p"
+	.string "¡Pero bueno! Ya que estamos, añádeme a\n"
+	.string "tu lista de contactos para… Bueno…\l"
+	.string "Porque sí, lo que sea.$"
+
 
 Route104_Text_RegisteredMay:
-	.string "{PLAYER} ha registrado a\n"
-	.string "AURA en el POKéNAV.$"
+	.string "{RIVAL} se registró sol{AO} en tu\n"
+	.string "PokeNav.$"
 
 Route104_Text_MayHowsYourPokedex:
-	.string "AURA: Por cierto, {PLAYER}{KUN},\n"
-	.string "¿cómo llevas la POKéDEX?$"
+	.string "Ah, sí, necesito saber, ¿Cómo va tu\n"
+	.string "Pokédex?\n"
+	.string "Seguro que no tan bien como la mía.$"
 
 Route104_Text_MayMinesDecentLetsBattle:
-	.string "La mía es más que aceptable.\n"
-	.string "Así que…\l"
-	.string "¿nos echamos un combate?$"
+	.string "La mía está increíble, ¿Sabías?\p"
+	.string "Además, algo me dijo mi Papá sobre las\n"
+	.string "Dexes, que podemos {COLOR GREEN}intercambiar los\l"
+	.string "datos de la Pokédex{COLOR DARK_GRAY} para poder\l"
+	.string "completarla más rápido.\p"
+	.string "Realmente no quiero necesitar tu ayuda\n"
+	.string "para esto, y también dudo que hacerlo\l"
+	.string "vaya a registrarme nuevos Pokémon. Así\l"
+	.string "que hagamos una cosa:\p"
+	.string "Si me ganas en una Batalla Pokémon, voy\n"
+	.string "a intercambiarte los datos.$"
 
-Route104_Text_MayHaventRaisedPokemon:
-	.string "AURA: ¡Pero bueno! ¿Acaso no\n"
-	.string "has estado entrenando tus POKéMON?\p"
-	.string "¿No has atrapado nuevos POKéMON?\n"
-	.string "¿No has estado criando los que tienes?\p"
-	.string "Pues todo ENTRENADOR que se precie\n"
-	.string "debería hacerlo…$"
 
 Route104_Text_MayLetsBattle:
-	.string "AURA: Bueno, ¿qué te parece?\n"
-	.string "¿Nos echamos un combate?$"
+	.string "¡PELEA!$"
 
 Route104_Text_MayIntro:
-	.string "AURA: No tienes mucha experiencia,\n"
-	.string "{PLAYER}{KUN}. ¡No puedo perder!$"
+	.string "¡Ganaré!$"
 
 Route104_Text_MayDefeat:
-	.string "¡Vaya!\n"
-	.string "¡Eres mejor de lo que esperaba!$"
+	.string "………………………………………………\n"
+	.string "No… Puedo derrotarte…\l"
+	.string "Pero si he… Considerado todo…$"
 
 Route104_Text_MayPostBattle:
-	.string "AURA: Se ve a la legua que has mejorado\n"
-	.string "mucho en los combates POKéMON.\p"
-	.string "Pero, además de hacerles luchar,\n"
-	.string "tendrías que hacer como el SR. ARENQUE.\p"
-	.string "Es importante entablar una buena\n"
-	.string "amistad con tus POKéMON.$"
+	.string "Pues, como dije, ahora intercambiemos\n"
+	.string "datos de nuestras Pokédex.\n"
+	.string "Préstamela un poco.$"
 
 Route104_Text_BrendanWeShouldRegister:
-	.string "BRUNO: ¡Eh, hola, {PLAYER}!\p"
-	.string "¡DEVON ha activado la AGENDA\n"
-	.string "del MÓVIL de tu POKéNAV! ¡Genial!\p"
-	.string "¡Vamos a registrarnos para estar\n"
-	.string "en contacto!$"
+	.string "Ah, hola, {PLAYER}.\n"
+	.string "¿También te dieron el PC Portátil y el\l"
+	.string "PokéNav?\l"
+	.string "Creí que eran raros de conseguir…\p"
+	.string "¡Pero bueno! Ya que estamos, añádeme a\n"
+	.string "tu lista de contactos para… Bueno…\l"
+	.string "Porque sí, lo que sea.$"
 
 Route104_Text_RegisteredBrendan:
-	.string "{PLAYER} ha registrado a\n"
-	.string "BRUNO en el POKéNAV.$"
+	.string "{RIVAL} se registró sol{AO} en tu\n"
+	.string "PokeNav.$"
 
 Route104_Text_BrendanHowsYourPokedex:
-	.string "BRUNO: {PLAYER}, ¿cómo está tu POKéDEX?\n"
-	.string "¿Has completado alguna página?$"
+	.string "Ah, sí, necesito saber, ¿Cómo va tu\n"
+	.string "Pokédex?\n"
+	.string "Seguro que no tan bien como la mía.$"
 
 Route104_Text_BrendanDoingGreatLetsBattle:
-	.string "La mía va sobre ruedas.\p"
-	.string "Dime, ¿quieres echar un combate\n"
-	.string "para ver cuánto he mejorado?$"
+	.string "La mía está increíble, ¿Sabías?\p"
+	.string "Además, algo me dijo mi Papá sobre las\n"
+	.string "Dexes, que podemos {COLOR GREEN}intercambiar los\l"
+	.string "datos de la Pokédex{COLOR DARK_GRAY} para poder\l"
+	.string "completarla más rápido.\p"
+	.string "Realmente no quiero necesitar tu ayuda\n"
+	.string "para esto, y también dudo que hacerlo\l"
+	.string "vaya a registrarme nuevos Pokémon. Así\l"
+	.string "que hagamos una cosa:\p"
+	.string "Si me ganas en una Batalla Pokémon, voy\n"
+	.string "a intercambiarte los datos.$"
 
-Route104_Text_BrendanNoConfidence:
-	.string "BRUNO: ¿Qué problema hay?\n"
-	.string "¿No confías en tus POKéMON?$"
-
-Route104_Text_BrendanLetsBattle:
-	.string "BRUNO: ¿Qué pasa?\n"
-	.string "¿Quieres luchar conmigo?$"
 
 Route104_Text_BrendanIntro:
-	.string "BRUNO: Sé que acabas de empezar\n"
-	.string "a entrenar POKéMON, pero\l"
-	.string "no te lo pondré fácil.$"
+	.string "¡Perderás!$"
 
 Route104_Text_BrendanDefeat:
-	.string "Mmm…\n"
-	.string "No se te da nada mal.$"
+	.string "Pero…\n"
+	.string "He capturado tantos Pokémon.$"
 
 Route104_Text_BrendanPostBattle:
-	.string "BRUNO: Has mejorado bastante\n"
-	.string "en los combates POKéMON.\p"
-	.string "Pero ¿sabes?, no deberías limitarte\n"
-	.string "a hacer luchar a los POKéMON.\p"
-	.string "Haz como el SR. ARENQUE: es importante\n"
-	.string "entablar amistad con tus POKéMON.$"
+	.string "Pues, como dije, ahora intercambiemos\n"
+	.string "datos de nuestras Pokédex.\n"
+	.string "Préstamela un poco.$"
 `

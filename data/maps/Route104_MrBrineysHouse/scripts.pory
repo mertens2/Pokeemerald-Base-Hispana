@@ -1,4 +1,110 @@
+
+text Route104_MrBrineysHouse_Text_WaitUpPeeko {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Quieto, Peeko!")
+		}
+		EN {
+			format("Peeko, stay!")
+		}
+	}
+}
+
+text Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Oh, eres {PLAYER}!\n¿Tienes que ir hasta Dewford?\p¡Cuenta conmigo para llevarte!")
+		}
+		EN {
+			format("Oh, you're {PLAYER}!\nYou need to go to Dewford?\pYou can count on me to take you there!")
+		}
+	}
+}
+
+text Route104_MrBrineysHouse_Text_SetSailForDewford {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Vamos a Dewford!")
+		}
+		EN {
+			format("Let's go to Dewford!")
+		}
+	}
+	
+}
+
+text Route104_MrBrineysHouse_Text_DeclineDeliverySail {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿Entonces no quieres?\p¡Ven cuando estés list{OA}!")
+		}
+		EN {
+			format("Not ready?\pCome back whenever you are!")
+		}
+	}
+	
+}
+
+text Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Ya me contaron todo!\p¿Debes llevar una carta\na Dewford, no?\p¡Pues vamos!")
+		}
+		EN {
+			format("I've been told!\pYou need a letter delivered, no?\pLet's go!")
+		}
+	}
+	
+}
+
+text Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Ya me contaron todo!\p¿Debes llevar algo\na Slateport, no?\p¡Pasemos por Dewford primero!")
+		}
+		EN {
+			format("I've been told!\pYou need something delivered, no?\pLet's go to Dewford first!")
+		}
+	}
+}
+
+text Route104_MrBrineysHouse_Text_WhereAreWeBound {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿A dónde te llevo hoy?")
+		}
+		EN {
+			format("Where to now?")
+		}
+	}
+}
+
+text Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿Entonces no quieres?\p¡No te preocupes,\nven cuando estés list{OA}!")
+		}
+		EN {
+			format("Not ready?\pCome back whenever you are!")
+		}
+	}
+}
+
+text Route104_MrBrineysHouse_Text_Peeko {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Wingull!")
+		}
+		EN {
+			format("Pii piihyoro!")
+		}
+	}
+}
+
 raw `
+.set LOCALID_BRINEY, 1
+.set LOCALID_PEEKO, 2
+
 Route104_MrBrineysHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route104_MrBrineysHouse_OnTransition
 	.byte 0
@@ -14,10 +120,10 @@ Route104_MrBrineysHouse_EventScript_HideRustboroRival::
 	return
 
 Route104_MrBrineysHouse_EventScript_SetBrineyPeekoPos::
-	setobjectxyperm LOCALID_BRINEYS_HOUSE_BRINEY, 9, 3
-	setobjectmovementtype LOCALID_BRINEYS_HOUSE_BRINEY, MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT
-	setobjectxyperm LOCALID_BRINEYS_HOUSE_PEEKO, 9, 6
-	setobjectmovementtype LOCALID_BRINEYS_HOUSE_PEEKO, MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN
+	setobjectxyperm LOCALID_BRINEY, 9, 3
+	setobjectmovementtype LOCALID_BRINEY, MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT
+	setobjectxyperm LOCALID_PEEKO, 9, 6
+	setobjectmovementtype LOCALID_PEEKO, MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN
 	return
 
 Route104_MrBrineysHouse_EventScript_Briney::
@@ -94,67 +200,5 @@ Route104_MrBrineysHouse_EventScript_Peeko::
 	waitmoncry
 	release
 	end
-
-Route104_MrBrineysHouse_Text_WaitUpPeeko:
-	.string "SR. ARENQUE: ¡Un segundo, grumete!\n"
-	.string "¡PEEKO, para de una vez!$"
-
-Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford:
-	.string "¿Eh? ¡Si eres {PLAYER}{KUN}!\n"
-	.string "¡Tú salvaste a mi PEEKO del alma!\l"
-	.string "¡Te debo una muy gorda!\p"
-	.string "¿Qué me dices?\n"
-	.string "¿Quieres navegar conmigo?\p"
-	.string "Mmmm…\p"
-	.string "Tienes una CARTA que llevar a AZULIZA\n"
-	.string "y un paquete para CIUDAD PORTUAL, ¿no?\p"
-	.string "¡Vaya vida tan movidita que llevas!\p"
-	.string "Pero, por supuesto, lo que pides no\n"
-	.string "supone ningún problema en absoluto.\p"
-	.string "¡Hablas con el hombre adecuado!\n"
-	.string "Vamos a poner rumbo a AZULIZA.$"
-
-Route104_MrBrineysHouse_Text_SetSailForDewford:
-	.string "SR. ARENQUE: ¡Rumbo a AZULIZA!\p"
-	.string "¡Levad anclas!\n"
-	.string "¡PEEKO, bonito, nos vamos!$"
-
-Route104_MrBrineysHouse_Text_DeclineDeliverySail:
-	.string "SR. ARENQUE: ¿Ah, sí?\n"
-	.string "¿Tus recados pueden esperar?\p"
-	.string "Cuando quieras volver a hacerte\n"
-	.string "a la mar, llámame.$"
-
-Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford:
-	.string "SR. ARENQUE: ¡Eh, grumete!\n"
-	.string "¡Sé exactamente lo que vas a decir!\p"
-	.string "Debes entregar una CARTA en AZULIZA\n"
-	.string "y un paquete en CIUDAD PORTUAL.\p"
-	.string "Lo que pides no es ningún problema.\n"
-	.string "¡Hablas con el hombre adecuado!\p"
-	.string "Primero pondremos rumbo a AZULIZA.$"
-
-Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford:
-	.string "SR. ARENQUE: ¡Eh, grumete!\n"
-	.string "¡Sé exactamente lo que vas a decir!\p"
-	.string "Tienes que entregar un paquete\n"
-	.string "al CAP. BABOR en CIUDAD PORTUAL.\p"
-	.string "Lo que pides no es ningún problema.\n"
-	.string "¡Hablas con el hombre adecuado!\p"
-	.string "Primero pondremos rumbo a AZULIZA.$"
-
-Route104_MrBrineysHouse_Text_WhereAreWeBound:
-	.string "SR. ARENQUE: ¡Eh, grumete!\n"
-	.string "¡Yo levo anclas cuando quieras!\p"
-	.string "Venga, ¿adónde vamos?$"
-
-Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail:
-	.string "SR. ARENQUE: ¿Ah, sí?\n"
-	.string "Bueno, PEEKO te debe la vida.\p"
-	.string "Cuando quieras volver a hacerte\n"
-	.string "a la mar, llámame.$"
-
-Route104_MrBrineysHouse_Text_Peeko:
-	.string "PEEKO: ¡Pi, pikooooo!$"
 
 `
