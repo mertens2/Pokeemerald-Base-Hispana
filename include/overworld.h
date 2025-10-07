@@ -59,12 +59,16 @@ extern void (*gFieldCallback)(void);
 extern bool8 (*gFieldCallback2)(void);
 extern u8 gLocalLinkPlayerId;
 extern u8 gFieldLinkPlayerCount;
+
 extern bool8 gExitStairsMovementDisabled;
 extern bool8 gSkipShowMonAnim;
 extern u8 gTimeOfDay;
 extern s16 gTimeUpdateCounter;
 
 extern struct TimeBlendSettings gTimeBlend;
+
+extern u8 gGlobalFieldTintMode;
+
 
 extern const struct UCoords32 gDirectionToVectors[];
 
@@ -81,7 +85,12 @@ void LoadObjEventTemplatesFromHeader(void);
 void LoadSaveblockObjEventScripts(void);
 void SetObjEventTemplateCoords(u8 localId, s16 x, s16 y);
 void SetObjEventTemplateMovementType(u8 localId, u8 movementType);
+
 const struct MapLayout *GetMapLayout(u16 mapLayoutId);
+
+void InitMapView(void);
+void RemoveTintFromObjectEvents(void);
+
 void ApplyCurrentWarp(void);
 struct MapHeader const *const Overworld_GetMapHeaderByGroupAndId(u16 mapGroup, u16 mapNum);
 struct MapHeader const *const GetDestinationWarpMapHeader(void);

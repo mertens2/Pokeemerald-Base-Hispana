@@ -2978,6 +2978,24 @@ static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette
     return paletteNum;
 }
 
+void PatchObjectPalette(u16 paletteTag, u8 paletteSlot)
+{
+    u8 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
+
+    LoadPalette(sObjectEventSpritePalettes[paletteIndex].data, 16 * paletteSlot + 0x100, 0x20);
+    ApplyGlobalFieldPaletteTint(paletteSlot);
+}
+
+void PatchObjectPaletteRange(const u16 *paletteTags, u8 minSlot, u8 maxSlot)
+{
+    while (minSlot < maxSlot)
+    {
+        PatchObjectPalette(*paletteTags, minSlot);
+        paletteTags++;
+        minSlot++;
+    }
+}
+
 static u8 FindObjectEventPaletteIndexByTag(u16 tag)
 {
     u8 i;
@@ -3371,6 +3389,44 @@ void OverrideSecretBaseDecorationSpriteScript(u8 localId, u8 mapNum, u8 mapGroup
         }
     }
 }
+
+
+void InitObjectEventPalettes(u8 palSlot)
+{
+    FreeAndReserveObjectSpritePalettes();
+    sCurrentSpecialObjectPaletteTag = OBJ_EVENT_PAL_TAG_NONE;
+    sCurrentReflectionType = palSlot;
+    if (palSlot == 1)
+    {
+        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 6);
+        gReservedSpritePaletteCount = 8;
+    }
+    else
+    {
+        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 10);
+    }
+}
+
+void RemoveTintFromObjectEventPalettes()
+{
+    PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 5);
+}
+
+u16 GetObjectPaletteTag(u8 palSlot)
+{
+    u8 i;
+
+    if (palSlot < 10)
+        return sObjectPaletteTagSets[sCurrentReflectionType][palSlot];
+
+    for (i = 0; sSpecialObjectReflectionPaletteSets[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
+    {
+        if (sSpecialObjectReflectionPaletteSets[i].tag == sCurrentSpecialObjectPaletteTag)
+            return sSpecialObjectReflectionPaletteSets[i].data[sCurrentReflectionType];
+    }
+    return OBJ_EVENT_PAL_TAG_NONE;
+}
+
 
 movement_type_empty_callback(MovementType_None)
 movement_type_def(MovementType_WanderAround, gMovementTypeFuncs_WanderAround)
