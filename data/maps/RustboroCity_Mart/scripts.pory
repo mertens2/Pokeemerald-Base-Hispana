@@ -7,12 +7,11 @@ RustboroCity_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	goto_if_unset FLAG_MET_DEVON_EMPLOYEE, RustboroCity_Mart_EventScript_PokemartBasic
-	goto_if_set FLAG_MET_DEVON_EMPLOYEE, RustboroCity_Mart_EventScript_PokemartExpanded
+	pokemart 0
 	end
 
 RustboroCity_Mart_EventScript_PokemartBasic::
-	pokemart RustboroCity_Mart_Pokemart_Basic
+	pokemart 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
@@ -29,10 +28,12 @@ RustboroCity_Mart_Pokemart_Basic:
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFENSE
-	pokemartlistend
+	.2byte ITEM_NONE
+	release
+	end
 
 RustboroCity_Mart_EventScript_PokemartExpanded::
-	pokemart RustboroCity_Mart_Pokemart_Expanded
+	pokemart 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
@@ -51,7 +52,9 @@ RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFENSE
-	pokemartlistend
+	.2byte ITEM_NONE
+	release
+	end
 
 RustboroCity_Mart_EventScript_PokefanF::
 	msgbox RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish, MSGBOX_NPC
@@ -66,20 +69,21 @@ RustboroCity_Mart_EventScript_BugCatcher::
 	end
 
 RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish:
-	.string "Estoy comprando ANTIPARALIZACIÓN\n"
-	.string "y ANTÍDOTOS.\p"
-	.string "Por si acaso caigo sobre un SHROOMISH\n"
-	.string "en el BOSQUE PETALIA…$"
+	.string "I'm buying some PARLYZ HEALS and\n"
+	.string "ANTIDOTES.\p"
+	.string "Just in case I run into SHROOMISH\n"
+	.string "in PETALBURG WOODS.$"
 
 RustboroCity_Mart_Text_ShouldBuySuperPotionsInstead:
-	.string "Mi POKéMON ha evolucionado y ahora\n"
-	.string "tiene un montón de PS.\p"
-	.string "Ahora, más que POCIONES, compensa\n"
-	.string "comprarle SUPERPOCIONES.$"
+	.string "My POKéMON evolved.\n"
+	.string "It has a lot of HP now.\p"
+	.string "I should buy SUPER POTIONS for it\n"
+	.string "instead of ordinary POTIONS.$"
 
 RustboroCity_Mart_Text_GettingEscapeRopeJustInCase:
-	.string "Me he hecho con una CUERDA HUIDA\n"
-	.string "por si me pierdo algún día en una cueva.\p"
-	.string "Cuando la usas, vuelves a la entrada.$"
+	.string "I'm getting an ESCAPE ROPE just in\n"
+	.string "case I get lost in a cave.\p"
+	.string "I just need to use it to get back to\n"
+	.string "the entrance.$"
 
 `

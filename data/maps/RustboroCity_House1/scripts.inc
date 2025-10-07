@@ -105,58 +105,40 @@ RustboroCity_House1_EventScript_Hiker::
 # 53 "data/maps/RustboroCity_House1/scripts.pory"
 RustboroCity_House1_Text_IllTradeIfYouWant:
 # 54 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "¿Qué? ¿Que mi POKéMON es una monada?\n"
+	.string "¿Te gustaría cambiar mi {STR_VAR_2}\n"
 # 55 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Eso ya lo sabía yo.\p"
+	.string "de Alola por tu {STR_VAR_1} de Kanto?$"
 # 56 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Pues, si te hace mucha ilusión, podría\n"
+
 # 57 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "incluso dártelo a cambio de algo.\p"
+RustboroCity_House1_Text_PleaseBeGoodToMyPokemon:
 # 58 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Si quieres, te cambio mi {STR_VAR_2}\n"
+	.string "jejejeje…\n"
 # 59 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "por un {STR_VAR_1}.$"
+	.string "Por fin…$"
 # 60 "data/maps/RustboroCity_House1/scripts.pory"
 
 # 61 "data/maps/RustboroCity_House1/scripts.pory"
-RustboroCity_House1_Text_PleaseBeGoodToMyPokemon:
+RustboroCity_House1_Text_DoesntLookLikeMonToMe:
 # 62 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Je, je, je…\n"
+	.string "¿Qué? Eso no es un {STR_VAR_1}\n"
 # 63 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Pórtate bien con mi POKéMON.$"
+	.string "de Kanto, no me engañarás.$"
 # 64 "data/maps/RustboroCity_House1/scripts.pory"
 
 # 65 "data/maps/RustboroCity_House1/scripts.pory"
-RustboroCity_House1_Text_DoesntLookLikeMonToMe:
-# 66 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "¿Eh? ¿Qué eso es un {STR_VAR_1}?\n"
-# 67 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Pues a mí no me lo parece en absoluto…$"
-# 68 "data/maps/RustboroCity_House1/scripts.pory"
-
-# 69 "data/maps/RustboroCity_House1/scripts.pory"
 RustboroCity_House1_Text_YouDontWantToThatsOkay:
-# 70 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Ah, pues si no quieres, peor para ti.\n"
-# 71 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Porque mi POKéMON es una monada…$"
-# 72 "data/maps/RustboroCity_House1/scripts.pory"
+# 66 "data/maps/RustboroCity_House1/scripts.pory"
+	.string "Pero…$"
+# 67 "data/maps/RustboroCity_House1/scripts.pory"
 
-# 73 "data/maps/RustboroCity_House1/scripts.pory"
+# 68 "data/maps/RustboroCity_House1/scripts.pory"
 RustboroCity_House1_Text_AnyPokemonCanBeCute:
-# 74 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Cualquier POKéMON puede ser mono\n"
-# 75 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "si lo crías con cariño y esmero.$"
-# 76 "data/maps/RustboroCity_House1/scripts.pory"
+# 69 "data/maps/RustboroCity_House1/scripts.pory"
+	.string "¡Gracias!$"
+# 70 "data/maps/RustboroCity_House1/scripts.pory"
 
-# 77 "data/maps/RustboroCity_House1/scripts.pory"
+# 71 "data/maps/RustboroCity_House1/scripts.pory"
 RustboroCity_House1_Text_AllSortsOfPlaces:
-# 78 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "En cada lugar hay gente y POKéMON\n"
-# 79 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "diferentes.\p"
-# 80 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "Es muy curioso, por eso voy siempre\n"
-# 81 "data/maps/RustboroCity_House1/scripts.pory"
-	.string "de aquí para allá.$"
+# 72 "data/maps/RustboroCity_House1/scripts.pory"
+	.string "A mi primo le encanta intercambiar\nPokémon con variantes regionales.\pSi vienes cada día,\n¡Podrás cambiar muchos!$"

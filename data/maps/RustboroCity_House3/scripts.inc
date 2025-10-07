@@ -47,28 +47,16 @@ RustboroCity_House3_EventScript_Pekachu::
 # 24 "data/maps/RustboroCity_House3/scripts.pory"
 RustboroCity_House3_Text_IGivePerfectlySuitedNicknames:
 # 25 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "Yo siempre pongo motes estupendos\n"
+	.string "Me encanta darles apodos a mis\nPokémon. Les doy algo de ehhh…\lpersonalidad.$"
 # 26 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "a mis POKéMON.\p"
+
 # 27 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "Así puedo demostrar al mundo\n"
+RustboroCity_House3_Text_NamingPikachuPekachu:
 # 28 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "lo original que soy, je, je.$"
+	.string "Decirle Pecachu a Pikachu…\nParece fanático religioso.$"
 # 29 "data/maps/RustboroCity_House3/scripts.pory"
 
 # 30 "data/maps/RustboroCity_House3/scripts.pory"
-RustboroCity_House3_Text_NamingPikachuPekachu:
-# 31 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "¿Y tú piensas que llamar a un PIKACHU\n"
-# 32 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "PEKACHU cambia mucho?\p"
-# 33 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "Ya sé que es mejor poner un nombre\n"
-# 34 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "fácil de entender, pero…$"
-# 35 "data/maps/RustboroCity_House3/scripts.pory"
-
-# 36 "data/maps/RustboroCity_House3/scripts.pory"
 RustboroCity_House3_Text_Pekachu:
-# 37 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "PEKACHU: ¡Peka!$"
+# 31 "data/maps/RustboroCity_House3/scripts.pory"
+	.string "PECACHU: ¡PECA!$"

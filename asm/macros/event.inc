@@ -2018,6 +2018,19 @@
 	.2byte \move
 	.endm
 	
+	.macro deletepokemon num:req
+	setvar VAR_0x8004, \num,
+	callnative ScrCmd_deletepokemon
+	.endm
+
+	.macro savepartofteam
+	callnative ScrCmd_savepartofteam
+	.endm
+		
+	.macro loadpartofteam
+	callnative ScrCmd_loadpartofteam
+	.endm
+	
 
 @ Supplementary
 

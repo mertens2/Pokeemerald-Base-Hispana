@@ -25,12 +25,10 @@ RustboroCity_Flat1_1F_EventScript_Woman::
 # 13 "data/maps/RustboroCity_Flat1_1F/scripts.pory"
 RustboroCity_Flat1_1F_Text_EveryPokemonHasAbility:
 # 14 "data/maps/RustboroCity_Flat1_1F/scripts.pory"
-	.string "Cada POKéMON tiene una habilidad\n"
+	.string "Cada Pokémon tiene una habildad.$"
 # 15 "data/maps/RustboroCity_Flat1_1F/scripts.pory"
-	.string "especial propia.$"
-# 16 "data/maps/RustboroCity_Flat1_1F/scripts.pory"
 
-# 17 "data/maps/RustboroCity_Flat1_1F/scripts.pory"
+# 16 "data/maps/RustboroCity_Flat1_1F/scripts.pory"
 RustboroCity_Flat1_1F_Text_PokemonStrange:
-# 18 "data/maps/RustboroCity_Flat1_1F/scripts.pory"
-	.string "Los POKéMON son criaturas extrañas.$"
+# 17 "data/maps/RustboroCity_Flat1_1F/scripts.pory"
+	.string "Mi esposo dice cosas tan obvias que me\nhace querer divorciarme.\pPero es más barato vivir\ncon dos sueldos.$"

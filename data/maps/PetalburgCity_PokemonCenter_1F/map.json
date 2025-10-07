@@ -56,8 +56,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 9,
-      "y": 6,
+      "x": 3,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -79,6 +79,33 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_PokemonCenter_1F_EventScript_Woman",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_PETALBURG_MART_CLERK",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+      "x": 14,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_PkmnCenter_Clerk_1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+      "x": 14,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_PkmnCenter_Clerk_2",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -98,8 +125,8 @@
     },
     {
       "x": 1,
-      "y": 6,
-      "elevation": 4,
+      "y": 5,
+      "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_2F",
       "dest_warp_id": "0"
     }

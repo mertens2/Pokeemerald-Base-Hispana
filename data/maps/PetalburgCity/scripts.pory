@@ -1,4 +1,9 @@
 raw `
+.set LOCALID_WALLY, 2
+.set LOCALID_BOY, 3
+.set LOCALID_WALLYS_DAD, 5
+.set LOCALID_GYM_BOY, 8
+
 PetalburgCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCity_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PetalburgCity_OnFrame
@@ -9,11 +14,12 @@ PetalburgCity_OnTransition:
 	call_if_eq VAR_PETALBURG_CITY_STATE, 0, PetalburgCity_EventScript_MoveGymBoyToWestEntrance
 	call_if_eq VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_DisableMapNameAndMusic
 	call_if_eq VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
+	call_if_eq VAR_PETALBURG_CITY_STATE, 6, PetalburgCity_EventScript_SetTintForMemory
 	call_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_EventScript_SetGymDoorsUnlocked
 	end
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
-	setobjectxyperm LOCALID_GYM_BOY, 5, 11
+	setobjectxyperm LOCALID_GYM_BOY, 5, 13
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
@@ -21,56 +27,184 @@ PetalburgCity_EventScript_DisableMapNameAndMusic::
 	savebgm MUS_FOLLOW_ME
 	return
 
+PetalburgCity_EventScript_SetTintForMemory::
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	call Script_SetSepiaTint
+	clearflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
+	clearflag FLAG_HIDE_PETALBURG_CITY_WALLY
+	addobject LOCALID_WALLY
+	addobject LOCALID_WALLYS_DAD
+	setobjectxyperm LOCALID_WALLY, 15, 19
+	setobjectxyperm LOCALID_WALLYS_DAD, 14, 19
+	setobjectxyperm LOCALID_GYM_BOY, 12, 13
+	savebgm MUS_END
+	return
+
 PetalburgCity_EventScript_SetGymDoorsUnlocked::
 	setvar VAR_PETALBURG_GYM_STATE, 7
 	return
 
 PetalburgCity_OnFrame:
-	map_script_2 VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_WallyTutorial
 	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_WalkToWallyHouse
+	map_script_2 VAR_PETALBURG_CITY_STATE, 6, PetalburgCity_EventScript_WallysFlashback
 	.2byte 0
-
-PetalburgCity_EventScript_WallyTutorial::
+	
+PetalburgCity_EventScript_WallysFlashback::
 	lockall
-	special SavePlayerParty
-	special LoadWallyZigzagoon
-	applymovement LOCALID_PETALBURG_WALLY, PetalburgCity_Movement_WallyTutorialWally
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_WallyTutorialPlayer
+	special SpawnCameraObject
+	applymovement LOCALID_GYM_BOY, Common_Movement_FaceDown
 	waitmovement 0
-	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_DEFAULT
-	special StartWallyTutorialBattle
-	waitstate
-	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
-	applymovement LOCALID_PETALBURG_WALLY, Common_Movement_WalkInPlaceFasterLeft, MAP_PETALBURG_CITY
-	waitmovement LOCALID_PETALBURG_WALLY, MAP_PETALBURG_CITY
-	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
 	closemessage
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_PETALBURG_CITY_STATE, 3
-	fadedefaultbgm
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-	special LoadPlayerParty
-	setvar VAR_PETALBURG_GYM_STATE, 1
-	warp MAP_PETALBURG_CITY_GYM, 4, 108
-	waitstate
-	releaseall
+	hidenamebox
+	fadescreen FADE_FROM_BLACK
+	delay 20
+	applymovement LOCALID_WALLY, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_WALLYS_DAD, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_WALLY, PetalburgCity_Movement_WallyMemory
+	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Movement_WallyDadMemory
+	applymovement OBJ_EVENT_ID_CAMERA, PetalburgCity_Movement_WallyMemoryCamera
+	namebox Chico
+	msgbox PetalburgCity_Text_WallysMemoryKid, MSGBOX_DEFAULT
+	namebox PapaWally
+	msgbox PetalburgCity_Text_WallysMemory2, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	delay 16
+	namebox Wally
+	msgbox PetalburgCity_Text_WallysMemory3, MSGBOX_DEFAULT
+	closemessage
+	hidenamebox
+	waitmovement 0
+	applymovement LOCALID_WALLY, PetalburgCity_Movement_WallyMemory2
+	waitmovement 0
+	opendoor 7, 5
+	waitdooranim
+	delay 8
+	applymovement LOCALID_WALLY, PetalburgCity_Movement_WallyMemory3
+	waitmovement 0
+	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Movement_WallyDadMemory2
+	waitmovement 0
+	delay 16
+	closedoor 7, 5
+	waitdooranim
+	setvar VAR_DEWFORD_TOWN_STATE, 3
+	setvar VAR_VERDANTURF_TOWN_STATE, 1
+	setvar VAR_PETALBURG_CITY_STATE, 7
+	clearflag FLAG_HIDE_WALLY_VERDANTURF
+	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
+	setflag FLAG_HIDE_PETALBURG_CITY_WALLY
+	special RemoveCameraObject
+	setflag FLAG_SPAWN_INVISIBLE
+	setflag FLAG_REMOVE_WARP_FADE_OUT
+	warp MAP_VERDANTURF_TOWN, 10, 15
+	release
 	end
+
+PetalburgCity_Movement_WallyMemory:
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+PetalburgCity_Movement_WallyMemoryCamera:
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+PetalburgCity_Movement_WallyDadMemory:
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	delay_16
+	delay_8
+	delay_4
+	walk_in_place_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_in_place_slow_right
+	step_end
+
+PetalburgCity_Movement_WallyMemory2:
+	walk_in_place_slow_up
+	step_end
+
+PetalburgCity_Movement_WallyMemory3:
+	walk_slow_up
+	set_invisible
+	step_end
+
+PetalburgCity_Movement_WallyDadMemory2:
+	walk_slow_right
+	walk_slow_up
+	set_invisible
+	step_end
+
+
 
 PetalburgCity_EventScript_WalkToWallyHouse::
 	lockall
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	applymovement LOCALID_PETALBURG_WALLYS_DAD, PetalburgCity_Movement_WalkToWallyHouseWallysDad
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_WalkToWallyHousePlayer
+	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Movement_WalkToWallyHouseWallysDad
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkToWallyHousePlayer
 	waitmovement 0
 	setvar VAR_0x8004, 7
 	setvar VAR_0x8005, 5
 	opendoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	applymovement LOCALID_PETALBURG_WALLYS_DAD, PetalburgCity_Movement_WalkInsideHouseWallysDad
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_WalkInsideHousePlayer
+	applymovement LOCALID_WALLYS_DAD, PetalburgCity_Movement_WalkInsideHouseWallysDad
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkInsideHousePlayer
 	waitmovement 0
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
-	hideobjectat LOCALID_PLAYER, MAP_PETALBURG_CITY
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_PETALBURG_CITY
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
@@ -86,7 +220,7 @@ PetalburgCity_EventScript_Boy::
 	faceplayer
 	msgbox PetalburgCity_Text_WaterReflection, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PETALBURG_BOY, Common_Movement_FaceOriginalDirection
+	applymovement LOCALID_BOY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -147,32 +281,6 @@ PetalburgCity_Movement_WalkInsideHouseWallysDad:
 
 PetalburgCity_Movement_WallyTutorialPlayer:
 	delay_8
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_right
 	walk_right
 	walk_up
@@ -182,36 +290,10 @@ PetalburgCity_Movement_WallyTutorialPlayer:
 
 PetalburgCity_Movement_WallyTutorialWally:
 	delay_8
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_right
 	walk_up
 	walk_up
-	walk_right
+	walk_up
 	delay_16
 	walk_in_place_faster_up
 	delay_16
@@ -280,7 +362,7 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_LeadPlayerToGym3
 	msgbox PetalburgCity_Text_ThisIsPetalburgGym, MSGBOX_DEFAULT
 	applymovement LOCALID_GYM_BOY, Common_Movement_WalkInPlaceFasterRight
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox PetalburgCity_Text_ThisIsGymSign, MSGBOX_DEFAULT
 	closemessage
@@ -293,7 +375,7 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 PetalburgCity_EventScript_BoyApproachPlayer0::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer0
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
@@ -305,38 +387,38 @@ PetalburgCity_EventScript_BoyApproachPlayer1::
 PetalburgCity_EventScript_BoyApproachPlayer2::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer2
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_BoyApproachPlayer3::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer3
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_LeadPlayerToGym0::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGym0
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym0
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym0
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_LeadPlayerToGym1::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGym1
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym1
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym1
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_LeadPlayerToGym2::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGym2
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym2
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym2
 	waitmovement 0
 	return
 
 PetalburgCity_EventScript_LeadPlayerToGym3::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGym3
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym3
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_PlayerWalkToGym3
 	waitmovement 0
 	return
 
@@ -497,270 +579,217 @@ PetalburgCity_Movement_PlayerWalkToGym3:
 	walk_up
 	step_end
 
-PetalburgCity_EventScript_Scott0::
-	lockall
-	addobject LOCALID_PETALBURG_SCOTT
-	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 10
-	goto PetalburgCity_EventScript_Scott
-	end
-
-PetalburgCity_EventScript_Scott1::
-	lockall
-	addobject LOCALID_PETALBURG_SCOTT
-	setvar VAR_0x8008, 1
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 11
-	goto PetalburgCity_EventScript_Scott
-	end
-
-PetalburgCity_EventScript_Scott2::
-	lockall
-	addobject LOCALID_PETALBURG_SCOTT
-	setvar VAR_0x8008, 2
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 12
-	goto PetalburgCity_EventScript_Scott
-	end
-
-PetalburgCity_EventScript_Scott3::
-	lockall
-	addobject LOCALID_PETALBURG_SCOTT
-	setvar VAR_0x8008, 3
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 13
-	goto PetalburgCity_EventScript_Scott
-	end
-
-PetalburgCity_EventScript_Scott::
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottStartWalkLeft
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_Delay48
-	waitmovement 0
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottApproachPlayer
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	setvar VAR_SCOTT_STATE, 1
-	msgbox PetalburgCity_Text_AreYouATrainer, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	delay 30
-	msgbox PetalburgCity_Text_WellMaybeNot, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PETALBURG_SCOTT, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
-	delay 30
-	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
-	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
-	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
-	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_ScottExit3
-	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
-	removeobject LOCALID_PETALBURG_SCOTT
-	releaseall
-	end
-
-PetalburgCity_EventScript_ScottExit0::
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit0
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottExit0
-	waitmovement 0
-	return
-
-PetalburgCity_EventScript_ScottExit1::
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit1
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottExit1
-	waitmovement 0
-	return
-
-PetalburgCity_EventScript_ScottExit2::
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit2
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottExit2
-	waitmovement 0
-	return
-
-PetalburgCity_EventScript_ScottExit3::
-	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit3
-	applymovement LOCALID_PETALBURG_SCOTT, PetalburgCity_Movement_ScottExit3
-	waitmovement 0
-	return
-
-PetalburgCity_Movement_ScottStartWalkLeft:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PetalburgCity_Movement_ScottApproachPlayer:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PetalburgCity_Movement_ScottExit0:
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PetalburgCity_Movement_PlayerWatchScottExit0:
-	delay_16
-	walk_in_place_faster_down
-	delay_16
-	delay_16
-	delay_8
-	walk_in_place_faster_left
-	step_end
-
-PetalburgCity_Movement_ScottExit1:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PetalburgCity_Movement_PlayerWatchScottExit1:
-	delay_16
-	walk_in_place_faster_down
-	delay_16
-	delay_8
-	walk_in_place_faster_left
-	step_end
-
-PetalburgCity_Movement_ScottExit2:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PetalburgCity_Movement_PlayerWatchScottExit2:
-	delay_16
-	walk_in_place_faster_down
-	delay_16
-	delay_8
-	walk_in_place_faster_left
-	step_end
-
-PetalburgCity_Movement_ScottExit3:
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PetalburgCity_Movement_PlayerWatchScottExit3:
-	delay_16
-	walk_in_place_faster_up
-	delay_16
-	delay_8
-	walk_in_place_faster_left
-	step_end
 
 PetalburgCity_EventScript_GymBoy::
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
 	end
 
+Petalburg_Leaf::
+	lockall
+	faceplayer
+	goto_if_unset FLAG_DEFEATED_LEAF, Petalburg_Leaf_2
+	namebox CampeonaLeaf
+	msgbox Petalburg_Leaf_Text_3
+	fadescreen FADE_TO_BLACK
+	hidenamebox
+	setflag FLAG_DEFEATED_LEAF
+	removeobject 10
+	delay 60
+	fadescreen FADE_FROM_BLACK
+Petalburg_Leaf_1:
+	releaseall
+	return
+
+Petalburg_Leaf_2:
+	namebox Unknown
+	msgbox Petalburg_Leaf_Text_0
+	hidenamebox
+	namebox CampeonaLeaf
+	msgbox Petalburg_Leaf_Text_02
+	hidenamebox
+	trainerbattle_no_intro TRAINER_LEAF, Leaf_Defeated_Message
+	namebox Leaf
+	msgbox Petalburg_Leaf_Text_1
+	hidenamebox
+	giveitem ITEM_CHERISH_BALL, 30
+	namebox Leaf
+	msgbox Petalburg_Leaf_Text_2
+	fadescreen FADE_TO_BLACK
+	hidenamebox
+	closemessage
+	setflag FLAG_DEFEATED_LEAF
+	removeobject 10
+	delay 60
+	fadescreen FADE_FROM_BLACK
+	goto Petalburg_Leaf_1
+
+
+Petalburg_Leaf_Text_0:
+	.string "¡AH!\n"
+	.string "¡Me encontraste!\p"
+	.string "¡P-por favor no me hagas nada! ¡S-solo\n"
+	.string "estoy jugando con los Pokémon Bebé\l"
+	.string "que aparecen acá!\p"
+	.string "… … … … …\n"
+	.string "Ah, que solo venías a explorar…\l"
+	.string "Entiendo…\l"
+	.string "Pues ya que me encontraste, déjame\l"
+	.string "contarte algo, y escucha bien que es un\l"
+	.string "secretito importantísimo que no debe\l"
+	.string "saber nadie pero nadie nadie, ¿sí?\p"
+	.string "Bueeeeno, pues…\n"
+	.string "Yo…\l"
+	.string "Soy {COLOR GREEN}Leaf{COLOR DARK_GRAY}, y soy una de las {COLOR GREEN}Campeonas de\l"
+	.string "la Liga Añil de Kanto{COLOR DARK_GRAY} y me propuse a\l"
+	.string "venir a Hoenn para investigar la\l"
+	.string "migración de Pokémon, que parece estar\l"
+	.string "relacionada al clima. ¿Y te digo otro\l"
+	.string "secretito más, uno que aún más\l"
+	.string "secretoso que el otro, y que nadie\l"
+	.string "NADIE debe saber?$"
+Petalburg_Leaf_Text_02:
+	.string "Bueno, bueno ahorita te cuento…\n"
+	.string "Hace poco volví a iniciar, con un Equipo\l"
+	.string "Pokémon nuevo bien nuevecito… Una\l"
+	.string "nueva aventura por la Región de Hoenn,\l"
+	.string "para investigar qué está pasando…\p"
+	.string "Y como veo que tienes potencial, voy a\n"
+	.string "hacer una cosita muy cositezca…\l"
+	.string "¡Vamos a tener una Batalla, y voy a\l"
+	.string "ganarte, JA JA JA!$"
+
+Petalburg_Leaf_Text_1:
+	.string "¡AH!\n"
+	.string "¡Me ganaste!\l"
+	.string "¡INCREÍBLE!\p"
+	.string "¡Eres un{A} Entrenador{A}\n"
+	.string "poderosisimisimísim{OA} de l{OA}s que ganan\l"
+	.string "batallas batallonezcas!\p"
+	.string "Pero bueno, bueeno, me ganaste, así que\n"
+	.string "tengo que decirte al menos una de las\l"
+	.string "cosas que descubrí: {COLOR GREEN}Hoenn tiene una\l"
+	.string "gran resistencia al cambio climático{COLOR DARK_GRAY},\l"
+	.string "pero incluso con eso, el ser humano\l"
+	.string "sigue logrando arruinar tanto las\l"
+	.string "cosas, que está afectando incluso a\l"
+	.string "Hoenn.\p"
+	.string "Mi sospecha es que los Pokémon han\n"
+	.string "venido a Hoenn en busca de un hogar\l"
+	.string "más seguro, pero por ahora es solo una\l"
+	.string "teoría teorizadora, nada más ni nada\l"
+	.string "menos.\p"
+	.string "… … … … …\n"
+	.string "¡Ah!\l"
+	.string "Se me olvidaba darte algo por vencer a\l"
+	.string "una campeona campeonística como yo.$"
+
+Petalburg_Leaf_Text_2:
+	.string "Es una Gloria Ball, una Pokéball\n"
+	.string "especial creada para conmemorar un\l"
+	.string "evento importantísimo; y tiene la\l"
+	.string "peculiar capacidad de atrapar a los\l"
+	.string "Pokémon raros, de esos rarísimos que\l"
+	.string "no se dejan atrapar ni con las Ultra\l"
+	.string "Ball ni las Ocaso Ball.\p"
+	.string "Úsala sabiamente, pues no sirve muy\n"
+	.string "bien con Pokémon fáciles facilitos de\l"
+	.string "atrapar, solo con los más caprichosos.\p"
+	.string "Bueeeeno, ya no te detengo más. ¡Sigue\n"
+	.string "adelante! ¡Nos vemos!$"
+
+Petalburg_Leaf_Text_3:
+	.string "¿¿¿QUE HAGO ACÁ NO SE SUPONE QUE\n"
+	.string "ESTÉ ACÁ QUE???$"
+	
+Leaf_Defeated_Message:
+	.string "¡AH! ¡WOW!\p"
+	.string "Los Entrenadores en Hoenn\n"
+	.string "no dejan nada que desear!$"
+
 PetalburgCity_Text_WhereIsWally:
-	.string "¿Adónde se ha ido BLASCO?\p"
-	.string "Tenemos que irnos a PUEBLO\n"
-	.string "VERDEGAL muy pronto…$"
+	.string "¿A dónde se ha ido Wally?\p"
+	.string "Tenemos que irnos a la\n"
+	.string "Ciudad Verdantuff pronto…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
-	.string "¡Hola, caracola! Tú… no llevas mucho\n"
-	.string "tiempo entrenando POKéMON, ¿no?\p"
-	.string "¿Sabes lo que hacen los ENTRENADORES\n"
-	.string "POKéMON cuando cambian de ciudad?\p"
-	.string "Comprueban qué tipo de GIMNASIO\n"
-	.string "hay allí…$"
+	.string "¡Holis! ¿Será que eres…\n"
+	.string "Un{A} novat{OA}?\p"
+	.string "¡Pues ven aquí!$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "¿Ves? Éste es el GIMNASIO\n"
-	.string "de CIUDAD PETALIA.$"
+	.string "Este es el Gimnasio Petalburg.$"
 
 PetalburgCity_Text_ThisIsGymSign:
-	.string "Éste es el letrero del GIMNASIO.\n"
-	.string "Búscalo cada vez que cambies de ciudad.$"
+	.string "¡Buena suerte!$"
 
 PetalburgCity_Text_WaterReflection:
-	.string "Mi cara se refleja en el agua…\p"
-	.string "¿Qué ves tú? ¿La esperanzada sonrisa\n"
-	.string "de quien espera llegar a ser CAMPEÓN?\p"
-	.string "¿O la preocupada mirada del que\n"
-	.string "no sabe si podrá llegar hasta el final?\p"
-	.string "¿Y qué ves en el reflejo de tu cara?$"
+	.string "Reflejada es,\n"
+	.string "mi cara en el agua,\l"
+	.string "melacólica.\p"
+	.string "¿Y tu cara, cuál\n"
+	.string "emoción reflejará?\l"
+	.string "¿Será que lo sabrás?$"
 
 PetalburgCity_Text_FullPartyExplanation:
-	.string "Vamos a ver… Si tienes seis POKéMON\n"
-	.string "y atrapas otro más…,\p"
-	.string "éste es enviado automáticamente a una\n"
-	.string "CAJA de ALMACENAMIENTO del PC.$"
+	.string "El PC es maravilloso.\n"
+	.string "Ojalá tuviera más espacio…$"
 
 PetalburgCity_Text_GymSign:
-	.string "GIMNASIO POKéMON de CIUDAD PETALIA\n"
-	.string "LÍDER: NORMAN\l"
-	.string "“¡Un hombre con ambición!”$"
+	.string "Gimnasio Pokémon de Petalburg\n"
+	.string "Líder: Norman\l"
+	.string "“¡El hombre que persigue el poder!”$"
 
 PetalburgCity_Text_CitySign:
-	.string "CIUDAD PETALIA\n"
-	.string "“Donde las personas viven en\l"
-	.string "armonía con la naturaleza.”$"
+	.string "{COLOR RED}CIUDAD PETALBURG{COLOR DARK_GRAY}\n"
+	.string "“Donde las personas viven en armonía\l"
+	.string "con la naturaleza”$"
+
 
 PetalburgCity_Text_WallyHouseSign:
-	.string "CASA DE BLASCO$"
+	.string "Casa de Wally$"
 
 PetalburgCity_Text_AreYouATrainer:
-	.string "¡Disculpa!\p"
-	.string "Déjame adivinar. Por tu forma de vestir,\n"
-	.string "se ve que entrenas POKéMON, ¿a que sí?$"
+	.string "Hola, dime, ¿Eres un{A} Entrenador{A}?$"
 
 PetalburgCity_Text_WellMaybeNot:
-	.string "Claro que…\p"
-	.string "Quizás me equivoque.\n"
-	.string "No tienes mucha mugre encima.\p"
-	.string "Así que debes de tener poca\n"
-	.string "experiencia… o incluso ninguna.$"
+	.string "Quizás no… Algo me dice, en la forma en\n"
+	.string "la que te vistes… Que, o bien eres un{A}\l"
+	.string "novat{OA}, o sólamente eres un{A} niñ{OA}\l"
+	.string "ordinari{OA}…$"
+
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
-	.string "Me estoy recorriendo la región\n"
-	.string "en busca de grandes ENTRENADORES.\p"
-	.string "Siento haberte hecho perder tiempo.$"
+	.string "Verás, estoy en busca de Entrenadores\n"
+	.string "poderosos para {COLOR BLUE}un proyecto especial{COLOR DARK_GRAY}\l"
+	.string "en el que estoy trabajando…$"
+	
+PetalburgCity_Text_WallysMemoryKid:
+	.string "¡Hey, Wally! ¿Qué pasa? ¿No puedes\n"
+	.string "volver a tu casa solito sin que\l"
+	.string "tu papito te lleve de la mano?\p"
+	.string "¡Ja! Y pensaba que verte correr\n"
+	.string "de los Poochyena salvajes y\l"
+	.string "desmayarte era patético...$"
+
+PetalburgCity_Text_WallysMemory2:
+	.string "Tranquilo, Wally, no les hagas caso.\p"
+	.string "Sólo te dicen esas cosas porque no\n"
+	.string "pueden ni atravesar el Bosque\l"
+	.string "Petalburg.\p"
+	.string "Te hacen sentir mal para ellos sentirse\n"
+	.string "mejor.$"
+
+PetalburgCity_Text_WallysMemory3:
+	.string "Allá en Petalburg, todos me trataban\n"
+	.string "muy mal...\p"
+	.string "Mi papá intentaba ayudarme, pero... Sólo\n"
+	.string "me hacía sentir peor...\p"
+	.string "Sin un Pokémon que me protegiera, y\n"
+	.string "estando siempre débil por mis\l"
+	.string "enfermedades, siempre se aprovechaban\l"
+	.string "de mí para burlarse y hacer cosas como\l"
+	.string "empujarme hacia la hierba alta y\l"
+	.string "escapar...$"
+
+
 `

@@ -25,7 +25,7 @@ RustboroCity_Flat2_2F_EventScript_NinjaBoy::
 # 13 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
 	msgbox RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt, MSGBOX_DEFAULT
 # 14 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	giveitem ITEM_PREMIER_BALL
+	giveitem ITEM_QUICK_BALL, 2
 # 15 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 16 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
@@ -49,26 +49,16 @@ RustboroCity_Flat2_2F_EventScript_GavePremierBall::
 # 25 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
 RustboroCity_Flat2_2F_Text_DevonWasTinyInOldDays:
 # 26 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	.string "Hace mucho, mucho tiempo, DEVON no\n"
+	.string "Cuando era joven, Devor era un pequeño\nnegocio familiar. ¡Cómo pasa el tiempo!$"
 # 27 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	.string "era más que una mini-empresa de nada.$"
+
 # 28 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-
-# 29 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
 RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt:
+# 29 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
+	.string "¡Mi papi trabaja en Devon, y le\ndan de estas gratis!\pA mí no me sirven,\n¡Así que toma!$"
 # 30 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	.string "Mi papá trabaja en DEVON S.A.\p"
-# 31 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	.string "¡Mi papá ha hecho esto!\n"
-# 32 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	.string "Pero, como yo no puedo usarlo, te lo doy.$"
-# 33 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
 
-# 34 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
+# 31 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
 RustboroCity_Flat2_2F_Text_GoingToWorkAtDevonToo:
-# 35 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	.string "Mi papá trabaja en DEVON S.A.\p"
-# 36 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	.string "Cuando sea mayor, yo también\n"
-# 37 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
-	.string "voy a trabajar en DEVON.$"
+# 32 "data/maps/RustboroCity_Flat2_2F/scripts.pory"
+	.string "¡Ojalá trabaje ahí cuando sea grande!$"

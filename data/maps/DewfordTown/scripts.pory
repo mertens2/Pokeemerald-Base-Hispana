@@ -1,11 +1,668 @@
+text DewfordTown_EventScript_Trigger_Text_2 {
+	poryswitch(LANGUAGE){
+		ES {
+			format("El Gimnasio está cerrado.")
+		}
+		EN {
+			format("The Gym's closed.")
+		}
+	}
+}
+
+text DewfordTown_Text_TinyIslandCommunity {
+	format("Dewford es una pequeña comunidad.\pSi algo se pone de moda,\ntodos lo saben.")
+}
+
+text DewfordTown_Text_TownSign {
+	format("PUEBLO DEWFORD\n"
+	"“Una islita en el mar azul.”")
+}
+
+text DewfordTown_Text_GymSign {
+	format("GIMNASIO DE PUEBLO DEWFORD\n"
+	"Líder: Brawly\l"
+	"“¡Una enorme ola de poder!”")
+}
+
+text DewfordTown_Text_HallSign {
+	format("SALÓN COMUNITARIO DEWFORD\n"
+	"“¡Un lugar de encuentros!”")
+}
+
+text Route104_Text_LandedInDewfordDeliverLetter {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Ahoy, mariner{OA}!\n¡Esto es Dewford!\pAhora podrás entregar la carta.")
+		}
+		EN {
+			format("Ahoy, matey!\nThis is Dewford!\pNow you can deliver that letter.")
+		}
+	}
+}
+
+text DewfordTown_Text_SetSailBackToPetalburg {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿Has terminado y quieres volver?")
+		}
+		EN {
+			format("You finished and want to go back?")
+		}
+	}
+	
+}
+
+text DewfordTown_Text_PetalburgWereSettingSail2 {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡A Petalburg entonces!")
+		}
+		EN {
+			format("To Petalburg then!")
+		}
+	}
+	
+}
+
+text DewfordTown_Text_GoDeliverIllBeWaiting {
+	format("Ah, OK.")
+}
+
+text DewfordTown_Text_BrineyLandedInDewford {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Ahoy!")
+		}
+		EN {
+			format("Ahoy!")
+		}
+	}
+	
+}
+
+text DewfordTown_Text_WhereAreWeBound {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Allá vamos!")
+		}
+		EN {
+			format("Let's go!")
+		}
+	}
+	
+}
+
+text DewfordTown_Text_PetalburgWereSettingSail {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿A Petalburg?\n¡Vamos, Peeko, querido!")
+		}
+		EN {
+			format("To Petalburg?\nGet ready, Peeko, baby!")
+		}
+	}
+	
+}
+
+text DewfordTown_Text_SlateportWereSettingSail {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¿A Slaterport?\n¡Lo lamento!\pHasta aquí llega la DEMO de\nPokémon Bismuto.\pPuedes continuar si quieres, pero las\ncosas no estarán terminadas, y los\lmapas usarán gráficos viejos.\p¿Continuar igualmente?")
+		}
+		EN {
+			format("To Slaterport?\nSorry!\pPokemon Bismuth's DEMO ends here!\pYou can go on if you want to, but things are far from polished, although there is some untranslated story to experience.\pGo on anyway?")
+		}
+	}
+}
+
+text DewfordTown_Text_JustTellMeWhenYouNeedToSetSail {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Aquí esperaré!")
+		}
+		EN {
+			format("I'll be waiting here!")
+		}
+	}
+}
+
+text DewfordTown_Text_GettingItchToFish {
+	format("¡Ah! ¡Quiero pescar!\p¿Tú no?")
+}
+
+text DewfordTown_Text_GiveYouOneOfMyRods {
+	format("¡Te escucho fuerte y claro!\p¡Toma esto, pequeñ{OA}!")
+}
+
+text DewfordTown_Text_ThrowInFishingAdvice {
+	format("¿Sabes?\pHe desarrollado una caña que puede\npescar Pokémon, ¡Sin necesidad\lde esperar tanto!")
+}
+
+text DewfordTown_Text_ThatsTooBadThen {
+	format("Qué mal.")
+}
+
+text DewfordTown_Text_HowsYourFishing {
+	format("¡Ey!\n"
+	"¿Cómo va todo?")
+}
+
+text DewfordTown_Text_GreatHaulInSomeBigOnes {
+	format("¡Genial, atrapa unos grandes!")
+}
+
+text DewfordTown_Text_FishingAdvice {
+	format("Oh, bueno, ¡Ya irá mejor!")
+}
+
+text DewfordTown_Text_XIsTheBiggestHappeningThingRight {
+	format("O sea, está muy de moda eso de\n“{STR_VAR_1}”\p"
+	"Obvio lo conoces, o sea,\n"
+	"“{STR_VAR_1}”…\l"
+	"¡Todos hablan de eso!\n"
+	"“{STR_VAR_1}”\l"
+	"Es lo más, ¿no?")
+}
+
+text DewfordTown_Text_TellMeWhatsNewAndIn {
+	format("¿Qué?\n¿Ya pasó de moda?\pEntonces, ¿Qué es lo más?")
+}
+
+text DewfordTown_Text_OfCourseIKnowAboutThat {
+	format("¿“{STR_VAR_2}”?\p"
+	"… …\p"
+	"…Eh… ¡Sí! ¡Claro, claro!\n"
+	"“{STR_VAR_2},” ¿No?\p"
+	"Pfff, ¡Obvio!\n"
+	"“{STR_VAR_2}”\pEs lo más.")
+}
+
+text DewfordTown_Text_XHuhIThinkYIsCool {
+	format("Mmmhhh…\n"
+	"“{STR_VAR_2},” ¿No?\p"
+	"Aunque pienso que\n"
+	"“{STR_VAR_1}”\l"
+	"es mucho mejor.")
+}
+
+text DewfordTown_Text_HearOfAnyTrendsComeShareWithMe {
+	format("Bueno, si hay otras\ntrends, dímelo, ¿Sí?")
+}
+
+text DewfordTown_Text_YeahDefinitionOfInRightNow {
+	format("¡O sea, obvio!\p"
+	"“{STR_VAR_1}” es la\n"
+	"definición de cool.")
+}
+
+text DewfordTown_EventScript_WallyHello {
+	format("¡O-oh!\n"
+	"-COF COF-\l"
+	"¡{PLAYER}!\p"
+	"N-no sabía que vendrías…\n"
+	"¡Pero que bien que estés aquí!")
+}
+
+text DewfordTown_EventScript_WallyBeginSpeech {
+	format("Sabes, tengo mucho miedo de comenzar mi\n"
+	"{COLOR BLUE}Desafío de los Gimnasios{COLOR DARK_GRAY}, y n-no sé si\l"
+	"sea algo en lo que pueda siquiera\l"
+	"aspirar a ser bueno…\p"
+	"Tengo miedo de fallar, y que todos se\n"
+	"burlen de mí de nuevo…")
+}
+
+
+text DewfordTown_Text_HopeYouEnjoyed {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Espero hays disfrutado esta DEMO!")
+		}
+		EN {
+			format("Hope you enjoyed the DEMO!")
+		}
+	}
+}
+
+
+text DewfordTown_Text_WallyContinueSpeech {
+	format("Pero ahora.\nAhora voy a demostrarles que\lse equivocaban conmigo.\p"
+	"…\n…\pO…\n¿…Sabes qué?\p"
+	"¿A quién le importa lo\nque ellos piensan de mí?")
+}
+
+text DewfordTown_Text_WallyContinueSpeech2 {
+	format("Claramente no les importa\nquién soy, o qué es lo que haga.\p"
+	"Quizá… Sea mejor hacer este viaje\npor mí mismo, y no por otros.\p¿Eso… Eso suena bien, ¿no?\p"
+	"Pero aún así… Me gustaría\nque estés aquí conmigo…")
+}
+
+text DewfordTown_Text_WallyDetermined {
+	format("…\p"
+	"El {COLOR BLUE}Gimnasio Dewford{COLOR DARK_GRAY}…\p"
+	"{COLOR GREEN}(Vamos Wally… ¡Tú puedes!){COLOR DARK_GRAY}\p"
+	"El tipo de este Gimnasio es Lucha…\p"
+	"Mi Ralts es tipo Psíquico Y Hada, así\n"
+	"que debería ser relativamente fácil\l"
+	"para él…")
+}
+
+text DewfordTown_Text_WallyLetsGo {
+	format("Bueno, Ralts… ¿Estás listo?\p"
+	"¡Entonces vamos!")
+}
+
+text DewfordTown_Text_WallyGym1 {
+	format("¡Wow! ¡En serio no puede verse nada!\p"
+	"¿Cómo siquiera funcionan las luces en\n"
+	"este Gimnasio? ¿Los Entrenadores acá\l"
+	"pueden verme pero yo a ellos no?\p"
+	"Eh- ¡No importa, Wally!\n"
+	"¡Concéntrate!\p"
+	"…\p"
+	"¡AH!")
+}
+
+text DewfordTown_Text_WallyGym2 {
+	format("G-gracias, Ralts, pensé que ese- COF,\n"
+	"COF- Em… Ese Meditite iba a\l"
+	"lastimarme…\p"
+	"¡Pero ahora, Ralts, usa {COLOR LIGHT_RED}Brillo Mágico{COLOR DARK_GRAY}!")
+}
+
+text DewfordTown_Text_WallyGym3 {
+	format("¡Bien hecho, Ralts!\n"
+	"¡Eso fue increíble!\p"
+	"Ahora… Yo estudié la arquitectura de\n"
+	"este Gimnasio… El Líder debería\l"
+	"estar…\l"
+	"………\p"
+	"¡Acá!\n"
+	"¡Ja! ¡Lo sabía! ¡Vamos, Ralts!")
+}
+
+text DewfordTown_Text_WallyGymBattle {
+	format("Y ahora, Ralts… ¡¡Usa {COLOR LIGHT_RED}Campo Psíquico{COLOR DARK_GRAY}, y\n"
+	"luego usa {COLOR LIGHT_RED}Confusión{COLOR DARK_GRAY}!!")
+}
+text DewfordTown_Text_WallyGymBattle2 {
+	format("{COLOR RED}D-detección{COLOR DARK_GRAY}…\n"
+	"Brawly leyó mi estrategia y reaccionó\l"
+	"acorde…")
+}
+text DewfordTown_Text_WallyGymBattle3 {
+	format("¡Cuidado, Ralts, esquiva eso!\p"
+	"………\p"
+	"¿E-eh?")
+}
+text DewfordTown_Text_WallyGymBattle4 {
+	format("¡R-Ralts! ¡Evolucionaste a Kirlia!\n"
+	"¡Estoy t-tan orgulloso de tí, Ra- Eh,\l"
+	"Kirlia!\p"
+	"-COF, COF, COF- Em… Ahora, ¡Usa {COLOR LIGHT_RED}Fuerza\n"
+	"Expansiva{COLOR DARK_GRAY}!")
+}
+text DewfordTown_Text_WallyAfter {
+	format("¡G-gané, {PLAYER}, gané!\n"
+	"¡Y Ralts evolucionó a Kirlia, también!\p"
+	"Muchas gracias por estar ahí,\n"
+	"{PLAYER}, sin tu apoyo, no habría\l"
+	"podido hacer nada…\p"
+	"Ahora, ¡Voy a continuar mejorando, y un\n"
+	"día, voy a derrotarte en un combate,\l"
+	"{PLAYER}!")
+}
+text DewfordTown_EventScript_Trigger_Text_0 {
+	poryswitch(LANGUAGE){
+		ES {
+			format("{COLOR BLUE}(¿Q-qué fue eso…?){COLOR LIGHT_GRAY}")
+		}
+		EN {
+			format("{COLOR BLUE}(W-what's that about…?){COLOR LIGHT_GRAY}")
+		}
+	}
+	
+}
 raw `
+
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DewfordTown_OnFrame
 	.byte 0
 
 DewfordTown_OnTransition:
 	setflag FLAG_VISITED_DEWFORD_TOWN
 	end
+
+DewfordTown_OnFrame:
+	map_script_2 VAR_DEWFORD_TOWN_STATE, 3, DewfordTown_OnFrameWally
+	.2byte 0
+
+DewfordTown_EventScript_Wally::
+	goto_if_set FLAG_TEMP_1, DewfordTown_EventScript_Wally2
+	lock
+	faceplayer
+	setflag FLAG_TEMP_1
+	namebox Wally
+	msgbox DewfordTown_EventScript_WallyHello, MSGBOX_DEFAULT
+	hidenamebox
+	closemessage
+	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	waitmovement 0
+	namebox Wally
+	msgbox DewfordTown_EventScript_WallyBeginSpeech, MSGBOX_DEFAULT
+	setflag FLAG_SPAWN_INVISIBLE
+	setflag FLAG_REMOVE_WARP_FADE_OUT
+	setvar VAR_PETALBURG_CITY_STATE, 6
+	specialvar VAR_0x8004, GetPlayerFacingDirection
+    warp MAP_PETALBURG_CITY, 15, 16
+	hidenamebox
+	closemessage
+	end
+
+DewfordTown_EventScript_Wally2::
+	end
+
+DewfordTown_OnFrameWally::
+	lockall
+	call Script_RemoveTint
+	call_if_eq VAR_0x8004, DIR_EAST, DewfordTown_OnFrameWallyEast
+	call_if_eq VAR_0x8004, DIR_WEST, DewfordTown_OnFrameWallyWest
+	call_if_eq VAR_0x8004, DIR_NORTH, DewfordTown_OnFrameWallyNorth
+	call_if_eq VAR_0x8004, DIR_SOUTH, DewfordTown_OnFrameWallySouth
+	delay 16
+	fadescreen FADE_FROM_BLACK
+	delay 8
+	namebox Wally
+	msgbox DewfordTown_Text_WallyContinueSpeech, MSGBOX_DEFAULT
+	applymovement LOCALID_WALLY, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox DewfordTown_Text_WallyContinueSpeech2
+	closemessage
+	hidenamebox
+	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	waitmovement 0
+	applymovement LOCALID_WALLY, Common_Movement_FaceUp
+	waitmovement 0
+	namebox Wally
+	msgbox DewfordTown_Text_WallyDetermined
+	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox DewfordTown_Text_WallyLetsGo
+	closemessage
+	hidenamebox
+	call_if_eq VAR_0x8004, DIR_WEST, DewfordTown_WallyGoToGymWest
+	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyGoToGym
+	waitmovement 0
+	setvar VAR_0x8004, 8
+	setvar VAR_0x8005, 17
+	opendoor VAR_0x8004, VAR_0x8005
+	waitdooranim
+	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyGoToGym2
+	waitmovement 0
+	closedoor VAR_0x8004, VAR_0x8005
+	waitdooranim
+	namebox Wally
+	msgbox DewfordTown_Text_WallyGym1
+	playmoncry SPECIES_MEDITITE, CRY_MODE_NORMAL
+	waitmoncry
+	closemessage
+	hidenamebox
+	delay 8
+	playse SE_NOT_EFFECTIVE
+	waitse
+	delay 12
+	namebox Wally
+	msgbox DewfordTown_Text_WallyGym2
+	hidenamebox
+	closemessage
+	playse SE_M_SUPERSONIC
+	waitse
+	playse SE_SUPER_EFFECTIVE
+	waitse
+	playmoncry SPECIES_MEDITITE, CRY_MODE_FAINT
+	waitmoncry
+	delay 8
+	playse SE_FAINT
+	waitse
+	namebox Wally
+	msgbox DewfordTown_Text_WallyGym3
+	hidenamebox
+	closemessage
+	fadescreen FADE_TO_BLACK
+	delay 50
+	fadescreen FADE_FROM_BLACK
+	delay 10
+	namebox Wally
+	msgbox DewfordTown_Text_WallyGymBattle
+	hidenamebox
+	closemessage
+	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+	waitmoncry
+	delay 8
+	playse SE_M_DETECT
+	waitse
+	namebox Wally
+	msgbox DewfordTown_Text_WallyGymBattle2
+	hidenamebox
+	closemessage
+	playmoncry SPECIES_MAKUHITA, CRY_MODE_NORMAL
+	waitmoncry
+	namebox Wally
+	msgbox DewfordTown_Text_WallyGymBattle3
+	hidenamebox
+	closemessage
+	delay 10
+	playse SE_M_REFLECT
+	waitse
+	playse SE_M_BRICK_BREAK
+	waitse
+	delay 12
+	playse SE_NOT_EFFECTIVE
+	waitse
+	delay 16
+	playmoncry SPECIES_RALTS,CRY_MODE_NORMAL
+	waitmoncry
+	delay 30
+	playmoncry SPECIES_KIRLIA,CRY_MODE_GROWL_1
+	waitmoncry
+	delay 30
+	playfanfare MUS_EVOLVED
+	waitfanfare
+	delay 10
+	namebox Wally
+	msgbox DewfordTown_Text_WallyGymBattle4
+	hidenamebox
+	closemessage
+	playmoncry SPECIES_KIRLIA, CRY_MODE_NORMAL
+	waitmoncry
+	playse SE_M_SUPERSONIC
+	waitse
+	playse SE_SUPER_EFFECTIVE
+	waitse
+	playmoncry SPECIES_MAKUHITA, CRY_MODE_FAINT
+	waitmoncry
+	playse SE_FAINT
+	waitse
+	delay 20
+	opendoor VAR_0x8004, VAR_0x8005
+	waitdooranim
+	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyComeOut
+	waitmovement 0
+	closedoor VAR_0x8004, VAR_0x8005
+	waitdooranim
+	namebox Wally
+	msgbox DewfordTown_Text_WallyAfter
+	closemessage
+	hidenamebox
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_HIDE_WALLY_DEWFORD_TOWN
+	clearflag FLAG_HIDE_WALLY_RUSTBORO
+	removeobject LOCALID_WALLY
+	delay 16
+	fadescreen FADE_FROM_BLACK
+	delay 8
+	setvar VAR_DEWFORD_TOWN_STATE, 4
+	releaseall
+	end
+
+DewfordTown_Movement_WallyComeOut::
+	face_down
+	set_visible
+	walk_down
+	walk_left
+	face_player
+	step_end
+
+DewfordTown_WallyGoToGymWest::
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerOutTheWay
+	waitmovement 0
+	return
+
+
+DewfordTown_OnFrameWallyEast::
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_VisiblePlayer
+	waitmovement 0
+	return
+
+DewfordTown_OnFrameWallyWest::
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_VisiblePlayerWest
+	waitmovement 0
+	return
+
+DewfordTown_OnFrameWallyNorth::
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_VisiblePlayerNorth
+	waitmovement 0
+	return
+
+DewfordTown_OnFrameWallySouth::
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_VisiblePlayerSouth
+	waitmovement 0
+	return
+
+
+DewfordTown_Movement_WallyGoToGym::
+	walk_right
+	walk_right
+	face_up
+	walk_in_place_up
+	step_end
+
+DewfordTown_Movement_WallyGoToGym2::
+	walk_up
+	set_invisible
+	step_end
+
+DewfordTown_Movement_PlayerOutTheWay::
+	walk_down
+	face_up
+	step_end
+DewfordTown_Movement_VisiblePlayer::
+	face_right
+	set_visible
+	step_end
+
+DewfordTown_Movement_VisiblePlayerWest::
+	face_left
+	set_visible
+	step_end
+
+DewfordTown_Movement_VisiblePlayerNorth::
+	face_up
+	set_visible
+	step_end
+
+DewfordTown_Movement_VisiblePlayerSouth::
+	face_down
+	set_visible
+	step_end
+
+DewfordTown_EventScript_Trigger::
+	goto_if_ne VAR_DEWFORD_TOWN_STATE, 0, DewfordTown_EventScript_TriggerNada
+	lockall
+	playse SE_BALL_TRADE
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_GRUNT, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_GRUNT, Common_Movement_FacePlayer
+	waitmovement 0
+	delay 32
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerApproach1
+	waitmovement 0
+	delay 16
+	applymovement LOCALID_GRUNT, DewfordTown_Movement_GruntEscapes
+	waitmovement 0
+	removeobject LOCALID_GRUNT
+	setflag FLAG_DEWFORD_GRUNT
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerApproach2
+	waitmovement 0
+	namebox Player
+	msgbox DewfordTown_EventScript_Trigger_Text_0
+	hidenamebox
+	setvar VAR_DEWFORD_TOWN_STATE, 1
+	releaseall
+	return
+	end
+
+DewfordTown_EventScript_Trigger2::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	msgbox DewfordTown_EventScript_Trigger_Text_2
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerBackDown
+	waitmovement 0
+	releaseall
+	end
+
+DewfordTown_Movement_PlayerBackDown:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
+
+DewfordTown_EventScript_TriggerNada::
+	releaseall
+	end
+
+DewfordTown_Movement_PlayerApproach1:
+	walk_slow_left
+	step_end
+
+DewfordTown_Movement_GruntEscapes:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	delay_16
+	delay_16
+	lock_facing_direction
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	unlock_facing_direction
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	step_end
+
+DewfordTown_Movement_PlayerApproach2:
+	player_run_left
+	player_run_left
+	player_run_up
+	player_run_up
+	player_run_up
+	player_run_up
+	player_run_up
+	step_end
+
+
+
+
 
 DewfordTown_EventScript_Briney::
 	lock
@@ -29,11 +686,12 @@ DewfordTown_EventScript_ChoosePetalburg::
 	end
 
 DewfordTown_EventScript_ChooseSlateport::
-	msgbox DewfordTown_Text_SlateportWereSettingSail, MSGBOX_DEFAULT
+	msgbox DewfordTown_Text_SlateportWereSettingSail, MSGBOX_YESNO
 	closemessage
-	goto DewfordTown_EventScript_SailToSlateport
+	goto_if_eq VAR_RESULT, YES, DewfordTown_EventScript_SailToSlateport
+	msgbox DewfordTown_Text_HopeYouEnjoyed, MSGBOX_DEFAULT
 	release
-	end
+	end 
 
 DewfordTown_EventScript_CancelSailSelect::
 	msgbox DewfordTown_Text_JustTellMeWhenYouNeedToSetSail, MSGBOX_DEFAULT
@@ -82,7 +740,6 @@ DewfordTown_EventScript_OldRodFisherman::
 DewfordTown_EventScript_GiveOldRod::
 	msgbox DewfordTown_Text_GiveYouOneOfMyRods, MSGBOX_DEFAULT
 	giveitem ITEM_OLD_ROD
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_OLD_ROD
 	msgbox DewfordTown_Text_ThrowInFishingAdvice, MSGBOX_DEFAULT
 	release
@@ -113,30 +770,30 @@ DewfordTown_EventScript_FishingNotSoGood::
 
 DewfordTown_EventScript_SailToPetalburg::
 	call EventScript_BackupMrBrineyLocation
-	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
-	setobjectsubpriority LOCALID_PLAYER, MAP_DEWFORD_TOWN, 0
-	applymovement LOCALID_DEWFORD_BRINEY, DewfordTown_Movement_BrineyBoardBoat
+	setobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
+	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN, 0
+	applymovement LOCALID_BRINEY_DEWFORD, DewfordTown_Movement_BrineyBoardBoat
 	waitmovement 0
-	removeobject LOCALID_DEWFORD_BRINEY
-	applymovement LOCALID_PLAYER, DewfordTown_Movement_PlayerBoardBoat
+	removeobject LOCALID_BRINEY_DEWFORD
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerBoardBoat
 	waitmovement 0
-	hideobjectat LOCALID_PLAYER, MAP_DEWFORD_TOWN
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	call Common_EventScript_PlayBrineysBoatMusic
-	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToPetalburg
-	applymovement LOCALID_PLAYER, DewfordTown_Movement_SailToPetalburg
+	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToPetalburg
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToPetalburg
 	waitmovement 0
-	showobjectat LOCALID_PLAYER, MAP_ROUTE104
+	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
 	call Common_EventScript_StopBrineysBoatMusic
-	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatPetalburg
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_ExitBoatPetalburg
 	waitmovement 0
-	showobjectat LOCALID_PLAYER, MAP_ROUTE104
+	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	hideobjectat LOCALID_DEWFORD_BOAT, MAP_DEWFORD_TOWN
+	hideobjectat LOCALID_BOAT_DEWFORD, MAP_DEWFORD_TOWN
 	setvar VAR_BOARD_BRINEY_BOAT_STATE, 2
-	resetobjectsubpriority LOCALID_PLAYER, MAP_DEWFORD_TOWN
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	warp MAP_ROUTE104_MR_BRINEYS_HOUSE, 5, 4
 	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
 	waitstate
@@ -145,21 +802,21 @@ DewfordTown_EventScript_SailToPetalburg::
 
 DewfordTown_EventScript_SailToSlateport::
 	call EventScript_BackupMrBrineyLocation
-	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
-	setobjectsubpriority LOCALID_PLAYER, MAP_DEWFORD_TOWN, 1
-	applymovement LOCALID_DEWFORD_BRINEY, DewfordTown_Movement_BrineyBoardBoat
+	setobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
+	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN, 1
+	applymovement LOCALID_BRINEY_DEWFORD, DewfordTown_Movement_BrineyBoardBoat
 	waitmovement 0
-	removeobject LOCALID_DEWFORD_BRINEY
-	applymovement LOCALID_PLAYER, DewfordTown_Movement_PlayerBoardBoat
+	removeobject LOCALID_BRINEY_DEWFORD
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerBoardBoat
 	waitmovement 0
-	hideobjectat LOCALID_PLAYER, MAP_DEWFORD_TOWN
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	call Common_EventScript_PlayBrineysBoatMusic
-	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToSlateport
-	applymovement LOCALID_PLAYER, DewfordTown_Movement_SailToSlateport
+	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToSlateport
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToSlateport
 	waitmovement 0
 	call Common_EventScript_StopBrineysBoatMusic
-	showobjectat LOCALID_PLAYER, MAP_ROUTE109
-	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatSlateport
+	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_ExitBoatSlateport
 	waitmovement 0
 	setobjectxyperm LOCALID_ROUTE109_BRINEY, 21, 26
 	addobject LOCALID_ROUTE109_BRINEY
@@ -170,12 +827,12 @@ DewfordTown_EventScript_SailToSlateport::
 	addobject LOCALID_ROUTE109_BOAT
 	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	hideobjectat LOCALID_DEWFORD_BOAT, MAP_DEWFORD_TOWN
+	hideobjectat LOCALID_BOAT_DEWFORD, MAP_DEWFORD_TOWN
 	call_if_unset FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateportDeliverGoods
 	call_if_set FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateport
 	closemessage
 	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
-	resetobjectsubpriority LOCALID_PLAYER, MAP_DEWFORD_TOWN
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	resetobjectsubpriority LOCALID_ROUTE109_BRINEY, MAP_ROUTE109
 	copyobjectxytoperm LOCALID_ROUTE109_BRINEY
 	release
@@ -628,164 +1285,5 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 	release
 	end
 
-DewfordTown_Text_TinyIslandCommunity:
-	.string "PUEBLO AZULIZA es una islita de nada,\n"
-	.string "pero si se crea una moda aquí,\l"
-	.string "enseguida nos copian todos.$"
 
-DewfordTown_Text_TownSign:
-	.string "PUEBLO AZULIZA\n"
-	.string "“Una isla en medio del mar.”$"
-
-DewfordTown_Text_GymSign:
-	.string "GIMNASIO POKéMON de PUEBLO AZULIZA\n"
-	.string "LÍDER: MARCIAL\l"
-	.string "“¡Soy como un maremoto!”$"
-
-DewfordTown_Text_HallSign:
-	.string "CLUB de AZULIZA\n"
-	.string "“¡Sabemos todo de todo y aún más!”$"
-
-Route104_Text_LandedInDewfordDeliverLetter:
-	.string "SR. ARENQUE: ¡Eh, grumete!\n"
-	.string "¡Hemos arribado a AZULIZA!\p"
-	.string "Supongo que has venido a entregar esa\n"
-	.string "CARTA a, ¿cómo se llama…?, ¡MÁXIMO!$"
-
-DewfordTown_Text_SetSailBackToPetalburg:
-	.string "SR. ARENQUE: ¿Has entregado la CARTA?\p"
-	.string "¿O quieres volver a PETALIA?$"
-
-DewfordTown_Text_PetalburgWereSettingSail2:
-	.string "SR. ARENQUE: ¡Pues rumbo a PETALIA!\p"
-	.string "¡Levad anclas!\n"
-	.string "¡PEEKO, bonito, nos vamos!$"
-
-DewfordTown_Text_GoDeliverIllBeWaiting:
-	.string "SR. ARENQUE: Vale, pues ve a entregar\n"
-	.string "la CARTA. Yo te espero aquí.$"
-
-DewfordTown_Text_BrineyLandedInDewford:
-	.string "SR. ARENQUE: ¡Eh, grumete!\n"
-	.string "¡Hemos arribado a AZULIZA!\p"
-	.string "Cuando quieras volver a hacerte\n"
-	.string "a la mar, me lo dices, ¿eh?$"
-
-DewfordTown_Text_WhereAreWeBound:
-	.string "SR. ARENQUE: ¡Eh, grumete!\n"
-	.string "¡Yo levo anclas cuando quieras!\p"
-	.string "Venga, ¿adónde vamos?$"
-
-DewfordTown_Text_PetalburgWereSettingSail:
-	.string "SR. ARENQUE: ¿A PETALIA, dices?\p"
-	.string "¡Levad anclas!\n"
-	.string "¡PEEKO, bonito, nos vamos!$"
-
-DewfordTown_Text_SlateportWereSettingSail:
-	.string "SR. ARENQUE: ¿A CIUDAD PORTUAL, dices?\p"
-	.string "¡Levad anclas!\n"
-	.string "¡PEEKO, bonito, nos vamos!$"
-
-DewfordTown_Text_JustTellMeWhenYouNeedToSetSail:
-	.string "SR. ARENQUE: Cuando quieras volver\n"
-	.string "a hacerte a la mar, llámame.$"
-
-DewfordTown_Text_GettingItchToFish:
-	.string "Éste es un buen lugar de pesca.\n"
-	.string "¿Tú también te mueres de ganas\l"
-	.string "por echar el anzuelo?$"
-
-DewfordTown_Text_GiveYouOneOfMyRods:
-	.string "¡Me gusta lo que oigo!\p"
-	.string "¡Por eso te voy a dar una de mis CAÑAS!$"
-
-DewfordTown_Text_ThrowInFishingAdvice:
-	.string "Y, como regalito extra, te voy a dar\n"
-	.string "un par de consejos…\p"
-	.string "Primero, mira hacia el agua y lanza\n"
-	.string "la CAÑA.\p"
-	.string "Concéntrate…\n"
-	.string "Si pican, tira de la CAÑA.\p"
-	.string "A veces atraparás buenas piezas en\n"
-	.string "nada de tiempo, pero para las más\l"
-	.string "gordas necesitarás saber cuándo tirar\l"
-	.string "de la CAÑA para hacerte con ellas.$"
-
-DewfordTown_Text_ThatsTooBadThen:
-	.string "¿Ésas tenemos?\n"
-	.string "Pues peor para ti…$"
-
-DewfordTown_Text_HowsYourFishing:
-	.string "¡Hey!\n"
-	.string "¿Cómo va la pesca?$"
-
-DewfordTown_Text_GreatHaulInSomeBigOnes:
-	.string "¿En serio? ¡Genial!\n"
-	.string "¡Atrapa una buena pieza!$"
-
-DewfordTown_Text_FishingAdvice:
-	.string "Bueno, bueno, no hay que deprimirse…\n"
-	.string "Te voy a dar un par de consejos…\p"
-	.string "Primero, mira hacia el agua y lanza\n"
-	.string "la CAÑA.\p"
-	.string "Concéntrate…\n"
-	.string "Si pican, tira de la CAÑA.\p"
-	.string "A veces atraparás buenas piezas en\n"
-	.string "seguida, pero para las más gordas\l"
-	.string "necesitarás saber cuándo tirar de\l"
-	.string "la CAÑA para hacerte con ellas.$"
-
-DewfordTown_Text_XIsTheBiggestHappeningThingRight:
-	.string "¡Yo soy el más guay, por eso me\n"
-	.string "sé todo lo que está a la última!\p"
-	.string "Dime, ¿has oído hablar de\n"
-	.string "“{STR_VAR_1}”?\p"
-	.string "¡Exacto!\n"
-	.string "¡Pues claro que te suena!\p"
-	.string "Porque, vamos, está claro,\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "es lo último de lo último.\p"
-	.string "Vengas de donde vengas,\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "es lo que está de moda, ¿a que sí?$"
-
-DewfordTown_Text_TellMeWhatsNewAndIn:
-	.string "¿Cómo?\n"
-	.string "¿Que no es lo que más mola?\p"
-	.string "Bueno, pues entonces dime qué es\n"
-	.string "lo más “in” del momento…$"
-
-DewfordTown_Text_OfCourseIKnowAboutThat:
-	.string "¿Eh?\n"
-	.string "¿“{STR_VAR_2}”?\p"
-	.string "Qué cosa…\p"
-	.string "Pero… ¡Sí! ¡Por supuesto!\n"
-	.string "¡Si yo ya lo sabía, qué despiste!\p"
-	.string "Yo sigo las modas de cerca…\n"
-	.string "“{STR_VAR_2}”, ¿no?\p"
-	.string "Sí, sí, no hay ninguna duda.\n"
-	.string "¡“{STR_VAR_2}”\l"
-	.string "es lo más supermegaguay!\p"
-	.string "¡Mola cantidubi!\n"
-	.string "¿Creías que no lo sabía?\p"
-	.string "Y “{STR_VAR_1}”…\n"
-	.string "está ya más que fuera de onda.\p"
-	.string "Ahora, “{STR_VAR_2}”\n"
-	.string "es lo que le chifla a todo el mundo.$"
-
-DewfordTown_Text_XHuhIThinkYIsCool:
-	.string "¿Eh?\n"
-	.string "¿“{STR_VAR_2}”?\p"
-	.string "Pues a mí me parece que\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "es lo que mola de verdad.$"
-
-DewfordTown_Text_HearOfAnyTrendsComeShareWithMe:
-	.string "Bueno, si oyes de alguna nueva moda\n"
-	.string "que cause furor, ven a decírmelo, ¿eh?$"
-
-DewfordTown_Text_YeahDefinitionOfInRightNow:
-	.string "¡Por supuestísimo!\p"
-	.string "Si hay algo que está a la última,\n"
-	.string "es “{STR_VAR_1}”.$"
 `

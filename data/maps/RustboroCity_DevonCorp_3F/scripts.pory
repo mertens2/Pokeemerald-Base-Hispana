@@ -1,4 +1,153 @@
+
+
+text RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Hola, soy el Presidente de Devon.\p¡He escuchado mucho de ti!\nSalvaste la compañía dos veces, ¡En un día!\p"
+			"Mi hijo, Steven, está en Ciudad Dewford, cruzando el mar.\p"
+			"Y ya que vas de camino, pensé que podrías llevarle esta carta.")
+		}
+		EN {
+			format("Hi, I'm the President of Devon.\pI've heard much about you!\nYou saved the company twice in a day!\p"
+			"My son, Steven, is across the sea in Dewford City.\p"
+			"And since you're headed there already, I'd like you to give him this letter.")
+		}
+	}
+	
+}
+
+text RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Cuando lo hagas,\n¡Ven y te recompensaré!\pPor ahora, toma esto.")
+		}
+		EN {
+			format("I'll reward you once you're done!\pFor now, take this.")
+		}
+	}
+	
+}
+
+text RustboroCity_DevonCorp_3F_Text_ReceivedPokenav {
+	poryswitch(LANGUAGE){
+		ES {
+			format("{PLAYER} recibió un PokéNav.")
+		}
+		EN {
+			format("{PLAYER} got a PokéNav.")
+		}
+	}
+	
+}
+
+text RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Eso es un PokéNav.\p"
+			"Es indispensable para cada entrenador.\pAdemás, escuché que esos criminales que derrotaste siguen andando sueltos.\p"
+			"He visto y prescenciado de lo que son capaces.\pTe recomendaría no meterte con ellos.")
+		}
+		EN {
+			format("It's a PokéNav.\p"
+			"Any Trainer needs one.\pAlso, those criminals you defeated are still out there.\p"
+			"I've seen and felt what they're capable of.\pI'd recommend not messing with them.")
+		}
+	}
+	
+}
+
+text RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Bueno, {PLAYER}, cuídate!")
+		}
+		EN {
+			format("Well, {PLAYER}, take care!")
+		}
+	}
+	
+}
+
+text RustboroCity_DevonCorp_3F_Text_CountingOnYou {
+	poryswitch(LANGUAGE){
+		ES {
+			format("¡Cuento contigo!")
+		}
+		EN {
+			format("Counting on you!")
+		}
+	}
+}
+
+text RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter {
+	format("¿Le diste la carta?\p¡Espléndido!\pEn ese caso, ¡Toma esto!")
+}
+
+text RustboroCity_DevonCorp_3F_Text_ExplainExpShare {
+	format("Un Pokémon que sostenga el\n{COLOR GREEN}Repartir Experiencia{COLOR DARK_GRAY}, ganará,\lcomo su nombre lo indica,\l{COLOR GREEN}Puntos de Experiencia aún\lsi no ha combatido{COLOR DARK_GRAY}.\p"
+	"Y lo que es más,\n{COLOR GREEN}ganará el doble de Puntos de lo usual{COLOR DARK_GRAY},\lgracias a una reciente mejora.\p"
+	"El efecto se apila con otros\nmodificadores, por lo que,\lbajo el {COLOR GREEN}Modo de Entrenamiento{COLOR DARK_GRAY},\lganarán 4 veces más Exp.\p"
+	"¡Buena suerte con todo!")
+}
+
+text RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends {
+	format("La verdad, me he rodeado de\ntantas oportunidades laborales,\lque conceptos comunes y vagos como\l{COLOR GREEN}la moral en la ciencia{COLOR DARK_GRAY}\lhan perdido su significado.\p"
+	"Honestamente, pienso que si nos\ndejáramos llevar por “lo que está bien,”\lperderíamos de vista el progreso.\pEs mejor incomodar a un grupo\nmenor molesto, que lidiar con\lla opresión y discomfort de muchos.")
+}
+
+text RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Esta es la oficina del Presidente.\p"
+			"Él es un hombre muy ocupado, tendré que preguntarle si tiene tiempo para atenderte.")
+		}
+		EN {
+			format("This is the President's Office.\p"
+			"He's a very busy man, I'll see if he can attend you.")
+		}
+	}
+	
+}
+
+text RustboroCity_DevonCorp_3F_Text_WordWithPresidentComeWithMe {
+	poryswitch(LANGUAGE){
+		ES {
+			format("El Presidente está libre.\nPor favor, sígueme.")
+		}
+		EN {
+			format("The President's free.\nHere, please.")
+		}
+	}
+	
+}
+
+text RustboroCity_DevonCorp_3F_Text_PleaseGoAhead {
+	format("Por favor, pase.")
+}
+
+text RustboroCity_DevonCorp_3F_Text_VisitCaptSternShipyard {
+	format("El Capitán Stern es reconocido\nmundialmente. Espero un día ser tan\lexitoso como él.")
+}
+
+text RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular {
+	format("Fabricamos Pokéballs. Compra Pokéballs.")
+}
+
+text RustboroCity_DevonCorp_3F_Text_RareRocksDisplay {
+	poryswitch(LANGUAGE){
+		ES {
+			format("Es una colección de rocas raras.\nUna inscripción dice:\l“No te las comas otra vez, Steven.”\Ny tiene una cara triste dibujada.")
+		}
+		EN {
+			format("A rare rock collection.\nThere's a plate that says:\l“Don't eat them again, Steven.”\Nand a sad face is drawn besides it.")
+		}
+	}
+	
+}
+
 raw `
+.set LOCALID_DEVON_EMPLOYEE, 2
+
 RustboroCity_DevonCorp_3F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_DevonCorp_3F_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, RustboroCity_DevonCorp_3F_OnWarp
@@ -10,8 +159,8 @@ RustboroCity_DevonCorp_3F_OnTransition:
 	end
 
 RustboroCity_DevonCorp_3F_EventScript_SetEmployeePos::
-	setobjectxyperm LOCALID_DEVON_CORP_3F_EMPLOYEE, 3, 2
-	setobjectmovementtype LOCALID_DEVON_CORP_3F_EMPLOYEE, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 3, 2
+	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 RustboroCity_DevonCorp_3F_OnWarp:
@@ -19,7 +168,7 @@ RustboroCity_DevonCorp_3F_OnWarp:
 	.2byte 0
 
 RustboroCity_DevonCorp_3F_EventScript_PlayerFaceEast::
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	end
 
 RustboroCity_DevonCorp_3F_OnFrame:
@@ -30,22 +179,22 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	lockall
 	msgbox RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_DEVON_CORP_3F_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeWalkOffscreen
+	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeWalkOffscreen
 	waitmovement 0
 	delay 80
-	applymovement LOCALID_DEVON_CORP_3F_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeReturnToPlayer
+	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeReturnToPlayer
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_WordWithPresidentComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_FOLLOW_ME, FALSE
-	applymovement LOCALID_DEVON_CORP_3F_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_LeadPlayerToPresident
-	applymovement LOCALID_PLAYER, RustboroCity_DevonCorp_3F_Movement_PlayerFollowToPresident
+	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_LeadPlayerToPresident
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_DevonCorp_3F_Movement_PlayerFollowToPresident
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_PleaseGoAhead, MSGBOX_DEFAULT
 	closemessage
 	fadedefaultbgm
-	applymovement LOCALID_DEVON_CORP_3F_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeFaceDesk
-	applymovement LOCALID_PLAYER, RustboroCity_DevonCorp_3F_Movement_PlayerApproachDesk
+	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeFaceDesk
+	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_DevonCorp_3F_Movement_PlayerApproachDesk
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER
@@ -161,7 +310,7 @@ RustboroCity_DevonCorp_3F_EventScript_MrStone::
 
 RustboroCity_DevonCorp_3F_EventScript_GiveExpShare::
 	msgbox RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter, MSGBOX_DEFAULT
-	giveitem ITEM_EXP_SHARE
+	giveitem ITEM_EXP_SHARE, 12
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_EXP_SHARE
 	msgbox RustboroCity_DevonCorp_3F_Text_ExplainExpShare, MSGBOX_DEFAULT
@@ -196,115 +345,6 @@ RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay::
 	msgbox RustboroCity_DevonCorp_3F_Text_RareRocksDisplay, MSGBOX_SIGN
 	end
 
-RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:
-	.string "Soy el SR. PEÑAS, el PRESIDENTE\n"
-	.string "de DEVON S.A.\p"
-	.string "¿Puedo hablar contigo un segundo?\p"
-	.string "Nos has salvado no sólo una vez,\n"
-	.string "¡sino dos veces!\p"
-	.string "Eres una persona asombrosa…\n"
-	.string "y quisiera pedirte un favor.\p"
-	.string "Tengo entendido que vas a llevar\n"
-	.string "un paquete a los ASTILLEROS\l"
-	.string "que hay en CIUDAD PORTUAL.\p"
-	.string "¿Podrías parar de camino un\n"
-	.string "segundo en PUEBLO AZULIZA?\p"
-	.string "Te agradecería que le entregaras\n"
-	.string "una CARTA a MÁXIMO en AZULIZA.$"
 
-RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis:
-	.string "SR. PEÑAS: No sé si lo sabrás,\n"
-	.string "pero soy un gran PRESIDENTE.\p"
-	.string "Nunca me he aprovechado de nadie\n"
-	.string "y siempre devuelvo los favores.\p"
-	.string "¡Por eso quiero darte esto!$"
-
-RustboroCity_DevonCorp_3F_Text_ReceivedPokenav:
-	.string "{PLAYER} recibió un POKéNAV.$"
-
-RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
-	.string "SR. PEÑAS: Este dispositivo es…\p"
-	.string "¡un POKéNAVEGADOR!\n"
-	.string "POKéNAV, para abreviar…\p"
-	.string "Se trata de una herramienta esencial\n"
-	.string "para todo ENTRENADOR aventurero.\p"
-	.string "Incluye un mapa de la región de HOENN.\p"
-	.string "Puedes consultar las ubicaciones\n"
-	.string "de AZULIZA y CIUDAD PORTUAL\l"
-	.string "en un abrir y cerrar de ojos.\p"
-	.string "Por cierto, he oído que esos siniestros\n"
-	.string "delincuentes, creo que se llaman MAGMA\l"
-	.string "y AQUA, no paran de dar problemas.\p"
-	.string "Me parece que sería buena idea\n"
-	.string "que descansaras antes de seguir.$"
-
-RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare:
-	.string "SR. PEÑAS: En fin, {PLAYER}{KUN},\n"
-	.string "ve con cuidado.$"
-
-RustboroCity_DevonCorp_3F_Text_CountingOnYou:
-	.string "SR. PEÑAS: ¡Cuento contigo!$"
-
-RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
-	.string "SR. PEÑAS: ¿Has entregado mi CARTA?\n"
-	.string "¡Muchas gracias!\p"
-	.string "Y también quiero agradecértelo así.\n"
-	.string "Como entrenas POKéMON, te vendrá bien.$"
-
-RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
-	.string "SR. PEÑAS: Si un POKéMON tiene\n"
-	.string "REPARTIR EXP, obtendrá algunos de los\l"
-	.string "puntos de EXPERIENCIA del combate…\p"
-	.string "¡Aunque no haya combatido!\p"
-	.string "REPARTIR EXP es de lo más\n"
-	.string "útil para fortalecer POKéMON débiles.$"
-
-RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends:
-	.string "SR. PEÑAS: Desde que era un chaval,\n"
-	.string "siempre he trabajado de sol a sol.\p"
-	.string "Eso no me ha dejado mucho tiempo\n"
-	.string "para estar al tanto de las modas.\p"
-	.string "¿Todos los jóvenes de ahora quieren\n"
-	.string "ser ENTRENADORES en la LIGA POKéMON?$"
-
-RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere:
-	.string "Éste es el segundo piso de DEVON S.A.\p"
-	.string "Aquí está el DESPACHO de nuestro\n"
-	.string "PRESIDENTE.\p"
-	.string "Bueno, sólo quería decirte cuánto\n"
-	.string "aprecio lo que has hecho.\p"
-	.string "Eh… Por cierto… Ese paquete que\n"
-	.string "nos has devuelto…\p"
-	.string "¿Podrías llevarlo a los ASTILLEROS\n"
-	.string "de CIUDAD PORTUAL?\p"
-	.string "Sería horrible que nos lo volvieran\n"
-	.string "a robar…\p"
-	.string "Así que, ejem, ¿puedo contar contigo\n"
-	.string "para que te ocupes de eso?\p"
-	.string "¡Qué bien!\n"
-	.string "¿Puedes esperar un segundo aquí?$"
-
-RustboroCity_DevonCorp_3F_Text_WordWithPresidentComeWithMe:
-	.string "Nuestro PRESIDENTE querría hablar\n"
-	.string "un momento contigo.\p"
-	.string "Acompáñame, por favor.$"
-
-RustboroCity_DevonCorp_3F_Text_PleaseGoAhead:
-	.string "Aquí es. Adelante.$"
-
-RustboroCity_DevonCorp_3F_Text_VisitCaptSternShipyard:
-	.string "Si vas a los ASTILLEROS\n"
-	.string "de CIUDAD PORTUAL, no olvides visitar\l"
-	.string "al CAPITÁN BABOR.$"
-
-RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular:
-	.string "Los nuevos productos de DEVON, la\n"
-	.string "ACOPIO BALL y la TURNO BALL, están\l"
-	.string "haciendo furor entre los ENTRENADORES.$"
-
-RustboroCity_DevonCorp_3F_Text_RareRocksDisplay:
-	.string "Se trata de una colección de libros\n"
-	.string "raros y rocas poco comunes\l"
-	.string "que ha reunido el PRESIDENTE.$"
 
 `

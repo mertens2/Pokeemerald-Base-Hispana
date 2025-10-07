@@ -43,39 +43,39 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_NOT_DOUBLE_BIKE 			  	0x20 // Unused Flag
-#define FLAG_NO_SHINIES    	 			  	0x21 // Unused Flag
-#define FLAG_SHINY_CREATION  			  	0x22 // Unused Flag
-#define FLAG_ENABLED_PC      	    	  	0x23 // Unused Flag
-#define FLAG_REGIELEKI_DEFEATED     	  	0x24 // Unused Flag
-#define FLAG_REGIDRAGO_DEFEATED     	  	0x25 // Unused Flag
-#define FLAG_REGIELEKI_ALMOST_UNLOCKED    	0x26 // Unused Flag
-#define FLAG_REGIDRAGO_ALMOST_UNLOCKED    	0x27 // Unused Flag
-#define FLAG_FORCE_LOAD_OFFSCREEN_OBJEV   	0x28 // Unused Flag
-#define FLAG_SMART_WILDS     				0x29 // Unused Flag
-#define FLAG_NO_BAG_USE      				0x2A // Unused Flag
-#define FLAG_NO_CATCHING     				0x2B // Unused Flag
-#define FLAG_SLEEP_CLAUSE    				0x2C // Unused Flag
-#define FLAG_NO_WHITEOUT     				0x2D // Unused Flag
-#define FLAG_ASHS_POKEMON    				0x2E // Unused Flag
-#define FLAG_MINI_SAFARI_PARK_BALL    		0x2F // Unused Flag
-#define FLAG_MINI_SAFARI_NUGGET    			0x30 // Unused Flag
-#define FLAG_REGIELEKI_UNLOCKED    			0x31 // Unused Flag
-#define FLAG_REGIDRAGO_UNLOCKED 			0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    				0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    				0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_NOT_DOUBLE_BIKE 			  	0x20
+#define FLAG_NO_SHINIES    	 			  	0x21
+#define FLAG_SHINY_CREATION  			  	0x22
+#define FLAG_ENABLED_PC      	    	  	0x23
+#define FLAG_REGIELEKI_DEFEATED     	  	0x24
+#define FLAG_REGIDRAGO_DEFEATED     	  	0x25
+#define FLAG_REGIELEKI_ALMOST_UNLOCKED    	0x26
+#define FLAG_REGIDRAGO_ALMOST_UNLOCKED    	0x27
+#define FLAG_FORCE_LOAD_OFFSCREEN_OBJEV   	0x28
+#define FLAG_SMART_WILDS     				0x29
+#define FLAG_NO_BAG_USE      				0x2A
+#define FLAG_NO_CATCHING     				0x2B
+#define FLAG_SLEEP_CLAUSE    				0x2C
+#define FLAG_NO_WHITEOUT     				0x2D
+#define FLAG_ASHS_POKEMON    				0x2E
+#define FLAG_MINI_SAFARI_PARK_BALL    		0x2F
+#define FLAG_MINI_SAFARI_NUGGET    			0x30
+#define FLAG_REGIELEKI_UNLOCKED    			0x31
+#define FLAG_REGIDRAGO_UNLOCKED 			0x32
+#define FLAG_STARTED_BOSS    				0x33
+#define FLAG_HIDE_WALLY_VERDANTURF    		0x34
+#define FLAG_DEFEATED_LEAF   				0x35
+#define FLAG_HIDE_WALLY_RUSTBORO    		0x36
+#define FLAG_HIDE_WALLY_111    				0x37
+#define FLAG_HIDE_WALLY_DEWFORD_TOWN	    0x38
+#define FLAG_DEWFORD_GRUNT				    0x39
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_HIDE_RALTS_102  0x3D
 #define FLAG_HIDE_ZIGZA_102	 0x3E
 #define FLAG_HIDE_BALL_102   0x3F
-#define FLAG_BALL_CATCH_102  0x40 // Unused Flag
+#define FLAG_BALL_CATCH_102  0x40
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
@@ -156,7 +156,7 @@
 #define FLAG_PENDING_DAYCARE_EGG             0x86
 #define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
-#define FLAG_RECEIVED_HM_CUT                 0x89
+#define FLAG_RECEIVED_HM_CUT                 0x89 // unused flag
 #define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
 #define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
 #define FLAG_RECEIVED_6_SODA_POP             0x8C
@@ -1380,13 +1380,13 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_SYS_DEXNAV_SEARCHING                   (SYSTEM_FLAGS + 0x21) // Unused Flag
-#define FLAG_SYS_DEXNAV_DETECTOR_MODE               (SYSTEM_FLAGS + 0x22) // Unused Flag
-#define FLAG_SYS_DEXNAV_GET                         (SYSTEM_FLAGS + 0x23) // Unused Flag
-#define FLAG_SYS_EXP_SHARE                          (SYSTEM_FLAGS + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
-#define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
-#define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
+#define FLAG_SYS_DEXNAV_SEARCHING                   (SYSTEM_FLAGS + 0x21) 
+#define FLAG_SYS_DEXNAV_DETECTOR_MODE               (SYSTEM_FLAGS + 0x22) 
+#define FLAG_SYS_DEXNAV_GET                         (SYSTEM_FLAGS + 0x23) 
+#define FLAG_SYS_EXP_SHARE                          (SYSTEM_FLAGS + 0x24) 
+#define FLAG_SPAWN_INVISIBLE                        (SYSTEM_FLAGS + 0x25) 
+#define FLAG_REMOVE_WARP_FADE_OUT                   (SYSTEM_FLAGS + 0x26)
+#define FLAG_MOVE_RELEARNER_UPGRADE                 (SYSTEM_FLAGS + 0x27)
 
 #define FLAG_SYS_USE_FLASH                          (SYSTEM_FLAGS + 0x28)
 #define FLAG_SYS_USE_STRENGTH                       (SYSTEM_FLAGS + 0x29)

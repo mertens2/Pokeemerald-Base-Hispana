@@ -81,6 +81,7 @@ static bool8 sIsScriptedWildDouble;
 extern const SpecialFunc gSpecials[];
 extern const u8 *gStdScripts[];
 extern const u8 *gStdScripts_End[];
+extern void ZeroMonData(struct Pokemon *); 
 
 static void CloseBrailleWindow(void);
 static void DynamicMultichoiceSortList(struct ListMenuItem *items, u32 count);
@@ -3347,38 +3348,38 @@ void ScrCmd_getemptyslot(void)
 	gSaveBlock1Ptr->Empty = gPlayerParty[1];
 }
 
-void ScrCmd_deletepokemon(void)
-{
-	u8 NumberDelete = gSpecialVar_0x8004;
-	u8 i;
-	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-	for(i = 5; i >= NumberDelete; i--)
-	{
-		if(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL))
-			gPlayerParty[i] = gSaveBlock1Ptr->Empty;
-	}
-}
+// void ScrCmd_deletepokemon(void)
+// {
+	// u8 NumberDelete = gSpecialVar_0x8004;
+	// u8 i;
+	// Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	// for(i = 5; i >= NumberDelete; i--)
+	// {
+		// if(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL))
+			// gPlayerParty[i] = gSaveBlock1Ptr->Empty;
+	// }
+// }
 
-void ScrCmd_savepartofteam(void)
-{
-	u8 i;
-	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-	for (i = 0; i < PARTY_SIZE; i++)
-        gSaveBlock1Ptr->BossTeam[i] = gPlayerParty[i];
-}
+// void ScrCmd_savepartofteam(void)
+// {
+	// u8 i;
+	// Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	// for (i = 0; i < PARTY_SIZE; i++)
+        // gSaveBlock1Ptr->BossTeam[i] = gPlayerParty[i];
+// }
 
-void ScrCmd_loadpartofteam(void)
-{
-	u8 i;
-	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-	for(i = 0; i < PARTY_SIZE; i++){
-		struct Pokemon mon = gSaveBlock1Ptr->BossTeam[i];
-		// struct Pokemon mon2 = &gSaveBlock1Ptr->BossTeam[i];
-		if (GetMonData(&mon, MON_DATA_SPECIES, NULL))
-			break;
-		gPlayerParty[i] = mon;
-	}
-}
+// void ScrCmd_loadpartofteam(void)
+// {
+	// u8 i;
+	// Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	// for(i = 0; i < PARTY_SIZE; i++){
+		// struct Pokemon mon = gSaveBlock1Ptr->BossTeam[i];
+		// // struct Pokemon mon2 = &gSaveBlock1Ptr->BossTeam[i];
+		// if (GetMonData(&mon, MON_DATA_SPECIES, NULL))
+			// break;
+		// gPlayerParty[i] = mon;
+	// }
+// }
 
 bool8 ScrCmd_setgetobjectflags(struct ScriptContext *ctx)
 {
@@ -3502,4 +3503,36 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
         }
     }
     return FALSE;
+}
+
+void ScrCmd_deletepokemon(void)
+{
+	u8 NumberDelete = gSpecialVar_0x8004;
+	u8 i;
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	for(i = 5; i >= NumberDelete; i--)
+	{
+		if(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL))
+			ZeroMonData(&gPlayerParty[i]);
+	}
+}
+
+void ScrCmd_savepartofteam(void)
+{
+	u8 i;
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	for (i = 0; i < PARTY_SIZE; i++)
+        gSaveBlock1Ptr->BossTeam[i] = gPlayerParty[i];
+}
+
+void ScrCmd_loadpartofteam(void)
+{
+	u8 i;
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	for(i = 0; i < 6; i++) {
+		struct Pokemon *currMon = &gSaveBlock1Ptr->BossTeam[i];
+		if (!GetMonData(currMon, MON_DATA_SPECIES))
+			break;
+		gPlayerParty[i] = gSaveBlock1Ptr->BossTeam[i];
+	}
 }

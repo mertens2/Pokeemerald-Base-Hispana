@@ -2605,25 +2605,25 @@ SootopolisCity_EventScript_Wallace::
 # 1303 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_GoToSkyPillar
 # 1304 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-	goto_if_set FLAG_RECEIVED_HM07, SootopolisCity_EventScript_GoToGym
+	checkitem ITEM_HM07
 # 1305 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_GiveWaterfall
+	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_EventScript_GoToGym
 # 1306 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-	msgbox SootopolisCity_Text_AquaMagmaDidntMeanHarm, MSGBOX_DEFAULT
+	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_GiveWaterfall
 # 1307 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-	release
+	msgbox SootopolisCity_Text_AquaMagmaDidntMeanHarm, MSGBOX_DEFAULT
 # 1308 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-	end
+	release
 # 1309 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-
+	end
 # 1310 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-SootopolisCity_EventScript_GiveWaterfall::
+
 # 1311 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-	msgbox SootopolisCity_Text_ThankYouForHelpAcceptThis, MSGBOX_DEFAULT
+SootopolisCity_EventScript_GiveWaterfall::
 # 1312 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-	giveitem ITEM_HM07
+	msgbox SootopolisCity_Text_ThankYouForHelpAcceptThis, MSGBOX_DEFAULT
 # 1313 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
-	setflag FLAG_RECEIVED_HM07
+	giveitem ITEM_HM07
 # 1314 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
 	msgbox SootopolisCity_Text_ExplainWaterfallGoToGym, MSGBOX_DEFAULT
 # 1315 "data/maps/AquaHideout_UnusedRubyMap2/SootopolisCity/scripts.pory"
