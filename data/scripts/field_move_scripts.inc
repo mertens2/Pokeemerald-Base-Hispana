@@ -595,6 +595,52 @@ EventScript_SmashRockDinoFound:
 	goto EventScript_EndSmash
 
 
+Script_Wishes::
+	lockall
+	switch VAR_WISHES_FUFILLED
+	case 1, Script_YouFeelAsThough
+	case 2, Script_YouFeelAsThough
+	case 3, Script_YouFeelAsThough
+	case 4, Script_YouAreHalfwayThrough
+	case 5, Script_YouFeelAsThough
+	case 6, Script_JustOneMoreWish
+	case 7, Script_YouHaveAchieved
+	releaseall
+	end
+	
+Script_YouFeelAsThough::
+	msgbox YouFeelAsThough
+	releaseall
+	end
+
+Script_YouAreHalfwayThrough::
+	msgbox YouAreHalfwayThrough
+	releaseall
+	end
+	
+Script_JustOneMoreWish::
+	msgbox YouAreAlmostThere
+	releaseall
+	end
+
+Script_YouHaveAchieved::
+	msgbox YouHaveAchieved
+	clearflag FLAG_HIDE_JIRACHI
+	releaseall
+	end
+
+Text_CutTreeNoNeed:
+	.string "No tengo porqué cortar este árbol.$"
+
+YouFeelAsThough:
+	.string "Sientes como si un gran ser\nhubiera visto tu buena acción.\pEsperemos esté complacido.$"
+YouHaveAchieved:
+	.string "Escuchas una voz a la distancia:\p“Siete deseos has cumplido,\nY yo, estoy complacido.”\p“Para obetener tu regalo,\nhas de volver a donde todo\lha comenzado.”$"
+YouAreAlmostThere:
+	.string "Escuchas una voz a la distancia:\p“Tu travesía esta cerca de terminar,\nun solo deseo queda por completar.”$"
+YouAreHalfwayThrough:
+	.string "Escuchas una voz a la distancia:\p“Cuatro de siete deseos has completado,\nquedan tres para obetener tu regalo.”$"
+
 
 Text_WantToRockClimb:
     .string "The cliff is steep.\n"

@@ -9,6 +9,34 @@ Common_Movement_ExclamationMark:
 	emote_exclamation_mark
 	step_end
 
+Common_Movement_Heart:
+	emote_heart
+	step_end
+
+Common_Movement_JumpInPlaceLeft:
+	jump_in_place_left
+	step_end
+
+Common_Movement_JumpInPlaceRight:
+	jump_in_place_right
+	step_end
+
+Common_Movement_JumpInPlaceUp:
+	jump_in_place_up
+	step_end
+
+Common_Movement_JumpInPlaceDown:
+	jump_in_place_down
+	step_end
+
+Common_Movement_JumpUp:
+	jump_up
+	step_end
+
+Common_Movement_JumpDown:
+	jump_down
+	step_end
+
 Common_Movement_Delay48:
 	delay_16
 	delay_16
@@ -69,6 +97,22 @@ Common_Movement_WalkInPlaceLeft:
 
 Common_Movement_WalkInPlaceRight:
 	walk_in_place_right
+	step_end
+
+Common_Movement_WalkInPlaceUp:
+	walk_in_place_up
+	step_end
+
+Common_Movement_SetInvisible:
+	set_invisible
+	step_end
+
+Common_Movement_SetVisible:
+	set_visible
+	step_end
+
+Common_Movement_WalkInPlaceSlowDown:
+	walk_in_place_slow_down
 	step_end
 
 @ End of follower-safe movements

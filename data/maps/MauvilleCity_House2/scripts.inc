@@ -53,80 +53,78 @@ MauvilleCity_House2_EventScript_AcceptTrade::
 # 27 "data/maps/MauvilleCity_House2/scripts.pory"
 	msgbox MauvilleCity_House2_Text_IllTradeYouCoinCase, MSGBOX_DEFAULT
 # 28 "data/maps/MauvilleCity_House2/scripts.pory"
-	giveitem ITEM_COIN_CASE
-# 29 "data/maps/MauvilleCity_House2/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-# 30 "data/maps/MauvilleCity_House2/scripts.pory"
 	removeitem ITEM_HARBOR_MAIL
-# 31 "data/maps/MauvilleCity_House2/scripts.pory"
+# 29 "data/maps/MauvilleCity_House2/scripts.pory"
+	giveitem ITEM_COIN_CASE
+# 30 "data/maps/MauvilleCity_House2/scripts.pory"
 	setflag FLAG_RECEIVED_COIN_CASE
-# 32 "data/maps/MauvilleCity_House2/scripts.pory"
+# 31 "data/maps/MauvilleCity_House2/scripts.pory"
 	goto MauvilleCity_House2_EventScript_ReceivedCoinCase
+# 32 "data/maps/MauvilleCity_House2/scripts.pory"
+	end
 # 33 "data/maps/MauvilleCity_House2/scripts.pory"
-	end
+
 # 34 "data/maps/MauvilleCity_House2/scripts.pory"
-
-# 35 "data/maps/MauvilleCity_House2/scripts.pory"
 MauvilleCity_House2_EventScript_ReceivedCoinCase::
-# 36 "data/maps/MauvilleCity_House2/scripts.pory"
+# 35 "data/maps/MauvilleCity_House2/scripts.pory"
 	msgbox MauvilleCity_House2_Text_UseCoinCaseAtGameCorner, MSGBOX_DEFAULT
+# 36 "data/maps/MauvilleCity_House2/scripts.pory"
+	release
 # 37 "data/maps/MauvilleCity_House2/scripts.pory"
-	release
+	end
 # 38 "data/maps/MauvilleCity_House2/scripts.pory"
-	end
+
 # 39 "data/maps/MauvilleCity_House2/scripts.pory"
-
-# 40 "data/maps/MauvilleCity_House2/scripts.pory"
 MauvilleCity_House2_EventScript_DeclineTrade::
-# 41 "data/maps/MauvilleCity_House2/scripts.pory"
+# 40 "data/maps/MauvilleCity_House2/scripts.pory"
 	msgbox MauvilleCity_House2_Text_ThatsDisappointing, MSGBOX_DEFAULT
-# 42 "data/maps/MauvilleCity_House2/scripts.pory"
+# 41 "data/maps/MauvilleCity_House2/scripts.pory"
 	release
-# 43 "data/maps/MauvilleCity_House2/scripts.pory"
+# 42 "data/maps/MauvilleCity_House2/scripts.pory"
 	end
+# 43 "data/maps/MauvilleCity_House2/scripts.pory"
+
 # 44 "data/maps/MauvilleCity_House2/scripts.pory"
-
-# 45 "data/maps/MauvilleCity_House2/scripts.pory"
 MauvilleCity_House2_Text_BuyHarborMailAtSlateport:
+# 45 "data/maps/MauvilleCity_House2/scripts.pory"
+	.string "If I had a BIKE, it'd be easy to cycle to\n"
 # 46 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "Si tuviera una BICI, sería facilísimo\n"
+	.string "SLATEPORT for some shopping.\p"
 # 47 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "ir de compras por CIUDAD PORTUAL.\p"
+	.string "I'd be able to buy HARBOR MAIL at the\n"
 # 48 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "Podría comprar una CARTA PUERTO en\n"
+	.string "POKéMON MART in SLATEPORT…$"
 # 49 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "la TIENDA POKéMON de CIUDAD PORTUAL.$"
+
 # 50 "data/maps/MauvilleCity_House2/scripts.pory"
-
-# 51 "data/maps/MauvilleCity_House2/scripts.pory"
 MauvilleCity_House2_Text_TradeHarborMailForCoinCase:
+# 51 "data/maps/MauvilleCity_House2/scripts.pory"
+	.string "Oh! You have HARBOR MAIL?\n"
 # 52 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "Ah, ¿tienes una CARTA PUERTO?\n"
+	.string "Will you trade it for a COIN CASE?$"
 # 53 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "¿La cambiarías por un MONEDERO?$"
+
 # 54 "data/maps/MauvilleCity_House2/scripts.pory"
-
-# 55 "data/maps/MauvilleCity_House2/scripts.pory"
 MauvilleCity_House2_Text_IllTradeYouCoinCase:
+# 55 "data/maps/MauvilleCity_House2/scripts.pory"
+	.string "Oh, I'm so happy!\n"
 # 56 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "¡Qué buena suerte!\n"
+	.string "Okay, I'll trade you a COIN CASE!$"
 # 57 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "Muy bien, te daré un MONEDERO.$"
+
 # 58 "data/maps/MauvilleCity_House2/scripts.pory"
-
-# 59 "data/maps/MauvilleCity_House2/scripts.pory"
 MauvilleCity_House2_Text_UseCoinCaseAtGameCorner:
+# 59 "data/maps/MauvilleCity_House2/scripts.pory"
+	.string "That COIN CASE can be used\n"
 # 60 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "Ese MONEDERO se puede usar\n"
+	.string "at the GAME CORNER.$"
 # 61 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "en el CASINO.$"
-# 62 "data/maps/MauvilleCity_House2/scripts.pory"
 
-# 63 "data/maps/MauvilleCity_House2/scripts.pory"
+# 62 "data/maps/MauvilleCity_House2/scripts.pory"
 MauvilleCity_House2_Text_ThatsDisappointing:
+# 63 "data/maps/MauvilleCity_House2/scripts.pory"
+	.string "Oh, that's disappointing.\p"
 # 64 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "Qué disgusto…\p"
+	.string "A COIN CASE is needed for the\n"
 # 65 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "Pues que sepas que necesitas un\n"
-# 66 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "MONEDERO en el CASINO.$"
+	.string "GAME CORNER.$"

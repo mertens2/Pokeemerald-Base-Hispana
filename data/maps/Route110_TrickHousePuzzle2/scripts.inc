@@ -205,84 +205,78 @@ Route110_TrickHousePuzzle2_EventScript_Georgia::
 # 103 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_WroteSecretCodeLockOpened:
 # 104 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "{PLAYER} escribió el código secreto\n"
+	.string "{PLAYER} wrote down the secret code\n"
 # 105 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "en la puerta.\p"
+	.string "on the door.\p"
 # 106 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "“El MAESTRO TRETA\n"
+	.string "“TRICK MASTER is smart.”\n"
 # 107 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "es listo.”\l"
+	.string "… … … … … … … …\p"
 # 108 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "Y…\p"
+	.string "The lock clicked open!$"
 # 109 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "¡la puerta se ha abierto!$"
+
 # 110 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-
-# 111 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_TedIntro:
+# 111 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "Which switch closes which hole?$"
 # 112 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "¿Qué interruptor cierra qué agujero?$"
+
 # 113 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-
-# 114 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_TedDefeat:
+# 114 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "After that battle, I'm even more\n"
 # 115 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "Tras este combate, estoy\n"
+	.string "confused!$"
 # 116 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "todavía más liado…$"
+
 # 117 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-
-# 118 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_TedPostBattle:
+# 118 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "Can I get you to push all the buttons\n"
 # 119 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "¿Por qué no te pones a pulsar\n"
+	.string "for me?$"
 # 120 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "interruptores y vemos qué pasa?$"
+
 # 121 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-
-# 122 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_PaulIntro:
+# 122 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "Oh! You're on your second TRICK HOUSE\n"
 # 123 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "Anda, así que has aceptado tu segundo\n"
+	.string "challenge!$"
 # 124 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "desafío de la CASA TRETA…$"
+
 # 125 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-
-# 126 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_PaulDefeat:
+# 126 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "You're good at battling too?$"
 # 127 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "¿Así que también se te dan\n"
+
 # 128 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "bien los combates?$"
-# 129 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-
-# 130 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_PaulPostBattle:
+# 129 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "The TRICK MASTER rigged all the tricks\n"
+# 130 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "in this house all by himself.$"
 # 131 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "¡El MAESTRO TRETA preparó todos\n"
+
 # 132 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "los trucos de esta casa él solito!$"
-# 133 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-
-# 134 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_GeorgiaIntro:
+# 133 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "I want to make my own GYM one day.\n"
+# 134 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "So, I'm studying how to set traps.$"
 # 135 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "Quiero tener mi propio GIMNASIO algún\n"
+
 # 136 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "día, por eso aprendo a poner trampas.$"
-# 137 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-
-# 138 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_GeorgiaDefeat:
-# 139 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "¡Debería haber aprendido tácticas\n"
-# 140 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "de combate en vez de chorradas!$"
-# 141 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+# 137 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "I didn't study battling enough!$"
+# 138 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 
-# 142 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+# 139 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_GeorgiaPostBattle:
-# 143 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "Eres fuerte, sí… ¡Quizás tú también\n"
-# 144 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "llegues a ser LÍDER algún día!$"
+# 140 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "You're strong, aren't you?\n"
+# 141 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
+	.string "Maybe even enough to be a GYM LEADER!$"

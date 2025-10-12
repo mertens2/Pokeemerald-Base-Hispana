@@ -1,332 +1,482 @@
-# 1 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 2 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 VerdanturfTown_WandasHouse_MapScripts::
-# 3 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 	.byte 0
-# 4 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 
-# 5 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+
 VerdanturfTown_WandasHouse_EventScript_Wally::
+# 4 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	lock
+# 5 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	faceplayer
 # 6 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	lock
+	namebox Wally
 # 7 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	faceplayer
-# 8 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	goto_if_set FLAG_WALLY_SPEECH, VerdanturfTown_WandasHouse_EventScript_WallyShortSpeech
-# 9 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_StrongerSpeech, MSGBOX_DEFAULT
-# 10 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	setflag FLAG_WALLY_SPEECH
-# 11 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
-# 12 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
-# 13 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 14 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WallyShortSpeech::
-# 15 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_StrongerSpeechShort, MSGBOX_DEFAULT
-# 16 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
+	goto_if_set FLAG_WALLY_SPEECH, VerdanturfTown_WandasHouse_EventScript_Wally_2
 # 17 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
-# 18 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 19 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WallysUncle::
-# 20 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	lock
-# 21 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	faceplayer
-# 22 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, VerdanturfTown_WandasHouse_EventScript_WallysUncleEverGrande
+	goto_if_set FLAG_BADGE03_GET, VerdanturfTown_WandasHouse_EventScript_Wally_5
 # 23 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_WallysUncleSlippedOff
-# 24 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_WallysNextDoor, MSGBOX_DEFAULT
+	msgbox VerdanturfTown_WandasHouse_EventScript_Wally_Text_3
 # 25 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
+	hidenamebox
 # 26 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
+	closemessage
 # 27 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	setflag FLAG_WALLY_SPEECH
 # 28 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WallysUncleSlippedOff::
-# 29 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_WallySlippedOff, MSGBOX_DEFAULT
-# 30 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 	release
-# 31 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 	end
-# 32 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 
+VerdanturfTown_WandasHouse_EventScript_Wally_2:
+# 8 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	goto_if_set FLAG_BADGE03_GET, VerdanturfTown_WandasHouse_EventScript_Wally_8
+# 13 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_Wally_Text_1
+# 14 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_Wally_5:
+# 18 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_Wally_Text_2
+# 20 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_Wally_8:
+# 9 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_Wally_Text_0
+# 10 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+
+VerdanturfTown_WandasHouse_EventScript_WallysUncle::
 # 33 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WallysUncleEverGrande::
+	lock
 # 34 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_WallyGoneThatFar, MSGBOX_DEFAULT
+	faceplayer
 # 35 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
+	namebox TioWally
 # 36 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
-# 37 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 38 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend::
-# 39 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_CanSeeGirlfriendEveryDay, MSGBOX_NPC
-# 40 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
-# 41 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 42 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_Wanda::
+	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, VerdanturfTown_WandasHouse_EventScript_WallysUncle_2
 # 43 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	lock
-# 44 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	faceplayer
-# 45 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_WandaDontWorry
-# 46 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	goto_if_set FLAG_DEFEATED_WALLY_MAUVILLE, VerdanturfTown_WandasHouse_EventScript_MeetWanda
-# 47 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_DontWorryAboutWally, MSGBOX_DEFAULT
+	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_WallysUncle_5
 # 48 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
-# 49 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
+	msgbox VerdanturfTown_WandasHouse_EventScript_WallysUncle_Text_2
 # 50 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	closemessage
 # 51 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_MeetWanda::
+	hidenamebox
 # 52 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_MeetWanda, MSGBOX_DEFAULT
-# 53 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 	release
-# 54 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 	end
-# 55 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 
-# 56 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WandaDontWorry::
-# 57 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_DontWorryAboutWally, MSGBOX_DEFAULT
+VerdanturfTown_WandasHouse_EventScript_WallysUncle_2:
+# 37 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_WallysUncle_Text_0
+# 40 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_WallysUncle_5:
+# 44 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_WallysUncle_Text_1
+# 45 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+
+VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend::
 # 58 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
+	namebox Riley
 # 59 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
-# 60 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	msgbox VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_0
 # 61 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WallysAunt::
+	closemessage
 # 62 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	lock
+	hidenamebox
 # 63 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	faceplayer
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 # 64 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, VerdanturfTown_WandasHouse_EventScript_WallysAuntEverGrande
+	waitmovement 0
 # 65 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_WallysAuntAnythingHappened
+	applymovement 6, Common_Movement_FaceLeft
 # 66 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	goto_if_set FLAG_RUSTURF_TUNNEL_OPENED, VerdanturfTown_WandasHouse_EventScript_WallysAuntTunnelOpen
+	waitmovement 0
 # 67 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendDriven, MSGBOX_DEFAULT
+	playse SE_CONTEST_HEART
 # 68 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
+	applymovement VAR_LAST_TALKED, Common_Movement_Heart
 # 69 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
+	waitmovement 0
 # 70 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	namebox Riley
 # 71 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WallysAuntTunnelOpen::
+	msgbox VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_1
 # 72 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendWasDigging, MSGBOX_DEFAULT
+	closemessage
 # 73 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
+	hidenamebox
 # 74 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
+	playse SE_CONTEST_HEART
 # 75 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	applymovement 6, Common_Movement_Heart
 # 76 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WallysAuntAnythingHappened::
+	waitmovement 0
 # 77 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_IfAnythingHappenedToWally, MSGBOX_DEFAULT
+	namebox Camilo
 # 78 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	release
+	msgbox VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_2
 # 79 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	end
+	closemessage
 # 80 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	hidenamebox
 # 81 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_EventScript_WallysAuntEverGrande::
-# 82 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	msgbox VerdanturfTown_WandasHouse_Text_WallyWasInEverGrande, MSGBOX_DEFAULT
-# 83 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 	release
-# 84 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 	end
-# 85 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
 
+
+VerdanturfTown_WandasHouse_EventScript_Wanda::
 # 86 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_StrongerSpeech:
+	lock
 # 87 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "BLASCO: Me has vencido, {PLAYER}, pero\n"
+	faceplayer
 # 88 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "ahora eso me importa un comino…\p"
+	namebox Wanda
 # 89 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Porque tengo un nuevo objetivo\n"
-# 90 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "en la vida. Junto a mi RALTS,\l"
-# 91 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "voy a desafiar a los GIMNASIOS POKéMON\l"
-# 92 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "y convertirme en un gran ENTRENADOR.\p"
-# 93 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "No me pierdas de vista, {PLAYER}.\n"
-# 94 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Voy a ser más fuerte que tú.\p"
-# 95 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Y, cuando lo sea, te voy a desafiar\n"
+	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_Wanda_2
 # 96 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "a otro combate…$"
-# 97 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 98 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_StrongerSpeechShort:
-# 99 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "BLASCO: Obsérvame bien, {PLAYER}.\n"
-# 100 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Voy a ser más fuerte que tú.\p"
-# 101 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Y, cuando lo sea, te voy a desafiar\n"
-# 102 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "a otro combate…$"
-# 103 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 104 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_WallysNextDoor:
-# 105 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "TÍO: ¡Ey, {PLAYER}{KUN}!\n"
-# 106 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "BLASCO está al lado.\p"
-# 107 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Pero primero quiero contarte\n"
+	goto_if_set FLAG_DEFEATED_WALLY_MAUVILLE, VerdanturfTown_WandasHouse_EventScript_Wanda_5
 # 108 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "una cosa…\p"
+	hidenamebox
 # 109 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Este entorno natural está sentando\n"
+	closemessage
 # 110 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "a BLASCO de maravilla.\p"
-# 111 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Quizás no sea sólo el entorno.\n"
-# 112 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Los POKéMON también tendrán que ver…$"
-# 113 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
 
-# 114 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_WallySlippedOff:
+VerdanturfTown_WandasHouse_EventScript_Wanda_2:
+# 90 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_Wanda_Text_0
+# 91 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	hidenamebox
+# 92 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	closemessage
+# 93 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_Wanda_5:
+# 97 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_Wanda_Text_1
+# 100 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	hidenamebox
+# 101 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	closemessage
+# 102 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	playse SE_CONTEST_HEART
+# 103 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_Heart
+# 104 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	waitmovement 0
+# 105 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+
+VerdanturfTown_WandasHouse_EventScript_WallysAunt::
 # 115 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "BLASCO se ha ido…\n"
+	lock
 # 116 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Se ha marchado sin decir ni mu…$"
+	faceplayer
 # 117 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	namebox TiaWally
 # 118 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_WallyGoneThatFar:
-# 119 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "TÍO: ¿Es cierto que BLASCO\n"
-# 120 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "se ha ido tan lejos él solito?\p"
-# 121 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Bueno, no debería extrañarme:\n"
-# 122 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "¡es el hijo de mi hermano!$"
+	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, VerdanturfTown_WandasHouse_EventScript_WallysAunt_2
 # 123 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 124 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_MeetWanda:
-# 125 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "CLARA: ¿Tú eras…?\n"
-# 126 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Ah, sí, ya sé.\p"
-# 127 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Eres {PLAYER}. BLASCO siempre está\n"
-# 128 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "hablando de ti.\p"
+	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_WallysAunt_5
 # 129 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Soy la prima de BLASCO.\n"
-# 130 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "¡Es un placer!\p"
-# 131 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Creo que a BLASCO se le ve mucho\n"
-# 132 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "más sano y animado desde que está aquí.$"
-# 133 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	goto_if_set FLAG_RUSTURF_TUNNEL_OPENED, VerdanturfTown_WandasHouse_EventScript_WallysAunt_8
 # 134 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_DontWorryAboutWally:
-# 135 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "CLARA: No te preocupes por BLASCO.\n"
-# 136 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Sabe cuidarse él solo.\p"
+	msgbox VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_3
+VerdanturfTown_WandasHouse_EventScript_WallysAunt_7:
 # 137 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Conozco a mi primo y además\n"
+	hidenamebox
 # 138 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "no está solo: tiene a sus POKéMON.$"
+	closemessage
 # 139 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
 
-# 140 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_CanSeeGirlfriendEveryDay:
-# 141 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Gracias a ti, puedo ver a mi novia\n"
-# 142 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "cada día. ¿Que si estoy contento?\l"
-# 143 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "¿Acaso no se ve? Je, je, je…$"
+VerdanturfTown_WandasHouse_EventScript_WallysAunt_2:
+# 119 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_0
+# 120 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_WallysAunt_5:
+# 124 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_1
+# 126 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_WallysAunt_8:
+# 130 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_2
+	goto VerdanturfTown_WandasHouse_EventScript_WallysAunt_7
+
+
+VerdanturfTown_WandasHouse_EventScript_Camilo::
 # 144 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	lock
 # 145 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendDriven:
+	faceplayer
 # 146 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "El novio de mi hija es de lo más\n"
+	namebox Camilo
 # 147 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "lanzado y apasionado.\p"
+	checkitem ITEM_TM45
 # 148 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Ha estado cavando el túnel\n"
-# 149 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "sin parar sólo para poder verla.\p"
-# 150 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Mi hija está un poco preocupada,\n"
-# 151 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "por eso va al túnel cada dos por tres.$"
-# 152 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 153 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendWasDigging:
-# 154 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Es asombroso. ¡El novio de mi hija\n"
-# 155 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "ha estado cavando el túnel a mano!\p"
-# 156 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "¡No me lo puedo creer!$"
-# 157 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
-# 158 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_IfAnythingHappenedToWally:
+	compare VAR_RESULT, TRUE
+	goto_if_eq VerdanturfTown_WandasHouse_EventScript_Camilo_2
 # 159 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "Si algo le pasara a BLASCO, nunca\n"
-# 160 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "podría volver a mirar a sus padres\l"
-# 161 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "a la cara, cuando volviera a PETALIA…$"
-# 162 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-
+	msgbox VerdanturfTown_WandasHouse_EventScript_Camilo_Text_1
 # 163 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-VerdanturfTown_WandasHouse_Text_WallyWasInEverGrande:
+	hidenamebox
 # 164 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "¿BLASCO ha estado en COLOSALIA?\p"
+	giveitem ITEM_TM45
 # 165 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "¡Sus padres, que viven en PETALIA,\n"
+	giveitem ITEM_TM48
 # 166 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
-	.string "estarían atónitos si lo supieran!$"
+	namebox Camilo
+# 167 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_Camilo_Text_2
+# 170 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_Camilo_Text_3
+# 172 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	playse SE_CONTEST_HEART
+# 173 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_Heart
+# 174 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	waitmovement 0
+# 175 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	hidenamebox
+# 176 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	closemessage
+# 177 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_Camilo_2:
+# 149 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	msgbox VerdanturfTown_WandasHouse_EventScript_Camilo_Text_0
+# 151 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	hidenamebox
+# 152 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	closemessage
+# 153 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	playse SE_CONTEST_HEART
+# 154 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_Heart
+# 155 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	waitmovement 0
+# 156 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	release
+	end
+
+
+VerdanturfTown_WandasHouse_EventScript_Wally_Text_0:
+# 9 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "$"
+
+VerdanturfTown_WandasHouse_EventScript_Wally_Text_1:
+# 13 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "Voy a alcanzarte, {PLAYER}. La\n"
+	.string "próxima vez que nos enfrentemos,\l"
+	.string "seré mucho más fuerte.$"
+
+VerdanturfTown_WandasHouse_EventScript_Wally_Text_2:
+# 18 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "Estoy planeando hacer algo. Algo que me\n"
+	.string "hará ser mucho más fuerte,\l"
+	.string "{PLAYER}, pero no voy a decirte qué\l"
+	.string "es.\p"
+	.string "Parece que eres mucho más fuerte,\n"
+	.string "¿no?\p"
+	.string "Pues verás que cuando logre lo que\n"
+	.string "estoy pensando, te lograré sobrepasar.$"
+
+VerdanturfTown_WandasHouse_EventScript_Wally_Text_3:
+# 23 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "{PLAYER}…\p"
+	.string "Me… Me habías vencido, pero…\l"
+	.string "No creo estar tan afectado como lo\l"
+	.string "estaba antes.\p"
+	.string "De hecho, creo que esa derrota es lo que\n"
+	.string "necesitaba.\p"
+	.string "Ahora podré mejorar realmente, y podré\n"
+	.string "esforzarme diez veces más que antes.\p"
+	.string "Voy a alcanzarte, {PLAYER}. La\n"
+	.string "próxima vez que nos enfrentemos,\l"
+	.string "seré mucho más fuerte.$"
+
+VerdanturfTown_WandasHouse_EventScript_WallysUncle_Text_0:
+# 37 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "¿Así que Wally ha logrado, sólo por su\n"
+	.string "propia voluntad y determinación,\l"
+	.string "llegar a la Liga Pokémon?\p"
+	.string "Y yo que le decía que no estaba listo\n"
+	.string "para afrontar el {COLOR BLUE}Desafío de los\l"
+	.string "Gimnasios{COLOR DARK_GRAY}, pero lo completó todo.\p"
+	.string "Estoy sorprendido, tomando en cuenta\n"
+	.string "que es hijo de mi hermanito menor.\p"
+	.string "¡Estoy muy orgulloso de él!$"
+
+VerdanturfTown_WandasHouse_EventScript_WallysUncle_Text_1:
+# 44 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "No puedo creer que se haya ido…\p"
+	.string "¡Wally, ¿Dónde estás, mi chiquitín?!\p"
+	.string "Argh, ¿¡CÓMO PUDE PERDERLO DE VISTA!?$"
+
+VerdanturfTown_WandasHouse_EventScript_WallysUncle_Text_2:
+# 48 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "¿Wally?\n"
+	.string "Ah, está en el cuarto de al lado.\p"
+	.string "Su condición ha mejorado bastante,\n"
+	.string "gracias a lo limpio que es el aire por\l"
+	.string "aquí.\p"
+	.string "Pero quizá, y sólo quizá, sea la\n"
+	.string "influencia de sus Pokémon la que le\l"
+	.string "está dando esperanza y vitalidad…$"
+
+VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_0:
+# 59 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "¡ROAR!\n"
+	.string "¡Soy yo, Riley, el tipo que ayudaste en\l"
+	.string "el túnel!\p"
+	.string "Estuve hablando con mi novia, y resulta\n"
+	.string "que a ella también le gusta el hombre\l"
+	.string "que encontré en el túnel.\p"
+	.string "¡Ahora somos novios los tres!\p"
+	.string "¿¡No es eso genial!?\p"
+	.string "¡ROOOAARRR!$"
+
+VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_1:
+# 71 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "¡Mi lindo, lindo novio!\n"
+	.string "¡Qué lindo es mi novio!$"
+
+VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_2:
+# 78 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "¡A-ay, basta, Riley, que me sonrojo!$"
+
+VerdanturfTown_WandasHouse_EventScript_Wanda_Text_0:
+# 90 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "No te preocupes, Wally está bien.\p"
+	.string "Me dijo que se iba a ir a Dewford para\n"
+	.string "empezar su {COLOR BLUE}Desafío de los Gimnasios{COLOR DARK_GRAY}.$"
+
+VerdanturfTown_WandasHouse_EventScript_Wanda_Text_1:
+# 97 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "¡Ah! Tú debes de ser {PLAYER}.\p"
+	.string "Wally no para de hablar de tí y lo mucho\n"
+	.string "que te admira, soy Wanda, su prima.\p"
+	.string "Y te debo un agradecimiento, porque\n"
+	.string "gracias a tí, no sólo puedo ahora ver\l"
+	.string "a mi novio cuando quiera, ¡Si no que\l"
+	.string "conocí a otro hombre hermoso con el\l"
+	.string "que salir!\p"
+	.string "Amo mucho a mis dos novios, ¡Y es que\n"
+	.string "cómo no amarlos, sólo míralos,\l"
+	.string "musculosos, tiernos y graciosos!\p"
+	.string "¡Son los mejores!$"
+
+VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_0:
+# 119 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "¿¡QUE WALLY ESTABA EN EVERGRANDE!?\p"
+	.string "¡Sus padres estarían sorprendidísimos,\n"
+	.string "nunca se habrían imaginado tal hazaña!$"
+
+VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_1:
+# 124 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "Ay, Arceus mío…\p"
+	.string "Me voy a comprar al Centro Pokémon, y\n"
+	.string "cuando vuelvo, el nuevo novio de mi\l"
+	.string "hija me dice que Wally no está y todos\l"
+	.string "están fuera buscándolo.\p"
+	.string "Si algo le llegase a pasar… ¡No podría\n"
+	.string "ver a sus padres a la cara nunca más!$"
+
+VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_2:
+# 130 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "¡Es increíble!\p"
+	.string "El novio de mi hija cavó la mayor parte\n"
+	.string "del Túnel Rusturf por su cuenta, ¡Sin\l"
+	.string "máquinas ni nada!\p"
+	.string "No sólo eso, si no que mi hija es tan\n"
+	.string "encantadora que hasta se consiguió\l"
+	.string "otro novio.\p"
+	.string "¿Hay algún límite para lo que mi hija\n"
+	.string "pueda lograr?$"
+
+VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_3:
+# 134 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "El novio de mi hija es un constructor\n"
+	.string "reconocido por su amabilidad y gran\l"
+	.string "habilidad natural de liderazgo. ¡Y mi\l"
+	.string "hija lo encantó con su ternura!\p"
+	.string "¿Hay algún límite para lo que mi hija\n"
+	.string "pueda lograr?$"
+
+VerdanturfTown_WandasHouse_EventScript_Camilo_Text_0:
+# 149 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "Muchas gracias, {PLAYER}, por\n"
+	.string "ayudarme a dejar el Team Aqua.\p"
+	.string "Desde que lo hice, ¡Mi vida ha\n"
+	.string "mejorado!\p"
+	.string "Ahora tengo un hermosísimo novio y una\n"
+	.string "hermosa novia, ¡Y los amo tanto!$"
+
+VerdanturfTown_WandasHouse_EventScript_Camilo_Text_1:
+# 159 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "H-hola, {PLAYER}, ¿No?\p"
+	.string "Realmente lamento todo lo que hice…\p"
+	.string "Dejé el Team Aqua hace un rato, y el\n"
+	.string "Ex-Jefecito me dio una remuneración\l"
+	.string "por mis\p"
+	.string "servicios, aunque tambien me dijo que el\n"
+	.string "Team Aqua no era un grupo de\l"
+	.string "ladrones, si no que esa era una imagen\l"
+	.string "pública.\p"
+	.string "Pero desde que dejé el Team Aqua, ¡Mi\n"
+	.string "vida ha mejorado!\p"
+	.string "Ahora tengo un hermosísimo novio y una\n"
+	.string "hermosa novia, ¡Y los amo tanto!\p"
+	.string "De todo corazón, {PLAYER}, gracias\n"
+	.string "por todo.\p"
+	.string "Deberías tener esto como\n"
+	.string "agradecimiento.$"
+
+VerdanturfTown_WandasHouse_EventScript_Camilo_Text_2:
+# 167 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "Es la MT 45 Atracción.\n"
+	.string "Debes saber que ahora, se ha\l"
+	.string "descubierto que Pokémon de cualquier\l"
+	.string "género pueden enamorarse con este\l"
+	.string "moviminto,\l"
+	.string "incluso si es un Pokémon macho con\l"
+	.string "otro Pokémon macho, ¡Funcionará de la\l"
+	.string "misma forma!\p"
+	.string "¡Es como mi novio, mi novia y yo, a los\n"
+	.string "tres nos gustan tanto chicas como\l"
+	.string "chicos!$"
+
+VerdanturfTown_WandasHouse_EventScript_Camilo_Text_3:
+# 170 "data/maps/VerdanturfTown_WandasHouse/scripts.pory"
+	.string "También, te di la MT 48 Voz Cautivadora.\n"
+	.string "Golpea a ambos oponentes y hace más\l"
+	.string "daño si los rivales están enamorados\l"
+	.string "del usuario.\p"
+	.string "¡Las voces cautivadoras de mi novio y mi\n"
+	.string "novia siempre hacen que mi\l"
+	.string "corazoncito bisexual salte de amor!$"

@@ -27,6 +27,7 @@ evs_definition           = re.compile(r'\.ev = TRAINER_PARTY_EVS\(([0-9 ]+),([0-
 moves_definition         = re.compile(r'\.moves = \{([^}]+)\}')
 move_definition          = re.compile(r'MOVE_(\w+)')
 nature_definition        = re.compile(r'\.nature = NATURE_(\w+)')
+difficulty_definition    = re.compile(r'\s(\w+)Party')
 
 # NOTE: These are just for aesthetics, the Pokemon would still compile
 # without them.
@@ -90,6 +91,7 @@ def convert_parties(in_path, in_h):
     party_identifier = None
     party = None
     pokemon = None
+    difficulty = None
     parties = {}
 
     for line_no, line in enumerate(in_h, 1):
@@ -106,6 +108,14 @@ def convert_parties(in_path, in_h):
                     raise Exception(f"unexpected end of party")
                 parties[party_identifier] = party
                 party = None
+            elif difficulty_definition.search(line):
+                if difficulty:
+                    raise Exception(f"unexpected difficulty setting")
+                [difficulty_] = m.groups()
+                if difficulty_ == "":
+                    difficulty =  "Normal"
+                else:
+                    difficulty = difficulty_
             elif begin_pokemon_definition.search(line):
                 if pokemon:
                     raise Exception(f"unexpected start of Pokemon")
@@ -267,6 +277,8 @@ def convert_trainers(in_path, in_h, parties, out_party):
             elif m := trainer_starting_status_definition.search(line):
                 [starting_status] = m.groups()
                 trainer.starting_status = starting_status.replace("_", " ").title()
+            elif difficulty:
+                    trainer.difficulty = difficulty
             elif m := trainer_party_definition.search(line):
                 [party] = m.groups()
                 trainer.party = parties[party]
@@ -292,6 +304,8 @@ def convert_trainers(in_path, in_h, parties, out_party):
                     out_party.write(f"Mugshot: {trainer.mugshot}\n")
                 if trainer.starting_status:
                     out_party.write(f"Starting Status: {trainer.starting_status}\n")
+                if trainer.difficulty:
+                    out_party.write(f"Difficulty: {trainer.difficulty}\n")
                 if trainer.party:
                     for i, pokemon in enumerate(trainer.party):
                         out_party.write(f"\n")

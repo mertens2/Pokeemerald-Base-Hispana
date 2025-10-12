@@ -347,7 +347,7 @@ DewfordTown_EventScript_Wally::
 	msgbox DewfordTown_EventScript_WallyHello, MSGBOX_DEFAULT
 	hidenamebox
 	closemessage
-	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 	waitmovement 0
 	namebox Wally
 	msgbox DewfordTown_EventScript_WallyBeginSpeech, MSGBOX_DEFAULT
@@ -375,30 +375,30 @@ DewfordTown_OnFrameWally::
 	delay 8
 	namebox Wally
 	msgbox DewfordTown_Text_WallyContinueSpeech, MSGBOX_DEFAULT
-	applymovement LOCALID_WALLY, Common_Movement_FacePlayer
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox DewfordTown_Text_WallyContinueSpeech2
 	closemessage
 	hidenamebox
-	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 	waitmovement 0
-	applymovement LOCALID_WALLY, Common_Movement_FaceUp
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceUp
 	waitmovement 0
 	namebox Wally
 	msgbox DewfordTown_Text_WallyDetermined
-	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox DewfordTown_Text_WallyLetsGo
 	closemessage
 	hidenamebox
 	call_if_eq VAR_0x8004, DIR_WEST, DewfordTown_WallyGoToGymWest
-	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyGoToGym
+	applymovement LOCALID_DEWFORD_WALLY, DewfordTown_Movement_WallyGoToGym
 	waitmovement 0
 	setvar VAR_0x8004, 8
 	setvar VAR_0x8005, 17
 	opendoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyGoToGym2
+	applymovement LOCALID_DEWFORD_WALLY, DewfordTown_Movement_WallyGoToGym2
 	waitmovement 0
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
@@ -487,7 +487,7 @@ DewfordTown_OnFrameWally::
 	delay 20
 	opendoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyComeOut
+	applymovement LOCALID_DEWFORD_WALLY, DewfordTown_Movement_WallyComeOut
 	waitmovement 0
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
@@ -498,7 +498,7 @@ DewfordTown_OnFrameWally::
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_WALLY_DEWFORD_TOWN
 	clearflag FLAG_HIDE_WALLY_RUSTBORO
-	removeobject LOCALID_WALLY
+	removeobject LOCALID_DEWFORD_WALLY
 	delay 16
 	fadescreen FADE_FROM_BLACK
 	delay 8
@@ -584,17 +584,17 @@ DewfordTown_EventScript_Trigger::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_GRUNT, Common_Movement_ExclamationMark
+	applymovement LOCALID_DEWFORD_GRUNT, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_GRUNT, Common_Movement_FacePlayer
+	applymovement LOCALID_DEWFORD_GRUNT, Common_Movement_FacePlayer
 	waitmovement 0
 	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerApproach1
 	waitmovement 0
 	delay 16
-	applymovement LOCALID_GRUNT, DewfordTown_Movement_GruntEscapes
+	applymovement LOCALID_DEWFORD_GRUNT, DewfordTown_Movement_GruntEscapes
 	waitmovement 0
-	removeobject LOCALID_GRUNT
+	removeobject LOCALID_DEWFORD_GRUNT
 	setflag FLAG_DEWFORD_GRUNT
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerApproach2
 	waitmovement 0
@@ -770,16 +770,16 @@ DewfordTown_EventScript_FishingNotSoGood::
 
 DewfordTown_EventScript_SailToPetalburg::
 	call EventScript_BackupMrBrineyLocation
-	setobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
+	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
 	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN, 0
-	applymovement LOCALID_BRINEY_DEWFORD, DewfordTown_Movement_BrineyBoardBoat
+	applymovement LOCALID_DEWFORD_BRINEY, DewfordTown_Movement_BrineyBoardBoat
 	waitmovement 0
-	removeobject LOCALID_BRINEY_DEWFORD
+	removeobject LOCALID_DEWFORD_BRINEY
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerBoardBoat
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	call Common_EventScript_PlayBrineysBoatMusic
-	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToPetalburg
+	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToPetalburg
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToPetalburg
 	waitmovement 0
 	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
@@ -791,7 +791,7 @@ DewfordTown_EventScript_SailToPetalburg::
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	hideobjectat LOCALID_BOAT_DEWFORD, MAP_DEWFORD_TOWN
+	hideobjectat LOCALID_DEWFORD_BOAT, MAP_DEWFORD_TOWN
 	setvar VAR_BOARD_BRINEY_BOAT_STATE, 2
 	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	warp MAP_ROUTE104_MR_BRINEYS_HOUSE, 5, 4
@@ -802,16 +802,16 @@ DewfordTown_EventScript_SailToPetalburg::
 
 DewfordTown_EventScript_SailToSlateport::
 	call EventScript_BackupMrBrineyLocation
-	setobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
+	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
 	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN, 1
-	applymovement LOCALID_BRINEY_DEWFORD, DewfordTown_Movement_BrineyBoardBoat
+	applymovement LOCALID_DEWFORD_BRINEY, DewfordTown_Movement_BrineyBoardBoat
 	waitmovement 0
-	removeobject LOCALID_BRINEY_DEWFORD
+	removeobject LOCALID_DEWFORD_BRINEY
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerBoardBoat
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	call Common_EventScript_PlayBrineysBoatMusic
-	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToSlateport
+	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToSlateport
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToSlateport
 	waitmovement 0
 	call Common_EventScript_StopBrineysBoatMusic
@@ -827,7 +827,7 @@ DewfordTown_EventScript_SailToSlateport::
 	addobject LOCALID_ROUTE109_BOAT
 	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	hideobjectat LOCALID_BOAT_DEWFORD, MAP_DEWFORD_TOWN
+	hideobjectat LOCALID_DEWFORD_BOAT, MAP_DEWFORD_TOWN
 	call_if_unset FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateportDeliverGoods
 	call_if_set FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateport
 	closemessage

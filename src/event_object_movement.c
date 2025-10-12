@@ -3393,37 +3393,27 @@ void OverrideSecretBaseDecorationSpriteScript(u8 localId, u8 mapNum, u8 mapGroup
 
 void InitObjectEventPalettes(u8 palSlot)
 {
-    FreeAndReserveObjectSpritePalettes();
-    sCurrentSpecialObjectPaletteTag = OBJ_EVENT_PAL_TAG_NONE;
-    sCurrentReflectionType = palSlot;
-    if (palSlot == 1)
-    {
-        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 6);
-        gReservedSpritePaletteCount = 8;
-    }
-    else
-    {
-        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 10);
-    }
+    // FreeAndReserveObjectSpritePalettes();
+    // sCurrentSpecialObjectPaletteTag = OBJ_EVENT_PAL_TAG_NONE;
+    // sCurrentReflectionType = palSlot;
+    // if (palSlot == 1)
+    // {
+        // PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 6);
+        // gReservedSpritePaletteCount = 8;
+    // }
+    // else
+    // {
+        // PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 10);
+    // }
 }
 
 void RemoveTintFromObjectEventPalettes()
 {
-    PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 5);
+    // PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 5);
 }
 
 u16 GetObjectPaletteTag(u8 palSlot)
 {
-    u8 i;
-
-    if (palSlot < 10)
-        return sObjectPaletteTagSets[sCurrentReflectionType][palSlot];
-
-    for (i = 0; sSpecialObjectReflectionPaletteSets[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
-    {
-        if (sSpecialObjectReflectionPaletteSets[i].tag == sCurrentSpecialObjectPaletteTag)
-            return sSpecialObjectReflectionPaletteSets[i].data[sCurrentReflectionType];
-    }
     return OBJ_EVENT_PAL_TAG_NONE;
 }
 

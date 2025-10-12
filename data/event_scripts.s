@@ -1073,21 +1073,16 @@ EventScript_VsSeekerChargingDone::
 	end
 
 Script_SetGrayscaleTint::
-	setptr GLOBAL_FIELD_TINT_GRAYSCALE, gGlobalFieldTintMode
-	callnative InitMapView
 	return
 
 Script_SetSepiaTint::
-	setptr GLOBAL_FIELD_TINT_SEPIA, gGlobalFieldTintMode
-	callnative InitMapView
 	return
 
 Script_RemoveTint::
-	setptr GLOBAL_FIELD_TINT_NONE, gGlobalFieldTintMode
-	callnative RemoveTintFromObjectEvents
-	callnative InitMapView
 	return
 
+Common_EventScript_TrainerTypeChanger::
+	end
 
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
@@ -1256,3 +1251,5 @@ Decline:
 	.include "data/maps/MauvilleCity_BattleCafe/scripts.inc"
 
 	.include "data/maps/MauvilleCity_Middle/scripts.inc"
+
+	.include "data/maps/Route117_Left/scripts.inc"

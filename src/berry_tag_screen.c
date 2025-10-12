@@ -537,7 +537,6 @@ static void PrintBerryDescription1(void)
     }
     else
     {
-        const struct Berry *berry = GetBerryInfo(sBerryTag->berryId);
         AddTextPrinterParameterized(WIN_DESC, FONT_NORMAL, berry->description1, 0, 1, 0, NULL);
     }
 
@@ -554,7 +553,6 @@ static void PrintBerryDescription2(void)
     }
     else
     {
-        const struct Berry *berry = GetBerryInfo(sBerryTag->berryId);
         AddTextPrinterParameterized(WIN_DESC, FONT_NORMAL, berry->description2, 0, 0x11, 0, NULL);
     }
 }

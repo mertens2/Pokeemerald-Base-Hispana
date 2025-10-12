@@ -128,8 +128,6 @@ static u32 Crc32B (const u8 *data, u32 size);
 static u32 GeneratePartyHash(const struct Trainer *trainer, u32 i);
 static s32 Factorial(s32);
 static void PlayerTryEvolution(void);
-static void BeginLeftEvoluionAfterFade(void);
-static void BeginRightEvoluionAfterFade(void);
 static void WaitForEvolutionThenTryAnother(void);
 static void CB2_SetUpReshowBattleScreenAfterEvolution(void);
 

@@ -7,7 +7,7 @@ SlateportCity_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart SlateportCity_Mart_Pokemart
+	pokemart 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
@@ -23,7 +23,9 @@ SlateportCity_Mart_Pokemart:
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
 	.2byte ITEM_HARBOR_MAIL
-	pokemartlistend
+	.2byte ITEM_NONE
+	release
+	end
 
 SlateportCity_Mart_EventScript_BlackBelt::
 	msgbox SlateportCity_Mart_Text_SomeItemsOnlyAtMart, MSGBOX_NPC
@@ -34,15 +36,15 @@ SlateportCity_Mart_EventScript_Man::
 	end
 
 SlateportCity_Mart_Text_SomeItemsOnlyAtMart:
-	.string "El MERCADO ofrece muchos artículos\n"
-	.string "muy interesantes.\p"
-	.string "Pero hay muchos otros que sólo se\n"
-	.string "venden en las TIENDAS POKéMON.$"
+	.string "The MARKET does have some interesting\n"
+	.string "merchandise.\p"
+	.string "But there are some items you can only\n"
+	.string "get at a POKéMON MART.$"
 
 SlateportCity_Mart_Text_GreatBallIsBetter:
-	.string "Una SUPERBALL es mejor que una\n"
-	.string "POKé BALL para atrapar POKéMON.\p"
-	.string "Si la usas, deberías poder hacerte\n"
-	.string "con los POKéMON escurridizos.$"
+	.string "A GREAT BALL is better than a POKé BALL\n"
+	.string "at catching POKéMON.\p"
+	.string "With this, I should be able to get that\n"
+	.string "elusive POKéMON…$"
 
 `

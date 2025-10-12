@@ -109,256 +109,246 @@ Route109_SeashoreHouse_EventScript_BuySodaPop::
 # 55 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	updatemoneybox
 # 56 "data/maps/Route109_SeashoreHouse/scripts.pory"
-.if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
+	hidemoneybox
 # 57 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	hidemoneybox
+	giveitem ITEM_SODA_POP
 # 58 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	giveitem ITEM_SODA_POP
+	release
 # 59 "data/maps/Route109_SeashoreHouse/scripts.pory"
-.else
+	end
 # 60 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	giveitem ITEM_SODA_POP
+
 # 61 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	hidemoneybox
-# 62 "data/maps/Route109_SeashoreHouse/scripts.pory"
-.endif
-# 63 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	release
-# 64 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	end
-# 65 "data/maps/Route109_SeashoreHouse/scripts.pory"
-
-# 66 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_EventScript_NotEnoughMoney::
-# 67 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 62 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox Route109_SeashoreHouse_Text_NotEnoughMoney, MSGBOX_DEFAULT
-# 68 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 63 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	hidemoneybox
-# 69 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 64 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
-# 70 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 65 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	end
-# 71 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 66 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 72 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 67 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_EventScript_NotEnoughSpace::
-# 73 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 68 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
-# 74 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 69 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	hidemoneybox
-# 75 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 70 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
+# 71 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	end
+# 72 "data/maps/Route109_SeashoreHouse/scripts.pory"
+
+# 73 "data/maps/Route109_SeashoreHouse/scripts.pory"
+Route109_SeashoreHouse_EventScript_Dwayne::
+# 74 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	trainerbattle_single TRAINER_DWAYNE, Route109_SeashoreHouse_Text_DwayneIntro, Route109_SeashoreHouse_Text_DwayneDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
+# 75 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	msgbox Route109_SeashoreHouse_Text_DwaynePostBattle, MSGBOX_AUTOCLOSE
 # 76 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	end
 # 77 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 78 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_EventScript_Dwayne::
+Route109_SeashoreHouse_EventScript_Johanna::
 # 79 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	trainerbattle_single TRAINER_DWAYNE, Route109_SeashoreHouse_Text_DwayneIntro, Route109_SeashoreHouse_Text_DwayneDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
+	trainerbattle_single TRAINER_JOHANNA, Route109_SeashoreHouse_Text_JohannaIntro, Route109_SeashoreHouse_Text_JohannaDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
 # 80 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	msgbox Route109_SeashoreHouse_Text_DwaynePostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route109_SeashoreHouse_Text_JohannaPostBattle, MSGBOX_AUTOCLOSE
 # 81 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	end
 # 82 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 83 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_EventScript_Johanna::
+Route109_SeashoreHouse_EventScript_Simon::
 # 84 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	trainerbattle_single TRAINER_JOHANNA, Route109_SeashoreHouse_Text_JohannaIntro, Route109_SeashoreHouse_Text_JohannaDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
+	trainerbattle_single TRAINER_SIMON, Route109_SeashoreHouse_Text_SimonIntro, Route109_SeashoreHouse_Text_SimonDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
 # 85 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	msgbox Route109_SeashoreHouse_Text_JohannaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route109_SeashoreHouse_Text_SimonPostBattle, MSGBOX_AUTOCLOSE
 # 86 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	end
 # 87 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 88 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_EventScript_Simon::
-# 89 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	trainerbattle_single TRAINER_SIMON, Route109_SeashoreHouse_Text_SimonIntro, Route109_SeashoreHouse_Text_SimonDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
-# 90 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	msgbox Route109_SeashoreHouse_Text_SimonPostBattle, MSGBOX_AUTOCLOSE
-# 91 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	end
-# 92 "data/maps/Route109_SeashoreHouse/scripts.pory"
-
-# 93 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_EventScript_CheckTrainersCompletion::
-# 94 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 89 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_not_defeated TRAINER_DWAYNE, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
-# 95 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 90 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_not_defeated TRAINER_JOHANNA, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
-# 96 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 91 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_not_defeated TRAINER_SIMON, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
-# 97 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 92 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setflag FLAG_DEFEATED_SEASHORE_HOUSE
-# 98 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 93 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
-# 99 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 94 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	end
-# 100 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 95 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 101 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 96 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_EventScript_TrainersNotCompleted::
-# 102 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 97 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
-# 103 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 98 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	end
-# 104 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 99 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 105 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 100 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_SeashoreHouseIntro:
+# 101 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "I'm the owner of the SEASHORE HOUSE.\n"
+# 102 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "But you can call me MR. SEA!\p"
+# 103 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "What I love above all is to see hot\n"
+# 104 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "POKéMON battles.\p"
+# 105 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Let me see that your heart burns hot!\p"
 # 106 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Soy el dueño de la CASA de la PLAYA,\n"
+	.string "If you can defeat all the TRAINERS\n"
 # 107 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "pero me puedes llamar SR. MARINO.\p"
+	.string "here, I'll reward your efforts.$"
 # 108 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Lo que más me gusta del mundo es ver\n"
+
 # 109 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "combates POKéMON bien candentes.\p"
+Route109_SeashoreHouse_Text_ShowMeSomeHotMatches:
 # 110 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡A ver si tú también peleas con pasión!\p"
+	.string "Show me some hot matches!\p"
 # 111 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Si logras derrotar a todos los\n"
+	.string "I run this SEASHORE HOUSE just for\n"
 # 112 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "ENTRENADORES, tendrás una recompensa.$"
+	.string "that reason alone!$"
 # 113 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 114 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_Text_ShowMeSomeHotMatches:
-# 115 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Me encantan los combates al rojo vivo!\p"
-# 116 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Tengo esta CASA de la PLAYA sólo\n"
-# 117 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "y exclusivamente por eso.$"
-# 118 "data/maps/Route109_SeashoreHouse/scripts.pory"
-
-# 119 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles:
+# 115 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "You're scorching hot!\n"
+# 116 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Those battles blazed!\l"
+# 117 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "I'm more than just satisfied!\p"
+# 118 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "As thanks for showing me your hot\n"
+# 119 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "streak, I want you to take these.\p"
 # 120 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Eres como un volcán en erupción!\n"
+	.string "It's half a dozen bottles of SODA POP!$"
 # 121 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Esos combates han sido tremendos!\l"
+
 # 122 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Estoy la mar de satisfecho!\p"
-# 123 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Qué bien que te haya podido ver\n"
-# 124 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "en racha. Toma esto como regalo.\p"
-# 125 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Son seis botellas de REFRESCO!$"
-# 126 "data/maps/Route109_SeashoreHouse/scripts.pory"
-
-# 127 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_BagFull:
-# 128 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Eh, tienes la MOCHILA que va a estallar.\n"
-# 129 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Te las voy a guardar mientras…$"
-# 130 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 123 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Oh, but hey, your BAG's jammed full.\n"
+# 124 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "I'll hang on to these for you.$"
+# 125 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 131 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 126 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_WantToBuySodaPop:
+# 127 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Want to buy some SODA POP?\n"
+# 128 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "POKéMON love it!\p"
+# 129 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Just ¥300 a bottle!\n"
+# 130 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Buy some!$"
+# 131 "data/maps/Route109_SeashoreHouse/scripts.pory"
+
 # 132 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¿Quieres comprar un REFRESCO?\n"
-# 133 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡A los POKéMON les chifla!\p"
-# 134 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Sólo son 300¥ la botella!\n"
-# 135 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Está tirado!$"
-# 136 "data/maps/Route109_SeashoreHouse/scripts.pory"
-
-# 137 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_HereYouGo:
-# 138 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Aquí tienes!$"
-# 139 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 133 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Here you go!$"
+# 134 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 140 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 135 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_NotEnoughMoney:
-# 141 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Oye, estás sin blanca…$"
-# 142 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 136 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "You don't have the money.$"
+# 137 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 143 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 138 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_ThatsTooBad:
+# 139 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "No?\n"
+# 140 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "That's too bad.$"
+# 141 "data/maps/Route109_SeashoreHouse/scripts.pory"
+
+# 142 "data/maps/Route109_SeashoreHouse/scripts.pory"
+Route109_SeashoreHouse_Text_DwayneIntro:
+# 143 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "If you're looking for a battle in the\n"
 # 144 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¿No quieres?\n"
+	.string "SEASHORE HOUSE, you'll find no\l"
 # 145 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Tú te lo pierdes!$"
+	.string "hotter TRAINER than me, matey!$"
 # 146 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 147 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_Text_DwayneIntro:
+Route109_SeashoreHouse_Text_DwayneDefeated:
 # 148 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Si buscas combates en alta mar, yo\n"
+	.string "That was a hot battle!\n"
 # 149 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "soy el ENTRENADOR adecuado, grumete!$"
+	.string "I can accept that loss, matey!$"
 # 150 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 151 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_Text_DwayneDefeated:
+Route109_SeashoreHouse_Text_DwaynePostBattle:
 # 152 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Éste ha sido un señor combate!\n"
+	.string "Whenever I'm in SLATEPORT, I enjoy\n"
 # 153 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Acepto la derrota, grumete!$"
+	.string "hot battles and ice-cold SODA POP!$"
 # 154 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 155 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_Text_DwaynePostBattle:
+Route109_SeashoreHouse_Text_JohannaIntro:
 # 156 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Ir a CIUDAD PORTUAL es sinónimo\n"
+	.string "Boring battles aren't worth the effort.\p"
 # 157 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "de combates al rojo vivo y REFRESCOS\l"
+	.string "Fiery hot battles are what toughen up\n"
 # 158 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "helados. ¡Todo un contraste!$"
+	.string "TRAINERS and POKéMON!$"
 # 159 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 160 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_Text_JohannaIntro:
-# 161 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Las peleas aburridas no valen la pena.\p"
-# 162 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Los combates feroces sí que hacen\n"
-# 163 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "mejorar a ENTRENADORES y POKéMON.$"
-# 164 "data/maps/Route109_SeashoreHouse/scripts.pory"
-
-# 165 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_JohannaDefeated:
-# 166 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "¡Más feroz que el lobo de Caperucita!$"
-# 167 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 161 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "That's hot!$"
+# 162 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 168 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 163 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_JohannaPostBattle:
-# 169 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Bueno, tengo una sed que me muero.\n"
-# 170 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Voy a comprarme un REFRESCO.$"
-# 171 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 164 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Whew, I'm all thirsty.\n"
+# 165 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "Maybe I'll have a SODA POP.$"
+# 166 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 172 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 167 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_SimonIntro:
-# 173 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Te voy a demostrar que mis POKéMON\n"
-# 174 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "no tienen rival. ¡Luego no te quejes!$"
-# 175 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 168 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "I'm going to show you how great\n"
+# 169 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "my POKéMON are, but don't cry!$"
+# 170 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 176 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 171 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_SimonDefeated:
-# 177 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "He perdido, pero no me quejo…$"
-# 178 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 172 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "…I lost, but I won't cry…$"
+# 173 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
-# 179 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 174 "data/maps/Route109_SeashoreHouse/scripts.pory"
 Route109_SeashoreHouse_Text_SimonPostBattle:
-# 180 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Si alguno de mis POKéMON supiera\n"
-# 181 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "el movimiento que te transporta por\l"
-# 182 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "el agua, podría olvidarme del flotador…$"
+# 175 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "If one of my POKéMON knew the move\n"
+# 176 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "for carrying me across water on its\l"
+# 177 "data/maps/Route109_SeashoreHouse/scripts.pory"
+	.string "back, I could get rid of this inner tube.$"

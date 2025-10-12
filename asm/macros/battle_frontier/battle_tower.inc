@@ -169,10 +169,10 @@
 	
 	.macro battle_1_vs_2 trainer1Id:req, trainer1LoseText:req, trainer2Id:req, trainer2LoseText:req, whiteOutContinue=0
 	special SavePlayerParty
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, \trainer1Id, 0, NULL, \trainer1LoseText @ set first trainer mons
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, \trainer2Id, 0, NULL, \trainer2LoseText @ set second trainer mons
+	trainerbattle TRAINER_BATTLE_SET_TRAINERS_FOR_MULTI_BATTLE, OBJ_ID_NONE, \trainer1Id, NULL, \trainer1LoseText, NULL, OBJ_ID_NONE, \trainer2Id, NULL, \trainer2LoseText, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 	setvar VAR_0x8004, SPECIAL_BATTLE_1_VS_2
 	setvar VAR_0x8005, \whiteOutContinue
 	special DoSpecialTrainerBattle
 	waitstate
 	.endm
+

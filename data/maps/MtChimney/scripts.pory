@@ -376,10 +376,6 @@ MtChimney_Text_MaxieIntro:
 	.string "las consecuencias de haberte\l"
 	.string "entrometido en nuestros planes!$"
 
-MtChimney_Text_MaxieDefeat:
-	.string "¡¿Qué?!\p"
-	.string "¡¿A mí, al gran MAGNO,\n"
-	.string "me han dado una lección?!$"
 
 MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 	.string "MAGNO: Ya basta.\n"

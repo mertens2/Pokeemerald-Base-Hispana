@@ -114,8 +114,8 @@
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
 #define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var
 #define VAR_ROUTE101_STATE                               0x4060
-#define VAR_ROUTE102_STATE                               0x4061 // Unused Var
-#define VAR_ROUTE103_STATE                               0x4062 // Unused Var
+#define VAR_MT_CHIMNEY_STATE                             0x4061 // Unused Var
+#define VAR_WISHES_FUFILLED                              0x4062 // Unused Var
 #define VAR_ROUTE104_STATE                               0x4063
 #define VAR_ROUTE105_STATE                               0x4064 // Unused Var
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var
@@ -174,7 +174,7 @@
 #define VAR_RUSTURF_TUNNEL_STATE                         0x409A
 #define VAR_EVIL_TEAM_SIDE                               0x409B
 #define VAR_ELITE_4_STATE                                0x409C
-#define VAR_UNUSED_0x409D                                0x409D // Unused Var
+#define VAR_LEVEL_FOR_TRAINING                           0x409D // Unused Var
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
 #define VAR_SLATEPORT_HARBOR_STATE                       0x40A0

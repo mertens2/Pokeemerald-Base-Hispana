@@ -1,110 +1,112 @@
 # 1 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 
 # 2 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_MapScripts::
+.set LOCALID_NURSE, 1
 # 3 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_PokemonCenter_1F_OnTransition
+
 # 4 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+MauvilleCity_PokemonCenter_1F_MapScripts::
 # 5 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.byte 0
+	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_PokemonCenter_1F_OnTransition
 # 6 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-
+	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 # 7 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_OnTransition:
+	.byte 0
 # 8 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	setrespawn HEAL_LOCATION_MAUVILLE_CITY
+
 # 9 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	call Common_EventScript_UpdateBrineyLocation
+MauvilleCity_PokemonCenter_1F_OnTransition:
 # 10 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	goto MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx
+	setrespawn HEAL_LOCATION_MAUVILLE_CITY
 # 11 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	end
+	call Common_EventScript_UpdateBrineyLocation
 # 12 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-
+	goto MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx
 # 13 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx::
+	end
 # 14 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	special SetMauvilleOldManObjEventGfx
+
 # 15 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	end
+MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx::
 # 16 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-
+	special SetMauvilleOldManObjEventGfx
 # 17 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_EventScript_Nurse::
+	end
 # 18 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	setvar VAR_0x800B, LOCALID_MAUVILLE_NURSE
+
 # 19 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	call Common_EventScript_PkmnCenterNurse
+MauvilleCity_PokemonCenter_1F_EventScript_Nurse::
 # 20 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	waitmessage
+	setvar VAR_0x800B, LOCALID_NURSE
 # 21 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	waitbuttonpress
+	call Common_EventScript_PkmnCenterNurse
 # 22 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	release
+	waitmessage
 # 23 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	end
+	waitbuttonpress
 # 24 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-
+	release
 # 25 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_EventScript_Woman1::
+	end
 # 26 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	msgbox MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings, MSGBOX_NPC
+
 # 27 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	end
+MauvilleCity_PokemonCenter_1F_EventScript_Woman1::
 # 28 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-
+	msgbox MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings, MSGBOX_NPC
 # 29 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_EventScript_Woman2::
+	end
 # 30 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	msgbox MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner, MSGBOX_NPC
+
 # 31 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	end
+MauvilleCity_PokemonCenter_1F_EventScript_Woman2::
 # 32 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-
+	msgbox MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner, MSGBOX_NPC
 # 33 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_EventScript_Youngster::
-# 34 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	msgbox MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun, MSGBOX_NPC
-# 35 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	end
+# 34 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+
+# 35 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+MauvilleCity_PokemonCenter_1F_EventScript_Youngster::
 # 36 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-
+	msgbox MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun, MSGBOX_NPC
 # 37 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings:
+	end
 # 38 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "¡Ese hombre de ahí dice unas cosas\n"
+
 # 39 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "muy raras!\p"
+MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings:
 # 40 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "En cierto modo tiene gracia.\n"
+	.string "That man over there, he says weird\n"
 # 41 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "Creo que no le olvidaré fácilmente.$"
+	.string "things!\p"
 # 42 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-
+	.string "He's funny in a weird way.\n"
 # 43 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner:
+	.string "I doubt I'll forget about him!$"
 # 44 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "Cuando accedí al CENTRO de RÉCORDS,\n"
-# 45 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "se actualizaron los datos de lo que\l"
-# 46 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "más mola en AZULIZA.\p"
-# 47 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "¡Ahora esos datos son los mismos\n"
-# 48 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "que los de mis amigos!$"
-# 49 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 
+# 45 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner:
+# 46 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	.string "When I accessed the RECORD CORNER,\n"
+# 47 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	.string "the data for what's hot in DEWFORD\l"
+# 48 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	.string "got updated.\p"
+# 49 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	.string "Now that bit of data is the same\n"
 # 50 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
+	.string "as my friend's!$"
 # 51 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "Han abierto un CENTRO de RÉCORDS\n"
+
 # 52 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "en la planta de arriba del CENTRO\l"
+MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
 # 53 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "POKéMON.\p"
+	.string "A RECORD CORNER opened upstairs in\n"
 # 54 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "No sé de qué va, pero suena díver.\n"
+	.string "the POKéMON CENTER.\p"
 # 55 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "¡Voy a echar un ojo!$"
+	.string "I don't know what it's about, but it\n"
+# 56 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	.string "sounds fun. I'll go check it out!$"

@@ -803,20 +803,20 @@ void FieldEffectScript_LoadTiles(u8 **script)
 
 void ApplyGlobalFieldPaletteTint(u8 paletteIdx)
 {
-    switch (gGlobalFieldTintMode)
-    {
-    case GLOBAL_FIELD_TINT_NONE:
-        return;
-    case GLOBAL_FIELD_TINT_GRAYSCALE:
-        TintPalette_GrayScale(&gPlttBufferUnfaded[(paletteIdx + 16) * 16], 0x10);
-        break;
-    case GLOBAL_FIELD_TINT_SEPIA:
-        TintPalette_SepiaTone(&gPlttBufferUnfaded[(paletteIdx + 16) * 16], 0x10);
-        break;
-    default:
-        return;
-    }
-    CpuFastCopy(&gPlttBufferUnfaded[(paletteIdx + 16) * 16], &gPlttBufferFaded[(paletteIdx + 16) * 16], 0x20);
+    // switch (gGlobalFieldTintMode)
+    // {
+    // case GLOBAL_FIELD_TINT_NONE:
+        // return;
+    // case GLOBAL_FIELD_TINT_GRAYSCALE:
+        // TintPalette_GrayScale(&gPlttBufferUnfaded[(paletteIdx + 16) * 16], 0x10);
+        // break;
+    // case GLOBAL_FIELD_TINT_SEPIA:
+        // TintPalette_SepiaTone(&gPlttBufferUnfaded[(paletteIdx + 16) * 16], 0x10);
+        // break;
+    // default:
+        // return;
+    // }
+    // CpuFastCopy(&gPlttBufferUnfaded[(paletteIdx + 16) * 16], &gPlttBufferFaded[(paletteIdx + 16) * 16], 0x20);
 }
 
 void FieldEffectScript_LoadFadedPalette(u8 **script)

@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT",
+      "local_id": "LOCALID_SLATEPORT_BATTLE_TENT_OPPONENT",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 5,
       "y": 1,
@@ -42,7 +42,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_SLATEPORT_TENT_BATTLE_PLAYER",
+      "local_id": "LOCALID_SLATEPORT_BATTLE_TENT_PLAYER",
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
       "x": 4,
       "y": 8,

@@ -295,259 +295,259 @@
 	
 
 
-// // dewford town
+// dewford town
 
-// text DewfordTown_Text_BrineyLandedInSlateportDeliverGoods{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("MR. BRINEY: Ahoy!\n"
-	// "We've made land in SLATEPORT!\p"
-	// "I suppose you're going to visit CAPT.\n"
-	// "STERN and deliver the DEVON GOODS?")
-// }
-// ES {
-		// format( "¡Eh, grumete!\n"
-	// "¡Hemos arribado a CIUDAD PORTUAL!\p"
-	// "Supongo que vas a visitar al CAP.\n"
-	// "BABOR y entregar las PIEZAS DEVON,\l"
-	// "¿no es así?")
-// }
-// }
-// }
+text DewfordTown_Text_BrineyLandedInSlateportDeliverGoods{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("MR. BRINEY: Ahoy!\n"
+		"We've made land in SLATEPORT!\p"
+		"I suppose you're going to visit CAPT.\n"
+		"STERN and deliver the DEVON GOODS?")
+	}
+	ES {
+			format( "¡Eh, grumete!\n"
+		"¡Hemos arribado a CIUDAD PORTUAL!\p"
+		"Supongo que vas a visitar al CAP.\n"
+		"BABOR y entregar las PIEZAS DEVON,\l"
+		"¿no es así?")
+	}
+	}
+}
 
-// text Route109_Text_BrineySailToDewfordQuestion{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("MR. BRINEY: I thought you're supposed\n"
-	// "to deliver the DEVON GOODS.\p"
-	// "Would you like to sail back to\n"
-	// "DEWFORD, then?")
-// }
-// ES {
-		// format( "¿No vas a entregar\n"
-	// "las PIEZAS DEVON?\p"
-	// "¿Quieres volver a AZULIZA?")
-// }
-// }
-// }
+text Route109_Text_BrineySailToDewfordQuestion{
+poryswitch(LANGUAGE) {
+	EN {
+		format("MR. BRINEY: I thought you're supposed\n"
+	"to deliver the DEVON GOODS.\p"
+	"Would you like to sail back to\n"
+	"DEWFORD, then?")
+}
+ES {
+		format( "¿No vas a entregar\n"
+	"las PIEZAS DEVON?\p"
+	"¿Quieres volver a AZULIZA?")
+}
+}
+}
 
-// text Route109_Text_BrineyDewfordItIs{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("MR. BRINEY: DEWFORD it is, then!\p"
-	// "Anchors aweigh!\n"
-	// "PEEKO, we're setting sail, my darling!")
-// }
-	// ES {
-		// format( "¡Pues rumbo a AZULIZA!\p"
-	// "¡Levad anclas!\n"
-	// "¡PEEKO, bonito, nos vamos!")
-// }
-// }
-// }
+text Route109_Text_BrineyDewfordItIs{
+poryswitch(LANGUAGE) {
+	EN {
+		format("MR. BRINEY: DEWFORD it is, then!\p"
+	"Anchors aweigh!\n"
+	"PEEKO, we're setting sail, my darling!")
+}
+	ES {
+		format( "¡Pues rumbo a AZULIZA!\p"
+	"¡Levad anclas!\n"
+	"¡PEEKO, bonito, nos vamos!")
+}
+}
+}
 
-// text Route109_Text_BrineyDeliverDevonGoods{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("MR. BRINEY: Then you go on and deliver\n"
-	// "the DEVON GOODS. I'll be waiting.")
-// }
-// ES {
-		// format( "Pues ve a entregar\n"
-	// "las PIEZAS DEVON. Yo te espero.")
-// }
-// }
-// }
+text Route109_Text_BrineyDeliverDevonGoods{
+poryswitch(LANGUAGE) {
+	EN {
+		format("MR. BRINEY: Then you go on and deliver\n"
+	"the DEVON GOODS. I'll be waiting.")
+}
+ES {
+		format( "Pues ve a entregar\n"
+	"las PIEZAS DEVON. Yo te espero.")
+}
+}
+}
 
-// text DewfordTown_Text_BrineyLandedInSlateport{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("MR. BRINEY: Ahoy! We've made land in\n"
-	// "SLATEPORT!\p"
-	// "You just go on and tell me whenever\n"
-	// "you want to set sail again!")
-// }
-// ES {
-		// format( "¡Eh, grumete!\n"
-	// "¡Hemos arribado a CIUDAD PORTUAL!\p"
-	// "Cuando quieras volver a hacerte\n"
-	// "a la mar, me lo dices, ¿eh?")
-// }
-// }
-// }
+text DewfordTown_Text_BrineyLandedInSlateport{
+poryswitch(LANGUAGE) {
+	EN {
+		format("MR. BRINEY: Ahoy! We've made land in\n"
+	"SLATEPORT!\p"
+	"You just go on and tell me whenever\n"
+	"you want to set sail again!")
+}
+ES {
+		format( "¡Eh, grumete!\n"
+	"¡Hemos arribado a CIUDAD PORTUAL!\p"
+	"Cuando quieras volver a hacerte\n"
+	"a la mar, me lo dices, ¿eh?")
+}
+}
+}
 
-// text Route109_Text_BrineyWhereAreWeBound{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("MR. BRINEY: Ahoy!\n"
-	// "For you, I'll go out to sea anytime!\p"
-	// "Now, my friend, where are we bound?")
-// }
-// ES {
-		// format( "¡Eh, grumete!\n"
-	// "¡Yo levo anclas cuando quieras!\p"
-	// "Venga, ¿adónde vamos?")
-// }
-// }
-// }
+text Route109_Text_BrineyWhereAreWeBound{
+poryswitch(LANGUAGE) {
+	EN {
+		format("MR. BRINEY: Ahoy!\n"
+	"For you, I'll go out to sea anytime!\p"
+	"Now, my friend, where are we bound?")
+}
+ES {
+		format( "¡Eh, grumete!\n"
+	"¡Yo levo anclas cuando quieras!\p"
+	"Venga, ¿adónde vamos?")
+}
+}
+}
 
 
-// // route 109
+// route 109
 
-// text Route109_Text_BrineyTellMeWhenYouNeedToSail{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("MR. BRINEY: You just tell me whenever\n"
-	// "you need to set sail again!")
-// }
-// ES {
-		// format( "Cuando quieras volver\n"
-	// "a hacerte a la mar, llámame.")
-// }
-// }
-// }
+text Route109_Text_BrineyTellMeWhenYouNeedToSail{
+poryswitch(LANGUAGE) {
+	EN {
+		format("MR. BRINEY: You just tell me whenever\n"
+	"you need to set sail again!")
+}
+ES {
+		format( "Cuando quieras volver\n"
+	"a hacerte a la mar, llámame.")
+}
+}
+}
 
-// text Route109_Text_ChillAtMyPapasSpot{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("Yo, TRAINERS!\n"
-	// "Whether you're hot to trot,\l"
-	// "or cool cat not,\l"
-	// "chill at my papa's spot!")
-// }
-// ES {
-		// format( "¡Entrenadores, aquí!\n"
-	// "Ya sean ardientes cual fuego,\l"
-	// "o se le den bien cualquier juego,\l"
-	// "¡mi papá les romperá los huevos!")
-// }
-// }
-// }
+text Route109_Text_ChillAtMyPapasSpot{
+poryswitch(LANGUAGE) {
+	EN {
+		format("Yo, TRAINERS!\n"
+	"Whether you're hot to trot,\l"
+	"or cool cat not,\l"
+	"chill at my papa's spot!")
+}
+ES {
+		format( "¡Entrenadores, aquí!\n"
+	"Ya sean ardientes cual fuego,\l"
+	"o se le den bien cualquier juego,\l"
+	"¡mi papá les romperá los huevos!")
+}
+}
+}
 
-// text Route109_Text_LittleKidsDartAround{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("Little kids can dart around so quickly…\p"
-	// "You don't dare take your eyes off them\n"
-	// "for an instant. It's very taxing.\p"
-	// "Mine are with my POKéMON, so they\n"
-	// "should be okay, but…")
-// }
-// ES {
-		// format( "Los niños pueden perderse de vista\n"
-	// "en un segundo…\p"
-	// "Tienes que estar siempre pendiente\n"
-	// "de ellos. Es agotador.\p"
-	// "El mío está con mi POKéMON, así\n"
-	// "que debe de estar bien…")
-// }
-// }
-// }
+text Route109_Text_LittleKidsDartAround{
+poryswitch(LANGUAGE) {
+	EN {
+		format("Little kids can dart around so quickly…\p"
+	"You don't dare take your eyes off them\n"
+	"for an instant. It's very taxing.\p"
+	"Mine are with my POKéMON, so they\n"
+	"should be okay, but…")
+}
+ES {
+		format( "Los niños pueden perderse de vista\n"
+	"en un segundo…\p"
+	"Tienes que estar siempre pendiente\n"
+	"de ellos. Es agotador.\p"
+	"El mío está con mi POKéMON, así\n"
+	"que debe de estar bien…")
+}
+}
+}
 
-// text Route109_Text_SandCastleTakingLongTime{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("Our… sand castle's… taking a long time…\n"
-	// "to make…\p………… ………… ………… …………")
-// }
-// ES {
-		// format( "Estamos… tardando un montón… en\n"
-	// "terminar nuestro… castillo de arena…\p………… ………… ………… …………")
-// }
-// }
-// }
+text Route109_Text_SandCastleTakingLongTime{
+poryswitch(LANGUAGE) {
+	EN {
+		format("Our… sand castle's… taking a long time…\n"
+	"to make…\p………… ………… ………… …………")
+}
+ES {
+		format( "Estamos… tardando un montón… en\n"
+	"terminar nuestro… castillo de arena…\p………… ………… ………… …………")
+}
+}
+}
 
-// text Route109_Text_YouCanHaveThis{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("You can have this!")
-// }
-// ES {
-		// format( "¡Toma esto para ti!")
-// }
-// }
-// }
+text Route109_Text_YouCanHaveThis{
+poryswitch(LANGUAGE) {
+	EN {
+		format("You can have this!")
+}
+ES {
+		format( "¡Toma esto para ti!")
+}
+}
+}
 
-// text Route109_Text_WereGoingToMakeBigCastle{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("We'll… use up all the sand for this… sand castle of ours…\pAnd you will be… our servant…")
-	// }
-	// ES {
-		// format("Usaremos… toda la arena para este… castillo de arena…\pTú serás… nuestra servidumbre…")
-	// }
-// }
-// }
+text Route109_Text_WereGoingToMakeBigCastle{
+poryswitch(LANGUAGE) {
+	EN {
+		format("We'll… use up all the sand for this… sand castle of ours…\pAnd you will be… our servant…")
+	}
+	ES {
+		format("Usaremos… toda la arena para este… castillo de arena…\pTú serás… nuestra servidumbre…")
+	}
+}
+}
 
-// text Route109_Text_ZigzagoonPicksUpLitter{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("The water around these parts is clean.\p"
-	// "But, I get my ZIGZAGOON to pick up\n"
-	// "litter from the shoreline at times.\p"
-	// "Dirty water becomes rain and joins our\n"
-	// "rivers, which we drink from…\p"
-	// "If we pollute the sea, it all comes\n"
-	// "back to haunt us eventually.")
-// }
-// ES {
-		// format( "El agua de esta zona está limpia.\p"
-	// "Pero, a veces, mi ZIGZAGOON recoge\n"
-	// "basura en la orilla…\p"
-	// "Cuando el agua sucia se evapora, cae en\n"
-	// "forma de lluvia y va a parar a los ríos,\l"
-	// "de los que se saca el agua potable.\p"
-	// "Si contaminamos el mar, acabamos\n"
-	// "pagando el pato nosotros.")
-// }
-// }
-// }
+text Route109_Text_ZigzagoonPicksUpLitter{
+poryswitch(LANGUAGE) {
+	EN {
+		format("The water around these parts is clean.\p"
+	"But, I get my ZIGZAGOON to pick up\n"
+	"litter from the shoreline at times.\p"
+	"Dirty water becomes rain and joins our\n"
+	"rivers, which we drink from…\p"
+	"If we pollute the sea, it all comes\n"
+	"back to haunt us eventually.")
+}
+ES {
+		format( "El agua de esta zona está limpia.\p"
+	"Pero, a veces, mi ZIGZAGOON recoge\n"
+	"basura en la orilla…\p"
+	"Cuando el agua sucia se evapora, cae en\n"
+	"forma de lluvia y va a parar a los ríos,\l"
+	"de los que se saca el agua potable.\p"
+	"Si contaminamos el mar, acabamos\n"
+	"pagando el pato nosotros.")
+}
+}
+}
 
-// text Route109_Text_ZigzagoonCry{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("ZIGZAGOON: Guguu? :(")
-// }
-// ES {
-		// format( "ZIGZAGOON: ¿Zigzaaa? :(")
-// }
-// }
-// }
+text Route109_Text_ZigzagoonCry{
+poryswitch(LANGUAGE) {
+	EN {
+		format("ZIGZAGOON: Guguu? :(")
+}
+ES {
+		format( "ZIGZAGOON: ¿Zigzaaa? :(")
+}
+}
+}
 
-// text Route109_Text_SeashoreHouseSign{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("SEASHORE HOUSE\p"
-	// "“May hot battles rage on hot sands!\n"
-	// "The place for hot TRAINERS!”")
-// }
-// ES {
-		// format( "CASA de la PLAYA\p"
-	// "“¡Combates al rojo vivo!\n"
-	// "¡Sólo para ENTRENADORES apasionados!”")
-// }
-// }
-// }
+text Route109_Text_SeashoreHouseSign{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("SEASHORE HOUSE\p"
+		"“May hot battles rage on hot sands!\n"
+		"The place for hot TRAINERS!”")
+	}
+	ES {
+			format( "CASA de la PLAYA\p"
+		"“¡Combates al rojo vivo!\n"
+		"¡Sólo para ENTRENADORES apasionados!”")
+	}
+	}
+}
 
-// text Route109_Text_TrainerTipsSign{
-// poryswitch(LANGUAGE) {
-	// EN {
-		// format("TRAINER TIPS\p"
-	// "POKéMON at the same level may not\n"
-	// "always have identical stats.\p"
-	// "POKéMON raised by TRAINERS are said\n"
-	// "to grow stronger than wild POKéMON.")
-	// }
-	// ES {
-		// format( "PISTAS para ENTRENADORES\p"
-	// "POKéMON que tienen el mismo nivel\n"
-	// "pueden tener distintas habilidades.\p"
-	// "Dicen que los POKéMON entrenados por\n"
-	// "ENTRENADORES se vuelven más fuertes\l"
-	// "que los POKéMON salvajes.")
-// }
-// }
-// }
+text Route109_Text_TrainerTipsSign{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("TRAINER TIPS\p"
+		"POKéMON at the same level may not\n"
+		"always have identical stats.\p"
+		"POKéMON raised by TRAINERS are said\n"
+		"to grow stronger than wild POKéMON.")
+		}
+		ES {
+			format( "PISTAS para ENTRENADORES\p"
+		"POKéMON que tienen el mismo nivel\n"
+		"pueden tener distintas habilidades.\p"
+		"Dicen que los POKéMON entrenados por\n"
+		"ENTRENADORES se vuelven más fuertes\l"
+		"que los POKéMON salvajes.")
+		}
+	}
+}
 
 // text AbandonedShip_Rooms2_1F_Text_DanDefeat{
 	// format("DAN: We couldn't win even though\n"

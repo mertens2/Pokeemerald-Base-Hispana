@@ -91,15 +91,15 @@ Route114_EventScript_RoarGentleman::
 # 46 "data/maps/Route114/scripts.pory"
 	faceplayer
 # 47 "data/maps/Route114/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_ROAR, Route114_EventScript_ReceivedRoar
+	checkitem ITEM_TM05
 # 48 "data/maps/Route114/scripts.pory"
-	msgbox Route114_Text_AllMyMonDoesIsRoarTakeThis, MSGBOX_DEFAULT
+	goto_if_eq VAR_RESULT, TRUE, Route114_EventScript_ReceivedRoar
 # 49 "data/maps/Route114/scripts.pory"
-	giveitem ITEM_TM_ROAR
+	msgbox Route114_Text_AllMyMonDoesIsRoarTakeThis, MSGBOX_DEFAULT
 # 50 "data/maps/Route114/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	giveitem ITEM_TM05
 # 51 "data/maps/Route114/scripts.pory"
-	setflag FLAG_RECEIVED_TM_ROAR
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 52 "data/maps/Route114/scripts.pory"
 	msgbox Route114_Text_ExplainRoar, MSGBOX_DEFAULT
 # 53 "data/maps/Route114/scripts.pory"
@@ -359,46 +359,46 @@ Route114_EventScript_Kai::
 # 180 "data/maps/Route114/scripts.pory"
 Route114_Text_AllMyMonDoesIsRoarTakeThis:
 # 181 "data/maps/Route114/scripts.pory"
-	.string "Mi POKéMON sólo tiene que dar un\n"
+	.string "All my POKéMON does is ROAR…\n"
 # 182 "data/maps/Route114/scripts.pory"
-	.string "RUGIDO y nadie se atreve a acercarse…\p"
+	.string "No one dares to come near me…\p"
 # 183 "data/maps/Route114/scripts.pory"
-	.string "Así que estoy más solo que la una, snif…\n"
+	.string "Sigh… If you would, please take\n"
 # 184 "data/maps/Route114/scripts.pory"
-	.string "Mira, te voy a dar esta MT.$"
+	.string "this TM away…$"
 # 185 "data/maps/Route114/scripts.pory"
 
 # 186 "data/maps/Route114/scripts.pory"
 Route114_Text_ExplainRoar:
 # 187 "data/maps/Route114/scripts.pory"
-	.string "La MT05 contiene RUGIDO.\n"
+	.string "TM05 contains ROAR.\n"
 # 188 "data/maps/Route114/scripts.pory"
-	.string "Un RUGIDO asusta a los POKéMON.$"
+	.string "A ROAR sends POKéMON scurrying.$"
 # 189 "data/maps/Route114/scripts.pory"
 
 # 190 "data/maps/Route114/scripts.pory"
 Route114_Text_Poochyena:
 # 191 "data/maps/Route114/scripts.pory"
-	.string "¡Guau! ¡Guau! ¡Guau!$"
+	.string "Bow! Bowwow!$"
 # 192 "data/maps/Route114/scripts.pory"
 
 # 193 "data/maps/Route114/scripts.pory"
 Route114_Text_MeteorFallsSign:
 # 194 "data/maps/Route114/scripts.pory"
-	.string "CASCADA METEORO\n"
+	.string "METEOR FALLS\n"
 # 195 "data/maps/Route114/scripts.pory"
-	.string "DIRECCIÓN CIUDAD FÉRRICA$"
+	.string "RUSTBORO CITY THROUGH HERE$"
 # 196 "data/maps/Route114/scripts.pory"
 
 # 197 "data/maps/Route114/scripts.pory"
 Route114_Text_FossilManiacsHouseSign:
 # 198 "data/maps/Route114/scripts.pory"
-	.string "CASA del FOSILMANÍACO\n"
+	.string "FOSSIL MANIAC'S HOUSE\n"
 # 199 "data/maps/Route114/scripts.pory"
-	.string "“¡Se aceptan fósiles!”$"
+	.string "“Fossils gratefully accepted!”$"
 # 200 "data/maps/Route114/scripts.pory"
 
 # 201 "data/maps/Route114/scripts.pory"
 Route114_Text_LanettesHouse:
 # 202 "data/maps/Route114/scripts.pory"
-	.string "CASA de AREDIA$"
+	.string "LANETTE'S HOUSE$"

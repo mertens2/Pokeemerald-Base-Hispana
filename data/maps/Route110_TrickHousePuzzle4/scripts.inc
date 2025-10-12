@@ -61,84 +61,80 @@ Route110_TrickHousePuzzle4_EventScript_Paula::
 # 31 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_WroteSecretCodeLockOpened:
 # 32 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "{PLAYER} escribió el código secreto\n"
+	.string "{PLAYER} wrote down the secret code\n"
 # 33 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "en la puerta.\p"
+	.string "on the door.\p"
 # 34 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "“El MAESTRO TRETA\n"
+	.string "“TRICK MASTER is cool.”\n"
 # 35 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "es guay.”\l"
+	.string "… … … … … … … …\p"
 # 36 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "Y…\p"
+	.string "The lock clicked open!$"
 # 37 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "¡la puerta se ha abierto!$"
+
 # 38 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-
-# 39 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_CoraIntro:
+# 39 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "It's too much bother to think this out.\n"
 # 40 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "Me duele la cabeza de pensar…\n"
+	.string "I only wanted to battle!$"
 # 41 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "¡Luchar cuesta menos trabajo!$"
+
 # 42 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-
-# 43 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_CoraDefeat:
+# 43 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "Even though I lost, I still like battling\n"
 # 44 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "Me da igual haber perdido…\n"
+	.string "the best!$"
 # 45 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "¡Luchar sigue siendo lo mejor!$"
+
 # 46 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-
-# 47 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_CoraPostBattle:
+# 47 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "Wouldn't you agree? You would go\n"
 # 48 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "¡Por supuesto! Yo iría a cualquier sitio\n"
+	.string "anywhere if TRAINERS were there.$"
 # 49 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "donde hubiera un ENTRENADOR.$"
+
 # 50 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-
-# 51 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_YujiIntro:
+# 51 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "Heh! Boulders like this, I can brush\n"
 # 52 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "¡Eh, tú! ¿Ves estas rocas tan gordas?\n"
+	.string "aside with one finger!$"
 # 53 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "¡Pues yo las muevo con el dedo meñique!$"
+
 # 54 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-
-# 55 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_YujiDefeat:
+# 55 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "I can push boulders, but I can't solve\n"
 # 56 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "Puedo mover rocas, pero no\n"
+	.string "the puzzle…$"
 # 57 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "puedo resolver acertijos…$"
+
 # 58 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-
-# 59 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_YujiPostBattle:
+# 59 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "It's not good enough to be brawny…\n"
 # 60 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "No basta con ser musculoso,\n"
+	.string "You have to use your head. Be brainy!$"
 # 61 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "¡también hay que ser ingenioso!$"
+
 # 62 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-
-# 63 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_PaulaIntro:
+# 63 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "The TRICK HOUSE is getting trickier,\n"
 # 64 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "La CASA TRETA es cada vez más\n"
+	.string "isn't it?$"
 # 65 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "traicionera, ¿no te parece?$"
+
 # 66 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-
-# 67 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_PaulaDefeat:
+# 67 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "Aaak!$"
 # 68 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "¡Ayyyy!$"
-# 69 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 
-# 70 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+# 69 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 Route110_TrickHousePuzzle4_Text_PaulaPostBattle:
-# 71 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "Yo creo que nadie ha logrado\n"
-# 72 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "llegar hasta el final…$"
+# 70 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
+	.string "Has anyone made it to the end?$"

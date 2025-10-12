@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_MAUVILLE_CITY",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
       "map": "MAP_ROUTE113",
       "offset": 0,
       "direction": "left"
@@ -27,6 +22,16 @@
       "map": "MAP_ROUTE112",
       "offset": 20,
       "direction": "left"
+    },
+    {
+      "map": "MAP_MAUVILLE_CITY",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MAUVILLE_CITY_F1",
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -101,8 +106,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 22,
-      "y": 5,
+      "x": 21,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -114,8 +119,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 23,
-      "y": 5,
+      "x": 22,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -193,8 +198,8 @@
     {
       "local_id": "LOCALID_ROUTE111_TY_1",
       "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
-      "x": 14,
-      "y": 86,
+      "x": 18,
+      "y": 99,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -207,8 +212,8 @@
     {
       "local_id": "LOCALID_ROUTE111_GABBY_1",
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
-      "x": 13,
-      "y": 86,
+      "x": 17,
+      "y": 99,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -220,8 +225,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 18,
-      "y": 101,
+      "x": 22,
+      "y": 109,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -233,8 +238,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 19,
-      "y": 100,
+      "x": 21,
+      "y": 110,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -259,21 +264,21 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 33,
-      "y": 104,
+      "x": 32,
+      "y": 103,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_SANDSTORM",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM37",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_111_TM_SANDSTORM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 18,
-      "y": 5,
+      "x": 19,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -285,8 +290,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 19,
-      "y": 5,
+      "x": 20,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -295,6 +300,34 @@
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_111_ORAN_2",
       "script": "BerryTreeScript",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROUTE111_GABBY_3",
+      "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
+      "x": 24,
+      "y": 109,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GabbyAndTy_EventScript_GabbyBattle4",
+      "flag": "FLAG_HIDE_ROUTE_111_GABBY_AND_TY_3"
+    },
+    {
+      "local_id": "LOCALID_ROUTE111_TY_3",
+      "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
+      "x": 25,
+      "y": 109,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GabbyAndTy_EventScript_TyBattle4",
+      "flag": "FLAG_HIDE_ROUTE_111_GABBY_AND_TY_3"
     },
     {
       "local_id": "LOCALID_ROUTE111_GABBY_2",
@@ -307,7 +340,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "GabbyAndTy_EventScript_GabbyBattle4",
+      "script": "GabbyAndTy_EventScript_GabbyBattle6",
       "flag": "FLAG_HIDE_ROUTE_111_GABBY_AND_TY_2"
     },
     {
@@ -321,36 +354,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "GabbyAndTy_EventScript_TyBattle4",
-      "flag": "FLAG_HIDE_ROUTE_111_GABBY_AND_TY_2"
-    },
-    {
-      "local_id": "LOCALID_ROUTE111_GABBY_3",
-      "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
-      "x": 13,
-      "y": 86,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "GabbyAndTy_EventScript_GabbyBattle6",
-      "flag": "FLAG_HIDE_ROUTE_111_GABBY_AND_TY_3"
-    },
-    {
-      "local_id": "LOCALID_ROUTE111_TY_3",
-      "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
-      "x": 14,
-      "y": 86,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
       "script": "GabbyAndTy_EventScript_TyBattle6",
-      "flag": "FLAG_HIDE_ROUTE_111_GABBY_AND_TY_3"
+      "flag": "FLAG_HIDE_ROUTE_111_GABBY_AND_TY_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -629,8 +634,8 @@
     {
       "local_id": "LOCALID_ROUTE111_ROCK_SMASH_MAN",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 19,
-      "y": 101,
+      "x": 22,
+      "y": 110,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -639,6 +644,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_RockSmashTipFatMan",
       "flag": "FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY"
+    },
+    {
+      "local_id": "LOCALID_ROUTE111_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 13,
+      "y": 60,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route111_EventScript_Wally",
+      "flag": "FLAG_HIDE_WALLY_111"
     }
   ],
   "warp_events": [
@@ -672,10 +691,31 @@
     },
     {
       "x": 31,
-      "y": 113,
+      "y": 115,
       "elevation": 0,
       "dest_map": "MAP_TRAINER_HILL_ENTRANCE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 142,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 16,
+      "y": 142,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 17,
+      "y": 142,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "8"
     }
   ],
   "coord_events": [
@@ -684,7 +724,7 @@
       "x": 12,
       "y": 62,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -720,7 +760,7 @@
       "x": 7,
       "y": 63,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -774,7 +814,7 @@
       "x": 18,
       "y": 32,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -783,7 +823,7 @@
       "x": 17,
       "y": 31,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -792,7 +832,7 @@
       "x": 9,
       "y": 37,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -801,7 +841,7 @@
       "x": 10,
       "y": 36,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -828,7 +868,7 @@
       "x": 8,
       "y": 64,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -837,7 +877,7 @@
       "x": 9,
       "y": 65,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -846,7 +886,7 @@
       "x": 10,
       "y": 65,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -855,7 +895,7 @@
       "x": 11,
       "y": 66,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -864,7 +904,7 @@
       "x": 12,
       "y": 67,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -873,7 +913,7 @@
       "x": 13,
       "y": 68,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -882,7 +922,7 @@
       "x": 14,
       "y": 69,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SunTrigger"
     },
@@ -891,7 +931,7 @@
       "x": 10,
       "y": 61,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -900,7 +940,7 @@
       "x": 11,
       "y": 62,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -909,7 +949,7 @@
       "x": 13,
       "y": 62,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -918,7 +958,7 @@
       "x": 14,
       "y": 62,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -927,7 +967,7 @@
       "x": 17,
       "y": 38,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -936,7 +976,7 @@
       "x": 16,
       "y": 39,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -945,7 +985,7 @@
       "x": 15,
       "y": 40,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -954,7 +994,7 @@
       "x": 14,
       "y": 41,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -963,7 +1003,7 @@
       "x": 13,
       "y": 42,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -972,7 +1012,7 @@
       "x": 12,
       "y": 43,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
     },
@@ -981,9 +1021,27 @@
       "x": 11,
       "y": 44,
       "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 108,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Route111_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 109,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Route111_Trigger"
     }
   ],
   "bg_events": [

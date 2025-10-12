@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_TRICK_MASTER_END",
+      "local_id": "LOCALID_TRICK_HOUSE_END_TRICK_MASTER",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 4,
       "y": 5,

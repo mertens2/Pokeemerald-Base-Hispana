@@ -388,12 +388,12 @@
     {
       "id": "LAYOUT_ROUTE117",
       "name": "Route117_Layout",
-      "width": 60,
+      "width": 29,
       "height": 22,
       "border_width": 6,
       "border_height": 6,
       "primary_tileset": "gTileset_Nature",
-      "secondary_tileset": "gTileset_PetalburgNew",
+      "secondary_tileset": "gTileset_Route110",
       "border_filepath": "data/layouts/Route117/border.bin",
       "blockdata_filepath": "data/layouts/Route117/map.bin"
     },
@@ -5556,6 +5556,18 @@
       "secondary_tileset": "gTileset_MauvilleDecor",
       "border_filepath": "data/layouts/MauvilleCity_Middle/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_Middle/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE117LEFT",
+      "name": "Route117_Left_Layout",
+      "width": 31,
+      "height": 22,
+      "border_width": 6,
+      "border_height": 6,
+      "primary_tileset": "gTileset_Nature",
+      "secondary_tileset": "gTileset_PetalburgNew",
+      "border_filepath": "data/layouts/Route117_Left/border.bin",
+      "blockdata_filepath": "data/layouts/Route117_Left/map.bin"
     }
   ]
 }

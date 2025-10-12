@@ -39,7 +39,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_BRINEY_DEWFORD",
+      "local_id": "LOCALID_DEWFORD_BRINEY",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 20,
       "y": 7,
@@ -66,7 +66,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_BOAT_DEWFORD",
+      "local_id": "LOCALID_DEWFORD_BOAT",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 20,
       "y": 6,
@@ -93,6 +93,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_DEWFORD_GRUNT",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
       "x": 12,
       "y": 9,
@@ -106,6 +107,7 @@
       "flag": "FLAG_DEWFORD_GRUNT"
     },
     {
+      "local_id": "LOCALID_DEWFORD_WALLY",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 16,
       "y": 17,

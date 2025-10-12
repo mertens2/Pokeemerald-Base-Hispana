@@ -1,6 +1,7 @@
 #include "global.h"
 #include "event_data.h"
 #include "pokedex.h"
+#include "random.h"
 
 #define SPECIAL_FLAGS_SIZE  (NUM_SPECIAL_FLAGS / 8)  // 8 flags per byte
 #define TEMP_FLAGS_SIZE     (NUM_TEMP_FLAGS / 8)
@@ -317,12 +318,12 @@ void RerollBattleCafeTrainers(void) {
 	
 	
 	for (i=0; i<4; i++){
-		// do {
-			// todaysTrainers[i] = Random() % 15;
-			// if (i!=0)
-				// lastTrainer = todaysTrainers[i-1];
-		// }while (todaysTrainers[i] != gSaveBlock2Ptr->cafeTrainers[i] && (todaysTrainers[i] != lastTrainer));
-		todaysTrainers[i] = i+1;
+		do {
+			todaysTrainers[i] = Random() % 15;
+			if (i!=0)
+				lastTrainer = todaysTrainers[i-1];
+		}while (todaysTrainers[i] != gSaveBlock2Ptr->cafeTrainers[i] && (todaysTrainers[i] != lastTrainer));
+		// todaysTrainers[i] = i+1;
 	}
 	for (i=0; i<4; i++)
 		gSaveBlock2Ptr->cafeTrainers[i] = todaysTrainers[i];

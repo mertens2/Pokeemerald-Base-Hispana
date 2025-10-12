@@ -131,3 +131,23 @@ Movement_PkmnCenterNurse_Bow:
 Movement_PkmnCenterNurse_Turn:
 	walk_in_place_faster_left
 	step_end
+
+EventScript_PkmnCenter_Clerk_1::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart 0
+	closemessage
+	end
+
+EventScript_PkmnCenter_Clerk_2::
+	lock
+	faceplayer
+	setflag FLAG_SECONDMART
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart 0
+	closemessage
+	clearflag FLAG_SECONDMART
+	end

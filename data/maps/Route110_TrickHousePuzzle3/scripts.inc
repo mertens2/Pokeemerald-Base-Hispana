@@ -609,84 +609,82 @@ Route110_TrickHousePuzzle3_EventScript_Alan::
 # 305 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_WroteSecretCodeLockOpened:
 # 306 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "{PLAYER} escribió el código secreto\n"
+	.string "{PLAYER} wrote down the secret code\n"
 # 307 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "en la puerta.\p"
+	.string "on the door.\p"
 # 308 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "“El MAESTRO TRETA\n"
+	.string "“TRICK MASTER is coveted.”\n"
 # 309 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "es lo más.”\l"
+	.string "… … … … … … … …\p"
 # 310 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "Y…\p"
+	.string "The lock clicked open!$"
 # 311 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "¡la puerta se ha abierto!$"
+
 # 312 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-
-# 313 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_JustinIntro:
+# 313 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "I keep coming back to this same place!$"
 # 314 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "¡No paro de dar vueltas en círculo!$"
+
 # 315 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-
-# 316 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_JustinDefeat:
+# 316 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "I'm already having trouble, and then\n"
 # 317 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "Como si no tuviera bastantes problemas,\n"
+	.string "you have to beat me? It's not fair!$"
 # 318 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "vienes tú a derrotarme. ¡No es justo!$"
+
 # 319 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-
-# 320 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_JustinPostBattle:
+# 320 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "It's full of doors here!\n"
 # 321 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "¡Aquí hay demasiadas puertas!\n"
+	.string "It's too small and dark in here! Help!$"
 # 322 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "¡Es pequeño y está oscuro! ¡Socorro!$"
+
 # 323 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-
-# 324 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_MarthaIntro:
+# 324 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "I don't know what's going on here.\n"
 # 325 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "No sé de dónde vengo ni adónde voy\n"
+	.string "I'm starting to feel sad…$"
 # 326 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "y me está entrando un mal rollo…$"
+
 # 327 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-
-# 328 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_MarthaDefeat:
+# 328 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "You… You're awful!$"
 # 329 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "Y tú, tú… ¡eres una mala persona!$"
+
 # 330 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-
-# 331 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_MarthaPostBattle:
+# 331 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "I know I'm weak!\n"
 # 332 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "Ya sé que tengo que mejorar…\n"
+	.string "And, I have no sense of direction!$"
 # 333 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "¡Y aprender a orientarme también!$"
+
 # 334 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-
-# 335 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_AlanIntro:
+# 335 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "I don't get it. What would anyone want\n"
 # 336 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "No lo entiendo. ¿Quién en su sano\n"
+	.string "with a house this bizarre?$"
 # 337 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "juicio querría una casa tan rara?$"
+
 # 338 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-
-# 339 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_AlanDefeat:
+# 339 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "I don't get it.\n"
 # 340 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "No lo entiendo.\n"
+	.string "How did I lose?$"
 # 341 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "¿Cómo he podido perder?$"
-# 342 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 
-# 343 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+# 342 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 Route110_TrickHousePuzzle3_Text_AlanPostBattle:
+# 343 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
+	.string "I don't get it.\n"
 # 344 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "No lo entiendo.\n"
+	.string "How many traps are in this house?\p"
 # 345 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "¿Cuántas trampas hay en esta casa?\p"
-# 346 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "A ver si tú sabes la respuesta…$"
+	.string "You may be the one to solve that.$"

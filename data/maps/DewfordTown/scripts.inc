@@ -47,7 +47,7 @@ DewfordTown_EventScript_Wally::
 # 349 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 350 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 # 351 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 352 "data/maps/DewfordTown/scripts.pory"
@@ -103,7 +103,7 @@ DewfordTown_OnFrameWally::
 # 377 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyContinueSpeech, MSGBOX_DEFAULT
 # 378 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_WALLY, Common_Movement_FacePlayer
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FacePlayer
 # 379 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 380 "data/maps/DewfordTown/scripts.pory"
@@ -113,11 +113,11 @@ DewfordTown_OnFrameWally::
 # 382 "data/maps/DewfordTown/scripts.pory"
 	hidenamebox
 # 383 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 # 384 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 385 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_WALLY, Common_Movement_FaceUp
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceUp
 # 386 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 387 "data/maps/DewfordTown/scripts.pory"
@@ -125,7 +125,7 @@ DewfordTown_OnFrameWally::
 # 388 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyDetermined
 # 389 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_WALLY, Common_Movement_FaceRight
+	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 # 390 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 391 "data/maps/DewfordTown/scripts.pory"
@@ -137,7 +137,7 @@ DewfordTown_OnFrameWally::
 # 394 "data/maps/DewfordTown/scripts.pory"
 	call_if_eq VAR_0x8004, DIR_WEST, DewfordTown_WallyGoToGymWest
 # 395 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyGoToGym
+	applymovement LOCALID_DEWFORD_WALLY, DewfordTown_Movement_WallyGoToGym
 # 396 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 397 "data/maps/DewfordTown/scripts.pory"
@@ -149,7 +149,7 @@ DewfordTown_OnFrameWally::
 # 400 "data/maps/DewfordTown/scripts.pory"
 	waitdooranim
 # 401 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyGoToGym2
+	applymovement LOCALID_DEWFORD_WALLY, DewfordTown_Movement_WallyGoToGym2
 # 402 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 403 "data/maps/DewfordTown/scripts.pory"
@@ -327,7 +327,7 @@ DewfordTown_OnFrameWally::
 # 489 "data/maps/DewfordTown/scripts.pory"
 	waitdooranim
 # 490 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_WALLY, DewfordTown_Movement_WallyComeOut
+	applymovement LOCALID_DEWFORD_WALLY, DewfordTown_Movement_WallyComeOut
 # 491 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 492 "data/maps/DewfordTown/scripts.pory"
@@ -349,7 +349,7 @@ DewfordTown_OnFrameWally::
 # 500 "data/maps/DewfordTown/scripts.pory"
 	clearflag FLAG_HIDE_WALLY_RUSTBORO
 # 501 "data/maps/DewfordTown/scripts.pory"
-	removeobject LOCALID_WALLY
+	removeobject LOCALID_DEWFORD_WALLY
 # 502 "data/maps/DewfordTown/scripts.pory"
 	delay 16
 # 503 "data/maps/DewfordTown/scripts.pory"
@@ -521,11 +521,11 @@ DewfordTown_EventScript_Trigger::
 # 586 "data/maps/DewfordTown/scripts.pory"
 	playse SE_PIN
 # 587 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_GRUNT, Common_Movement_ExclamationMark
+	applymovement LOCALID_DEWFORD_GRUNT, Common_Movement_ExclamationMark
 # 588 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 589 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_GRUNT, Common_Movement_FacePlayer
+	applymovement LOCALID_DEWFORD_GRUNT, Common_Movement_FacePlayer
 # 590 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 591 "data/maps/DewfordTown/scripts.pory"
@@ -537,11 +537,11 @@ DewfordTown_EventScript_Trigger::
 # 594 "data/maps/DewfordTown/scripts.pory"
 	delay 16
 # 595 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_GRUNT, DewfordTown_Movement_GruntEscapes
+	applymovement LOCALID_DEWFORD_GRUNT, DewfordTown_Movement_GruntEscapes
 # 596 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 597 "data/maps/DewfordTown/scripts.pory"
-	removeobject LOCALID_GRUNT
+	removeobject LOCALID_DEWFORD_GRUNT
 # 598 "data/maps/DewfordTown/scripts.pory"
 	setflag FLAG_DEWFORD_GRUNT
 # 599 "data/maps/DewfordTown/scripts.pory"
@@ -893,15 +893,15 @@ DewfordTown_EventScript_SailToPetalburg::
 # 772 "data/maps/DewfordTown/scripts.pory"
 	call EventScript_BackupMrBrineyLocation
 # 773 "data/maps/DewfordTown/scripts.pory"
-	setobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
+	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
 # 774 "data/maps/DewfordTown/scripts.pory"
 	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN, 0
 # 775 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_BRINEY_DEWFORD, DewfordTown_Movement_BrineyBoardBoat
+	applymovement LOCALID_DEWFORD_BRINEY, DewfordTown_Movement_BrineyBoardBoat
 # 776 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 777 "data/maps/DewfordTown/scripts.pory"
-	removeobject LOCALID_BRINEY_DEWFORD
+	removeobject LOCALID_DEWFORD_BRINEY
 # 778 "data/maps/DewfordTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerBoardBoat
 # 779 "data/maps/DewfordTown/scripts.pory"
@@ -911,7 +911,7 @@ DewfordTown_EventScript_SailToPetalburg::
 # 781 "data/maps/DewfordTown/scripts.pory"
 	call Common_EventScript_PlayBrineysBoatMusic
 # 782 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToPetalburg
+	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToPetalburg
 # 783 "data/maps/DewfordTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToPetalburg
 # 784 "data/maps/DewfordTown/scripts.pory"
@@ -935,7 +935,7 @@ DewfordTown_EventScript_SailToPetalburg::
 # 793 "data/maps/DewfordTown/scripts.pory"
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
 # 794 "data/maps/DewfordTown/scripts.pory"
-	hideobjectat LOCALID_BOAT_DEWFORD, MAP_DEWFORD_TOWN
+	hideobjectat LOCALID_DEWFORD_BOAT, MAP_DEWFORD_TOWN
 # 795 "data/maps/DewfordTown/scripts.pory"
 	setvar VAR_BOARD_BRINEY_BOAT_STATE, 2
 # 796 "data/maps/DewfordTown/scripts.pory"
@@ -957,15 +957,15 @@ DewfordTown_EventScript_SailToSlateport::
 # 804 "data/maps/DewfordTown/scripts.pory"
 	call EventScript_BackupMrBrineyLocation
 # 805 "data/maps/DewfordTown/scripts.pory"
-	setobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
+	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
 # 806 "data/maps/DewfordTown/scripts.pory"
 	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN, 1
 # 807 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_BRINEY_DEWFORD, DewfordTown_Movement_BrineyBoardBoat
+	applymovement LOCALID_DEWFORD_BRINEY, DewfordTown_Movement_BrineyBoardBoat
 # 808 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 809 "data/maps/DewfordTown/scripts.pory"
-	removeobject LOCALID_BRINEY_DEWFORD
+	removeobject LOCALID_DEWFORD_BRINEY
 # 810 "data/maps/DewfordTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerBoardBoat
 # 811 "data/maps/DewfordTown/scripts.pory"
@@ -975,7 +975,7 @@ DewfordTown_EventScript_SailToSlateport::
 # 813 "data/maps/DewfordTown/scripts.pory"
 	call Common_EventScript_PlayBrineysBoatMusic
 # 814 "data/maps/DewfordTown/scripts.pory"
-	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToSlateport
+	applymovement LOCALID_DEWFORD_BOAT, DewfordTown_Movement_SailToSlateport
 # 815 "data/maps/DewfordTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToSlateport
 # 816 "data/maps/DewfordTown/scripts.pory"
@@ -1007,7 +1007,7 @@ DewfordTown_EventScript_SailToSlateport::
 # 829 "data/maps/DewfordTown/scripts.pory"
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
 # 830 "data/maps/DewfordTown/scripts.pory"
-	hideobjectat LOCALID_BOAT_DEWFORD, MAP_DEWFORD_TOWN
+	hideobjectat LOCALID_DEWFORD_BOAT, MAP_DEWFORD_TOWN
 # 831 "data/maps/DewfordTown/scripts.pory"
 	call_if_unset FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateportDeliverGoods
 # 832 "data/maps/DewfordTown/scripts.pory"

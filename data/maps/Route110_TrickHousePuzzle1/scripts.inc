@@ -79,80 +79,76 @@ Route110_TrickHousePuzzle1_EventScript_Robin::
 # 40 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_WroteSecretCodeLockOpened::
 # 41 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "{PLAYER} escribió el código secreto\n"
+	.string "{PLAYER} wrote down the secret code\n"
 # 42 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "en la puerta.\p"
+	.string "on the door.\p"
 # 43 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "“El MAESTRO TRETA\n"
+	.string "“TRICK MASTER is fabulous.”\n"
 # 44 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "es fabuloso.”\l"
+	.string "… … … … … … … …\p"
 # 45 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "Y…\p"
+	.string "The lock clicked open!$"
 # 46 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "¡la puerta se ha abierto!$"
+
 # 47 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-
-# 48 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_SallyIntro:
+# 48 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "I'll hack and slash my way to victory\n"
 # 49 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "Me voy a hacer con la victoria gracias\n"
+	.string "with the CUT we just learned!$"
 # 50 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "al movimiento que acabo de aprender.$"
+
 # 51 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-
-# 52 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_SallyDefeat:
+# 52 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "Why are you so serious?$"
 # 53 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "Vaya, contigo no funciona…$"
+
 # 54 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-
-# 55 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_SallyPostBattle:
+# 55 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "I never get tired of hacking\n"
 # 56 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "Este nuevo movimiento es estupendo.\n"
+	.string "and slashing!$"
 # 57 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "¡No me canso de usarlo!$"
+
 # 58 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-
-# 59 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_EddieIntro:
+# 59 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "I wandered into this weird house\n"
 # 60 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "He llegado hasta esta casa tan\n"
+	.string "by accident…$"
 # 61 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "rara sin querer…$"
+
 # 62 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-
-# 63 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_EddieDefeat:
+# 63 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "And now I've lost…$"
 # 64 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "Y encima voy y pierdo…$"
+
 # 65 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-
-# 66 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_EddiePostBattle:
+# 66 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "I lost my way, I lost a battle, and I'm\n"
 # 67 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "Me he perdido, he perdido luchando\n"
+	.string "now even more lost… I can't get out…$"
 # 68 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "y ahora… ¡no sé ni cómo volver a casa!$"
+
 # 69 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-
-# 70 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_RobinIntro:
+# 70 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "Just who is the TRICK MASTER?$"
 # 71 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "¿Pero quién es ese MAESTRO TRETA?$"
+
 # 72 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-
-# 73 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_RobinDefeat:
+# 73 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "I lost while I was lost in thought!$"
 # 74 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "¡Has vencido porque estaba sumida\n"
-# 75 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "en mis pensamientos, que conste!$"
-# 76 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 
-# 77 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+# 75 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_RobinPostBattle:
-# 78 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "¡Qué fuerte eres!\n"
-# 79 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "¿De dónde sales?$"
+# 76 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "You're strong!\n"
+# 77 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
+	.string "Just who are you?$"

@@ -568,8 +568,8 @@ void InitMapView(void)
     s32 paletteIndex;
 
     ResetFieldCamera();
-    for (paletteIndex = 0; paletteIndex < 15; paletteIndex++)
-        ApplyGlobalFieldPaletteTint(paletteIndex);
+    // for (paletteIndex = 0; paletteIndex < 15; paletteIndex++)
+        // ApplyGlobalFieldPaletteTint(paletteIndex);
     CopyMapTilesetsToVram(gMapHeader.mapLayout);
     LoadMapTilesetPalettes(gMapHeader.mapLayout);
     DrawWholeMapView();
@@ -579,8 +579,8 @@ void InitMapView(void)
 
 void RemoveTintFromObjectEvents(void)
 {
-    if (gGlobalFieldTintMode == GLOBAL_FIELD_TINT_NONE)
-        RemoveTintFromObjectEventPalettes();
+    // if (gGlobalFieldTintMode == GLOBAL_FIELD_TINT_NONE)
+        // RemoveTintFromObjectEventPalettes();
 }
 
 const struct MapLayout *GetMapLayout(u16 mapLayoutId)

@@ -135,18 +135,28 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sDartrixLevelUpLearnset,
         .teachableLearnset = sDartrixTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_DECIDUEYE},
-                                {EVO_NONE, 0, SPECIES_DECIDUEYE_HISUI}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_DECIDUEYE, CONDITIONS({IF_NOT_TIME, TIME_NIGHT})},
+                                {EVO_LEVEL, 34, SPECIES_DECIDUEYE_HISUI, CONDITIONS({IF_TIME, TIME_NIGHT})}),
     },
 
     [SPECIES_DECIDUEYE] =
     {
-        .baseHP        = 78,
+		#if P_BUFF_SPECIES
+		.baseHP        = 75,
+        .baseAttack    = 110,
+        .baseDefense   = 70,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 100,
+		#else
+		.baseHP        = 78,
         .baseAttack    = 107,
         .baseDefense   = 75,
         .baseSpeed     = 70,
         .baseSpAttack  = 100,
         .baseSpDefense = 100,
+		#endif
+        
         .types = MON_TYPES(TYPE_GRASS, TYPE_GHOST),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 265 : 239,
@@ -208,12 +218,21 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 #if P_HISUIAN_FORMS
     [SPECIES_DECIDUEYE_HISUI] =
     {
-        .baseHP        = 88,
+		#if P_BUFF_SPECIES
+        .baseHP        = 80,
+        .baseAttack    = 110,
+        .baseDefense   = 80,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 80,
+		#else
+		.baseHP        = 88,
         .baseAttack    = 112,
         .baseDefense   = 80,
         .baseSpeed     = 60,
         .baseSpAttack  = 95,
         .baseSpDefense = 95,
+		#endif
         .types = MON_TYPES(TYPE_GRASS, TYPE_FIGHTING),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 265 : 239,
@@ -1122,15 +1141,24 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .eggMoveLearnset = sGrubbinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_CHARJABUG}),
     },
-
+// 10
     [SPECIES_CHARJABUG] =
     {
-        .baseHP        = 57,
+		#if P_BUFF_SPECIES
+        .baseHP        = 75,
+        .baseAttack    = 85,
+        .baseDefense   = 95,
+        .baseSpeed     = 20,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 75,
+		#else
+		.baseHP        = 57,
         .baseAttack    = 82,
         .baseDefense   = 95,
         .baseSpeed     = 36,
         .baseSpAttack  = 55,
         .baseSpDefense = 75,
+		#endif
         .types = MON_TYPES(TYPE_BUG, TYPE_ELECTRIC),
         .catchRate = 120,
         .expYield = 140,
@@ -1192,15 +1220,25 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
                                 {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VIKAVOLT},
                                 {EVO_NONE, 0, SPECIES_VIKAVOLT_TOTEM}),
     },
-
+// 25
     [SPECIES_VIKAVOLT] =
     {
-        .baseHP        = 77,
+		#if P_BUFF_SPECIES
+		.baseHP        = 80,
+        .baseAttack    = 40,
+        .baseDefense   = 80,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 145,
+        .baseSpDefense = 75,
+		#else
+		.baseHP        = 77,
         .baseAttack    = 70,
         .baseDefense   = 90,
         .baseSpeed     = 43,
         .baseSpAttack  = 145,
         .baseSpDefense = 75,
+		#endif
+        
         .types = MON_TYPES(TYPE_BUG, TYPE_ELECTRIC),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 250 : 225,
@@ -1256,10 +1294,10 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 
     [SPECIES_VIKAVOLT_TOTEM] =
     {
-        .baseHP        = 77,
-        .baseAttack    = 70,
-        .baseDefense   = 90,
-        .baseSpeed     = 43,
+        .baseHP        = 80,
+        .baseAttack    = 40,
+        .baseDefense   = 80,
+        .baseSpeed     = 100,
         .baseSpAttack  = 145,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_BUG, TYPE_ELECTRIC),
@@ -7462,6 +7500,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sMeltanLevelUpLearnset,
         .teachableLearnset = sMeltanTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MELMETAL, CONDITIONS({IF_SPECIES_IN_PARTY, SPECIES_MELTAN})}),
+		
     },
 
     [SPECIES_MELMETAL] =

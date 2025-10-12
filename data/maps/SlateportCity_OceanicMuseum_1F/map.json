@@ -107,7 +107,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 8,
+      "x": 9,
       "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -171,10 +171,10 @@
       "flag": "FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION"
     },
     {
-      "local_id": "LOCALID_OCEANIC_MUSEUM_FAMILIAR_GRUNT",
+      "local_id": "LOCALID_FAMILIAR_GRUNT",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 9,
-      "y": 4,
+      "x": 6,
+      "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -204,14 +204,14 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY",
-      "dest_warp_id": "5"
+      "dest_warp_id": "4"
     },
     {
       "x": 10,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY",
-      "dest_warp_id": "7"
+      "dest_warp_id": "6"
     },
     {
       "x": 6,

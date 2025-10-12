@@ -23,15 +23,15 @@ Route114_FossilManiacsHouse_EventScript_FossilManiacsBrother::
 # 12 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 	faceplayer
 # 13 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_DIG, Route114_FossilManiacsHouse_EventScript_ReceivedDig
+	checkitem ITEM_TM28
 # 14 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	msgbox Route114_FossilManiacsHouse_Text_HaveThisToDigLikeMyBrother, MSGBOX_DEFAULT
+	goto_if_eq VAR_RESULT, TRUE, Route114_FossilManiacsHouse_EventScript_ReceivedDig
 # 15 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	giveitem ITEM_TM_DIG
+	msgbox Route114_FossilManiacsHouse_Text_HaveThisToDigLikeMyBrother, MSGBOX_DEFAULT
 # 16 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	giveitem ITEM_TM28
 # 17 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	setflag FLAG_RECEIVED_TM_DIG
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 18 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 	release
 # 19 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
@@ -67,42 +67,42 @@ Route114_FossilManiacsHouse_EventScript_Bookshelf::
 # 34 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 Route114_FossilManiacsHouse_Text_HaveThisToDigLikeMyBrother:
 # 35 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "Mi hermano mayor es el FOSILMANÍACO.\n"
+	.string "My big brother's the FOSSIL MANIAC…\n"
 # 36 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "Le enseñas un fósil y se vuelve loco…\p"
+	.string "He's a nice guy who loves FOSSILS…\p"
 # 37 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "También le pirra cavar agujeros…\n"
+	.string "He loves digging holes, too…\n"
 # 38 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "Él mismo cavó esta cueva que ves.\p"
+	.string "He dug this hole by himself…\p"
 # 39 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "Te voy a dar esto para que puedas\n"
+	.string "You can have this, so you can DIG\n"
 # 40 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "EXCAVAR agujeros como mi hermano.$"
+	.string "holes just like my big brother…$"
 # 41 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 
 # 42 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 Route114_FossilManiacsHouse_Text_DigReturnsYouToEntrance:
 # 43 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "Si haces que un POKéMON use EXCAVAR\n"
+	.string "If you make a POKéMON DIG inside a\n"
 # 44 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "en una cueva, vuelves a la entrada.$"
+	.string "cave, you're returned to the entrance…$"
 # 45 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 
 # 46 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 Route114_FossilManiacsHouse_Text_RocksFillDisplayCase:
 # 47 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "La vitrina de exhibición contiene\n"
+	.string "Rocks in peculiar shapes fill\n"
 # 48 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "rocas con formas extrañas.$"
+	.string "the display case…$"
 # 49 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 
 # 50 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 Route114_FossilManiacsHouse_Text_CrammedWithBooks:
 # 51 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "“La composición de los estratos”…\n"
+	.string "THE COMPOSITION OF STRATA…\n"
 # 52 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "“Cómo erosiona la lluvia”…\l"
+	.string "HOW RAIN SHAPES THE LAND…\l"
 # 53 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "“Piedras, rocas y suelos”…\p"
+	.string "STONES, SOIL, AND ROCK…\p"
 # 54 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "Está repleto de libros…$"
+	.string "It's crammed with books.$"

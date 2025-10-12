@@ -59,86 +59,84 @@ Route110_TrickHousePuzzle8_EventScript_Leroy::
 # 30 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 
 # 31 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-Route110_TrickHousePuzzle8_Text_WroteSecretCodeLockOpened::
+Route110_TrickHousePuzzle8_EventScript_WroteSecretCodeLockOpened::
 # 32 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "{PLAYER} escribió el código secreto\n"
+	.string "{PLAYER} wrote down the secret code\n"
 # 33 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "en la puerta.\p"
+	.string "on the door.\p"
 # 34 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "“El MAESTRO TRETA\n"
+	.string "“TRICK MASTER I love.”\n"
 # 35 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "es amable.”\l"
+	.string "… … … … … … … …\p"
 # 36 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "Y…\p"
+	.string "The lock clicked open!$"
 # 37 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "¡la puerta se ha abierto!$"
+
 # 38 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-
-# 39 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_VincentIntro:
+# 39 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "Not many TRAINERS have made it\n"
 # 40 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "No hay muchos ENTRENADORES\n"
+	.string "this far.$"
 # 41 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "que hayan llegado hasta aquí…$"
+
 # 42 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-
-# 43 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_VincentDefeat:
+# 43 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "That must mean you're tough, too…$"
 # 44 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "Así que debes de ser muy fuerte…$"
+
 # 45 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-
-# 46 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_VincentPostBattle:
+# 46 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "You've beaten the POKéMON LEAGUE\n"
 # 47 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "¿Has vencido al CAMPEÓN de la LIGA\n"
+	.string "CHAMPION? That's too much!$"
 # 48 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "POKéMON? ¡Menos lobos!$"
+
 # 49 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-
-# 50 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_KeiraIntro:
+# 50 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "Consider yourself lucky to be\n"
 # 51 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "¡Puedes darte con un canto en los\n"
+	.string "battling me!$"
 # 52 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "dientes por luchar contra mí!$"
+
 # 53 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-
-# 54 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_KeiraDefeat:
+# 54 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "This isn't right!\n"
 # 55 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "¡Esto no puede ser!\n"
+	.string "I can't lose!$"
 # 56 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "¡Yo nunca había perdido antes!$"
+
 # 57 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-
-# 58 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_KeiraPostBattle:
+# 58 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "It's a miracle that you beat me.\n"
 # 59 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "Me has vencido de pura chorra.\n"
+	.string "You can brag about it.$"
 # 60 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "Puede darte para fardar un rato…$"
+
 # 61 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-
-# 62 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_LeroyIntro:
+# 62 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "You've been slugging through the TRICK\n"
 # 63 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "Te las has apañado bien en el desafío\n"
+	.string "HOUSE challenge, too.$"
 # 64 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "de la CASA TRETA…$"
+
 # 65 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-
-# 66 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_LeroyDefeat:
+# 66 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "I see…\n"
 # 67 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "Ya entiendo…\n"
+	.string "You possess an extraordinary style.$"
 # 68 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "Posees un estilo único e inimitable…$"
-# 69 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 
-# 70 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+# 69 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_LeroyPostBattle:
+# 70 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
+	.string "Seeing someone like you should please\n"
 # 71 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "Alguien como tú le tiene que gustar\n"
-# 72 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "por fuerza al MAESTRO TRETA.$"
+	.string "the TRICK MASTER.$"

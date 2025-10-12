@@ -69,24 +69,24 @@
 #define FLAG_HIDE_WALLY_111    				0x37
 #define FLAG_HIDE_WALLY_DEWFORD_TOWN	    0x38
 #define FLAG_DEWFORD_GRUNT				    0x39
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_HIDE_RALTS_102  0x3D
-#define FLAG_HIDE_ZIGZA_102	 0x3E
-#define FLAG_HIDE_BALL_102   0x3F
-#define FLAG_BALL_CATCH_102  0x40
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
+#define FLAG_HIDE_WALLY_LAVARIDGE    		0x3A // Unused Flag
+#define FLAG_UNUSED_0x03B    				0x3B // Unused Flag
+#define FLAG_UNUSED_0x03C    				0x3C // Unused Flag
+#define FLAG_HIDE_RALTS_102  				0x3D
+#define FLAG_HIDE_ZIGZA_102	 				0x3E
+#define FLAG_HIDE_BALL_102   				0x3F
+#define FLAG_BALL_CATCH_102					0x40
+#define FLAG_SECONDMART      				0x41 // Unused Flag
+#define FLAG_HIDE_NORMAN_SPECIAL_DADS_GYM   0x42 // Unused Flag
+#define FLAG_HIDE_PLAYER_SPECIAL_DADS_GYM   0x43 // Unused Flag
+#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_DELTA    0x44 // Unused Flag
+#define FLAG_RIVAL_110_SAD    					0x45 // Unused Flag
+#define FLAG_GOTTEN_EV_TRAINING    		    	0x46 // Unused Flag
+#define FLAG_TALKED_EVMAN    					0x47 // Unused Flag
+#define FLAG_TALKED_TRAININGMAN    				0x48 // Unused Flag
+#define FLAG_AQUA_HIDEOUT_SET_DELTA_DIVISION    0x49 // Unused Flag
+#define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNTS_BLOCKING_ENTRANCE    0x4A // Unused Flag
+#define FLAG_HIDE_JIRACHI    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag
 #define FLAG_UNUSED_0x04E    0x4E // Unused Flag
@@ -124,7 +124,7 @@
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
-#define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
+#define FLAG_UNUSED_0x6B          			 0x6B
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
 #define FLAG_RECEIVED_HM_FLASH               0x6D
 #define FLAG_RECEIVED_HM_FLY                 0x6E
@@ -228,7 +228,7 @@
 #define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
 #define FLAG_GOT_BASEMENT_KEY_FROM_WATTSON   0xD0
-#define FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON 0xD1
+#define FLAG_UNUSED_0xD1					 0xD1
 #define FLAG_FAN_CLUB_STRENGTH_SHARED        0xD2 // Set when you rate the strength of another trainer in Lilycove's Trainer Fan Club.
 #define FLAG_DEFEATED_RIVAL_RUSTBORO         0xD3
 #define FLAG_RECEIVED_RED_OR_BLUE_ORB        0xD4
@@ -284,7 +284,7 @@
 #define FLAG_RECEIVED_COIN_CASE              0x102
 #define FLAG_RETURNED_RED_OR_BLUE_ORB        0x103
 #define FLAG_RECEIVED_TM_SNATCH              0x104
-#define FLAG_RECEIVED_TM_DIG                 0x105
+#define FLAG_UNUSED_0x105	                 0x105
 #define FLAG_RECEIVED_TM_BULLET_SEED         0x106
 #define FLAG_ENTERED_ELITE_FOUR              0x107
 #define FLAG_RECEIVED_TM_HIDDEN_POWER        0x108
@@ -292,7 +292,7 @@
 #define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
-#define FLAG_RECEIVED_TM_THIEF               0x10D
+#define FLAG_UNUSED_0x10D	               	 0x10D
 #define FLAG_CONTEST_SKETCH_CREATED          0x10E  // Set but never read
 #define FLAG_EVIL_TEAM_ESCAPED_STERN_SPOKE   0x10F
 #define FLAG_RECEIVED_EXP_SHARE              0x110
@@ -1500,7 +1500,7 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
+#define FLAG_REMOVE_WARP_FADE                       (SYSTEM_FLAGS + 0x85) // Unused Flag
 #define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
 #define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag

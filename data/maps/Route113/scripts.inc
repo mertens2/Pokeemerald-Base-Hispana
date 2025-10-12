@@ -273,60 +273,60 @@ Route113_EventScript_Wyatt::
 # 137 "data/maps/Route113/scripts.pory"
 Route113_Text_AshCanBeFashionedIntoGlass:
 # 138 "data/maps/Route113/scripts.pory"
-	.string "¡Hoy en día, la ciencia avanza\n"
+	.string "Wahahaha! Today's technology is a\n"
 # 139 "data/maps/Route113/scripts.pory"
-	.string "que es una barbaridad!\p"
+	.string "wondrous thing!\p"
 # 140 "data/maps/Route113/scripts.pory"
-	.string "Por ejemplo, mira esta ceniza volcánica.\n"
+	.string "Take this volcanic ash here.\n"
 # 141 "data/maps/Route113/scripts.pory"
-	.string "Se puede hacer cristal con ella.$"
+	.string "It can be fashioned into glass.$"
 # 142 "data/maps/Route113/scripts.pory"
 
 # 143 "data/maps/Route113/scripts.pory"
 Route113_Text_FunWalkingThroughAsh:
 # 144 "data/maps/Route113/scripts.pory"
-	.string "Caminar entre las cenizas del\n"
+	.string "It's fun walking through the volcano's\n"
 # 145 "data/maps/Route113/scripts.pory"
-	.string "volcán mola mogollón.\p"
+	.string "ashes on the ground and grass.\p"
 # 146 "data/maps/Route113/scripts.pory"
-	.string "¡Vas dejando huellas por todas partes!$"
+	.string "You can see where you walked--it's\n"
 # 147 "data/maps/Route113/scripts.pory"
-
+	.string "really neat!$"
 # 148 "data/maps/Route113/scripts.pory"
-Route113_Text_RouteSign111:
+
 # 149 "data/maps/Route113/scripts.pory"
-	.string "RUTA 113\n"
+Route113_Text_RouteSign111:
 # 150 "data/maps/Route113/scripts.pory"
-	.string "{RIGHT_ARROW} RUTA 111$"
+	.string "ROUTE 113\n"
 # 151 "data/maps/Route113/scripts.pory"
-
+	.string "{RIGHT_ARROW} ROUTE 111$"
 # 152 "data/maps/Route113/scripts.pory"
-Route113_Text_RouteSignFallarbor:
+
 # 153 "data/maps/Route113/scripts.pory"
-	.string "RUTA 113\n"
+Route113_Text_RouteSignFallarbor:
 # 154 "data/maps/Route113/scripts.pory"
-	.string "{LEFT_ARROW} PUEBLO PARDAL$"
+	.string "ROUTE 113\n"
 # 155 "data/maps/Route113/scripts.pory"
-
+	.string "{LEFT_ARROW} FALLARBOR TOWN$"
 # 156 "data/maps/Route113/scripts.pory"
-Route113_Text_TrainerTipsRegisterKeyItems:
-# 157 "data/maps/Route113/scripts.pory"
-	.string "PISTAS para ENTRENADORES\p"
-# 158 "data/maps/Route113/scripts.pory"
-	.string "Puedes asignar uno de los OBJETOS\n"
-# 159 "data/maps/Route113/scripts.pory"
-	.string "CLAVE de la MOCHILA al Botón SELECT.\p"
-# 160 "data/maps/Route113/scripts.pory"
-	.string "Para usar ese objeto después, sólo\n"
-# 161 "data/maps/Route113/scripts.pory"
-	.string "tendrás que pulsar SELECT.$"
-# 162 "data/maps/Route113/scripts.pory"
 
+# 157 "data/maps/Route113/scripts.pory"
+Route113_Text_TrainerTipsRegisterKeyItems:
+# 158 "data/maps/Route113/scripts.pory"
+	.string "TRAINER TIPS\p"
+# 159 "data/maps/Route113/scripts.pory"
+	.string "You may register one of the KEY ITEMS\n"
+# 160 "data/maps/Route113/scripts.pory"
+	.string "in your BAG as SELECT.\p"
+# 161 "data/maps/Route113/scripts.pory"
+	.string "Simply press SELECT to use\n"
+# 162 "data/maps/Route113/scripts.pory"
+	.string "the registered item conveniently.$"
 # 163 "data/maps/Route113/scripts.pory"
-Route113_Text_GlassWorkshopSign:
+
 # 164 "data/maps/Route113/scripts.pory"
-	.string "TALLER de VIDRIO\n"
+Route113_Text_GlassWorkshopSign:
 # 165 "data/maps/Route113/scripts.pory"
-	.string "“Creamos objetos de cristal con\l"
+	.string "GLASS WORKSHOP\n"
 # 166 "data/maps/Route113/scripts.pory"
-	.string "ceniza volcánica.”$"
+	.string "“Turning Volcanic Ash into Glass Items”$"
