@@ -7,203 +7,193 @@ MauvilleCity_InverseBattle_Scripts_Psychic::
 	lockall
 # 6 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_0
-# 7 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	dynmultichoice 15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MauvilleCity_InverseBattle_Scripts_Psychic_Text_1, MauvilleCity_InverseBattle_Scripts_Psychic_Text_2, MauvilleCity_InverseBattle_Scripts_Psychic_Text_3, MauvilleCity_InverseBattle_Scripts_Psychic_Text_4
 # 8 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MauvilleCity_InverseBattle_Scripts_Psychic_Text_1, MauvilleCity_InverseBattle_Scripts_Psychic_Text_2, MauvilleCity_InverseBattle_Scripts_Psychic_Text_3
 # 9 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	switch VAR_RESULT
+# 10 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	case 0, MauvilleCity_InverseBattle_Scripts_Psychic_2
-# 30 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 67 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	case 1, MauvilleCity_InverseBattle_Scripts_Psychic_3
-# 51 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 2, MauvilleCity_InverseBattle_Scripts_Psychic_4
-# 59 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 3, MauvilleCity_InverseBattle_Scripts_Psychic_5
+# 75 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	case 3, MauvilleCity_InverseBattle_Scripts_Psychic_4
 	return
 
 MauvilleCity_InverseBattle_Scripts_Psychic_2:
-# 10 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_5
-# 12 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	dynmultichoice 15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MauvilleCity_InverseBattle_Scripts_Psychic_Text_6, MauvilleCity_InverseBattle_Scripts_Psychic_Text_7, MauvilleCity_InverseBattle_Scripts_Psychic_Text_8, MauvilleCity_InverseBattle_Scripts_Psychic_Text_4
+# 11 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_4
 # 13 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	switch VAR_RESULT
+	dynmultichoice 15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MauvilleCity_InverseBattle_Scripts_Psychic_Text_5, MauvilleCity_InverseBattle_Scripts_Psychic_Text_6, MauvilleCity_InverseBattle_Scripts_Psychic_Text_7, MauvilleCity_InverseBattle_Scripts_Psychic_Text_3
 # 14 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 0, MauvilleCity_InverseBattle_Scripts_Psychic_8
-# 18 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 1, MauvilleCity_InverseBattle_Scripts_Psychic_9
-# 22 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 2, MauvilleCity_InverseBattle_Scripts_Psychic_10
-# 26 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 3, MauvilleCity_InverseBattle_Scripts_Psychic_11
-MauvilleCity_InverseBattle_Scripts_Psychic_6:
+	switch VAR_RESULT
+# 15 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	case 0, MauvilleCity_InverseBattle_Scripts_Psychic_7
+# 24 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	case 1, MauvilleCity_InverseBattle_Scripts_Psychic_8
+# 33 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	case 2, MauvilleCity_InverseBattle_Scripts_Psychic_9
+# 42 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	case 3, MauvilleCity_InverseBattle_Scripts_Psychic_10
+MauvilleCity_InverseBattle_Scripts_Psychic_5:
 	return
 
 MauvilleCity_InverseBattle_Scripts_Psychic_3:
-# 31 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 68 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_11
+# 71 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_12
-# 33 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	dynmultichoice 15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MauvilleCity_InverseBattle_Scripts_Psychic_Text_6, MauvilleCity_InverseBattle_Scripts_Psychic_Text_7, MauvilleCity_InverseBattle_Scripts_Psychic_Text_8, MauvilleCity_InverseBattle_Scripts_Psychic_Text_4
-# 34 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	switch VAR_RESULT
-# 35 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 0, MauvilleCity_InverseBattle_Scripts_Psychic_14
-# 39 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 1, MauvilleCity_InverseBattle_Scripts_Psychic_15
-# 43 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 2, MauvilleCity_InverseBattle_Scripts_Psychic_16
-# 47 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	case 3, MauvilleCity_InverseBattle_Scripts_Psychic_17
-MauvilleCity_InverseBattle_Scripts_Psychic_12:
-	return
-
-MauvilleCity_InverseBattle_Scripts_Psychic_4:
-# 52 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_13
-# 55 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_14
-# 56 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 72 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	releaseall
-# 57 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 73 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	end
 	return
 
-MauvilleCity_InverseBattle_Scripts_Psychic_5:
-# 60 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_4:
+# 76 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	goto MauvilleCity_InverseBattle_Scripts_PsychicEnd
 	return
 
+MauvilleCity_InverseBattle_Scripts_Psychic_7:
+# 16 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_8
+# 17 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	setflag B_FLAG_INVERSE_BATTLE
+# 18 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	setvar VAR_INVERSE_BATTLE_TYPE, 1
+# 19 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	random 6
+# 20 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	copyvar VAR_INVERSE_BATTLE_FOE, VAR_RESULT
+# 21 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	warp MAP_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY, 4, 6
+	goto MauvilleCity_InverseBattle_Scripts_Psychic_5
+
 MauvilleCity_InverseBattle_Scripts_Psychic_8:
-# 15 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 25 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_9
-	goto MauvilleCity_InverseBattle_Scripts_Psychic_6
+# 26 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	setflag B_FLAG_INVERSE_BATTLE
+# 27 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	setvar VAR_INVERSE_BATTLE_TYPE, 2
+# 28 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	random 6
+# 29 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	copyvar VAR_INVERSE_BATTLE_FOE, VAR_RESULT
+# 30 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	warp MAP_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY, 4, 6
+	goto MauvilleCity_InverseBattle_Scripts_Psychic_5
 
 MauvilleCity_InverseBattle_Scripts_Psychic_9:
-# 19 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 34 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_10
-	goto MauvilleCity_InverseBattle_Scripts_Psychic_6
+# 35 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	setflag B_FLAG_INVERSE_BATTLE
+# 36 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	setvar VAR_INVERSE_BATTLE_TYPE, 3
+# 37 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	random 6
+# 38 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	copyvar VAR_INVERSE_BATTLE_FOE, VAR_RESULT
+# 39 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	warp MAP_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY, 4, 6
+	goto MauvilleCity_InverseBattle_Scripts_Psychic_5
 
 MauvilleCity_InverseBattle_Scripts_Psychic_10:
-# 23 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_11
-	goto MauvilleCity_InverseBattle_Scripts_Psychic_6
-
-MauvilleCity_InverseBattle_Scripts_Psychic_11:
-# 27 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 43 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	goto MauvilleCity_InverseBattle_Scripts_PsychicEnd
-	goto MauvilleCity_InverseBattle_Scripts_Psychic_6
-
-MauvilleCity_InverseBattle_Scripts_Psychic_14:
-# 36 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_9
-	goto MauvilleCity_InverseBattle_Scripts_Psychic_12
-
-MauvilleCity_InverseBattle_Scripts_Psychic_15:
-# 40 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_10
-	goto MauvilleCity_InverseBattle_Scripts_Psychic_12
-
-MauvilleCity_InverseBattle_Scripts_Psychic_16:
-# 44 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	msgbox MauvilleCity_InverseBattle_Scripts_Psychic_Text_11
-	goto MauvilleCity_InverseBattle_Scripts_Psychic_12
-
-MauvilleCity_InverseBattle_Scripts_Psychic_17:
-# 48 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	goto MauvilleCity_InverseBattle_Scripts_PsychicEnd
-	goto MauvilleCity_InverseBattle_Scripts_Psychic_12
+	goto MauvilleCity_InverseBattle_Scripts_Psychic_5
 
 
 MauvilleCity_InverseBattle_Scripts_PsychicEnd::
-# 66 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 82 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_PsychicEnd_Text_0
-# 67 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 83 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	closemessage
-# 68 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 84 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	releaseall
 	end
 
 
 MauvilleCity_InverseBattle_Scripts_Woman1::
-# 73 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 89 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	faceplayer
-# 74 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 90 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	lockall
 	checkitem ITEM_TM49
 # 0 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MauvilleCity_InverseBattle_Scripts_Woman1_2
-# 90 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 106 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Woman1_Text_3
 MauvilleCity_InverseBattle_Scripts_Woman1_1:
-# 92 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 108 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	closemessage
-# 93 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 109 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	releaseall
 	end
 
 MauvilleCity_InverseBattle_Scripts_Woman1_2:
-# 76 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 92 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Woman1_Text_0, MSGBOX_INTERRUPT
-# 78 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 94 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	playse SE_PIN
-# 79 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 95 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	applymovement 4, Common_Movement_ExclamationMark
-# 80 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 96 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	applymovement 4, Common_Movement_FacePlayer
-# 81 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 97 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	waitmovement 0
-# 82 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 98 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Woman1_Text_1
-# 85 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 101 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	giveitem ITEM_TM49
-# 86 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 102 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Woman1_Text_2
 	goto MauvilleCity_InverseBattle_Scripts_Woman1_1
 
 
 MauvilleCity_InverseBattle_Scripts_Woman2::
-# 98 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 114 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	faceplayer
-# 99 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 115 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	lockall
 	checkitem ITEM_TM49
 # 0 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MauvilleCity_InverseBattle_Scripts_Woman2_2
-# 105 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 121 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Woman2_Text_0
 MauvilleCity_InverseBattle_Scripts_Woman2_1:
-# 107 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 123 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	closemessage
-# 108 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 124 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	releaseall
 	end
 
 MauvilleCity_InverseBattle_Scripts_Woman2_2:
-# 101 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 117 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Woman1_Text_2
 	goto MauvilleCity_InverseBattle_Scripts_Woman2_1
 
 
 MauvilleCity_InverseBattle_Scripts_Man1::
-# 113 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 129 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	faceplayer
-# 114 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 130 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	lockall
-# 115 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 131 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Man1_Text_0
-# 117 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 133 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	closemessage
-# 118 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 134 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	releaseall
 	end
 
 
 MauvilleCity_InverseBattle_Scripts_Man2::
-# 123 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 139 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	faceplayer
-# 124 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 140 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	lockall
 	setgetobjectflags VAR_LAST_TALKED, 2, TRUE, GET_EVENT_FLAG
 # 0 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
@@ -213,44 +203,44 @@ MauvilleCity_InverseBattle_Scripts_Man2::
 # 0 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne MauvilleCity_InverseBattle_Scripts_Man2_3
-# 151 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 167 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Man2_Text_2
-# 161 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 177 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	setgetobjectflags VAR_LAST_TALKED, 1, TRUE, SET_EVENT_FLAG
 MauvilleCity_InverseBattle_Scripts_Man2_1:
-# 163 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 179 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	closemessage
-# 164 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 180 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	releaseall
-# 165 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 181 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	end
 
 MauvilleCity_InverseBattle_Scripts_Man2_2:
-# 128 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 144 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Man2_Text_0
 	goto MauvilleCity_InverseBattle_Scripts_Man2_1
 
 MauvilleCity_InverseBattle_Scripts_Man2_3:
-# 138 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 154 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Man2_Text_1
-# 146 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 162 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	setgetobjectflags VAR_LAST_TALKED, 2, TRUE, SET_EVENT_FLAG
 	goto MauvilleCity_InverseBattle_Scripts_Man2_1
 
 
 MauvilleCity_InverseBattle_Scripts_Krokorok::
-# 170 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 186 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	faceplayer
-# 171 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 187 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	lockall
-# 172 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 188 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	playmoncry SPECIES_KROKOROK, CRY_MODE_NORMAL
-# 173 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 189 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	msgbox MauvilleCity_InverseBattle_Scripts_Krokorok_Text_0
-# 174 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 190 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	waitmoncry
-# 175 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 191 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	releaseall
 	end
 
@@ -263,68 +253,56 @@ MauvilleCity_InverseBattle_Scripts_Psychic_Text_0:
 	.string "¿Necesitas algo?$"
 
 MauvilleCity_InverseBattle_Scripts_Psychic_Text_1:
-# 7 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	.string "Solitario$"
+# 8 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	.string "Jugar$"
 
 MauvilleCity_InverseBattle_Scripts_Psychic_Text_2:
-# 7 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	.string "Con Amigos$"
-
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_3:
-# 7 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 8 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¿Qué es esto?$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_4:
-# 7 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_3:
+# 8 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Nada, disculpe$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_5:
-# 10 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	.string "Ah, ¡Así que jugarás sol{OA}!\n"
-	.string "Está bien, probarás suerte contra\l"
-	.string "nuestros competidores.\p"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_4:
+# 11 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+	.string "Ah, ¡Así que probarás suerte contra\n"
+	.string "nuestros competidores!\p"
 	.string "¿En qué formato te gustaría\n"
 	.string "participar?$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_6:
-# 12 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_5:
+# 13 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Simples$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_7:
-# 12 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_6:
+# 13 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Dobles$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_8:
-# 12 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_7:
+# 13 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "1v1$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_9:
-# 15 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_8:
+# 16 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¡Simples, perfecto!\n"
 	.string "Justo estábamos esperando otr{OA}\l"
 	.string "combatiente, ¡Por aquí!$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_10:
-# 19 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_9:
+# 25 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¡Dobles, perfecto!\n"
 	.string "Justo estábamos esperando otr{OA}\l"
 	.string "combatiente, ¡Por aquí!$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_11:
-# 23 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_10:
+# 34 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¡1v1, perfecto!\n"
 	.string "Justo estábamos esperando otr{OA}\l"
 	.string "combatiente, ¡Por aquí!$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_12:
-# 31 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
-	.string "Ah, ¡Así que jugarás con amigos!\n"
-	.string "Será divertido, ¡Ojalá que le ganes!\p"
-	.string "¿En qué formato te gustaría\n"
-	.string "participar?$"
-
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_13:
-# 52 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_11:
+# 68 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Las Batallas Inversas son creación\n"
 	.string "nuestra, de los Psíquicos. ¡He venido\l"
 	.string "desde Kalos para popularizarlas!\p"
@@ -336,16 +314,16 @@ MauvilleCity_InverseBattle_Scripts_Psychic_Text_13:
 	.string "Pokémon tipo Fuego serán débiles a\l"
 	.string "ataques tipo Planta!$"
 
-MauvilleCity_InverseBattle_Scripts_Psychic_Text_14:
-# 55 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+MauvilleCity_InverseBattle_Scripts_Psychic_Text_12:
+# 71 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¡Esperamos verte pronto!$"
 
 MauvilleCity_InverseBattle_Scripts_PsychicEnd_Text_0:
-# 66 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 82 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¡No pasa nada, vuelva pronto!$"
 
 MauvilleCity_InverseBattle_Scripts_Woman1_Text_0:
-# 76 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 92 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Las recompensas por ganar en estos\n"
 	.string "Torneos son bastante buenas para ser\l"
 	.string "tan baratos…\p"
@@ -353,7 +331,7 @@ MauvilleCity_InverseBattle_Scripts_Woman1_Text_0:
 	.string "ganadores adultos los usan-{PAUSE 15}$"
 
 MauvilleCity_InverseBattle_Scripts_Woman1_Text_1:
-# 82 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 98 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¡NO DIGAS ESO EN FRENTE DE UN{A} NIÑ{OA}!\p"
 	.string "……… {COLOR LIGHT_GRAY SHADOW WHITE}Justo de esta me tenía que\n"
 	.string "enamorar……\p"
@@ -363,7 +341,7 @@ MauvilleCity_InverseBattle_Scripts_Woman1_Text_1:
 	.string "Ten esto para compensártelo.$"
 
 MauvilleCity_InverseBattle_Scripts_Woman1_Text_2:
-# 86 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 102 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Robo es un movimiento que te permite…\n"
 	.string "Robar… Los efectos de los\l"
 	.string "movimientos de Estado que use\l"
@@ -375,19 +353,19 @@ MauvilleCity_InverseBattle_Scripts_Woman1_Text_2:
 	.string "a mi novia…$"
 
 MauvilleCity_InverseBattle_Scripts_Woman1_Text_3:
-# 90 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 106 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¡Disculpa lo de antes! ¡Me refería\n"
 	.string "monetariamente!$"
 
 MauvilleCity_InverseBattle_Scripts_Woman2_Text_0:
-# 105 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 121 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Mi novia y yo amamos las Batallas\n"
 	.string "Dobles, así que un lugar así de raro\l"
 	.string "es bueno para variar un poco, ¡Y las\l"
 	.string "recompensas son increíbles!$"
 
 MauvilleCity_InverseBattle_Scripts_Man1_Text_0:
-# 115 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 131 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¿¡Batallas Inversas!? ¡Qué locura!\p"
 	.string "Pobres Pokémon tipo Acero, todas esas\n"
 	.string "Resistencias que tiene…\p"
@@ -395,11 +373,11 @@ MauvilleCity_InverseBattle_Scripts_Man1_Text_0:
 	.string "lástima!$"
 
 MauvilleCity_InverseBattle_Scripts_Man2_Text_0:
-# 128 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 144 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Malditos Emolgas…$"
 
 MauvilleCity_InverseBattle_Scripts_Man2_Text_1:
-# 138 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 154 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¿Que por qué quiero vengarme de los\n"
 	.string "Emolgas?\p"
 	.string "¡Porque es difícil derrotarlos con un\n"
@@ -407,7 +385,7 @@ MauvilleCity_InverseBattle_Scripts_Man2_Text_1:
 	.string "arreglado!$"
 
 MauvilleCity_InverseBattle_Scripts_Man2_Text_2:
-# 151 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 167 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "¡Vine desde Unova junto a mi Krokorok\n"
 	.string "cuando me enteré de este lugar!\p"
 	.string "Batallas donde un tipo Tierra tiene\n"
@@ -415,5 +393,5 @@ MauvilleCity_InverseBattle_Scripts_Man2_Text_2:
 	.string "¡Al fin me vengaré de los Emolgas!$"
 
 MauvilleCity_InverseBattle_Scripts_Krokorok_Text_0:
-# 173 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
+# 189 "data/maps/MauvilleCity_InverseBattle/scripts.pory"
 	.string "Krooook…$"

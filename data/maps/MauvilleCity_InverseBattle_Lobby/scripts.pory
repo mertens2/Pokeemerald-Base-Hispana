@@ -1,0 +1,153 @@
+mapscripts MauvilleCity_InverseBattle_Lobby_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_INVERSE_BATTLE_TYPE, 1 {
+            lock
+			call (MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle)
+			msgbox("Algo malo pasó.")
+            release
+			fadescreen(FADE_TO_BLACK)
+			warp(MAP_MAUVILLE_CITY_INVERSE_BATTLE, 9, 8)
+        }
+    ]
+}
+// torneo
+
+script MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle {
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox("La batalla emperzará.")
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	setvar(VAR_INVERSE_BATTLE_TYPE, 0)
+	switch(var(VAR_INVERSE_BATTLE_FOE)){
+		case 0:
+			cleartrainerflag(TRAINER_VALERIE_1)
+			trainerbattle_single (TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			break
+		case 1:
+			cleartrainerflag(TRAINER_CINDY_2)
+			trainerbattle_single (TRAINER_CINDY_2, "¡Mi estrategia te paralizará!", "Ah, pues nada.", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			break
+		case 2:
+			cleartrainerflag(TRAINER_GRUNT_SPACE_CENTER_2)
+			trainerbattle_single (TRAINER_GRUNT_SPACE_CENTER_2, "¿Qué? ¡Tengo hobbies!", "Soy terrible en mis\nhobbies…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			break
+		case 3:
+			cleartrainerflag(TRAINER_VALERIE_1)
+			trainerbattle_single (TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			break
+		case 4:
+			cleartrainerflag(TRAINER_CINDY_2)
+			trainerbattle_single (TRAINER_CINDY_2, "¡Mi estrategia te paralizará!", "Ah, pues nada.", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			break
+		default:
+			cleartrainerflag(TRAINER_GRUNT_SPACE_CENTER_2)
+			trainerbattle_single (TRAINER_GRUNT_SPACE_CENTER_2, "¿Qué? ¡Tengo hobbies!", "Soy terrible en mis\nhobbies…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			break
+	}
+	return
+}
+
+script MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle {
+	addvar(VAR_WINNING_STREAK, 1)
+	if (var(VAR_WINNING_STREAK) >= 3){
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		msgbox(format("¡Ganaste el torneo!\p¡Quedaste en primer lugar!"))
+		random(4)
+		switch(var(VAR_RESULT))
+		{
+			case 0:
+				giveitem(ITEM_BIG_NUGGET, 5)
+				break
+			case 1:
+				giveitem(ITEM_SACRED_ASH, 1)
+				break
+			case 2:
+				msgbox(format("¡Estás de suerte! ¡Puedes elegir tu recompensa de esta lista!"))
+				dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Piedra Fuego", "Piedra Agua", "Piedra Trueno", "Piedra Hoja", "Piedra Lunar")
+				switch(var(VAR_RESULT)){
+					case 0:
+						giveitem(ITEM_FIRE_STONE, 1)
+						break
+					case 1:
+						giveitem(ITEM_WATER_STONE, 1)
+						break
+					case 2:
+						giveitem(ITEM_THUNDER_STONE, 1)
+						break
+					case 3:
+						giveitem(ITEM_LEAF_STONE, 1)
+						break
+					case 4:
+						giveitem(ITEM_MOON_STONE,1)
+						break
+				}
+				msgbox(format("¡Espero disfrute su elección! ¡No hay cambios!"))
+				break
+			case 3:
+				msgbox(format("¡Estás de suerte! ¡Puedes elegir tu recompensa de esta lista!"))
+				dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Piedra Solar", "Piedra Alba", "Piedra Día", "Piedra Noche", "Piedra Hielo")
+				switch(var(VAR_RESULT)){
+					case 0:
+						giveitem(ITEM_SUN_STONE, 1)
+						break
+					case 1:
+						giveitem(ITEM_DAWN_STONE, 1)
+						break
+					case 2:
+						giveitem(ITEM_SHINY_STONE, 1)
+						break
+					case 3:
+						giveitem(ITEM_DUSK_STONE, 1)
+						break
+					case 4:
+						giveitem(ITEM_ICE_STONE,1)
+						break
+				}
+				msgbox(format("¡Espero disfrute su elección! ¡No hay cambios!"))
+				break
+		}
+		msgbox("¡Vuelve pronto a participar!")
+		closemessage
+		delay(16)
+		setvar(VAR_WINNING_STREAK, 0)
+		fadescreen(FADE_TO_BLACK)
+		warp(MAP_MAUVILLE_CITY_INVERSE_BATTLE, 9, 8)
+		end
+	}
+	clearflag(B_FLAG_INVERSE_BATTLE)
+	random(4)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("¡Aquí tienes, por ganar!"))
+	switch(var(VAR_RESULT))
+	{
+		case 0:
+			giveitem(ITEM_RED_SHARD, 1)
+			break
+		case 1:
+			giveitem(ITEM_BLUE_SHARD, 1)
+			break
+		case 2:
+			giveitem(ITEM_GREEN_SHARD, 1)
+			break
+		case 3:
+			giveitem(ITEM_YELLOW_SHARD, 1)
+			break
+		
+	}
+	msgbox("¿Quieres seguir?",MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES){
+		random(6)
+		copyvar(VAR_INVERSE_BATTLE_FOE, VAR_RESULT)
+		call(MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle)
+	}
+	msgbox("¡Vuelve pronto a participar!")
+	closemessage
+	delay(16)
+	setvar(VAR_WINNING_STREAK, 0)
+	fadescreen(FADE_TO_BLACK)
+	warp(MAP_MAUVILLE_CITY_INVERSE_BATTLE, 9, 8)
+	end
+}

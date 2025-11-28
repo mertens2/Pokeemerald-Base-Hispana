@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_WEATHER_INSTITUTE_2F_GRUNT_1",
+      "local_id": "LOCALID_WEATHER_INSTITUTE_2F_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 15,
       "y": 6,
@@ -29,7 +29,7 @@
       "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
     },
     {
-      "local_id": "LOCALID_WEATHER_INSTITUTE_2F_GRUNT_2",
+      "local_id": "LOCALID_WEATHER_INSTITUTE_2F_GRUNT_3",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 10,
       "y": 8,
@@ -48,7 +48,7 @@
       "x": 4,
       "y": 6,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -97,7 +97,7 @@
       "flag": "FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS"
     },
     {
-      "local_id": "LOCALID_WEATHER_INSTITUTE_2F_GRUNT_3",
+      "local_id": "LOCALID_WEATHER_INSTITUTE_2F_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 16,
       "y": 6,
@@ -122,6 +122,34 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route119_WeatherInstitute_2F_EventScript_Grunt5",
+      "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_B",
+      "graphics_id": "OBJ_EVENT_GFX_WINONA",
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_A",
+      "graphics_id": "OBJ_EVENT_GFX_WINONA",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
       "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
     }
   ],

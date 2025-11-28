@@ -2148,9 +2148,20 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Sableye
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+El Inmortal (Swadloon)
+Level: 20
+IVs: 0 HP / 31 Atk / 0 Def / 31 SpA / 0 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe
+- U-Turn
+- Leaf Blade
+- Synthesis
+
+El Hacker (Avalugg-Hisui)
+Level: 15
+- Splash
+- Celebrate
+- Hold Hands
+- Bloom Doom
 
 === TRAINER_TASHA ===
 Name: TASHA
@@ -2314,22 +2325,22 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
-Level: 11
+Linoone @ Nugget
+Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Extreme Speed
 - Thunderbolt
 - Surf
-- Rock Smash
+- Hyper Beam
 
-Zigzagoon @ Big Nugget
-Level: 11
+Linoone-Galar @ Big Nugget
+Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Shiny: Yes
 - Ice Beam
 - Thunderbolt
 - Surf
-- Rock Smash
+- Hyper Voice
 
 === TRAINER_BRIANNA ===
 Name: BRIANNA
@@ -5022,6 +5033,7 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
+Difficulty: Normal
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
 
@@ -5042,6 +5054,43 @@ Ball: Luxury Ball
 - Metal Claw
 - Smack Down
 - Roost
+
+Nosepass @ Oran Berry
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dusk Ball
+- Thunder Punch
+- Iron Defense
+- Headbutt
+- Smack Down
+
+=== TRAINER_ROXANNE_1 ===
+Name: Roxanne
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Difficulty: Hard
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Archen @ Oran Berry
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Luxury Ball
+- Mud Slap
+- Metal Claw
+- Smack Down
+- Roost
+
+Lileep
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Poke Ball
+- Powder Snow
+- Ingrain
+- Absorb
+- Smack Down
 
 Nosepass @ Oran Berry
 Level: 15
@@ -5188,7 +5237,7 @@ Ball: Dusk Ball
 - Zen Headbutt
 
 Dudunsparce @ Sitrus Berry
-Level: 31
+Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Dusk Ball
 - Lunge
@@ -5197,7 +5246,7 @@ Ball: Dusk Ball
 - Roost
 
 Stoutland @ Leftovers
-Level: 31
+Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Friend Ball
 - Crunch
@@ -5206,7 +5255,7 @@ Ball: Friend Ball
 - Baby Doll Eyes
 
 Obstagoon @ Flame Orb
-Level: 32
+Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Dusk Ball
 - Night Slash
@@ -5215,7 +5264,7 @@ Ball: Dusk Ball
 - Swords Dance
 
 Slaking @ Sitrus Berry
-Level: 32
+Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Repeat Ball
 - Shadow Claw
@@ -5233,7 +5282,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Risky
 
 Unfezant @ Razor Claw
-Level: 34
+Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Dream Ball
 - Tailwind
@@ -5242,7 +5291,7 @@ Ball: Dream Ball
 - Blaze Kick
 
 Gliscor @ Toxic Orb
-Level: 34
+Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Dream Ball
 - Smack Down
@@ -5251,7 +5300,7 @@ Ball: Dream Ball
 - Fire Fang
 
 Pelipper @ Leftovers
-Level: 35
+Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Dream Ball
 - Scald
@@ -5260,7 +5309,7 @@ Ball: Dream Ball
 - Aerial Ace
 
 Skarmory @ Sitrus Berry
-Level: 35
+Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Dream Ball
 - Spikes
@@ -5269,7 +5318,7 @@ Ball: Dream Ball
 - Aerial Ace
 
 Altaria @ Altarianite
-Level: 36
+Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Dream Ball
 - Earthquake
@@ -5287,7 +5336,7 @@ Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
 
 Gardevoir @ Gardevoirite
-Level: 42
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Friend Ball
 - Psychic
@@ -5296,7 +5345,7 @@ Ball: Friend Ball
 - Focus Blast
 
 Xatu @ Choice Band
-Level: 42
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Friend Ball
 - Psychic
@@ -5305,7 +5354,7 @@ Ball: Friend Ball
 - Calm Mind
 
 Hatterene @ Choice Specs
-Level: 42
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Friend Ball
 - Psychic
@@ -5314,7 +5363,7 @@ Ball: Friend Ball
 - Calm Mind
 
 Lunatone @ Sitrus Berry
-Level: 45
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Friend Ball
 - Light Screen
@@ -5323,7 +5372,7 @@ Ball: Friend Ball
 - Calm Mind
 
 Solrock @ Sitrus Berry
-Level: 45
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Friend Ball
 - Sunny Day
@@ -5341,7 +5390,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
 
 Azumarill @ Life Orb
-Level: 45
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Love Ball
 - Scald
@@ -5350,7 +5399,7 @@ Ball: Love Ball
 - Play Rough
 
 Dracovish @ Choice Band
-Level: 45
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Shiny: Yes
 Ball: Love Ball
@@ -5360,7 +5409,7 @@ Ball: Love Ball
 - Low Kick
 
 Primarina @ Life Orb
-Level: 48
+Level: 52
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Love Ball
 - Sparkling Aria
@@ -5369,7 +5418,7 @@ Ball: Love Ball
 - Scald
 
 Toxapex @ Black Sludge
-Level: 48
+Level: 52
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Love Ball
 - Scald
@@ -5378,7 +5427,7 @@ Ball: Love Ball
 - Toxic Spikes
 
 Kingdra @ Chesto Berry
-Level: 50
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Love Ball
 - Rain Dance
@@ -5387,7 +5436,7 @@ Ball: Love Ball
 - Rest
 
 Swampert @ Swampertite
-Level: 50
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Shiny: Yes
 Ball: Love Ball
@@ -11660,14 +11709,14 @@ AI: Check Bad Move / Try To Faint / Check Viability
 
 Larvesta
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 252 SpA / 252 Spe / 4 HP
 - Struggle Bug
 - Sunny Day
 - Ember
 
 Torracat
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
 - Slash
 - Fire Fang
 - Crunch
@@ -11692,11 +11741,13 @@ AI: Check Bad Move
 
 Budew
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 0 Atk / 31 Def / 0 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 128 Def / 128 SpD
 
 Zigzagoon-Galar
 Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 0 Atk / 31 Def / 0 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 128 Def / 128 SpD
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -11707,13 +11758,20 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Lotad
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Shroomish
+Scorpio (Gligar) (M)
 Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 64 Atk / 64 Spe
+- Tackle
+- Bug Bite
+
+Hydro (Marill) (M) @ Mystic Water
+Level: 9
+Ability: Huge Power
+EVs: 128 Atk
+- Defense Curl
+- Rollout
+- Glitter Punch
+- Aqua Jet
 
 === TRAINER_JANICE ===
 Name: JANICE
@@ -12208,7 +12266,7 @@ Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CLARK ===
-Name: CLARK
+Name: Kuki
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -12216,9 +12274,12 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
-Level: 8
+Gordis (Dedenne) (F)
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Nuzzle
+- Glitter Punch
+
 
 === TRAINER_ERIC ===
 Name: ERIC
@@ -14601,13 +14662,13 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cacnea
+Level: 9
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Lotad
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Skiddo
+Level: 9
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MELINA ===
 Name: MELINA
@@ -15412,13 +15473,13 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Pikachu
+Pikachu @ Light Ball
 Level: 39
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder
-- Slam
-- Rain Dance
-- Shock Wave
+IVs: 0 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 31 Spe
+- Electroweb
+- Thunderbolt
+- Nuzzle
+- Nasty Plot
 
 Flaaffy
 Level: 41
@@ -15464,9 +15525,9 @@ AI: Check Bad Move / Try To Faint / Check Viability
 
 Raichu
 Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
 - Thunder
-- Slam
+- Volt Tackle
 - Rain Dance
 - Protect
 
@@ -15522,9 +15583,9 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Raichu
 Level: 51
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
 - Thunder
-- Slam
+- Volt Tackle
 - Rain Dance
 - Protect
 
@@ -16856,7 +16917,7 @@ Items: Potion
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
+Qwilfish
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
@@ -16864,7 +16925,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Aqua Jet
 - Fire Fang
 
-Corphish
+Crabrawler
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Swift
@@ -16882,7 +16943,7 @@ Items: Potion
 Double Battle: No
 AI: Check Bad Move / Prefer Highest Damage Move / Force Setup First Turn
 
-Carvanha
+Qwilfish-Hisui @ Eviolite
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Aqua Jet

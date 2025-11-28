@@ -652,7 +652,7 @@ void HideSecretBaseDecorationSprites(void)
 
 void SetSecretBaseOwnerGfxId(void)
 {
-    VarSet(VAR_OBJ_GFX_ID_F, sSecretBaseOwnerGfxIds[GetSecretBaseOwnerType(VarGet(VAR_CURRENT_SECRET_BASE))]);
+    VarSet(VAR_OBJ_GFX_ID_1F, sSecretBaseOwnerGfxIds[GetSecretBaseOwnerType(VarGet(VAR_CURRENT_SECRET_BASE))]);
 }
 
 void SetCurSecretBaseIdFromPosition(const struct MapPosition *position, const struct MapEvents *events)

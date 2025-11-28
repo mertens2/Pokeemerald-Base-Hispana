@@ -127,222 +127,240 @@ MeteorFalls_1F_2R_EventScript_RematchJay::
 # 64 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 MeteorFalls_1F_2R_Text_NicolasIntro:
 # 65 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Aquí es donde los amantes de los\n"
+	.string "This is where we DRAGON users do our\n"
 # 66 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "DRAGONES entrenamos.\p"
+	.string "training.\p"
 # 67 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "A veces viene el CAMPEÓN de visita.\n"
+	.string "The CHAMPION even visits.\n"
 # 68 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¿Ves como somos algo especial?$"
+	.string "Now do you see how special it is here?$"
 # 69 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
 # 70 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 MeteorFalls_1F_2R_Text_NicolasDefeat:
 # 71 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¡Uf!\n"
+	.string "Urgh!\n"
 # 72 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¡No esperaba que fueras tan fuerte!$"
+	.string "I didn't expect you to be so strong!$"
 # 73 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
 # 74 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 MeteorFalls_1F_2R_Text_NicolasPostBattle:
 # 75 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Te aguarda un camino largo y difícil.\p"
+	.string "The road ahead remains long and harsh.\p"
 # 76 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¿Cuándo lograré llegar triunfante\n"
+	.string "When will my POKéMON and I become\n"
 # 77 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "hasta el final con mis POKéMON?$"
+	.string "the best?$"
 # 78 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
 # 79 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 MeteorFalls_1F_2R_Text_NicolasRegister:
 # 80 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Quiero saber más sobre tus habilidades.\n"
+	.string "I want to know more about your power.\n"
 # 81 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Déjame registrarte en mi POKéNAV.$"
+	.string "Let me register you in my POKéNAV.$"
 # 82 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
 # 83 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 MeteorFalls_1F_2R_Text_NicolasRematchIntro:
 # 84 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Desde que nos conocimos, hemos\n"
+	.string "Since we met, we have trained hard\n"
 # 85 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "entrenado duro para ser los mejores.\p"
+	.string "with our sights on number one.\p"
 # 86 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¡Veamos cuánto hemos mejorado!$"
+	.string "Help us see how much stronger we've\n"
 # 87 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "become!$"
 # 88 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_NicolasRematchDefeat:
+
 # 89 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¡Uf!\n"
+MeteorFalls_1F_2R_Text_NicolasRematchDefeat:
 # 90 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¡No esperaba que fueras tan fuerte!$"
+	.string "Urgh!\n"
 # 91 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "I didn't expect you to be so strong!$"
 # 92 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_NicolasPostRematch:
+
 # 93 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Se ve que has estado entrenando\n"
+MeteorFalls_1F_2R_Text_NicolasPostRematch:
 # 94 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "mucho con tus POKéMON.\p"
+	.string "You've obviously kept up your\n"
 # 95 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¡Pero yo también puedo mejorar!$"
+	.string "POKéMON training.\p"
 # 96 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "So long as you remain strong, I, too,\n"
 # 97 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnIntro:
+	.string "can become stronger!$"
 # 98 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: Siempre hemos luchado a dúo.\n"
+
 # 99 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Juntos somos más fuertes.$"
+MeteorFalls_1F_2R_Text_JohnIntro:
 # 100 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "JOHN: We've always battled POKéMON\n"
 # 101 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnDefeat:
+	.string "together as a twosome.\l"
 # 102 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: Oh…\n"
+	.string "We've confidence in ourselves.$"
 # 103 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Hemos perdido, querida.$"
+
 # 104 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+MeteorFalls_1F_2R_Text_JohnDefeat:
 # 105 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnPostBattle:
+	.string "JOHN: Oh, my.\n"
 # 106 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: Llevamos cincuenta años casados.\p"
+	.string "We've lost, dear wife.$"
 # 107 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Y ahora que lo pienso… Todavía\n"
+
 # 108 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "no he vencido a mi mujer en combate.$"
+MeteorFalls_1F_2R_Text_JohnPostBattle:
 # 109 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "JOHN: We've been married for\n"
 # 110 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnNotEnoughMons:
+	.string "fifty years.\p"
 # 111 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: ¡Vaya, vaya! ¡Qué joven eres!\p"
+	.string "Come to think of it, I've yet to beat\n"
 # 112 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¿Quieres desafiarnos? Pues entonces\n"
+	.string "my dear wife in a battle.$"
 # 113 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "tendrás que volver con más POKéMON.$"
-# 114 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
+# 114 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+MeteorFalls_1F_2R_Text_JohnNotEnoughMons:
 # 115 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnRegister:
+	.string "JOHN: Well, well, what a young TRAINER!\p"
 # 116 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: Dime, si surgiera la oportunidad,\n"
+	.string "Will you battle with us? If so, you'll\n"
 # 117 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¿volverías a enfrentarte a nosotros?$"
+	.string "have to return with more POKéMON.$"
 # 118 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
 # 119 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JayIntro:
+MeteorFalls_1F_2R_Text_JohnRegister:
 # 120 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "NELA: Llevamos cincuenta años casados.\p"
+	.string "JOHN: Young TRAINER, if the chance\n"
 # 121 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "El vínculo que nos une como pareja\n"
+	.string "arises, will you battle with us again?$"
 # 122 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "es fuerte como un roble.$"
+
 # 123 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+MeteorFalls_1F_2R_Text_JayIntro:
 # 124 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JayDefeat:
+	.string "JAY: We've been married for\n"
 # 125 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "NELA: Oh…\n"
+	.string "fifty years.\p"
 # 126 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Hemos perdido, querido.$"
+	.string "The bond we share as a couple could\n"
 # 127 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "never be broken.$"
 # 128 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JayPostBattle:
+
 # 129 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "NELA: Cincuenta años de matrimonio…\p"
+MeteorFalls_1F_2R_Text_JayDefeat:
 # 130 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Cada vez que discutíamos,\n"
+	.string "JAY: Oh, dear.\n"
 # 131 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "lo resolvíamos con un combate POKéMON.$"
+	.string "We've lost, my dear husband.$"
 # 132 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
 # 133 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JayNotEnoughMons:
+MeteorFalls_1F_2R_Text_JayPostBattle:
 # 134 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "NELA: ¡Vaya, vaya! ¡Qué joven eres!\p"
+	.string "JAY: Fifty years of marriage…\p"
 # 135 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¿Quieres desafiarnos? Pues entonces\n"
+	.string "If we ever argued, we always settled\n"
 # 136 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "tendrás que volver con más POKéMON.$"
+	.string "it with a POKéMON battle…$"
 # 137 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
 # 138 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnRematchIntro:
+MeteorFalls_1F_2R_Text_JayNotEnoughMons:
 # 139 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: Siempre hemos luchado a dúo.\n"
+	.string "JAY: Well, well, aren't you a young\n"
 # 140 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Juntos somos más fuertes.$"
+	.string "TRAINER?\p"
 # 141 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "If you'd care to battle with us, you'll\n"
 # 142 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnRematchDefeat:
+	.string "have to come back with more POKéMON.$"
 # 143 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: Oh…\n"
+
 # 144 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Hemos perdido, querida.$"
+MeteorFalls_1F_2R_Text_JohnRematchIntro:
 # 145 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "JOHN: We've always battled POKéMON\n"
 # 146 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnPostRematch:
+	.string "together as a twosome.\l"
 # 147 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: Llevamos cincuenta años casados.\p"
+	.string "We've confidence in ourselves.$"
 # 148 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Y ahora que lo pienso… Mi mujer y yo\n"
+
 # 149 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "hemos combatido día sí y día no.$"
+MeteorFalls_1F_2R_Text_JohnRematchDefeat:
 # 150 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "JOHN: Oh, my.\n"
 # 151 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons:
+	.string "We've lost, dear wife.$"
 # 152 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "JULI: ¡Vaya, vaya! ¡Qué joven eres!\p"
+
 # 153 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¿Quieres desafiarnos? Pues entonces\n"
+MeteorFalls_1F_2R_Text_JohnPostRematch:
 # 154 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "tendrás que volver con más POKéMON.$"
+	.string "JOHN: Married for fifty years…\p"
 # 155 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "On reflection, the dear wife and I,\n"
 # 156 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JayRematchIntro:
+	.string "we battled day in and day out…$"
 # 157 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "NELA: Llevamos cincuenta años casados.\p"
+
 # 158 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Nos hemos apoyado el uno al otro\n"
+MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons:
 # 159 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "en las duras y en las maduras.$"
+	.string "JOHN: Well, well, what a young TRAINER!\p"
 # 160 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "Will you battle with us? If so, you'll\n"
 # 161 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JayRematchDefeat:
+	.string "have to return with more POKéMON.$"
 # 162 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "NELA: Oh…\n"
+
 # 163 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Hemos perdido, querido.$"
+MeteorFalls_1F_2R_Text_JayRematchIntro:
 # 164 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-
+	.string "JAY: We've been married for\n"
 # 165 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JayPostRematch:
+	.string "fifty years.\p"
 # 166 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "NELA: Cincuenta años de matrimonio…\n"
+	.string "We've supported each other all that\n"
 # 167 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Han pasado tantas cosas…\p"
+	.string "time. We've made ourselves strong.$"
 # 168 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Espero que siempre seamos\n"
-# 169 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "tan felices como hasta ahora.$"
-# 170 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
+# 169 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+MeteorFalls_1F_2R_Text_JayRematchDefeat:
+# 170 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+	.string "JAY: Oh, dear.\n"
 # 171 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons:
+	.string "We've lost, my dear husband.$"
 # 172 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "NELA: ¡Vaya, vaya! ¡Qué joven eres!\p"
+
 # 173 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "¿Quieres desafiarnos? Pues entonces\n"
+MeteorFalls_1F_2R_Text_JayPostRematch:
 # 174 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "tendrás que volver con más POKéMON.$"
+	.string "JAY: Fifty years of marriage…\n"
+# 175 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+	.string "Many things have happened.\p"
+# 176 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+	.string "I hope that we will continue to make\n"
+# 177 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+	.string "happy memories together.$"
+# 178 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+
+# 179 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons:
+# 180 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+	.string "JAY: Well, well, aren't you a young\n"
+# 181 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+	.string "TRAINER?\p"
+# 182 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+	.string "If you'd care to battle with us, you'll\n"
+# 183 "data/maps/MeteorFalls_1F_2R/scripts.pory"
+	.string "have to come back with more POKéMON.$"

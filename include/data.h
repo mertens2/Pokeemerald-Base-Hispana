@@ -48,6 +48,28 @@ struct TrainerBacksprite
     const union AnimCmd *const *const animation;
 };
 
+#define LEVEL_CAP_NO_BADGES 	10
+#define LEVEL_CAP_GYM_1 		15
+#define LEVEL_CAP_GYM_2 		18
+#define LEVEL_CAP_GYM_3 		22
+#define LEVEL_CAP_GYM_4 		30
+#define LEVEL_CAP_GYM_5 		34
+#define LEVEL_CAP_GYM_6 		40
+#define LEVEL_CAP_GYM_7		 	46
+#define LEVEL_CAP_GYM_8 		54
+#define LEVEL_CAP_LEAGUE_1 		60
+#define LEVEL_CAP_LEAGUE_2 		62
+#define LEVEL_CAP_LEAGUE_3 		64
+#define LEVEL_CAP_LEAGUE_4 		66
+#define LEVEL_CAP_CHAMP 		68
+#define LEVEL_CAP_POST_GAME_1 	72
+#define LEVEL_CAP_POST_GAME_2 	74
+#define LEVEL_CAP_POST_GAME_3 	78
+#define LEVEL_CAP_POST_GAME_4 	80
+#define LEVEL_CAP_POST_GAME_5 	84
+
+u8 GetLevelCap(u8 currLevel);
+
 #define MON_COORDS_SIZE(width, height) (DIV_ROUND_UP(width, 8) << 4 | DIV_ROUND_UP(height, 8))
 #define GET_MON_COORDS_WIDTH(size) ((size >> 4) * 8)
 #define GET_MON_COORDS_HEIGHT(size) ((size & 0xF) * 8)

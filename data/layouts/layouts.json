@@ -211,7 +211,7 @@
       "width": 50,
       "height": 25,
       "border_width": 4,
-      "border_height": 4,
+      "border_height": 2,
       "primary_tileset": "gTileset_Nature",
       "secondary_tileset": "gTileset_PetalburgNew",
       "border_filepath": "data/layouts/Route102/border.bin",
@@ -748,8 +748,8 @@
     {
       "id": "LAYOUT_MART",
       "name": "Mart_Layout",
-      "width": 11,
-      "height": 8,
+      "width": 16,
+      "height": 14,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
@@ -5512,7 +5512,7 @@
     {
       "id": "LAYOUT_MAUVILLE_CITY_INSIDE",
       "name": "MauvilleCity_Inside_Layout",
-      "width": 50,
+      "width": 51,
       "height": 25,
       "border_width": 2,
       "border_height": 2,
@@ -5549,7 +5549,7 @@
       "id": "LAYOUT_MAUVILLE_CITY_MIDDLE",
       "name": "MauvilleCity_Middle_Layout",
       "width": 40,
-      "height": 25,
+      "height": 32,
       "border_width": 1,
       "border_height": 1,
       "primary_tileset": "gTileset_MauvilleInside",
@@ -5568,6 +5568,30 @@
       "secondary_tileset": "gTileset_PetalburgNew",
       "border_filepath": "data/layouts/Route117_Left/border.bin",
       "blockdata_filepath": "data/layouts/Route117_Left/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_EVO_MART",
+      "name": "MauvilleCity_EvoMart_Layout",
+      "width": 28,
+      "height": 16,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleDecor",
+      "border_filepath": "data/layouts/MauvilleCity_EvoMart/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_EvoMart/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY",
+      "name": "MauvilleCity_InverseBattle_Lobby_Layout",
+      "width": 17,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleDecor",
+      "border_filepath": "data/layouts/MauvilleCity_InverseBattle_Lobby/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_InverseBattle_Lobby/map.bin"
     }
   ]
 }

@@ -1,4 +1,4 @@
-# 984 "data/text/story_dialogue.pory"
+# 963 "data/text/story_dialogue.pory"
 
 
 Common_Text_Suspense::
@@ -646,3 +646,164 @@ MtChimney_Text_WeLoveYouArchie::
 # 655 "data/text/story_dialogue.pory"
 	.string "¡Eres genial, Jefecito!\p"
 	.string "¡Te amamos, Archie!$"
+
+MeteorFalls_1F_1R_Text_AndThatsWhy::
+# 661 "data/text/story_dialogue.pory"
+	.string "Y es por eso… Cuando lleguen…\p"
+	.string "Harás lo que te digan.$"
+
+MeteorFalls_1F_1R_Text_Understood::
+# 672 "data/text/story_dialogue.pory"
+	.string "¡Entendido, Señor!\p"
+	.string "Espero no lo noten…$"
+
+MeteorFalls_1F_1R_Text_FamiliarVoice::
+# 684 "data/text/story_dialogue.pory"
+	.string "{COLOR_PLAYER}(Esa voz…)\n"
+	.string "(… ¿Será que… Es {COLOR_RIVAL}él{COLOR_PLAYER}…?)$"
+
+MeteorFalls_1F_1R_Text_WithThisMeteorite::
+# 696 "data/text/story_dialogue.pory"
+	.string "¡Entregue el meteorito!\n"
+	.string "Con él, en el Monte Chimney…$"
+
+MeteorFalls_1F_1R_Text_ThisIsAllIHave::
+# 707 "data/text/story_dialogue.pory"
+	.string "¡N-no…! ¡Esto es todo lo que tengo!$"
+
+MeteorFalls_1F_1R_Text_PlayerWhatDoIDo::
+# 718 "data/text/story_dialogue.pory"
+	.string "{COLOR_PLAYER}(¿Y qué hago yo ahora?)$"
+
+MeteorFalls_1F_1R_Text_PlayerRightHelp::
+# 729 "data/text/story_dialogue.pory"
+	.string "{COLOR_PLAYER}(¡Claro! No puedo abandonarlo así,\n"
+	.string "¿Verdad?)$"
+
+MeteorFalls_1F_1R_Text_PlayerRightJustWatch::
+# 740 "data/text/story_dialogue.pory"
+	.string "{COLOR_PLAYER} (¡Claro! No es mi lugar, ¿Verdad?)$"
+
+MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma::
+# 751 "data/text/story_dialogue.pory"
+	.string "¿Y est{EA} niñ{OA}?\n"
+	.string "¿No serás tú {ELLA} que estuvo derrotando\l"
+	.string "al Equipo Aqua?\p"
+	.string "¡Verás qué gran poder poseemos en el\n"
+	.string "Equipo Magma!$"
+
+MeteorFalls_1F_1R_Text_HoldItRightThereMagma::
+# 776 "data/text/story_dialogue.pory"
+	.string "¡Alto ahí, Equipo Magma!\p"
+	.string "{COLOR BLUE}(Jeje… Siempre quise decir eso…){COLOR DARK_GRAY}\p"
+	.string "¡Abandonen el planeta!$"
+
+MeteorFalls_1F_1R_Text_MagmaConfusion::
+# 790 "data/text/story_dialogue.pory"
+	.string "???????????????????????????????$"
+
+MeteorFalls_1F_1R_Text_GotCarriedAway::
+# 794 "data/text/story_dialogue.pory"
+	.string "Em… Creo que me pasé…\p"
+	.string "Ejem……\n"
+	.string "¿Creyeron que podrían salirse con la\l"
+	.string "suya sin que les digamos nada?$"
+
+MeteorFalls_1F_1R_Text_WhatIsThisChild::
+# 805 "data/text/story_dialogue.pory"
+	.string "Q-{PAUSE 5} eh?\p"
+	.string "{PAUSE 10}¿¡PERO Y EST{EA} {ITOITA} QUÉ ES!?$"
+
+MeteorFalls_1F_1R_Text_WhatIsThisYOU::
+# 816 "data/text/story_dialogue.pory"
+	.string "¡Mítico mío, eres IDIOTA!\p"
+	.string "Te vivo diciendo, un Ursaring Atacante\n"
+	.string "Especial ¡NO. VA. A. FUNCIONAR!\p"
+	.string "¿Y cómo hiciste para que tu Nidoking\n"
+	.string "conozca Terremoto cuatro veces?$"
+
+MeteorFalls_1F_1R_Text_ShutUp::
+# 829 "data/text/story_dialogue.pory"
+	.string "¡CÁLLATE! ¡CÁLLATE!\p"
+	.string "Primero que nada, este Nidoking me lo\n"
+	.string "dio el {COLOR RED}Señor Maxie{COLOR DARK_GRAY}.\l"
+	.string "Segundo que nada, ¡MI URSARING VA A\l"
+	.string "FUNCIONAR, TE LO ASEGURO!$"
+
+MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua::
+# 842 "data/text/story_dialogue.pory"
+	.string "¡Muy tarde, Equipo Aqua!\p"
+	.string "¡El Meteorito es nuestro!\p"
+	.string "¿Por qué no se vienen al Monte Chimney\n"
+	.string "e intentan detenernos?$"
+
+MeteorFalls_1F_1R_Text_ArchieHelpedBeforeNotNow::
+# 854 "data/text/story_dialogue.pory"
+	.string "Tú. Tú eres {ELLA} {GENDER} que ví en Slateport,\n"
+	.string "¿verdad?\p"
+	.string "La verdad no te comprendo.\n"
+	.string "Al menos una vez, nos ayudaste,\l"
+	.string "¿Verdad?\p"
+	.string "¿Y ahora estás de SU lado?\p"
+	.string "Mira. Piensa lo que quieras, pero no soy\n"
+	.string "agresivo. No soy idiota. Ese Eqipo\l"
+	.string "Magma es un peligro.\p"
+	.string "Mientras no interfieras, y ayudes a\n"
+	.string "acabar con el Equipo Magma, no me\l"
+	.string "importa lo que hagas.\p"
+	.string "Pero te metes en nuestro camino… Y\n"
+	.string "preferirás haberte ahogado en el\l"
+	.string "océano de camino a Slateport…$"
+
+MeteorFalls_1F_1R_Text_ArchieHelpedBothTimes::
+# 873 "data/text/story_dialogue.pory"
+	.string "Tú. Tú eres {ELLA} que ví en Slateport,\n"
+	.string "¿verdad?\p"
+	.string "Parece que estamos en el mismo barco.\n"
+	.string "Je, no lo escondas. Te vi robarte el\l"
+	.string "Meteorito en ese descuido. Más te\l"
+	.string "vale no bajarte de esa nave.\p"
+	.string "Vayamos todos al Monte Chimney… Me\n"
+	.string "muero de ganas de ver la cara de {COLOR RED}Maxie{COLOR DARK_GRAY}\l"
+	.string "cuando se entere.$"
+
+MeteorFalls_1F_1R_Text_ArchieNeverHelped::
+# 891 "data/text/story_dialogue.pory"
+	.string "Tú. Tú eres {ELLA} {GENDER} que ví en Slateport,\n"
+	.string "¿verdad?\p"
+	.string "La verdad no te comprendo.\n"
+	.string "¿Eres infiltrad{OA} del Equipo Magma,\l"
+	.string "verdad?\p"
+	.string "¿O simplemente eres idiota? Mira. Piensa\n"
+	.string "lo que quieras, pero no actúo sin\l"
+	.string "pensar. Ese Eqipo Magma es un peligro.\p"
+	.string "Y si te metes en nuestro camino… No\n"
+	.string "prometo que haya Centro Pokémon\l"
+	.string "capaz de salvar a tus compañeros…$"
+
+MeteorFalls_1F_1R_Text_MeetProfCozmo::
+# 909 "data/text/story_dialogue.pory"
+	.string "Soy… Cozmo…\n"
+	.string "Soy un Profesor Pokémon…\p"
+	.string "É-{PAUSE 8}él dijo…{PAUSE 16} ¡C-{PAUSE 8}cl-{PAUSE 8}claro que hablo de ese\n"
+	.string "Recluta!\p"
+	.string "Me engañó…{PAUSE 16} Y se llevó el Meteorito.\p"
+	.string "¿Para qué lo querrán?$"
+
+MeteorFalls_1F_1R_Text_ProfCozmoGiveMeteorite::
+# 925 "data/text/story_dialogue.pory"
+	.string "¿L-{PAUSE 8}lo tienes?\p"
+	.string "{COLOR BLUE}(Esto es terrible…){COLOR DARK_GRAY}\p"
+	.string "¡Q-{PAUSE 8}qué bien!\n"
+	.string "¿Vamos a mi laboratorio?$"
+
+MeteorFalls_1F_1R_Text_ProfCozmoGetItBack::
+# 939 "data/text/story_dialogue.pory"
+	.string "¿L-{PAUSE 8}lo recuperarás?\p"
+	.string "¡Qué alivio!\n"
+	.string "Por favor, ten cuidado con ellos…$"
+
+MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney::
+# 951 "data/text/story_dialogue.pory"
+	.string "Ese tal “Equipo Magma”… ¿Qué Giratinas\n"
+	.string "querrán en el Monte Chimney?$"

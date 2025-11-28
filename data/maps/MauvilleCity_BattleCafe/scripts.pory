@@ -5,13 +5,20 @@ mapscripts MauvilleCity_BattleCafe_MapScripts {
 }
 
 // por hacer wip
-script MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle {
+script MauvilleCity_BattleCafe_Scripts_SetUpDailyTrainersBattle {
 	special(DoCafeTrainerBattle)
+	delay(16)
+	goto(MauvilleCity_BattleCafe_Scripts_DoDailyTrainersBattle)
+}
+script MauvilleCity_BattleCafe_Scripts_DoDailyTrainersBattle {
+	waitbuttonpress
+	dotrainerbattle
+	delay(16)
 	special(GetCafeTrainersAfterBattleData)
-	msgbox(format("{STR_VAR_1}"))
+	
 	if (var(VAR_RESULT) != 0) {
 		giveitem(VAR_RESULT, 1)
-		msgbox(format("{STR_VAR_3}"))
+		special(GetCafeTrainersFinalText)
 	}
 	closemessage
 	releaseall
@@ -21,7 +28,7 @@ script MauvilleCity_BattleCafe_Scripts_DailyTrainer1 {
 	lockall
 	faceplayer
 	setvar(VAR_0x8000, 0)
-	goto (MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle)
+	goto (MauvilleCity_BattleCafe_Scripts_SetUpDailyTrainersBattle)
 }
 
 
@@ -29,19 +36,19 @@ script MauvilleCity_BattleCafe_Scripts_DailyTrainer2 {
 	lockall
 	faceplayer
 	setvar(VAR_0x8000, 1)
-	goto (MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle)
+	goto (MauvilleCity_BattleCafe_Scripts_SetUpDailyTrainersBattle)
 }
 
 script MauvilleCity_BattleCafe_Scripts_DailyTrainer3 {
 	lockall
 	faceplayer
 	setvar(VAR_0x8000, 2)
-	goto (MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle)
+	goto (MauvilleCity_BattleCafe_Scripts_SetUpDailyTrainersBattle)
 }
 
 script MauvilleCity_BattleCafe_Scripts_DailyTrainer4 {
 	lockall
 	faceplayer
 	setvar(VAR_0x8000, 3)
-	goto (MauvilleCity_BattleCafe_Scripts_DailyTrainersBattle)
+	goto (MauvilleCity_BattleCafe_Scripts_SetUpDailyTrainersBattle)
 }

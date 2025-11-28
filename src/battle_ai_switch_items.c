@@ -2567,6 +2567,9 @@ static bool32 AI_ShouldHeal(u32 battler, u32 healAmount)
     u8 opponent;
     u32 maxDamage = 0;
     u32 dmg = 0;
+	
+	if (!gSaveBlock2Ptr->optionsEnemyPotionUse)
+		return FALSE;
 
     if (gBattleMons[battler].hp < gBattleMons[battler].maxHP / 4
      || gBattleMons[battler].hp == 0

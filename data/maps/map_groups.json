@@ -198,7 +198,9 @@
     "MauvilleCity_Inside",
     "MauvilleCity_InverseBattle",
     "MauvilleCity_BattleCafe",
-    "MauvilleCity_Middle"
+    "MauvilleCity_Middle",
+    "MauvilleCity_EvoMart",
+    "MauvilleCity_InverseBattle_Lobby"
   ],
   "gMapGroup_IndoorRustboro": [
     "RustboroCity_DevonCorp_1F",

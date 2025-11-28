@@ -62,6 +62,7 @@
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
 #include "field_name_box.h"
+#include "wild_encounter.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -2499,6 +2500,32 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_setwildbattlevar(struct ScriptContext *ctx)
+{
+    u16 species = VarGet(ScriptReadHalfword(ctx));
+    u8 level = ScriptReadByte(ctx);
+    u16 item = ScriptReadHalfword(ctx);
+    u16 species2 = ScriptReadHalfword(ctx);
+    u8 level2 = ScriptReadByte(ctx);
+    u16 item2 = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    if(species2 == SPECIES_NONE)
+    {
+        CreateScriptedWildMon(species, level, item);
+        sIsScriptedWildDouble = FALSE;
+    }
+    else
+    {
+        CreateScriptedDoubleWildMon(species, level, item, species2, level2, item2);
+        sIsScriptedWildDouble = TRUE;
+    }
+
+    return FALSE;
+}
+
+
 bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
@@ -3535,4 +3562,29 @@ void ScrCmd_loadpartofteam(void)
 			break;
 		gPlayerParty[i] = gSaveBlock1Ptr->BossTeam[i];
 	}
+}
+
+bool8 ScrCmd_getlocalwildmon(struct ScriptContext *ctx)
+{
+	u32 gfxVar 	       = ScriptReadHalfword(ctx);
+	u32 speciesVar     = ScriptReadHalfword(ctx);
+	u8 isWaterMon 	   = ScriptReadByte(ctx);
+	u16 *ptrGfxVar 	   = GetVarPointer(gfxVar);
+	u16 *ptrSpeciesVar = GetVarPointer(speciesVar);
+	bool8 truefalseptr;
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	Script_RequestWriteVar(gfxVar);
+	Script_RequestWriteVar(speciesVar);
+	if (isWaterMon == TRUE)
+	{
+		truefalseptr = TRUE;
+	}
+	else
+	{
+		truefalseptr = FALSE;
+	}
+	*ptrSpeciesVar = GetLocalWildMon(&truefalseptr);
+	// objEventMon = VarGet(speciesVar) + OBJ_EVENT_MON;
+	*ptrGfxVar = *ptrSpeciesVar + OBJ_EVENT_MON;
+	return FALSE;
 }

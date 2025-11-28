@@ -11431,13 +11431,17 @@ const struct Item gItemsInfo[] =
     [ITEM_TM51] =
     {
         .name = ITEM_NAME("MT51"),
+        .pluralName = ITEM_NAME("MTs51"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "Se potencia si es usado\n"
+			"en suceción. Los aliados\n"
+			"que lo conozcan lo usarán."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_ROUND, // Todo
     },
 
     [ITEM_TM52] =

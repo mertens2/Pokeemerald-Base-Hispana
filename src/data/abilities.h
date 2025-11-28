@@ -2409,4 +2409,25 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+	
+	[ABILITY_SWORD_MASTER] =
+    {
+        .name = _("As Espadachín"),
+        .description = COMPOUND_STRING("Mov. cortantes golpean dos\nveces, con 75% de potencia."),
+        .aiRating = 0,
+        .cantBeSwapped = FALSE,
+        .cantBeTraced = FALSE,
+		.breakable = FALSE,
+    },
+	[ABILITY_COLONYS_POWER] =
+    {
+        .name = _("Poder Colonial"),
+        .description = COMPOUND_STRING("Cada que pierde 25% de PS,\ncrea un Sustituto sin perder PS."),
+        .aiRating = 0,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+		.cantBeCopied = TRUE,
+		.breakable = FALSE,
+    },
+	
 };

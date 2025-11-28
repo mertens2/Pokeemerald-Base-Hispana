@@ -1836,6 +1836,50 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
+u8 GetLevelCap(u8 currLevel){
+	u8 badgeCount = 0;
+    u32 i;
+
+    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
+    {
+        if (FlagGet(i))
+            badgeCount++;
+    }
+	if (gSaveBlock2Ptr->optionsBadgeScaling) {
+		switch(badgeCount)
+		{
+			case 0:
+				break;
+			case 1:
+				currLevel = LEVEL_CAP_GYM_1;
+				break;
+			case 2:
+				currLevel = LEVEL_CAP_GYM_2;
+				break;
+			case 3:
+				currLevel = LEVEL_CAP_GYM_3;
+				break;
+			case 4:
+				currLevel = LEVEL_CAP_GYM_4;
+				break;
+			case 5:
+				currLevel = LEVEL_CAP_GYM_5;
+				break;
+			case 6:
+				currLevel = LEVEL_CAP_GYM_6;
+				break;
+			case 7:
+				currLevel = LEVEL_CAP_GYM_7;
+				break;
+			case 8:
+				currLevel = LEVEL_CAP_GYM_8;
+				break;
+		}
+	}
+	// if (gSaveBlock2Ptr->optionsLevelScaling == 1 && currLevel < )
+	return currLevel;
+}
+
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {
     u32 personalityValue;
@@ -1893,6 +1937,18 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
+			switch (trainer->trainerClass)
+			{
+			case TRAINER_CLASS_ELITE_FOUR:
+			case TRAINER_CLASS_CHAMPION:
+			case TRAINER_CLASS_AQUA_ADMIN:
+			case TRAINER_CLASS_AQUA_LEADER:
+			case TRAINER_CLASS_MAGMA_ADMIN:
+			case TRAINER_CLASS_MAGMA_LEADER:
+			case TRAINER_CLASS_LEADER:
+				GetLevelCap(partyData[monIndex].lvl);
+				break;
+			}
             CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
@@ -4299,7 +4355,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (FlagGet(B_FLAG_NO_BAG_USE))
+                    if (FlagGet(B_FLAG_NO_BAG_USE) || !gSaveBlock2Ptr->optionsPLayerItemUse)
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;

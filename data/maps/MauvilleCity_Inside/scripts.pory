@@ -1,1 +1,68 @@
 mapscripts MauvilleCity_Inside_MapScripts {}
+
+
+script MauvilleCity_Inside_Scripts_OldMan {
+	lockall
+	faceplayer
+	if (!checkitem(ITEM_TM51)) {
+		if (setgetobjectflags(VAR_LAST_TALKED, 2, TRUE, GET_EVENT_FLAG)) {
+			msgbox(MauvilleCity_Inside_Text_OldMan3)
+			giveitem(ITEM_TM51)
+		}
+		elif (setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, GET_EVENT_FLAG)) {
+			msgbox(MauvilleCity_Inside_Text_OldMan2)
+			setgetobjectflags(VAR_LAST_TALKED, 2, TRUE, SET_EVENT_FLAG)
+		}
+		else {
+			msgbox(MauvilleCity_Inside_Text_OldMan1)
+			setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, SET_EVENT_FLAG)
+		}
+	}
+	else {
+		msgbox(MauvilleCity_Inside_Text_OldManExplainTMRound)
+	}
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_Scripts_OldWoman {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_Inside_Text_OldWoman)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_Scripts_Guitarist {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_Inside_Text_Guitarist)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_Scripts_AromaLady {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_Inside_Text_AromaLady)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_Scripts_BlackBelt {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_Inside_Text_BlackBelt)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_Scripts_Sawk {
+	lockall
+	faceplayer
+	playmoncry(SPECIES_SAWK, CRY_MODE_NORMAL)
+	msgbox(MauvilleCity_Inside_Text_Sawk)
+	waitmoncry
+	closemessage
+	releaseall
+}

@@ -72,6 +72,55 @@ script Route101_EventScript_YouSavedMe {
 	}
 	return
 }
+
+script Route101_EventScript_LoadStaticWildMons {
+	// getlocalwildmon(VAR_OBJ_GFX_ID_2, VAR_0x8004, FALSE)
+	// getlocalwildmon(VAR_OBJ_GFX_ID_3, VAR_0x8005, FALSE)
+	// getlocalwildmon(VAR_OBJ_GFX_ID_4, VAR_0x8006, FALSE)
+	// getlocalwildmon(VAR_OBJ_GFX_ID_5, VAR_0x8007, FALSE)
+	return
+}
+
+// script Route101_EventScript_BattleStaticMon1 {
+	// lockall
+	// playmoncry(VAR_0x8004, CRY_MODE_NORMAL)
+	// waitmoncry
+	// setwildbattlevar(VAR_0x8004, 3)
+	// dowildbattle
+	// releaseall
+	// end
+// }
+
+// script Route101_EventScript_BattleStaticMon2 {
+	// lockall
+	// playmoncry(VAR_0x8005, CRY_MODE_NORMAL)
+	// waitmoncry
+	// setwildbattlevar(VAR_0x8005, 3)
+	// dowildbattle
+	// releaseall
+	// end
+// }
+
+// script Route101_EventScript_BattleStaticMon3 {
+	// lockall
+	// playmoncry(VAR_0x8006, CRY_MODE_NORMAL)
+	// waitmoncry
+	// setwildbattlevar(VAR_0x8006, 3)
+	// dowildbattle
+	// releaseall
+	// end
+// }
+
+// script Route101_EventScript_BattleStaticMon4 {
+	// lockall
+	// playmoncry(VAR_0x8007, CRY_MODE_NORMAL)
+	// waitmoncry
+	// setwildbattlevar(VAR_0x8007, 3)
+	// dowildbattle
+	// releaseall
+	// end
+// }
+
 raw `
 Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
@@ -89,6 +138,7 @@ Route101_OnTransition:
 	
 Route101_OnTransition_Night:
 	call ProfBirch_EventScript_UpdateLocation
+	call Route101_EventScript_LoadStaticWildMons
 	end
 
 Route101_OnTransition_Day:

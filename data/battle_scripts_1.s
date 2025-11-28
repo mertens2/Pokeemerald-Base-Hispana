@@ -3460,6 +3460,14 @@ BattleScript_TwoTurnMovesSecondTurnRet:
 	clearsemiinvulnerablebit @ only for moves with EFFECT_SEMI_INVULNERABLE/EFFECT_SKY_DROP
 	return
 
+BattleScript_AbilitySetsSubstitute::
+	jumpifvolatile BS_ATTACKER, VOLATILE_SUBSTITUTE, BattleScript_AlreadyHasSubstitute
+	setsubstitute
+	pause B_WAIT_TIME_SHORT
+	printfromtable gSubstituteUsedStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end2
+	
 BattleScript_EffectSubstitute::
 	attackcanceler
 	ppreduce

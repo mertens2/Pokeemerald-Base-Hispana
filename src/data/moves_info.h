@@ -643,15 +643,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_SLAM] =
     {
-        .name = COMPOUND_STRING("Atizar"),
+        .name = COMPOUND_STRING("Puño Brillantina"),
         .description = COMPOUND_STRING(
-            "Golpea con las\n"
-            "extremidades."),
+            "Un puño con un 25%\n"
+            "de bajar precisión."),
         .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 75,
+        .power = 50,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
         .pp = 20,
+		.additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
+            .chance = 50,
+        }),
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -1362,7 +1366,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_SONIC_BOOM] =
     {
-        .name = COMPOUND_STRING("Bomba sónica"),
+        .name = COMPOUND_STRING("Explosónica"),
         .description = COMPOUND_STRING(
             "Lanza ondas de choque\n"
             "que restan 20 PS."),
@@ -2965,10 +2969,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_DEFENSE_CURL] =
     {
-        .name = COMPOUND_STRING("Rizo defensa"),
+        .name = COMPOUND_STRING("Hacerse Bolita"),
         .description = COMPOUND_STRING(
-            "Oculta su punto débil al\n"
-            "rizarse. Sube la defensa."),
+            "Se protege haciéndose\n"
+            "bolita. Sube la defensa."),
         .effect = EFFECT_DEFENSE_CURL,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -8705,9 +8709,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Ataque con agua lodosa que\n"
             "puede bajar la precisión."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95,
+        .power = 95,
         .type = TYPE_WATER,
-        .accuracy = 85,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
@@ -9120,15 +9124,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Hidrochorro"),
         .description = COMPOUND_STRING(
-            "Te moja para que resistas\n"
-            "más los ataques de fuego."),
+            "+3 prioridad. Baja potencia\n"
+            "a los ataques tipo fuego."),
         .effect = EFFECT_WATER_SPORT,
         .power = 0,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
+        .priority = 3,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_SPDEF_UP_1 },
         .ignoresProtect = TRUE,

@@ -4451,12 +4451,21 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_DUNSPARCE
     [SPECIES_DUNSPARCE] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 100,
+        .baseAttack    = 85,
+        .baseDefense   = 70,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 65,
+		#else
         .baseHP        = 100,
         .baseAttack    = 70,
         .baseDefense   = 70,
         .baseSpeed     = 45,
         .baseSpAttack  = 65,
         .baseSpDefense = 65,
+		#endif
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 190,
     #if P_UPDATED_EXP_YIELDS >= GEN_5
@@ -4472,7 +4481,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_RUN_AWAY, ABILITY_RATTLED },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_SIMPLE, ABILITY_RATTLED },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Dunsparce"),
         .cryId = CRY_DUNSPARCE,
@@ -4532,12 +4541,21 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_GEN_9_CROSS_EVOS
     [SPECIES_DUDUNSPARCE_TWO_SEGMENT] =
     {
+		#if P_BUFF_SPECIES
         .baseHP        = 125,
+        .baseAttack    = 115,
+        .baseDefense   = 80,
+        .baseSpeed     = 30,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 80,
+		#else
+		.baseHP        = 125,
         .baseAttack    = 100,
         .baseDefense   = 80,
         .baseSpeed     = 55,
         .baseSpAttack  = 85,
         .baseSpDefense = 75,
+		#endif
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,
         .expYield = 182,
@@ -4547,7 +4565,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_RUN_AWAY, ABILITY_RATTLED },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_SIMPLE, ABILITY_RATTLED },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Dudunsparce"),
         .cryId = CRY_DUDUNSPARCE,
@@ -4596,12 +4614,21 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] =
     {
+		#if P_BUFF_SPECIES
         .baseHP        = 125,
+        .baseAttack    = 115,
+        .baseDefense   = 80,
+        .baseSpeed     = 30,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 80,
+		#else
+		.baseHP        = 125,
         .baseAttack    = 100,
         .baseDefense   = 80,
         .baseSpeed     = 55,
         .baseSpAttack  = 85,
         .baseSpDefense = 75,
+		#endif
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,
         .expYield = 182,
@@ -4611,7 +4638,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_RUN_AWAY, ABILITY_RATTLED },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_SIMPLE, ABILITY_RATTLED },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Dudunsparce"),
         .cryId = CRY_DUDUNSPARCE,

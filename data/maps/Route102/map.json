@@ -130,6 +130,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ROUTE102_RALTS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RALTS)",
       "x": 12,
       "y": 6,
@@ -143,6 +144,7 @@
       "flag": "FLAG_HIDE_RALTS_102"
     },
     {
+      "local_id": "LOCALID_ROUTE102_ZIGZAGOON",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
       "x": 12,
       "y": 6,
@@ -156,6 +158,7 @@
       "flag": "FLAG_HIDE_ZIGZA_102"
     },
     {
+      "local_id": "LOCALID_ROUTE102_BALL",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 12,
       "y": 6,
@@ -182,9 +185,10 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ROUTE102_BALL_CATCH",
       "graphics_id": "OBJ_EVENT_GFX_BALL_CATCH",
       "x": 12,
-      "y": 6,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -195,6 +199,7 @@
       "flag": "FLAG_BALL_CATCH_102"
     },
     {
+      "local_id": "LOCALID_ROUTE102_WALLY",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 1,
       "y": 9,

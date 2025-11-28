@@ -549,6 +549,301 @@ text Route109_Text_TrainerTipsSign{
 	}
 }
 
+// mauville city
+
+text MauvilleCity_EvoMart_Text_AzurillGirl {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Just like everyday, I'm here with one hope only…\p"
+			"Finding someone who's allergic to Azurill to attack!")
+		}
+		ES {
+			format("Como todos los días, estoy aquí en una única misión…\p"
+			"¡Encontrar a alguien alérgico a Azurill para atacar!")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_HereToBuy {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("This city is unbelievable!\pFour clerks that all do different things?\pThis city never ceases to amaze!")
+		}
+		ES {
+			format("¡Esta ciudad es increíble!\p¿Cuatro empleados que hacen todos cosas distintas?\p¡Nunca me dejo de sorprender aquí!")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_UltimateMoveTutor {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("I'm the Ultimate Tutor!\pFor just any Colored Shard {COLOR LIGHT_GRAY SHADOW WHITE}although I DO like Red Shards the best{COLOR DARK_GRAY SHADOW LIGHT_GRAY}, I can teach your Pokémon an Ultimate Move!\pWould you like to try?")
+		}
+		ES {
+			format("¡Soy la Tutora Suprema!\pPor una Parte de cualquier color {COLOR LIGHT_GRAY SHADOW WHITE}aunque prefiero las Rojas{COLOR DARK_GRAY SHADOW LIGHT_GRAY}, ¡Le enseñaré a tus Pokémon un Movimiento Supremo!\p¿Intentamos?")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_SelectMoveTutor {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("What move do you want me to teach your Pokémon?")
+		}
+		ES {
+			format("¿Qué movimiento debería enseñarle a tus Pokémon?")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_DeclineTutor {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("That's okay!\nCome back soon!")
+		}
+		ES {
+			format("¡No pasa nada!\n¡Vuelve pronto!")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_TutorNotEnough {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Oh, you don't have enough Shards? That's okay!\pCome back soon!")
+		}
+		ES {
+			format("Ah, ¿Te faltan Partes?\p¡Vuelve pronto!")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_TutorSelectMon {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Perfect!\nWhich Pokémon will I teach a move to?")
+		}
+		ES {
+			format("¡Perfecto!\n¿A qué Pokémon debería enseñarle un movimiento?")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_TutorIncompatible {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Oh, I'm sorry, but not even I could…")
+		}
+		ES {
+			format("Ah, disculpa, pero eso va más allá de mis capacidades…")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_TutorDone {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("All done! {STR_VAR_1}\nnow knows {STR_VAR_2}!")
+		}
+		ES {
+			format("¡Todo listo! ¡{STR_VAR_1}\naprendió {STR_VAR_2}!")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_TutorBye {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Thanks for passing by!")
+		}
+		ES {
+			format("¡Gracias por todo!")
+		}
+	}
+}
+
+
+text MauvilleCity_EvoMart_Text_SignatureMoveTutor {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("I'm the Signatur Tutor!\pFor just five of any Shard, I can teach your Pokémon their Signature Move!\pWould you like to try?")
+		}
+		ES {
+			format("¡Soy el Tutor Característico!\pPor cinco Partes de cualquier color, ¡Le enseñaré a tus Pokémon su Movimiento Característico!\p¿Intentamos?")
+		}
+	}
+}
+
+
+
+text MauvilleCity_Inside_Text_Guitarist{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Dude! So many people come here randomly, dude!\N"
+			"So many people to sing my new single to, dude!")
+		}
+		ES {
+			format("¡Bro! ¡Tanta gente pasa al azar, bro!\N"
+			"¡Tanta gente a la que cantarles mi nueva canción, bro!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_AromaLady{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("This city is not to my liking, but no other city has free electricity…\p"
+			"Everything is so insanely unnatural here, and I'm supposed to like it on that condition alone?")
+		}
+		ES {
+			format("Odio esta ciudad, pero es la única con electrididad gratis…\p"
+			"Todo es tan anti-natural aquí, ¿Y me tiene que gustar sólo por una cuota menos?") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_BlackBelt{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Did you know there's different people at the Battle Café everyday?\p"
+			"And they all scale to you current Badge! It's always a challenge!")
+		}
+		ES {
+			format("¿Sabías que todos los días hay personas distintas en el Café Combate?\p"
+			"¡Y suben de nivel basados en tus Medallas actuales! ¡Siempre es un desafío!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_Sawk{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Grahhh!")
+		}
+		ES {
+			format("Sawk.") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_OldWoman{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("It seems just like yesterday when I hid a body in the ground just below this very tile…\N"
+			"Oh, how time flies!") 
+		}
+		ES {
+			format("Parece como si hubiese sido ayer cuando escondí un cuerpo en la tierra debajo de este mismo azulejo…\N"
+			"¡Cómo vuela el tiempo!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_OldMan1{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Nowadays,{PAUSE 8} the {COLOR BLUE}Residential Area{COLOR DARK_GRAY} is in the second floor,\N"
+			"and the {COLOR RED}Comercial Area{COLOR DARK_GRAY}, in the first, but get this…\p"
+			"There wasn't ANY floors back when I was young! Up til a few years ago, it was a normal, outside city.") 
+		}
+		ES {
+			format("Hoy día,{PAUSE 8} el {COLOR BLUE}Área Residencial{COLOR DARK_GRAY} está en el segundo piso,\N"
+			"y el {COLOR RED}Área Comercial{COLOR DARK_GRAY}, en el primero, pero…\p"
+			"¡No había NINGÚN piso cuando era más joven! Hasta hace algunos años, era una ciudad común y corriente.") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_OldMan2{
+	poryswitch(LANGUAGE) {
+		EN {
+			format("It was pretty hard to adapt, to be quite honest, but we all got to keep our homes almost intact, at least.\p"
+			"Nobody had a two-floored house anyways so we could ensure to perfectly replicate the layouts, and nobody had wallpaper to keep either…\p"
+			"Mew, we didn't have many things back then, did we?") 
+		}
+		ES {
+			format("Fue difícil adaptarse, no mentiré, pero al menos nuestras casas fueron replicadas.\p"
+			"Nadie tenía dos pisos, ni papel de pared propio, así que el proceso fue simple…\p"
+			"Arceus, ¿En serio teníamos tan pocas cosas?") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_OldMan3{
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Gracias por escuchar a un viejo divagar… ¡Ten, la MT Canon, un movimiento que se potencia mientras más se use!\p"
+			"¡También obliga a aliados que lo conozcan a repetirlo! Podrías terminar usándolo cuatro veces en un turno de Batalla Doble.") 
+		}
+		EN {
+			format("Thanks for hearing an old man ramble… Here you go, the TM for Round, a move that becomes more powerful the more it's used!\p"
+			"It also prompts Allies who know the move to use it immediately! You could both use two moves in a turn in a Double Battle!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_OldManExplainTMRound{
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Canon es un movimiento que se potencia mientras más se use.\p"
+			"¡También obliga a aliados que lo conozcan a repetirlo! Podrías terminar usándolo cuatro veces en un turno de Batalla Doble.") 
+		}
+		EN {
+			format("Round is a move that becomes more powerful the more it's used!\p"
+			"It also prompts Allies who know the move to use it immediately! You could both use two moves in a turn in a Double Battle!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_Tourist4A {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Podría perderme en esta ciudad!\n……Bueno, no. Estoy exagerando.") 
+		}
+		EN {
+			format("I could get lost in this city!\n……Well, no. I'm just exaggerating.") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_Tourist4B {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Lo que le falta a esta ciudad… No se lo puedo decir a un{A} niñ{OA}…") 
+		}
+		EN {
+			format("What I think this city lacks cannot be told to a child…") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_Tourist4C {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Vine aquí desde Kalos para ver el avance de la infraestructura de Hoenn.\p"
+			"7.5/10. Demasiado naranja.") 
+		}
+		EN {
+			format("I came from Kalos to see the advances in Hoenn's infrastructure.\p"
+			"For this city… 7.5/10. Too much orange.") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_Text_Tourist4D {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Vine a comparle algo a mi esposa por nuestro aniversario.\p"
+			"Y a comprarle algo para que me regale a mí, ya que seguro lo volvió a olvidar.") 
+		}
+		EN {
+			format("I came to buy my wife an anniversary gift.\p"
+			"And to buy myself a gift for her to give me. She probably forgot again.") 
+		}
+	}
+}
+
 // text AbandonedShip_Rooms2_1F_Text_DanDefeat{
 	// format("DAN: We couldn't win even though\n"
 	// "we worked together…")

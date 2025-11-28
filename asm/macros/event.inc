@@ -776,7 +776,18 @@
 	.macro trainerbattle_two_trainers trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
 	trainerbattle TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO, OBJ_ID_NONE, \trainer_a, NULL, \lose_text_a, NULL, OBJ_ID_NONE, \trainer_b, NULL, \lose_text_b, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 	.endm
+	
+	@ Starts a single trainer battle. Takes a trainer, intro text, loss text, and an event script which continues after the battle,regardless of the result.
+	@ When used with an event script, you can also pass in an optional flag to disable music
+    .macro trainerbattle_no_whiteout_continue_script trainer:req, intro_text:req, lose_text:req, event_script:req
+    trainerbattle TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, LOCALID_NONE, \trainer, \intro_text, \lose_text, \event_script, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+	.endm
 
+	@ Starts a trainer battle, skipping intro text. Takes a trainer and loss text. Does not warp the player to last heal location if they lose. 
+	.macro trainerbattle_no_intro_no_whiteout trainer:req, lose_text:req
+	trainerbattle TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, LOCALID_NONE, \trainer, 0, \lose_text
+	.endm
+	
 	@ Starts a trainer battle using the battle information stored in RAM (usually by the scripts in trainer_battle.inc, which
 	@ are run by trainerbattle), and blocks script execution until the battle finishes.
 	.macro dotrainerbattle
@@ -2031,7 +2042,27 @@
 	callnative ScrCmd_loadpartofteam
 	.endm
 	
-
+	.macro getlocalwildmon gfxvar:req, speciesvar:req, iswater=0
+	.byte SCR_OP_GETLOCALWILDMON
+	.2byte \gfxvar
+	.2byte \speciesvar
+	.byte \iswater
+	.endm
+	
+	@ Prepares to start a wild battle against a 'species' at 'level' holding 'item'. Species is a var.
+	@ If 'species2' is something other than SPECIES_NONE, then the battle is a double battle
+	@ that is also against 'species2' at 'level2' holding 'item2'.
+	@ Running this command will not affect normal wild battles. You start the prepared battle with dowildbattle.
+	@ If the player only has one Pokemon, a scripted double battle will be buggy.
+	.macro setwildbattlevar species:req, level:req, item=ITEM_NONE, species2=SPECIES_NONE, level2=0, item2=ITEM_NONE
+	.byte SCR_OP_SETWILDBATTLEVAR
+	.2byte \species
+	.byte \level
+	.2byte \item
+	.2byte \species2
+	.byte \level2
+	.2byte \item2
+	.endm
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -2807,3 +2838,5 @@
 	setvar VAR_0x8001, \stringvarnumber
 	special BufferUnitSystemText
 	.endm
+
+

@@ -4,51 +4,67 @@ mapscripts MauvilleCity_InverseBattle_MapScripts {}
 script MauvilleCity_InverseBattle_Scripts_Psychic {
 	lockall
 	msgbox(format("¡Hola, bienvenid{OA}!\p¡Este es el Torneo de Batallas Inversas!\p¿Necesitas algo?"))
-	dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Solitario", "Con Amigos", "¿Qué es esto?", "Nada, disculpe")
+	// dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Solitario", "Con Amigos", "¿Qué es esto?", "Nada, disculpe")
+	dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Jugar", "¿Qué es esto?", "Nada, disculpe")
 	switch (var(VAR_RESULT)) {
 		case 0:
-			msgbox(format("Ah, ¡Así que jugarás sol{OA}!\NEstá bien, probarás suerte contra nuestros competidores.\p"
+			msgbox(format("Ah, ¡Así que probarás suerte contra nuestros competidores!\p"
 			"¿En qué formato te gustaría participar?"))
 			dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Simples", "Dobles", "1v1", "Nada, disculpe")
 			switch (var(VAR_RESULT)) {
 				case 0:
 					msgbox(format("¡Simples, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					setflag(B_FLAG_INVERSE_BATTLE)
+					setvar(VAR_INVERSE_BATTLE_TYPE, 1)
+					random(6)
+					copyvar(VAR_INVERSE_BATTLE_FOE, VAR_RESULT)
+					warp(MAP_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY, 4, 6)
 					// activar flag B_FLAG_INVERSE_BATTLE
 					break
 				case 1:
 					msgbox(format("¡Dobles, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					setflag(B_FLAG_INVERSE_BATTLE)
+					setvar(VAR_INVERSE_BATTLE_TYPE, 2)
+					random(6)
+					copyvar(VAR_INVERSE_BATTLE_FOE, VAR_RESULT)
+					warp(MAP_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY, 4, 6)
 					// activar flag B_FLAG_INVERSE_BATTLE
 					break
 				case 2:
 					msgbox(format("¡1v1, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					setflag(B_FLAG_INVERSE_BATTLE)
+					setvar(VAR_INVERSE_BATTLE_TYPE, 3)
+					random(6)
+					copyvar(VAR_INVERSE_BATTLE_FOE, VAR_RESULT)
+					warp(MAP_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY, 4, 6)
 					// activar flag B_FLAG_INVERSE_BATTLE
 					break
 				case 3:
 					goto (MauvilleCity_InverseBattle_Scripts_PsychicEnd)
 			}
 		break
+		// case 1:
+			// msgbox(format("Ah, ¡Así que jugarás con amigos!\NSerá divertido, ¡Ojalá que le ganes!\p"
+			// "¿En qué formato te gustaría participar?"))
+			// dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Simples", "Dobles", "1v1", "Nada, disculpe")
+			// switch (var(VAR_RESULT)) {
+				// case 0:
+					// msgbox(format("¡Simples, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip 
+					// // activar flag B_FLAG_INVERSE_BATTLE
+					// break
+				// case 1:
+					// msgbox(format("¡Dobles, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					// // activar flag B_FLAG_INVERSE_BATTLE
+					// break
+				// case 2:
+					// msgbox(format("¡1v1, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
+					// // activar flag B_FLAG_INVERSE_BATTLE
+					// break
+				// case 3:
+					// goto (MauvilleCity_InverseBattle_Scripts_PsychicEnd)
+			// }
+			// break
 		case 1:
-			msgbox(format("Ah, ¡Así que jugarás con amigos!\NSerá divertido, ¡Ojalá que le ganes!\p"
-			"¿En qué formato te gustaría participar?"))
-			dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Simples", "Dobles", "1v1", "Nada, disculpe")
-			switch (var(VAR_RESULT)) {
-				case 0:
-					msgbox(format("¡Simples, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip 
-					// activar flag B_FLAG_INVERSE_BATTLE
-					break
-				case 1:
-					msgbox(format("¡Dobles, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
-					// activar flag B_FLAG_INVERSE_BATTLE
-					break
-				case 2:
-					msgbox(format("¡1v1, perfecto!\nJusto estábamos esperando otr{OA} combatiente, ¡Por aquí!")) // por hacer wip
-					// activar flag B_FLAG_INVERSE_BATTLE
-					break
-				case 3:
-					goto (MauvilleCity_InverseBattle_Scripts_PsychicEnd)
-			}
-			break
-		case 2:
 			msgbox(format("Las Batallas Inversas son creación nuestra, de los Psíquicos. ¡He venido desde Kalos para popularizarlas!\p"
 			"Usando mis poderes, podré invertir las ventajas y desventajas de tipo… ¡Y tranquil{OA}!\p"
 			"¡Las inmunidades no existirán!\nEn resumen: ¡En estas batallas, los Pokémon tipo Fuego serán débiles a ataques tipo Planta!"))

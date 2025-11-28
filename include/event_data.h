@@ -32,6 +32,7 @@ u8 FlagClear(u16 id);
 u8 TrainerFlagClear(u16 id);
 bool8 FlagGet(u16 id);
 bool8 TrainerFlagGet(u16 id);
+void RerollBattleCafeTrainers(void);
 
 extern u16 gSpecialVar_0x8000;
 extern u16 gSpecialVar_0x8001;

@@ -339,6 +339,7 @@ struct SpeciesInfo /*0xC4*/
     u16 trainerScale;
     u16 trainerOffset;
     const u8 *description;
+    // const u8 *description2; // may decide to add a secondary description for every pokemon as a dex upgrade since natdex is unlocked early
     enum BodyColor bodyColor:7;
     // Graphical Data
     u8 noFlip:1;
@@ -347,13 +348,17 @@ struct SpeciesInfo /*0xC4*/
     u8 backAnimId;
     const union AnimCmd *const *frontAnimFrames;
     const u32 *frontPic;
+    const u32 *frontPicShiny; //only called if flag hasUniqueShinySprite is set
     const u32 *backPic;
+    const u32 *backPicShiny; //only called if flag hasUniqueShinySprite is set
     const u16 *palette;
     const u16 *shinyPalette;
     const u8 *iconSprite;
 #if P_GENDER_DIFFERENCES
     const u32 *frontPicFemale;
+    const u32 *frontPicFemaleShiny; //only called if flag hasUniqueShinySprite is set
     const u32 *backPicFemale;
+    const u32 *backPicFemaleShiny; //only called if flag hasUniqueShinySprite is set
     const u16 *paletteFemale;
     const u16 *shinyPaletteFemale;
     const u8 *iconSpriteFemale;
@@ -398,7 +403,8 @@ struct SpeciesInfo /*0xC4*/
     u32 dexForceRequired:1; // This species will be taken into account for Pokédex ratings even if they have the "isMythical" flag set.
     u32 tmIlliterate:1;     // This species will be unable to learn the universal moves.
     u32 isFrontierBanned:1; // This species is not allowed to participate in Battle Frontier facilities.
-    u32 padding4:11;
+	u32 hasUniqueShinySprite:1;
+    u32 padding4:10;
     // Shadow settings
     s8 enemyShadowXOffset; // This determines the X-offset for an enemy Pokémon's shadow during battle; negative values point left, positive values point right.
     s8 enemyShadowYOffset; // This determines the Y-offset for an enemy Pokémon's shadow during battle; negative values point up, positive values point down.

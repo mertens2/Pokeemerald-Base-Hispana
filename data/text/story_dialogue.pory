@@ -656,124 +656,115 @@ text MtChimney_Text_WeLoveYouArchie {
 	format("¡Eres genial, Jefecito!\p¡Te amamos, Archie!")
 }
 
-// // meteor falls 1f
+// meteor falls 1f
 
-// text MeteorFalls_1F_1R_Text_AndThatsWhy {
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("And that's why… Once they appear…\pYou'll comply.")
-		// }
-		// ES{
-			// format("Y es por eso… Cuando lleguen…\pHarás lo que te digan.")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_AndThatsWhy {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("And that's why… Once they appear…\pYou'll comply.")
+		}
+		ES{
+			format("Y es por eso… Cuando lleguen…\pHarás lo que te digan.")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_Understood {
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("Understood, Mister!\pI hope they don't realize…")
-		// }
-		// ES{
-			// format("¡Entendido, Señor!\pEspero no lo noten…")
-		// }
-	// }
-// }
-
-// text MeteorFalls_1F_1R_Text_FamiliarVoice {
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("{COLOR_PLAYER}(That voice…)\n(… Is… {COLOR_RIVAL}He{COLOR_PLAYER} here?)")
-		// }
-		// ES{
-			// format("{COLOR_PLAYER}(Esa voz…)\n(… ¿Será que… Es {COLOR_RIVAL}él{COLOR_PLAYER}…?)")
-		// }
-	// }
-// }
-
-// // text MeteorFalls_1F_1R_Text_FamiliarVoice {
-	// // poryswitch(LANGUAGE) {
-		// // EN{
-			// // format("{COLOR_PLAYER}(That voice…)\n(… Is… {COLOR_RIVAL}He{COLOR_PLAYER} here?)")
-		// // }
-		// // ES{
-			// // format("{COLOR_PLAYER}(Esa voz…)\n(… ¿Será que… Es {COLOR_RIVAL}él{COLOR_PLAYER}…?)")
-		// // }
-	// // }
-// // }
-
-// // text MeteorFalls_1F_1R_Text_FamiliarVoice {
-	// // poryswitch(LANGUAGE) {
-		// // EN{
-			// // format("{COLOR_PLAYER}(That voice…)\n(… Is… {COLOR_RIVAL}He{COLOR_PLAYER} here?)")
-		// // }
-		// // ES{
-			// // format("{COLOR_PLAYER}(Esa voz…)\n(… ¿Será que… Es {COLOR_RIVAL}él{COLOR_PLAYER}…?)")
-		// // }
-	// // }
-// // }
+text MeteorFalls_1F_1R_Text_Understood {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Understood, Mister!\pI hope they don't realize…")
+		}
+		ES{
+			format("¡Entendido, Señor!\pEspero no lo noten…")
+		}
+	}
+}
 
 
-// text MeteorFalls_1F_1R_Text_WithThisMeteorite{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("Give up the Meteorite!\nWith it, there, at Mt. Chimney…")
-		// }
-		// ES{
-			// format("¡Entregue el meteorito!\nCon él, en el Monte Chimney…")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_FamiliarVoice {
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{COLOR_PLAYER}(That voice…)\n(… Is… {COLOR_RIVAL}He{COLOR_PLAYER} here?)")
+		}
+		ES{
+			format("{COLOR_PLAYER}(Esa voz…)\n(… ¿Será que… Es {COLOR_RIVAL}él{COLOR_PLAYER}…?)")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_ThisIsAllIHave{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("N-no…! This is all I have!")
-		// }
-		// ES{
-			// format("¡N-no…! ¡Esto es todo lo que tengo!")
-		// }
-	// }
-// }
 
-// text MeteorFalls_1F_1R_Text_PlayerWhatDoIDo{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("{COLOR_PLAYER}(What do I do now?)")
-		// }
-		// ES{
-			// format("{COLOR_PLAYER}(¿Y qué hago yo ahora?)")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_WithThisMeteorite{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Give up the Meteorite!\nWith it, there, at Mt. Chimney…")
+		}
+		ES{
+			format("¡Entregue el meteorito!\nCon él, en el Monte Chimney…")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_PlayerRightHelp{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("{COLOR_PLAYER}(Right! I can't leave him like this, can I?)")
-		// }
-		// ES{
-			// format("{COLOR_PLAYER}(¡Claro! No puedo abandonarlo así, ¿Verdad?)")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_ThisIsAllIHave{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("N-no…! This is all I have!")
+		}
+		ES{
+			format("¡N-no…! ¡Esto es todo lo que tengo!")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_PlayerRightJustWatch{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("{COLOR_PLAYER}(Right! It's not my place, is it?)")
-		// }
-		// ES{
-			// format("{COLOR_PLAYER} (¡Claro! No es mi lugar, ¿Verdad?)")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_PlayerWhatDoIDo{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{COLOR_PLAYER}(What do I do now?)")
+		}
+		ES{
+			format("{COLOR_PLAYER}(¿Y qué hago yo ahora?)")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_PlayerRightHelp{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{COLOR_PLAYER}(Right! I can't leave him like this, can I?)")
+		}
+		ES{
+			format("{COLOR_PLAYER}(¡Claro! No puedo abandonarlo así, ¿Verdad?)")
+		}
+	}
+}
+
+text MeteorFalls_1F_1R_Text_PlayerRightJustWatch{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("{COLOR_PLAYER}(Right! It's not my place, is it?)")
+		}
+		ES{
+			format("{COLOR_PLAYER} (¡Claro! No es mi lugar, ¿Verdad?)")
+		}
+	}
+}
 			
-// text MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma{
+text MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma{
+	poryswitch(LANGUAGE) {
+		EN{
+		format("Whose child is this? Are you the brat that's been"
+		"messing with Team Aqua?\p¡Verás qué gran poder poseemos en el Equipo Magma!")
+		}
+		ES{
+		format("¿Y est{EA} niñ{OA}?\n¿No serás tú {ELLA} que estuvo derrotando al"
+		"Equipo Aqua?\p¡Verás qué gran poder poseemos en el Equipo Magma!")
+		}
+	}
+}
+
+// text MeteorFalls_1F_1R_Text_FreedomOfChoice{
 	// poryswitch(LANGUAGE) {
 		// EN{
-		// format("Whose child is this? Are you the brat that's been"
-		// "messing with Team Aqua?\p¡Verás qué gran poder poseemos en el Equipo Magma!")
+		// format("{COLOR_PLAYER}(im killing myself )")
 		// }
 		// ES{
 		// format("¿Y est{EA} niñ{OA}?\n¿No serás tú {ELLA} que estuvo derrotando al"
@@ -782,203 +773,191 @@ text MtChimney_Text_WeLoveYouArchie {
 	// }
 // }
 
-// // text MeteorFalls_1F_1R_Text_FreedomOfChoice{
-	// // poryswitch(LANGUAGE) {
-		// // EN{
-		// // format("{COLOR_PLAYER}(im killing myself )")
-		// // }
-		// // ES{
-		// // format("¿Y est{EA} niñ{OA}?\n¿No serás tú {ELLA} que estuvo derrotando al"
-		// // "Equipo Aqua?\p¡Verás qué gran poder poseemos en el Equipo Magma!")
-		// // }
-	// // }
-// // }
-
-// text MeteorFalls_1F_1R_Text_HoldItRightThereMagma{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("Hold it right there, Team Magma!\p{COLOR BLUE}(Hehe… Always wanted to say that…){COLOR DARK_GRAY}\p"
-			// "Abandon this planet at once!")
-		// }
-		// ES{
-			// format("¡Alto ahí, Equipo Magma!\p{COLOR BLUE}(Jeje… Siempre quise decir eso…){COLOR DARK_GRAY}\p"
-			// "¡Abandonen el planeta!")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_HoldItRightThereMagma{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Hold it right there, Team Magma!\p{COLOR BLUE}(Hehe… Always wanted to say that…){COLOR DARK_GRAY}\p"
+			"Abandon this planet at once!")
+		}
+		ES{
+			format("¡Alto ahí, Equipo Magma!\p{COLOR BLUE}(Jeje… Siempre quise decir eso…){COLOR DARK_GRAY}\p"
+			"¡Abandonen el planeta!")
+		}
+	}
+}
 
 
-// text MeteorFalls_1F_1R_Text_MagmaConfusion {
-	// format("???????????????????????????????")
-// }
+text MeteorFalls_1F_1R_Text_MagmaConfusion {
+	format("???????????????????????????????")
+}
 
-// text MeteorFalls_1F_1R_Text_GotCarriedAway{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("Um… Got carried away…\pEhem……\nY'all really thought you could get away without us sayin' nothin'?")
-		// }
-		// ES{
-			// format("Em… Creo que me pasé…\pEjem……\n¿Creyeron que podrían salirse con la suya sin que les digamos nada?")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_GotCarriedAway{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Um… Got carried away…\pEhem……\nY'all really thought you could get away without us sayin' nothin'?")
+		}
+		ES{
+			format("Em… Creo que me pasé…\pEjem……\n¿Creyeron que podrían salirse con la suya sin que les digamos nada?")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_WhatIsThisChild{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("H-{PAUSE 5}huh?\p{PAUSE 10}WHAT EVEN IS THIS CHILD!?")
-		// }
-		// ES{
-			// format("Q-{PAUSE 5} eh?\p{PAUSE 10}¿¡PERO Y EST{EA} {ITOITA} QUÉ ES!?")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_WhatIsThisChild{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("H-{PAUSE 5}huh?\p{PAUSE 10}WHAT EVEN IS THIS CHILD!?")
+		}
+		ES{
+			format("Q-{PAUSE 5} eh?\p{PAUSE 10}¿¡PERO Y EST{EA} {ITOITA} QUÉ ES!?")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_WhatIsThisYOU{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("Oh my myths, you are STUPID!\pI keep telling you, a Special Attacking Ursaring is NOT. GOING. TO. WORK!\p"
-			// "And a Nidoking… With all four moves being Earthquake? HOW do you even do that?")
-		// }
-		// ES{
-			// format("¡Mítico mío, eres IDIOTA!\pTe vivo diciendo, un Ursaring Atacante Especial ¡NO. VA. A. FUNCIONAR!\p"
-			// "¿Y cómo hiciste para que tu Nidoking conozca Terremoto cuatro veces?")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_WhatIsThisYOU{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Oh my myths, you are STUPID!\pI keep telling you, a Special Attacking Ursaring is NOT. GOING. TO. WORK!\p"
+			"And a Nidoking… With all four moves being Earthquake? HOW do you even do that?")
+		}
+		ES{
+			format("¡Mítico mío, eres IDIOTA!\pTe vivo diciendo, un Ursaring Atacante Especial ¡NO. VA. A. FUNCIONAR!\p"
+			"¿Y cómo hiciste para que tu Nidoking conozca Terremoto cuatro veces?")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_ShutUp{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("SHUT UP! SHUT UP!\pFirst of all, this Nidoking was {COLOR RED}Mr. Maxie's gift{COLOR DARK_GRAY}.\NSecond of all,"
-			// " MY URSARING WILL PAY OFF. I GUARANTEE YOU.")
-		// }
-		// ES{
-			// format("¡CÁLLATE! ¡CÁLLATE!\pPrimero que nada, este Nidoking me lo dio el {COLOR RED}Señor Maxie{COLOR DARK_GRAY}.\NSegundo que nada,"
-			// " ¡MI URSARING VA A FUNCIONAR, TE LO ASEGURO!")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_ShutUp{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("SHUT UP! SHUT UP!\pFirst of all, this Nidoking was {COLOR RED}Mr. Maxie's gift{COLOR DARK_GRAY}.\NSecond of all,"
+			" MY URSARING WILL PAY OFF. I GUARANTEE YOU.")
+		}
+		ES{
+			format("¡CÁLLATE! ¡CÁLLATE!\pPrimero que nada, este Nidoking me lo dio el {COLOR RED}Señor Maxie{COLOR DARK_GRAY}.\NSegundo que nada,"
+			" ¡MI URSARING VA A FUNCIONAR, TE LO ASEGURO!")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("Too late, Team Aqua!\pThe Meteorite is in our possesion!\pWhy don't you all come to Mt Chimney to stop us?")
-		// }
-		// ES{
-			// format("¡Muy tarde, Equipo Aqua!\p¡El Meteorito es nuestro!\p¿Por qué no se vienen al Monte Chimney"
-			// "e intentan detenernos?")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Too late, Team Aqua!\pThe Meteorite is in our possesion!\pWhy don't you all come to Mt Chimney to stop us?")
+		}
+		ES{
+			format("¡Muy tarde, Equipo Aqua!\p¡El Meteorito es nuestro!\p¿Por qué no se vienen al Monte Chimney"
+			"e intentan detenernos?")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_ArchieHelpedBeforeNotNow{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("You. I met back you in Slateport, didn't I?\p"
-			// "Look. I don't get you.\nAt least once you helped us…\pBut now? Now you're siding with THEM?\p"
-			// "Look. Think what ya want of me, but I'm not aggressive. Neither am I stupid. But that Team Magma"
-			// "is a real danger.\pAs long as you don't mess with us, and you do anything against them, I don't care what you do.\p"
-			// "But you make a wrong step with us… And you'll end up wishing you sank into the ocean on your way to Slateport…")
-		// }
-		// ES{
-			// format("Tú. Tú eres {ELLA} {GENDER} que ví en Slateport, ¿verdad?\pLa verdad no te comprendo.\n"
-			// "Al menos una vez, nos ayudaste, ¿Verdad?\p¿Y ahora estás de SU lado?\p"
-			// "Mira. Piensa lo que quieras, pero no soy agresivo. No soy idiota. Ese Eqipo Magma es un peligro.\p"
-			// "Mientras no interfieras, y ayudes a acabar con el Equipo Magma, no me importa lo que hagas.\p"
-			// "Pero te metes en nuestro camino… Y preferirás haberte ahogado en el océano de camino a Slateport…")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_ArchieHelpedBeforeNotNow{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("You. I met back you in Slateport, didn't I?\p"
+			"Look. I don't get you.\nAt least once you helped us…\pBut now? Now you're siding with THEM?\p"
+			"Look. Think what ya want of me, but I'm not aggressive. Neither am I stupid. But that Team Magma"
+			"is a real danger.\pAs long as you don't mess with us, and you do anything against them, I don't care what you do.\p"
+			"But you make a wrong step with us… And you'll end up wishing you sank into the ocean on your way to Slateport…")
+		}
+		ES{
+			format("Tú. Tú eres {ELLA} {GENDER} que ví en Slateport, ¿verdad?\pLa verdad no te comprendo.\n"
+			"Al menos una vez, nos ayudaste, ¿Verdad?\p¿Y ahora estás de SU lado?\p"
+			"Mira. Piensa lo que quieras, pero no soy agresivo. No soy idiota. Ese Eqipo Magma es un peligro.\p"
+			"Mientras no interfieras, y ayudes a acabar con el Equipo Magma, no me importa lo que hagas.\p"
+			"Pero te metes en nuestro camino… Y preferirás haberte ahogado en el océano de camino a Slateport…")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_ArchieHelpedBothTimes{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("You. I met back you in Slateport, didn't I?\N"
-			// "Seems like we're on the same ship.\pDon't try to hide it.\n"
-			// "I saw you taking that Meteorite when nobody was looking. You better keep that ship afloat, matey.\p"
-			// "Let's go to Mt Chimney together, I'm dying to see {COLOR RED}Maxie's{COLOR DARK_GRAY} face"
-			// "when he finds out.")
-		// }
-		// ES{
-			// format("Tú. Tú eres {ELLA} que ví en Slateport, ¿verdad?\pParece que estamos en el mismo barco.\n"
-			// "Je, no lo escondas. Te vi robarte el Meteorito en ese descuido. Más te vale no bajarte de esa nave.\p"
-			// "Vayamos todos al Monte Chimney… Me muero de ganas de ver la cara de {COLOR RED}Maxie{COLOR DARK_GRAY}"
-			// "cuando se entere.")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_ArchieHelpedBothTimes{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("You. I met back you in Slateport, didn't I?\N"
+			"Seems like we're on the same ship.\pDon't try to hide it.\n"
+			"I saw you taking that Meteorite when nobody was looking. You better keep that ship afloat, matey.\p"
+			"Let's go to Mt Chimney together, I'm dying to see {COLOR RED}Maxie's{COLOR DARK_GRAY} face"
+			"when he finds out.")
+		}
+		ES{
+			format("Tú. Tú eres {ELLA} que ví en Slateport, ¿verdad?\pParece que estamos en el mismo barco.\n"
+			"Je, no lo escondas. Te vi robarte el Meteorito en ese descuido. Más te vale no bajarte de esa nave.\p"
+			"Vayamos todos al Monte Chimney… Me muero de ganas de ver la cara de {COLOR RED}Maxie{COLOR DARK_GRAY}"
+			"cuando se entere.")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_ArchieNeverHelped{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("You. I met back you in Slateport, didn't I?\p"
-			// "You must be one of them, or are you just plain old stupid?\p"
-			// "Think what you want of me, but I'm not one to act without thinking. But that Team Magma"
-			// "is a real danger.\p"
-			// "If you take even one wrong step with us… I can't promise any Pokémon Center will save your Team…")
-		// }
-		// ES{
-			// format("Tú. Tú eres {ELLA} {GENDER} que ví en Slateport, ¿verdad?\pLa verdad no te comprendo.\n"
-			// "¿Eres infiltrad{OA} del Equipo Magma, verdad?\p¿O simplemente eres idiota?"
-			// "Mira. Piensa lo que quieras, pero no actúo sin pensar. Ese Eqipo Magma es un peligro.\p"
-			// "Y si te metes en nuestro camino… No prometo que haya Centro Pokémon capaz de salvar a tus compañeros…")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_ArchieNeverHelped{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("You. I met back you in Slateport, didn't I?\p"
+			"You must be one of them, or are you just plain old stupid?\p"
+			"Think what you want of me, but I'm not one to act without thinking. But that Team Magma"
+			"is a real danger.\p"
+			"If you take even one wrong step with us… I can't promise any Pokémon Center will save your Team…")
+		}
+		ES{
+			format("Tú. Tú eres {ELLA} {GENDER} que ví en Slateport, ¿verdad?\pLa verdad no te comprendo.\n"
+			"¿Eres infiltrad{OA} del Equipo Magma, verdad?\p¿O simplemente eres idiota?"
+			"Mira. Piensa lo que quieras, pero no actúo sin pensar. Ese Eqipo Magma es un peligro.\p"
+			"Y si te metes en nuestro camino… No prometo que haya Centro Pokémon capaz de salvar a tus compañeros…")
+		}
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_MeetProfCozmo{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("I… I'm Cozmo…\nI'm a Professor…\p"
-			// "H-{PAUSE 8}he told me…{PAUSE 16} T-{PAUSE 8}t-{PAUSE 8}he Team Magma Grunt, I mean!\p"
-			// "He tricked me…{PAUSE 16} And now the Meteorite is gone.\pWhat would they even need it for?")
-		// }
-		// ES{
-			// format("Soy… Cozmo…\nSoy un Profesor Pokémon…\p"
-			// "É-{PAUSE 8}él dijo…{PAUSE 16} ¡C-{PAUSE 8}cl-{PAUSE 8}claro que hablo de ese Recluta!\p"
-			// "Me engañó…{PAUSE 16} Y se llevó el Meteorito.\p¿Para qué lo querrán?")
-		// }
+text MeteorFalls_1F_1R_Text_MeetProfCozmo{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("I… I'm Cozmo…\nI'm a Professor…\p"
+			"H-{PAUSE 8}he told me…{PAUSE 16} T-{PAUSE 8}t-{PAUSE 8}he Team Magma Grunt, I mean!\p"
+			"He tricked me…{PAUSE 16} And now the Meteorite is gone.\pWhat would they even need it for?")
+		}
+		ES{
+			format("Soy… Cozmo…\nSoy un Profesor Pokémon…\p"
+			"É-{PAUSE 8}él dijo…{PAUSE 16} ¡C-{PAUSE 8}cl-{PAUSE 8}claro que hablo de ese Recluta!\p"
+			"Me engañó…{PAUSE 16} Y se llevó el Meteorito.\p¿Para qué lo querrán?")
+		}
 		
-	// }
-// }
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_ProfCozmoGiveMeteorite{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("Y-{PAUSE 8}you have it?\p{COLOR BLUE}(This isn't good…){COLOR DARK_GRAY}\pT-{PAUSE 8}that's great!\N"
-			// "Why don't we go to my lab?")
-		// }
-		// ES{
-			// format("¿L-{PAUSE 8}lo tienes?\p{COLOR BLUE}(Esto es terrible…){COLOR DARK_GRAY}\p¡Q-{PAUSE 8}qué bien!\N"
-			// "¿Vamos a mi laboratorio?")
-		// }
+text MeteorFalls_1F_1R_Text_ProfCozmoGiveMeteorite{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Y-{PAUSE 8}you have it?\p{COLOR BLUE}(This isn't good…){COLOR DARK_GRAY}\pT-{PAUSE 8}that's great!\N"
+			"Why don't we go to my lab?")
+		}
+		ES{
+			format("¿L-{PAUSE 8}lo tienes?\p{COLOR BLUE}(Esto es terrible…){COLOR DARK_GRAY}\p¡Q-{PAUSE 8}qué bien!\N"
+			"¿Vamos a mi laboratorio?")
+		}
 		
-	// }
-// }
+	}
+}
 
-// text MeteorFalls_1F_1R_Text_ProfCozmoGetItBack{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("Y-{PAUSE 8}you'll get it back?\pThat's great!\NJust, please be careful…")
-		// }
-		// ES{
-			// format("¿L-{PAUSE 8}lo recuperarás?\p¡Qué alivio!\nPor favor, ten cuidado con ellos…")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_ProfCozmoGetItBack{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("Y-{PAUSE 8}you'll get it back?\pThat's great!\NJust, please be careful…")
+		}
+		ES{
+			format("¿L-{PAUSE 8}lo recuperarás?\p¡Qué alivio!\nPor favor, ten cuidado con ellos…")
+		}
+	}
+}
 
 
-// text MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney{
-	// poryswitch(LANGUAGE) {
-		// EN{
-			// format("That “Team Magma”… The Distorsion World do they want at Chimney?")
-		// }
-		// ES{
-			// format("Ese tal “Equipo Magma”… ¿Qué Giratinas querrán en el Monte Chimney?")
-		// }
-	// }
-// }
+text MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney{
+	poryswitch(LANGUAGE) {
+		EN{
+			format("That “Team Magma”… The Distorsion World do they want at Chimney?")
+		}
+		ES{
+			format("Ese tal “Equipo Magma”… ¿Qué Giratinas querrán en el Monte Chimney?")
+		}
+	}
+}
 
 
 raw `

@@ -4202,7 +4202,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallCatch = {
 	.tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_LIGHT,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
     .size = 256,
     .width = 16,
     .height = 32,

@@ -2249,7 +2249,6 @@ static ALWAYS_INLINE bool32 IsEggOrBadEgg(struct BoxPokemon *boxMon)
  * number of arguments. */
 u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 {
-    s32 i;
     u32 retVal = 0;
 
     // Any field greater than MON_DATA_ENCRYPT_SEPARATOR is encrypted and must be treated as such
@@ -6934,22 +6933,24 @@ u32 CalculateShininess(bool8 affectsShinyFlags, u8 method, u8 flagAffected, u16 
 	if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
 		totalRerolls += I_SHINY_CHARM_ADDITIONAL_ROLLS;
 	
-	// switch (gSaveBlock2Ptr->optionsShinyOdds){
-		// case 0:
-			// totalRerolls *= 1;
-			// break;
-		// case 1:
-			// totalRerolls *= 2;
-			// break;
-		// case 2:
-			// totalRerolls *= 4;
-			// break;
-		// case 3:
-			// totalRerolls *= 8;
-			// break;
-		// default:
-			// totalRerolls *= 2;
-	// }
+	switch (gSaveBlock2Ptr->optionsShinyOdds){
+		case 0:
+			totalRerolls *= 1;
+			break;
+		case 1:
+			totalRerolls *= 2;
+			break;
+		case 2:
+			totalRerolls *= 4;
+			break;
+		case 3:
+			totalRerolls *= 64;
+			break;
+		default:
+			totalRerolls *= 2;
+	}
+	
+	
 	personality = Random32();
 	if (!keepNature){
 		while ((GET_SHINY_VALUE(value, personality)) >= SHINY_ODDS && (totalRerolls > 0))

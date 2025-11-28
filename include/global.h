@@ -595,6 +595,11 @@ struct SaveBlock2
 			 u8 customization[5];
              u16 optionsDisableMatchCall:1; //tx_optionsPlus
              u16 optionsCurrentFont:1;  //tx_optionsPlus
+             u16 optionsBadgeScaling:1;  //tx_optionsPlus
+             u16 optionsEnemyPotionUse:1;  //tx_optionsPlus
+             u16 optionsPLayerItemUse:1;  //tx_optionsPlus
+             u16 optionsLevelScaling:2;  //tx_optionsPlus
+             u16 optionsTrainingMode:1;  //tx_optionsPlus
              //u16 padding1:4;
              //u16 padding2;
     /*0x18*/ struct Pokedex pokedex;

@@ -8420,6 +8420,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+	case ABILITY_SWORD_MASTER:
+        if (IsSlicingMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
+        break;
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
@@ -8934,7 +8938,7 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
         }
         break;
     case ABILITY_GRASS_PELT:
-        if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && usesDefStat)
+        if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
         {
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
             if (ctx->updateFlags)
@@ -9027,9 +9031,12 @@ static inline uq4_12_t GetTargetDamageModifier(struct DamageContext *ctx)
 
 static inline uq4_12_t GetParentalBondModifier(u32 battlerAtk)
 {
-    if (gSpecialStatuses[battlerAtk].parentalBondState != PARENTAL_BOND_2ND_HIT)
-        return UQ_4_12(1.0);
-    return B_PARENTAL_BOND_DMG >= GEN_7 ? UQ_4_12(0.25) : UQ_4_12(0.5);
+	if (gBattleMons[battlerAtk].ability != ABILITY_SWORD_MASTER) {
+		if (gSpecialStatuses[battlerAtk].parentalBondState != PARENTAL_BOND_2ND_HIT)
+			return UQ_4_12(1.0);
+		return B_PARENTAL_BOND_DMG >= GEN_7 ? UQ_4_12(0.25) : UQ_4_12(0.5);
+	}
+	return UQ_4_12(1.0);
 }
 
 static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageContext *ctx)

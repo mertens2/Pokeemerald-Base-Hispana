@@ -1,0 +1,140 @@
+mapscripts MauvilleCity_EvoMart_MapScripts {}
+
+
+script MauvilleCity_EvoMart_Scripts_Azurill {
+	faceplayer
+	msgbox("Uuuuu…")
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_EvoMart_Scripts_AzurillGirl {
+	faceplayer
+	msgbox(MauvilleCity_EvoMart_Text_AzurillGirl)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_EvoMart_Scripts_HereToBuy {
+	faceplayer
+	msgbox(MauvilleCity_EvoMart_Text_HereToBuy)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_EvoMart_Scripts_UltimateMoveTutor {
+	faceplayer
+	msgbox(MauvilleCity_EvoMart_Text_UltimateMoveTutor, MSGBOX_YESNO)
+	if (var(VAR_RESULT))
+	{
+		if (checkitem(ITEM_RED_SHARD)){
+			setvar(VAR_TEMP_1, ITEM_RED_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_UltimateMoveTutorSelectMove)
+		}
+		if (checkitem(ITEM_BLUE_SHARD)){
+			setvar(VAR_TEMP_1, ITEM_BLUE_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_UltimateMoveTutorSelectMove)
+		}
+		if (checkitem(ITEM_GREEN_SHARD)){
+			setvar(VAR_TEMP_1, ITEM_GREEN_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_UltimateMoveTutorSelectMove)
+		}
+	}
+	else {
+		goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+	}
+}
+
+script MauvilleCity_EvoMart_Scripts_UltimateMoveTutorSelectMove {
+	msgbox(MauvilleCity_EvoMart_Text_SelectMoveTutor)
+	dynmultichoice (15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Planta Feroz", "Anillo de Fuego", "Hidrocañón", "Enfado", "Bruma Explosiva")
+	switch(var(VAR_RESULT))
+	{
+		case 0:
+			setvar (VAR_0x8005, MOVE_FRENZY_PLANT)
+			break
+		case 1:
+			setvar (VAR_0x8005, MOVE_BLAST_BURN)
+			break
+		case 2:
+			setvar (VAR_0x8005, MOVE_HYDRO_CANNON)
+			break
+		case 3:
+			setvar (VAR_0x8005, MOVE_OUTRAGE)
+			break
+		case 4:
+			setvar (VAR_0x8005, MOVE_MISTY_EXPLOSION)
+			break
+	}
+	call (MauvilleCity_EvoMart_Scripts_TeachMove)
+	removeitem(VAR_TEMP_1, 1)
+	closemessage
+	end
+}
+
+script MauvilleCity_EvoMart_Scripts_TeachMove {
+	msgbox (MauvilleCity_EvoMart_Text_TutorSelectMon, MSGBOX_DEFAULT)
+	fadescreen (FADE_TO_BLACK)
+	special (ChooseMonForMoveTutor)
+	waitstate
+	goto_if_eq (VAR_RESULT, FALSE, MauvilleCity_EvoMart_Scripts_TutorCancel)
+	return
+}
+
+script MauvilleCity_EvoMart_Scripts_TutorCancel {
+	msgbox(MauvilleCity_EvoMart_Text_DeclineTutor)
+	closemessage
+	releaseall
+	end
+}
+
+script MauvilleCity_EvoMart_Scripts_SignatureMoveTutor {
+	faceplayer
+	msgbox(MauvilleCity_EvoMart_Text_SignatureMoveTutor, MSGBOX_YESNO)
+	if (var(VAR_RESULT))
+	{
+		if (checkitem(ITEM_RED_SHARD, 5)){
+			setvar(VAR_TEMP_1, ITEM_RED_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_SignatureMoveTutorSelectMon)
+		}
+		if (checkitem(ITEM_BLUE_SHARD, 5)){
+			setvar(VAR_TEMP_1, ITEM_BLUE_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_SignatureMoveTutorSelectMon)
+		}
+		if (checkitem(ITEM_GREEN_SHARD, 5)){
+			setvar(VAR_TEMP_1, ITEM_GREEN_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_SignatureMoveTutorSelectMon)
+		}
+		goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+	}
+	else {
+		goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+	}
+}
+
+script MauvilleCity_EvoMart_Scripts_SignatureMoveTutorSelectMon {
+	msgbox(MauvilleCity_EvoMart_Text_SelectMoveTutor)
+	dynmultichoice (15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Planta Feroz", "Anillo de Fuego", "Hidrocañón", "Enfado", "Bruma Explosiva")
+	switch(var(VAR_RESULT))
+	{
+		case 0:
+			setvar (VAR_0x8005, MOVE_FRENZY_PLANT)
+			break
+		case 1:
+			setvar (VAR_0x8005, MOVE_BLAST_BURN)
+			break
+		case 2:
+			setvar (VAR_0x8005, MOVE_HYDRO_CANNON)
+			break
+		case 3:
+			setvar (VAR_0x8005, MOVE_OUTRAGE)
+			break
+		case 4:
+			setvar (VAR_0x8005, MOVE_MISTY_EXPLOSION)
+			break
+	}
+	call (MauvilleCity_EvoMart_Scripts_TeachMove)
+	removeitem(VAR_TEMP_1, 5)
+	closemessage
+	end
+}

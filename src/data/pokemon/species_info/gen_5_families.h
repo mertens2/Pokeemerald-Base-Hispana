@@ -145,12 +145,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_SERVINE] =
     {
+	#if P_BUFF_SPECIES == TRUE
         .baseHP        = 60,
+        .baseAttack    = 40,
+        .baseDefense   = 75,
+        .baseSpeed     = 83,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 75,
+	#else
+		.baseHP        = 60,
         .baseAttack    = 60,
         .baseDefense   = 75,
         .baseSpeed     = 83,
         .baseSpAttack  = 60,
         .baseSpDefense = 75,
+	#endif
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = 145,
@@ -216,12 +225,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_SERPERIOR] =
     {
+	#if P_BUFF_SPECIES == TRUE
         .baseHP        = 75,
+        .baseAttack    = 45,
+        .baseDefense   = 95,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 95, //total 530
+	#else
+		.baseHP        = 75,
         .baseAttack    = 75,
         .baseDefense   = 95,
         .baseSpeed     = 113,
         .baseSpAttack  = 75,
         .baseSpDefense = 95,
+	#endif
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
@@ -423,12 +441,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_EMBOAR] =
     {
+	#if P_BUFF_SPECIES == TRUE
+        .baseHP        = 120,
+        .baseAttack    = 130,
+        .baseDefense   = 65,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 65,
+	#else
         .baseHP        = 110,
         .baseAttack    = 123,
         .baseDefense   = 65,
         .baseSpeed     = 65,
         .baseSpAttack  = 100,
         .baseSpDefense = 65,
+	#endif
         .types = MON_TYPES(TYPE_FIRE, TYPE_FIGHTING),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
@@ -653,13 +680,24 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_SAMUROTT] =
     {
+	#if P_BUFF_SPECIES == TRUE
         .baseHP        = 95,
+        .baseAttack    = 95,
+        .baseDefense   = 70,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 60,
+		.types = MON_TYPES(TYPE_WATER, TYPE_STEEL),
+	#else
+		.baseHP        = 95,
         .baseAttack    = 100,
         .baseDefense   = 85,
         .baseSpeed     = 70,
         .baseSpAttack  = 108,
         .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_WATER),
+		.types = MON_TYPES(TYPE_WATER),
+	#endif
+        
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
         .evYield_SpAttack = 3,
@@ -668,7 +706,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR },
+        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SWORD_MASTER },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Samurott"),
         .cryId = CRY_SAMUROTT,
@@ -720,12 +758,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_HISUIAN_FORMS
     [SPECIES_SAMUROTT_HISUI] =
     {
+	#if P_BUFF_SPECIES == TRUE
         .baseHP        = 90,
         .baseAttack    = 108,
         .baseDefense   = 80,
         .baseSpeed     = 85,
         .baseSpAttack  = 100,
         .baseSpDefense = 65,
+	#else
+		.baseHP        = 90,
+        .baseAttack    = 108,
+        .baseDefense   = 80,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 65,
+	#endif
         .types = MON_TYPES(TYPE_WATER, TYPE_DARK),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
@@ -744,10 +791,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 15,
         .weight = 582,
         .description = COMPOUND_STRING(
-            "De corazón duro y hábil con la espada,\n"
-            "esta rara forma de Samurott es un\n"
-            "producto de la evolución del Pokémon\n"
-            "en la región de Hisui."),
+            "Dicen que los Samurott en Hisui\n"
+            "tuvieron que aliarse con Bisharp\n"
+            "para sobrevivir. Y así aprendieron\n"
+            "tácticas sucias con la espada."),
         .pokemonScale = 268,
         .pokemonOffset = 2,
         .trainerScale = 271,
@@ -3444,12 +3491,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_FAMILY_SEWADDLE
     [SPECIES_SEWADDLE] =
     {
+	#if P_BUFF_SPECIES == TRUE
+		.baseHP        = 55,
+        .baseAttack    = 55,
+        .baseDefense   = 70,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 60,
+	#else
         .baseHP        = 45,
         .baseAttack    = 53,
         .baseDefense   = 70,
         .baseSpeed     = 42,
         .baseSpAttack  = 40,
         .baseSpDefense = 60,
+	#endif
         .types = MON_TYPES(TYPE_BUG, TYPE_GRASS),
         .catchRate = 255,
         .expYield = 62,
@@ -3515,12 +3571,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_SWADLOON] =
     {
-        .baseHP        = 55,
+	#if P_BUFF_SPECIES == TRUE
+        .baseHP        = 60,
         .baseAttack    = 63,
         .baseDefense   = 90,
         .baseSpeed     = 42,
         .baseSpAttack  = 50,
         .baseSpDefense = 80,
+	#else
+		.baseHP        = 55,
+        .baseAttack    = 63,
+        .baseDefense   = 90,
+        .baseSpeed     = 42,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 80,
+	#endif
         .types = MON_TYPES(TYPE_BUG, TYPE_GRASS),
         .catchRate = 120,
         .expYield = 133,
@@ -3584,11 +3649,19 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_LEAVANNY] =
     {
-        .baseHP        = 75,
+	#if P_BUFF_SPECIES == TRUE
+        .baseHP        = 90,
+        .baseAttack    = 103,
+        .baseDefense   = 80,
+        .baseSpeed     = 97,
+        .baseSpAttack  = 50,
+	#else
+		.baseHP        = 75,
         .baseAttack    = 103,
         .baseDefense   = 80,
         .baseSpeed     = 92,
         .baseSpAttack  = 70,
+	#endif
         .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 80 : 70,
         .types = MON_TYPES(TYPE_BUG, TYPE_GRASS),
         .catchRate = 45,
@@ -8262,12 +8335,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_ESCAVALIER] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 90,
+        .baseAttack    = 135,
+        .baseDefense   = 105,
+        .baseSpeed     = 20,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 105,
+		#else
         .baseHP        = 70,
         .baseAttack    = 135,
         .baseDefense   = 105,
         .baseSpeed     = 20,
         .baseSpAttack  = 60,
         .baseSpDefense = 105,
+		#endif
         .types = MON_TYPES(TYPE_BUG, TYPE_STEEL),
         .catchRate = 75,
         .expYield = 173,
@@ -8277,7 +8359,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_SHELL_ARMOR, ABILITY_OVERCOAT },
+        .abilities = { ABILITY_SPEED_BOOST, ABILITY_SHARPNESS, ABILITY_STURDY },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Escavalier"),
         .cryId = CRY_ESCAVALIER,
@@ -9822,7 +9904,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
+        .abilities = { ABILITY_OWN_TEMPO, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Axew"),
         .cryId = CRY_AXEW,
@@ -9831,10 +9913,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 6,
         .weight = 180,
 		.description = COMPOUND_STRING(
-			"Usa sus colmillos para romper las\n"
-			"bayas que come. Estos se regeneran\n"
-			"una y otra vez, por eso son tan\n"
-			"fuertes y afilados."),
+			"Sus afilados colmillos siempre\n"
+			"se le rompen. Esto los afila más,\n"
+			"paradójicamente. Ama esconderse\n"
+			"en el pelo de sus Entrenadores."),
         .pokemonScale = 422,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -9890,7 +9972,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
+        .abilities = { ABILITY_OWN_TEMPO, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Fraxure"),
         .cryId = CRY_FRAXURE,
@@ -9899,9 +9981,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 10,
         .weight = 360,
 		.description = COMPOUND_STRING(
-			"Al terminar un combate, se tiene que\n"
-			"afilar los colmillos con pedernal,\n"
-			"pues los rotos no le vuelven a salir."),
+			"A diferencia de Axew, sus grandes\n"
+			"colmillos no se regeneran, por lo\n"
+			"que deben reafilárselos siempre.\n"
+			"Si no es inmediato, no sobrevivirá."),
         .pokemonScale = 305,
         .pokemonOffset = 7,
         .trainerScale = 257,
@@ -9941,12 +10024,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_HAXORUS] =
     {
+		#if P_BUFF_SPECIES
+        .baseHP        = 75,
+        .baseAttack    = 150,
+        .baseDefense   = 90,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 70,
+		#else
         .baseHP        = 76,
         .baseAttack    = 147,
         .baseDefense   = 90,
         .baseSpeed     = 97,
         .baseSpAttack  = 60,
         .baseSpDefense = 70,
+		#endif
         .types = MON_TYPES(TYPE_DRAGON),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 270 : 243,
@@ -9956,7 +10048,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
+        .abilities = { ABILITY_OWN_TEMPO, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Haxorus"),
         .cryId = CRY_HAXORUS,
@@ -9965,9 +10057,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 18,
         .weight = 1055,
 		.description = COMPOUND_STRING(
-			"Sus colmillos no se quiebran ni aunque\n"
-			"los hinque en un armazón de acero.\n"
-			"Está protegido por una coraza."),
+			"Sus colmillos no se quiebran ni se\n"
+			"rasguñan de ninguna manera.\n"
+			"Aún así, sigue intentando meterse\n"
+			"en el pelo de sus Entrenadores."),
         .pokemonScale = 267,
         .pokemonOffset = 2,
         .trainerScale = 286,
@@ -10172,7 +10265,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_GUARD },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Cryogonal"),
         .cryId = CRY_CRYOGONAL,
@@ -10298,12 +10391,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_ACCELGOR] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 80,
+        .baseAttack    = 40,
+        .baseDefense   = 40,
+        .baseSpeed     = 145,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 60,
+		#else
         .baseHP        = 80,
         .baseAttack    = 70,
         .baseDefense   = 40,
         .baseSpeed     = 145,
         .baseSpAttack  = 100,
         .baseSpDefense = 60,
+		#endif
         .types = MON_TYPES(TYPE_BUG),
         .catchRate = 75,
         .expYield = 173,
@@ -10642,12 +10744,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_FAMILY_DRUDDIGON
     [SPECIES_DRUDDIGON] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 100,
+        .baseAttack    = 120,
+        .baseDefense   = 100,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 100,
+		#else
         .baseHP        = 77,
         .baseAttack    = 120,
         .baseDefense   = 90,
         .baseSpeed     = 48,
         .baseSpAttack  = 60,
         .baseSpDefense = 90,
+		#endif
         .types = MON_TYPES(TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 170,
@@ -10863,11 +10974,13 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_DARK, TYPE_STEEL),
         .catchRate = 120,
-        .expYield = 68,
+        .expYield = 90,
         .evYield_Attack = 1,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 35,
+		.itemCommon = ITEM_LEADERS_CREST,
+		.itemRare = ITEM_LEADERS_CREST,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
         .abilities = { ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE },
@@ -10923,7 +11036,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sPawniardLevelUpLearnset,
         .teachableLearnset = sPawniardTeachableLearnset,
         .eggMoveLearnset = sPawniardEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 52, SPECIES_BISHARP}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_BISHARP}),
     },
 
     [SPECIES_BISHARP] =
@@ -10938,10 +11051,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .catchRate = 45,
         .expYield = 172,
         .evYield_Attack = 2,
-        .itemRare = ITEM_LEADERS_CREST,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 35,
+		.itemCommon = ITEM_LEADERS_CREST,
+		.itemRare = ITEM_LEADERS_CREST,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
         .abilities = { ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE },
@@ -10991,7 +11105,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sBisharpLevelUpLearnset,
         .teachableLearnset = sBisharpTeachableLearnset,
     #if P_GEN_9_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_KINGAMBIT, CONDITIONS({IF_DEFEAT_X_WITH_ITEMS, SPECIES_BISHARP, ITEM_LEADERS_CREST, 3})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_KINGAMBIT, CONDITIONS({IF_HOLD_ITEM, ITEM_LEADERS_CREST})}),
     #endif
     },
 
@@ -11022,7 +11136,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 20,
         .weight = 1200,
         .description = COMPOUND_STRING(
-            "Cuenta con un enorme ejercito a sus\n"
+            "Cuenta con un enorme ejército a sus\n"
             "órdenes. Sin embargo, debido a su\n"
             "falta de dote como estratega,\n"
             "termina recurriendo a la fuerza bruta."),
@@ -11559,7 +11673,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_HUSTLE, ABILITY_TRUANT },
+        .abilities = { ABILITY_COLONYS_POWER, ABILITY_HUSTLE, ABILITY_TRUANT },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Durant"),
         .cryId = CRY_DURANT,
@@ -11568,9 +11682,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 3,
         .weight = 330,
 		.description = COMPOUND_STRING(
-			"Llevan una armadura de acero.\n"
-			"Se defienden en grupo para contrarrestar\n"
-			"sus depredadores, los Heatmor."),
+			"Cuando está por ser derrotado,\n"
+			"otro Durant sale de dondesea para\n"
+			"protegerle. Es presa de Heatmor."),
         .pokemonScale = 530,
         .pokemonOffset = 19,
         .trainerScale = 256,

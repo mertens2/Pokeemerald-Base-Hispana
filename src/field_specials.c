@@ -40,12 +40,14 @@
 #include "rtc.h"
 #include "script.h"
 #include "script_menu.h"
+#include "bg.h"
 #include "sound.h"
 #include "starter_choose.h"
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
 #include "text.h"
+#include "text_window.h"
 #include "tilesets.h"
 #include "tv.h"
 #include "wallclock.h"
@@ -75,7 +77,7 @@
 #include "pokedex.h"
 #include "item.h"
 #include "item_menu.h"
-#include "battle_util.h"
+#include "battle_setup.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -216,165 +218,198 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	[CAFE_TRAINER_HIKER] = {
 		.graphicsId = OBJ_EVENT_GFX_HIKER,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
-		.itemToGiveId = ITEM_POKE_BALL,
+		.introText = COMPOUND_STRING("¿Hm? ¿Quieres un combate?\n¡Pues vamos!"),
+		.lossText = COMPOUND_STRING("¡Increíble!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto! ¡Te servirá\ncuando vayas por cuevas!"),
+		.afterGiveItemText = COMPOUND_STRING("¡La próxima vez que nos\nveamos, voy a derrotarte!"),
+		.itemToGiveId = ITEM_DUSK_BALL,
 		
 	},
 	[CAFE_TRAINER_ACE_TRAINER_1] = {
 		.graphicsId = OBJ_EVENT_GFX_MAN_3,
-		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
-		.itemToGiveId = ITEM_NONE,
+		.trainerPartyId = TRAINER_MARCEL,
+		.introText = COMPOUND_STRING("¡Qué estupidez,\nesto de luchar!"),
+		.lossText = COMPOUND_STRING("¡Qué idiotez,\nesto de luchar!"),
+		.afterBattleText = COMPOUND_STRING("¡Qué bobería,\nesto de regalar!"),
+		.afterGiveItemText = COMPOUND_STRING("Texto de relleno."),
+		.itemToGiveId = ITEM_MASTER_BALL,
 		
 	}, 
 	[CAFE_TRAINER_ACE_TRAINER_2] = {
 		.graphicsId = OBJ_EVENT_GFX_WOMAN_3,
-		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
-		.itemToGiveId = ITEM_NONE,
+		.trainerPartyId = TRAINER_MARY,
+		.introText = COMPOUND_STRING("¡María te quemaría!"),
+		.lossText = COMPOUND_STRING("¡María se plasmaría!"),
+		.afterBattleText = COMPOUND_STRING("¡María no amaría!"),
+		.afterGiveItemText = COMPOUND_STRING("¡María se llama María!"),
+		.itemToGiveId = ITEM_NUGGET,
 		
 	},
 	[CAFE_TRAINER_EV_TRAIN_MEN]  =  {
 		.graphicsId = OBJ_EVENT_GFX_BLACK_BELT,
-		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.trainerPartyId = TRAINER_TAKAO,
+		.introText = COMPOUND_STRING("… Machop :3"),
+		.lossText = COMPOUND_STRING("… Machop :("),
+		.afterBattleText = COMPOUND_STRING("… Objeto."),
+		.afterGiveItemText = COMPOUND_STRING("… Vete."),
 		.itemToGiveId = ITEM_PROTEIN,
 		
 	},
 	[CAFE_TRAINER_WIVES]         =  {
 		.graphicsId = OBJ_EVENT_GFX_WOMAN_1,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_NONE,
 		
 	},
 	[CAFE_TRAINER_TV] =  {
 		.graphicsId = OBJ_EVENT_GFX_REPORTER_F,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_NONE,
 		
 	},
 	[CAFE_TRAINER_RIVAL]         =  {
 		.graphicsId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_NONE,
 		
 	},
 	[CAFE_TRAINER_WALLY_SISTER] =  {
 		.graphicsId = OBJ_EVENT_GFX_WOMAN_2,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_ULTRA_BALL,
 		
 	},
 	[CAFE_TRAINER_POLY_1] =  {
 		.graphicsId = OBJ_EVENT_GFX_BLACK_BELT,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_DUSK_BALL,
 	},
 	[CAFE_TRAINER_POLY_2] =  {
 		.graphicsId = OBJ_EVENT_GFX_AQUA_MEMBER_M,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_DIVE_BALL,
 		
 	},
 	[CAFE_TRAINER_OLD_LADY]      =  {
 		.graphicsId = OBJ_EVENT_GFX_EXPERT_F,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_OLD_GATEAU,
 		
 	},
 	[CAFE_TRAINER_OLD_MAN]       =  {
 		.graphicsId = OBJ_EVENT_GFX_EXPERT_M,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_OLD_GATEAU,
 		
 	},
 	[CAFE_TRAINER_BEAUTY]        =  {
 		.graphicsId = OBJ_EVENT_GFX_BEAUTY,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_BOTTLE_CAP,
 		
 	},
 	[CAFE_TRAINER_PARASOL_LADY]  =  {
 		.graphicsId = OBJ_EVENT_GFX_WOMAN_4,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_BOTTLE_CAP,
 		
 	},
 	[CAFE_TRAINER_LASS]          =  {
 		.graphicsId = OBJ_EVENT_GFX_LASS,
 		.trainerPartyId = TRAINER_DUSTY_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_BOTTLE_CAP,
 		
 	},
 	[CAFE_TRAINER_ROXANNE]       =  {
 		.graphicsId = OBJ_EVENT_GFX_ROXANNE,
 		.trainerPartyId = TRAINER_ROXANNE_1,
-		.introText = (const u8[]) _("¡Ah! ¡Luchemos!"),
-		.lossText = (const u8[]) _("¡Ah! ¡Perdí!"),
-		.afterBattleText = (const u8[]) _("¡Ten esto!"),
-		.afterGiveItemText = (const u8[]) _("¡Eres fuerte!"),
+		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
+		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
+		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
+		.afterGiveItemText = COMPOUND_STRING("¡Eres fuerte!"),
 		.itemToGiveId = ITEM_GOLD_BOTTLE_CAP,
 		
 	}, // por hacer wip
 };
 
 extern const struct CafeTrainer sCafeTrainers[];
+
+static const struct WindowTemplate sDailyCafeTrainersTextWindows[] =
+{
+    {
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 15,
+        .width = 27,
+        .height = 4,
+        .paletteNum = 15,
+        .baseBlock = 1
+    },
+    {
+        .bg = 0,
+        .tilemapLeft = 3,
+        .tilemapTop = 5,
+        .width = 6,
+        .height = 4,
+        .paletteNum = 15,
+        .baseBlock = 0x6D
+    },
+    {
+        .bg = 0,
+        .tilemapLeft = 3,
+        .tilemapTop = 2,
+        .width = 9,
+        .height = 10,
+        .paletteNum = 15,
+        .baseBlock = 0x85
+    },
+    DUMMY_WIN_TEMPLATE
+};
+
 
 void Special_ShowDiploma(void)
 {
@@ -5054,15 +5089,105 @@ void SetCafeTrainersToday(void) // por hacer wip
 	}
 }
 
-void DoCafeTrainerBattle(void) {
-	gSpecialVar_Result = sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].trainerPartyId;
-	StringExpandPlaceholders(gStringVar1, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].introText);
-	StringExpandPlaceholders(gStringVar2, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].lossText);
+
+static void LoadCafeWindowFrameTiles(u8 bgId, u16 tileOffset)
+{
+    LoadBgTiles(bgId, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, tileOffset);
+    LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
 }
 
+
+static void CafeTrainers_CreateDialogueWindowBorder(u8 bg, u8 x, u8 y, u8 width, u8 height, u8 palNum)
+{
+    FillBgTilemapBufferRect(bg, 0xFC +  1, x-2,       y-1, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, 0xFC +  3, x-1,       y-1, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, 0xFC +  4, x,         y-1, width,   1, palNum);
+    FillBgTilemapBufferRect(bg, 0xFC +  5, x+width-1, y-1, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, 0xFC +  6, x+width,   y-1, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, 0xFC +  7, x-2,       y,   1,       5, palNum);
+    FillBgTilemapBufferRect(bg, 0xFC +  9, x-1,       y,   width+1, 5, palNum);
+    FillBgTilemapBufferRect(bg, 0xFC + 10, x+width,   y,   1,       5, palNum);
+
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(0xFC + 1), x-2,       y+height, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(0xFC + 3), x-1,       y+height, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(0xFC + 4), x,         y+height, width-1, 1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(0xFC + 5), x+width-1, y+height, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(0xFC + 6), x+width,   y+height, 1,       1, palNum);
+}
+
+static void CafeTrainers_ShowDialogueWindow(u8 windowId, bool8 copyToVram)
+{
+    CallWindowFunction(windowId, CafeTrainers_CreateDialogueWindowBorder);
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    PutWindowTilemap(windowId);
+    if (copyToVram == TRUE)
+        CopyWindowToVram(windowId, COPYWIN_FULL);
+}
+
+static void CafeTrainers_ClearWindow(u8 windowId)
+{
+    u8 bgColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_BACKGROUND);
+    u8 maxCharWidth = GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_WIDTH);
+    u8 maxCharHeight = GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT);
+    u8 winWidth = GetWindowAttribute(windowId, WINDOW_WIDTH);
+    u8 winHeight = GetWindowAttribute(windowId, WINDOW_HEIGHT);
+
+    FillWindowPixelRect(windowId, bgColor, 0, 0, maxCharWidth * winWidth, maxCharHeight * winHeight);
+    CopyWindowToVram(windowId, COPYWIN_GFX);
+}
+
+static void CafeTrainers_InitWindows(void) {
+	InitWindows(sDailyCafeTrainersTextWindows);
+	LoadCafeWindowFrameTiles(0, 0xF3);
+	LoadMessageBoxGfx(0, 0xFC, BG_PLTT_ID(15));
+	CafeTrainers_ShowDialogueWindow(0, TRUE);
+	PutWindowTilemap(0);
+	CopyWindowToVram(0, COPYWIN_GFX);
+	CafeTrainers_ClearWindow(0);
+}
+
+static void Task_LoadLossTextData(u8 taskId){
+	if (!RunTextPrintersAndIsPrinter0Active())
+    {
+		StringCopy(TRAINER_BATTLE_PARAM.defeatTextA, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].lossText);
+        DestroyTask(taskId);
+        ScriptContext_Enable();
+    }
+}
+
+static void Task_LoadAfterLossData(u8 taskId){
+	if (!RunTextPrintersAndIsPrinter0Active())
+    {
+        DestroyTask(taskId);
+        ScriptContext_Enable();
+    }
+}
+
+void DoCafeTrainerBattle(void) {
+	CafeTrainers_InitWindows();
+	TRAINER_BATTLE_PARAM.opponentA = sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].trainerPartyId;
+	TRAINER_BATTLE_PARAM.isDoubleBattle = FALSE;
+	TRAINER_BATTLE_PARAM.mode = TRAINER_BATTLE_TYPE_SINGLES;
+	TRAINER_BATTLE_PARAM.objEventLocalIdA = VarGet(VAR_LAST_TALKED);
+	StringExpandPlaceholders(gStringVar4, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].introText);
+	AddTextPrinterForMessage(TRUE);
+	CreateTask(Task_LoadLossTextData, 1);
+}
+
+
+
 void GetCafeTrainersAfterBattleData(void) {
-	StringExpandPlaceholders(gStringVar1, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].afterBattleText);
-	StringExpandPlaceholders(gStringVar3, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].afterGiveItemText);
+	// CafeTrainers_InitWindows();
+	StringExpandPlaceholders(gStringVar4, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].afterBattleText);
+    AddTextPrinterForMessage(TRUE);
+	CreateTask(Task_LoadAfterLossData, 1);
 	gSpecialVar_Result = sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].itemToGiveId;
+}
+
+void GetCafeTrainersFinalText(void) {
+	CafeTrainers_InitWindows();
+	StringExpandPlaceholders(gStringVar4, sCafeTrainers[gSaveBlock2Ptr->cafeTrainers[gSpecialVar_0x8000]].afterGiveItemText);
+    AddTextPrinterForMessage(TRUE);
+	CreateTask(Task_LoadAfterLossData, 1);
 }
 

@@ -49,6 +49,8 @@ const u16 gBadgeFlags[NUM_BADGES] =
     FLAG_BADGE08_GET,
 };
 
+
+
 void InitEventData(void)
 {
     memset(gSaveBlock1Ptr->flags, 0, sizeof(gSaveBlock1Ptr->flags));
@@ -317,16 +319,20 @@ void RerollBattleCafeTrainers(void) {
 	u8 lastTrainer = 0;
 	
 	
-	for (i=0; i<4; i++){
-		do {
-			todaysTrainers[i] = Random() % 15;
-			if (i!=0)
-				lastTrainer = todaysTrainers[i-1];
-		}while (todaysTrainers[i] != gSaveBlock2Ptr->cafeTrainers[i] && (todaysTrainers[i] != lastTrainer));
-		// todaysTrainers[i] = i+1;
-	}
-	for (i=0; i<4; i++)
-		gSaveBlock2Ptr->cafeTrainers[i] = todaysTrainers[i];
+	// for (i=0; i<4; i++){
+		// do {
+			// todaysTrainers[i] = Random() % 15;
+			// if (i!=0)
+				// lastTrainer = todaysTrainers[i-1];
+		// }while (todaysTrainers[i] != gSaveBlock2Ptr->cafeTrainers[i] && (todaysTrainers[i] != lastTrainer));
+		// // todaysTrainers[i] = i+1;
+	// }
+	// for (i=0; i<4; i++)
+		// gSaveBlock2Ptr->cafeTrainers[i] = todaysTrainers[i];
+	gSaveBlock2Ptr->cafeTrainers[0] = 0;
+	gSaveBlock2Ptr->cafeTrainers[1] = 1;
+	gSaveBlock2Ptr->cafeTrainers[2] = 2;
+	gSaveBlock2Ptr->cafeTrainers[3] = 3;
 }
 
 static bool8 IsBattleCafeTrainerAvailable(u32 trainerToday, const u32 trainerYesterday, const u32 allTrainersToday) { // por hacer wip

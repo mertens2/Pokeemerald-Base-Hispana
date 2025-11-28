@@ -1253,3 +1253,7 @@ Decline:
 	.include "data/maps/MauvilleCity_Middle/scripts.inc"
 
 	.include "data/maps/Route117_Left/scripts.inc"
+
+	.include "data/maps/MauvilleCity_EvoMart/scripts.inc"
+
+	.include "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.inc"

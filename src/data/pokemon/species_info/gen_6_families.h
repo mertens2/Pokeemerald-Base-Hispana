@@ -2157,12 +2157,21 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 #if P_FAMILY_PANCHAM
     [SPECIES_PANCHAM] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 70,
+        .baseAttack    = 85,
+        .baseDefense   = 60,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 50,
+		#else
         .baseHP        = 67,
         .baseAttack    = 82,
         .baseDefense   = 62,
         .baseSpeed     = 43,
         .baseSpAttack  = 46,
         .baseSpDefense = 48,
+		#endif
         .types = MON_TYPES(TYPE_FIGHTING),
         .catchRate = 220,
         .expYield = 70,
@@ -2225,17 +2234,26 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sPanchamLevelUpLearnset,
         .teachableLearnset = sPanchamTeachableLearnset,
         .eggMoveLearnset = sPanchamEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_PANGORO, CONDITIONS({IF_TYPE_IN_PARTY, TYPE_DARK})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_PANGORO, CONDITIONS({IF_TYPE_IN_PARTY, TYPE_DARK})}),
     },
 
     [SPECIES_PANGORO] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 100,
+        .baseAttack    = 130,
+        .baseDefense   = 80,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 70,
+		#else
         .baseHP        = 95,
         .baseAttack    = 124,
         .baseDefense   = 78,
         .baseSpeed     = 58,
         .baseSpAttack  = 69,
         .baseSpDefense = 71,
+		#endif
         .types = MON_TYPES(TYPE_FIGHTING, TYPE_DARK),
         .catchRate = 65,
         .expYield = 173,
@@ -2303,13 +2321,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 #if P_FAMILY_FURFROU
 #define FURFROU_MISC_INFO(_form, _noFlip, frontWidth, frontYOffset, backWidth, backYOffset, _iconIdx)   \
     {                                                                                                   \
-        .baseHP        = 75,                                                                            \
-        .baseAttack    = 80,                                                                            \
+        .baseHP        = P_BUFF_SPECIES ? 100 : 75,                                                     \
+        .baseAttack    = P_BUFF_SPECIES ? 90 : 80,														\
         .baseDefense   = 60,                                                                            \
-        .baseSpeed     = 102,                                                                           \
+        .baseSpeed     = P_BUFF_SPECIES ? 105 : 102,                                                    \
         .baseSpAttack  = 65,                                                                            \
-        .baseSpDefense = 90,                                                                            \
-        .types = MON_TYPES(TYPE_NORMAL),                                                                \
+        .baseSpDefense = 90,																			\
+		.types = MON_TYPES(TYPE_NORMAL),                                                                \
         .catchRate = 160,                                                                               \
         .expYield = 165,                                                                                \
         .evYield_Speed = 1,                                                                             \
@@ -2363,7 +2381,21 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .formSpeciesIdTable = sFurfrouFormSpeciesIdTable,                                               \
         .formChangeTable = sFurfrouFormChangeTable,                                                     \
     }
-
+#define FURFROU_BUFFED_INFO(_form, _noFlip, frontWidth, frontYOffset, backWidth, backYOffset, _iconIdx) \
+	{	                                                                            					\
+		.baseHP        = 90,                                                                            \
+        .baseAttack    = 80,                                                                            \
+        .baseDefense   = 60,                                                                            \
+        .baseSpeed     = 105,                                                                           \
+        .baseSpAttack  = 65,                                                                            \
+        .baseSpDefense = 90,																			\
+		FURFROU_MISC_INFO(_form, _noFlip, frontWidth, frontYOffset, backWidth, backYOffset, _iconIdx)	\
+	}
+#define FURFROU_NORMAL_INFO(_form, _noFlip, frontWidth, frontYOffset, backWidth, backYOffset, _iconIdx) \
+	{	                                                                            					\
+																					\
+		FURFROU_MISC_INFO(_form, _noFlip, frontWidth, frontYOffset, backWidth, backYOffset, _iconIdx)	\
+	}
     [SPECIES_FURFROU_NATURAL]   = FURFROU_MISC_INFO(Natural,   FALSE, 48, 3, 56, 0, 0),
     [SPECIES_FURFROU_HEART]     = FURFROU_MISC_INFO(Heart,     FALSE, 56, 2, 56, 1, 0),
     [SPECIES_FURFROU_STAR]      = FURFROU_MISC_INFO(Star,      FALSE, 56, 2, 64, 1, 0),
@@ -3152,14 +3184,24 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 #endif //P_FAMILY_SWIRLIX
 
 #if P_FAMILY_INKAY
+
     [SPECIES_INKAY] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 55,
+        .baseAttack    = 60,
+        .baseDefense   = 55,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 45,
+		#else
         .baseHP        = 53,
         .baseAttack    = 54,
         .baseDefense   = 53,
         .baseSpeed     = 45,
         .baseSpAttack  = 37,
         .baseSpDefense = 46,
+		#endif
         .types = MON_TYPES(TYPE_DARK, TYPE_PSYCHIC),
         .catchRate = 190,
         .expYield = 58,
@@ -3169,7 +3211,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_2),
+		#if P_BUFF_SPECIES
+        .abilities = { ABILITY_CONTRARY, ABILITY_SUCTION_CUPS, ABILITY_SHADOW_TAG },
+		#else
         .abilities = { ABILITY_CONTRARY, ABILITY_SUCTION_CUPS, ABILITY_INFILTRATOR },
+		#endif
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Inkay"),
         .cryId = CRY_INKAY,
@@ -3224,12 +3270,21 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
     [SPECIES_MALAMAR] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 90,
+        .baseAttack    = 110,
+        .baseDefense   = 90,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 75,
+		#else
         .baseHP        = 86,
         .baseAttack    = 92,
         .baseDefense   = 88,
         .baseSpeed     = 73,
         .baseSpAttack  = 68,
         .baseSpDefense = 75,
+		#endif
         .types = MON_TYPES(TYPE_DARK, TYPE_PSYCHIC),
         .catchRate = 80,
         .expYield = 169,
@@ -3239,7 +3294,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_2),
+        #if P_BUFF_SPECIES
+        .abilities = { ABILITY_CONTRARY, ABILITY_SUCTION_CUPS, ABILITY_SHADOW_TAG },
+		#else
         .abilities = { ABILITY_CONTRARY, ABILITY_SUCTION_CUPS, ABILITY_INFILTRATOR },
+		#endif
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Malamar"),
         .cryId = CRY_MALAMAR,
@@ -3648,12 +3707,22 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
     [SPECIES_CLAWITZER] =
     {
+		#if P_BUFF_SPECIES
+        .baseHP        = 80,
+        .baseAttack    = 60,
+        .baseDefense   = 90,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 120,
+        .baseSpDefense = 90,
+		#else
         .baseHP        = 71,
         .baseAttack    = 73,
         .baseDefense   = 88,
         .baseSpeed     = 59,
         .baseSpAttack  = 120,
         .baseSpDefense = 89,
+		#endif
+        
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 55,
         .expYield = 100,
@@ -3791,12 +3860,21 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
     [SPECIES_HELIOLISK] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 65,
+        .baseAttack    = 50,
+        .baseDefense   = 55,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 95,
+		#else
         .baseHP        = 62,
         .baseAttack    = 55,
         .baseDefense   = 52,
         .baseSpeed     = 109,
         .baseSpAttack  = 109,
         .baseSpDefense = 94,
+		#endif
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_NORMAL),
         .catchRate = 75,
         .expYield = 168,

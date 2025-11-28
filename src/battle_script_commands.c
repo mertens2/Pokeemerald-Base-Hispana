@@ -925,14 +925,18 @@ static const u16 sFinalStrikeOnlyEffects[] =
 };
 
 #define _ 0
-
+// 
 static const struct PickupItem sPickupTable[] =
 {//   Item                      1+  11+  21+  31+  41+  51+  61+  71+  81+  91+   Levels
-    { ITEM_POTION,          {  35,   _,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_TINY_MUSHROOM,   {  25,  10,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_REPEL,           {   8,  30,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_SUPER_POTION,    {   8,  10,  30,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_POKE_DOLL,       {   8,  10,   9,  30,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_POTION,          {  20,   _,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_ORAN_BERRY,      {  10,   _,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_SITRUS_BERRY,    {  10,  10,  10,   5,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_TINY_MUSHROOM,   {  20,  10,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_REPEL,           {   8,   5,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_EXP_CANDY_XS,    {   _,   5,   5,  10,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_EXP_CANDY_S,     {   _,   _,   _,  10,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_SUPER_POTION,    {   8,  10,  10,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_POKE_DOLL,       {   8,  10,   4,   _,   _,   _,   _,   _,   _,   _, } },
     { ITEM_BIG_MUSHROOM,    {   3,  10,   9,   _,   _,   _,   _,   _,   _,   _, } },
     { ITEM_SUPER_REPEL,     {   3,  10,   9,   9,  30,   _,   _,   _,   _,   _, } },
     { ITEM_FULL_HEAL,       {   3,   3,   9,   8,   9,  30,   _,   _,   _,   _, } },
@@ -958,6 +962,8 @@ static const struct PickupItem sPickupTable[] =
     { ITEM_ELIXIR,          {   _,   _,   _,   _,   1,   1,   4,   5,   4,   5, } },
     { ITEM_MAX_ELIXIR,      {   _,   _,   _,   _,   _,   _,   1,   1,   4,   5, } },
     { ITEM_BOTTLE_CAP,      {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
+    { ITEM_LUM_BERRY,       {   _,  10,  10,   5,   _,   _,   _,   1,   1,   1, } },
+    // { ITEM_GOLD_BOTTLE_CAP, {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
 };
 
 #undef _
@@ -1122,6 +1128,19 @@ static void Cmd_attackcanceler(void)
      && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
      && !(gAbsentBattlerFlags & (1u << gBattlerTarget))
      && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE)
+    {
+        gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_1ST_HIT;
+        gMultiHitCounter = 2;
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+        return;
+    }
+	
+	if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_OFF
+	&&  GetBattlerAbility(gBattlerAttacker) == ABILITY_SWORD_MASTER
+     && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
+     && !(gAbsentBattlerFlags & (1u << gBattlerTarget))
+     && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE
+	 && IsSlicingMove(gCurrentMove))
     {
         gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_1ST_HIT;
         gMultiHitCounter = 2;
