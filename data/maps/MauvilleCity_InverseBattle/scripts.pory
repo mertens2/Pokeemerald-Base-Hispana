@@ -69,6 +69,7 @@ script MauvilleCity_InverseBattle_Scripts_Psychic {
 			"Usando mis poderes, podré invertir las ventajas y desventajas de tipo… ¡Y tranquil{OA}!\p"
 			"¡Las inmunidades no existirán!\nEn resumen: ¡En estas batallas, los Pokémon tipo Fuego serán débiles a ataques tipo Planta!"))
 			msgbox(format("¡Esperamos verte pronto!"))
+			closemessage
 			releaseall
 			end
 			break
@@ -90,12 +91,12 @@ script MauvilleCity_InverseBattle_Scripts_Woman1 {
 	lockall
 	if (!checkitem(ITEM_TM49)){
 		msgbox(format("Las recompensas por ganar en estos Torneos son bastante buenas para ser tan baratos…\p"
-		"Mi novia dice que debe ser que a los ganadores adultos los usan-{PAUSE 15} "), MSGBOX_INTERRUPT)
+		"Mi novia dice que debe ser que lavan diner-{PAUSE 15} "), MSGBOX_INTERRUPT)
 		playse(SE_PIN)
 		applymovement(4, Common_Movement_ExclamationMark)
 		applymovement(4, Common_Movement_FacePlayer)
 		waitmovement(0)
-		msgbox(format("¡NO DIGAS ESO EN FRENTE DE UN{A} NIÑ{OA}!\p……… {COLOR LIGHT_GRAY SHADOW WHITE}Justo de esta me tenía que enamorar……\p"
+		msgbox(format("¡NO DIGAS ESO EN FRENTE DEL DUEÑO!\p……… {COLOR LIGHT_GRAY SHADOW WHITE}Justo de esta me tenía que enamorar……\p"
 		"{COLOR LIGHT_GRAY SHADOW WHITE}Qué idiota tan linda es…{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\pDiscúlpala, es un poco lenta a veces, pero no es mala.\p"
 		"Ten esto para compensártelo."))
 		giveitem(ITEM_TM49)
@@ -103,7 +104,7 @@ script MauvilleCity_InverseBattle_Scripts_Woman1 {
 		"¡Perfecto contra Entrenadores que amen boostearse en el primer turno!\pAunque, aquí entre nos… Me gusta usarlo para robarle las Danzas Aleteo a mi novia…"))
 	}
 	else {
-		msgbox(format("¡Disculpa lo de antes! ¡Me refería monetariamente!"))
+		msgbox(format("¡Disculpa lo de antes! ¡No se lo digas a nadie!"))
 	}
 	closemessage
 	releaseall
@@ -188,6 +189,17 @@ script MauvilleCity_InverseBattle_Scripts_Krokorok {
 	playmoncry(SPECIES_KROKOROK, CRY_MODE_NORMAL)
 	msgbox(format("Krooook…"))
 	waitmoncry
+	closemessage
+	releaseall
+	end
+}
+
+script MauvilleCity_InverseBattle_Scripts_Artist {
+	faceplayer
+	lockall
+	msgbox(format("En este lugar, los Pokémon Tipo Normal son increíblemente fuertes…\p"
+	"Intentaré conseguir alguno fuerte para farmear Partes…"))
+	closemessage
 	releaseall
 	end
 }

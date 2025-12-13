@@ -404,7 +404,10 @@ struct SpeciesInfo /*0xC4*/
     u32 tmIlliterate:1;     // This species will be unable to learn the universal moves.
     u32 isFrontierBanned:1; // This species is not allowed to participate in Battle Frontier facilities.
 	u32 hasUniqueShinySprite:1;
-    u32 padding4:10;
+	u32 isGrassStarter:1;
+	u32 isWaterStarter:1;
+	u32 isFireStarter:1;
+    u32 padding4:7;
     // Shadow settings
     s8 enemyShadowXOffset; // This determines the X-offset for an enemy Pokémon's shadow during battle; negative values point left, positive values point right.
     s8 enemyShadowYOffset; // This determines the Y-offset for an enemy Pokémon's shadow during battle; negative values point up, positive values point down.
@@ -415,6 +418,7 @@ struct SpeciesInfo /*0xC4*/
     const struct LevelUpMove *levelUpLearnset;
     const u16 *teachableLearnset;
     const u16 *eggMoveLearnset;
+    const u16 *signatureLearnset;
     const struct Evolution *evolutions;
     const u16 *formSpeciesIdTable;
     const struct FormChange *formChangeTable;
@@ -718,6 +722,7 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon);
 u8 CanLearnTeachableMove(u16 species, u16 move);
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves);
 u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves);
+u8 GetSignatureMoves(struct Pokemon *mon, u16 *moves);
 u8 GetNumberOfRelearnableMoves(struct Pokemon *mon);
 u16 SpeciesToPokedexNum(u16 species);
 bool32 IsSpeciesInHoennDex(u16 species);
@@ -789,5 +794,9 @@ void SavePlayerPartyMon(u32 index, struct Pokemon *mon);
 u32 IsSpeciesOfType(u32 species, u32 type);
 u8 GetRealIV(u8 iv);
 u32 CalculateShininess(bool8 affectsShinyFlags, u8 method, u8 flagAffected, u16 species, u8 nature);
+u8 GetSignatureMovesNum(struct Pokemon *mon);
+u8 GetEggMovesTutor(struct Pokemon *mon, u16 *moves);
+u8 GetEggMovesNum(struct Pokemon *mon);
+
 
 #endif // GUARD_POKEMON_H

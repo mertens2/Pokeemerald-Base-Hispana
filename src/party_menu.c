@@ -453,7 +453,11 @@ static void Task_ChooseContestMon(u8 taskId);
 static void CB2_ChooseContestMon(void);
 static void Task_ChoosePartyMon(u8 taskId);
 static void Task_ChooseMonForMoveRelearner(u8);
+static void Task_ChooseMonForSignatureMove(u8);
+static void Task_ChooseMonForEggMove(u8);
 static void CB2_ChooseMonForMoveRelearner(void);
+static void CB2_ChooseMonForEggMove(void);
+static void CB2_ChooseMonForSignatureMove(void);
 static void Task_BattlePyramidChooseMonHeldItems(u8);
 static void ShiftMoveSlot(struct Pokemon *, u8, u8);
 static void BlitBitmapToPartyWindow_LeftColumn(u8, u8, u8, u8, u8, bool8);
@@ -7817,6 +7821,40 @@ void ChooseMonForMoveRelearner(void)
     CreateTask(Task_ChooseMonForMoveRelearner, 10);
 }
 
+void ChooseMonForSignatureMove(void)
+{
+    LockPlayerFieldControls();
+    FadeScreen(FADE_TO_BLACK, 0);
+    CreateTask(Task_ChooseMonForSignatureMove, 10);
+}
+
+void ChooseMonForEggMove(void)
+{
+    LockPlayerFieldControls();
+    FadeScreen(FADE_TO_BLACK, 0);
+    CreateTask(Task_ChooseMonForEggMove, 10);
+}
+
+static void Task_ChooseMonForSignatureMove(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        InitPartyMenu(PARTY_MENU_TYPE_MOVE_RELEARNER, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ChooseMonForSignatureMove);
+        DestroyTask(taskId);
+    }
+}
+
+static void Task_ChooseMonForEggMove(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        InitPartyMenu(PARTY_MENU_TYPE_MOVE_RELEARNER, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ChooseMonForEggMove);
+        DestroyTask(taskId);
+    }
+}
+
 static void Task_ChooseMonForMoveRelearner(u8 taskId)
 {
     if (!gPaletteFade.active)
@@ -7830,10 +7868,35 @@ static void Task_ChooseMonForMoveRelearner(u8 taskId)
 static void CB2_ChooseMonForMoveRelearner(void)
 {
     gSpecialVar_0x8004 = GetCursorSelectionMonId();
+	VarSet(VAR_TEMP_3, 0);
     if (gSpecialVar_0x8004 >= PARTY_SIZE)
         gSpecialVar_0x8004 = PARTY_NOTHING_CHOSEN;
     else
         gSpecialVar_0x8005 = GetNumberOfRelearnableMoves(&gPlayerParty[gSpecialVar_0x8004]);
+    gFieldCallback2 = CB2_FadeFromPartyMenu;
+    SetMainCallback2(CB2_ReturnToField);
+}
+
+static void CB2_ChooseMonForSignatureMove(void)
+{
+    gSpecialVar_0x8004 = GetCursorSelectionMonId();
+	VarSet(VAR_TEMP_3, 1);
+    if (gSpecialVar_0x8004 >= PARTY_SIZE)
+        gSpecialVar_0x8004 = PARTY_NOTHING_CHOSEN;
+    else
+        gSpecialVar_0x8005 = GetSignatureMovesNum(&gPlayerParty[gSpecialVar_0x8004]);
+    gFieldCallback2 = CB2_FadeFromPartyMenu;
+    SetMainCallback2(CB2_ReturnToField);
+}
+
+static void CB2_ChooseMonForEggMove(void)
+{
+    gSpecialVar_0x8004 = GetCursorSelectionMonId();
+	VarSet(VAR_TEMP_3, 2);
+    if (gSpecialVar_0x8004 >= PARTY_SIZE)
+        gSpecialVar_0x8004 = PARTY_NOTHING_CHOSEN;
+    else
+        gSpecialVar_0x8005 = GetEggMovesNum(&gPlayerParty[gSpecialVar_0x8004]);
     gFieldCallback2 = CB2_FadeFromPartyMenu;
     SetMainCallback2(CB2_ReturnToField);
 }

@@ -2415,6 +2415,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sVespiquenLevelUpLearnset,
         .teachableLearnset = sVespiquenTeachableLearnset,
+        .signatureLearnset = sCombeeSignatureLearnset,
     },
 #endif //P_FAMILY_COMBEE
 
@@ -3997,6 +3998,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sChatotLevelUpLearnset,
         .teachableLearnset = sChatotTeachableLearnset,
         .eggMoveLearnset = sChatotEggMoveLearnset,
+		.signatureLearnset = sChatotSignatureLearnset,
     },
 #endif //P_FAMILY_CHATOT
 
@@ -6351,6 +6353,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sDialgaTeachableLearnset,
         .formSpeciesIdTable = sDialgaFormSpeciesIdTable,
         .formChangeTable = sDialgaFormChangeTable,
+		.signatureLearnset = sDialgaSignatureLearnset,
     },
 
     [SPECIES_DIALGA_ORIGIN] =
@@ -6418,6 +6421,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sDialgaLevelUpLearnset,
         .teachableLearnset = sDialgaTeachableLearnset,
         .formSpeciesIdTable = sDialgaFormSpeciesIdTable,
+		.signatureLearnset = sDialgaSignatureLearnset,
         .formChangeTable = sDialgaFormChangeTable,
     },
 #endif //P_FAMILY_DIALGA
@@ -6498,6 +6502,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sPalkiaLevelUpLearnset,
         .teachableLearnset = sPalkiaTeachableLearnset,
         .formSpeciesIdTable = sPalkiaFormSpeciesIdTable,
+		.signatureLearnset = sPalkiaSignatureLearnset,
         .formChangeTable = sPalkiaFormChangeTable,
     },
 
@@ -6566,6 +6571,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sPalkiaLevelUpLearnset,
         .teachableLearnset = sPalkiaTeachableLearnset,
         .formSpeciesIdTable = sPalkiaFormSpeciesIdTable,
+		.signatureLearnset = sPalkiaSignatureLearnset,
         .formChangeTable = sPalkiaFormChangeTable,
     },
 #endif //P_FAMILY_PALKIA
@@ -6643,6 +6649,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sHeatranLevelUpLearnset,
         .teachableLearnset = sHeatranTeachableLearnset,
+		.signatureLearnset = sHeatranSignatureLearnset,
     },
 #endif //P_FAMILY_HEATRAN
 
@@ -6718,6 +6725,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sRegigigasLevelUpLearnset,
         .teachableLearnset = sRegigigasTeachableLearnset,
+		.signatureLearnset = sRegigigasSignatureLearnset,
     },
 #endif //P_FAMILY_REGIGIGAS
 
@@ -6800,6 +6808,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sGiratinaTeachableLearnset,
         .formSpeciesIdTable = sGiratinaFormSpeciesIdTable,
         .formChangeTable = sGiratinaFormChangeTable,
+		.signatureLearnset = sGiratinaSignatureLearnset,
     },
 
     [SPECIES_GIRATINA_ORIGIN] =
@@ -6874,6 +6883,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sGiratinaLevelUpLearnset,
         .teachableLearnset = sGiratinaTeachableLearnset,
         .formSpeciesIdTable = sGiratinaFormSpeciesIdTable,
+		.signatureLearnset = sGiratinaSignatureLearnset,
         .formChangeTable = sGiratinaFormChangeTable,
     },
 #endif //P_FAMILY_GIRATINA
@@ -6954,6 +6964,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .isLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sCresseliaLevelUpLearnset,
+		.signatureLearnset = sCresseliaSignatureLearnset,
         .teachableLearnset = sCresseliaTeachableLearnset,
     },
 #endif //P_FAMILY_CRESSELIA
@@ -7188,6 +7199,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sDarkraiLevelUpLearnset,
         .teachableLearnset = sDarkraiTeachableLearnset,
+		.signatureLearnset = sDarkraiSignatureLearnset,
     },
 #endif //P_FAMILY_DARKRAI
 
@@ -7272,6 +7284,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sShayminLandTeachableLearnset,
         .formSpeciesIdTable = sShayminFormSpeciesIdTable,
         .formChangeTable = sShayminFormChangeTable,
+		.signatureLearnset = sShayminSignatureLearnset,
     },
 
     [SPECIES_SHAYMIN_SKY] =
@@ -7350,6 +7363,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sShayminSkyLevelUpLearnset,
         .teachableLearnset = sShayminSkyTeachableLearnset,
         .formSpeciesIdTable = sShayminFormSpeciesIdTable,
+		.signatureLearnset = sShayminSignatureLearnset,
         .formChangeTable = sShayminFormChangeTable,
     },
 #endif //P_FAMILY_SHAYMIN

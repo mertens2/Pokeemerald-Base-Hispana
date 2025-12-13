@@ -27,15 +27,15 @@ script MauvilleCity_EvoMart_Scripts_UltimateMoveTutor {
 	msgbox(MauvilleCity_EvoMart_Text_UltimateMoveTutor, MSGBOX_YESNO)
 	if (var(VAR_RESULT))
 	{
-		if (checkitem(ITEM_RED_SHARD)){
+		if (checkitem(ITEM_RED_SHARD, 5)){
 			setvar(VAR_TEMP_1, ITEM_RED_SHARD)
 			goto (MauvilleCity_EvoMart_Scripts_UltimateMoveTutorSelectMove)
 		}
-		if (checkitem(ITEM_BLUE_SHARD)){
+		if (checkitem(ITEM_BLUE_SHARD, 5)){
 			setvar(VAR_TEMP_1, ITEM_BLUE_SHARD)
 			goto (MauvilleCity_EvoMart_Scripts_UltimateMoveTutorSelectMove)
 		}
-		if (checkitem(ITEM_GREEN_SHARD)){
+		if (checkitem(ITEM_GREEN_SHARD, 5)){
 			setvar(VAR_TEMP_1, ITEM_GREEN_SHARD)
 			goto (MauvilleCity_EvoMart_Scripts_UltimateMoveTutorSelectMove)
 		}
@@ -81,7 +81,24 @@ script MauvilleCity_EvoMart_Scripts_TeachMove {
 	return
 }
 
+script MauvilleCity_EvoMart_Scripts_TeachSignatureMove {
+	msgbox (MauvilleCity_EvoMart_Text_TutorSelectMon, MSGBOX_DEFAULT)
+	fadescreen (FADE_TO_BLACK)
+	special (ChooseMonForSignatureMove)
+	waitstate
+	goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, MauvilleCity_EvoMart_Scripts_TutorCancel)
+	special (IsSelectedMonEgg)
+	if (var(VAR_RESULT) == TRUE){
+		goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+	}
+	if (var(VAR_0x8005) == 0){
+		goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+	}
+	return
+}
+
 script MauvilleCity_EvoMart_Scripts_TutorCancel {
+	clearflag(FLAG_TEACH_SIGNATURE_MOVES)
 	msgbox(MauvilleCity_EvoMart_Text_DeclineTutor)
 	closemessage
 	releaseall
@@ -112,29 +129,83 @@ script MauvilleCity_EvoMart_Scripts_SignatureMoveTutor {
 	}
 }
 
-script MauvilleCity_EvoMart_Scripts_SignatureMoveTutorSelectMon {
+script MauvilleCity_EvoMart_Scripts_PledgeMoveTutor {
+	faceplayer
+	msgbox(MauvilleCity_EvoMart_Text_PledgeMoveTutor, MSGBOX_YESNO)
+	if (var(VAR_RESULT))
+	{
+		if (checkitem(ITEM_RED_SHARD, 2)){
+			setvar(VAR_TEMP_1, ITEM_RED_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_PledgeMoveTutorSelectMon)
+		}
+		if (checkitem(ITEM_BLUE_SHARD, 2)){
+			setvar(VAR_TEMP_1, ITEM_BLUE_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_PledgeMoveTutorSelectMon)
+		}
+		if (checkitem(ITEM_GREEN_SHARD, 2)){
+			setvar(VAR_TEMP_1, ITEM_GREEN_SHARD)
+			goto (MauvilleCity_EvoMart_Scripts_PledgeMoveTutorSelectMon)
+		}
+		goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+	}
+	else {
+		goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+	}
+}
+
+script MauvilleCity_EvoMart_Scripts_PledgeMoveTutorSelectMon {
 	msgbox(MauvilleCity_EvoMart_Text_SelectMoveTutor)
-	dynmultichoice (15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Planta Feroz", "Anillo de Fuego", "Hidrocañón", "Enfado", "Bruma Explosiva")
+	dynmultichoice (15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Voto Planta", "Voto Fuego", "Voto Agua")
 	switch(var(VAR_RESULT))
 	{
 		case 0:
-			setvar (VAR_0x8005, MOVE_FRENZY_PLANT)
+			setvar (VAR_0x8005, MOVE_GRASS_PLEDGE)
 			break
 		case 1:
-			setvar (VAR_0x8005, MOVE_BLAST_BURN)
+			setvar (VAR_0x8005, MOVE_FIRE_PLEDGE)
 			break
 		case 2:
-			setvar (VAR_0x8005, MOVE_HYDRO_CANNON)
-			break
-		case 3:
-			setvar (VAR_0x8005, MOVE_OUTRAGE)
-			break
-		case 4:
-			setvar (VAR_0x8005, MOVE_MISTY_EXPLOSION)
+			setvar (VAR_0x8005, MOVE_WATER_PLEDGE)
 			break
 	}
 	call (MauvilleCity_EvoMart_Scripts_TeachMove)
+	removeitem(VAR_TEMP_1, 2)
+	closemessage
+	end
+}
+
+script MauvilleCity_EvoMart_Scripts_SignatureMoveTutorSelectMon {
+	call (MauvilleCity_EvoMart_Scripts_TeachSignatureMove)
+	special (TeachSignatureMove)
 	removeitem(VAR_TEMP_1, 5)
 	closemessage
+	clearflag(FLAG_TEACH_SIGNATURE_MOVES)
+	end
+}
+
+script MauvilleCity_EvoMart_Scripts_EggMoveTutor {
+	msgbox(MauvilleCity_EvoMart_Text_EggMoveTutor,MSGBOX_YESNO)
+	if (var(VAR_RESULT) == TRUE){
+		if (!checkitem(ITEM_GREEN_SHARD, 10)){
+			msgbox(MauvilleCity_EvoMart_Text_EggMoveTutorNotEnough)
+			goto(MauvilleCity_EvoMart_Scripts_TutorCancel)
+		}
+		fadescreen (FADE_TO_BLACK)
+		special (ChooseMonForEggMove)
+		waitstate
+		goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, MauvilleCity_EvoMart_Scripts_TutorCancel)
+		special (IsSelectedMonEgg)
+		if (var(VAR_RESULT) == TRUE){
+			goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+		}
+		if (var(VAR_0x8005) == 0){
+			goto (MauvilleCity_EvoMart_Scripts_TutorCancel)
+		}
+		special (TeachEggMove)
+	}
+	else {
+		goto(MauvilleCity_EvoMart_Scripts_TutorCancel)
+	}
+	releaseall
 	end
 }

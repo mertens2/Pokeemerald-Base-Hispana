@@ -69,9 +69,9 @@
 #define FLAG_HIDE_WALLY_111    				0x37
 #define FLAG_HIDE_WALLY_DEWFORD_TOWN	    0x38
 #define FLAG_DEWFORD_GRUNT				    0x39
-#define FLAG_HIDE_WALLY_LAVARIDGE    		0x3A // Unused Flag
-#define FLAG_INVERSE_BATTLES    			0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    				0x3C // Unused Flag
+#define FLAG_HIDE_WALLY_LAVARIDGE    		0x3A 
+#define FLAG_INVERSE_BATTLES    			0x3B 
+#define FLAG_TEACH_SIGNATURE_MOVES    		0x3C 
 #define FLAG_HIDE_RALTS_102  				0x3D
 #define FLAG_HIDE_ZIGZA_102	 				0x3E
 #define FLAG_HIDE_BALL_102   				0x3F
@@ -87,7 +87,7 @@
 #define FLAG_AQUA_HIDEOUT_SET_DELTA_DIVISION    0x49 // Unused Flag
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNTS_BLOCKING_ENTRANCE    0x4A // Unused Flag
 #define FLAG_HIDE_JIRACHI    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
+#define FLAG_GOTTEN_POKEMON_FROM_HYPERFIXATED_BOY    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag
 #define FLAG_UNUSED_0x04E    0x4E // Unused Flag
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag

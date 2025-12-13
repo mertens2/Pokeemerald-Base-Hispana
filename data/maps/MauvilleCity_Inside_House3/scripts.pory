@@ -1,0 +1,114 @@
+mapscripts MauvilleCity_Inside_House3_MapScripts {}
+
+
+script MauvilleCity_Inside_House3_Scripts_Mom1 {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_Inside_House3_Text_Mom1)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_House3_Scripts_Mom2 {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_Inside_House3_Text_Mom2)
+	poryswitch(LANGUAGE) {
+		ES {
+			dynmultichoice(25, 6, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Asentir incómodamente", "Dar un “NO” rotundo")
+		}
+		EN {
+			dynmultichoice(25, 6, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Awkwardly nod along…", "Give a stern “NO”")
+		}
+	}
+	if (var(VAR_RESULT) == 0)
+	{
+		closemessage
+		playse(SE_PIN)
+		applymovement(LOCALID_MAUVILLE_HOUSE_3_MOM_2, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		msgbox(MauvilleCity_Inside_House3_Text_Mom2_Yes)
+	}
+	else {
+		applymovement(LOCALID_MAUVILLE_HOUSE_3_MOM_2, Common_Movement_QuestionMark)
+		waitmovement(0)
+		msgbox(MauvilleCity_Inside_House3_Text_Mom2_No)
+	}
+	applymovement(LOCALID_MAUVILLE_HOUSE_3_MOM_1, Common_Movement_WalkInPlaceLeft)
+	msgbox(MauvilleCity_Inside_House3_Text_Mom1_Darling)
+	waitmovement(0)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_House3_Scripts_Girl {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_Inside_House3_Text_Girl)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_House3_Scripts_HyperfixatedBoy {
+	lockall
+	faceplayer
+	if (flag(FLAG_GOTTEN_POKEMON_FROM_HYPERFIXATED_BOY)){
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy_Thanks)
+	}
+	elif (setgetobjectflags(VAR_LAST_TALKED, 4, TRUE, GET_EVENT_FLAG)) {
+		random(15)
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy_Congrats)
+		dynmultichoice(25, 5, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Delibird", "Gothita", "Durant")
+		if (var(VAR_0x800A) == 0){
+			switch(var(VAR_RESULT))
+			{
+				case 0:
+					givemon (SPECIES_DELIBIRD, 20, ITEM_NONE, ITEM_FAST_BALL, NATURE_JOLLY, 0, 0, 0, 0, 0, 0, 0, 1, 7, 7, 7, 7, 7, 7, MOVE_PRESENT, MOVE_NATURAL_GIFT, MOVE_FLING, MOVE_BELCH, TRUE)
+					break
+				case 1:
+					givemon (SPECIES_GOTHITA, 20, ITEM_SMOKE_BALL, ITEM_DREAM_BALL, NATURE_TIMID, 0, 1, 0, 0, 0, 0, 0, 1, 7, 7, 7, 7, 7, 7, MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_RECOVER, TRUE)
+					break
+				case 2:
+					givemon (SPECIES_DURANT, 20, ITEM_SITRUS_BERRY, ITEM_DUSK_BALL, NATURE_BRAVE, 0, 1, 63, 0, 0, 0, 0, 1, 7, 7, 7, 7, 7, 7, MOVE_SHIFT_GEAR, MOVE_BUG_BITE, MOVE_IRON_HEAD, MOVE_ICE_FANG, TRUE)
+					break
+			}
+		}
+		else {
+			switch(var(VAR_RESULT))
+			{
+				case 0:
+					givemon (SPECIES_DELIBIRD, 20, ITEM_NONE, ITEM_FAST_BALL, NATURE_JOLLY, 0, 0, 0, 0, 0, 0, 0, 1, 7, 7, 7, 7, 7, 7, MOVE_PRESENT, MOVE_NATURAL_GIFT, MOVE_FLING, MOVE_BELCH, FALSE)
+					break
+				case 1:
+					givemon (SPECIES_GOTHITA, 15, ITEM_SMOKE_BALL, ITEM_DREAM_BALL, NATURE_TIMID, 0, 1, 0, 0, 0, 0, 0, 1, 7, 7, 7, 7, 7, 7, MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_RECOVER, FALSE)
+					break
+				case 2:
+					givemon (SPECIES_DURANT, 20, ITEM_SITRUS_BERRY, ITEM_DUSK_BALL, NATURE_BRAVE, 0, 1, 63, 0, 0, 0, 0, 1, 7, 7, 7, 7, 7, 7, MOVE_SHIFT_GEAR, MOVE_BUG_BITE, MOVE_IRON_HEAD, MOVE_ICE_FANG, FALSE)
+					break
+			}
+		}
+		setflag(FLAG_GOTTEN_POKEMON_FROM_HYPERFIXATED_BOY)
+	}
+	elif (setgetobjectflags(VAR_LAST_TALKED, 3, TRUE, GET_EVENT_FLAG)) {
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy_ColonysAid)
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy_RewardTalkAgain)
+		setgetobjectflags(VAR_LAST_TALKED, 4, TRUE, SET_EVENT_FLAG)
+	}
+	elif (setgetobjectflags(VAR_LAST_TALKED, 2, TRUE, GET_EVENT_FLAG)) {
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy_FutureVision)
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy_OneMore)
+		setgetobjectflags(VAR_LAST_TALKED, 3, TRUE, SET_EVENT_FLAG)
+	}
+	elif (setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, GET_EVENT_FLAG)) {
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy_GiftGiver)
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy_StillMore)
+		setgetobjectflags(VAR_LAST_TALKED, 2, TRUE, SET_EVENT_FLAG)
+	}
+	else {
+		msgbox(MauvilleCity_Inside_House3_Text_HyperfixatedBoy)
+		setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, SET_EVENT_FLAG)
+	}
+	closemessage
+	releaseall
+}
+

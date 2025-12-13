@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_ROUTE118",
-      "offset": 0,
+      "offset": 2,
       "direction": "right"
     },
     {
@@ -32,6 +32,11 @@
       "map": "MAP_ROUTE111",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE118",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [],

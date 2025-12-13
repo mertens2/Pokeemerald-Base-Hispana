@@ -237,6 +237,7 @@ gSpecials::
 	def_special DoLotteryCornerComputerEffect
 	def_special EndLotteryCornerComputerEffect
 	def_special ChooseMonForMoveRelearner
+	def_special ChooseMonForSignatureMove
 	def_special MoveDeleterChooseMoveToForget
 	def_special MoveDeleterForgetMove
 	def_special BufferMoveDeleterNicknameAndMove
@@ -593,3 +594,6 @@ gSpecials::
 	def_special GetCafeTrainersFinalText
 	def_special SetHourMinutes
 	def_special BufferUnitSystemText
+	def_special TeachSignatureMove
+	def_special TeachEggMove
+	def_special ChooseMonForEggMove

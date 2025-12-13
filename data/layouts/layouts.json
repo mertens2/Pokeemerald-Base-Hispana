@@ -5573,7 +5573,7 @@
       "id": "LAYOUT_MAUVILLE_CITY_EVO_MART",
       "name": "MauvilleCity_EvoMart_Layout",
       "width": 28,
-      "height": 16,
+      "height": 15,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_MauvilleInside",
@@ -5592,6 +5592,30 @@
       "secondary_tileset": "gTileset_MauvilleDecor",
       "border_filepath": "data/layouts/MauvilleCity_InverseBattle_Lobby/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_InverseBattle_Lobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_F2",
+      "name": "MauvilleCity_Inside_F2_Layout",
+      "width": 51,
+      "height": 25,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleDecor",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_F2/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_F2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_HOUSE3",
+      "name": "MauvilleCity_Inside_House3_Layout",
+      "width": 15,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleHouse",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_House3/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_House3/map.bin"
     }
   ]
 }

@@ -155,6 +155,12 @@ enum {
     JAM_HEART_FULL,
 };
 
+enum {
+	TUTOR_LEVEL,
+	TUTOR_SIGNATURE,
+	TUTOR_EGG,
+};
+
 #define TAG_MODE_ARROWS 5325
 #define TAG_LIST_ARROWS 5425
 #define GFXTAG_UI       5525
@@ -351,10 +357,16 @@ static const struct BgTemplate sMoveRelearnerMenuBackgroundTemplates[] =
 };
 
 static void DoMoveRelearnerMain(void);
+static void DoSignatureMoveMain(void);
 static void CreateLearnableMovesList(void);
+static void CreateSignatureMovesList(void);
+static void CreateEggMovesList(void);
 static void CreateUISprites(void);
+static void CB2_EggMoveMain(void);
+static void CB2_SignatureMoveMain(void);
 static void CB2_MoveRelearnerMain(void);
 static void Task_WaitForFadeOut(u8 taskId);
+static void Task_WaitForSignatureFadeOut(u8 taskId);
 static void CB2_InitLearnMoveReturnFromSelectMove(void);
 static void InitMoveRelearnerBackgroundLayers(void);
 static void AddScrollArrows(void);
@@ -381,6 +393,22 @@ void TeachMoveRelearnerMove(void)
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
 }
 
+void TeachSignatureMove(void)
+{
+	LockPlayerFieldControls();
+    CreateTask(Task_WaitForFadeOut, 10);
+    // Fade to black
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+}
+
+void TeachEggMove(void)
+{
+	LockPlayerFieldControls();
+    CreateTask(Task_WaitForFadeOut, 10);
+    // Fade to black
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+}
+
 static void Task_WaitForFadeOut(u8 taskId)
 {
     if (!gPaletteFade.active)
@@ -389,6 +417,48 @@ static void Task_WaitForFadeOut(u8 taskId)
         gFieldCallback = FieldCB_ContinueScriptHandleMusic;
         DestroyTask(taskId);
     }
+}
+
+static void CreateSignatureMovesList(void)
+{
+    s32 i;
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
+
+    sMoveRelearnerStruct->numMenuChoices = GetSignatureMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
+
+    for (i = 0; i < sMoveRelearnerStruct->numMenuChoices; i++)
+    {
+        sMoveRelearnerStruct->menuItems[i].name = GetMoveName(sMoveRelearnerStruct->movesToLearn[i]);
+        sMoveRelearnerStruct->menuItems[i].id = sMoveRelearnerStruct->movesToLearn[i];
+    }
+
+    GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_NICKNAME, nickname);
+    StringCopy_Nickname(gStringVar1, nickname);
+    sMoveRelearnerStruct->menuItems[sMoveRelearnerStruct->numMenuChoices].name = gText_Cancel;
+    sMoveRelearnerStruct->menuItems[sMoveRelearnerStruct->numMenuChoices].id = LIST_CANCEL;
+    sMoveRelearnerStruct->numMenuChoices++;
+    sMoveRelearnerStruct->numToShowAtOnce = LoadMoveRelearnerMovesList(sMoveRelearnerStruct->menuItems, sMoveRelearnerStruct->numMenuChoices);
+}
+
+static void CreateEggMovesList(void)
+{
+    s32 i;
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
+
+    sMoveRelearnerStruct->numMenuChoices = GetEggMovesTutor(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
+
+    for (i = 0; i < sMoveRelearnerStruct->numMenuChoices; i++)
+    {
+        sMoveRelearnerStruct->menuItems[i].name = GetMoveName(sMoveRelearnerStruct->movesToLearn[i]);
+        sMoveRelearnerStruct->menuItems[i].id = sMoveRelearnerStruct->movesToLearn[i];
+    }
+
+    GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_NICKNAME, nickname);
+    StringCopy_Nickname(gStringVar1, nickname);
+    sMoveRelearnerStruct->menuItems[sMoveRelearnerStruct->numMenuChoices].name = gText_Cancel;
+    sMoveRelearnerStruct->menuItems[sMoveRelearnerStruct->numMenuChoices].id = LIST_CANCEL;
+    sMoveRelearnerStruct->numMenuChoices++;
+    sMoveRelearnerStruct->numToShowAtOnce = LoadMoveRelearnerMovesList(sMoveRelearnerStruct->menuItems, sMoveRelearnerStruct->numMenuChoices);
 }
 
 void CB2_InitLearnMove(void)
@@ -407,16 +477,25 @@ void CB2_InitLearnMove(void)
     sMoveRelearnerMenuState.listOffset = 0;
     sMoveRelearnerMenuState.listRow = 0;
     sMoveRelearnerMenuState.showContestInfo = gOriginSummaryScreenPage == PSS_PAGE_CONTEST_MOVES;
-
-    CreateLearnableMovesList();
-
+	
+	if (VarGet(VAR_TEMP_3) == TUTOR_LEVEL)
+		CreateLearnableMovesList();
+	else if (VarGet(VAR_TEMP_3) == TUTOR_SIGNATURE)
+		CreateSignatureMovesList();
+	else if (VarGet(VAR_TEMP_3) == TUTOR_EGG)
+		CreateEggMovesList();
     LoadSpriteSheet(&sMoveRelearnerSpriteSheet);
     LoadSpritePalette(&sMoveRelearnerPalette);
     CreateUISprites();
 
     sMoveRelearnerStruct->moveListMenuTask = ListMenuInit(&gMultiuseListMenuTemplate, sMoveRelearnerMenuState.listOffset, sMoveRelearnerMenuState.listRow);
     SetBackdropFromColor(RGB_BLACK);
-    SetMainCallback2(CB2_MoveRelearnerMain);
+    if (VarGet(VAR_TEMP_3) == TUTOR_LEVEL)
+		SetMainCallback2(CB2_MoveRelearnerMain);
+	else if (VarGet(VAR_TEMP_3) == TUTOR_SIGNATURE)
+		SetMainCallback2(CB2_SignatureMoveMain);
+	else if (VarGet(VAR_TEMP_3) == TUTOR_EGG)
+		SetMainCallback2(CB2_EggMoveMain);
 }
 
 static void CB2_InitLearnMoveReturnFromSelectMove(void)
@@ -433,7 +512,12 @@ static void CB2_InitLearnMoveReturnFromSelectMove(void)
 
     InitMoveRelearnerBackgroundLayers();
     InitMoveRelearnerWindows(sMoveRelearnerMenuState.showContestInfo);
-    CreateLearnableMovesList();
+    if (VarGet(VAR_TEMP_3) == TUTOR_LEVEL)
+		CreateLearnableMovesList();
+	else if (VarGet(VAR_TEMP_3) == TUTOR_SIGNATURE)
+		CreateSignatureMovesList();
+	else if (VarGet(VAR_TEMP_3) == TUTOR_EGG)
+		CreateEggMovesList();
 
     LoadSpriteSheet(&sMoveRelearnerSpriteSheet);
     LoadSpritePalette(&sMoveRelearnerPalette);
@@ -441,9 +525,14 @@ static void CB2_InitLearnMoveReturnFromSelectMove(void)
 
     sMoveRelearnerStruct->moveListMenuTask = ListMenuInit(&gMultiuseListMenuTemplate, sMoveRelearnerMenuState.listOffset, sMoveRelearnerMenuState.listRow);
     SetBackdropFromColor(RGB_BLACK);
-    SetMainCallback2(CB2_MoveRelearnerMain);
+	if (VarGet(VAR_TEMP_3) == TUTOR_LEVEL)
+		SetMainCallback2(CB2_MoveRelearnerMain);
+	else if (VarGet(VAR_TEMP_3) == TUTOR_SIGNATURE)
+		SetMainCallback2(CB2_SignatureMoveMain);
+	else if (VarGet(VAR_TEMP_3) == TUTOR_EGG)
+		SetMainCallback2(CB2_EggMoveMain);
+    
 }
-
 static void InitMoveRelearnerBackgroundLayers(void)
 {
     ResetVramOamAndBgCntRegs();
@@ -461,6 +550,26 @@ static void InitMoveRelearnerBackgroundLayers(void)
 static void CB2_MoveRelearnerMain(void)
 {
     DoMoveRelearnerMain();
+    RunTasks();
+    AnimateSprites();
+    BuildOamBuffer();
+    DoScheduledBgTilemapCopiesToVram();
+    UpdatePaletteFade();
+}
+
+static void CB2_SignatureMoveMain(void)
+{
+	DoMoveRelearnerMain();
+    RunTasks();
+    AnimateSprites();
+    BuildOamBuffer();
+    DoScheduledBgTilemapCopiesToVram();
+    UpdatePaletteFade();
+}
+
+static void CB2_EggMoveMain(void)
+{
+	DoMoveRelearnerMain();
     RunTasks();
     AnimateSprites();
     BuildOamBuffer();
@@ -794,6 +903,325 @@ static void DoMoveRelearnerMain(void)
     }
 }
 
+// static void DoSignatureMoveMain(void)
+// {
+    // switch (sMoveRelearnerStruct->state)
+    // {
+    // case MENU_STATE_FADE_TO_BLACK:
+        // sMoveRelearnerStruct->state++;
+        // HideHeartSpritesAndShowTeachMoveText(FALSE);
+        // if (gOriginSummaryScreenPage == PSS_PAGE_CONTEST_MOVES)
+            // MoveRelearnerShowHideHearts(GetCurrentSelectedMove());
+        // BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        // break;
+    // case MENU_STATE_WAIT_FOR_FADE:
+        // if (!gPaletteFade.active)
+        // {
+            // if (gOriginSummaryScreenPage == PSS_PAGE_CONTEST_MOVES)
+                // sMoveRelearnerStruct->state = MENU_STATE_IDLE_CONTEST_MODE;
+            // else
+                // sMoveRelearnerStruct->state = MENU_STATE_IDLE_BATTLE_MODE;
+        // }
+        // break;
+    // case MENU_STATE_UNREACHABLE:
+        // sMoveRelearnerStruct->state++;
+        // break;
+    // case MENU_STATE_SETUP_BATTLE_MODE:
+
+        // HideHeartSpritesAndShowTeachMoveText(FALSE);
+        // sMoveRelearnerStruct->state++;
+        // AddScrollArrows();
+        // break;
+    // case MENU_STATE_IDLE_BATTLE_MODE:
+        // HandleInput(FALSE);
+        // break;
+    // case MENU_STATE_SETUP_CONTEST_MODE:
+        // ShowTeachMoveText(FALSE);
+        // sMoveRelearnerStruct->state++;
+        // AddScrollArrows();
+        // break;
+    // case MENU_STATE_IDLE_CONTEST_MODE:
+        // HandleInput(TRUE);
+        // break;
+    // case MENU_STATE_PRINT_TEACH_MOVE_PROMPT:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // MoveRelearnerCreateYesNoMenu();
+            // sMoveRelearnerStruct->state++;
+        // }
+        // break;
+    // case MENU_STATE_TEACH_MOVE_CONFIRM:
+        // {
+            // s8 selection = Menu_ProcessInputNoWrapClearOnChoose();
+
+            // if (selection == 0)
+            // {
+                // if (GiveMoveToMon(&gPlayerParty[sMoveRelearnerStruct->partyMon], GetCurrentSelectedMove()) != MON_HAS_MAX_MOVES)
+                // {
+                    // PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnLearnedMove);
+                    // gSpecialVar_0x8004 = TRUE;
+                    // sMoveRelearnerStruct->state = MENU_STATE_PRINT_TEXT_THEN_FANFARE;
+                // }
+                // else
+                // {
+                    // sMoveRelearnerStruct->state = MENU_STATE_PRINT_TRYING_TO_LEARN_PROMPT;
+                // }
+            // }
+            // else if (selection == MENU_B_PRESSED || selection == 1)
+            // {
+                // if (sMoveRelearnerMenuState.showContestInfo == FALSE)
+                // {
+                    // sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
+                // }
+                // else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
+                // {
+                    // sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
+                // }
+            // }
+        // }
+        // break;
+    // case MENU_STATE_PRINT_GIVE_UP_PROMPT:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // MoveRelearnerCreateYesNoMenu();
+            // sMoveRelearnerStruct->state++;
+        // }
+        // break;
+    // case MENU_STATE_GIVE_UP_CONFIRM:
+        // {
+            // s8 selection = Menu_ProcessInputNoWrapClearOnChoose();
+
+            // if (selection == 0)
+            // {
+                // gSpecialVar_0x8004 = FALSE;
+                // sMoveRelearnerStruct->state = MENU_STATE_FADE_AND_RETURN;
+            // }
+            // else if (selection == MENU_B_PRESSED || selection == 1)
+            // {
+                // if (sMoveRelearnerMenuState.showContestInfo == FALSE)
+                // {
+                    // sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
+                // }
+                // else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
+                // {
+                    // sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
+                // }
+            // }
+        // }
+        // break;
+    // case MENU_STATE_PRINT_TRYING_TO_LEARN_PROMPT:
+        // PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnTryingToLearnMove);
+        // sMoveRelearnerStruct->state++;
+        // break;
+    // case MENU_STATE_WAIT_FOR_TRYING_TO_LEARN:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // MoveRelearnerCreateYesNoMenu();
+            // sMoveRelearnerStruct->state = MENU_STATE_CONFIRM_DELETE_OLD_MOVE;
+        // }
+        // break;
+    // case MENU_STATE_CONFIRM_DELETE_OLD_MOVE:
+        // {
+            // s8 selection = Menu_ProcessInputNoWrapClearOnChoose();
+
+            // if (selection == 0)
+            // {
+                // PrintMessageWithPlaceholders(gText_MoveRelearnerWhichMoveToForget);
+                // sMoveRelearnerStruct->state = MENU_STATE_PRINT_WHICH_MOVE_PROMPT;
+            // }
+            // else if (selection == MENU_B_PRESSED || selection == 1)
+            // {
+                // if (P_ASK_MOVE_CONFIRMATION)
+                // {
+                    // sMoveRelearnerStruct->state = MENU_STATE_PRINT_STOP_TEACHING;
+                // }
+                // else
+                // {
+                    // if (sMoveRelearnerMenuState.showContestInfo == FALSE)
+                    // {
+                        // sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
+                    // }
+                    // else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
+                    // {
+                        // sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
+                    // }
+                // }
+            // }
+        // }
+        // break;
+    // case MENU_STATE_PRINT_STOP_TEACHING:
+        // StringCopy(gStringVar2, GetMoveName(GetCurrentSelectedMove()));
+        // PrintMessageWithPlaceholders(gText_MoveRelearnerStopTryingToTeachMove);
+        // sMoveRelearnerStruct->state++;
+        // break;
+    // case MENU_STATE_WAIT_FOR_STOP_TEACHING:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // MoveRelearnerCreateYesNoMenu();
+            // sMoveRelearnerStruct->state++;
+        // }
+        // break;
+    // case MENU_STATE_CONFIRM_STOP_TEACHING:
+        // {
+            // s8 selection = Menu_ProcessInputNoWrapClearOnChoose();
+
+            // if (selection == 0)
+            // {
+                // sMoveRelearnerStruct->state = MENU_STATE_CHOOSE_SETUP_STATE;
+            // }
+            // else if (selection == MENU_B_PRESSED || selection == 1)
+            // {
+                // // What's the point? It gets set to MENU_STATE_PRINT_TRYING_TO_LEARN_PROMPT, anyway.
+                // if (sMoveRelearnerMenuState.showContestInfo == FALSE)
+                // {
+                    // sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
+                // }
+                // else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
+                // {
+                    // sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
+                // }
+                // sMoveRelearnerStruct->state = MENU_STATE_PRINT_TRYING_TO_LEARN_PROMPT;
+            // }
+        // }
+        // break;
+    // case MENU_STATE_CHOOSE_SETUP_STATE:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // FillWindowPixelBuffer(RELEARNERWIN_MSG, 0x11);
+            // if (sMoveRelearnerMenuState.showContestInfo == FALSE)
+            // {
+                // sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
+            // }
+            // else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
+            // {
+                // sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
+            // }
+        // }
+        // break;
+    // case MENU_STATE_PRINT_WHICH_MOVE_PROMPT:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // sMoveRelearnerStruct->state = MENU_STATE_SHOW_MOVE_SUMMARY_SCREEN;
+            // BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        // }
+        // break;
+    // case MENU_STATE_SHOW_MOVE_SUMMARY_SCREEN:
+        // if (!gPaletteFade.active)
+        // {
+            // ShowSelectMovePokemonSummaryScreen(gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, CB2_InitLearnSignatureMoveReturnFromSelectMove, GetCurrentSelectedMove());
+            // FreeMoveRelearnerResources();
+        // }
+        // break;
+    // case 21:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // sMoveRelearnerStruct->state = MENU_STATE_FADE_AND_RETURN;
+        // }
+        // break;
+    // case 22:
+        // BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        // break;
+    // case MENU_STATE_FADE_AND_RETURN:
+        // BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        // sMoveRelearnerStruct->state++;
+        // break;
+    // case MENU_STATE_RETURN_TO_FIELD:
+        // if (!gPaletteFade.active)
+        // {
+            // if (gInitialSummaryScreenCallback != NULL)
+            // {
+                // switch (gOriginSummaryScreenPage)
+                // {
+                // case PSS_PAGE_BATTLE_MOVES:
+                    // ShowPokemonSummaryScreen(SUMMARY_MODE_RELEARNER_BATTLE, gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, gInitialSummaryScreenCallback);
+                    // break;
+                // case PSS_PAGE_CONTEST_MOVES:
+                    // ShowPokemonSummaryScreen(SUMMARY_MODE_RELEARNER_CONTEST, gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, gInitialSummaryScreenCallback);
+                    // break;
+                // default:
+                    // ShowPokemonSummaryScreen(SUMMARY_MODE_NORMAL, gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, gInitialSummaryScreenCallback);
+                    // break;
+                // }
+                // gOriginSummaryScreenPage = 0;
+            // }
+            // else
+            // {
+                // SetMainCallback2(CB2_ReturnToField);
+            // }
+
+            // FreeMoveRelearnerResources();
+        // }
+        // break;
+    // case MENU_STATE_FADE_FROM_SUMMARY_SCREEN:
+        // BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        // sMoveRelearnerStruct->state++;
+        // if (sMoveRelearnerMenuState.showContestInfo == FALSE)
+        // {
+            // HideHeartSpritesAndShowTeachMoveText(TRUE);
+        // }
+        // else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
+        // {
+            // ShowTeachMoveText(TRUE);
+        // }
+        // RemoveScrollArrows();
+        // CopyWindowToVram(RELEARNERWIN_MSG, COPYWIN_GFX);
+        // break;
+    // case MENU_STATE_TRY_OVERWRITE_MOVE:
+        // if (!gPaletteFade.active)
+        // {
+            // if (sMoveRelearnerStruct->moveSlot == MAX_MON_MOVES)
+            // {
+                // sMoveRelearnerStruct->state = MENU_STATE_PRINT_STOP_TEACHING;
+            // }
+            // else
+            // {
+                // u16 move = GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_MOVE1 + sMoveRelearnerStruct->moveSlot);
+                // u8 originalPP = GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_PP1 + sMoveRelearnerStruct->moveSlot);
+
+                // StringCopy(gStringVar3, GetMoveName(move));
+                // RemoveMonPPBonus(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->moveSlot);
+                // SetMonMoveSlot(&gPlayerParty[sMoveRelearnerStruct->partyMon], GetCurrentSelectedMove(), sMoveRelearnerStruct->moveSlot);
+                // u8 newPP = GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_PP1 + sMoveRelearnerStruct->moveSlot);
+                // if (!P_SUMMARY_MOVE_RELEARNER_FULL_PP && gOriginSummaryScreenPage != 0 && originalPP < newPP)
+                    // SetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_PP1 + sMoveRelearnerStruct->moveSlot, &originalPP);
+                // StringCopy(gStringVar2, GetMoveName(GetCurrentSelectedMove()));
+                // PrintMessageWithPlaceholders(gText_MoveRelearnerAndPoof);
+                // sMoveRelearnerStruct->state = MENU_STATE_DOUBLE_FANFARE_FORGOT_MOVE;
+                // gSpecialVar_0x8004 = TRUE;
+            // }
+        // }
+        // break;
+    // case MENU_STATE_DOUBLE_FANFARE_FORGOT_MOVE:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnForgotMoveAndLearnedNew);
+            // sMoveRelearnerStruct->state = MENU_STATE_PRINT_TEXT_THEN_FANFARE;
+            // PlayFanfare(MUS_LEVEL_UP);
+        // }
+        // break;
+    // case MENU_STATE_PRINT_TEXT_THEN_FANFARE:
+        // if (!MoveRelearnerRunTextPrinters())
+        // {
+            // PlayFanfare(MUS_LEVEL_UP);
+            // sMoveRelearnerStruct->state = MENU_STATE_WAIT_FOR_FANFARE;
+        // }
+        // break;
+    // case MENU_STATE_WAIT_FOR_FANFARE:
+        // if (IsFanfareTaskInactive())
+        // {
+            // sMoveRelearnerStruct->state = MENU_STATE_WAIT_FOR_A_BUTTON;
+        // }
+        // break;
+    // case MENU_STATE_WAIT_FOR_A_BUTTON:
+        // if (JOY_NEW(A_BUTTON))
+        // {
+            // PlaySE(SE_SELECT);
+            // sMoveRelearnerStruct->state = MENU_STATE_FADE_AND_RETURN;
+        // }
+        // break;
+    // }
+// }
+
 static void FreeMoveRelearnerResources(void)
 {
     RemoveScrollArrows();
@@ -968,6 +1396,7 @@ static void CreateLearnableMovesList(void)
     sMoveRelearnerStruct->numMenuChoices++;
     sMoveRelearnerStruct->numToShowAtOnce = LoadMoveRelearnerMovesList(sMoveRelearnerStruct->menuItems, sMoveRelearnerStruct->numMenuChoices);
 }
+
 
 void MoveRelearnerShowHideHearts(s32 move)
 {

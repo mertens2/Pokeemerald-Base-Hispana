@@ -105,63 +105,90 @@ Route109_Text_TrainerTipsSign::
 
 MauvilleCity_EvoMart_Text_AzurillGirl::
 # 554 "data/text/npc_dialogue.pory"
-	.string "Como todos los días, estoy aquí en una\n"
-	.string "única misión…\p"
-	.string "¡Encontrar a alguien alérgico a Azurill\n"
-	.string "para atacar!$"
+	.string "Los Tutores del medio se especializan\n"
+	.string "en categorías específicas,\l"
+	.string "¡Pero los que tienen sus propios\l"
+	.string "cuartos enseñan ataques\l"
+	.string "personalizados para cada Pokémon!$"
 
 MauvilleCity_EvoMart_Text_HereToBuy::
 # 567 "data/text/npc_dialogue.pory"
 	.string "¡Esta ciudad es increíble!\p"
-	.string "¿Cuatro empleados que hacen todos\n"
-	.string "cosas distintas?\p"
+	.string "¿Cuatro Tutores de Movimientos en una\n"
+	.string "tienda?\p"
 	.string "¡Nunca me dejo de sorprender aquí!$"
 
-MauvilleCity_EvoMart_Text_UltimateMoveTutor::
+MauvilleCity_EvoMart_Text_PledgeMoveTutor::
 # 578 "data/text/npc_dialogue.pory"
+	.string "¡Soy el Tutor de Votos!\p"
+	.string "Por dos Partes de cualquier color\n"
+	.string "{COLOR LIGHT_GRAY SHADOW WHITE}aunque las mejores son las Amarillas{COLOR DARK_GRAY SHADOW LIGHT_GRAY},\l"
+	.string "¡Le enseñaré a tus Pokémon un\l"
+	.string "Movimiento Voto!\p"
+	.string "¿Intentamos?$"
+
+MauvilleCity_EvoMart_Text_UltimateMoveTutor::
+# 589 "data/text/npc_dialogue.pory"
 	.string "¡Soy la Tutora Suprema!\p"
-	.string "Por una Parte de cualquier color {COLOR LIGHT_GRAY SHADOW WHITE}aunque\n"
-	.string "prefiero las Rojas{COLOR DARK_GRAY SHADOW LIGHT_GRAY}, ¡Le enseñaré a tus\l"
+	.string "Por cinco Partes de cualquier color\n"
+	.string "menos amarillo, ¡Le enseñaré a tus\l"
 	.string "Pokémon un Movimiento Supremo!\p"
 	.string "¿Intentamos?$"
 
+MauvilleCity_EvoMart_Text_EggMoveTutor::
+# 600 "data/text/npc_dialogue.pory"
+	.string "¡Hola, soy la reconocida Tutora de\n"
+	.string "Movimientos Huevo!\p"
+	.string "Por 10 Partes Verdes puedo enseñarle\n"
+	.string "un Movimiento Huevo a tu Pokémon,\l"
+	.string "¡Y no te preocupes, si es una\l"
+	.string "evolución podré enseñarle ataques de\l"
+	.string "etapas anteriores!\p"
+	.string "¿Quieres probar?$"
+
+MauvilleCity_EvoMart_Text_EggMoveTutorNotEnough::
+# 617 "data/text/npc_dialogue.pory"
+	.string "¡Te faltan Partes Verdes! ¡Recuerda que\n"
+	.string "necesitas 10!\p"
+	.string "Pero…$"
+
 MauvilleCity_EvoMart_Text_SelectMoveTutor::
-# 589 "data/text/npc_dialogue.pory"
+# 630 "data/text/npc_dialogue.pory"
 	.string "¿Qué movimiento debería enseñarle a\n"
 	.string "tus Pokémon?$"
 
 MauvilleCity_EvoMart_Text_DeclineTutor::
-# 600 "data/text/npc_dialogue.pory"
+# 641 "data/text/npc_dialogue.pory"
 	.string "¡No pasa nada!\n"
 	.string "¡Vuelve pronto!$"
 
 MauvilleCity_EvoMart_Text_TutorNotEnough::
-# 611 "data/text/npc_dialogue.pory"
+# 652 "data/text/npc_dialogue.pory"
 	.string "Ah, ¿Te faltan Partes?\p"
 	.string "¡Vuelve pronto!$"
 
 MauvilleCity_EvoMart_Text_TutorSelectMon::
-# 622 "data/text/npc_dialogue.pory"
+# 663 "data/text/npc_dialogue.pory"
 	.string "¡Perfecto!\n"
 	.string "¿A qué Pokémon debería enseñarle un\l"
 	.string "movimiento?$"
 
 MauvilleCity_EvoMart_Text_TutorIncompatible::
-# 633 "data/text/npc_dialogue.pory"
+# 674 "data/text/npc_dialogue.pory"
 	.string "Ah, disculpa, pero eso va más allá de mis\n"
 	.string "capacidades…$"
 
 MauvilleCity_EvoMart_Text_TutorDone::
-# 644 "data/text/npc_dialogue.pory"
+# 685 "data/text/npc_dialogue.pory"
 	.string "¡Todo listo! ¡{STR_VAR_1}\n"
 	.string "aprendió {STR_VAR_2}!$"
 
 MauvilleCity_EvoMart_Text_TutorBye::
-# 655 "data/text/npc_dialogue.pory"
+# 696 "data/text/npc_dialogue.pory"
 	.string "¡Gracias por todo!$"
 
 MauvilleCity_EvoMart_Text_SignatureMoveTutor::
-# 667 "data/text/npc_dialogue.pory"
+# 708 "data/text/npc_dialogue.pory"
 	.string "¡Soy el Tutor Característico!\p"
 	.string "Por cinco Partes de cualquier color, ¡Le\n"
 	.string "enseñaré a tus Pokémon su Movimiento\l"
@@ -169,13 +196,13 @@ MauvilleCity_EvoMart_Text_SignatureMoveTutor::
 	.string "¿Intentamos?$"
 
 MauvilleCity_Inside_Text_Guitarist::
-# 680 "data/text/npc_dialogue.pory"
+# 721 "data/text/npc_dialogue.pory"
 	.string "¡Bro! ¡Tanta gente pasa al azar, bro!\n"
 	.string "¡Tanta gente a la que cantarles mi\l"
 	.string "nueva canción, bro!$"
 
 MauvilleCity_Inside_Text_AromaLady::
-# 693 "data/text/npc_dialogue.pory"
+# 734 "data/text/npc_dialogue.pory"
 	.string "Odio esta ciudad, pero es la única con\n"
 	.string "electrididad gratis…\p"
 	.string "Todo es tan anti-natural aquí, ¿Y me\n"
@@ -183,7 +210,7 @@ MauvilleCity_Inside_Text_AromaLady::
 	.string "menos?$"
 
 MauvilleCity_Inside_Text_BlackBelt::
-# 706 "data/text/npc_dialogue.pory"
+# 747 "data/text/npc_dialogue.pory"
 	.string "¿Sabías que todos los días hay\n"
 	.string "personas distintas en el Café\l"
 	.string "Combate?\p"
@@ -192,18 +219,18 @@ MauvilleCity_Inside_Text_BlackBelt::
 	.string "desafío!$"
 
 MauvilleCity_Inside_Text_Sawk::
-# 719 "data/text/npc_dialogue.pory"
+# 760 "data/text/npc_dialogue.pory"
 	.string "Sawk.$"
 
 MauvilleCity_Inside_Text_OldWoman::
-# 730 "data/text/npc_dialogue.pory"
+# 771 "data/text/npc_dialogue.pory"
 	.string "Parece como si hubiese sido ayer cuando\n"
 	.string "escondí un cuerpo en la tierra debajo\l"
 	.string "de este mismo azulejo…\l"
 	.string "¡Cómo vuela el tiempo!$"
 
 MauvilleCity_Inside_Text_OldMan1::
-# 743 "data/text/npc_dialogue.pory"
+# 784 "data/text/npc_dialogue.pory"
 	.string "Hoy día,{PAUSE 8} el {COLOR BLUE}Área Residencial{COLOR DARK_GRAY} está en el\n"
 	.string "segundo piso,\l"
 	.string "y el {COLOR RED}Área Comercial{COLOR DARK_GRAY}, en el primero,\l"
@@ -213,7 +240,7 @@ MauvilleCity_Inside_Text_OldMan1::
 	.string "una ciudad común y corriente.$"
 
 MauvilleCity_Inside_Text_OldMan2::
-# 758 "data/text/npc_dialogue.pory"
+# 799 "data/text/npc_dialogue.pory"
 	.string "Fue difícil adaptarse, no mentiré, pero\n"
 	.string "al menos nuestras casas fueron\l"
 	.string "replicadas.\p"
@@ -223,7 +250,7 @@ MauvilleCity_Inside_Text_OldMan2::
 	.string "cosas?$"
 
 MauvilleCity_Inside_Text_OldMan3::
-# 773 "data/text/npc_dialogue.pory"
+# 814 "data/text/npc_dialogue.pory"
 	.string "Gracias por escuchar a un viejo\n"
 	.string "divagar… ¡Ten, la MT Canon, un\l"
 	.string "movimiento que se potencia mientras\l"
@@ -234,7 +261,7 @@ MauvilleCity_Inside_Text_OldMan3::
 	.string "turno de Batalla Doble.$"
 
 MauvilleCity_Inside_Text_OldManExplainTMRound::
-# 786 "data/text/npc_dialogue.pory"
+# 827 "data/text/npc_dialogue.pory"
 	.string "Canon es un movimiento que se potencia\n"
 	.string "mientras más se use.\p"
 	.string "¡También obliga a aliados que lo\n"
@@ -243,25 +270,137 @@ MauvilleCity_Inside_Text_OldManExplainTMRound::
 	.string "turno de Batalla Doble.$"
 
 MauvilleCity_Inside_Text_Tourist4A::
-# 799 "data/text/npc_dialogue.pory"
+# 840 "data/text/npc_dialogue.pory"
 	.string "¡Podría perderme en esta ciudad!\n"
 	.string "……Bueno, no. Estoy exagerando.$"
 
 MauvilleCity_Inside_Text_Tourist4B::
-# 810 "data/text/npc_dialogue.pory"
+# 851 "data/text/npc_dialogue.pory"
 	.string "Lo que le falta a esta ciudad… No se lo\n"
 	.string "puedo decir a un{A} niñ{OA}…$"
 
 MauvilleCity_Inside_Text_Tourist4C::
-# 821 "data/text/npc_dialogue.pory"
+# 862 "data/text/npc_dialogue.pory"
 	.string "Vine aquí desde Kalos para ver el\n"
 	.string "avance de la infraestructura de\l"
 	.string "Hoenn.\p"
 	.string "7.5/10. Demasiado naranja.$"
 
 MauvilleCity_Inside_Text_Tourist4D::
-# 834 "data/text/npc_dialogue.pory"
+# 875 "data/text/npc_dialogue.pory"
 	.string "Vine a comparle algo a mi esposa por\n"
 	.string "nuestro aniversario.\p"
 	.string "Y a comprarle algo para que me regale a\n"
 	.string "mí, ya que seguro lo volvió a olvidar.$"
+
+MauvilleCity_Inside_House3_Text_Mom1::
+# 888 "data/text/npc_dialogue.pory"
+	.string "Mi mujer y yo llevamos años en la Ciudad,\n"
+	.string "¡qué bueno que pudimos mantener\l"
+	.string "nuestra casa intacta!\p"
+	.string "¡Hasta nos dieron nuevos muebles!$"
+
+MauvilleCity_Inside_House3_Text_Mom1_Darling::
+# 901 "data/text/npc_dialogue.pory"
+	.string "Ay, querida, no metas a la gente que nos\n"
+	.string "visita en esto…$"
+
+MauvilleCity_Inside_House3_Text_Mom2::
+# 912 "data/text/npc_dialogue.pory"
+	.string "¿Tengo razón o no?$"
+
+MauvilleCity_Inside_House3_Text_Mom2_Yes::
+# 923 "data/text/npc_dialogue.pory"
+	.string "¿Eh? ¡No me des la razón como a los\n"
+	.string "locos!$"
+
+MauvilleCity_Inside_House3_Text_Mom2_No::
+# 934 "data/text/npc_dialogue.pory"
+	.string "Ni siquiera terminé la pregunta…$"
+
+MauvilleCity_Inside_House3_Text_Girl::
+# 945 "data/text/npc_dialogue.pory"
+	.string "Ay, ete mi hemanito…\p"
+	.string "Siempe le agadan obsesiones y no pada\n"
+	.string "de hablad…\p"
+	.string "Al menos tiene decompensas… Hasta\n"
+	.string "mejor que chó habla…$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy::
+# 956 "data/text/npc_dialogue.pory"
+	.string "¡Ah, hola distinguid{OA} señor{A}!\p"
+	.string "Tengo unos temas fantásticos de los\n"
+	.string "que charlar…\p"
+	.string "Aunque no soy maleducado y te dejaré\n"
+	.string "irte si no quieres seguir hablando…\p"
+	.string "¡Más si te quedas, te recompensaré!$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy_StillMore::
+# 969 "data/text/npc_dialogue.pory"
+	.string "¡Aún tengo más de qué hablar!$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy_OneMore::
+# 980 "data/text/npc_dialogue.pory"
+	.string "¡Sólo tengo un tema más para hablar!$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy_RewardTalkAgain::
+# 991 "data/text/npc_dialogue.pory"
+	.string "¡Perfecto!\n"
+	.string "¡Háblame de nuevo y te daré tu\l"
+	.string "recompensa!$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy_GiftGiver::
+# 1002 "data/text/npc_dialogue.pory"
+	.string "Permíteme hablarte sobre la Habilidad\n"
+	.string "Pokémon {COLOR RED}Regalador{COLOR DARK_GRAY}.\p"
+	.string "Esta es la Habilidad Característica de\n"
+	.string "{COLOR RED}Delibird{COLOR DARK_GRAY}, y permite al usuario usar\l"
+	.string "Movimientos que dependan del Objeto\l"
+	.string "Equipado,\l"
+	.string "incluso si no se posee uno. Por\l"
+	.string "ejemplo, ¡Don Natural usará su\l"
+	.string "potencia máxima y cambiará su Tipo\l"
+	.string "dependiendo de qué será más efectivo\l"
+	.string "contra el rival!$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy_FutureVision::
+# 1017 "data/text/npc_dialogue.pory"
+	.string "Ahora, déjame contarte sobre la\n"
+	.string "Habilidad Pokémon {COLOR RED}Visión Futura{COLOR DARK_GRAY}.\p"
+	.string "Una vez más, se trata de una Habilidad\n"
+	.string "Característica, de la familia\l"
+	.string "evolutiva de {COLOR RED}Gothita{COLOR DARK_GRAY}.\p"
+	.string "Visión Futura permite al usuario\n"
+	.string "predecir la posición exacta del rival\l"
+	.string "en todo futuro posible, ¡pudiendo así\l"
+	.string "tener precisión perfecta con\l"
+	.string "Movimientos Tipo Psíquico!\p"
+	.string "Como te imaginarás, combina\n"
+	.string "perfectamente con Movimientos como\l"
+	.string "Hipnosis…$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy_ColonysAid::
+# 1034 "data/text/npc_dialogue.pory"
+	.string "Por último, centrémonos en otra\n"
+	.string "Habilidad Pokémon Característica,\l"
+	.string "{COLOR RED}Socorro Colonial{COLOR DARK_GRAY}.\p"
+	.string "Es la Habilidad de {COLOR RED}Durant{COLOR DARK_GRAY}.\p"
+	.string "Al perder un 25% de sus PS, Durant\n"
+	.string "activa Socorro Colonial, y otro Durant\l"
+	.string "hace de Sustituto, uno con 1/4 de\l"
+	.string "salud, por supuesto,\l"
+	.string "¡Y esto se activa cada vez que Durant\l"
+	.string "pierde 25% de PS! ¡Qué gran mecanismo\l"
+	.string "de defensa!$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy_Congrats::
+# 1051 "data/text/npc_dialogue.pory"
+	.string "¡Muchas gracias por escucharme,\n"
+	.string "estimad{OA} señor{A}!\p"
+	.string "¡Como recompensa, podrá elegir uno de\n"
+	.string "los Pokémon de los que hablamos!$"
+
+MauvilleCity_Inside_House3_Text_HyperfixatedBoy_Thanks::
+# 1063 "data/text/npc_dialogue.pory"
+	.string "¡Muchas gracias por escucharme,\n"
+	.string "estimad{OA} señor{A}!$"

@@ -19,30 +19,55 @@ script MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle {
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
 	setvar(VAR_INVERSE_BATTLE_TYPE, 0)
+	addvar(VAR_INVERSE_BATTLE_FOE, 1)
+	while(var(VAR_0x8000) == VAR_INVERSE_BATTLE_FOE || var(VAR_0x8001) == VAR_INVERSE_BATTLE_FOE || var(VAR_0x8002) == VAR_INVERSE_BATTLE_FOE){
+		random(5)
+		copyvar(VAR_INVERSE_BATTLE_FOE, VAR_RESULT)
+		addvar(VAR_INVERSE_BATTLE_FOE, 1)
+	}
+	
+	if (var(VAR_0x8000) == 0){
+		copyvar(VAR_0x8000, VAR_INVERSE_BATTLE_FOE)
+	}
+	else {
+		if (var(VAR_0x8001) == 0) {
+			copyvar(VAR_0x8001, VAR_INVERSE_BATTLE_FOE)
+		}
+		else {
+			copyvar(VAR_0x8002, VAR_INVERSE_BATTLE_FOE)
+		}
+	}
+
 	switch(var(VAR_INVERSE_BATTLE_FOE)){
-		case 0:
-			cleartrainerflag(TRAINER_VALERIE_1)
-			trainerbattle_single (TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
-			break
 		case 1:
-			cleartrainerflag(TRAINER_CINDY_2)
-			trainerbattle_single (TRAINER_CINDY_2, "¡Mi estrategia te paralizará!", "Ah, pues nada.", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			cleartrainerflag(TRAINER_VALERIE_1)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			cleartrainerflag(TRAINER_VALERIE_1)
 			break
 		case 2:
-			cleartrainerflag(TRAINER_GRUNT_SPACE_CENTER_2)
-			trainerbattle_single (TRAINER_GRUNT_SPACE_CENTER_2, "¿Qué? ¡Tengo hobbies!", "Soy terrible en mis\nhobbies…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			cleartrainerflag(TRAINER_CINDY_2)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_CINDY_2, "¡Mi estrategia te paralizará!", "Ah, pues nada.", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			cleartrainerflag(TRAINER_CINDY_2)
 			break
 		case 3:
-			cleartrainerflag(TRAINER_VALERIE_1)
-			trainerbattle_single (TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			cleartrainerflag(TRAINER_GRUNT_SPACE_CENTER_2)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_GRUNT_SPACE_CENTER_2, "¿Qué? ¡Tengo hobbies!", "Soy terrible en mis\nhobbies…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			cleartrainerflag(TRAINER_GRUNT_SPACE_CENTER_2)
 			break
 		case 4:
-			cleartrainerflag(TRAINER_CINDY_2)
-			trainerbattle_single (TRAINER_CINDY_2, "¡Mi estrategia te paralizará!", "Ah, pues nada.", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+			cleartrainerflag(TRAINER_ROSE_1)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_ROSE_1, "¡Estoy aquí para redimirme!", "La redención…\nNo la merezco…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			cleartrainerflag(TRAINER_ROSE_1)
 			break
-		default:
-			cleartrainerflag(TRAINER_GRUNT_SPACE_CENTER_2)
-			trainerbattle_single (TRAINER_GRUNT_SPACE_CENTER_2, "¿Qué? ¡Tengo hobbies!", "Soy terrible en mis\nhobbies…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle)
+		case 5:
+			cleartrainerflag(TRAINER_DALTON_1)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_DALTON_1, "¡Aplaudan fuerte, gente bonita!", "¡Aplausos fuertes para\nnuestr{OA} ganador{A}!\p¡Vamo', vamo', vamo'!", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			cleartrainerflag(TRAINER_DALTON_1)
+			break
+		case 6:
+			cleartrainerflag(TRAINER_DEREK)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_DEREK, "Bichos… ¡Aprenderás a temerles!", "Bichos… ¡Aprendí a fallarles!", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			cleartrainerflag(TRAINER_DEREK)
 			break
 	}
 	return
@@ -50,15 +75,23 @@ script MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle {
 
 script MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle {
 	addvar(VAR_WINNING_STREAK, 1)
-	if (var(VAR_WINNING_STREAK) >= 3){
+	if (var(VAR_WINNING_STREAK) >= 4){
 		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
-		msgbox(format("¡Ganaste el torneo!\p¡Quedaste en primer lugar!"))
-		random(4)
+		msgbox(format("¡Ganaste el torneo!\p¡Quedaste en primer lugar!\p¡Tienes derecho a un paquete completo de Partes!"))
+		giveitem(ITEM_BLUE_SHARD, 5)
+		giveitem(ITEM_YELLOW_SHARD, 5)
+		giveitem(ITEM_GREEN_SHARD, 5)
+		giveitem(ITEM_RED_SHARD, 5)
+		setvar(VAR_0x8000, 0)
+		setvar(VAR_0x8001, 0)
+		setvar(VAR_0x8002, 0)
+		msgbox(format("¡Y eso no es todo!\pUn segundo premio te espera… ¿Qué será…?"))
+		random(5)
 		switch(var(VAR_RESULT))
 		{
 			case 0:
-				giveitem(ITEM_BIG_NUGGET, 5)
+				giveitem(ITEM_BIG_NUGGET, 2)
 				break
 			case 1:
 				giveitem(ITEM_SACRED_ASH, 1)
@@ -137,13 +170,26 @@ script MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle {
 			break
 		
 	}
-	msgbox("¿Quieres seguir?",MSGBOX_YESNO)
-	if (var(VAR_RESULT) == YES){
-		random(6)
-		copyvar(VAR_INVERSE_BATTLE_FOE, VAR_RESULT)
-		call(MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle)
+	if (var(VAR_WINNING_STREAK) >= 3){
+		msgbox(format("La final… Aquí se decidirá todo…\p¿A menos que te quieras rendir?"))
+		dynmultichoice(25, 5, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "¡Seguir con todo!", "¡Retirarse con cobardía!")
+		if (var(VAR_RESULT) == 0){
+			msgbox(format("¡Déjame curar a tus Pokémon para la final!"))
+			call (Common_EventScript_OutOfCenterPartyHeal)
+			random(6)
+			copyvar(VAR_INVERSE_BATTLE_FOE, VAR_RESULT)
+			call(MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle)
+		}
 	}
-	msgbox("¡Vuelve pronto a participar!")
+	else {
+		msgbox("¿Quieres seguir?",MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES){
+			random(6)
+			copyvar(VAR_INVERSE_BATTLE_FOE, VAR_RESULT)
+			call(MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle)
+		}
+	}
+	msgbox(format("¡No te preocupes!\N¡Vuelve pronto a participar!"))
 	closemessage
 	delay(16)
 	setvar(VAR_WINNING_STREAK, 0)

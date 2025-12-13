@@ -71,6 +71,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sVictiniLevelUpLearnset,
         .teachableLearnset = sVictiniTeachableLearnset,
+		.signatureLearnset = sVictiniSignatureLearnset,
     },
 #endif //P_FAMILY_VICTINI
 
@@ -140,6 +141,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sSnivyLevelUpLearnset,
         .teachableLearnset = sSnivyTeachableLearnset,
         .eggMoveLearnset = sSnivyEggMoveLearnset,
+		.signatureLearnset = sGrassStarterSignatureLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_SERVINE}),
     },
 
@@ -369,6 +371,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sTepigLevelUpLearnset,
         .teachableLearnset = sTepigTeachableLearnset,
         .eggMoveLearnset = sTepigEggMoveLearnset,
+		.signatureLearnset = sTepigSignatureLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE}),
     },
 
@@ -531,6 +534,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gShinyOverworldPalette_Emboar
         )
         .levelUpLearnset = sEmboarLevelUpLearnset,
+		.isFireStarter = TRUE,
         .teachableLearnset = sEmboarTeachableLearnset,
     },
 #endif //P_FAMILY_TEPIG
@@ -605,6 +609,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sOshawottLevelUpLearnset,
         .teachableLearnset = sOshawottTeachableLearnset,
         .eggMoveLearnset = sOshawottEggMoveLearnset,
+		.signatureLearnset = sOshawottSignatureLearnset,
+		.isWaterStarter = TRUE,
         .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_DEWOTT}),
     },
 
@@ -674,6 +680,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sDewottLevelUpLearnset,
         .teachableLearnset = sDewottTeachableLearnset,
+		.isWaterStarter = TRUE,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT},
                                 {EVO_NONE, 0, SPECIES_SAMUROTT_HISUI}),
     },
@@ -753,6 +760,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sSamurottLevelUpLearnset,
         .teachableLearnset = sSamurottTeachableLearnset,
         .formSpeciesIdTable = sSamurottFormSpeciesIdTable,
+		.isWaterStarter = TRUE,
     },
 
 #if P_HISUIAN_FORMS
@@ -828,6 +836,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sSamurottHisuiLevelUpLearnset,
         .teachableLearnset = sSamurottHisuiTeachableLearnset,
         .formSpeciesIdTable = sSamurottFormSpeciesIdTable,
+		.isWaterStarter = TRUE,
+		
     },
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_OSHAWOTT
@@ -1394,6 +1404,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sPansageLevelUpLearnset,
         .teachableLearnset = sPansageTeachableLearnset,
         .eggMoveLearnset = sPansageEggMoveLearnset,
+		.signatureLearnset = sGrassStarterSignatureLearnset,	
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_SIMISAGE}),
     },
 
@@ -1461,6 +1472,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sSimisageLevelUpLearnset,
         .teachableLearnset = sSimisageTeachableLearnset,
+		.signatureLearnset = sGrassStarterSignatureLearnset,
     },
 #endif //P_FAMILY_PANSAGE
 
@@ -1529,6 +1541,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sPansearLevelUpLearnset,
         .teachableLearnset = sPansearTeachableLearnset,
+		.signatureLearnset = sFireStarterSignatureLearnset,
         .eggMoveLearnset = sPansearEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_SIMISEAR}),
     },
@@ -1599,6 +1612,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gShinyOverworldPalette_Simisear
         )
         .levelUpLearnset = sSimisearLevelUpLearnset,
+		.signatureLearnset = sFireStarterSignatureLearnset,
         .teachableLearnset = sSimisearTeachableLearnset,
     },
 #endif //P_FAMILY_PANSEAR
@@ -1668,6 +1682,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sPanpourLevelUpLearnset,
         .teachableLearnset = sPanpourTeachableLearnset,
+		.isWaterStarter = TRUE,
         .eggMoveLearnset = sPanpourEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_SIMIPOUR}),
     },
@@ -1734,6 +1749,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gShinyOverworldPalette_Simipour
         )
         .levelUpLearnset = sSimipourLevelUpLearnset,
+		.isWaterStarter = TRUE,
+		.signatureLearnset = sPanpourSignatureLearnset,
         .teachableLearnset = sSimipourTeachableLearnset,
     },
 #endif //P_FAMILY_PANPOUR
@@ -4727,6 +4744,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sSandileLevelUpLearnset,
         .teachableLearnset = sSandileTeachableLearnset,
+		.signatureLearnset = sSandileSignatureLearnset,
         .eggMoveLearnset = sSandileEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 29, SPECIES_KROKOROK}),
     },
@@ -9158,6 +9176,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gShinyOverworldPalette_Klink
         )
         .levelUpLearnset = sKlinkLevelUpLearnset,
+		.signatureLearnset = sKlinkSignatureLearnset,
         .teachableLearnset = sKlinkTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_KLANG}),
     },
@@ -11240,6 +11259,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sBouffalantLevelUpLearnset,
         .teachableLearnset = sBouffalantTeachableLearnset,
+		.signatureLearnset = sBouffalantSignatureLearnset,
         .eggMoveLearnset = sBouffalantEggMoveLearnset,
     },
 #endif //P_FAMILY_BOUFFALANT
@@ -11586,16 +11606,25 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sMandibuzzTeachableLearnset,
     },
 #endif //P_FAMILY_VULLABY
-
+// 35
 #if P_FAMILY_HEATMOR
     [SPECIES_HEATMOR] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 95,
+        .baseAttack    = 120,
+        .baseDefense   = 70,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 75,
+		#else
         .baseHP        = 85,
         .baseAttack    = 97,
         .baseDefense   = 66,
         .baseSpeed     = 65,
         .baseSpAttack  = 105,
         .baseSpDefense = 66,
+		#endif
         .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 90,
         .expYield = 169,
@@ -11605,7 +11634,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_GLUTTONY, ABILITY_FLASH_FIRE, ABILITY_WHITE_SMOKE },
+        .abilities = { ABILITY_WIND_RIDER, ABILITY_FLASH_FIRE, ABILITY_WHITE_SMOKE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Heatmor"),
         .cryId = CRY_HEATMOR,
@@ -11614,8 +11643,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 14,
         .weight = 580,
 		.description = COMPOUND_STRING(
-			"Absorbe aire por el orificio de su cola y\n"
-			"consume llamas en su interior.\n"
+			"Absorbe viento por el orificio de su cola\n"
+			"para potenciar las llamas del interior.\n"
 			"Es enemigo acérrimo de los Durant."),
         .pokemonScale = 265,
         .pokemonOffset = 2,
@@ -11651,6 +11680,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sHeatmorLevelUpLearnset,
         .teachableLearnset = sHeatmorTeachableLearnset,
+		.signatureLearnset = sHeatmorSignatureLearnset,
         .eggMoveLearnset = sHeatmorEggMoveLearnset,
     },
 #endif //P_FAMILY_HEATMOR
@@ -11658,12 +11688,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_FAMILY_DURANT
     [SPECIES_DURANT] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 80,
+        .baseAttack    = 120,
+        .baseDefense   = 110,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 10,
+        .baseSpDefense = 70,
+		#else
         .baseHP        = 58,
         .baseAttack    = 109,
         .baseDefense   = 112,
         .baseSpeed     = 109,
         .baseSpAttack  = 48,
         .baseSpDefense = 48,
+		#endif
         .types = MON_TYPES(TYPE_BUG, TYPE_STEEL),
         .catchRate = 90,
         .expYield = 169,
@@ -11673,7 +11712,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_COLONYS_POWER, ABILITY_HUSTLE, ABILITY_TRUANT },
+        .abilities = { ABILITY_COLONYS_POWER, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Durant"),
         .cryId = CRY_DURANT,
@@ -12716,6 +12755,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+		.signatureLearnset = sReshiramSignatureLearnset,
         .levelUpLearnset = sReshiramLevelUpLearnset,
         .teachableLearnset = sReshiramTeachableLearnset,
     },
@@ -12786,6 +12826,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+		.signatureLearnset = sZekromSignatureLearnset,
         .levelUpLearnset = sZekromLevelUpLearnset,
         .teachableLearnset = sZekromTeachableLearnset,
     },
@@ -13029,6 +13070,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sKyuremLevelUpLearnset,
         .teachableLearnset = sKyuremTeachableLearnset,
+		.signatureLearnset = sKyuremSignatureLearnset,
         .formSpeciesIdTable = sKyuremFormSpeciesIdTable,
     },
 
@@ -13108,6 +13150,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sKyuremWhiteLevelUpLearnset,
         .teachableLearnset = sKyuremTeachableLearnset,
+		.signatureLearnset = sKyuremWhiteSignatureLearnset,
         .formSpeciesIdTable = sKyuremFormSpeciesIdTable,
     },
 
@@ -13186,6 +13229,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sKyuremBlackLevelUpLearnset,
         .teachableLearnset = sKyuremTeachableLearnset,
+		.signatureLearnset = sKyuremBlackSignatureLearnset,
         .formSpeciesIdTable = sKyuremFormSpeciesIdTable,
     },
 #endif //P_FUSION_FORMS
@@ -13552,6 +13596,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sGenesectTeachableLearnset,                            \
         .formSpeciesIdTable = sGenesectFormSpeciesIdTable,                          \
         .formChangeTable = sGenesectFormChangeTable,                                \
+		.signatureLearnset = sGenesectSignatureLearnset,\
         .isMythical = TRUE,                                                         \
         .isFrontierBanned = TRUE,                                                   \
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT, \

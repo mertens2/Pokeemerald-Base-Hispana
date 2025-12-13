@@ -554,12 +554,12 @@ text Route109_Text_TrainerTipsSign{
 text MauvilleCity_EvoMart_Text_AzurillGirl {
 	poryswitch(LANGUAGE) {
 		EN {
-			format("Just like everyday, I'm here with one hope only…\p"
-			"Finding someone who's allergic to Azurill to attack!")
+			format("The Move Tutors in the middle specialize in some Move categories,\N"
+			"but the ones in their own rooms teach you moves customized for each Pokémon!")
 		}
 		ES {
-			format("Como todos los días, estoy aquí en una única misión…\p"
-			"¡Encontrar a alguien alérgico a Azurill para atacar!")
+			format("Los Tutores del medio se especializan en categorías específicas,\N"
+			"¡Pero los que tienen sus propios cuartos enseñan ataques personalizados para cada Pokémon!")
 		}
 	}
 }
@@ -567,10 +567,21 @@ text MauvilleCity_EvoMart_Text_AzurillGirl {
 text MauvilleCity_EvoMart_Text_HereToBuy {
 	poryswitch(LANGUAGE) {
 		EN {
-			format("This city is unbelievable!\pFour clerks that all do different things?\pThis city never ceases to amaze!")
+			format("This city is unbelievable!\pFour Move Tutors in one place?\pThis city never ceases to amaze!")
 		}
 		ES {
-			format("¡Esta ciudad es increíble!\p¿Cuatro empleados que hacen todos cosas distintas?\p¡Nunca me dejo de sorprender aquí!")
+			format("¡Esta ciudad es increíble!\p¿Cuatro Tutores de Movimientos en una tienda?\p¡Nunca me dejo de sorprender aquí!")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_PledgeMoveTutor {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("I'm the Pledge Tutor!\pFor just two of any Colored Shard {COLOR LIGHT_GRAY SHADOW WHITE}but Yellow Shards ARE the best{COLOR DARK_GRAY SHADOW LIGHT_GRAY}, I can teach your Pokémon an Pledge Move!\pWould you like to try?")
+		}
+		ES {
+			format("¡Soy el Tutor de Votos!\pPor dos Partes de cualquier color {COLOR LIGHT_GRAY SHADOW WHITE}aunque las mejores son las Amarillas{COLOR DARK_GRAY SHADOW LIGHT_GRAY}, ¡Le enseñaré a tus Pokémon un Movimiento Voto!\p¿Intentamos?")
 		}
 	}
 }
@@ -578,13 +589,43 @@ text MauvilleCity_EvoMart_Text_HereToBuy {
 text MauvilleCity_EvoMart_Text_UltimateMoveTutor {
 	poryswitch(LANGUAGE) {
 		EN {
-			format("I'm the Ultimate Tutor!\pFor just any Colored Shard {COLOR LIGHT_GRAY SHADOW WHITE}although I DO like Red Shards the best{COLOR DARK_GRAY SHADOW LIGHT_GRAY}, I can teach your Pokémon an Ultimate Move!\pWould you like to try?")
+			format("I'm the Ultimate Tutor!\pFor just five of any Colored Shard other than Yellow, I can teach your Pokémon an Ultimate Move!\pWould you like to try?")
 		}
 		ES {
-			format("¡Soy la Tutora Suprema!\pPor una Parte de cualquier color {COLOR LIGHT_GRAY SHADOW WHITE}aunque prefiero las Rojas{COLOR DARK_GRAY SHADOW LIGHT_GRAY}, ¡Le enseñaré a tus Pokémon un Movimiento Supremo!\p¿Intentamos?")
+			format("¡Soy la Tutora Suprema!\pPor cinco Partes de cualquier color menos amarillo, ¡Le enseñaré a tus Pokémon un Movimiento Supremo!\p¿Intentamos?")
 		}
 	}
 }
+
+text MauvilleCity_EvoMart_Text_EggMoveTutor {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Hi, I'm the renowed Egg Move Tutor!\p"
+					"For just 10 Green Shards I can teach your Pokemon an Egg Move,\N"
+					"and don't worry, evolutions can learn their previous stage's Egg Moves all the same!\p"
+					"Wanna try?")
+		}
+		ES {
+			format("¡Hola, soy la reconocida Tutora de Movimientos Huevo!\p"
+					"Por 10 Partes Verdes puedo enseñarle un Movimiento Huevo a tu Pokémon,\N"
+					"¡Y no te preocupes, si es una evolución podré enseñarle ataques de etapas anteriores!\p"
+					"¿Quieres probar?")
+		}
+	}
+}
+
+text MauvilleCity_EvoMart_Text_EggMoveTutorNotEnough {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("You still need more Green Shards! Remember you need 10!\pRegardless…")
+		}
+		ES {
+			format("¡Te faltan Partes Verdes! ¡Recuerda que necesitas 10!\pPero…")
+		}
+	}
+}
+
+
 
 text MauvilleCity_EvoMart_Text_SelectMoveTutor {
 	poryswitch(LANGUAGE) {
@@ -843,6 +884,195 @@ text MauvilleCity_Inside_Text_Tourist4D {
 		}
 	}
 }
+
+text MauvilleCity_Inside_House3_Text_Mom1 {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Mi mujer y yo llevamos años en la Ciudad, ¡qué bueno que pudimos mantener nuestra casa intacta!\p"
+			"¡Hasta nos dieron nuevos muebles!") 
+		}
+		EN {
+			format("My wife and I've been living in this City for years, I'm so glad we could keep our house intact!\p"
+			"We were even given new furniture!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_Mom1_Darling {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Ay, querida, no metas a la gente que nos visita en esto…") 
+		}
+		EN {
+			format("Oh, darling, don't bring the visitors into it…") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_Mom2 {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¿Tengo razón o no?") 
+		}
+		EN {
+			format("Am I right or am I right?") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_Mom2_Yes {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¿Eh? ¡No me des la razón como a los locos!") 
+		}
+		EN {
+			format("Eh? Don't just nod along like I'm cray-cray!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_Mom2_No {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Ni siquiera terminé la pregunta…") 
+		}
+		EN {
+			format("I didn't even finish the question…") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_Girl {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Ay, ete mi hemanito…\pSiempe le agadan obsesiones y no pada de hablad…\pAl menos tiene decompensas… Hasta mejor que chó habla…") 
+		}
+		EN {
+			format("Ah, this widdle bwother of mine…\pHe always gets fwixated on things and wambles on and on…\pAt least, he's got rewawds… He event tawks better than me…") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Ah, hola distinguid{OA} señor{A}!\pTengo unos temas fantásticos de los que charlar…\pAunque no soy maleducado y te dejaré irte si no quieres seguir hablando…\p"
+			"¡Más si te quedas, te recompensaré!") 
+		}
+		EN {
+			format("Oh! Hello, distinguished gentle-preeteen!\pI've got quite the fantastic topics to conversate about…\p"
+			"But I am a boy of manners, and if you want to quit the conversation, you can! However…\pDo I got a good reward for you if you stay…") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_StillMore {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Aún tengo más de qué hablar!") 
+		}
+		EN {
+			format("And I've still got more to talk about!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_OneMore {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Sólo tengo un tema más para hablar!") 
+		}
+		EN {
+			format("I've got one singular topic left to talk about!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_RewardTalkAgain {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Perfecto!\n¡Háblame de nuevo y te daré tu recompensa!") 
+		}
+		EN {
+			format("Perfect!\nTalk to me, one last time, to get your reward!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_GiftGiver {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Permíteme hablarte sobre la Habilidad Pokémon {COLOR RED}Regalador{COLOR DARK_GRAY}.\p"
+			"Esta es la Habilidad Característica de {COLOR RED}Delibird{COLOR DARK_GRAY}, y permite al usuario usar Movimientos que dependan del Objeto Equipado,\N"
+			"incluso si no se posee uno. Por ejemplo, ¡Don Natural usará su potencia máxima y cambiará su Tipo dependiendo de qué será más efectivo contra el rival!") 
+		}
+		EN {
+			format("Let me tell you about the Pokémon Ability {COLOR RED}Gift Giver{COLOR DARK_GRAY}.\p"
+			"This is {COLOR RED}Delibird{COLOR DARK_GRAY}'s Signature Ability, and allows the user to always use Moves that require a Held Item,\N"
+			"even when it's not holding anything. For example, Natural Gift will use its maximum power and will change its Type depending on what'll be most effective!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_FutureVision {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Ahora, déjame contarte sobre la Habilidad Pokémon {COLOR RED}Visión Futura{COLOR DARK_GRAY}.\p"
+			"Una vez más, se trata de una Habilidad Característica, de la familia evolutiva de {COLOR RED}Gothita{COLOR DARK_GRAY}.\p"
+			"Visión Futura permite al usuario predecir la posición exacta del rival en todo futuro posible, ¡pudiendo así tener precisión perfecta con Movimientos Tipo Psíquico!\p"
+			"Como te imaginarás, combina perfectamente con Movimientos como Hipnosis…") 
+		}
+		EN {
+			format("Now, let me tell you about the Pokémon Ability {COLOR RED}Future Vision{COLOR DARK_GRAY}.\p"
+			"Once more, it's a Signature Ability, {COLOR RED}Gothita{COLOR DARK_GRAY}'s evolutionary line's, to be exact.\p"
+			"Future Vision allows the user to predoct the exact location of the foe in any possible future, giving it perfect accuracy for Psychic-type attacks!\p"
+			"As you can probably imagine, quite devastating when paired up with Hypnosis…") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_ColonysAid {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Por último, centrémonos en otra Habilidad Pokémon Característica, {COLOR RED}Socorro Colonial{COLOR DARK_GRAY}.\p"
+			"Es la Habilidad de {COLOR RED}Durant{COLOR DARK_GRAY}.\p"
+			"Al perder un 25% de sus PS, Durant activa Socorro Colonial, y otro Durant hace de Sustituto, uno con 1/4 de salud, por supuesto,\N"
+			"¡Y esto se activa cada vez que Durant pierde 25% de PS! ¡Qué gran mecanismo de defensa!") 
+		}
+		EN {
+			format("Lastly, let's shift our focust to the Signature Pokémon Ability {COLOR RED}Colony's Aid{COLOR DARK_GRAY}.\p"
+			"This time, {COLOR RED}Durant{COLOR DARK_GRAY}'s Ability.\p"
+			"Colony's Aid activates once Durant has lost 25% of its HP or more, prompting another Durant to come to its aid and act as a 1/4th-healthed Substitute.\p"
+			"And this activates every time Durant loses 25% of its Max HP! Quite the defense mechanism!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_Congrats {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Muchas gracias por escucharme, estimad{OA} señor{A}!\p¡Como recompensa, podrá elegir uno de los Pokémon de los que hablamos!") 
+		}
+		EN {
+			format("Why, thank you for the listening ear, my dear companion!\pAs reward, you may chose one of the Pokémon we've talked about today!") 
+
+		}
+	}
+}
+
+text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_Thanks {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Muchas gracias por escucharme, estimad{OA} señor{A}!") 
+		}
+		EN {
+			format("Why, thank you for the listening ear, my dear companion!") 
+
+		}
+	}
+}
+
+
 
 // text AbandonedShip_Rooms2_1F_Text_DanDefeat{
 	// format("DAN: We couldn't win even though\n"

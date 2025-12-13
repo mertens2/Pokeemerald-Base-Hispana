@@ -703,6 +703,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 
 #include "data/pokemon/teachable_learnsets.h"
 #include "data/pokemon/egg_moves.h"
+#include "data/pokemon/signature_moves.h"
 #include "data/pokemon/form_species_tables.h"
 #include "data/pokemon/form_change_tables.h"
 #include "data/pokemon/form_change_table_pointers.h"
@@ -3382,6 +3383,15 @@ const struct LevelUpMove *GetSpeciesLevelUpLearnset(u16 species)
     return learnset;
 }
 
+static const u16 *GetSpeciesSignatureLearnset(u16 species)
+{
+    const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].signatureLearnset;
+	if (learnset == NULL)
+		return gSpeciesInfo[SPECIES_NONE].signatureLearnset;
+	
+    return learnset;
+}
+
 const u16 *GetSpeciesTeachableLearnset(u16 species)
 {
     const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].teachableLearnset;
@@ -5471,6 +5481,303 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
         }
         return FALSE;
     }
+}
+
+static u8 DoesMonKnowThisMove(u16 learnedMoves[4], u16 move){
+	if (move == MOVE_UNAVAILABLE)
+		return TRUE;
+	if (learnedMoves[0] == move)
+		return TRUE;
+	if (learnedMoves[1] == move)
+		return TRUE;
+	if (learnedMoves[2] == move)
+		return TRUE;
+	if (learnedMoves[3] == move)
+		return TRUE;
+	
+	return FALSE;
+}
+
+static u8 DoesMoveExistInList(const u16 *list, u16 move){
+	u8 i;
+	for (i = 0; i <= 20; i++){
+		if (list[i] == move)
+			return TRUE;
+		if (list[i] == MOVE_UNAVAILABLE)
+			break;
+	}
+	return FALSE;
+}
+
+
+u8 GetSignatureMoves(struct Pokemon *mon, u16 *moves)
+{
+	u16 learnedMoves[4];
+    u8 numMoves = 0;
+	u8 shiftLearnset = 0; //0, curr evo, 1 mid evo, 2 first stage, 3 starter moveset
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+    u16 speciesPreEvo = GetSpeciesPreEvolution(species);
+    u16 speciesFirstEvo = GetSpeciesPreEvolution(speciesPreEvo);
+	u32 isGrassStarter = gSpeciesInfo[SanitizeSpeciesId(species)].isGrassStarter;
+	u32 isFireStarter = gSpeciesInfo[SanitizeSpeciesId(species)].isFireStarter;
+	u32 isWaterStarter = gSpeciesInfo[SanitizeSpeciesId(species)].isWaterStarter;
+
+    // get all necessary learnsets
+    const u16 *learnset = GetSpeciesSignatureLearnset(species);
+    const u16 *learnsetMidEvo = GetSpeciesSignatureLearnset(speciesPreEvo);
+    const u16 *learnsetFirstEvo = GetSpeciesSignatureLearnset(speciesFirstEvo);
+    const u16 *learnsetGrass = GetSpeciesSignatureLearnset(SPECIES_BULBASAUR);
+    const u16 *learnsetFire = GetSpeciesSignatureLearnset(SPECIES_CHARMANDER);
+    const u16 *learnsetWater = GetSpeciesSignatureLearnset(SPECIES_SQUIRTLE);
+    int i, j;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    for (i = 0; i <= 20; i++)
+    {
+        if (learnset[i] == MOVE_UNAVAILABLE && shiftLearnset == 0) { // this evolution has no signature moves left.
+			shiftLearnset = 1;									      // start searching for preevo moves instead
+			i = 0;
+        }
+			
+		if (learnsetMidEvo[i] == MOVE_UNAVAILABLE && shiftLearnset == 1) { // this evolution has no signature moves left.
+			shiftLearnset = 2;									            // start searching for preevo moves instead
+			i = 0;
+        }
+		if (learnsetFirstEvo[i] == MOVE_UNAVAILABLE && shiftLearnset == 2) {// this evolution has no signature moves left.
+			shiftLearnset = 3;									             // start searching for starter signature moves instead
+			i = 0;
+        }
+		//below is to avoid those pokémon getting their signature moves doubled
+		if (shiftLearnset == 3 && (species == SPECIES_BULBASAUR || species == SPECIES_CHARMANDER || species == SPECIES_SQUIRTLE))
+			break;
+		// once no moves are left, break the loop immediately
+		if (learnsetGrass[i] == MOVE_UNAVAILABLE && shiftLearnset == 3 && isGrassStarter)
+			break;
+		if (learnsetWater[i] == MOVE_UNAVAILABLE && shiftLearnset == 3 && isWaterStarter)
+			break;
+		if (learnsetFire[i] == MOVE_UNAVAILABLE && shiftLearnset == 3 && isFireStarter)
+			break;
+		// depending on evo stage, use different learnsets.
+		// this allows different stages to have their own signature movelist
+		// independant from other lines, and if one evo lacks a signature list but the
+		// preevos don't, to use that instead. clunky and ugly but it gets the job done
+		switch(shiftLearnset){
+			case 0:
+				if (!DoesMonKnowThisMove(learnedMoves, learnset[i]) && !DoesMoveExistInList(moves, learnset[i]))
+					moves[numMoves++] = learnset[i];
+				break;
+			case 1:
+				if (!DoesMonKnowThisMove(learnedMoves, learnsetMidEvo[i]) && !DoesMoveExistInList(moves, learnsetMidEvo[i]))
+					moves[numMoves++] = learnsetMidEvo[i];
+				break;
+			case 2:
+				if (!DoesMonKnowThisMove(learnedMoves, learnsetFirstEvo[i]) && !DoesMoveExistInList(moves, learnsetFirstEvo[i]))
+					moves[numMoves++] = learnsetFirstEvo[i];
+				break;
+			case 3:
+			// in case the pokemon uses the starter signature list
+			// (all starters + elemental monkeys), add those moves to their list, last
+				if (isGrassStarter){
+					if (!DoesMonKnowThisMove(learnedMoves, learnsetGrass[i]) && !DoesMoveExistInList(moves, learnsetGrass[i]))
+						moves[numMoves++] = learnsetGrass[i];
+					break;
+				}
+				if (isWaterStarter){
+					if (!DoesMonKnowThisMove(learnedMoves, learnsetWater[i]) && !DoesMoveExistInList(moves, learnsetWater[i]))
+						moves[numMoves++] = learnsetWater[i];
+					break;
+				}
+				if (isFireStarter){
+					if (!DoesMonKnowThisMove(learnedMoves, learnsetFire[i]) && !DoesMoveExistInList(moves, learnsetFire[i]))
+						moves[numMoves++] = learnsetFire[i];
+					break;
+				}
+				break;
+		}
+	}
+
+    return numMoves;
+}
+
+u8 GetSignatureMovesNum(struct Pokemon *mon)
+{
+	u16 learnedMoves[4];
+    u8 numMoves = 0;
+	u8 shiftLearnset = 0; //0, curr evo, 1 mid evo, 2 first stage, 3 starter moveset
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+    u16 speciesPreEvo = GetSpeciesPreEvolution(species);
+    u16 speciesFirstEvo = GetSpeciesPreEvolution(speciesPreEvo);
+	u32 isGrassStarter = gSpeciesInfo[SanitizeSpeciesId(species)].isGrassStarter;
+	u32 isFireStarter = gSpeciesInfo[SanitizeSpeciesId(species)].isFireStarter;
+	u32 isWaterStarter = gSpeciesInfo[SanitizeSpeciesId(species)].isWaterStarter;
+
+    // get all necessary learnsets
+    const u16 *learnset = GetSpeciesSignatureLearnset(species);
+    const u16 *learnsetMidEvo = GetSpeciesSignatureLearnset(speciesPreEvo);
+    const u16 *learnsetFirstEvo = GetSpeciesSignatureLearnset(speciesFirstEvo);
+    const u16 *learnsetGrass = GetSpeciesSignatureLearnset(SPECIES_BULBASAUR);
+    const u16 *learnsetFire = GetSpeciesSignatureLearnset(SPECIES_CHARMANDER);
+    const u16 *learnsetWater = GetSpeciesSignatureLearnset(SPECIES_SQUIRTLE);
+    int i, j;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    for (i = 0; i <= 20; i++)
+    {
+        if (learnset[i] == MOVE_UNAVAILABLE && shiftLearnset == 0) { // this evolution has no signature moves left.
+			shiftLearnset = 1;									      // start searching for preevo moves instead
+			i = 0;
+        }
+			
+		if (learnsetMidEvo[i] == MOVE_UNAVAILABLE && shiftLearnset == 1) { // this evolution has no signature moves left.
+			shiftLearnset = 2;									            // start searching for preevo moves instead
+			i = 0;
+        }
+		if (learnsetFirstEvo[i] == MOVE_UNAVAILABLE && shiftLearnset == 2) {// this evolution has no signature moves left.
+			shiftLearnset = 3;									             // start searching for starter signature moves instead
+			i = 0;
+        }
+		//below is to avoid those pokémon getting their signature moves doubled
+		if (shiftLearnset == 3 && (species == SPECIES_BULBASAUR || species == SPECIES_CHARMANDER || species == SPECIES_SQUIRTLE))
+			break;
+		// once no moves are left, break the loop immediately
+		if (learnsetGrass[i] == MOVE_UNAVAILABLE && shiftLearnset == 3 && isGrassStarter)
+			break;
+		if (learnsetWater[i] == MOVE_UNAVAILABLE && shiftLearnset == 3 && isWaterStarter)
+			break;
+		if (learnsetFire[i] == MOVE_UNAVAILABLE && shiftLearnset == 3 && isFireStarter)
+			break;
+		// depending on evo stage, use different learnsets.
+		// this allows different stages to have their own signature movelist
+		// independant from other lines, and if one evo lacks a signature list but the
+		// preevos don't, to use that instead. clunky and ugly but it gets the job done
+		switch(shiftLearnset){
+			case 0:
+				if (!DoesMonKnowThisMove(learnedMoves, learnset[i]))
+					numMoves++;
+				break;
+			case 1:
+				if (!DoesMonKnowThisMove(learnedMoves, learnsetMidEvo[i]))
+					numMoves++;
+				break;
+			case 2:
+				if (!DoesMonKnowThisMove(learnedMoves, learnsetFirstEvo[i]))
+					numMoves++;
+				break;
+			case 3:
+			// in case the pokemon uses the starter signature list
+			// (all starters + elemental monkeys), add those moves to their list, last
+				if (isGrassStarter){
+					if (!DoesMonKnowThisMove(learnedMoves, learnsetGrass[i]))
+						numMoves++;
+					break;
+				}
+				if (isWaterStarter){
+					if (!DoesMonKnowThisMove(learnedMoves, learnsetWater[i]))
+						numMoves++;
+					break;
+				}
+				if (isFireStarter){
+					if (!DoesMonKnowThisMove(learnedMoves, learnsetFire[i]))
+						numMoves++;
+					break;
+				}
+				break;
+		}
+	}
+
+    return numMoves;
+}
+
+u8 GetEggMovesTutor(struct Pokemon *mon, u16 *moves)
+{
+	u16 learnedMoves[4];
+    u8 numMoves = 0;
+
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+    u16 speciesPreEvo = GetSpeciesPreEvolution(species);
+    u16 speciesFirstEvo = GetSpeciesPreEvolution(speciesPreEvo);
+
+    // get all necessary learnsets
+    const u16 *learnset = GetSpeciesEggMoves(species);
+    const u16 *learnsetMidEvo = GetSpeciesEggMoves(speciesPreEvo);
+    const u16 *learnsetFirstEvo = GetSpeciesEggMoves(speciesFirstEvo);
+    int i, j;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    for (i = 0; i <= 20; i++)
+    {
+		if (learnsetFirstEvo[i] == MOVE_UNAVAILABLE || learnsetFirstEvo == NULL)
+			break;
+		if (!DoesMonKnowThisMove(learnedMoves, learnsetFirstEvo[i]) && !DoesMoveExistInList(moves, learnsetFirstEvo[i]))
+			moves[numMoves++] = learnsetFirstEvo[i];
+		
+	}
+	for (i = 0; i <= 20; i++)
+    {
+		if (learnsetMidEvo[i] == MOVE_UNAVAILABLE || learnsetMidEvo == NULL)
+			break;
+		if (!DoesMonKnowThisMove(learnedMoves, learnsetMidEvo[i]) && !DoesMoveExistInList(moves, learnsetMidEvo[i]))
+			moves[numMoves++] = learnsetMidEvo[i];
+	}
+	for (i = 0; i <= 20; i++)
+    {
+		if (learnset[i] == MOVE_UNAVAILABLE || learnset == NULL)
+			break;
+		if (!DoesMonKnowThisMove(learnedMoves, learnset[i]) && !DoesMoveExistInList(moves, learnset[i]))
+			moves[numMoves++] = learnset[i];
+	}
+	
+    return numMoves;
+}
+
+u8 GetEggMovesNum(struct Pokemon *mon)
+{
+	u16 learnedMoves[4];
+    u8 numMoves = 0;
+	u16 moves[21];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+    u16 speciesPreEvo = GetSpeciesPreEvolution(species);
+    u16 speciesFirstEvo = GetSpeciesPreEvolution(speciesPreEvo);
+
+    // get all necessary learnsets
+    const u16 *learnset = GetSpeciesEggMoves(species);
+    const u16 *learnsetMidEvo = GetSpeciesEggMoves(speciesPreEvo);
+    const u16 *learnsetFirstEvo = GetSpeciesEggMoves(speciesFirstEvo);
+    int i, j;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    for (i = 0; i <= 20; i++)
+    {
+		if (learnsetFirstEvo[i] == MOVE_UNAVAILABLE || learnsetFirstEvo == NULL)
+			break;
+		if (!DoesMonKnowThisMove(learnedMoves, learnsetFirstEvo[i]) && !DoesMoveExistInList(moves, learnsetFirstEvo[i]))
+			moves[numMoves++] = learnsetFirstEvo[i];
+		
+	}
+	for (i = 0; i <= 20; i++)
+    {
+		if (learnsetMidEvo[i] == MOVE_UNAVAILABLE || learnsetMidEvo == NULL)
+			break;
+		if (!DoesMonKnowThisMove(learnedMoves, learnsetMidEvo[i]) && !DoesMoveExistInList(moves, learnsetMidEvo[i]))
+			moves[numMoves++] = learnsetMidEvo[i];
+	}
+	for (i = 0; i <= 20; i++)
+    {
+		if (learnset[i] == MOVE_UNAVAILABLE || learnset == NULL)
+			break;
+		if (!DoesMonKnowThisMove(learnedMoves, learnset[i]) && !DoesMoveExistInList(moves, learnset[i]))
+			moves[numMoves++] = learnset[i];
+	}
+
+    return numMoves;
 }
 
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)

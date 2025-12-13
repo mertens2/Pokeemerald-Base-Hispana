@@ -2093,7 +2093,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WIND_RIDER] =
     {
         .name = _("Surcavientos"),
-        .description = COMPOUND_STRING("Volador aumenta el ataque."),
+        .description = COMPOUND_STRING("Viento aumenta el ataque."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -2116,7 +2116,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WIND_POWER] =
     {
         .name = _("Energía eólica"),
-        .description = COMPOUND_STRING("Recupera energía con Volador."),
+        .description = COMPOUND_STRING("Se carga con el viento."),
         .aiRating = 4,
     },
 
@@ -2421,7 +2421,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     },
 	[ABILITY_COLONYS_POWER] =
     {
-        .name = _("Poder Colonial"),
+        .name = _("Socorro Colonial"),
         .description = COMPOUND_STRING("Cada que pierde 25% de PS,\ncrea un Sustituto sin perder PS."),
         .aiRating = 0,
         .cantBeSwapped = TRUE,

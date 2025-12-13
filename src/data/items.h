@@ -1175,8 +1175,8 @@ const struct Item gItemsInfo[] =
     // Regional Specialties
     [ITEM_PEWTER_CRUNCHIES] =
     {
-        .name = ITEM_NAME("Rokikos"),
-        .pluralName = ITEM_NAME("Rokikos"),
+        .name = ITEM_NAME("Plategalletas"),
+        .pluralName = ITEM_NAME("Plategalletas"),
         .price = 250,
         .description = sFullHealDesc,
         .pocket = POCKET_ITEMS,
@@ -2772,7 +2772,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Parte roja"),
         .pluralName = ITEM_NAME("Partes rojas"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 200,
+        .price = 200,
         .description = COMPOUND_STRING(
             "Están muy cotizadas\n"
             "tanto en el mercado\n"
@@ -2789,7 +2789,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Parte azul"),
         .pluralName = ITEM_NAME("Partes azules"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 200,
+        .price = 200,
         .description = COMPOUND_STRING(
             "Están muy cotizadas\n"
             "tanto en el mercado\n"
@@ -2806,7 +2806,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Parte amarilla"),
         .pluralName = ITEM_NAME("Partes amarillas"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 200,
+        .price = 200,
         .description = COMPOUND_STRING(
             "Están muy cotizadas\n"
             "tanto en el mercado\n"
@@ -2823,7 +2823,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Parte verde"),
         .pluralName = ITEM_NAME("Partes verdes"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 200,
+        .price = 200,
         .description = sShardsDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,

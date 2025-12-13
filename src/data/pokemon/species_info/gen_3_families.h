@@ -12251,6 +12251,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sLatiasTeachableLearnset,
         .formSpeciesIdTable = sLatiasFormSpeciesIdTable,
         .formChangeTable = sLatiasFormChangeTable,
+		.signatureLearnset = sLatiasSignatureLearnset,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -12406,6 +12407,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sLatiosTeachableLearnset,
         .formSpeciesIdTable = sLatiosFormSpeciesIdTable,
         .formChangeTable = sLatiosFormChangeTable,
+		.signatureLearnset = sLatiosSignatureLearnset,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -12562,6 +12564,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sKyogreTeachableLearnset,
         .formSpeciesIdTable = sKyogreFormSpeciesIdTable,
         .formChangeTable = sKyogreFormChangeTable,
+		.signatureLearnset = sKyogreSignatureLearnset,
     },
 #if P_PRIMAL_REVERSIONS
     [SPECIES_KYOGRE_PRIMAL] =
@@ -12716,6 +12719,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sGroudonTeachableLearnset,
         .formSpeciesIdTable = sGroudonFormSpeciesIdTable,
         .formChangeTable = sGroudonFormChangeTable,
+		.signatureLearnset = sGroudonSignatureLearnset,
     },
 
 #if P_PRIMAL_REVERSIONS
@@ -12874,6 +12878,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sRayquazaTeachableLearnset,
         .formSpeciesIdTable = sRayquazaFormSpeciesIdTable,
         .formChangeTable = sRayquazaFormChangeTable,
+		// .signatureLearnset = sRayquazaSignatureLearnset,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -13037,6 +13042,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sJirachiLevelUpLearnset,
         .teachableLearnset = sJirachiTeachableLearnset,
+		.signatureLearnset = sJirachiSignatureLearnset,
     },
 #endif //P_FAMILY_JIRACHI
 
