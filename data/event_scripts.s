@@ -1263,3 +1263,5 @@ Decline:
 	.include "data/maps/MauvilleCity_Inside_House3/scripts.inc"
 
 	.include "data/maps/MauvilleCity_Inside_House4/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_CandyShop/scripts.inc"

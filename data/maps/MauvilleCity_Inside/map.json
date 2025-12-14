@@ -148,7 +148,7 @@
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_F2",
-      "dest_warp_id": "6"
+      "dest_warp_id": "4"
     },
     {
       "x": 32,
@@ -169,7 +169,7 @@
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_F2",
-      "dest_warp_id": "9"
+      "dest_warp_id": "7"
     },
     {
       "x": 25,

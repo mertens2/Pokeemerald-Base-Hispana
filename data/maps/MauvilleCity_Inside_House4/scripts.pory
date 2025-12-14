@@ -1,1 +1,14 @@
 mapscripts MauvilleCity_Inside_House4_MapScripts {}
+
+script MauvilleCity_Inside_House4_Scripts_OldMan {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_House4_Text_OldMan)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_House4_Scripts_Plushie {
+	msgbox(MauvilleCity_Inside_House4_Text_Plushie)
+	closemessage
+}

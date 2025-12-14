@@ -22,13 +22,13 @@
 #define I_REPEL_INCLUDE_FAINTED         GEN_LATEST  // En Gen1 y Gen6+, los repelentes siempre usan el nivel del primer miembro del equipo para comprobar el nivel de los Pokémon salvajes, aunque estén debilitados.En Gen2-5, usa el nivel del primer Pokémon no debilitado.
 
 // Configuración de TM
-#define I_REUSABLE_TMS          FALSE       // En Gen5-8, los TMs son reutilizables. Establecer esto en TRUE hará que todos los TMs de la versión estándar sean reutilizables, aunque también se pueden seleccionar individualmente estableciendo su importancia en 1.
+#define I_REUSABLE_TMS          TRUE       // En Gen5-8, los TMs son reutilizables. Establecer esto en TRUE hará que todos los TMs de la versión estándar sean reutilizables, aunque también se pueden seleccionar individualmente estableciendo su importancia en 1.
 
 // Configuración de Experiencia Compartida
 // Para usar esta función, reemplaza el 0 con el ID de la flag que estás asignando.
 // Ej: Reemplaza con FLAG_UNUSED_0x264 para que puedas usar esa flag para activar la función.
-#define I_EXP_SHARE_FLAG        0           // Si esta flag está establecida, todos los Pokémon en el equipo ganarán experiencia, independientemente de si participaron en la batalla o no.
-#define I_EXP_SHARE_ITEM        GEN_5       // En Gen6+, el Exp. Share se cambió de un objeto en mano a un Objeto Clave que activa el efecto descrito arriba.
+#define I_EXP_SHARE_FLAG        FLAG_SYS_EXP_SHARE           // Si esta flag está establecida, todos los Pokémon en el equipo ganarán experiencia, independientemente de si participaron en la batalla o no.
+#define I_EXP_SHARE_ITEM        GEN_LATEST  				 // En Gen6+, el Exp. Share se cambió de un objeto en mano a un Objeto Clave que activa el efecto descrito arriba.
 
 // Configuración de Repelentes/Atrayentes
 // Estas dos configuraciones son independientes y complementarias.

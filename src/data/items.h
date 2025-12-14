@@ -1177,8 +1177,9 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Plategalletas"),
         .pluralName = ITEM_NAME("Plategalletas"),
-        .price = 250,
-        .description = sFullHealDesc,
+        .price = 1000,
+        .description = COMPOUND_STRING("Cura estados. Caras por\n"
+										"ser de una serie animada."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1193,7 +1194,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Caramelo furia"),
         .pluralName = ITEM_NAME("Caramelos furia"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 300,
+        .price = 300,
         .description = sFullHealDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1209,7 +1210,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Galleta lava"),
         .pluralName = ITEM_NAME("Galletas lava"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 200,
+        .price = 200,
         .description = COMPOUND_STRING(
             "Especialidad local\n"
             "que cura todos los\n"
@@ -1228,7 +1229,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Barrita plus"),
         .pluralName = ITEM_NAME("Barritas plus"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 200,
+        .price = 300,
         .description = sFullHealDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1243,7 +1244,7 @@ const struct Item gItemsInfo[] =
     [ITEM_CASTELIACONE] =
     {
         .name = ITEM_NAME("Porcehelado"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 100,
+        .price = 300,
         .description = sFullHealDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1259,7 +1260,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Crepe Luminalia"),
         .pluralName = ITEM_NAME("Crepes Luminalia"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 200,
+        .price = 300,
         .description = sFullHealDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1275,7 +1276,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Galleta Yantra"),
         .pluralName = ITEM_NAME("Galletas Yantra"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 200,
+        .price = 300,
         .description = sFullHealDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1291,7 +1292,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Malasada maxi"),
         .pluralName = ITEM_NAME("Malasadas maxi"),
-        .price = 350,
+        .price = 300,
         .description = sFullHealDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1941,10 +1942,10 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Caramelo exp. XS"),
         .pluralName = ITEM_NAME("Caramelos exp. XS"),
-        .price = 20,
+        .price = 1500,
         .holdEffectParam = EXP_100,
         .description = COMPOUND_STRING(
-            "Otorga muy poca\n"
+            "Da 100 puntos de\n"
             "experiencia a un\n"
             "Pokémon."),
         .pocket = POCKET_ITEMS,
@@ -1960,10 +1961,10 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Caramelo exp. S"),
         .pluralName = ITEM_NAME("Caramelos exp. S"),
-        .price = 240,
+        .price = 2500,
         .holdEffectParam = EXP_800,
         .description = COMPOUND_STRING(
-            "Otorga poca\n"
+            "Da 800 puntos de\n"
             "experiencia a un\n"
             "Pokémon."),
         .pocket = POCKET_ITEMS,
@@ -1979,12 +1980,12 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Caramelo exp. M"),
         .pluralName = ITEM_NAME("Caramelos exp. M"),
-        .price = 1000,
+        .price = 7500,
         .holdEffectParam = EXP_3000,
         .description = COMPOUND_STRING(
-            "Otorga bastante\n"
-            "experiencia a un\n"
-            "Pokémon."),
+            "Da 3.000 puntos\n"
+            "de experiencia a\n"
+            "un Pokémon."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
@@ -1998,12 +1999,12 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Caramelo exp. L"),
         .pluralName = ITEM_NAME("Caramelos exp. L"),
-        .price = 3000,
+        .price = 15000,
         .holdEffectParam = EXP_10000,
         .description = COMPOUND_STRING(
-            "Otorga mucha\n"
-            "experiencia a un\n"
-            "Pokémon."),
+            "Da 10.000 puntos\n"
+            "de experiencia a\n"
+            "un Pokémon."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
@@ -2017,12 +2018,12 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Caramelo exp. XL"),
         .pluralName = ITEM_NAME("Caramelos exp. XL"),
-        .price = 10000,
+        .price = 30000,
         .holdEffectParam = EXP_30000,
         .description = COMPOUND_STRING(
-            "Otorga muchísima\n"
-            "experiencia a un\n"
-            "Pokémon."),
+            "Da 30.000 puntos\n"
+            "de experiencia a\n"
+            "un Pokémon."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
@@ -4334,7 +4335,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Confite fresa"),
         .pluralName = ITEM_NAME("Confites fresa"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "Un dulce con forma\n"
             "de fresa amado por\n"
@@ -4351,7 +4352,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Confite corazón"),
         .pluralName = ITEM_NAME("Confites corazón"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "Un dulce con forma\n"
             "de corazón amado por\n"
@@ -4368,7 +4369,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Confite fruto"),
         .pluralName = ITEM_NAME("Confites fruto"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "Un dulce con forma\n"
             "de baya amado por\n"
@@ -4385,7 +4386,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Confite trébol"),
         .pluralName = ITEM_NAME("Confites trébol"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "Un dulce con forma\n"
             "de trébol amado por\n"
@@ -4402,7 +4403,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Confite flor"),
         .pluralName = ITEM_NAME("Confites flor"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "Un dulce con forma\n"
             "de flor amado por\n"
@@ -4419,7 +4420,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Confite estrella"),
         .pluralName = ITEM_NAME("Confites estrella"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "Un dulce con forma\n"
             "de estrella amado por\n"
@@ -4436,7 +4437,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Confite lazo"),
         .pluralName = ITEM_NAME("Confites lazo"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "Un dulce con forma\n"
             "de cinta amado por\n"

@@ -1,0 +1,117 @@
+mapscripts MauvilleCity_Inside_CandyShop_MapScripts {}
+
+
+script MauvilleCity_Inside_CandyShop_Scripts_Employee {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_Employee)
+	pokemart(CandyShopMart)
+	msgbox(MauvilleCity_Inside_CandyShop_Text_EmployeeBye)
+	closemessage
+	releaseall
+}
+
+
+script MauvilleCity_Inside_CandyShop_Scripts_EmployeeSweet {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_EmployeeSweet)
+	pokemart(CandyShopMart)
+	msgbox(MauvilleCity_Inside_CandyShop_Text_EmployeeBye)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_CandyShop_Scripts_MomNearSameKids {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_MomNearSameKids)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_CandyShop_Scripts_BlueBoy1 {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_BlueBoy1)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_CandyShop_Scripts_BlueBoy2 {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_BlueBoy2)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_CandyShop_Scripts_BlueBoy3 {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_BlueBoy3)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_CandyShop_Scripts_BoyFridge {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_BoyFridge)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_CandyShop_Scripts_Grandma {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_Grandma)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_CandyShop_Scripts_Girl {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_Girl)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_Inside_CandyShop_Scripts_NonBinaryParent {
+	faceplayer
+	lockall
+	msgbox(MauvilleCity_Inside_CandyShop_Text_NonBinaryParent)
+	closemessage
+	releaseall
+}
+
+
+mart CandyShopMart {
+	ITEM_PEWTER_CRUNCHIES
+	ITEM_RAGE_CANDY_BAR
+	ITEM_OLD_GATEAU
+	ITEM_LUMIOSE_GALETTE
+	ITEM_SHALOUR_SABLE
+	ITEM_BIG_MALASADA
+	ITEM_MAX_HONEY
+	ITEM_SWEET_HEART
+	ITEM_WHIPPED_DREAM
+	ITEM_SACHET
+	ITEM_EXP_CANDY_XS
+	ITEM_EXP_CANDY_S
+}
+
+mart SweetShopMart {
+	ITEM_RED_NECTAR
+	ITEM_YELLOW_NECTAR
+	ITEM_PINK_NECTAR
+	ITEM_PURPLE_NECTAR
+	ITEM_STRAWBERRY_SWEET
+	ITEM_LOVE_SWEET
+	ITEM_BERRY_SWEET
+	ITEM_CLOVER_SWEET
+	ITEM_FLOWER_SWEET
+	ITEM_STAR_SWEET
+	ITEM_RIBBON_SWEET
+}

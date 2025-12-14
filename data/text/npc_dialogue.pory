@@ -316,34 +316,34 @@ text DewfordTown_Text_BrineyLandedInSlateportDeliverGoods{
 }
 
 text Route109_Text_BrineySailToDewfordQuestion{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: I thought you're supposed\n"
-	"to deliver the DEVON GOODS.\p"
-	"Would you like to sail back to\n"
-	"DEWFORD, then?")
-}
-ES {
-		format( "¿No vas a entregar\n"
-	"las PIEZAS DEVON?\p"
-	"¿Quieres volver a AZULIZA?")
-}
-}
+	poryswitch(LANGUAGE) {
+		EN {
+			format("MR. BRINEY: I thought you're supposed\n"
+		"to deliver the DEVON GOODS.\p"
+		"Would you like to sail back to\n"
+		"DEWFORD, then?")
+	}
+		ES {
+				format( "¿No vas a entregar\n"
+			"las PIEZAS DEVON?\p"
+			"¿Quieres volver a AZULIZA?")
+		}
+	}
 }
 
 text Route109_Text_BrineyDewfordItIs{
-poryswitch(LANGUAGE) {
-	EN {
-		format("MR. BRINEY: DEWFORD it is, then!\p"
-	"Anchors aweigh!\n"
-	"PEEKO, we're setting sail, my darling!")
-}
-	ES {
-		format( "¡Pues rumbo a AZULIZA!\p"
-	"¡Levad anclas!\n"
-	"¡PEEKO, bonito, nos vamos!")
-}
-}
+	poryswitch(LANGUAGE) {
+		EN {
+			format("MR. BRINEY: DEWFORD it is, then!\p"
+		"Anchors aweigh!\n"
+		"PEEKO, we're setting sail, my darling!")
+		}
+		ES {
+			format( "¡Pues rumbo a AZULIZA!\p"
+		"¡Levad anclas!\n"
+		"¡PEEKO, bonito, nos vamos!")
+		}
+	}
 }
 
 text Route109_Text_BrineyDeliverDevonGoods{
@@ -1068,6 +1068,157 @@ text MauvilleCity_Inside_House3_Text_HyperfixatedBoy_Thanks {
 		EN {
 			format("Why, thank you for the listening ear, my dear companion!") 
 
+		}
+	}
+}
+
+text MauvilleCity_Inside_House4_Text_OldMan {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Conseguir nuevos Peluches Pokémon es algo complicado…\p¡Ojalá existiera alguna máquina de garra para conseguirlos! ¡Aunque sea uno chiquito!") 
+		}
+		EN {
+			format("Getting new Pokémon Plushies is hard…\pWish they'd make a claw machine to get them! Even if it's just for the little ones!") 
+
+		}
+	}
+}
+
+text MauvilleCity_Inside_House4_Text_Plushie {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Un Peluche Pokémon muy costoso… Te están entrando ganas de robarlo…") 
+		}
+		EN {
+			format("A very expensive Pokémon Plushie… You low-key wanna steal it…") 
+
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_Employee {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Bienvenid{OA} a la Tienda de Golosinas!\p¿Qué te gustaría comprar?") 
+		}
+		EN {
+			format("Welcome to the Nom-Nommies Shop!\pWhat would'ja like to get?") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_EmployeeSweet {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Bienvenid{OA} a la Tienda de Confites!\p¿Qué te gustaría comprar?") 
+		}
+		EN {
+			format("Welcome to the Sweets Shop!\pWhat would'ja like to get?") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_EmployeeBye {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Vuelve pronto!") 
+		}
+		EN {
+			format("Come back soon!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_MomNearSameKids {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Mi hijo y sus amigos se parecen bastante, y encima les encanta vestirse igual…\p"
+			"Una vez me llevé al hijo equivocado de una pijamada que hicieron…") 
+		}
+		EN {
+			format("My son and his friends are very alike, and they insist on wearing the same clothes…\p"
+			"Once I picked up the wrong son from a slumber party they were in…") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_BlueBoy1 {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¿Somos amigos porque somos iguales?\p¿O nos hicimos iguales por ser amigos?") 
+		}
+		EN {
+			format("Are we friends because we look the same?\pOr do we look the same since we're friends?") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_BlueBoy2 {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Sadly I don't speak Spanish, but I DO love my friends!") 
+		}
+		EN {
+			format("Qué triste no saber Inglés, ¡Pero qué felicidad amar a mis amigos!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_BlueBoy3 {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¿Y? ¿Qué vamos a comprar? ¡Tengo hambre!") 
+		}
+		EN {
+			format("And? What're we gonna get? I'm hungry!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_BoyFridge {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Cuando mi yaya me quite la vista de encima, tío…\p¡Agarro tres bolsas de caramelos y me voy pitando!") 
+		}
+		EN {
+			format("When my gran-gran takes her eyes off of me, mate…\pI'll grab all the bloody sweets and run, run, run!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_Grandma {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("A este se le da por hacerse el Paldeano Y por robar…\pNo me da un descanso el chaval-\p¡Ah! ¡Es contagioso!") 
+		}
+		EN {
+			format("This one loves to pretend being Galarian AND stealing…\pThis bloody kid doesn't give me a rest-\pAh! It's contagious!") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_Girl {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Es el cumpleaños de mi Papá, y traje a su cónyuge a que le compre algo, porque sé que sin mí, no lo haría el muy vague.") 
+		}
+		EN {
+			format("It's Dad's birthday today, so I brought my other parent to buy him a gift, otherwise I know their lazy butt won't.") 
+		}
+	}
+}
+
+text MauvilleCity_Inside_CandyShop_Text_NonBinaryParent {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Es el cumpleaños de mi marido, y eso de comprarle dulces no me convence.\p"
+			"Pero mi hija me toma de vague si no vengo…\p"
+			"Y eso que estoy esperando el regalo que le compré por Mercado Butterfree, y otro más por Temuk…") 
+		}
+		EN {
+			format("It's my husband's birthday today, and the whole buying him sweets thing doesn't convince me.\p"
+			"But our daughter WILL call me lazy if I refuse…\p"
+			"To think I'm also waiting for the gift I got him in Farfetsy…") 
 		}
 	}
 }

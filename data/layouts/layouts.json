@@ -5529,7 +5529,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_MauvilleInside",
-      "secondary_tileset": "gTileset_MauvilleDecor",
+      "secondary_tileset": "gTileset_MauvilleHouse",
       "border_filepath": "data/layouts/MauvilleCity_InverseBattle/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_InverseBattle/map.bin"
     },
@@ -5541,7 +5541,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_MauvilleInside",
-      "secondary_tileset": "gTileset_MauvilleDecor",
+      "secondary_tileset": "gTileset_MauvilleHouse",
       "border_filepath": "data/layouts/MauvilleCity_BattleCafe/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_BattleCafe/map.bin"
     },
@@ -5616,6 +5616,18 @@
       "secondary_tileset": "gTileset_MauvilleHouse",
       "border_filepath": "data/layouts/MauvilleCity_Inside_House3/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_Inside_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_CANDY_SHOP",
+      "name": "MauvilleCity_Inside_CandyShop_Layout",
+      "width": 19,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleHouse",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_CandyShop/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_CandyShop/map.bin"
     }
   ]
 }
