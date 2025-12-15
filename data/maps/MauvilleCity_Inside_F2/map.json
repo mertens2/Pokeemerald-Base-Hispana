@@ -10,7 +10,7 @@
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
-  "show_map_name": false,
+  "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
@@ -95,31 +95,31 @@
   ],
   "warp_events": [
     {
-      "x": 29,
-      "y": 17,
+      "x": 19,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_HOUSE2",
       "dest_warp_id": "0"
     },
     {
-      "x": 34,
+      "x": 35,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 18,
+      "x": 29,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MAUVILLE_CITY_GAME_CORNER",
+      "dest_map": "MAP_MAUVILLE_CITY_HOUSE5",
       "dest_warp_id": "0"
     },
     {
-      "x": 10,
+      "x": 11,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MAUVILLE_CITY_INVERSE_BATTLE",
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_CANDY_SHOP",
       "dest_warp_id": "0"
     },
     {
@@ -130,14 +130,14 @@
       "dest_warp_id": "7"
     },
     {
-      "x": 32,
-      "y": 7,
+      "x": 26,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
       "dest_warp_id": "0"
     },
     {
-      "x": 40,
+      "x": 41,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_BIKE_SHOP",
@@ -151,8 +151,8 @@
       "dest_warp_id": "10"
     },
     {
-      "x": 19,
-      "y": 17,
+      "x": 24,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_HOUSE3",
       "dest_warp_id": "0"

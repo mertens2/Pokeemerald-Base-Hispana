@@ -2,7 +2,7 @@
   "id": "MAP_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY",
   "name": "MauvilleCity_InverseBattle_Lobby",
   "layout": "LAYOUT_MAUVILLE_CITY_INVERSE_BATTLE_LOBBY",
-  "music": "MUS_DUMMY",
+  "music": "MUS_B_ARENA",
   "region_map_section": "MAPSEC_MAUVILLE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

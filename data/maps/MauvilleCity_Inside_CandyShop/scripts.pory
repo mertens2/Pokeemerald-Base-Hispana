@@ -16,7 +16,7 @@ script MauvilleCity_Inside_CandyShop_Scripts_EmployeeSweet {
 	faceplayer
 	lockall
 	msgbox(MauvilleCity_Inside_CandyShop_Text_EmployeeSweet)
-	pokemart(CandyShopMart)
+	pokemart(SweetShopMart)
 	msgbox(MauvilleCity_Inside_CandyShop_Text_EmployeeBye)
 	closemessage
 	releaseall

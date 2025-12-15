@@ -4700,8 +4700,8 @@
       "height": 140,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_NatureAlt",
+      "secondary_tileset": "gTileset_Route110",
       "border_filepath": "data/layouts/Route111_NoMirageTower/border.bin",
       "blockdata_filepath": "data/layouts/Route111_NoMirageTower/map.bin"
     },
@@ -5628,6 +5628,18 @@
       "secondary_tileset": "gTileset_MauvilleHouse",
       "border_filepath": "data/layouts/MauvilleCity_Inside_CandyShop/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_Inside_CandyShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_HOUSE_VACANT",
+      "name": "MauvilleCity_HouseVacant_Layout",
+      "width": 15,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleHouse",
+      "border_filepath": "data/layouts/MauvilleCity_HouseVacant/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_HouseVacant/map.bin"
     }
   ]
 }

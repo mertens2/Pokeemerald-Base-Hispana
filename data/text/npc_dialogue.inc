@@ -404,3 +404,83 @@ MauvilleCity_Inside_House3_Text_HyperfixatedBoy_Thanks::
 # 1063 "data/text/npc_dialogue.pory"
 	.string "¡Muchas gracias por escucharme,\n"
 	.string "estimad{OA} señor{A}!$"
+
+MauvilleCity_Inside_House4_Text_OldMan::
+# 1075 "data/text/npc_dialogue.pory"
+	.string "Conseguir nuevos Peluches Pokémon es\n"
+	.string "algo complicado…\p"
+	.string "¡Ojalá existiera alguna máquina de\n"
+	.string "garra para conseguirlos! ¡Aunque sea\l"
+	.string "uno chiquito!$"
+
+MauvilleCity_Inside_House4_Text_Plushie::
+# 1087 "data/text/npc_dialogue.pory"
+	.string "Un Peluche Pokémon muy costoso… Te\n"
+	.string "están entrando ganas de robarlo…$"
+
+MauvilleCity_Inside_CandyShop_Text_Employee::
+# 1099 "data/text/npc_dialogue.pory"
+	.string "¡Bienvenid{OA} a la Tienda de Golosinas!\p"
+	.string "¿Qué te gustaría comprar?$"
+
+MauvilleCity_Inside_CandyShop_Text_EmployeeSweet::
+# 1110 "data/text/npc_dialogue.pory"
+	.string "¡Bienvenid{OA} a la Tienda de Confites!\p"
+	.string "¿Qué te gustaría comprar?$"
+
+MauvilleCity_Inside_CandyShop_Text_EmployeeBye::
+# 1121 "data/text/npc_dialogue.pory"
+	.string "¡Vuelve pronto!$"
+
+MauvilleCity_Inside_CandyShop_Text_MomNearSameKids::
+# 1132 "data/text/npc_dialogue.pory"
+	.string "Mi hijo y sus amigos se parecen\n"
+	.string "bastante, y encima les encanta\l"
+	.string "vestirse igual…\p"
+	.string "Una vez me llevé al hijo equivocado de\n"
+	.string "una pijamada que hicieron…$"
+
+MauvilleCity_Inside_CandyShop_Text_BlueBoy1::
+# 1145 "data/text/npc_dialogue.pory"
+	.string "¿Somos amigos porque somos iguales?\p"
+	.string "¿O nos hicimos iguales por ser amigos?$"
+
+MauvilleCity_Inside_CandyShop_Text_BlueBoy2::
+# 1156 "data/text/npc_dialogue.pory"
+	.string "Sadly I don't speak Spanish, but I DO\n"
+	.string "love my friends!$"
+
+MauvilleCity_Inside_CandyShop_Text_BlueBoy3::
+# 1167 "data/text/npc_dialogue.pory"
+	.string "¿Y? ¿Qué vamos a comprar? ¡Tengo\n"
+	.string "hambre!$"
+
+MauvilleCity_Inside_CandyShop_Text_BoyFridge::
+# 1178 "data/text/npc_dialogue.pory"
+	.string "Cuando mi yaya me quite la vista de\n"
+	.string "encima, tío…\p"
+	.string "¡Agarro tres bolsas de caramelos y me\n"
+	.string "voy pitando!$"
+
+MauvilleCity_Inside_CandyShop_Text_Grandma::
+# 1189 "data/text/npc_dialogue.pory"
+	.string "A este se le da por hacerse el Paldeano\n"
+	.string "Y por robar…\p"
+	.string "No me da un descanso el chaval-\p"
+	.string "¡Ah! ¡Es contagioso!$"
+
+MauvilleCity_Inside_CandyShop_Text_Girl::
+# 1200 "data/text/npc_dialogue.pory"
+	.string "Es el cumpleaños de mi Papá, y traje a su\n"
+	.string "cónyuge a que le compre algo, porque\l"
+	.string "sé que sin mí, no lo haría el muy vague.$"
+
+MauvilleCity_Inside_CandyShop_Text_NonBinaryParent::
+# 1211 "data/text/npc_dialogue.pory"
+	.string "Es el cumpleaños de mi marido, y eso de\n"
+	.string "comprarle dulces no me convence.\p"
+	.string "Pero mi hija me toma de vague si no\n"
+	.string "vengo…\p"
+	.string "Y eso que estoy esperando el regalo que\n"
+	.string "le compré por Mercado Butterfree, y\l"
+	.string "otro más por Temuk…$"

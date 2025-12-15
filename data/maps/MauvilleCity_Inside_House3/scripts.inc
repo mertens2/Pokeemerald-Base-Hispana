@@ -24,7 +24,7 @@ MauvilleCity_Inside_House3_Scripts_Mom2::
 # 15 "data/maps/MauvilleCity_Inside_House3/scripts.pory"
 	msgbox MauvilleCity_Inside_House3_Text_Mom2
 # 18 "data/maps/MauvilleCity_Inside_House3/scripts.pory"
-	dynmultichoice 25, 3, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MauvilleCity_Inside_House3_Scripts_Mom2_Text_0, MauvilleCity_Inside_House3_Scripts_Mom2_Text_1
+	dynmultichoice 25, 6, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MauvilleCity_Inside_House3_Scripts_Mom2_Text_0, MauvilleCity_Inside_House3_Scripts_Mom2_Text_1
 # 24 "data/maps/MauvilleCity_Inside_House3/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MauvilleCity_Inside_House3_Scripts_Mom2_2
