@@ -159,7 +159,7 @@ Route111_EventScript_Wally_1:
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Route111_Movement_PlayerHelp
 	delay 8
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	waitmovement 0
 	msgbox Route111_EventScript_Wally_Text_4
 	closemessage

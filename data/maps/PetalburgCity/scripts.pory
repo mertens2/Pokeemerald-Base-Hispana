@@ -56,7 +56,7 @@ PetalburgCity_EventScript_WallysFlashback::
 	waitmovement 0
 	closemessage
 	hidenamebox
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 20
 	applymovement LOCALID_WALLY, Common_Movement_FaceUp
 	waitmovement 0
@@ -590,12 +590,12 @@ Petalburg_Leaf::
 	goto_if_unset FLAG_DEFEATED_LEAF, Petalburg_Leaf_2
 	namebox CampeonaLeaf
 	msgbox Petalburg_Leaf_Text_3
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	hidenamebox
 	setflag FLAG_DEFEATED_LEAF
 	removeobject 10
 	delay 60
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 Petalburg_Leaf_1:
 	releaseall
 	return
@@ -614,13 +614,13 @@ Petalburg_Leaf_2:
 	giveitem ITEM_CHERISH_BALL, 30
 	namebox Leaf
 	msgbox Petalburg_Leaf_Text_2
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	hidenamebox
 	closemessage
 	setflag FLAG_DEFEATED_LEAF
 	removeobject 10
 	delay 60
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto Petalburg_Leaf_1
 
 

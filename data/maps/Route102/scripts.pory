@@ -199,8 +199,8 @@ Route102_EventScript_RouteSignPetalburg::
 
 Error::
 	lockall
-	fadescreen FADE_TO_WHITE
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 	msgbox NoDeberiasVerlo, MSGBOX_NPC
 	releaseall
 	end
@@ -226,12 +226,12 @@ Route102_WallyTutorial::
 	playse SE_BALL
 	delay 16
 	playse SE_BALL_OPEN
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 	delay 16
 	setobjectxy LOCALID_ROUTE102_BALL, 10, 7
 	setobjectxy LOCALID_ROUTE102_ZIGZAGOON, 3, 6
 	delay 8
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 	delay 8
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
 	msgbox Route102_Text_Sigsa, MSGBOX_DEFAULT
@@ -252,14 +252,14 @@ Route102_WallyTutorial::
 	msgbox Route102_Text_Ralts
 	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsTeleport
 	delay 2
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 	waitmovement 0
 	delay 8
 	setobjectxy LOCALID_ROUTE102_RALTS, 5, 6
 	delay 16
 	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsTeleport2
 	delay 4
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 	waitmovement 0
 	delay 8
 	call Route102_EventScript_ZigzaSurprise
@@ -290,12 +290,12 @@ Route102_WallyTutorial::
 	hidenamebox
 	msgbox Route102_Text_WallyZigzagoonThanks, MSGBOX_DEFAULT
 	namebox Wally
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 	removeobject LOCALID_ROUTE102_ZIGZAGOON
 	setobjectxy LOCALID_ROUTE102_BALL, 7, 6
 	playse SE_BALL_OPEN
 	delay 8
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 	waitse
 	closemessage
 	hidenamebox

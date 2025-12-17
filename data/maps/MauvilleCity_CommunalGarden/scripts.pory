@@ -1,0 +1,150 @@
+mapscripts MauvilleCity_CommunalGarden_MapScripts {}
+
+
+script MauvilleCity_CommunalGarden_Scripts_Ranger1 {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_CommunalGarden_Text_Ranger1)
+	closemessage
+	applymovement(1, MauvilleCity_CommunalGarden_Movement_ExcitedRanger)
+	waitmovement(0)
+	releaseall
+}
+
+script MauvilleCity_CommunalGarden_Scripts_Ranger2 {
+	lockall
+	msgbox(MauvilleCity_CommunalGarden_Text_Ranger2)
+	closemessage
+	applymovement(1, MauvilleCity_CommunalGarden_Movement_ExcitedRanger)
+	msgbox(MauvilleCity_CommunalGarden_Text_Ranger1No)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_CommunalGarden_Scripts_OldWoman {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_CommunalGarden_Text_OldWoman)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_CommunalGarden_Scripts_Boy {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_CommunalGarden_Text_Boy)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_CommunalGarden_Scripts_Man {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_CommunalGarden_Text_Man)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_CommunalGarden_Scripts_Woman {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_CommunalGarden_Text_Woman)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_CommunalGarden_Scripts_Pokemon {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_CommunalGarden_Text_Pokemon)
+	closemessage
+	releaseall
+}
+
+script MauvilleCity_CommunalGarden_Scripts_BlackBelt {
+	lockall
+	faceplayer
+	msgbox(MauvilleCity_CommunalGarden_Text_BlackBeltWannaSee,MSGBOX_YESNO)
+	if(var(VAR_RESULT) == YES){
+		closemessage
+		getobjectfacingdirection(OBJ_EVENT_ID_PLAYER, VAR_RESULT)
+		if (var(VAR_RESULT) == DIR_EAST){
+			applymovement(VAR_LAST_TALKED, MauvilleCity_CommunalGarden_Movement_BlackBeltHelpSide)
+			applymovement(OBJ_EVENT_ID_PLAYER, MauvilleCity_CommunalGarden_Movement_GetOnBlackBeltBySide)
+			waitmovement(OBJ_EVENT_ID_PLAYER)
+		}
+		else {
+			applymovement(VAR_LAST_TALKED, MauvilleCity_CommunalGarden_Movement_BlackBeltHelpFront)
+			applymovement(OBJ_EVENT_ID_PLAYER, MauvilleCity_CommunalGarden_Movement_GetOnBlackBeltFront)
+			waitmovement(OBJ_EVENT_ID_PLAYER)
+		}
+		special (SpawnCameraObject)
+		applymovement (LOCALID_CAMERA, MauvilleCity_CommunalGarden_Movement_CameraUp)
+		waitmovement (0)
+		special (RemoveCameraObject)
+		if (msgbox(MauvilleCity_CommunalGarden_Text_BlackBeltYouDone, MSGBOX_YESNO) != YES){
+			do {
+				closemessage
+				delay(64)
+			}while(msgbox(MauvilleCity_CommunalGarden_Text_BlackBeltYouSure,MSGBOX_YESNO) == NO)
+		}
+		applymovement(VAR_LAST_TALKED, MauvilleCity_CommunalGarden_Movement_BlackBeltHelpDown)
+		applymovement(OBJ_EVENT_ID_PLAYER, MauvilleCity_CommunalGarden_Movement_GetOffBlackBelt)
+		waitmovement(OBJ_EVENT_ID_PLAYER)
+		special (SpawnCameraObject)
+		applymovement (LOCALID_CAMERA, MauvilleCity_CommunalGarden_Movement_CameraDown)
+		waitmovement (0)
+		special (RemoveCameraObject)
+		msgbox(MauvilleCity_CommunalGarden_Text_BlackBeltFun)
+	}
+	closemessage
+	releaseall
+}
+
+movement MauvilleCity_CommunalGarden_Movement_ExcitedRanger {
+	jump_in_place_down
+}
+
+movement MauvilleCity_CommunalGarden_Movement_CameraUp {
+	walk_slow_up * 3
+}
+
+movement MauvilleCity_CommunalGarden_Movement_CameraDown {
+	walk_slow_down * 3
+}
+
+movement MauvilleCity_CommunalGarden_Movement_GetOnBlackBeltBySide {
+	walk_right
+	walk_in_place_slow_right
+	walk_in_place_slow_up
+	walk_slow_up
+	walk_in_place_slow_up
+}
+
+movement MauvilleCity_CommunalGarden_Movement_GetOffBlackBelt {
+	walk_in_place_slow_up
+	walk_in_place_slow_down
+	walk_slow_down * 2
+}
+
+movement MauvilleCity_CommunalGarden_Movement_BlackBeltHelpSide {
+	walk_in_place_slow_left * 3
+	walk_in_place_slow_up * 3
+}
+
+movement MauvilleCity_CommunalGarden_Movement_BlackBeltHelpDown {
+	walk_in_place_slow_up
+	walk_in_place_slow_down * 3
+}
+
+
+movement MauvilleCity_CommunalGarden_Movement_BlackBeltHelpFront {
+	walk_in_place_slow_down * 3
+	walk_in_place_slow_up * 3
+}
+
+movement MauvilleCity_CommunalGarden_Movement_GetOnBlackBeltFront {
+	walk_in_place_slow_up
+	walk_slow_up * 2
+	walk_in_place_slow_up
+}

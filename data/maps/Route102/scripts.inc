@@ -82,9 +82,9 @@ Error::
 # 201 "data/maps/Route102/scripts.pory"
 	lockall
 # 202 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 # 203 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 # 204 "data/maps/Route102/scripts.pory"
 	msgbox NoDeberiasVerlo, MSGBOX_NPC
 # 205 "data/maps/Route102/scripts.pory"
@@ -136,7 +136,7 @@ Route102_WallyTutorial::
 # 228 "data/maps/Route102/scripts.pory"
 	playse SE_BALL_OPEN
 # 229 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 # 230 "data/maps/Route102/scripts.pory"
 	delay 16
 # 231 "data/maps/Route102/scripts.pory"
@@ -146,7 +146,7 @@ Route102_WallyTutorial::
 # 233 "data/maps/Route102/scripts.pory"
 	delay 8
 # 234 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 # 235 "data/maps/Route102/scripts.pory"
 	delay 8
 # 236 "data/maps/Route102/scripts.pory"
@@ -188,7 +188,7 @@ Route102_WallyTutorial::
 # 254 "data/maps/Route102/scripts.pory"
 	delay 2
 # 255 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 # 256 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 257 "data/maps/Route102/scripts.pory"
@@ -202,7 +202,7 @@ Route102_WallyTutorial::
 # 261 "data/maps/Route102/scripts.pory"
 	delay 4
 # 262 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 # 263 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 264 "data/maps/Route102/scripts.pory"
@@ -264,7 +264,7 @@ Route102_WallyTutorial::
 # 292 "data/maps/Route102/scripts.pory"
 	namebox Wally
 # 293 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 # 294 "data/maps/Route102/scripts.pory"
 	removeobject LOCALID_ROUTE102_ZIGZAGOON
 # 295 "data/maps/Route102/scripts.pory"
@@ -274,7 +274,7 @@ Route102_WallyTutorial::
 # 297 "data/maps/Route102/scripts.pory"
 	delay 8
 # 298 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 # 299 "data/maps/Route102/scripts.pory"
 	waitse
 # 300 "data/maps/Route102/scripts.pory"

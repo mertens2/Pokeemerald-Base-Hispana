@@ -5608,7 +5608,7 @@
     {
       "id": "LAYOUT_MAUVILLE_CITY_INSIDE_HOUSE3",
       "name": "MauvilleCity_Inside_House3_Layout",
-      "width": 15,
+      "width": 19,
       "height": 13,
       "border_width": 2,
       "border_height": 2,
@@ -5640,6 +5640,30 @@
       "secondary_tileset": "gTileset_MauvilleHouse",
       "border_filepath": "data/layouts/MauvilleCity_HouseVacant/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_HouseVacant/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_TOY_STORE",
+      "name": "MauvilleCity_ToyStore_Layout",
+      "width": 19,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleHouse",
+      "border_filepath": "data/layouts/MauvilleCity_ToyStore/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_ToyStore/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_COMMUNAL_GARDEN",
+      "name": "MauvilleCity_CommunalGarden_Layout",
+      "width": 40,
+      "height": 32,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleDecor",
+      "border_filepath": "data/layouts/MauvilleCity_CommunalGarden/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_CommunalGarden/map.bin"
     }
   ]
 }

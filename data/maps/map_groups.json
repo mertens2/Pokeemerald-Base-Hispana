@@ -206,7 +206,9 @@
     "MauvilleCity_Inside_House4",
     "MauvilleCity_Inside_CandyShop",
     "MauvilleCity_House5",
-    "MauvilleCity_HouseVacant"
+    "MauvilleCity_HouseVacant",
+    "MauvilleCity_ToyStore",
+    "MauvilleCity_CommunalGarden"
   ],
   "gMapGroup_IndoorRustboro": [
     "RustboroCity_DevonCorp_1F",

@@ -484,3 +484,101 @@ MauvilleCity_Inside_CandyShop_Text_NonBinaryParent::
 	.string "Y eso que estoy esperando el regalo que\n"
 	.string "le compré por Mercado Butterfree, y\l"
 	.string "otro más por Temuk…$"
+
+MauvilleCity_ToyStore_Text_OldMan::
+# 1226 "data/text/npc_dialogue.pory"
+	.string "¡Hola, esta es la Juguetería Mauville!\p"
+	.string "¿Qué te gustaría comprar?$"
+
+MauvilleCity_ToyStore_Text_Artist::
+# 1237 "data/text/npc_dialogue.pory"
+	.string "¿Te gustan los peluches que vendemos\n"
+	.string "aquí?\p"
+	.string "¡Soy el artista que los fabrica!\n"
+	.string "Quizá si esperas más tiempo, quizá\l"
+	.string "tengamos más…$"
+
+MauvilleCity_CommunalGarden_Text_Ranger1::
+# 1248 "data/text/npc_dialogue.pory"
+	.string "¡Bienvenid{OA} al Jardín Comunal Mauville!\n"
+	.string "¡Donde Pokémon y Humanos conviven en\l"
+	.string "harmonía!$"
+
+MauvilleCity_CommunalGarden_Text_Ranger2::
+# 1259 "data/text/npc_dialogue.pory"
+	.string "… Bienvenid{OA} al Jardín Comunal Mauville…\n"
+	.string "Zzz… Zzz…$"
+
+MauvilleCity_CommunalGarden_Text_Ranger1No::
+# 1270 "data/text/npc_dialogue.pory"
+	.string "¿¡Otra vez!? ¿¡Por qué tuvieron que\n"
+	.string "emparejarme con él!?$"
+
+MauvilleCity_CommunalGarden_Text_OldWoman::
+# 1281 "data/text/npc_dialogue.pory"
+	.string "Este lugar… ¡Qué idea tan estúpida!\n"
+	.string "A los Pokémon no les gusta estar\l"
+	.string "encerrados así,\l"
+	.string "y más aún en un lugar con tantas\l"
+	.string "luces artificiales y electricidad…\p"
+	.string "Sólo a los Voltorb les gusta vivir así…$"
+
+MauvilleCity_CommunalGarden_Text_Boy::
+# 1296 "data/text/npc_dialogue.pory"
+	.string "Escuché a mi Papá decirle a su novio que\n"
+	.string "Devon cree que este es el futuro de\l"
+	.string "Hoenn…\p"
+	.string "¡Pero hasta yo sé que a los Pokémon no\n"
+	.string "les gusta vivir aquí!\p"
+	.string "El otro día, salvé a un Lillipup que\n"
+	.string "intentó tirarse al piso inferior…\l"
+	.string "Desde entonces, no dejo de vigilarla,\l"
+	.string "por si acaso…$"
+
+MauvilleCity_CommunalGarden_Text_Man::
+# 1311 "data/text/npc_dialogue.pory"
+	.string "Entiendo que haya sido el sueño de\n"
+	.string "nuestro Líder de Gimnasio, Wattson,\l"
+	.string "crear una ciudad donde Pokémon y\l"
+	.string "Humanos convivan.\p"
+	.string "¿Pero qué no aprendió del gravísimo\n"
+	.string "error que fue Nova Mauville?\p"
+	.string "Todos los Pokémon que perdieron sus\n"
+	.string "vidas ese día, ¿No le importan?$"
+
+MauvilleCity_CommunalGarden_Text_Woman::
+# 1325 "data/text/npc_dialogue.pory"
+	.string "Muchos culpan y ya no ven bien a\n"
+	.string "Wattson por las decisiones que tomó\l"
+	.string "sobretodo con este Jardín.\p"
+	.string "¿Pero qué no ven que está haciendo lo\n"
+	.string "posible, dentro de los parámetros\l"
+	.string "dados por Devon?\p"
+	.string "¡Esa corporación tiene casi todo el\n"
+	.string "poder!\l"
+	.string "¡No dudo que Wattson se las arreglará\l"
+	.string "para mejorar todo!$"
+
+MauvilleCity_CommunalGarden_Text_Pokemon::
+# 1340 "data/text/npc_dialogue.pory"
+	.string "Ni siquiera te puede mirar… Este\n"
+	.string "Pokémon está muy deprimido.$"
+
+MauvilleCity_CommunalGarden_Text_BlackBeltWannaSee::
+# 1352 "data/text/npc_dialogue.pory"
+	.string "Si quieres, te puedo levantar para que\n"
+	.string "veas mejor el piso debajo. ¡No te\l"
+	.string "preocupes, soy fuerte y no te dejaré\l"
+	.string "caer!$"
+
+MauvilleCity_CommunalGarden_Text_BlackBeltYouDone::
+# 1363 "data/text/npc_dialogue.pory"
+	.string "¿Ya te quieres bajar?$"
+
+MauvilleCity_CommunalGarden_Text_BlackBeltYouSure::
+# 1374 "data/text/npc_dialogue.pory"
+	.string "¿Y-{PAUSE 8}y ahora? ¿Te quieres bajar o no?$"
+
+MauvilleCity_CommunalGarden_Text_BlackBeltFun::
+# 1385 "data/text/npc_dialogue.pory"
+	.string "¡Espero te hayas divertido!$"

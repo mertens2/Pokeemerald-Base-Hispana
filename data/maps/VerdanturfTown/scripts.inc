@@ -69,7 +69,7 @@ VerdanturfTown_EventScript_WallysMemory:
 # 35 "data/maps/VerdanturfTown/scripts.pory"
 	waitmovement 0
 # 36 "data/maps/VerdanturfTown/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 37 "data/maps/VerdanturfTown/scripts.pory"
 	delay 16
 # 38 "data/maps/VerdanturfTown/scripts.pory"

@@ -539,142 +539,146 @@ Route101_EventScript_Night::
 # 371 "data/maps/Route101/scripts.pory"
 Route101_EventScript_Boy::
 # 372 "data/maps/Route101/scripts.pory"
-	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
+	fadescreenswapbuffers FADE_TO_BLACK
 # 373 "data/maps/Route101/scripts.pory"
-	end
+	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
 # 374 "data/maps/Route101/scripts.pory"
-
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 375 "data/maps/Route101/scripts.pory"
-Route101_EventScript_RouteSign::
-# 376 "data/maps/Route101/scripts.pory"
-	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
-# 377 "data/maps/Route101/scripts.pory"
 	end
-# 378 "data/maps/Route101/scripts.pory"
+# 376 "data/maps/Route101/scripts.pory"
 
+# 377 "data/maps/Route101/scripts.pory"
+Route101_EventScript_RouteSign::
+# 378 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
 # 379 "data/maps/Route101/scripts.pory"
-Route101_EventScript_BirchsBag::
+	end
 # 380 "data/maps/Route101/scripts.pory"
-	lock
+
 # 381 "data/maps/Route101/scripts.pory"
-	faceplayer
+Route101_EventScript_BirchsBag::
 # 382 "data/maps/Route101/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	lock
 # 383 "data/maps/Route101/scripts.pory"
-	setflag FLAG_RESCUED_BIRCH
+	faceplayer
 # 384 "data/maps/Route101/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	setflag FLAG_SYS_POKEMON_GET
 # 385 "data/maps/Route101/scripts.pory"
-	setobjectxy OBJ_EVENT_ID_PLAYER, 7, 15
+	setflag FLAG_RESCUED_BIRCH
 # 386 "data/maps/Route101/scripts.pory"
-	applymovement LOCALID_ROUTE101_ZIGZAGOON, Common_Movement_WalkInPlaceFasterRight
+	fadescreen FADE_TO_BLACK
 # 387 "data/maps/Route101/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	setobjectxy OBJ_EVENT_ID_PLAYER, 7, 15
 # 388 "data/maps/Route101/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_ROUTE101_ZIGZAGOON, Common_Movement_WalkInPlaceFasterRight
 # 389 "data/maps/Route101/scripts.pory"
-	special ChooseStarter
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 # 390 "data/maps/Route101/scripts.pory"
-	waitstate
-# 391 "data/maps/Route101/scripts.pory"
-	playse SE_PIN
-# 392 "data/maps/Route101/scripts.pory"
-	applymovement LOCALID_ROUTE101_ZIGZAGOON, Common_Movement_ExclamationMark
-# 393 "data/maps/Route101/scripts.pory"
 	waitmovement 0
+# 391 "data/maps/Route101/scripts.pory"
+	special ChooseStarter
+# 392 "data/maps/Route101/scripts.pory"
+	waitstate
+# 393 "data/maps/Route101/scripts.pory"
+	playse SE_PIN
 # 394 "data/maps/Route101/scripts.pory"
-	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_PokemonEscape
+	applymovement LOCALID_ROUTE101_ZIGZAGOON, Common_Movement_ExclamationMark
 # 395 "data/maps/Route101/scripts.pory"
 	waitmovement 0
 # 396 "data/maps/Route101/scripts.pory"
-	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchApproachPlayer
+	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_PokemonEscape
 # 397 "data/maps/Route101/scripts.pory"
 	waitmovement 0
 # 398 "data/maps/Route101/scripts.pory"
-	call Route101_EventScript_YouSavedMe
+	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchApproachPlayer
 # 399 "data/maps/Route101/scripts.pory"
-	special HealPlayerParty
+	waitmovement 0
 # 400 "data/maps/Route101/scripts.pory"
-	removeobject LOCALID_ROUTE101_ZIGZAGOON
+	call Route101_EventScript_YouSavedMe
 # 401 "data/maps/Route101/scripts.pory"
-	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
+	special HealPlayerParty
 # 402 "data/maps/Route101/scripts.pory"
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
+	removeobject LOCALID_ROUTE101_ZIGZAGOON
 # 403 "data/maps/Route101/scripts.pory"
-	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
 # 404 "data/maps/Route101/scripts.pory"
-	setvar VAR_BIRCH_LAB_STATE, 2
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 # 405 "data/maps/Route101/scripts.pory"
-	setvar VAR_ROUTE101_STATE, 3
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
 # 406 "data/maps/Route101/scripts.pory"
-	setvar VAR_OLDALE_TOWN_STATE, 1
+	setvar VAR_BIRCH_LAB_STATE, 2
 # 407 "data/maps/Route101/scripts.pory"
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setvar VAR_ROUTE101_STATE, 3
 # 408 "data/maps/Route101/scripts.pory"
-	checkplayergender
+	setvar VAR_OLDALE_TOWN_STATE, 1
 # 409 "data/maps/Route101/scripts.pory"
-	call_if_eq VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 # 410 "data/maps/Route101/scripts.pory"
-	call_if_eq VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom
+	checkplayergender
 # 411 "data/maps/Route101/scripts.pory"
-	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5
+	call_if_eq VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom
 # 412 "data/maps/Route101/scripts.pory"
-	waitstate
+	call_if_eq VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom
 # 413 "data/maps/Route101/scripts.pory"
-	release
+	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5
 # 414 "data/maps/Route101/scripts.pory"
-	end
+	waitstate
 # 415 "data/maps/Route101/scripts.pory"
-
+	release
 # 416 "data/maps/Route101/scripts.pory"
-Route101_EventScript_HideMayInBedroom::
+	end
 # 417 "data/maps/Route101/scripts.pory"
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+
 # 418 "data/maps/Route101/scripts.pory"
-	return
+Route101_EventScript_HideMayInBedroom::
 # 419 "data/maps/Route101/scripts.pory"
-
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 # 420 "data/maps/Route101/scripts.pory"
-Route101_EventScript_HideBrendanInBedroom::
-# 421 "data/maps/Route101/scripts.pory"
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
-# 422 "data/maps/Route101/scripts.pory"
 	return
+# 421 "data/maps/Route101/scripts.pory"
+
+# 422 "data/maps/Route101/scripts.pory"
+Route101_EventScript_HideBrendanInBedroom::
 # 423 "data/maps/Route101/scripts.pory"
-
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 # 424 "data/maps/Route101/scripts.pory"
-Route101_Movement_BirchApproachPlayer:
+	return
 # 425 "data/maps/Route101/scripts.pory"
-	walk_right
+
 # 426 "data/maps/Route101/scripts.pory"
-	step_end
+Route101_Movement_BirchApproachPlayer:
 # 427 "data/maps/Route101/scripts.pory"
-
+	walk_right
 # 428 "data/maps/Route101/scripts.pory"
-
+	step_end
 # 429 "data/maps/Route101/scripts.pory"
 
 # 430 "data/maps/Route101/scripts.pory"
-Route101_Text_TakeTiredPokemonToPokeCenter2:
-# 431 "data/maps/Route101/scripts.pory"
-	.string "¡{STR_VAR_1}!$"
-# 432 "data/maps/Route101/scripts.pory"
-Route101_Text_WildPokemonInTallGrass:
-# 433 "data/maps/Route101/scripts.pory"
-	.string "Los Pokémon salvajes te atacarán\n"
-# 434 "data/maps/Route101/scripts.pory"
-	.string "sin pensar en la hierba alta.\p"
-# 435 "data/maps/Route101/scripts.pory"
-	.string "¡Ten cuidado en las Rutas!$"
-# 436 "data/maps/Route101/scripts.pory"
 
+# 431 "data/maps/Route101/scripts.pory"
+
+# 432 "data/maps/Route101/scripts.pory"
+Route101_Text_TakeTiredPokemonToPokeCenter2:
+# 433 "data/maps/Route101/scripts.pory"
+	.string "¡{STR_VAR_1}!$"
+# 434 "data/maps/Route101/scripts.pory"
+Route101_Text_WildPokemonInTallGrass:
+# 435 "data/maps/Route101/scripts.pory"
+	.string "Los Pokémon salvajes te atacarán\n"
+# 436 "data/maps/Route101/scripts.pory"
+	.string "sin pensar en la hierba alta.\p"
 # 437 "data/maps/Route101/scripts.pory"
-Route101_Text_RouteSign:
+	.string "¡Ten cuidado en las Rutas!$"
 # 438 "data/maps/Route101/scripts.pory"
-	.string "{COLOR LIGHT_RED SHADOW RED}RUTA 101{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\n"
+
 # 439 "data/maps/Route101/scripts.pory"
-	.string "{UP_ARROW} {COLOR LIGHT_GREEN SHADOW GREEN}PUEBLO OLDALE{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\l"
+Route101_Text_RouteSign:
 # 440 "data/maps/Route101/scripts.pory"
+	.string "{COLOR LIGHT_RED SHADOW RED}RUTA 101{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\n"
+# 441 "data/maps/Route101/scripts.pory"
+	.string "{UP_ARROW} {COLOR LIGHT_GREEN SHADOW GREEN}PUEBLO OLDALE{COLOR DARK_GRAY SHADOW LIGHT_GRAY}\l"
+# 442 "data/maps/Route101/scripts.pory"
 	.string "{DOWN_ARROW} {COLOR LIGHT_GREEN SHADOW GREEN}VILLA LITTLEROOT{COLOR DARK_GRAY SHADOW LIGHT_GRAY}$"
 
 Route101_EventScript_HelpMe_Text_0:

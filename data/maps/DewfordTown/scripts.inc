@@ -95,7 +95,7 @@ DewfordTown_OnFrameWally::
 # 373 "data/maps/DewfordTown/scripts.pory"
 	delay 16
 # 374 "data/maps/DewfordTown/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 375 "data/maps/DewfordTown/scripts.pory"
 	delay 8
 # 376 "data/maps/DewfordTown/scripts.pory"
@@ -211,11 +211,11 @@ DewfordTown_OnFrameWally::
 # 431 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 432 "data/maps/DewfordTown/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 433 "data/maps/DewfordTown/scripts.pory"
 	delay 50
 # 434 "data/maps/DewfordTown/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 435 "data/maps/DewfordTown/scripts.pory"
 	delay 10
 # 436 "data/maps/DewfordTown/scripts.pory"
@@ -343,7 +343,7 @@ DewfordTown_OnFrameWally::
 # 497 "data/maps/DewfordTown/scripts.pory"
 	hidenamebox
 # 498 "data/maps/DewfordTown/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 499 "data/maps/DewfordTown/scripts.pory"
 	setflag FLAG_HIDE_WALLY_DEWFORD_TOWN
 # 500 "data/maps/DewfordTown/scripts.pory"
@@ -353,7 +353,7 @@ DewfordTown_OnFrameWally::
 # 502 "data/maps/DewfordTown/scripts.pory"
 	delay 16
 # 503 "data/maps/DewfordTown/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 504 "data/maps/DewfordTown/scripts.pory"
 	delay 8
 # 505 "data/maps/DewfordTown/scripts.pory"

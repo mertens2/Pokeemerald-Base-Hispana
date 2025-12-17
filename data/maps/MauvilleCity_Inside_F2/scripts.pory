@@ -1,1 +1,13 @@
-mapscripts MauvilleCity_Inside_F2_MapScripts {}
+mapscripts MauvilleCity_Inside_F2_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+        if (flag(FLAG_MAUVILLE_VACANT_HOUSE_OCCUPIED)){
+			setmaplayoutindex (LAYOUT_MAUVILLE_CITY_INSIDE_HOUSE3)
+			setweather(WEATHER_NONE)
+		}
+    }
+}
+
+
+// Route111_EventScript_SetLayoutNoMirageTower:: Route111_OnTransition
+	// setmaplayoutindex LAYOUT_ROUTE111_NO_MIRAGE_TOWER
+	// return

@@ -305,7 +305,7 @@ RustboroCity_EventScript_Wally2::
 # 531 "data/maps/RustboroCity/scripts.pory"
 	delay 16
 # 532 "data/maps/RustboroCity/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 533 "data/maps/RustboroCity/scripts.pory"
 	delay 24
 # 534 "data/maps/RustboroCity/scripts.pory"
@@ -319,7 +319,7 @@ RustboroCity_EventScript_Wally2::
 # 538 "data/maps/RustboroCity/scripts.pory"
 	delay 16
 # 539 "data/maps/RustboroCity/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 540 "data/maps/RustboroCity/scripts.pory"
 	delay 16
 # 541 "data/maps/RustboroCity/scripts.pory"
@@ -373,7 +373,7 @@ RustboroCity_EventScript_Wally2::
 # 565 "data/maps/RustboroCity/scripts.pory"
 	setvar VAR_ROUTE111_STATE, 3
 # 566 "data/maps/RustboroCity/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 567 "data/maps/RustboroCity/scripts.pory"
 	delay 24
 # 568 "data/maps/RustboroCity/scripts.pory"
@@ -385,7 +385,7 @@ RustboroCity_EventScript_Wally2::
 # 571 "data/maps/RustboroCity/scripts.pory"
 	delay 8
 # 572 "data/maps/RustboroCity/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 573 "data/maps/RustboroCity/scripts.pory"
 	delay 16
 # 574 "data/maps/RustboroCity/scripts.pory"

@@ -33,7 +33,7 @@ VerdanturfTown_EventScript_WallysMemory:
 	applymovement LOCALID_BULLY_1, Common_Movement_FaceDown
 	applymovement LOCALID_BULLY_2, Common_Movement_FaceRight
 	waitmovement 0
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 16
 	opendoor 10, 14
 	waitdooranim

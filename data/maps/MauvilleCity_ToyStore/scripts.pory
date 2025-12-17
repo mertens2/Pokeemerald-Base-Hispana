@@ -1,0 +1,48 @@
+mapscripts MauvilleCity_ToyStore_MapScripts {}
+
+
+script MauvilleCity_ToyStore_Scripts_OldMan {
+	lock
+	msgbox(MauvilleCity_ToyStore_Text_OldMan)
+	pokemartdecoration2 (MauvilleCity_ToyStore_Mart)
+	msgbox(MauvilleCity_Inside_CandyShop_Text_EmployeeBye)
+	closemessage
+	release
+}
+
+script MauvilleCity_ToyStore_Scripts_Artist {
+	lock
+	msgbox(MauvilleCity_ToyStore_Text_Artist)
+	closemessage
+	release
+}
+
+script MauvilleCity_ToyStore_Scripts_LittleGirl {
+	faceplayer
+	lock
+	msgbox(". {PAUSE 15}. {PAUSE 15}. {PAUSE 15}. {PAUSE 15}. {PAUSE 15}. {PAUSE 15}\n"
+	". {PAUSE 15}. {PAUSE 15}. {PAUSE 15}. {PAUSE 15}. {PAUSE 15}. {PAUSE 15}")
+	closemessage
+	release
+	applymovement(VAR_LAST_TALKED,MauvilleCity_ToyStore_Movement_FaceAwayFromPlayer)
+	waitmovement(0)
+}
+
+movement MauvilleCity_ToyStore_Movement_FaceAwayFromPlayer {
+	face_away_player
+}
+
+mart MauvilleCity_ToyStore_Mart {
+	DECOR_DUSKULL_DOLL
+	DECOR_BALTOY_DOLL
+	DECOR_KECLEON_DOLL
+	DECOR_SKITTY_DOLL
+	DECOR_SWABLU_DOLL
+	DECOR_SLIDE
+	DECOR_RED_BRICK
+	DECOR_YELLOW_BRICK
+	DECOR_BLUE_BRICK
+	DECOR_RED_BALLOON
+	DECOR_BLUE_BALLOON
+	DECOR_YELLOW_BALLOON
+}

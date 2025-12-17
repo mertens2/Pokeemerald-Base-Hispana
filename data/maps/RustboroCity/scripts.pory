@@ -529,14 +529,14 @@ RustboroCity_EventScript_Wally2::
 	closedoor 27, 19
 	waitdooranim
 	delay 16
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	delay 24
 	namebox Wally
 	msgbox RustboroCity_Text_WallyBattle
 	closemessage
 	hidenamebox
 	delay 16
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 16
 	opendoor 27, 19
 	waitdooranim
@@ -563,13 +563,13 @@ RustboroCity_EventScript_Wally2::
 	hidenamebox
 	closemessage
 	setvar VAR_ROUTE111_STATE, 3
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	delay 24
 	removeobject LOCALID_RUSTBORO_WALLY
 	setflag FLAG_HIDE_WALLY_RUSTBORO
 	clearflag FLAG_HIDE_WALLY_111
 	delay 8
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 16
 	releaseall
 	end

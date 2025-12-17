@@ -54,16 +54,16 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SAWK)",
-      "x": 13,
-      "y": 9,
+      "graphics_id": "OBJ_EVENT_GFX_BALTOY_DOLL",
+      "x": 34,
+      "y": 18,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_Inside_Scripts_Sawk",
+      "script": "0x0",
       "flag": "0"
     },
     {
@@ -80,44 +80,44 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 45,
-      "y": 11,
+      "graphics_id": "OBJ_EVENT_GFX_AZURILL_DOLL",
+      "x": 36,
+      "y": 18,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_Inside_Scripts_AromaLady",
+      "script": "0x0",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 19,
+      "x": 34,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_HOUSE2",
       "dest_warp_id": "0"
     },
     {
-      "x": 35,
-      "y": 17,
+      "x": 39,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 29,
+      "x": 19,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_HOUSE5",
       "dest_warp_id": "0"
     },
     {
-      "x": 11,
-      "y": 7,
+      "x": 17,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_CANDY_SHOP",
       "dest_warp_id": "0"
@@ -133,14 +133,14 @@
       "x": 26,
       "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_map": "MAP_MAUVILLE_CITY_COMMUNAL_GARDEN",
       "dest_warp_id": "0"
     },
     {
-      "x": 41,
-      "y": 7,
+      "x": 35,
+      "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_MAUVILLE_CITY_BIKE_SHOP",
+      "dest_map": "MAP_MAUVILLE_CITY_TOY_STORE",
       "dest_warp_id": "0"
     },
     {
@@ -151,17 +151,24 @@
       "dest_warp_id": "10"
     },
     {
-      "x": 24,
+      "x": 29,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_HOUSE3",
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
-      "y": 17,
+      "x": 24,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_HOUSE4",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_HOUSE_VACANT",
       "dest_warp_id": "0"
     }
   ],

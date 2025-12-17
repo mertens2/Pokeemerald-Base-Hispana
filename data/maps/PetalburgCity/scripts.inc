@@ -115,7 +115,7 @@ PetalburgCity_EventScript_WallysFlashback::
 # 58 "data/maps/PetalburgCity/scripts.pory"
 	hidenamebox
 # 59 "data/maps/PetalburgCity/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 60 "data/maps/PetalburgCity/scripts.pory"
 	delay 20
 # 61 "data/maps/PetalburgCity/scripts.pory"
@@ -1183,7 +1183,7 @@ Petalburg_Leaf::
 # 592 "data/maps/PetalburgCity/scripts.pory"
 	msgbox Petalburg_Leaf_Text_3
 # 593 "data/maps/PetalburgCity/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 594 "data/maps/PetalburgCity/scripts.pory"
 	hidenamebox
 # 595 "data/maps/PetalburgCity/scripts.pory"
@@ -1193,7 +1193,7 @@ Petalburg_Leaf::
 # 597 "data/maps/PetalburgCity/scripts.pory"
 	delay 60
 # 598 "data/maps/PetalburgCity/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 599 "data/maps/PetalburgCity/scripts.pory"
 Petalburg_Leaf_1:
 # 600 "data/maps/PetalburgCity/scripts.pory"
@@ -1231,7 +1231,7 @@ Petalburg_Leaf_2:
 # 616 "data/maps/PetalburgCity/scripts.pory"
 	msgbox Petalburg_Leaf_Text_2
 # 617 "data/maps/PetalburgCity/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 618 "data/maps/PetalburgCity/scripts.pory"
 	hidenamebox
 # 619 "data/maps/PetalburgCity/scripts.pory"
@@ -1243,7 +1243,7 @@ Petalburg_Leaf_2:
 # 622 "data/maps/PetalburgCity/scripts.pory"
 	delay 60
 # 623 "data/maps/PetalburgCity/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 624 "data/maps/PetalburgCity/scripts.pory"
 	goto Petalburg_Leaf_1
 # 625 "data/maps/PetalburgCity/scripts.pory"

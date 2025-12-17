@@ -1223,7 +1223,175 @@ text MauvilleCity_Inside_CandyShop_Text_NonBinaryParent {
 	}
 }
 
+text MauvilleCity_ToyStore_Text_OldMan {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Hola, esta es la Juguetería Mauville!\p¿Qué te gustaría comprar?") 
+		}
+		EN {
+			format("Hi! This is Mauville's Toy Shop!\pWhat would you like to buy?") 
+		}
+	}
+}
 
+text MauvilleCity_ToyStore_Text_Artist {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¿Te gustan los peluches que vendemos aquí?\p¡Soy el artista que los fabrica!\NQuizá si esperas más tiempo, quizá tengamos más…") 
+		}
+		EN {
+			format("Do you like the plushies we sell here?\pI'm the artist that makes 'em!\NMaybe we'll make more if you come back later…") 
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_Ranger1 {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Bienvenid{OA} al Jardín Comunal Mauville! ¡Donde Pokémon y Humanos conviven en harmonía!") 
+		}
+		EN {
+			format("Welcome to the Mauville Community Garden! Where Pokémon and Humans coexist in harmony!") 
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_Ranger2 {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("… Bienvenid{OA} al Jardín Comunal Mauville… Zzz… Zzz…") 
+		}
+		EN {
+			format("… Welcome to the Mauville Community Garden… Zzz… Zzz…") 
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_Ranger1No {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¿¡Otra vez!? ¿¡Por qué tuvieron que emparejarme con él!?") 
+		}
+		EN {
+			format("Again!? Why did I have to get paired up with him!?") 
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_OldWoman {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Este lugar… ¡Qué idea tan estúpida!\NA los Pokémon no les gusta estar encerrados así,\N"
+			"y más aún en un lugar con tantas luces artificiales y electricidad…\p"
+			"Sólo a los Voltorb les gusta vivir así…") 
+		}
+		EN {
+			format("This goshdarn place… What a stupid idea, I tell ya!\NPokémon ain't lovin' livin' locked up like this,\N"
+			"even less are they vibin' with the artificial lights and electricity…\p"
+			"Only the Voltorb like this…") 
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_Boy {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Escuché a mi Papá decirle a su novio que Devon cree que este es el futuro de Hoenn…\p"
+			"¡Pero hasta yo sé que a los Pokémon no les gusta vivir aquí!\p"
+			"El otro día, salvé a un Lillipup que intentó tirarse al piso inferior… Desde entonces, no dejo de vigilarla, por si acaso…") 
+		}
+		EN {
+			format("Overheard my Dad talking to his boyfriend about how Devon thinks this is the future of Hoenn…\p"
+			"But even a boy like me can tell Pokémon don't like living here!\p"
+			"Just the other day, I saved a Lillipup that tried jumping out to the lower floor… Since then, there's no day I don't come here to guard it, just in case…") 
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_Man {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Entiendo que haya sido el sueño de nuestro Líder de Gimnasio, Wattson, crear una ciudad donde Pokémon y Humanos convivan.\p"
+			"¿Pero qué no aprendió del gravísimo error que fue Nova Mauville?\pTodos los Pokémon que perdieron sus vidas ese día, ¿No le importan?") 
+		}
+		EN {
+			format("I get that it's our Gym Leader's, Wattson's, dream to create a city where Pokémon and Humans both live together.\p"
+			"But did he learn nothing from the grave mistake New Mauville was?\p"
+			"All the Pokémon who lost their lives that day, do they mean nothing to him?") 
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_Woman {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Muchos culpan y ya no ven bien a Wattson por las decisiones que tomó sobretodo con este Jardín.\p"
+			"¿Pero qué no ven que está haciendo lo posible, dentro de los parámetros dados por Devon?\p"
+			"¡Esa corporación tiene casi todo el poder!\N¡No dudo que Wattson se las arreglará para mejorar todo!") 
+		}
+		EN {
+			format("Many people blame and have a bad view on Wattson for his choices regarding this Garden.\p"
+			"But don't they all see he did what he could given Devon's tight requests?\p"
+			"That dreadful corp's got all the power!\NI trust Wattson will figure something out to fix this all!")
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_Pokemon {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Ni siquiera te puede mirar… Este Pokémon está muy deprimido.") 
+		}
+		EN {
+			format("It can't even look up to you… This Pokémon is very depressed.")
+		}
+	}
+}
+
+
+text MauvilleCity_CommunalGarden_Text_BlackBeltWannaSee {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Si quieres, te puedo levantar para que veas mejor el piso debajo. ¡No te preocupes, soy fuerte y no te dejaré caer!") 
+		}
+		EN {
+			format("If you wanna, I can lift you up to show you the floor below. Don't you worry, I'm plenty strong and won't let you fall!")
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_BlackBeltYouDone {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¿Ya te quieres bajar?") 
+		}
+		EN {
+			format("All done over there?")
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_BlackBeltYouSure {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¿Y-{PAUSE 8}y ahora? ¿Te quieres bajar o no?") 
+		}
+		EN {
+			format("A-{PAUSE 8}and what about now? Wanna get down already?")
+		}
+	}
+}
+
+text MauvilleCity_CommunalGarden_Text_BlackBeltFun {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("¡Espero te hayas divertido!") 
+		}
+		EN {
+			format("Hope you had fun!")
+		}
+	}
+}
 
 // text AbandonedShip_Rooms2_1F_Text_DanDefeat{
 	// format("DAN: We couldn't win even though\n"

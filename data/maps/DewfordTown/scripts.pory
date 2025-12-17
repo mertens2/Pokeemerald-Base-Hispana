@@ -371,7 +371,7 @@ DewfordTown_OnFrameWally::
 	call_if_eq VAR_0x8004, DIR_NORTH, DewfordTown_OnFrameWallyNorth
 	call_if_eq VAR_0x8004, DIR_SOUTH, DewfordTown_OnFrameWallySouth
 	delay 16
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 8
 	namebox Wally
 	msgbox DewfordTown_Text_WallyContinueSpeech, MSGBOX_DEFAULT
@@ -429,9 +429,9 @@ DewfordTown_OnFrameWally::
 	msgbox DewfordTown_Text_WallyGym3
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	delay 50
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 10
 	namebox Wally
 	msgbox DewfordTown_Text_WallyGymBattle
@@ -495,12 +495,12 @@ DewfordTown_OnFrameWally::
 	msgbox DewfordTown_Text_WallyAfter
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_HIDE_WALLY_DEWFORD_TOWN
 	clearflag FLAG_HIDE_WALLY_RUSTBORO
 	removeobject LOCALID_DEWFORD_WALLY
 	delay 16
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 8
 	setvar VAR_DEWFORD_TOWN_STATE, 4
 	releaseall

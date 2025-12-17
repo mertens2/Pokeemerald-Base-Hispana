@@ -550,3 +550,8 @@ const u8 DecorDesc_REGISTEEL_DOLL[] = _(
     "Muñeco grande.\n"
     "Ponlo en una mesa\n"
     "o tapete.");
+
+// const u8 DecorDesc_REGISTEEL_DOLL[] = _(
+    // "Muñeco de .\n"
+    // "Ponlo en una mesa\n"
+    // "o tapete.");

@@ -317,7 +317,7 @@ Route111_EventScript_Wally_1:
 # 161 "data/maps/Route111/scripts.pory"
 	delay 8
 # 162 "data/maps/Route111/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 163 "data/maps/Route111/scripts.pory"
 	waitmovement 0
 # 164 "data/maps/Route111/scripts.pory"
