@@ -230,3 +230,6 @@ const u16 gMetatiles_MauvilleDecor[] = INCBIN_U16("data/tilesets/secondary/mauvi
 const u16 gMetatileAttributes_MauvilleDecor[] = INCBIN_U16("data/tilesets/secondary/mauville_decor/metatile_attributes.bin");
 const u16 gMetatiles_MauvilleHouse[] = INCBIN_U16("data/tilesets/secondary/mauville_house/metatiles.bin");
 const u16 gMetatileAttributes_MauvilleHouse[] = INCBIN_U16("data/tilesets/secondary/mauville_house/metatile_attributes.bin");
+
+const u16 gMetatiles_RydelsCycles[] = INCBIN_U16("data/tilesets/secondary/rydels_cycles/metatiles.bin");
+const u16 gMetatileAttributes_RydelsCycles[] = INCBIN_U16("data/tilesets/secondary/rydels_cycles/metatile_attributes.bin");

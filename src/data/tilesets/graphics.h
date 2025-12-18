@@ -1854,3 +1854,22 @@ const u16 gTilesetPalettes_MauvilleHouse[][16] =
 };
 
 const u32 gTilesetTiles_MauvilleHouse[] = INCBIN_U32("data/tilesets/secondary/mauville_house/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_RydelsCycles[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/rydels_cycles/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_RydelsCycles[] = INCBIN_U32("data/tilesets/secondary/rydels_cycles/tiles.4bpp.lz");
