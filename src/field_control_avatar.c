@@ -119,7 +119,7 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
                 input->pressedAButton = TRUE;
             if (newKeys & B_BUTTON)
                 input->pressedBButton = TRUE;
-            if (newKeys & R_BUTTON && !FlagGet(DN_FLAG_SEARCHING))
+            if (newKeys & R_BUTTON)
                 input->pressedRButton = TRUE;
         }
 
@@ -525,6 +525,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         SetMsgSignPostAndVarFacing(direction);
         return Common_EventScript_ShowPokemonCenterSign;
     }
+    if (MetatileBehavior_IsHeadbuttTree(metatileBehavior))
+        return EventScript_Headbutt;
     if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
         return EventScript_UseRockClimb;
 
@@ -620,6 +622,8 @@ static bool8 TryStartStepBasedScript(struct MapPosition *position, u16 metatileB
     if (TryStartStepCountScript(metatileBehavior) == TRUE)
         return TRUE;
     if (UpdateRepelCounter() == TRUE)
+        return TRUE;
+    if (OnStep_DexNavSearch())
         return TRUE;
     return FALSE;
 }

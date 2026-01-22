@@ -31,6 +31,15 @@
 #include "constants/event_objects.h"
 #include "constants/rgb.h"
 
+extern const u8 Password1[];
+extern const u8 Password2[];
+extern const u8 Password3[];
+extern const u8 PasswordMuchos[];
+extern const u8 PasswordFallo[];
+extern const u8 PasswordEvento1[];
+extern const u8 PasswordAshSM1[];
+extern const u8 PasswordAshSM2[];
+
 enum {
     INPUT_NONE,
     INPUT_DPAD_UP,
@@ -273,6 +282,8 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
     },
     DUMMY_WIN_TEMPLATE
 };
+
+
 
 // This handles what characters get inserted when a key is pressed
 // The keys shown on the keyboard are handled separately by sNamingScreenKeyboardText
@@ -2096,6 +2107,7 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
     .title = gText_TellHimTheWords,
 };
 
+
 static const u8 sText_EnterCode[] = _("Inserta código:");
 static const struct NamingScreenTemplate sCodeScreenTemplate = 
 {
@@ -2565,4 +2577,92 @@ static const struct SpritePalette sSpritePalettes[] =
     {}
 };
 
+//contraseñas pueden tener hasta 15 caracteres
+static const u8 gText_TextoInicialContra[] = _("");
+static const u8 gText_Recompensa1[] = _("un Paquete de Caramelos EXP");
+static const u8 gText_Contrasena2[] = _("PASSWORD");
+static const u8 gText_Contrasena3[] = _("RECIEVEPOKEMON");
+static const u8 gText_Contrasena4[] = _("ABCDEFG");
+static const u8 gText_Contrasena5[] = _("POKEMON");
+static const u8 gText_Contrasena6[] = _("A");
+static const u8 gText_Contrasena7[] = _("B");
+static const u8 gText_Contrasena8[] = _("CODE");
+static const u8 gText_EquipoDeAsh1[] = _("ASHKANTO116");
+static const u8 gText_EquipoDeAsh2[] = _("ASHJOHTO158");
+static const u8 gText_EquipoDeAsh3[] = _("ASHADVANCE192");
+static const u8 gText_EquipoDeAsh4[] = _("ASHDIAPEA191");
+static const u8 gText_EquipoDeAsh5[] = _("ASHBEWI142");
+static const u8 gText_EquipoDeAsh6[] = _("ASHXYZ140");
+static const u8 gText_EquipoDeAsh7Region[] = _("Alola");
+static const u8 gText_EquipoDeAsh8[] = _("ASHMASTERS8");
 
+void DoPasswordNamingScreen(void)
+{
+    // StringCopy(gStringVar2, gText_TextoInicialContra);
+    DoNamingScreen(NAMING_SCREEN_CODE, gStringVar2, 0, 0, 0, CB2_HandleGivenPassword);
+}
+
+static void CB2_HandleGivenPassword(void)
+{
+	if (StringCompare(gStringVar2, COMPOUND_STRING("WORLDOFPOKEMON") ) == 0) {
+		ScriptGiveMon(SPECIES_DITTO, 20, ITEM_EXP_CANDY_S, 0, 0, 0);
+		AddBagItem(ITEM_EXP_CANDY_XS, 5);
+		AddBagItem(ITEM_EXP_CANDY_S, 5);
+		AddBagItem(ITEM_EXP_CANDY_M, 5);
+		AddBagItem(ITEM_EXP_CANDY_L, 5);
+		AddBagItem(ITEM_EXP_CANDY_XL, 5);
+		GetSpeciesName(gStringVar1, SPECIES_DITTO);
+		StringCopy(gStringVar2, gText_Recompensa1);
+		ScriptContext_SetupScript(Password2);
+    }
+	else if (StringCompare(gStringVar2, COMPOUND_STRING("CATCHINGAID")) == 0) {
+		// ScriptGiveMon(SPECIES_ARCEUS, 100, ITEM_MASTER_BALL, 0, 0, 0);
+		AddBagItem(ITEM_POKE_BALL, 15);
+		AddBagItem(ITEM_GREAT_BALL,10);
+		AddBagItem(ITEM_ULTRA_BALL, 5);
+		CopyItemName(ITEM_POKE_BALL, gStringVar1);
+		CopyItemName(ITEM_GREAT_BALL, gStringVar2);
+		CopyItemName(ITEM_ULTRA_BALL, gStringVar3);
+		ScriptContext_SetupScript(Password3);
+    }
+	else if (StringCompare(gStringVar2, gText_Contrasena3) == 0) {
+		ScriptGiveMon(SPECIES_GIRATINA, 100, ITEM_MASTER_BALL, 0, 0, 0);
+		AddBagItem(ITEM_RARE_CANDY, 151);
+		GetSpeciesName(gStringVar1, SPECIES_GIRATINA);
+		CopyItemName(ITEM_RARE_CANDY, gStringVar2);
+		ScriptContext_SetupScript(Password2);
+    }
+	else if (StringCompare(gStringVar2, gText_Contrasena4) == 0) {
+		ScriptGiveMon(SPECIES_RESHIRAM, 100, ITEM_MASTER_BALL, 0, 0, 0);
+		ScriptGiveMon(SPECIES_ZEKROM, 100, ITEM_MASTER_BALL, 0, 0, 0);
+		ScriptGiveMon(SPECIES_KYUREM, 100, ITEM_MASTER_BALL, 0, 0, 0);
+		AddBagItem(ITEM_MASTER_BALL, 15);
+		ScriptContext_SetupScript(PasswordMuchos);
+    }
+	else if (StringCompare(gStringVar2, gText_Contrasena5) == 0) {
+		ScriptGiveMon(SPECIES_DITTO, 1, ITEM_POKE_BALL, 0, 0, 0);
+		GetSpeciesName(gStringVar1, SPECIES_DITTO);
+		ScriptContext_SetupScript(Password1);
+    }
+	else if (StringCompare(gStringVar2, gText_Contrasena6) == 0) {
+		ScriptGiveMon(SPECIES_DITTO, 1, ITEM_POKE_BALL, 0, 0, 0);
+		GetSpeciesName(gStringVar1, SPECIES_DITTO);
+		ScriptContext_SetupScript(Password1);
+    }
+	else if (StringCompare(gStringVar2, gText_Contrasena8) == 0) {
+		ScriptContext_SetupScript(PasswordEvento1);
+    }
+	else if (StringCompare(gStringVar2, COMPOUND_STRING("ASHSUMO147")) == 0) {
+		StringCopy(gStringVar1, gText_EquipoDeAsh7Region);
+		ScriptContext_SetupScript(PasswordAshSM1);
+	}
+	else if (StringCompare(gStringVar2, COMPOUND_STRING("ASHSUMO147V2")) == 0) {
+		StringCopy(gStringVar1, gText_EquipoDeAsh7Region);
+		ScriptContext_SetupScript(PasswordAshSM2);
+	}
+	else
+		ScriptContext_SetupScript(PasswordFallo);
+
+    gFieldCallback = FieldCB_ContinueScriptHandleMusic;
+    SetMainCallback2(CB2_ReturnToField);
+}

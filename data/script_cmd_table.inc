@@ -262,7 +262,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_CHECKPARTYMOVE				ScrCmd_checkpartymove,              requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_GETLOCALWILDMON				ScrCmd_getlocalwildmon,             requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_SETWILDBATTLEVAR				ScrCmd_setwildbattlevar,            requests_effects=1  @ 0xe5
-	
+	script_cmd_table_entry SCR_OP_HIDEFOLLOWER                  ScrCmd_hidefollower,                requests_effects=1  @ 0xe5
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::

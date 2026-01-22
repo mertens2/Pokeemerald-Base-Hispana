@@ -1053,7 +1053,7 @@ static const struct StorageMessage sMessages[] =
     [MSG_HOLDING_POKE]         = {COMPOUND_STRING("¡Ya llevas un Pokémon!"),        MSG_VAR_NONE},
     [MSG_WHICH_ONE_WILL_TAKE]  = {COMPOUND_STRING("¿Cuál quieres llevar?"),         MSG_VAR_NONE},
     [MSG_CANT_RELEASE_EGG]     = {COMPOUND_STRING("No puedes soltar un huevo."),    MSG_VAR_NONE},
-    [MSG_CONTINUE_BOX]         = {COMPOUND_STRING("¿Quieres salir del PC?"),MSG_VAR_NONE},
+    [MSG_CONTINUE_BOX]         = {COMPOUND_STRING("¿Hacer más cambios?"),MSG_VAR_NONE},
     [MSG_CAME_BACK]            = {COMPOUND_STRING("¡{DYNAMIC 0} volvió!"),          MSG_VAR_MON_NAME},
     [MSG_WORRIED]              = {COMPOUND_STRING("¿Estaba preocupado por ti?"),    MSG_VAR_NONE},
     [MSG_SURPRISE]             = {COMPOUND_STRING("… … … … !"),                     MSG_VAR_NONE},
@@ -10051,7 +10051,7 @@ void UpdateSpeciesSpritePSS(struct BoxPokemon *boxMon)
             DestroyBoxMonIconAtPosition(sCursorPosition);
             CreateBoxMonIconAtPos(sCursorPosition);
             if (sStorage->boxOption == OPTION_MOVE_ITEMS)
-                SetBoxMonIconObjMode(sCursorPosition, (GetBoxMonData(boxMon, MON_DATA_HELD_ITEM) == ITEM_NONE ? ST_OAM_OBJ_NORMAL : ST_OAM_OBJ_BLEND));
+                SetBoxMonIconObjMode(sCursorPosition, (GetBoxMonData(boxMon, MON_DATA_HELD_ITEM) == ITEM_NONE ? ST_OAM_OBJ_BLEND : ST_OAM_OBJ_NORMAL));
         }
     }
     sJustOpenedBag = FALSE;

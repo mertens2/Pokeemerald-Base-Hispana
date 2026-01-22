@@ -3,6 +3,7 @@
 #include "config/item.h"
 #include "constants/global.h"
 #include "constants/apprentice.h"
+#include "constants/apricorn_tree.h"
 #include "constants/battle.h"
 #include "constants/battle_arena.h"
 #include "constants/battle_dome.h"
@@ -43,6 +44,7 @@
 #include "constants/maps.h"
 #include "constants/mauville_old_man.h"
 #include "constants/metatile_labels.h"
+#include "constants/move_relearner.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/pokedex.h"
@@ -65,6 +67,7 @@
 #include "constants/weather.h"
 #include "constants/quests.h"
 #include "constants/rgb.h"
+#include "constants/speaker_names.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -74,6 +77,7 @@
 	.set ALLOCATE_SCRIPT_CMD_TABLE, 1
 	.include "data/script_cmd_table.inc"
 
+.align 2
 gSpecialVars::
 	.4byte gSpecialVar_0x8000
 	.4byte gSpecialVar_0x8001
@@ -694,6 +698,7 @@ EventScript_SetBrineyLocation_Route109::
 	.include "data/scripts/obtain_item.inc"
 	.include "data/scripts/record_mix.inc"
 	.include "data/scripts/pc.inc"
+	.include "data/scripts/move_relearner.inc"
 
 @ scripts/notices.inc? signs.inc? See comment about text/notices.inc
 Common_EventScript_ShowPokemartSign::
@@ -834,7 +839,7 @@ Common_EventScript_FerryDepartIsland::
 	call_if_eq VAR_FACING, DIR_SOUTH, Ferry_EventScript_DepartIslandSouth
 	call_if_eq VAR_FACING, DIR_WEST, Ferry_EventScript_DepartIslandWest
 	delay 30
-	hideobjectat LOCALID_PLAYER, 0
+	hideplayer
 	call Common_EventScript_FerryDepart
 	return
 
@@ -864,6 +869,7 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/text/pkmn_center_nurse.inc"
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
+	.include "data/text/move_relearner.inc"
 
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
@@ -914,46 +920,45 @@ gText_PlayerWhitedOut::
 	.string "¡{PLAYER} perdió el conocimiento!$"
 
 gText_FirstShouldRestoreMonsHealth::
-	.string "First, you should restore your\n"
-	.string "POKéMON to full health.$"
+    .string "Primero, deberías restaurar la\n"
+    .string "salud de tus POKéMON al máximo.$"
 
 gText_MonsHealedShouldBuyPotions::
-	.string "Your POKéMON have been healed\n"
-	.string "to perfect health.\p"
-	.string "If your POKéMON's energy, HP,\n"
-	.string "is down, please come see us.\p"
-	.string "If you're planning to go far in the\n"
-	.string "field, you should buy some POTIONS\l"
-	.string "at the POKéMON MART.\p"
-	.string "We hope you excel!$"
+    .string "Tus POKéMON han sido curados\n"
+    .string "a plena salud.\p"
+    .string "Si la energía o los PS de tus POKéMON\n"
+    .string "están bajos, ven a vernos.\p"
+    .string "Si planeas recorrer largas distancias,\n"
+    .string "deberías comprar algunas POCIONES\l"
+    .string "en la TIENDA POKéMON.\p"
+    .string "¡Esperamos que destaques!$"
 
 gText_MonsHealed::
-	.string "Your POKéMON have been healed\n"
-	.string "to perfect health.\p"
-	.string "We hope you excel!$"
+    .string "Tus POKéMON han sido curados\n"
+    .string "a plena salud.\p"
+    .string "¡Esperamos que destaques!$"
 
 gText_HadQuiteAnExperienceTakeRest::
-	.string "MOM: {PLAYER}!\n"
-	.string "Welcome home.\p"
-	.string "It sounds like you had quite\n"
-	.string "an experience.\p"
-	.string "Maybe you should take a quick\n"
-	.string "rest.$"
+    .string "MAMÁ: {PLAYER}!\n"
+    .string "Bienvenido a casa.\p"
+    .string "Parece que tuviste toda\n"
+    .string "una experiencia.\p"
+    .string "Tal vez deberías descansar un poco.$"
 
 gText_MomExplainHPGetPotions::
-	.string "MOM: Oh, good! You and your\n"
-	.string "POKéMON are looking great.\p"
-	.string "I just heard from PROF. BIRCH.\p"
-	.string "He said that POKéMON's energy is\n"
-	.string "measured in HP.\p"
-	.string "If your POKéMON lose their HP,\n"
-	.string "you can restore them at any\l"
-	.string "POKéMON CENTER.\p"
-	.string "If you're going to travel far away,\n"
-	.string "the smart TRAINER stocks up on\l"
-	.string "POTIONS at the POKéMON MART.\p"
-	.string "Make me proud, honey!\p"
-	.string "Take care!$"
+    .string "MAMÁ: ¡Oh, genial! Tú y tus\n"
+    .string "POKéMON se ven estupendos.\p"
+    .string "Acabo de escuchar del PROF. BIRCH.\p"
+    .string "Dijo que la energía de los POKéMON se\n"
+    .string "mide en PS.\p"
+    .string "Si tus POKéMON pierden PS,\n"
+    .string "puedes restaurarlos en cualquier\n"
+    .string "CENTRO POKéMON.\p"
+    .string "Si vas a viajar lejos,\n"
+    .string "el ENTRENADOR inteligente compra\n"
+    .string "POCIONES en la TIENDA POKéMON.\p"
+    .string "¡Hazme sentir orgullosa, cariño!\p"
+    .string "¡Cuídate!$"
 
 gText_RegisteredTrainerinPokeNav::
 	.string "Acabas de registrar a {STR_VAR_1}\n"
@@ -1093,9 +1098,6 @@ Common_EventScript_TrainerTypeChanger::
 	.include "data/scripts/cable_club.inc"
 	.include "data/text/cable_club.inc"
 	.include "data/scripts/contest_hall.inc"
-	.include "data/text/contest_strings.inc"
-	.include "data/text/contest_link.inc"
-	.include "data/text/contest_painting.inc"
 	.include "data/scripts/tv.inc"
 	.include "data/text/tv.inc"
 	.include "data/scripts/interview.inc"
@@ -1273,3 +1275,6 @@ Decline:
 	.include "data/maps/MauvilleCity_ToyStore/scripts.inc"
 
 	.include "data/maps/MauvilleCity_CommunalGarden/scripts.inc"
+
+	.include "data/scripts/battle_frontier.inc"
+	.include "data/scripts/apricorn_tree.inc"

@@ -4,6 +4,7 @@
 #include "berry_powder.h"
 #include "bg.h"
 #include "decompress.h"
+#include "digit_obj_util.h"
 #include "dynamic_placeholder_text_util.h"
 #include "event_data.h"
 #include "gpu_regs.h"
@@ -17,11 +18,10 @@
 #include "malloc.h"
 #include "math_util.h"
 #include "menu.h"
+#include "minigame_countdown.h"
 #include "overworld.h"
 #include "palette.h"
-#include "minigame_countdown.h"
 #include "random.h"
-#include "digit_obj_util.h"
 #include "save.h"
 #include "scanline_effect.h"
 #include "script.h"
@@ -1151,6 +1151,7 @@ static void SetNamesAndTextSpeed(struct BerryCrushGame *game)
         memset(game->players[i].name, 1, PLAYER_NAME_LENGTH);
         game->players[i].name[PLAYER_NAME_LENGTH] = EOS;
     }
+
 
     switch (gSaveBlock2Ptr->optionsTextSpeed)
     {

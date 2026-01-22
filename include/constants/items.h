@@ -994,22 +994,50 @@
 
 #define ITEM_STRANGE_BALL 828
 
+#define ITEM_CLEFABLITE 829
+#define ITEM_VICTREEBELITE 830
+#define ITEM_STARMINITE 831
+#define ITEM_DRAGONINITE 832
+#define ITEM_MEGANIUMITE 833
+#define ITEM_FERALIGITE 834
+#define ITEM_SKARMORITE 835
+#define ITEM_FROSLASSITE 836
+#define ITEM_EMBOARITE 837
+#define ITEM_EXCADRITE 838
+#define ITEM_SCOLIPITE 839
+#define ITEM_SCRAFTINITE 840
+#define ITEM_EELEKTROSSITE 841
+#define ITEM_CHANDELURITE 842
+#define ITEM_CHESNAUGHTITE 843
+#define ITEM_DELPHOXITE 844
+#define ITEM_GRENINJITE 845
+#define ITEM_PYROARITE 846
+#define ITEM_FLOETTITE 847
+#define ITEM_MALAMARITE 848
+#define ITEM_BARBARACITE 849
+#define ITEM_DRAGALGITE 850
+#define ITEM_HAWLUCHANITE 851
+#define ITEM_ZYGARDITE 852
+#define ITEM_DRAMPANITE 853
+#define ITEM_FALINKSITE 854
+
 // giga stones
 
-#define ITEM_GIGA_KANTONITE 	829
+#define ITEM_GIGA_KANTONITE 	855
 // #define ITEM_GIGA_JOHTONITE 	830 no johtonian mon got a gmax form
 // #define ITEM_GIGA_HOENNITE 	831 no hoennian mon got a gmax form
 // #define ITEM_GIGA_SINNOHITE	832 no sinnohnian mon got a gmax form
-#define ITEM_GIGA_UNOVANITE 	830
+#define ITEM_GIGA_UNOVANITE 	856
 // #define ITEM_GIGA_KALOSITE 	834 no kalosian mon got a gmax form
-#define ITEM_GIGA_GALARITE 		831
-#define ITEM_MELMETALITE 		832
-#define ITEM_URSHIFUNITE_X 		833
-#define ITEM_URSHIFUNITE_Y 		834
+#define ITEM_GIGA_GALARITE 		857
+#define ITEM_MELMETALITE 		858
+#define ITEM_URSHIFUNITE_X 		859
+#define ITEM_URSHIFUNITE_Y 		860
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 835
+#define ITEMS_COUNT 861
+
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

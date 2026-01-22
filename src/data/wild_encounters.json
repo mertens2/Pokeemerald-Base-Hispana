@@ -80,6 +80,16 @@
             35,
             33,
             32
+			]
+		},
+		{
+          "type": "headbutt_mons",
+          "encounter_rates": [
+            20,
+            40,
+            34,
+            5,
+            1
           ]
         }
       ],
@@ -258,6 +268,36 @@
                 "min_level": 11,
                 "max_level": 14,
                 "species": "SPECIES_ZORUA_HISUI"
+              }
+            ]
+          },
+          "headbutt_mons": {
+            "encounter_rate": 100,
+            "mons": [
+              {
+                "min_level": 10,
+                "max_level": 15,
+                "species": "SPECIES_HERACROSS_MEGA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_SCIZOR_MEGA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_GENGAR_GMAX"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_MEGANIUM"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_ALAKAZAM_MEGA"
               }
             ]
           }

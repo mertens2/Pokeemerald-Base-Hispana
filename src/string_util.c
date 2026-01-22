@@ -997,6 +997,7 @@ u8 GetExtCtrlCodeLength(u8 code)
 		[EXT_CTRL_CODE_TEXT_SPEED]         	   = 2,
         [EXT_CTRL_CODE_SHAKE_SCREEN]           = 5,
         [EXT_CTRL_CODE_FLASH]         	   	   = 2,
+        [EXT_CTRL_CODE_SPEAKER]                = 1,
     };
 
     u8 length = 0;

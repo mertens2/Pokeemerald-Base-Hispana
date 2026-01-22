@@ -145,7 +145,7 @@ const u8 gText_Space[] = _(" ");
 const u8 gText_SelectorArrow2[] = _("▶");
 const u8 gText_GoBackPrevMenu[] = _("Volver al menú\nanterior.");
 const u8 gText_Mailbox[] = _("Buzón");
-const u8 gText_WhatWouldYouLike[] = _("What would you like to do?");
+const u8 gText_WhatWouldYouLike[] = _("¿Qué te gustaría hacer?");
 const u8 gMenuText_Give2[] = _("Dar");
 const u8 gText_xVar1[] = _("×{STR_VAR_1}");
 const u8 gText_Coins[] = _("Fichas {STR_VAR_1}");
@@ -205,7 +205,7 @@ const u8 *const gPocketNamesStringsTable[] =
     [POCKET_KEY_ITEMS] = COMPOUND_STRING("Obj. clave")
 };
 
-const u8 gText_NumberItem_TMBerry[] = _("Nº{STR_VAR_1}{CLEAR 0x07}{STR_VAR_2}");
+const u8 gText_NumberItem_TMBerry[] = _("Nº{STR_VAR_1}{CLEAR 0x03}{STR_VAR_2}");
 const u8 gText_NumberItem_HM[] = _("{CLEAR_TO 0x11}{STR_VAR_1}{CLEAR 0x05}{STR_VAR_2}");
 
 const u8 gText_ShopBuy[] = _("Comprar");
@@ -953,6 +953,9 @@ ALIGNED(4) const u8 gText_FrontierFacilityRoomsCleared[] = _("Salas: {STR_VAR_2}
 ALIGNED(4) const u8 gText_FrontierFacilityKOsStreak[] = _("K.O. seguidos: {STR_VAR_2}");
 ALIGNED(4) const u8 gText_FrontierFacilityFloorsCleared[] = _("Niveles: {STR_VAR_2}");
 ALIGNED(4) const u8 gText_123Dot[][3] = {_("1."), _("2."), _("3.")};
+const u8 gText_FrontierFacilityTotalCaughtSpeciesBanned[] = _(" and {STR_VAR_2} of the POKéMON species\nyou caught are inelegible");
+const u8 gText_FrontierFacilityIncluding[] = _(".\pThese include ");
+const u8 gText_FrontierFacilityAreInelegible[] = _(" are inelegible");
 
 const u8 gText_SavingDontTurnOff2[] = _("Guardando…\nNo apagues la consola.");
 const u8 gText_BlenderMaxSpeedRecord[] = _("Licuabayas\n¡Récord de velocidad!");
@@ -966,6 +969,7 @@ const u8 gText_CommErrorEllipsis[] = _("Error de conexión…");
 const u8 gText_MoveCloserToLinkPartner[] = _("Procura que no haya distancia\nni obstáculos entre las consolas.");
 const u8 gText_ABtnRegistrationCounter[] = _("Botón A: mostrador de inscripción");
 const u8 gText_ABtnTitleScreen[] = _("Botón A: pantalla del título");
+
 const u8 gText_Option[] = _("Opciones");
 const u8 gText_TextSpeed[] = _("Veloc. texto");
 const u8 gText_BattleScene[] = _("Anim. combate");
@@ -988,6 +992,7 @@ const u8 gText_FrameTypeNumber[] = _("");
 const u8 gText_ButtonTypeNormal[] = _("Normal");
 const u8 gText_ButtonTypeLR[] = _("LR");
 const u8 gText_ButtonTypeLEqualsA[] = _("L=A");
+
 const u8 gText_NumPlayerLink[] = _("Conexión {STR_VAR_1}J");
 const u8 gText_BronzeCard[] = _("Bronce");
 const u8 gText_CopperCard[] = _("Cobre");
@@ -1268,7 +1273,13 @@ const u8 gText_PM[] = _("PM");
 const u8 gText_MaleSymbolPokeNav[] = _("{COLOR_HIGHLIGHT_SHADOW}{LIGHT_RED}{WHITE}{GREEN}♂{COLOR_HIGHLIGHT_SHADOW}{DARK_GRAY}{WHITE}{LIGHT_GRAY}");
 const u8 gText_FemaleSymbolPokeNav[] = _("{COLOR_HIGHLIGHT_SHADOW}{LIGHT_GREEN}{WHITE}{BLUE}♀{COLOR_HIGHLIGHT_SHADOW}{DARK_GRAY}{WHITE}{LIGHT_GRAY}");
 const u8 gText_NoGenderSymbolPokeNav[] = _(" ");
+const u8 gText_CannotSendMonToBoxActive[] = _("No puedes enviar a un Pokémon\nactivo al PC.{PAUSE_UNTIL_PRESS}");
+const u8 gText_CannotSendMonToBoxPartner[] = _("No puedes enviar un Pokémon que\nno te pertenece al PC.{PAUSE_UNTIL_PRESS}");
 const u8 gText_Relearn[] = _("{START_BUTTON} RECORDAR"); // future note: don't decap this, because it mimics the summary screen BG graphics which will not get decapped
+const u8 gText_Relearn_LevelUp[] = _("{START_BUTTON} RELEARN LEVEL");
+const u8 gText_Relearn_Egg[] = _("{START_BUTTON} RELEARN EGG");
+const u8 gText_Relearn_TM[] = _("{START_BUTTON} RELEARN TM");
+const u8 gText_Relearn_Tutor[] = _("{START_BUTTON} RELEARN TUTOR");
 const u8 gText_Rename[] = _("MOTE");
 const u8 gText_CannotSendMonToBoxHM[] = _("No puedes enviarlo a la caja,\nporque conoce una MT.{PAUSE_UNTIL_PRESS}");
 //// side quest data

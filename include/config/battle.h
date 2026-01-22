@@ -96,6 +96,7 @@
 #define B_CAN_SPITE_FAIL            GEN_LATEST // En Gen4+, Spite ya no puede fallar si el último movimiento del oponente solo tiene 1 PP restante.
 #define B_CRASH_IF_TARGET_IMMUNE    GEN_LATEST // En Gen4+, el usuario de Patada salto y Patada salto alta "seguirá adelante y chocará" si ataca a un objetivo que es inmune al movimiento.
 #define B_MEMENTO_FAIL              GEN_LATEST // En Gen4+, Memento falla si no hay objetivo o si el objetivo está protegido o detrás de un sustituto. Pero no si el Atk/Sp. Atk están en -6.
+#define B_PARTING_SHOT_SWITCH       GEN_LATEST // En Gen7+, el usuario no se retirar� si Desarme (Parting Shot) falla al bajar las estad�sticas del objetivo.
 #define B_GLARE_GHOST               GEN_LATEST // En Gen4+, Deslumbrar puede golpear a Pokémon de tipo Fantasma normalmente.
 #define B_SKILL_SWAP                GEN_LATEST // En Gen4+, Skill Swap activa las habilidades de entrada después de su uso.
 #define B_BRICK_BREAK               GEN_LATEST // En Gen4+, puedes destruir las pantallas de tu propio lado. En Gen 5+, las pantallas no se eliminan si el objetivo es inmune.
@@ -133,6 +134,7 @@
 #define B_TIME_OF_DAY_HEALING_MOVES GEN_LATEST // In Gen2, Morning Sun, Moonlight, and Synthesis heal twice as much HP based off the time of day. Also changes how much they heal. Evening affects Moonlight.
                                                // If OW_TIMES_OF_DAY is set to Gen 3, then Morning Sun is boosted during the day.
 #define B_DREAM_EATER_LIQUID_OOZE   GEN_LATEST // In Gen5+, Dream Eater is affected by Liquid Ooze.
+#define B_DREAM_EATER_SUBSTITUTE    GEN_LATEST // In Gen5+, Dream Eater can successfully hit and drain from a Substitute.
 
 // Configuración de habilidades
 #define B_GALE_WINGS                GEN_LATEST // En Gen7+ requiere HP completo para activarse.
@@ -166,10 +168,9 @@
 #define B_BATTLE_BOND               GEN_LATEST // A partir de la Gen 9, la habilidad Fuerte afecto aumenta el Ataque, Ataque Especial y Velocidad en un nivel una vez por combate.
 #define B_ATE_MULTIPLIER            GEN_LATEST // Desde la Gen 7, las habilidades del tipo -ado (Ej.: Piel celeste, Piel eléctrica, Normalidad, Piel feérica, Piel helada) multiplican el daño por 1.2. En generaciones anteriores, el multiplicador es 1.3, excepto para Normalidad, que no aplica bonificación.
 #define B_DEFIANT_STICKY_WEB        GEN_LATEST // In Gen9+, Defiant activates on Sticky Web regardless of who set it up. In Gen8, Defiant does not activate on Sticky Web set up by an ally after Court Change swaps its side.
+#define B_POWDER_OVERCOAT           GEN_LATEST // In Gen6+, Overcoat blocks powder and spore moves from affecting the user.
 
 // Configuración de ítems
-#define B_HP_BERRIES                GEN_LATEST // En Gen4+, las bayas que restauran HP se activan inmediatamente después de que HP cae a la mitad. En Gen3, el efecto ocurre al final del turno.
-#define B_BERRIES_INSTANT           GEN_LATEST // En Gen4+, la mayoría de las bayas se activan al inicio de la batalla/cambio si es aplicable. En Gen3, solo se activan al final del movimiento o al final del turno.
 #define B_CONFUSE_BERRIES_HEAL      GEN_LATEST // Antes de Gen7, Figy y bayas similares restauran 1/8 de HP y se activan a la mitad de HP. En Gen7 restauran la mitad de HP, activándose al 25% de HP. En Gen8 curan 1/3 de HP.
 #define B_X_ITEMS_BUFF              GEN_LATEST // En Gen7+, los X Items aumentan una estadística en 2 etapas en lugar de 1.
 #define B_MENTAL_HERB               GEN_LATEST // En Gen5+, Hierba mental cura Mofa, Otra vez, Tormento, Anticura y Anulación además de Enamoramiento.
@@ -230,6 +231,13 @@
                                                     // Para controlar mejor la IA de los Pokémon salvajes, edita GetWildAiFlags() en src/battle_ai_main.c
 #define B_VAR_DIFFICULTY                    0       // Si no es 0, puedes usar esta Var para controlar qué nivel de dificultad tienen los entrenadores. Esto debe ser implementado manualmente por el desarrollador usando Script_SetDifficulty DESPUÉS de que NewGameInitData haya sido llamada.
 
+// No bag settings
+#define NO_BAG_RESTRICTION       0
+#define NO_BAG_AGAINST_TRAINER   1
+#define NO_BAG_IN_BATTLE         2
+
+#define B_VAR_NO_BAG_USE         0     // If 1, the ability to use the bag in battle is disabled in trainer battles. If 2, it is also disabled in wild battles.
+
 // Batallas en el cielo
 #define B_FLAG_SKY_BATTLE                   0       // Si esta flag tiene un valor, el jugador podrá participar en Batallas en el Cielo programadas.
 #define B_VAR_SKY_BATTLE                    0       // Si esta variable tiene un valor, el juego recordará las posiciones de los Pokémon usados en Batallas en el Cielo.
@@ -268,7 +276,6 @@
 #define B_NEW_TERRAIN_BACKGROUNDS   TRUE       // Si está habilitado, usa nuevos fondos para los Campos.
 
 // Configuración de Interfaz
-#define B_ABILITY_POP_UP            TRUE  // En Gen5+, las habilidades de los Pokémon se muestran en una ventana emergente cuando se activan en batalla.
 #define B_FAST_INTRO_PKMN_TEXT      TRUE  // Si se establece en TRUE, los textos de introducción de la batalla se imprimen al mismo tiempo que la animación de un Pokémon, en lugar de esperar a que termine la animación.
 #define B_FAST_INTRO_NO_SLIDE       TRUE // Si se establece en TRUE, se saltará la animación de deslizamiento que se produce al entrar en combate.
 #define B_FAST_HP_DRAIN             TRUE  // Si se establece en TRUE, las barras de HP se moverán más rápido.
@@ -287,9 +294,10 @@
 
 // Configuración de Captura
 #define B_SEMI_INVULNERABLE_CATCH   GEN_LATEST // En Gen4+, no puedes lanzar una Poké Ball contra un Pokémon que está en un estado semi-invulnerable (excavar/volar/etc).
-#define B_CATCHING_CHARM_BOOST      20         // % de aumento en las probabilidades de Captura Crítica si el jugador tiene el Catching Charm.
+#define B_CATCHING_CHARM_BOOST      100         // % de aumento en las probabilidades de Captura Crítica si el jugador tiene el Catching Charm.
 #define B_CRITICAL_CAPTURE          TRUE       // Si se establece en TRUE, la Captura Crítica estará habilitada.
 #define B_CRITICAL_CAPTURE_LOCAL_DEX    TRUE       // If set to FALSE, Critical Capture % is based off of the National Pokedex estimated by enabled generations.
+#define B_CRITICAL_CAPTURE_IF_OWNED     GEN_LATEST // In Gen9, a capture appear critical if the pokemon you are trying to catch already has a dex entry (has already been caught)
 
 #define B_LAST_USED_BALL            TRUE       // Si está habilitado, se implementará la característica de "última bola usada" de Gen 7.
 #define B_LAST_USED_BALL_BUTTON     R_BUTTON   // Si se implementa la última bola usada, este botón (o combinación de botones) activará el lanzamiento de la última Poké Ball usada.
@@ -311,6 +319,7 @@
 #define B_TOXIC_REVERSAL                GEN_LATEST // En Gen5+, el veneno grave se convierte en veneno normal al final de las batallas.
 #define B_TRY_CATCH_TRAINER_BALL        GEN_LATEST // En Gen4+, intentar capturar a un Pokémon de un entrenador no consume la Poké Ball.
 #define B_SLEEP_CLAUSE                  FALSE     //  Si está habilitado, activa la cláusula de sueño siempre, sin importar el B_FLAG_SLEEP_CLAUSE. Usa esto si quieres que sea más fácil de ajustar.
+#define B_PARTNER_MONS_MARKED_SEEN      FALSE      // If TRUE, if your double battle partner sends out a Pokémon you haven't encountered yet, it will be marked as SEEN in your Pokédex.
 
 #define NUM_BEEPS_GEN_LATEST            4                    // Loops 4 times
 #define NUM_BEEPS_GEN_3                 -1                   // Loops infinitely
@@ -365,5 +374,7 @@
 #define B_POOL_RULE_EXCLUDE_FORMS           FALSE    // Exclude different forms from the Species Clause
 #define B_POOL_RULE_ITEM_CLAUSE             FALSE    // Only allow each item to be picked once
 #define B_POOL_RULES_USE_ITEM_EXCLUSIONS    FALSE    // Exclude items listed in poolItemClauseExclusions
+#define B_POOL_RULE_MEGA_STONE_CLAUSE       FALSE    // Pick only 1 mon with mega stone
+#define B_POOL_RULE_Z_CRYSTAL_CLAUSE        FALSE    // Pick only 1 mon with Z-crystal
 
 #endif // GUARD_CONFIG_BATTLE_H
