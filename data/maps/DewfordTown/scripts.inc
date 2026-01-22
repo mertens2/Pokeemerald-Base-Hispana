@@ -39,11 +39,11 @@ DewfordTown_EventScript_Wally::
 # 345 "data/maps/DewfordTown/scripts.pory"
 	setflag FLAG_TEMP_1
 # 346 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 347 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_EventScript_WallyHello, MSGBOX_DEFAULT
 # 348 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 349 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 350 "data/maps/DewfordTown/scripts.pory"
@@ -51,7 +51,7 @@ DewfordTown_EventScript_Wally::
 # 351 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 352 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 353 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_EventScript_WallyBeginSpeech, MSGBOX_DEFAULT
 # 354 "data/maps/DewfordTown/scripts.pory"
@@ -65,7 +65,7 @@ DewfordTown_EventScript_Wally::
 # 358 "data/maps/DewfordTown/scripts.pory"
     warp MAP_PETALBURG_CITY, 15, 16
 # 359 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 360 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 361 "data/maps/DewfordTown/scripts.pory"
@@ -99,7 +99,7 @@ DewfordTown_OnFrameWally::
 # 375 "data/maps/DewfordTown/scripts.pory"
 	delay 8
 # 376 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 377 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyContinueSpeech, MSGBOX_DEFAULT
 # 378 "data/maps/DewfordTown/scripts.pory"
@@ -111,7 +111,7 @@ DewfordTown_OnFrameWally::
 # 381 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 382 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 383 "data/maps/DewfordTown/scripts.pory"
 	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 # 384 "data/maps/DewfordTown/scripts.pory"
@@ -121,7 +121,7 @@ DewfordTown_OnFrameWally::
 # 386 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 387 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 388 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyDetermined
 # 389 "data/maps/DewfordTown/scripts.pory"
@@ -133,7 +133,7 @@ DewfordTown_OnFrameWally::
 # 392 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 393 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 394 "data/maps/DewfordTown/scripts.pory"
 	call_if_eq VAR_0x8004, DIR_WEST, DewfordTown_WallyGoToGymWest
 # 395 "data/maps/DewfordTown/scripts.pory"
@@ -157,7 +157,7 @@ DewfordTown_OnFrameWally::
 # 404 "data/maps/DewfordTown/scripts.pory"
 	waitdooranim
 # 405 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 406 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyGym1
 # 407 "data/maps/DewfordTown/scripts.pory"
@@ -167,7 +167,7 @@ DewfordTown_OnFrameWally::
 # 409 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 410 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 411 "data/maps/DewfordTown/scripts.pory"
 	delay 8
 # 412 "data/maps/DewfordTown/scripts.pory"
@@ -177,11 +177,11 @@ DewfordTown_OnFrameWally::
 # 414 "data/maps/DewfordTown/scripts.pory"
 	delay 12
 # 415 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 416 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyGym2
 # 417 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 418 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 419 "data/maps/DewfordTown/scripts.pory"
@@ -203,11 +203,11 @@ DewfordTown_OnFrameWally::
 # 427 "data/maps/DewfordTown/scripts.pory"
 	waitse
 # 428 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 429 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyGym3
 # 430 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 431 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 432 "data/maps/DewfordTown/scripts.pory"
@@ -219,11 +219,11 @@ DewfordTown_OnFrameWally::
 # 435 "data/maps/DewfordTown/scripts.pory"
 	delay 10
 # 436 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 437 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyGymBattle
 # 438 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 439 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 440 "data/maps/DewfordTown/scripts.pory"
@@ -237,11 +237,11 @@ DewfordTown_OnFrameWally::
 # 444 "data/maps/DewfordTown/scripts.pory"
 	waitse
 # 445 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 446 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyGymBattle2
 # 447 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 448 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 449 "data/maps/DewfordTown/scripts.pory"
@@ -249,11 +249,11 @@ DewfordTown_OnFrameWally::
 # 450 "data/maps/DewfordTown/scripts.pory"
 	waitmoncry
 # 451 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 452 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyGymBattle3
 # 453 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 454 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 455 "data/maps/DewfordTown/scripts.pory"
@@ -293,11 +293,11 @@ DewfordTown_OnFrameWally::
 # 472 "data/maps/DewfordTown/scripts.pory"
 	delay 10
 # 473 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 474 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyGymBattle4
 # 475 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 476 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 477 "data/maps/DewfordTown/scripts.pory"
@@ -335,13 +335,13 @@ DewfordTown_OnFrameWally::
 # 493 "data/maps/DewfordTown/scripts.pory"
 	waitdooranim
 # 494 "data/maps/DewfordTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 495 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_Text_WallyAfter
 # 496 "data/maps/DewfordTown/scripts.pory"
 	closemessage
 # 497 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 498 "data/maps/DewfordTown/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 499 "data/maps/DewfordTown/scripts.pory"
@@ -549,11 +549,11 @@ DewfordTown_EventScript_Trigger::
 # 600 "data/maps/DewfordTown/scripts.pory"
 	waitmovement 0
 # 601 "data/maps/DewfordTown/scripts.pory"
-	namebox Player
+	setspeaker Player
 # 602 "data/maps/DewfordTown/scripts.pory"
 	msgbox DewfordTown_EventScript_Trigger_Text_0
 # 603 "data/maps/DewfordTown/scripts.pory"
-	hidenamebox
+	
 # 604 "data/maps/DewfordTown/scripts.pory"
 	setvar VAR_DEWFORD_TOWN_STATE, 1
 # 605 "data/maps/DewfordTown/scripts.pory"

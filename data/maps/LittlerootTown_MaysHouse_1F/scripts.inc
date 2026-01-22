@@ -179,7 +179,7 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 # 144 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	waitmovement 0
 # 145 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	namebox Marta
+	setspeaker Marta
 # 146 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_RIVAL
 # 147 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -191,7 +191,7 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 # 150 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	closemessage
 # 151 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	hidenamebox
+	
 # 152 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	releaseall
 # 153 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -223,7 +223,7 @@ RivalsHouse_1F_EventScript_RivalMom::
 # 166 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	faceplayer
 # 167 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	namebox Marta
+	setspeaker Marta
 # 168 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
 # 169 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -235,7 +235,7 @@ RivalsHouse_1F_EventScript_RivalMom::
 # 172 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
 # 173 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	hidenamebox
+	
 # 174 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	release
 # 175 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -247,7 +247,7 @@ RivalsHouse_1F_EventScript_RivalTooBusy::
 # 178 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RivalsHouse_1F_Text_TooBusyToNoticeVisit, MSGBOX_DEFAULT
 # 179 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	hidenamebox
+	
 # 180 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	release
 # 181 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -259,7 +259,7 @@ RivalsHouse_1F_EventScript_RivalIsOnRoute103::
 # 184 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RivalsHouse_1F_Text_WentOutToRoute103, MSGBOX_DEFAULT
 # 185 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	hidenamebox
+	
 # 186 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	release
 # 187 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
@@ -271,7 +271,7 @@ RivalsHouse_1F_EventScript_GoHomeEverySoOften::
 # 190 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	msgbox RivalsHouse_1F_Text_ShouldGoHomeEverySoOften, MSGBOX_DEFAULT
 # 191 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
-	hidenamebox
+	
 # 192 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"
 	release
 # 193 "data/maps/LittlerootTown_MaysHouse_1F/scripts.pory"

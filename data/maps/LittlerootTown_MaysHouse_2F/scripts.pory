@@ -63,18 +63,18 @@ RivalsHouse_2F_EventScript_Rival::
 	end
 
 RivalsHouse_2F_EventScript_May::
-	namebox Rival
+	setspeaker Rival
 	msgbox RivalsHouse_2F_Text_MayGettingReady, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	hidesetspeaker
 	releaseall
 	end
 
 RivalsHouse_2F_EventScript_Brendan::
-	namebox Rival
+	setspeaker Rival
 	msgbox RivalsHouse_2F_Text_BrendanGettingReady, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	hidesetspeaker
 	releaseall
 	end
 

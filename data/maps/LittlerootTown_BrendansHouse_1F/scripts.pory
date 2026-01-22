@@ -53,10 +53,10 @@ LittlerootTown_BrendansHouse_1F_OnFrame:
 
 LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
 	lockall
-	namebox Mama
+	setspeaker Mama
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	applymovement LOCALID_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	waitmovement 0
@@ -93,7 +93,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_RIVAL_MOM, LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
-	namebox Marta
+	setspeaker Marta
 	setvar VAR_LAST_TALKED, LOCALID_RIVAL
 	call EventScript_YoureNewNeighbor_Translated
 	setflag FLAG_MET_RIVAL_MOM

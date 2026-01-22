@@ -123,7 +123,7 @@ script Route103_EventScript_Rival {
 	checkplayergender
 	questmenu (QUEST_MENU_SET_ACTIVE SIDE_QUEST_1)
 	questmenu (QUEST_MENU_COMPLETE_QUEST SIDE_QUEST_1)
-	namebox (Rival)
+	setspeaker (Rival)
 	poryswitch(LANGUAGE){
 		ES{
 			msgbox(format("Ah, Sentret, Ducklett, ¿Quién más?"))
@@ -133,7 +133,7 @@ script Route103_EventScript_Rival {
 		}
 	}
 	closemessage
-	hidenamebox
+	
 	faceplayer
 	if (var(VAR_RESULT) == MALE) {
 		playbgm (MUS_ENCOUNTER_MAY, TRUE)
@@ -147,7 +147,7 @@ script Route103_EventScript_Rival {
 	applymovement (LOCALID_RIVAL, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	delay (48)
-	namebox (Rival)
+	setspeaker (Rival)
 	poryswitch(LANGUAGE){
 		ES{
 			msgbox(format("¡Ah, hola, {PLAYER}!\pQué bueno que llegas, porque quería investigar el comportamiento en combate de nuestros iniciales.\p¡Prepárate!"))
@@ -180,9 +180,9 @@ script Route103_EventScript_Rival {
 				
 		}
 	}
-	hidenamebox
+	
 	closemessage
-	namebox (Rival)
+	setspeaker (Rival)
 	poryswitch(LANGUAGE){
 		ES{
 			msgbox(format("¡Genial! ¡Papá amará estos datos!"))
@@ -192,7 +192,7 @@ script Route103_EventScript_Rival {
 		}
 	}
 	closemessage
-	hidenamebox
+	
 	goto (Route103_EventScript_RivalExit)
 	end
 }

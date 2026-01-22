@@ -9,21 +9,19 @@ MauvilleCity_EventScript_Wally_1:
 # 10 "data/maps/MauvilleCity/scripts.pory"
 	waitmovement 0
 # 11 "data/maps/MauvilleCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 12 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallyWantToChallengeGym, MSGBOX_DEFAULT
 # 13 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 14 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_UncleYourePushingIt, MSGBOX_DEFAULT
 # 15 "data/maps/MauvilleCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 16 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallyWeCanBeatAnyone, MSGBOX_DEFAULT
 # 17 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
-# 18 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
 # 19 "data/maps/MauvilleCity/scripts.pory"
 	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer
 # 20 "data/maps/MauvilleCity/scripts.pory"
@@ -39,7 +37,7 @@ MauvilleCity_EventScript_Wally_1:
 # 25 "data/maps/MauvilleCity/scripts.pory"
 	waitmovement 0
 # 26 "data/maps/MauvilleCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 27 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallyWillYouBattleMe, MSGBOX_YESNO
 # 28 "data/maps/MauvilleCity/scripts.pory"
@@ -61,8 +59,6 @@ MauvilleCity_EventScript_BattleWallyPrompt::
 MauvilleCity_EventScript_BattleWallyPrompt_1:
 # 40 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
-# 41 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
 # 42 "data/maps/MauvilleCity/scripts.pory"
 	switch VAR_FACING
 # 43 "data/maps/MauvilleCity/scripts.pory"
@@ -104,19 +100,17 @@ MauvilleCity_EventScript_WallyAndUncleExitNorth::
 # 58 "data/maps/MauvilleCity/scripts.pory"
 	delay 30
 # 59 "data/maps/MauvilleCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 60 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallyNoNeedTo, MSGBOX_DEFAULT
 # 61 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
 # 62 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 63 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallysUncleItsOkay, MSGBOX_DEFAULT
 # 64 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
-# 65 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
 # 66 "data/maps/MauvilleCity/scripts.pory"
 	applymovement LOCALID_MAUVILLE_WALLY, MauvilleCity_Movement_WallyExitNorth2
 # 67 "data/maps/MauvilleCity/scripts.pory"
@@ -160,19 +154,17 @@ MauvilleCity_EventScript_WallyAndUncleExitEast::
 # 88 "data/maps/MauvilleCity/scripts.pory"
 	delay 30
 # 89 "data/maps/MauvilleCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 90 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallyNoNeedTo, MSGBOX_DEFAULT
 # 91 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
 # 92 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 93 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallysUncleItsOkay, MSGBOX_DEFAULT
 # 94 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
-# 95 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
 # 96 "data/maps/MauvilleCity/scripts.pory"
 	applymovement LOCALID_MAUVILLE_WALLY, MauvilleCity_Movement_WallyExitEast2
 # 97 "data/maps/MauvilleCity/scripts.pory"
@@ -200,13 +192,11 @@ MauvilleCity_EventScript_WallyAndUncleExitEast::
 
 MauvilleCity_EventScript_StartScottScene::
 # 112 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 113 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT
 # 114 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
-# 115 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
 # 116 "data/maps/MauvilleCity/scripts.pory"
 	switch VAR_FACING
 # 117 "data/maps/MauvilleCity/scripts.pory"
@@ -221,27 +211,27 @@ MauvilleCity_EventScript_StartScottScene_1:
 # 124 "data/maps/MauvilleCity/scripts.pory"
 	waitmovement 0
 # 125 "data/maps/MauvilleCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 126 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_ScottAParentShould, MSGBOX_DEFAULT
 # 127 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 128 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_AndWhoAreYou, MSGBOX_DEFAULT
 # 129 "data/maps/MauvilleCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 130 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_ImScott, MSGBOX_DEFAULT
 # 131 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 132 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_AndWhyDoICare, MSGBOX_DEFAULT
 # 133 "data/maps/MauvilleCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 134 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_ScottDefendsWally, MSGBOX_DEFAULT
 # 135 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 136 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_YouDontUnderstand, MSGBOX_DEFAULT
 # 137 "data/maps/MauvilleCity/scripts.pory"
@@ -253,13 +243,11 @@ MauvilleCity_EventScript_StartScottScene_1:
 # 140 "data/maps/MauvilleCity/scripts.pory"
 	waitmovement 0
 # 141 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 142 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_Although, MSGBOX_DEFAULT
 # 143 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
-# 144 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
 # 145 "data/maps/MauvilleCity/scripts.pory"
 	addvar VAR_SCOTT_STATE, 1
 	return
@@ -291,7 +279,7 @@ MauvilleCity_EventScript_DefeatedWally::
 # 156 "data/maps/MauvilleCity/scripts.pory"
 	setflag FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL
 # 157 "data/maps/MauvilleCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 158 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_ScottBadFamily
 # 159 "data/maps/MauvilleCity/scripts.pory"
@@ -304,8 +292,6 @@ MauvilleCity_EventScript_DefeatedWally::
 	msgbox MauvilleCity_Text_ScottYoureTheRealDeal
 # 163 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
-# 164 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
 # 165 "data/maps/MauvilleCity/scripts.pory"
 	switch VAR_FACING
 # 166 "data/maps/MauvilleCity/scripts.pory"
@@ -382,7 +368,7 @@ MauvilleCity_EventScript_BattleWally::
 # 209 "data/maps/MauvilleCity/scripts.pory"
 	waitmovement 0
 # 210 "data/maps/MauvilleCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 211 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallyIllGoBackToVerdanturf, MSGBOX_DEFAULT
 # 212 "data/maps/MauvilleCity/scripts.pory"
@@ -396,7 +382,7 @@ MauvilleCity_EventScript_BattleWally::
 # 216 "data/maps/MauvilleCity/scripts.pory"
 	waitmovement 0
 # 217 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 218 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_UncleNoNeedToBeDown, MSGBOX_DEFAULT
 	return
@@ -406,11 +392,9 @@ MauvilleCity_EventScript_DeclineWallyBattle::
 # 223 "data/maps/MauvilleCity/scripts.pory"
 	setflag FLAG_DECLINED_WALLY_BATTLE_MAUVILLE
 # 224 "data/maps/MauvilleCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 225 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WallyMyUncleWontKnowImStrong, MSGBOX_DEFAULT
-# 226 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
 # 227 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
 # 228 "data/maps/MauvilleCity/scripts.pory"
@@ -911,13 +895,13 @@ MauvilleCity_EventScript_WallysUncle::
 # 427 "data/maps/MauvilleCity/scripts.pory"
 	goto_if_set FLAG_DECLINED_WALLY_BATTLE_MAUVILLE, MauvilleCity_EventScript_UncleAskPlayerToBattleWally
 # 428 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 429 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_UncleHesTooPeppy, MSGBOX_DEFAULT
 # 430 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
 # 431 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
+	
 # 432 "data/maps/MauvilleCity/scripts.pory"
 	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
 # 433 "data/maps/MauvilleCity/scripts.pory"
@@ -931,13 +915,13 @@ MauvilleCity_EventScript_WallysUncle::
 # 437 "data/maps/MauvilleCity/scripts.pory"
 MauvilleCity_EventScript_UncleAskPlayerToBattleWally::
 # 438 "data/maps/MauvilleCity/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 439 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_UncleCanYouBattleWally, MSGBOX_DEFAULT
 # 440 "data/maps/MauvilleCity/scripts.pory"
 	closemessage
 # 441 "data/maps/MauvilleCity/scripts.pory"
-	hidenamebox
+	
 # 442 "data/maps/MauvilleCity/scripts.pory"
 	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
 # 443 "data/maps/MauvilleCity/scripts.pory"

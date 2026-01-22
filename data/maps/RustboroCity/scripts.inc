@@ -199,13 +199,13 @@ RustboroCity_EventScript_Wally::
 # 478 "data/maps/RustboroCity/scripts.pory"
 	faceplayer
 # 479 "data/maps/RustboroCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 480 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_WallyPokeCenter
 # 481 "data/maps/RustboroCity/scripts.pory"
 	closemessage
 # 482 "data/maps/RustboroCity/scripts.pory"
-	hidenamebox
+	
 # 483 "data/maps/RustboroCity/scripts.pory"
 	specialvar VAR_0x8004, GetPlayerFacingDirection
 # 484 "data/maps/RustboroCity/scripts.pory"
@@ -233,13 +233,13 @@ RustboroCity_EventScript_Wally::
 # 495 "data/maps/RustboroCity/scripts.pory"
 	waitdooranim
 # 496 "data/maps/RustboroCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 497 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_WallyPrepared
 # 498 "data/maps/RustboroCity/scripts.pory"
 	closemessage
 # 499 "data/maps/RustboroCity/scripts.pory"
-	hidenamebox
+	
 # 500 "data/maps/RustboroCity/scripts.pory"
 	specialvar VAR_0x8004, GetPlayerFacingDirection
 # 501 "data/maps/RustboroCity/scripts.pory"
@@ -277,13 +277,13 @@ RustboroCity_EventScript_Wally2::
 # 517 "data/maps/RustboroCity/scripts.pory"
 	waitmovement 0
 # 518 "data/maps/RustboroCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 519 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_WallyReady
 # 520 "data/maps/RustboroCity/scripts.pory"
 	closemessage
 # 521 "data/maps/RustboroCity/scripts.pory"
-	hidenamebox
+	
 # 522 "data/maps/RustboroCity/scripts.pory"
 	applymovement LOCALID_RUSTBORO_WALLY, RustboroCity_Movement_WallyEnterGym
 # 523 "data/maps/RustboroCity/scripts.pory"
@@ -309,13 +309,13 @@ RustboroCity_EventScript_Wally2::
 # 533 "data/maps/RustboroCity/scripts.pory"
 	delay 24
 # 534 "data/maps/RustboroCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 535 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_WallyBattle
 # 536 "data/maps/RustboroCity/scripts.pory"
 	closemessage
 # 537 "data/maps/RustboroCity/scripts.pory"
-	hidenamebox
+	
 # 538 "data/maps/RustboroCity/scripts.pory"
 	delay 16
 # 539 "data/maps/RustboroCity/scripts.pory"
@@ -329,13 +329,13 @@ RustboroCity_EventScript_Wally2::
 # 543 "data/maps/RustboroCity/scripts.pory"
 	delay 30
 # 544 "data/maps/RustboroCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 545 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_WallySilence
 # 546 "data/maps/RustboroCity/scripts.pory"
 	closemessage
 # 547 "data/maps/RustboroCity/scripts.pory"
-	hidenamebox
+	
 # 548 "data/maps/RustboroCity/scripts.pory"
 	applymovement LOCALID_RUSTBORO_WALLY, RustboroCity_Movement_WallyOutGym
 # 549 "data/maps/RustboroCity/scripts.pory"
@@ -345,13 +345,13 @@ RustboroCity_EventScript_Wally2::
 # 551 "data/maps/RustboroCity/scripts.pory"
 	waitdooranim
 # 552 "data/maps/RustboroCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 553 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_WallySilence2
 # 554 "data/maps/RustboroCity/scripts.pory"
 	closemessage
 # 555 "data/maps/RustboroCity/scripts.pory"
-	hidenamebox
+	
 # 556 "data/maps/RustboroCity/scripts.pory"
 	applymovement LOCALID_RUSTBORO_WALLY, Common_Movement_FaceAwayPlayer
 # 557 "data/maps/RustboroCity/scripts.pory"
@@ -363,11 +363,11 @@ RustboroCity_EventScript_Wally2::
 # 560 "data/maps/RustboroCity/scripts.pory"
 	waitmovement 0
 # 561 "data/maps/RustboroCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 562 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_WallyExcited
 # 563 "data/maps/RustboroCity/scripts.pory"
-	hidenamebox
+	
 # 564 "data/maps/RustboroCity/scripts.pory"
 	closemessage
 # 565 "data/maps/RustboroCity/scripts.pory"

@@ -70,11 +70,9 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger::
 	call LittlerootTown_EventScript_SetHomeDoorCoordsFemale
 LittlerootTown_EventScript_GiveRunningShoesTrigger_1:
 # 103 "data/maps/LittlerootTown/scripts.pory"
-	namebox Mama
+	setspeaker Mama
 # 104 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_EventScript_GiveRunningShoesTrigger_Text_0
-# 105 "data/maps/LittlerootTown/scripts.pory"
-	hidenamebox
 # 106 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
 # 107 "data/maps/LittlerootTown/scripts.pory"
@@ -116,7 +114,7 @@ LittlerootTown_EventScript_FatMan::
 # 124 "data/maps/LittlerootTown/scripts.pory"
 	faceplayer
 # 125 "data/maps/LittlerootTown/scripts.pory"
-	namebox Carlos
+	setspeaker Carlos
 	setgetobjectflags VAR_LAST_TALKED, 2, TRUE, GET_EVENT_FLAG
 # 0 "data/maps/LittlerootTown/scripts.pory"
 	compare VAR_RESULT, 0
@@ -130,8 +128,6 @@ LittlerootTown_EventScript_FatMan::
 # 158 "data/maps/LittlerootTown/scripts.pory"
 	setgetobjectflags VAR_LAST_TALKED, 1, TRUE, SET_EVENT_FLAG
 LittlerootTown_EventScript_FatMan_1:
-# 160 "data/maps/LittlerootTown/scripts.pory"
-	hidenamebox
 # 161 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
 # 162 "data/maps/LittlerootTown/scripts.pory"
@@ -181,11 +177,9 @@ LittlerootTown_EventScript_Boy_2:
 
 LittlerootTown_EventScript_GiveRunningShoes::
 # 199 "data/maps/LittlerootTown/scripts.pory"
-	namebox Mama
+	setspeaker Mama
 # 200 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_EventScript_GiveRunningShoes_Text_0
-# 202 "data/maps/LittlerootTown/scripts.pory"
-	hidenamebox
 # 203 "data/maps/LittlerootTown/scripts.pory"
 	giveitem ITEM_MACH_BIKE, 1
 # 204 "data/maps/LittlerootTown/scripts.pory"
@@ -195,11 +189,9 @@ LittlerootTown_EventScript_GiveRunningShoes::
 # 206 "data/maps/LittlerootTown/scripts.pory"
 	waitfanfare
 # 207 "data/maps/LittlerootTown/scripts.pory"
-	namebox Mama
+	setspeaker Mama
 # 208 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_EventScript_GiveRunningShoes_Text_1
-# 229 "data/maps/LittlerootTown/scripts.pory"
-	hidenamebox
 # 230 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
 # 231 "data/maps/LittlerootTown/scripts.pory"
@@ -544,11 +536,11 @@ LittlerootTown_EventScript_GoInsideWithMom::
 # 416 "data/maps/LittlerootTown/scripts.pory"
 	waitmovement 0
 # 417 "data/maps/LittlerootTown/scripts.pory"
-	namebox Mama
+	setspeaker Mama
 # 418 "data/maps/LittlerootTown/scripts.pory"
 	call LittlerootTown_EventScript_OurNewHomeLetsGoInside
 # 419 "data/maps/LittlerootTown/scripts.pory"
-	hidenamebox
+	
 # 420 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
 # 421 "data/maps/LittlerootTown/scripts.pory"

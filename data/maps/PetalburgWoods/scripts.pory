@@ -1,6 +1,6 @@
 
 script PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText {
-	namebox (Aqua)
+	setspeaker (Aqua)
 	if (var(VAR_EVIL_TEAM_SIDE) < 3) {
 		poryswitch(LANGUAGE) {
 			ES{
@@ -13,13 +13,13 @@ script PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText {
 		return
 	}
 	msgbox(PetalburgWoods_Text_YouveGotSomeNerve)
-	hidenamebox
+	
 	return
 }
 
 script PetalburgWoods_EventScript_GetInvolved {
 	closemessage
-	hidenamebox
+	
 	poryswitch(LANGUAGE) {
 		ES{
 			msgbox(format("¿Quieres involucrarte?"), MSGBOX_YESNO)
@@ -28,7 +28,7 @@ script PetalburgWoods_EventScript_GetInvolved {
 			msgbox(format("Do you want to get involved?"), MSGBOX_YESNO)
 		}
 	}
-	namebox (Aqua)
+	setspeaker (Aqua)
 	if ((var(VAR_RESULT) == YES)) {
 		setvar (VAR_EVIL_TEAM_SIDE, 3)
 		msgbox (PetalburgWoods_Text_NoOneCrossesTeamAqua)
@@ -38,26 +38,26 @@ script PetalburgWoods_EventScript_GetInvolved {
 		poryswitch(LANGUAGE) {
 			ES{
 				msgbox(format("¡Jojojo!\p¡Parece que nadie va a ayudarte después de todo!"))
-				namebox (EmpleadoDevon)
+				setspeaker (EmpleadoDevon)
 				msgbox(format("¿¡PERO QÚE HACES!?\p¡ESTO ES IMPORTANTE!\p¡ATACA, ATACA, ATACA!"))
-				namebox (Player)
+				setspeaker (Player)
 				msgbox(format("{COLOR BLUE}(Parece que no me queda de otra, este loco no me dejará ignorarlo...)\p(Pero... Tampoco parece que el Recluta se olvidará de esto.){COLOR DARK_GRAY}"))
 			}
 			EN{
 				msgbox(format("Hohoho!\pLooks like nobody's saving you after all!"))
-				namebox (EmpleadoDevon)
+				setspeaker (EmpleadoDevon)
 				msgbox(format("WHAT ARE YOU DOING!?\pTHIS IS BIG!\pATTACK, ATTACK, ATTACK!"))
-				namebox (Player)
+				setspeaker (Player)
 				msgbox(format("{COLOR BLUE}(Seems like I don't have a choice, this crazy man won't let me ignore him...)\p(But... It seems that Grunt won't forget this anyway.){COLOR DARK_GRAY}"))
 			}
 		}
 		closemessage
-		hidenamebox
+		
 		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
 		waitmovement (0)
 		applymovement (3, Common_Movement_QuestionMark)
 		waitmovement (0)
-		namebox (Aqua)
+		setspeaker (Aqua)
 		poryswitch(LANGUAGE) {
 			ES{
 				msgbox(format("¡Pero decídete, niñ{OA}!\p¿Estás con nosotros o no?\p¡Quizá una golpiza te haga decidirte!"))
@@ -345,31 +345,31 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 	call PetalburgWoods_EventScript_DevonResearcherIntro
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherApproachPlayerLeft
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgWoods_Text_HaveYouSeenShroomish, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaEntrance
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaApproachResearcherLeft
 	waitmovement 0
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerLeft
 	waitmovement 0
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaApproachPlayer
 	waitmovement 0
 	call PetalburgWoods_EventScript_GetInvolved
@@ -393,17 +393,17 @@ PetalburgWoods_EventScript_DevonResearcherCenter::
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaEntrance
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaApproachResearcherCenter
 	waitmovement 0
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerCenter
 	waitmovement 0
 	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
@@ -433,17 +433,17 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaEntrance
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaApproachResearcherRight
 	waitmovement 0
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerRight
 	waitmovement 0
 	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
@@ -464,24 +464,24 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 PetalburgWoods_EventScript_DevonResearcherIntro::
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherLookAround
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgWoods_Text_NotAOneToBeFound, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	return
 
 PetalburgWoods_EventScript_DevonResearcherPostBattle::
 	call PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaRunAway
 	waitmovement 0
 	removeobject LOCALID_PETALBURG_WOODS_GRUNT
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 	msgbox PetalburgWoods_Text_ThatWasAwfullyClose, MSGBOX_DEFAULT
-	hidenamebox
+	
 	giveitem ITEM_GREAT_BALL
 	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_BagFull
 	goto PetalburgWoods_EventScript_DevonResearcherFinish
@@ -493,15 +493,15 @@ PetalburgWoods_EventScript_BagFull::
 	end
 
 PetalburgWoods_EventScript_DevonResearcherFinish::
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 	msgbox PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherStartExit
 	waitmovement 0
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 	msgbox PetalburgWoods_Text_ICantBeWastingTime, MSGBOX_DEFAULT
-	hidenamebox
+	
 	closemessage
 	return
 

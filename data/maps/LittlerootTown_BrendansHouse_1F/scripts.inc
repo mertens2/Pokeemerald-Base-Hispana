@@ -105,13 +105,13 @@ LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
 # 55 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	lockall
 # 56 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	namebox Mama
+	setspeaker Mama
 # 57 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 # 58 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	closemessage
 # 59 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	hidenamebox
+	
 # 60 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 # 61 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -185,7 +185,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor::
 # 95 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	waitmovement 0
 # 96 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	namebox Marta
+	setspeaker Marta
 # 97 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_RIVAL
 # 98 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

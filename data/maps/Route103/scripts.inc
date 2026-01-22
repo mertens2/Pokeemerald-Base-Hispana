@@ -8,13 +8,11 @@ Route103_EventScript_Rival::
 # 125 "data/maps/Route103/scripts.pory"
 	questmenu QUEST_MENU_COMPLETE_QUEST SIDE_QUEST_1
 # 126 "data/maps/Route103/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 129 "data/maps/Route103/scripts.pory"
 	msgbox Route103_EventScript_Rival_Text_0
 # 135 "data/maps/Route103/scripts.pory"
 	closemessage
-# 136 "data/maps/Route103/scripts.pory"
-	hidenamebox
 # 137 "data/maps/Route103/scripts.pory"
 	faceplayer
 # 138 "data/maps/Route103/scripts.pory"
@@ -34,7 +32,7 @@ Route103_EventScript_Rival_1:
 # 149 "data/maps/Route103/scripts.pory"
 	delay 48
 # 150 "data/maps/Route103/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 153 "data/maps/Route103/scripts.pory"
 	msgbox Route103_EventScript_Rival_Text_1
 # 159 "data/maps/Route103/scripts.pory"
@@ -51,18 +49,14 @@ Route103_EventScript_Rival_1:
 # 178 "data/maps/Route103/scripts.pory"
 	case 2, Route103_EventScript_Rival_16
 Route103_EventScript_Rival_5:
-# 183 "data/maps/Route103/scripts.pory"
-	hidenamebox
 # 184 "data/maps/Route103/scripts.pory"
 	closemessage
 # 185 "data/maps/Route103/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 188 "data/maps/Route103/scripts.pory"
 	msgbox Route103_EventScript_Rival_Text_2
 # 194 "data/maps/Route103/scripts.pory"
 	closemessage
-# 195 "data/maps/Route103/scripts.pory"
-	hidenamebox
 # 196 "data/maps/Route103/scripts.pory"
 	goto Route103_EventScript_RivalExit
 	end

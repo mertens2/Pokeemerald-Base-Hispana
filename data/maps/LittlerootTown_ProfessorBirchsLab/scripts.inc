@@ -8,11 +8,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister::
 # 6 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_BIRCH_LAB_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait
 # 9 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 10 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_Text_0
-# 17 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 18 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	release
 	end
@@ -24,13 +22,11 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 # 24 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	bufferleadmonspeciesname STR_VAR_1
 # 27 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 28 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent_Text_0
 # 30 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 31 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 32 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	message LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent_Text_1
 # 43 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -44,11 +40,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 # 52 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 53 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_0
-# 54 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 55 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	questmenu QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_1
 # 56 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -64,11 +58,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 # 61 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitfanfare
 # 62 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 63 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival_Text_2
-# 83 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 84 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 # 85 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -84,19 +76,15 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 # 92 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_SYS_EXP_SHARE
 # 95 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 96 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_0
-# 99 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 100 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex
 # 101 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 102 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_1
-# 123 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 124 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitem ITEM_EXP_SHARE
 # 125 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -114,11 +102,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 # 131 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	setflag FLAG_ENABLED_PC
 # 134 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 135 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex_Text_2
-# 142 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 143 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement LOCALID_RIVAL, LittlerootTown_ProfessorBirchsLab_Movement_RivalApproachPlayer
 # 144 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -128,7 +114,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 # 146 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitmovement 0
 # 147 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 148 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls
 # 149 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -153,16 +139,12 @@ LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls::
 	waitmovement 0
 # 163 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls_Text_0
-# 166 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 167 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitem ITEM_POKE_BALL, 10
 # 168 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 169 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_RivalGivePokeBalls_Text_1
-# 181 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 182 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	applymovement LOCALID_RIVAL, Common_Movement_FaceOriginalDirection
 # 183 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
@@ -194,11 +176,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait::
 # 212 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 213 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait_Text_0
-# 220 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	hidenamebox
 # 221 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	release
 	end

@@ -52,9 +52,9 @@ Route116_EventScript_DevonEmployee::
 	faceplayer
 	goto_if_set FLAG_MET_DEVON_EMPLOYEE, Route116_EventScript_TryGiveRepeatBallAgain
 	msgbox Route116_Text_ThankYouTokenOfAppreciation, MSGBOX_DEFAULT
-	namebox Stern
+	setspeaker Stern
 	msgbox Route116_Text_ThankYouTokenOfAppreciation2, MSGBOX_DEFAULT
-	hidenamebox
+	
 	goto Route116_EventScript_GiveRepeatBall
 	end
 
@@ -62,10 +62,10 @@ Route116_EventScript_GiveRepeatBall::
 	setflag FLAG_MET_DEVON_EMPLOYEE
 	giveitem ITEM_REPEAT_BALL
 	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_NoRoomForRepeatBall
-	namebox Stern
+	setspeaker Stern
 	msgbox Route116_Text_NewBallAvailableAtMart, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	call_if_eq VAR_FACING, DIR_NORTH, Route116_EventScript_DevonEmployeeExit
 	call_if_eq VAR_FACING, DIR_SOUTH, Route116_EventScript_DevonEmployeeExit
 	call_if_eq VAR_FACING, DIR_WEST, Route116_EventScript_DevonEmployeeExit

@@ -8,15 +8,13 @@ VerdanturfTown_WandasHouse_EventScript_Wally::
 # 5 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	faceplayer
 # 6 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 7 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	goto_if_set FLAG_WALLY_SPEECH, VerdanturfTown_WandasHouse_EventScript_Wally_2
 # 17 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	goto_if_set FLAG_BADGE03_GET, VerdanturfTown_WandasHouse_EventScript_Wally_5
 # 23 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_Wally_Text_3
-# 25 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 26 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
 # 27 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -55,7 +53,7 @@ VerdanturfTown_WandasHouse_EventScript_WallysUncle::
 # 34 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	faceplayer
 # 35 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox TioWally
+	setspeaker TioWally
 # 36 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, VerdanturfTown_WandasHouse_EventScript_WallysUncle_2
 # 43 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -64,8 +62,6 @@ VerdanturfTown_WandasHouse_EventScript_WallysUncle::
 	msgbox VerdanturfTown_WandasHouse_EventScript_WallysUncle_Text_2
 # 50 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
-# 51 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 52 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	release
 	end
@@ -87,13 +83,11 @@ VerdanturfTown_WandasHouse_EventScript_WallysUncle_5:
 
 VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend::
 # 58 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox Riley
+	setspeaker Riley
 # 59 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_0
 # 61 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
-# 62 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 63 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 # 64 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -109,13 +103,11 @@ VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend::
 # 69 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	waitmovement 0
 # 70 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox Riley
+	setspeaker Riley
 # 71 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_1
 # 72 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
-# 73 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 74 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	playse SE_CONTEST_HEART
 # 75 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -123,13 +115,11 @@ VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend::
 # 76 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	waitmovement 0
 # 77 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox Camilo
+	setspeaker Camilo
 # 78 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend_Text_2
 # 79 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
-# 80 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 81 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	release
 	end
@@ -141,13 +131,11 @@ VerdanturfTown_WandasHouse_EventScript_Wanda::
 # 87 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	faceplayer
 # 88 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox Wanda
+	setspeaker Wanda
 # 89 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_Wanda_2
 # 96 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	goto_if_set FLAG_DEFEATED_WALLY_MAUVILLE, VerdanturfTown_WandasHouse_EventScript_Wanda_5
-# 108 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 109 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
 # 110 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -157,8 +145,6 @@ VerdanturfTown_WandasHouse_EventScript_Wanda::
 VerdanturfTown_WandasHouse_EventScript_Wanda_2:
 # 90 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_Wanda_Text_0
-# 91 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 92 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
 # 93 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -168,8 +154,6 @@ VerdanturfTown_WandasHouse_EventScript_Wanda_2:
 VerdanturfTown_WandasHouse_EventScript_Wanda_5:
 # 97 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_Wanda_Text_1
-# 100 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 101 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
 # 102 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -189,7 +173,7 @@ VerdanturfTown_WandasHouse_EventScript_WallysAunt::
 # 116 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	faceplayer
 # 117 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox TiaWally
+	setspeaker TiaWally
 # 118 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, VerdanturfTown_WandasHouse_EventScript_WallysAunt_2
 # 123 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -199,8 +183,6 @@ VerdanturfTown_WandasHouse_EventScript_WallysAunt::
 # 134 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_WallysAunt_Text_3
 VerdanturfTown_WandasHouse_EventScript_WallysAunt_7:
-# 137 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 138 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
 # 139 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -233,7 +215,7 @@ VerdanturfTown_WandasHouse_EventScript_Camilo::
 # 145 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	faceplayer
 # 146 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox Camilo
+	setspeaker Camilo
 # 147 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	checkitem ITEM_TM45
 # 148 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -241,14 +223,12 @@ VerdanturfTown_WandasHouse_EventScript_Camilo::
 	goto_if_eq VerdanturfTown_WandasHouse_EventScript_Camilo_2
 # 159 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_Camilo_Text_1
-# 163 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 164 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	giveitem ITEM_TM45
 # 165 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	giveitem ITEM_TM48
 # 166 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	namebox Camilo
+	setspeaker Camilo
 # 167 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_Camilo_Text_2
 # 170 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -259,8 +239,6 @@ VerdanturfTown_WandasHouse_EventScript_Camilo::
 	applymovement VAR_LAST_TALKED, Common_Movement_Heart
 # 174 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	waitmovement 0
-# 175 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 176 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
 # 177 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
@@ -270,8 +248,6 @@ VerdanturfTown_WandasHouse_EventScript_Camilo::
 VerdanturfTown_WandasHouse_EventScript_Camilo_2:
 # 149 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	msgbox VerdanturfTown_WandasHouse_EventScript_Camilo_Text_0
-# 151 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
-	hidenamebox
 # 152 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"
 	closemessage
 # 153 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown_WandasHouse/scripts.pory"

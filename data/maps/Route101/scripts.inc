@@ -24,17 +24,13 @@ Route101_EventScript_DontLeaveMe::
 
 Route101_EventScript_YouSavedMe::
 # 53 "data/maps/Route101/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 54 "data/maps/Route101/scripts.pory"
 	msgbox Route101_EventScript_YouSavedMe_Text_0
-# 57 "data/maps/Route101/scripts.pory"
-	hidenamebox
 # 58 "data/maps/Route101/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 59 "data/maps/Route101/scripts.pory"
 	msgbox Route101_EventScript_YouSavedMe_Text_1
-# 60 "data/maps/Route101/scripts.pory"
-	hidenamebox
 	return
 
 
@@ -117,13 +113,13 @@ Route101_EventScript_StartBirchRescue::
 # 160 "data/maps/Route101/scripts.pory"
 	playbgm MUS_HELP, TRUE
 # 161 "data/maps/Route101/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 162 "data/maps/Route101/scripts.pory"
 	call Route101_EventScript_HelpMe
 # 163 "data/maps/Route101/scripts.pory"
 	closemessage
 # 164 "data/maps/Route101/scripts.pory"
-	hidenamebox
+	
 # 165 "data/maps/Route101/scripts.pory"
 	setobjectxy LOCALID_ROUTE101_BIRCH, 0, 16
 # 166 "data/maps/Route101/scripts.pory"
@@ -153,13 +149,13 @@ Route101_EventScript_StartBirchRescue::
 # 178 "data/maps/Route101/scripts.pory"
 	waitmovement 0
 # 179 "data/maps/Route101/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 180 "data/maps/Route101/scripts.pory"
 	call Route101_EventScript_PleaseHelp
 # 181 "data/maps/Route101/scripts.pory"
 	closemessage
 # 182 "data/maps/Route101/scripts.pory"
-	hidenamebox
+	
 # 183 "data/maps/Route101/scripts.pory"
 	setvar VAR_ROUTE101_STATE, 2
 # 184 "data/maps/Route101/scripts.pory"
@@ -173,11 +169,11 @@ Route101_EventScript_PreventExitSouth::
 # 188 "data/maps/Route101/scripts.pory"
 	lockall
 # 189 "data/maps/Route101/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 190 "data/maps/Route101/scripts.pory"
 	call Route101_EventScript_DontLeaveMe
 # 191 "data/maps/Route101/scripts.pory"
-	hidenamebox
+	
 # 192 "data/maps/Route101/scripts.pory"
 	closemessage
 # 193 "data/maps/Route101/scripts.pory"
@@ -195,13 +191,13 @@ Route101_EventScript_PreventExitWest::
 # 199 "data/maps/Route101/scripts.pory"
 	lockall
 # 200 "data/maps/Route101/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 201 "data/maps/Route101/scripts.pory"
 	call Route101_EventScript_DontLeaveMe
 # 202 "data/maps/Route101/scripts.pory"
 	closemessage
 # 203 "data/maps/Route101/scripts.pory"
-	hidenamebox
+	
 # 204 "data/maps/Route101/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitWest
 # 205 "data/maps/Route101/scripts.pory"
@@ -217,13 +213,13 @@ Route101_EventScript_PreventExitNorth::
 # 210 "data/maps/Route101/scripts.pory"
 	lockall
 # 211 "data/maps/Route101/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 212 "data/maps/Route101/scripts.pory"
 	call Route101_EventScript_DontLeaveMe
 # 213 "data/maps/Route101/scripts.pory"
 	closemessage
 # 214 "data/maps/Route101/scripts.pory"
-	hidenamebox
+	
 # 215 "data/maps/Route101/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitNorth
 # 216 "data/maps/Route101/scripts.pory"

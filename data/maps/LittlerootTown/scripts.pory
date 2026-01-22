@@ -100,9 +100,9 @@ script LittlerootTown_EventScript_GiveRunningShoesTrigger {
 		call (LittlerootTown_EventScript_MomNoticePlayerFemale)
 		call (LittlerootTown_EventScript_SetHomeDoorCoordsFemale)
 	}
-	namebox (Mama)
+	setspeaker (Mama)
 	msgbox (format("Ah, {PLAYER}."))
-	hidenamebox
+	
 	closemessage
 	checkplayergender
 	if (var(VAR_RESULT) == MALE) {
@@ -122,7 +122,7 @@ script LittlerootTown_EventScript_GiveRunningShoesTrigger {
 script LittlerootTown_EventScript_FatMan {
 	lockall
 	faceplayer
-	namebox (Carlos)
+	setspeaker (Carlos)
 	if (setgetobjectflags(VAR_LAST_TALKED, 2, TRUE, GET_EVENT_FLAG)) {
 		poryswitch(LANGUAGE){
 			ES{
@@ -157,7 +157,7 @@ script LittlerootTown_EventScript_FatMan {
 		}
 		setgetobjectflags(VAR_LAST_TALKED, 1, TRUE, SET_EVENT_FLAG)
 	}
-	hidenamebox
+	
 	closemessage
 	releaseall
 	applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
@@ -196,15 +196,15 @@ script LittlerootTown_EventScript_Boy {
 script LittlerootTown_EventScript_GiveRunningShoes {
 	poryswitch(LANGUAGE){
 		ES{
-			namebox (Mama)
+			setspeaker (Mama)
 			msgbox (format("¡Mi amor!\p¡Ah, el Profesor te dio un Pokémon!\p-sniff sniff- …{PAUSE 5} …{PAUSE 5} …{PAUSE 5}\nPerdón por llorar pero… {PAUSE 5}Estoy tan orgullosa de ti, mi pequeñit{OA}…\p"
 					"Pero bueno… {PAUSE 5}No puedo evitar que crezcas, así que… {PAUSE 5}Toma esto, mi amor."))
-			hidenamebox
+			
 			giveitem (ITEM_MACH_BIKE, 1)
 			setflag (FLAG_NOT_DOUBLE_BIKE)
 			playfanfare (MUS_OBTAIN_ITEM)
 			waitfanfare
-			namebox (Mama)
+			setspeaker (Mama)
 			msgbox (format("Es una Bici Dos-En-Uno, aunque creo que no funciona… ¡Quizá la puedan reparar en la Tienda de Bicis!\p"
 					"… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\n… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
 					"Ya tienes un Pokémon…\n Estoy tan, tan orgullosa de ti, mi pequeñ{OA}…\p"
@@ -212,13 +212,13 @@ script LittlerootTown_EventScript_GiveRunningShoes {
 					"Cuídate mucho, mi amor…\n Voy a extrañarte…"))
 		}
 		EN{
-			namebox (Mama)
+			setspeaker (Mama)
 			msgbox (format("My baby!\pI see the Professor gave you a Pokémon!\p-sniff sniff- …{PAUSE 5} …{PAUSE 5} …{PAUSE 5}\nSorry for crying, but… {PAUSE 5}I'm so proud of you, my baby…\p"
 					"But… {PAUSE 5}I can't avoid seeing you grow up, so… {PAUSE 5}I have a gift for you."))
-			hidenamebox
+			
 			giveitem (ITEM_MACH_BIKE, 1)
 			setflag (FLAG_NOT_DOUBLE_BIKE)
-			namebox (Mama)
+			setspeaker (Mama)
 			msgbox (format("It's a 2-in-1 Bike, but it seems it can't change modes anymore… Maybe the Bike Shop Owner can fix it!\p"
 					"… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\n… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}… {PAUSE 5}…\p"
 					"You have a Pokémon…\nOh, Mew, I'm so, so proud of you…\p"
@@ -226,7 +226,7 @@ script LittlerootTown_EventScript_GiveRunningShoes {
 					"Take care, my sweetie…\nI'll miss you…"))
 		}
 	}
-	hidenamebox
+	
 	closemessage
 	delay (30)
 	return
@@ -414,9 +414,9 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	delay 10
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerAtTruck
 	waitmovement 0
-	namebox Mama
+	setspeaker Mama
 	call LittlerootTown_EventScript_OurNewHomeLetsGoInside
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachDoor
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerApproachDoor

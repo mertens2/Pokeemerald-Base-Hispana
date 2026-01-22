@@ -23,13 +23,13 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 12 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	faceplayer
 # 13 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 14 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts, MSGBOX_DEFAULT
 # 15 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	closemessage
 # 16 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	hidenamebox
+	
 # 17 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	playse SE_BALL_TRADE
 # 18 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -63,23 +63,23 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 32 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_EAST, SlateportCity_OceanicMuseum_2F_EventScript_PlayerFaceGrunts
 # 33 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 34 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts, MSGBOX_DEFAULT
 # 35 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	call_if_ne VAR_FACING, DIR_EAST, SlateportCity_OceanicMuseum_2F_EventScript_SternFaceGrunts
 # 36 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 37 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou, MSGBOX_DEFAULT
 # 38 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 39 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua, MSGBOX_DEFAULT
 # 40 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	closemessage
 # 41 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	hidenamebox
+	
 # 42 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	applymovement LOCALID_GRUNT_2, SlateportCity_OceanicMuseum_2F_Movement_GruntApproachToBattle
 # 43 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -91,13 +91,13 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 46 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	trainerbattle_no_intro TRAINER_GRUNT_MUSEUM_1, SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat
 # 47 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 48 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious, MSGBOX_DEFAULT
 # 49 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	closemessage
 # 50 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	hidenamebox
+	
 # 51 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	applymovement LOCALID_GRUNT_2, SlateportCity_OceanicMuseum_2F_Movement_GruntDefeated
 # 52 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -107,7 +107,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 54 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	waitmovement 0
 # 55 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 56 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis, MSGBOX_DEFAULT
 # 57 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -123,11 +123,11 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 62 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	waitmovement 0
 # 63 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 64 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_MeddlingKid, MSGBOX_DEFAULT
 # 65 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	hidenamebox
+	
 # 66 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	closemessage
 # 67 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -141,11 +141,11 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 71 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	waitmovement 0
 # 72 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 73 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong, MSGBOX_DEFAULT
 # 74 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	hidenamebox
+	
 # 75 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	closemessage
 # 76 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -153,29 +153,29 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 77 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	waitmovement 0
 # 78 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 79 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
 # 80 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 81 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning2, MSGBOX_DEFAULT
 # 82 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	closemessage
 # 83 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	hidenamebox
+	
 # 84 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceAwayPlayer
 # 85 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	waitmovement 0
 # 86 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 87 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWereLeaving, MSGBOX_DEFAULT
 # 88 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	closemessage
 # 89 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	hidenamebox
+	
 # 90 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	savebgm MUS_DUMMY
 # 91 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_OceanicMuseum_2F/scripts.pory"

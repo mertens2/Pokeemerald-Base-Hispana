@@ -41,20 +41,20 @@ Route119_WeatherInstitute_2F_EventScript_Grunt3::
 
 Route119_WeatherInstitute_2F_EventScript_Shelly::
 	lockall
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_0
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_1, MSGBOX_INTERRUPT
-	hidenamebox
+	
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_A, Common_Movement_WalkInPlaceDown
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_2
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_B, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_3
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_4, MSGBOX_INTERRUPT
 	fadescreen FADE_TO_BLACK
 	delay 16
@@ -67,52 +67,52 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 	playse SE_PIN
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Common_Movement_ExclamationMark
 	waitmovement 0
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_5, MSGBOX_INTERRUPT
-	hidenamebox
+	
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_B, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_6
 	playse SE_PIN
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Common_Movement_ExclamationMark
 	waitmovement 0
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_7, MSGBOX_INTERRUPT
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_8
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_9
 	closemessage
-	hidenamebox
+	
 	fadescreen FADE_TO_BLACK
 	delay 16
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_10, MSGBOX_INTERRUPT
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_11
 	closemessage
-	hidenamebox
+	
 	playse SE_SUPER_EFFECTIVE
 	waitse
 	playse SE_FAINT
 	waitse
 	playse SE_FAINT
 	waitse
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_12, MSGBOX_INTERRUPT
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_13
 	closemessage
-	hidenamebox
+	
 	playse SE_SUPER_EFFECTIVE
 	waitse
 	playse SE_FAINT
 	waitse
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_14
 	closemessage
-	hidenamebox
+	
 	playse SE_SUPER_EFFECTIVE
 	waitse
 	playse SE_FAINT
@@ -125,17 +125,17 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 	delay 16
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Common_Movement_ExclamationMark
 	waitmovement 0
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_15
 	delay 16
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_16
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_17
 	fadescreen FADE_TO_BLACK
 	delay 16
 	closemessage
-	hidenamebox
+	
 	setobjectxy LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_A, 19, 0
 	setobjectxy LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_B, 19, 0
 	setobjectxy LOCALID_WEATHER_INSTITUTE_2F_GRUNT_1, 5, 6
@@ -146,42 +146,42 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_Movement_PlayerOutOfTheWay
 	waitmovement 0
 	fadescreen FADE_FROM_BLACK
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_18
-	hidenamebox
+	
 	closemessage
-	namebox Aqua
+	setspeaker Aqua
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_19
-	hidenamebox
+	
 	closemessage
-	namebox Aqua
+	setspeaker Aqua
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_20
-	hidenamebox
+	
 	closemessage
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_21
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_22
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_GRUNT_2, Route119_WeatherInstitute_2F_Movement_GruntsOutTheWay
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_GRUNT_1, Route119_WeatherInstitute_2F_Movement_GruntsOutTheWay
 	waitmovement 0
-	namebox Aqua
+	setspeaker Aqua
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_23
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Route119_WeatherInstitute_2F_Movement_ShellyAttacks
 	waitmovement 0
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_24
-	namebox Aqua
+	setspeaker Aqua
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_25
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_GRUNT_2, Route119_WeatherInstitute_2F_Movement_GruntsHack
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_GRUNT_1, Route119_WeatherInstitute_2F_Movement_GruntsHack
@@ -194,24 +194,24 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_2
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_1
-	hidenamebox
+	
 	closemessage
 Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_1:
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_GRUNT_2, Route119_WeatherInstitute_2F_Movement_GruntsBack
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_GRUNT_1, Route119_WeatherInstitute_2F_Movement_GruntsBack
 	waitmovement 0
-	namebox Aqua
+	setspeaker Aqua
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_2
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_3
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_4
-	hidenamebox
+	
 	closemessage
 	setvar VAR_WEATHER_INSTITUTE_STATE, 1
 	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
@@ -238,9 +238,9 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_1:
 	return
 
 Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_2:
-	namebox Shelly
+	setspeaker Shelly
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_0
-	hidenamebox
+	
 	closemessage
 	goto Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_1
 

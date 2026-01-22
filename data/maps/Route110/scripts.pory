@@ -405,7 +405,7 @@ Route110_EventScript_RivalScene::
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_RivalApproachPlayer2
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_RivalApproachPlayer3
 	checkplayergender
-	namebox Rival
+	setspeaker Rival
 	goto_if_eq VAR_RESULT, MALE, Route110_EventScript_MayBattle
 	goto_if_eq VAR_RESULT, FEMALE, Route110_EventScript_BrendanBattle
 	releaseall
@@ -421,7 +421,7 @@ Route110_EventScript_PlayBrendanMusic::
 
 Route110_EventScript_MayBattle::
 	msgbox Route110_Text_RivalLetsBattle, MSGBOX_DEFAULT
-	hidenamebox
+	
 	closemessage
 	switch VAR_STARTER_MON
 	case 0, Route110_EventScript_MayBattleTreecko
@@ -445,10 +445,10 @@ Route110_EventScript_MayBattleMudkip::
 	end
 
 Route110_EventScript_RivalDefeated::
-	namebox Rival
+	setspeaker Rival
 	msgbox Route110_Text_RivalTakeThis, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	msgbox Route110_Text_RivalProcess, MSGBOX_DEFAULT
 	closemessage
 	setcaughtmon SPECIES_GULPIN
@@ -462,13 +462,13 @@ Route110_EventScript_RivalDefeated::
 	setcaughtmon SPECIES_MAGIKARP
 	setcaughtmon SPECIES_GYARADOS
 	call Route110_EventScript_GiveItemfinder
-	namebox Rival
+	setspeaker Rival
 	msgbox Route110_Text_RivalExplainItemfinder, MSGBOX_DEFAULT
 	goto Route110_EventScript_RivalExit
 	end
 
 Route110_EventScript_BrendanBattle::
-	namebox Rival
+	setspeaker Rival
 	msgbox Route110_Text_RivalLetsBattle, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
 	case 0, Route110_EventScript_BrendanBattleTreecko
@@ -497,7 +497,7 @@ Route110_EventScript_GiveItemfinder::
 
 Route110_EventScript_RivalExit::
 	closemessage
-	hidenamebox
+	
 	call Route110_SwapRivalSprite
 	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_RIGHT
 	delay 45
@@ -622,10 +622,10 @@ Route110_EventScript_BirchScene::
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_BirchApproachPlayer2
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_BirchApproachPlayer3
 	call_if_eq VAR_0x8008, 4, Route110_EventScript_BirchApproachPlayer4
-	namebox Birch
+	setspeaker Birch
 	msgbox Route110_Text_ImagineSeeingYouHere, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	delay 20
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
@@ -636,10 +636,10 @@ Route110_EventScript_BirchScene::
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	delay 30
-	namebox Birch
+	setspeaker Birch
 	msgbox Route110_Text_HeardYouInstallMatchCall, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
 	msgbox Route110_Text_RegisteredBirchInPokenav, MSGBOX_DEFAULT
@@ -647,15 +647,15 @@ Route110_EventScript_BirchScene::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_PROF_BIRCH_MATCH_CALL
-	namebox Birch
+	setspeaker Birch
 	msgbox Route110_Text_KeepAnEyeOutForRival, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	giveitem ITEM_POKEBLOCK_CASE
-	namebox Birch
+	setspeaker Birch
 	msgbox Route110_Text_KeepAnEyeOutForRival2, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	call_if_eq VAR_0x8008, 1, Route110_EventScript_BirchExit1
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_BirchExit1
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_BirchExit1
@@ -666,7 +666,7 @@ Route110_EventScript_BirchScene::
 	call Common_EventScript_SetupRivalGfxId
 	addobject LOCALID_RIVAL_2
 	delay 16
-	namebox Unknown
+	setspeaker Unknown
 	msgbox Route110_Text_RivalWait, MSGBOX_DEFAULT
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
@@ -674,16 +674,16 @@ Route110_EventScript_BirchScene::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	closemessage
-	hidenamebox
+	
 	fadeoutbgm 0
 	call_if_eq VAR_0x8008, 1, Route110_EventScript_RivalComeSeeFather1
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_RivalComeSeeFather1
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_RivalComeSeeFather3
 	call_if_eq VAR_0x8008, 4, Route110_EventScript_RivalComeSeeFather1
-	namebox Rival
+	setspeaker Rival
 	msgbox Route110_Text_RivalButIm, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	delay 24
 	call Route110_EventScript_RivalUp
 	delay 16
@@ -694,24 +694,24 @@ Route110_EventScript_BirchScene::
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_PlayerFaceRivalL
 	call_if_eq VAR_0x8008, 4, Route110_EventScript_PlayerFaceRivalL
 	delay 16
-	namebox Rival
+	setspeaker Rival
 	msgbox Route110_Text_RivalExplains, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_RIVAL_2, Common_Movement_FaceAwayPlayer
 	waitmovement 0
 	delay 25
-	namebox Rival
+	setspeaker Rival
 	msgbox Route110_Text_RivalThreeDots, MSGBOX_DEFAULT
-	hidenamebox
+	
 	closemessage
 	delay 25
 	applymovement LOCALID_RIVAL_2, Common_Movement_FacePlayer
 	waitmovement 0
-	namebox Rival
+	setspeaker Rival
 	msgbox Route110_Text_RivalGoodbye, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_RIVAL_2, Common_Movement_WalkUp6
 	waitmovement 0
 	applymovement LOCALID_RIVAL_2, Common_Movement_WalkUp6

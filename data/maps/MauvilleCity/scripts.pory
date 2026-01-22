@@ -8,14 +8,14 @@ script MauvilleCity_EventScript_Wally {
 	}
 	applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
-	namebox(Wally)
+	setspeaker(Wally)
 	msgbox(MauvilleCity_Text_WallyWantToChallengeGym, MSGBOX_DEFAULT)
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_UncleYourePushingIt, MSGBOX_DEFAULT)
-	namebox(Wally)
+	setspeaker(Wally)
 	msgbox(MauvilleCity_Text_WallyWeCanBeatAnyone, MSGBOX_DEFAULT)
 	closemessage
-	hidenamebox
+	
 	applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer)
 	waitmovement(0)
 	playse (SE_PIN)
@@ -23,7 +23,7 @@ script MauvilleCity_EventScript_Wally {
 	waitmovement(0)
 	applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_Delay48)
 	waitmovement(0)
-	namebox(Wally)
+	setspeaker(Wally)
 	msgbox(MauvilleCity_Text_WallyWillYouBattleMe, MSGBOX_YESNO)
 	goto(MauvilleCity_EventScript_BattleWallyPrompt)
 	end
@@ -38,7 +38,7 @@ script MauvilleCity_EventScript_BattleWallyPrompt {
 		goto (MauvilleCity_EventScript_DeclineWallyBattle)
 	}
 	closemessage
-	hidenamebox
+	
 	switch (var(VAR_FACING)) {
 		case DIR_NORTH:
 			goto (MauvilleCity_EventScript_WallyAndUncleExitNorth)
@@ -56,13 +56,13 @@ script MauvilleCity_EventScript_WallyAndUncleExitNorth {
 	applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
 	delay(30)
-	namebox(Wally)
+	setspeaker(Wally)
 	msgbox(MauvilleCity_Text_WallyNoNeedTo, MSGBOX_DEFAULT)
 	closemessage
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_WallysUncleItsOkay, MSGBOX_DEFAULT)
 	closemessage
-	hidenamebox
+	
 	applymovement(LOCALID_MAUVILLE_WALLY, MauvilleCity_Movement_WallyExitNorth2)
 	waitmovement(0)
 	delay(36)
@@ -86,13 +86,13 @@ script MauvilleCity_EventScript_WallyAndUncleExitEast {
 	applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
 	delay(30)
-	namebox(Wally)
+	setspeaker(Wally)
 	msgbox(MauvilleCity_Text_WallyNoNeedTo, MSGBOX_DEFAULT)
 	closemessage
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_WallysUncleItsOkay, MSGBOX_DEFAULT)
 	closemessage
-	hidenamebox
+	
 	applymovement(LOCALID_MAUVILLE_WALLY, MauvilleCity_Movement_WallyExitEast2)
 	waitmovement(0)
 	delay(36)
@@ -109,10 +109,10 @@ script MauvilleCity_EventScript_WallyAndUncleExitEast {
 
 
 script MauvilleCity_EventScript_StartScottScene {
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT)
 	closemessage
-	hidenamebox
+	
 	switch (var(VAR_FACING)) {
 		case DIR_NORTH:
 			call (MauvilleCity_EventScript_ScottApproachPlayerNorth)
@@ -122,26 +122,26 @@ script MauvilleCity_EventScript_StartScottScene {
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown)
 	applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
-	namebox(Scott)
+	setspeaker(Scott)
 	msgbox(MauvilleCity_Text_ScottAParentShould, MSGBOX_DEFAULT)
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_AndWhoAreYou, MSGBOX_DEFAULT)
-	namebox(Scott)
+	setspeaker(Scott)
 	msgbox(MauvilleCity_Text_ImScott, MSGBOX_DEFAULT)
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_AndWhyDoICare, MSGBOX_DEFAULT)
-	namebox(Scott)
+	setspeaker(Scott)
 	msgbox(MauvilleCity_Text_ScottDefendsWally, MSGBOX_DEFAULT)
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_YouDontUnderstand, MSGBOX_DEFAULT)
 	applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_WalkInPlaceUp)
 	waitmovement(0)
 	applymovement(LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_Although, MSGBOX_DEFAULT)
 	closemessage
-	hidenamebox
+	
 	addvar (VAR_SCOTT_STATE, 1)
 	return
 }
@@ -154,14 +154,14 @@ script MauvilleCity_EventScript_DefeatedWally {
 	setflag (FLAG_DEFEATED_WALLY_MAUVILLE)
 	setvar (VAR_WALLY_CALL_STEP_COUNTER, 0)
 	setflag (FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL)
-	namebox(Scott)
+	setspeaker(Scott)
 	msgbox(MauvilleCity_Text_ScottBadFamily)
 	applymovement(LOCALID_MAUVILLE_SCOTT, Common_Movement_WalkInPlaceUp)
 	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
 	msgbox(MauvilleCity_Text_ScottYoureTheRealDeal)
 	closemessage
-	hidenamebox
+	
 	switch (var(VAR_FACING)) {
 		case DIR_NORTH:
 			call (MauvilleCity_EventScript_ScottExitNorth)
@@ -207,23 +207,23 @@ script MauvilleCity_EventScript_BattleWally {
 	trainerbattle_no_intro (TRAINER_WALLY_MAUVILLE, MauvilleCity_Text_WallyDefeat)
 	applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
-	namebox(Wally)
+	setspeaker(Wally)
 	msgbox(MauvilleCity_Text_WallyIllGoBackToVerdanturf, MSGBOX_DEFAULT)
 	applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer)
 	waitmovement(0)
 	msgbox(MauvilleCity_Text_ThankYouNotEnoughToBattle, MSGBOX_DEFAULT)
 	applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
-	namebox(TioWally)
+	setspeaker(TioWally)
 	msgbox(MauvilleCity_Text_UncleNoNeedToBeDown, MSGBOX_DEFAULT)
 	return
 }
 
 script MauvilleCity_EventScript_DeclineWallyBattle {
 	setflag (FLAG_DECLINED_WALLY_BATTLE_MAUVILLE)
-	namebox(Wally)
+	setspeaker(Wally)
 	msgbox(MauvilleCity_Text_WallyMyUncleWontKnowImStrong, MSGBOX_DEFAULT)
-	hidenamebox
+	
 	closemessage
 	release
 	end
@@ -425,20 +425,20 @@ MauvilleCity_EventScript_WallysUncle::
 	lock
 	faceplayer
 	goto_if_set FLAG_DECLINED_WALLY_BATTLE_MAUVILLE, MauvilleCity_EventScript_UncleAskPlayerToBattleWally
-	namebox TioWally
+	setspeaker TioWally
 	msgbox MauvilleCity_Text_UncleHesTooPeppy, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
 
 MauvilleCity_EventScript_UncleAskPlayerToBattleWally::
-	namebox TioWally
+	setspeaker TioWally
 	msgbox MauvilleCity_Text_UncleCanYouBattleWally, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release

@@ -65,11 +65,11 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 # 44 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 45 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 46 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_0, MSGBOX_INTERRUPT
 # 47 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 48 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_1
 # 49 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -85,17 +85,17 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 # 54 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 55 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 56 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_2
 # 57 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 58 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_3, MSGBOX_INTERRUPT
 # 59 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_4
 # 60 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 61 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_5
 # 62 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -103,7 +103,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 # 63 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 64 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 65 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_6
 # 66 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -119,29 +119,27 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 # 71 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	addobject 11
 # 72 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 73 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_7
 # 74 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	applymovement 11, SlateportCity_Harbor_Movement_DeltaEnter
 # 75 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 76 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_8
 # 77 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Delta
+	setspeaker Delta
 # 78 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_9, MSGBOX_INTERRUPT
 # 79 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 80 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 81 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_10
 # 82 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 83 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 84 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	compare VAR_0x8008, 1
 	goto_if_eq SlateportCity_Harbor_EventScript_AquaEscapeScene_2
@@ -155,7 +153,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 91 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	playmoncry SPECIES_SHARPEDO, CRY_MODE_NORMAL
 # 92 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 93 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_11
 # 94 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -163,7 +161,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 95 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	delay 16
 # 96 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 97 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_12
 # 98 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -178,8 +176,6 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 	waitse
 # 103 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 104 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 105 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	removeobject 12
 # 106 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -209,7 +205,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 118 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 119 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 120 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_13
 # 121 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -221,17 +217,15 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 124 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 125 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 126 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_15
 # 127 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 128 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_16
 # 129 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 130 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 131 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	applymovement 9, SlateportCity_Harbor_Movement_WinonaDown
 # 132 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -241,13 +235,11 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 134 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 135 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 136 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_17
 # 137 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 138 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 139 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	applymovement 9, SlateportCity_Harbor_Movement_JumpDown
 # 140 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -261,17 +253,15 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 144 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	fadescreenspeed FADE_FROM_WHITE, 1
 # 145 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 146 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_18
 # 147 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 148 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_19, MSGBOX_INTERRUPT
 # 149 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 150 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 151 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	setvar VAR_0x8004, 2
 # 152 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -283,13 +273,11 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 155 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	special ShakeCamera
 # 156 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 157 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_20
 # 158 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 159 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 160 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	playse SE_PIN
 # 161 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -301,25 +289,23 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 164 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 165 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 166 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_21
 # 167 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	applymovement 9, SlateportCity_Harbor_Movement_WinonaLeave
 # 168 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 169 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_22
 # 170 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 171 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_23
 # 172 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 173 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 174 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 175 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 176 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -353,13 +339,11 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 190 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 191 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 192 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_24
 # 193 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 194 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 195 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 196 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -385,27 +369,25 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 206 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	delay 16
 # 207 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 208 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_25
 # 209 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Player
+	setspeaker Player
 # 210 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_26
 # 211 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 212 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_27, MSGBOX_INTERRUPT
 # 213 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_28
 # 215 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Player
+	setspeaker Player
 # 216 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_29
 # 217 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	special RemoveCameraObject
-# 218 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 219 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	closemessage
 # 220 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -861,11 +843,11 @@ SlateportCity_Harbor_EventScript_CaptStern::
 # 421 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 SlateportCity_Harbor_EventScript_WhyStealSubmarine::
 # 422 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 423 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_Text_TeamAquaLeftNeedDive, MSGBOX_DEFAULT
 # 424 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
+	
 # 425 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	release
 # 426 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
@@ -875,11 +857,11 @@ SlateportCity_Harbor_EventScript_WhyStealSubmarine::
 # 428 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 SlateportCity_Harbor_EventScript_TeamAquaLeftNeedDive::
 # 429 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 430 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_Text_TeamAquaLeftNeedDive, MSGBOX_DEFAULT
 # 431 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
+	
 # 432 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"
 	release
 # 433 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity_Harbor/scripts.pory"

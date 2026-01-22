@@ -50,24 +50,24 @@ script Route101_EventScript_DontLeaveMe {
 script Route101_EventScript_YouSavedMe {
 	poryswitch(LANGUAGE){
 		ES{
-			namebox (Unknown)
+			setspeaker (Unknown)
 			msgbox (format("¡UFF! {SHAKE_SCREEN 2 3 2 1}¡MUCHÍSIMAS GRACIAS!\p"
 					"Eso estuvo cerca…\nEstaba estudiando los Pokémon de esta ruta, y me atacó un Zigzagoon…\p"
 					"¡Por cierto, yo soy el {COLOR BLUE}Profesor Birch{COLOR DARK_GRAY}!"))
-			hidenamebox
-			namebox (Birch)
+			
+			setspeaker (Birch)
 			msgbox (format("¡Encantado!\nTe invito a mi Laboratorio para charlar más."))
-			hidenamebox
+			
 		}
 		EN{
-			namebox (Unknown)
+			setspeaker (Unknown)
 			msgbox (format("PUFF! {SHAKE_SCREEN 2 3 2 1}THANK YOU SO MUCH!\p"
 					"That was close…\nI was studying the Pokémon here, and then that Zigzagoon…\p"
 					"Anyway, I'm {COLOR BLUE}Professor Birch{COLOR DARK_GRAY}!"))
-			hidenamebox
-			namebox (Birch)
+			
+			setspeaker (Birch)
 			msgbox (format("Glad to meet you!\nLet's go to my Lab to talk more."))
-			hidenamebox
+			
 		}
 	}
 	return
@@ -158,10 +158,10 @@ Route101_EventScript_HideMapNamePopup::
 Route101_EventScript_StartBirchRescue::
 	lockall
 	playbgm MUS_HELP, TRUE
-	namebox Unknown
+	setspeaker Unknown
 	call Route101_EventScript_HelpMe
 	closemessage
-	hidenamebox
+	
 	setobjectxy LOCALID_ROUTE101_BIRCH, 0, 16
 	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 0, 17
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_EnterScene
@@ -176,19 +176,19 @@ Route101_EventScript_StartBirchRescue::
 	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonFaceBirch
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchFaceZigzagoon
 	waitmovement 0
-	namebox Unknown
+	setspeaker Unknown
 	call Route101_EventScript_PleaseHelp
 	closemessage
-	hidenamebox
+	
 	setvar VAR_ROUTE101_STATE, 2
 	releaseall
 	end
 
 Route101_EventScript_PreventExitSouth::
 	lockall
-	namebox Unknown
+	setspeaker Unknown
 	call Route101_EventScript_DontLeaveMe
-	hidenamebox
+	
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitSouth
 	waitmovement 0
@@ -197,10 +197,10 @@ Route101_EventScript_PreventExitSouth::
 
 Route101_EventScript_PreventExitWest::
 	lockall
-	namebox Unknown
+	setspeaker Unknown
 	call Route101_EventScript_DontLeaveMe
 	closemessage
-	hidenamebox
+	
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitWest
 	waitmovement 0
 	releaseall
@@ -208,10 +208,10 @@ Route101_EventScript_PreventExitWest::
 
 Route101_EventScript_PreventExitNorth::
 	lockall
-	namebox Unknown
+	setspeaker Unknown
 	call Route101_EventScript_DontLeaveMe
 	closemessage
-	hidenamebox
+	
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitNorth
 	waitmovement 0
 	releaseall

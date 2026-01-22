@@ -239,7 +239,7 @@ Route111_EventScript_Wally::
 # 122 "data/maps/Route111/scripts.pory"
 	waitmovement 0
 # 123 "data/maps/Route111/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 124 "data/maps/Route111/scripts.pory"
 	msgbox Route111_EventScript_Wally_Text_0
 # 125 "data/maps/Route111/scripts.pory"
@@ -259,7 +259,7 @@ Route111_EventScript_Wally_1:
 # 132 "data/maps/Route111/scripts.pory"
 	closemessage
 # 133 "data/maps/Route111/scripts.pory"
-	hidenamebox
+	
 # 134 "data/maps/Route111/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 135 "data/maps/Route111/scripts.pory"
@@ -269,13 +269,13 @@ Route111_EventScript_Wally_1:
 # 137 "data/maps/Route111/scripts.pory"
 	faceplayer
 # 138 "data/maps/Route111/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 139 "data/maps/Route111/scripts.pory"
 	msgbox Route111_EventScript_Wally_Text_2
 # 140 "data/maps/Route111/scripts.pory"
 	closemessage
 # 141 "data/maps/Route111/scripts.pory"
-	hidenamebox
+	
 # 142 "data/maps/Route111/scripts.pory"
 	applymovement LOCALID_ROUTE111_WALLY, Route111_Movement_Wally1
 # 143 "data/maps/Route111/scripts.pory"
@@ -287,7 +287,7 @@ Route111_EventScript_Wally_1:
 # 146 "data/maps/Route111/scripts.pory"
 	closemessage
 # 147 "data/maps/Route111/scripts.pory"
-	hidenamebox
+	
 # 148 "data/maps/Route111/scripts.pory"
 	playse SE_NOT_EFFECTIVE
 # 149 "data/maps/Route111/scripts.pory"

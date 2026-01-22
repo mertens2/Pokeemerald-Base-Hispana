@@ -11,11 +11,11 @@ RustboroCity_Gym_MapScripts::
 # 305 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_EventScript_Roxanne::
 # 306 "data/maps/RustboroCity_Gym/scripts.pory"
-	namebox Roxanne
+	setspeaker Roxanne
 # 307 "data/maps/RustboroCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 # 308 "data/maps/RustboroCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 309 "data/maps/RustboroCity_Gym/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 310 "data/maps/RustboroCity_Gym/scripts.pory"
@@ -25,11 +25,11 @@ RustboroCity_Gym_EventScript_Roxanne::
 # 312 "data/maps/RustboroCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, RustboroCity_Gym_EventScript_GiveRockTomb
 # 313 "data/maps/RustboroCity_Gym/scripts.pory"
-	namebox Roxanne
+	setspeaker Roxanne
 # 314 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
 # 315 "data/maps/RustboroCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 316 "data/maps/RustboroCity_Gym/scripts.pory"
 	release
 # 317 "data/maps/RustboroCity_Gym/scripts.pory"

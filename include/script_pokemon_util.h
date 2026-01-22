@@ -12,5 +12,7 @@ void Script_GetChosenMonOffensiveEVs(void);
 void Script_GetChosenMonDefensiveEVs(void);
 void Script_GetChosenMonOffensiveIVs(void);
 void Script_GetChosenMonDefensiveIVs(void);
+u32 ScriptGiveMonFull(u16 species, u8 level, u16 item, u16 ball, u8 nature, u8 abilityNum, u8 *ivs, u16 *moves);
+u32 ScriptGiveMonCustomMoves(u16 species, u8 level, u16 item, u16 *moves);
 
 #endif // GUARD_SCRIPT_POKEMON_UTIL_H

@@ -476,10 +476,10 @@ RustboroCity_EventScript_MatchCallTutorial::
 RustboroCity_EventScript_Wally::
 	lock
 	faceplayer
-	namebox Wally
+	setspeaker Wally
 	msgbox RustboroCity_Text_WallyPokeCenter
 	closemessage
-	hidenamebox
+	
 	specialvar VAR_0x8004, GetPlayerFacingDirection
 	call_if_eq VAR_0x8004, DIR_SOUTH, RustboroCity_EventScript_MovePlayerOutTheWay
 	applymovement LOCALID_RUSTBORO_WALLY, RustboroCity_Movement_WallyEnterCenter
@@ -493,10 +493,10 @@ RustboroCity_EventScript_Wally::
 	waitmovement 0
 	closedoor 16, 45
 	waitdooranim
-	namebox Wally
+	setspeaker Wally
 	msgbox RustboroCity_Text_WallyPrepared
 	closemessage
-	hidenamebox
+	
 	specialvar VAR_0x8004, GetPlayerFacingDirection
 	call_if_eq VAR_0x8004, DIR_WEST, RustboroCity_EventScript_MovePlayerEast
 	call_if_eq VAR_0x8004, DIR_EAST, RustboroCity_EventScript_MovePlayerWest
@@ -515,10 +515,10 @@ RustboroCity_EventScript_MovePlayerEast2::
 RustboroCity_EventScript_Wally2::
 	applymovement LOCALID_RUSTBORO_WALLY, Common_Movement_FacePlayer
 	waitmovement 0
-	namebox Wally
+	setspeaker Wally
 	msgbox RustboroCity_Text_WallyReady
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_RUSTBORO_WALLY, RustboroCity_Movement_WallyEnterGym
 	waitmovement 0
 	opendoor 27, 19
@@ -531,36 +531,36 @@ RustboroCity_EventScript_Wally2::
 	delay 16
 	fadescreenswapbuffers FADE_TO_BLACK
 	delay 24
-	namebox Wally
+	setspeaker Wally
 	msgbox RustboroCity_Text_WallyBattle
 	closemessage
-	hidenamebox
+	
 	delay 16
 	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 16
 	opendoor 27, 19
 	waitdooranim
 	delay 30
-	namebox Wally
+	setspeaker Wally
 	msgbox RustboroCity_Text_WallySilence
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_RUSTBORO_WALLY, RustboroCity_Movement_WallyOutGym
 	waitmovement 0
 	closedoor 27, 19
 	waitdooranim
-	namebox Wally
+	setspeaker Wally
 	msgbox RustboroCity_Text_WallySilence2
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_RUSTBORO_WALLY, Common_Movement_FaceAwayPlayer
 	waitmovement 0
 	delay 40
 	applymovement LOCALID_RUSTBORO_WALLY, Common_Movement_FacePlayer
 	waitmovement 0
-	namebox Wally
+	setspeaker Wally
 	msgbox RustboroCity_Text_WallyExcited
-	hidenamebox
+	
 	closemessage
 	setvar VAR_ROUTE111_STATE, 3
 	fadescreenswapbuffers FADE_TO_BLACK

@@ -4,7 +4,7 @@ script MLMHouse_EventScript_FatMan {
 	questmenu (QUEST_MENU_CHECK_UNLOCKED SIDE_QUEST_3)
     lockall
 	faceplayer
-	namebox (Alex)
+	setspeaker (Alex)
 	// if (var(VAR_RESULT) == TRUE){
 		// if (var(VAR_MISTERIO) >= 3) { 
 			// questmenu (QUEST_MENU_CHECK_COMPLETE SIDE_QUEST_3)
@@ -45,14 +45,14 @@ script MLMHouse_EventScript_FatMan {
 		// }
 		
 		
-	hidenamebox
+	
     releaseall
 }
 
 script MLMHouse_EventScript_Daughter {
     lockall
 	faceplayer
-	namebox (Esmeralda)
+	setspeaker (Esmeralda)
 	poryswitch(LANGUAGE) {
 		ES {
 			msgbox(format("¡Hola! ¡Encantada!\p¿Ya has conocido a los Chimecho de mis papás? ¡Los han tenido desde que eran Chingling!\pMe pregunto… ¿Porqué ambos tienen uno?\lQuizás… ¡Fue una declaración de amor!\l¿O quizás de lealtad?\p¡AH, ME INTRIGA LA RESPUESTA!"))
@@ -61,7 +61,7 @@ script MLMHouse_EventScript_Daughter {
 			msgbox(format("¡Hola! ¡Encantada!\pHave you met my dads' Chimecho? They've had them since they were kids!\pI wonder… Why do both have one?\lMaybe… It was a love confession!\lOr maybe a loyalty promise?\pAH, I'M SO INTRIGUED!"))
 		}
 	}
-    hidenamebox
+    
 	releaseall
 }
 

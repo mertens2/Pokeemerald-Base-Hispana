@@ -129,13 +129,13 @@ RivalsHouse_2F_EventScript_Rival::
 # 65 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 RivalsHouse_2F_EventScript_May::
 # 66 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 67 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	msgbox RivalsHouse_2F_Text_MayGettingReady, MSGBOX_DEFAULT
 # 68 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	closemessage
 # 69 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	hidenamebox
+	hidesetspeaker
 # 70 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	releaseall
 # 71 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
@@ -145,13 +145,13 @@ RivalsHouse_2F_EventScript_May::
 # 73 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 RivalsHouse_2F_EventScript_Brendan::
 # 74 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 75 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	msgbox RivalsHouse_2F_Text_BrendanGettingReady, MSGBOX_DEFAULT
 # 76 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	closemessage
 # 77 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	hidenamebox
+	hidesetspeaker
 # 78 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	releaseall
 # 79 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"

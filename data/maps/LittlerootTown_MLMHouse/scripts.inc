@@ -10,11 +10,9 @@ MLMHouse_EventScript_FatMan::
 # 6 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	faceplayer
 # 7 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
-	namebox Alex
+	setspeaker Alex
 # 38 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	msgbox MLMHouse_EventScript_FatMan_Text_0
-# 48 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
-	hidenamebox
 # 49 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	releaseall
 	return
@@ -26,11 +24,9 @@ MLMHouse_EventScript_Daughter::
 # 54 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	faceplayer
 # 55 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
-	namebox Esmeralda
+	setspeaker Esmeralda
 # 58 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	msgbox MLMHouse_EventScript_Daughter_Text_0
-# 64 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
-	hidenamebox
 # 65 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	releaseall
 	return

@@ -834,7 +834,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 	waitmovement 0
 	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceRight
 	waitmovement 0
-	namebox Norman
+	setspeaker Norman
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_0
 	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceUp
 	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_FaceUp
@@ -854,7 +854,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_5
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
@@ -863,7 +863,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 	delay 24
 	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceLeft
 	waitmovement 0
-	namebox Norman
+	setspeaker Norman
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_6
 	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceUp
 	waitmovement 0
@@ -872,7 +872,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 	waitmovement 0
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_8
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement LOCALID_SPECIAL_PLAYER, Common_Movement_FaceLeft
@@ -888,7 +888,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 	delay 16
 	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceRight
 	waitmovement 0
-	namebox Norman
+	setspeaker Norman
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_9
 	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceLeft
 	waitmovement 0
@@ -897,12 +897,12 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 	waitmovement 0
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_11
 	closemessage
-	hidenamebox
+	
 	removeobject LOCALID_SPECIAL_NORMAN
 	addobject LOCALID_NORMAN
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_12
 	closemessage
-	hidenamebox
+	
 	removeobject LOCALID_SPECIAL_PLAYER
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_SetVisible
 	waitmovement 0
@@ -1011,12 +1011,12 @@ PetalburgCity_Gym_Movement_SeriousTalk_NormanAnimation2Left:
 
 PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	lockall
-	namebox Norman
+	setspeaker Norman
 	msgbox PetalburgCity_Gym_Text_DadSoDidItWorkOut, MSGBOX_DEFAULT
-	namebox Wally
+	setspeaker Wally
 	msgbox PetalburgCity_Gym_Text_WallyThankYouBye, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	applymovement LOCALID_WALLY, PetalburgCity_Gym_Movement_WallyExitGym
 	waitmovement 0
@@ -1026,10 +1026,10 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	namebox Norman
+	setspeaker Norman
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	releaseall
 	end
@@ -1044,7 +1044,7 @@ PetalburgCity_Gym_Movement_WallyExitGym:
 PetalburgCity_Gym_EventScript_Norman::
 	lock
 	faceplayer
-	namebox Norman
+	setspeaker Norman
 	switch VAR_PETALBURG_GYM_STATE
 	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
 	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge
@@ -1055,7 +1055,7 @@ PetalburgCity_Gym_EventScript_Norman::
 	case 8, PetalburgCity_Gym_EventScript_NormanRematch
 	msgbox PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	switch VAR_FACING
 	case DIR_SOUTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth
 	case DIR_NORTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialNorth
@@ -1090,28 +1090,28 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_WallyArriveNorth
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_WallyArriveWestEast
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_WallyArriveWestEast
-	namebox Unknown
+	setspeaker Unknown
 	msgbox PetalburgCity_Gym_Text_WallyIdLikeAPokemon, MSGBOX_DEFAULT
-	namebox Norman
+	setspeaker Norman
 	msgbox PetalburgCity_Gym_Text_DadOhYoureWallyRight, MSGBOX_DEFAULT
-	namebox Wally
+	setspeaker Wally
 	msgbox PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon, MSGBOX_DEFAULT
-	namebox Norman
+	setspeaker Norman
 	msgbox PetalburgCity_Gym_Text_DadHmISee, MSGBOX_DEFAULT
-	hidenamebox
+	
 	closemessage
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_NormanAddressPlayerSouth
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_NormanAddressPlayerNorth
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_NormanAddressPlayerWest
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_NormanAddressPlayerEast
-	namebox Norman
+	setspeaker Norman
 	msgbox PetalburgCity_Gym_Text_DadPlayerGoWithWally, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_NormanAddressWallySouth
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_NormanAddressWallyNorth
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_NormanAddressWallyWest
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_NormanAddressWallyEast
 	msgbox PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon, MSGBOX_DEFAULT
-	namebox Wally
+	setspeaker Wally
 	msgbox PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall, MSGBOX_DEFAULT
 	msgbox PetalburgCity_Gym_Text_WallyOhWowThankYou, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_NormanFaceDoorSouth
@@ -1124,7 +1124,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_WallyFacePlayer
 	msgbox PetalburgCity_Gym_Text_WouldYouReallyComeWithMe, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	setflag FLAG_DONT_TRANSITION_MUSIC
 	playbgm MUS_FOLLOW_ME, FALSE
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_ExitGymWithWallySouth
@@ -1246,28 +1246,28 @@ PetalburgCity_Gym_EventScript_WallyFaceDown::
 PetalburgCity_Gym_EventScript_NormanNoBadges::
 	msgbox PetalburgCity_Gym_Text_NormanGoToRustboro, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	release
 	end
 
 PetalburgCity_Gym_EventScript_NormanOneBadge::
 	msgbox PetalburgCity_Gym_Text_NormanGoToDewford, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	release
 	end
 
 PetalburgCity_Gym_EventScript_NormanTwoBadges::
 	msgbox PetalburgCity_Gym_Text_YouHaveGottenStronger, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	release
 	end
 
 PetalburgCity_Gym_EventScript_NormanThreeBadges::
 	msgbox PetalburgCity_Gym_Text_YouHaveGottenStronger2, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	release
 	end
 

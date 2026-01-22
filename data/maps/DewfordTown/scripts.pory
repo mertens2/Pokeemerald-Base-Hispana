@@ -343,20 +343,20 @@ DewfordTown_EventScript_Wally::
 	lock
 	faceplayer
 	setflag FLAG_TEMP_1
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_EventScript_WallyHello, MSGBOX_DEFAULT
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 	waitmovement 0
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_EventScript_WallyBeginSpeech, MSGBOX_DEFAULT
 	setflag FLAG_SPAWN_INVISIBLE
 	setflag FLAG_REMOVE_WARP_FADE_OUT
 	setvar VAR_PETALBURG_CITY_STATE, 6
 	specialvar VAR_0x8004, GetPlayerFacingDirection
     warp MAP_PETALBURG_CITY, 15, 16
-	hidenamebox
+	
 	closemessage
 	end
 
@@ -373,24 +373,24 @@ DewfordTown_OnFrameWally::
 	delay 16
 	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 8
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyContinueSpeech, MSGBOX_DEFAULT
 	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox DewfordTown_Text_WallyContinueSpeech2
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 	waitmovement 0
 	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceUp
 	waitmovement 0
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyDetermined
 	applymovement LOCALID_DEWFORD_WALLY, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox DewfordTown_Text_WallyLetsGo
 	closemessage
-	hidenamebox
+	
 	call_if_eq VAR_0x8004, DIR_WEST, DewfordTown_WallyGoToGymWest
 	applymovement LOCALID_DEWFORD_WALLY, DewfordTown_Movement_WallyGoToGym
 	waitmovement 0
@@ -402,19 +402,19 @@ DewfordTown_OnFrameWally::
 	waitmovement 0
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyGym1
 	playmoncry SPECIES_MEDITITE, CRY_MODE_NORMAL
 	waitmoncry
 	closemessage
-	hidenamebox
+	
 	delay 8
 	playse SE_NOT_EFFECTIVE
 	waitse
 	delay 12
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyGym2
-	hidenamebox
+	
 	closemessage
 	playse SE_M_SUPERSONIC
 	waitse
@@ -425,32 +425,32 @@ DewfordTown_OnFrameWally::
 	delay 8
 	playse SE_FAINT
 	waitse
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyGym3
-	hidenamebox
+	
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
 	delay 50
 	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 10
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyGymBattle
-	hidenamebox
+	
 	closemessage
 	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
 	waitmoncry
 	delay 8
 	playse SE_M_DETECT
 	waitse
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyGymBattle2
-	hidenamebox
+	
 	closemessage
 	playmoncry SPECIES_MAKUHITA, CRY_MODE_NORMAL
 	waitmoncry
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyGymBattle3
-	hidenamebox
+	
 	closemessage
 	delay 10
 	playse SE_M_REFLECT
@@ -470,9 +470,9 @@ DewfordTown_OnFrameWally::
 	playfanfare MUS_EVOLVED
 	waitfanfare
 	delay 10
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyGymBattle4
-	hidenamebox
+	
 	closemessage
 	playmoncry SPECIES_KIRLIA, CRY_MODE_NORMAL
 	waitmoncry
@@ -491,10 +491,10 @@ DewfordTown_OnFrameWally::
 	waitmovement 0
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	namebox Wally
+	setspeaker Wally
 	msgbox DewfordTown_Text_WallyAfter
 	closemessage
-	hidenamebox
+	
 	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_HIDE_WALLY_DEWFORD_TOWN
 	clearflag FLAG_HIDE_WALLY_RUSTBORO
@@ -598,9 +598,9 @@ DewfordTown_EventScript_Trigger::
 	setflag FLAG_DEWFORD_GRUNT
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_PlayerApproach2
 	waitmovement 0
-	namebox Player
+	setspeaker Player
 	msgbox DewfordTown_EventScript_Trigger_Text_0
-	hidenamebox
+	
 	setvar VAR_DEWFORD_TOWN_STATE, 1
 	releaseall
 	return

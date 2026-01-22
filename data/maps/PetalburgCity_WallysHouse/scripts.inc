@@ -45,19 +45,19 @@ PetalburgCity_WallysHouse_EventScript_GiveHM03Surf::
 # 23 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	lockall
 # 24 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox PapaWally
+	setspeaker PapaWally
 # 25 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_PleaseExcuseUs, MSGBOX_DEFAULT
 # 26 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 27 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	giveitem ITEM_HM03
 # 28 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox PapaWally
+	setspeaker PapaWally
 # 29 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
 # 30 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 31 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	setvar VAR_PETALBURG_CITY_STATE, 5
 # 32 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -83,11 +83,11 @@ PetalburgCity_WallysHouse_EventScript_WallysDad::
 # 42 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	goto_if_set FLAG_THANKED_FOR_PLAYING_WITH_WALLY, PetalburgCity_WallysHouse_EventScript_PlayedWithWally
 # 43 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox PapaWally
+	setspeaker PapaWally
 # 44 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_ThanksForPlayingWithWally, MSGBOX_DEFAULT
 # 45 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 46 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	setflag FLAG_THANKED_FOR_PLAYING_WITH_WALLY
 # 47 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -99,11 +99,11 @@ PetalburgCity_WallysHouse_EventScript_WallysDad::
 # 50 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewford::
 # 51 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox PapaWally
+	setspeaker PapaWally
 # 52 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_WallyCantGoDewford, MSGBOX_DEFAULT
 # 53 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 54 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	release
 # 55 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -113,11 +113,11 @@ PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewford::
 # 57 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 PetalburgCity_WallysHouse_EventScript_ReceievedHM03Surf::
 # 58 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox PapaWally
+	setspeaker PapaWally
 # 59 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon, MSGBOX_DEFAULT
 # 60 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 61 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	release
 # 62 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -127,11 +127,11 @@ PetalburgCity_WallysHouse_EventScript_ReceievedHM03Surf::
 # 64 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 PetalburgCity_WallysHouse_EventScript_DefeatedWallyInVictoryRoad::
 # 65 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox PapaWally
+	setspeaker PapaWally
 # 66 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity, MSGBOX_DEFAULT
 # 67 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 68 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	release
 # 69 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -141,11 +141,11 @@ PetalburgCity_WallysHouse_EventScript_DefeatedWallyInVictoryRoad::
 # 71 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 PetalburgCity_WallysHouse_EventScript_PlayedWithWally::
 # 72 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox PapaWally
+	setspeaker PapaWally
 # 73 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_WonderHowWallyIsDoing, MSGBOX_DEFAULT
 # 74 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 75 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	release
 # 76 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -165,11 +165,11 @@ PetalburgCity_WallysHouse_EventScript_WallysMom::
 # 83 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_WallysHouse_EventScript_ReceivedHM03Surf
 # 84 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox MamaWally
+	setspeaker MamaWally
 # 85 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_WallyWasReallyHappy, MSGBOX_DEFAULT
 # 86 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 87 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	release
 # 88 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -179,11 +179,11 @@ PetalburgCity_WallysHouse_EventScript_WallysMom::
 # 90 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewfordMom::
 # 91 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox MamaWally
+	setspeaker MamaWally
 # 92 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_WallyCanDoAnything, MSGBOX_DEFAULT
 # 93 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 94 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	release
 # 95 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
@@ -193,11 +193,11 @@ PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewfordMom::
 # 97 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 PetalburgCity_WallysHouse_EventScript_ReceivedHM03Surf::
 # 98 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	namebox MamaWally
+	setspeaker MamaWally
 # 99 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	msgbox PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling, MSGBOX_DEFAULT
 # 100 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
-	hidenamebox
+	
 # 101 "data/maps/PetalburgCity_WallysHouse/scripts.pory"
 	release
 # 102 "data/maps/PetalburgCity_WallysHouse/scripts.pory"

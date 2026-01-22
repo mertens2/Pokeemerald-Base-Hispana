@@ -65,11 +65,11 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 # 36 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 37 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 38 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_0, MSGBOX_INTERRUPT
 # 39 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 40 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_1
 # 41 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -85,17 +85,17 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 # 46 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 47 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 48 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_2
 # 49 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 50 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_3, MSGBOX_INTERRUPT
 # 51 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_4
 # 52 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 53 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_5
 # 54 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -103,7 +103,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 # 55 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 56 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 57 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_6
 # 58 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -119,29 +119,27 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 # 63 "data/maps/SlateportCity_Harbor/scripts.pory"
 	addobject LOCALID_HARBOR_DELTA
 # 64 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 65 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_7
 # 66 "data/maps/SlateportCity_Harbor/scripts.pory"
 	applymovement LOCALID_HARBOR_DELTA, SlateportCity_Harbor_Movement_DeltaEnter
 # 67 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 68 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_8
 # 69 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Delta
+	setspeaker Delta
 # 70 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_9, MSGBOX_INTERRUPT
 # 71 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 72 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 73 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_10
 # 74 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 75 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 76 "data/maps/SlateportCity_Harbor/scripts.pory"
 	compare VAR_0x8008, 1
 	goto_if_eq SlateportCity_Harbor_EventScript_AquaEscapeScene_2
@@ -155,7 +153,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 83 "data/maps/SlateportCity_Harbor/scripts.pory"
 	playmoncry SPECIES_SHARPEDO, CRY_MODE_NORMAL
 # 84 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 85 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_11
 # 86 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -163,7 +161,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 87 "data/maps/SlateportCity_Harbor/scripts.pory"
 	delay 16
 # 88 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 89 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_12
 # 90 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -178,8 +176,6 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 	waitse
 # 95 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 96 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 97 "data/maps/SlateportCity_Harbor/scripts.pory"
 	removeobject LOCALID_HARBOR_SHARPEDO
 # 98 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -209,7 +205,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 110 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 111 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 112 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_13
 # 113 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -221,17 +217,15 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 116 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 117 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 118 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_15
 # 119 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 120 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_16
 # 121 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 122 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 123 "data/maps/SlateportCity_Harbor/scripts.pory"
 	applymovement LOCALID_HARBOR_WINONA, SlateportCity_Harbor_Movement_WinonaDown
 # 124 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -241,13 +235,11 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 126 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 127 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 128 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_17
 # 129 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 130 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 131 "data/maps/SlateportCity_Harbor/scripts.pory"
 	applymovement LOCALID_HARBOR_WINONA, SlateportCity_Harbor_Movement_JumpDown
 # 132 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -261,17 +253,15 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 136 "data/maps/SlateportCity_Harbor/scripts.pory"
 	fadescreenspeed FADE_FROM_WHITE, 1
 # 137 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 138 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_18
 # 139 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 140 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_19, MSGBOX_INTERRUPT
 # 141 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 142 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 143 "data/maps/SlateportCity_Harbor/scripts.pory"
 	setvar VAR_0x8004, 2
 # 144 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -283,13 +273,11 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 147 "data/maps/SlateportCity_Harbor/scripts.pory"
 	special ShakeCamera
 # 148 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 149 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_20
 # 150 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 151 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 152 "data/maps/SlateportCity_Harbor/scripts.pory"
 	playse SE_PIN
 # 153 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -301,25 +289,23 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 156 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 157 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Winona
+	setspeaker Winona
 # 158 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_21
 # 159 "data/maps/SlateportCity_Harbor/scripts.pory"
 	applymovement LOCALID_HARBOR_WINONA, SlateportCity_Harbor_Movement_WinonaLeave
 # 160 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 161 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_22
 # 162 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 163 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_23
 # 164 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 165 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 166 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 167 "data/maps/SlateportCity_Harbor/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 168 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -353,13 +339,11 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 182 "data/maps/SlateportCity_Harbor/scripts.pory"
 	waitmovement 0
 # 183 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 184 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_24
 # 185 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
-# 186 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 187 "data/maps/SlateportCity_Harbor/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 188 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -385,27 +369,25 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene_1:
 # 198 "data/maps/SlateportCity_Harbor/scripts.pory"
 	delay 16
 # 199 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 200 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_25
 # 201 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Player
+	setspeaker Player
 # 202 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_26
 # 203 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 204 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_27, MSGBOX_INTERRUPT
 # 205 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_28
 # 207 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Player
+	setspeaker Player
 # 208 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_EventScript_AquaEscapeScene_Text_29
 # 209 "data/maps/SlateportCity_Harbor/scripts.pory"
 	special RemoveCameraObject
-# 210 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
 # 211 "data/maps/SlateportCity_Harbor/scripts.pory"
 	closemessage
 # 212 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -861,11 +843,11 @@ SlateportCity_Harbor_EventScript_CaptStern::
 # 413 "data/maps/SlateportCity_Harbor/scripts.pory"
 SlateportCity_Harbor_EventScript_WhyStealSubmarine::
 # 414 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 415 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_Text_TeamAquaLeftNeedDive, MSGBOX_DEFAULT
 # 416 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
+	
 # 417 "data/maps/SlateportCity_Harbor/scripts.pory"
 	release
 # 418 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -875,11 +857,11 @@ SlateportCity_Harbor_EventScript_WhyStealSubmarine::
 # 420 "data/maps/SlateportCity_Harbor/scripts.pory"
 SlateportCity_Harbor_EventScript_TeamAquaLeftNeedDive::
 # 421 "data/maps/SlateportCity_Harbor/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 422 "data/maps/SlateportCity_Harbor/scripts.pory"
 	msgbox SlateportCity_Harbor_Text_TeamAquaLeftNeedDive, MSGBOX_DEFAULT
 # 423 "data/maps/SlateportCity_Harbor/scripts.pory"
-	hidenamebox
+	
 # 424 "data/maps/SlateportCity_Harbor/scripts.pory"
 	release
 # 425 "data/maps/SlateportCity_Harbor/scripts.pory"

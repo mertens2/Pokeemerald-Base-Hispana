@@ -303,16 +303,16 @@ RustboroCity_Gym_MapScripts::
 	.byte 0
 
 RustboroCity_Gym_EventScript_Roxanne::
-	namebox Roxanne
+	setspeaker Roxanne
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
-	hidenamebox
+	
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
 	checkitem ITEM_TM39
 	goto_if_eq VAR_RESULT, FALSE, RustboroCity_Gym_EventScript_GiveRockTomb
-	namebox Roxanne
+	setspeaker Roxanne
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 RustboroCity_Gym_Trigger_Nada::

@@ -85,21 +85,21 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 43 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	lockall
 # 44 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 45 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_0
 # 46 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 47 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_1, MSGBOX_INTERRUPT
 # 48 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 49 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_A, Common_Movement_WalkInPlaceDown
 # 50 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 51 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 52 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_2
 # 53 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -107,11 +107,11 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 54 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 55 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 56 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_3
 # 57 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 58 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_4, MSGBOX_INTERRUPT
 # 59 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -137,17 +137,17 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 69 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 70 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 71 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_5, MSGBOX_INTERRUPT
 # 72 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 73 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	applymovement LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_B, Common_Movement_WalkInPlaceUp
 # 74 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 75 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 76 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_6
 # 77 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -157,37 +157,37 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 79 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 80 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 81 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_7, MSGBOX_INTERRUPT
 # 82 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 83 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_8
 # 84 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 85 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_9
 # 86 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 87 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 88 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 89 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	delay 16
 # 90 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 91 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_10, MSGBOX_INTERRUPT
 # 92 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 93 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_11
 # 94 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 95 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 96 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	playse SE_SUPER_EFFECTIVE
 # 97 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -201,17 +201,17 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 101 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitse
 # 102 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 103 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_12, MSGBOX_INTERRUPT
 # 104 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 105 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_13
 # 106 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 107 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 108 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	playse SE_SUPER_EFFECTIVE
 # 109 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -221,13 +221,13 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 111 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitse
 # 112 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 113 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_14
 # 114 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 115 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 116 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	playse SE_SUPER_EFFECTIVE
 # 117 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -253,17 +253,17 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 127 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 128 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 129 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_15
 # 130 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	delay 16
 # 131 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 132 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_16
 # 133 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 134 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_17
 # 135 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -273,7 +273,7 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 137 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 138 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 139 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	setobjectxy LOCALID_WEATHER_INSTITUTE_2F_DELTA_DIVISION_GRUNT_A, 19, 0
 # 140 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -295,35 +295,35 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 148 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 149 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 150 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_18
 # 151 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 152 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 153 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 154 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_19
 # 155 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 156 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 157 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 158 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_20
 # 159 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 160 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 161 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 162 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_21
 # 163 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 164 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 165 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -331,11 +331,11 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 166 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 167 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 168 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_22
 # 169 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 170 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 171 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -345,11 +345,11 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 173 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 174 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 175 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_23
 # 176 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 177 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 178 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -357,15 +357,15 @@ Route119_WeatherInstitute_2F_EventScript_Shelly::
 # 179 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 180 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 181 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_24
 # 182 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 183 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_Shelly_Text_25
 # 184 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 185 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 186 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -391,11 +391,11 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
 # 196 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_2
 # 197 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 198 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_1
 # 199 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 200 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 201 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -407,7 +407,7 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_1:
 # 204 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 205 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 206 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_2
 # 207 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -415,7 +415,7 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_1:
 # 208 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitmovement 0
 # 209 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 210 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_3
 # 211 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -425,7 +425,7 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_1:
 # 213 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_4
 # 214 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 215 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 216 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -479,11 +479,11 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_1:
 # 240 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_2:
 # 241 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	namebox Shelly
+	setspeaker Shelly
 # 242 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_EventScript_ShellyDefeated_Text_0
 # 243 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	hidenamebox
+	
 # 244 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	closemessage
 # 245 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"

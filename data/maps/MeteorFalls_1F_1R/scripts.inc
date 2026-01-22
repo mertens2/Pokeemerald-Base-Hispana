@@ -2,27 +2,23 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 # 9 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	lockall
 # 11 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 12 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_AndThatsWhy
-# 13 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 14 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
 # 15 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 16 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_Understood
 # 17 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Player
+	setspeaker Player
 # 18 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_FamiliarVoice
-# 19 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 20 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
 # 21 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Magma
+	setspeaker Magma
 # 22 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_WithThisMeteorite
 # 23 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -35,8 +31,6 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	waitmovement 0
 # 28 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
-# 29 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 30 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, MeteorFalls_1F_1R_Movement_PlayerRescue
 # 31 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -48,19 +42,17 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 # 34 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	waitmovement 0
 # 35 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_Text_0
+	setspeaker MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_Text_0
 # 36 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_ThisIsAllIHave
 # 37 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
-# 38 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 39 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_PlayerWhatDoIDo
 # 45 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	dynmultichoice 25, 8, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_Text_1, MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_Text_2
 # 48 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Player
+	setspeaker Player
 # 49 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_2
@@ -69,8 +61,6 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_1:
 # 57 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
-# 58 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 59 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	applymovement 5, Common_Movement_WalkInPlaceFasterUp
 # 60 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -88,7 +78,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_1:
 # 66 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	waitmovement 0
 # 67 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Magma
+	setspeaker Magma
 # 68 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma, MSGBOX_DEFAULT
 # 69 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -102,7 +92,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_1:
 	goto_if_eq MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_6
 MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_5:
 # 79 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 80 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_HoldItRightThereMagma
 # 81 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -112,11 +102,9 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_5:
 # 83 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	waitmovement 0
 # 84 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Magma
+	setspeaker Magma
 # 85 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_MagmaConfusion
-# 86 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 87 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	goto_if_set FLAG_MET_PROF_COZMO, MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_9
 # 92 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -129,11 +117,9 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_8:
 	goto_if_eq MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_13
 MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_12:
 # 100 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 101 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_GotCarriedAway
-# 102 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 103 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
 # 104 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -163,13 +149,11 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_12:
 # 116 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	waitmovement 0
 # 117 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Magma
+	setspeaker Magma
 # 118 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua, MSGBOX_DEFAULT
 # 119 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
-# 120 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 121 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay
 # 122 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -187,7 +171,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_12:
 # 128 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	waitmovement 0
 # 129 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Archie
+	setspeaker Archie
 # 130 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	goto_if_set FLAG_MET_PROF_COZMO, MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_22
 MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_20:
@@ -199,8 +183,6 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_18:
 MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_15:
 # 139 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
-# 140 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	hidenamebox
 # 141 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	applymovement 8, MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie
 # 142 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -260,7 +242,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene_6:
 # 74 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_3, MeteorFalls_1F_1R_Text_WhatIsThisChild
 # 75 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	namebox Magma
+	setspeaker Magma
 # 76 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	msgbox MeteorFalls_1F_1R_Text_WhatIsThisYOU
 # 77 "data/maps/MeteorFalls_1F_1R/scripts.pory"

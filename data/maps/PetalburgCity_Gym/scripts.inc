@@ -229,7 +229,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 # 836 "data/maps/PetalburgCity_Gym/scripts.pory"
 	waitmovement 0
 # 837 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 838 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_0
 # 839 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -269,7 +269,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 # 856 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_5
 # 857 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 858 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 859 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -287,7 +287,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 # 865 "data/maps/PetalburgCity_Gym/scripts.pory"
 	waitmovement 0
 # 866 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 867 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_6
 # 868 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -305,7 +305,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 # 874 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 875 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 876 "data/maps/PetalburgCity_Gym/scripts.pory"
 	applymovement LOCALID_SPECIAL_NORMAN, Common_Movement_FaceUp
 # 877 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -337,7 +337,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 # 890 "data/maps/PetalburgCity_Gym/scripts.pory"
 	waitmovement 0
 # 891 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 892 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_EventScript_SeriousTalk_Text_9
 # 893 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -355,7 +355,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 # 899 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 900 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 901 "data/maps/PetalburgCity_Gym/scripts.pory"
 	removeobject LOCALID_SPECIAL_NORMAN
 # 902 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -365,7 +365,7 @@ PetalburgCity_Gym_EventScript_SeriousTalk::
 # 904 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 905 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 906 "data/maps/PetalburgCity_Gym/scripts.pory"
 	removeobject LOCALID_SPECIAL_PLAYER
 # 907 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -583,17 +583,17 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 # 1013 "data/maps/PetalburgCity_Gym/scripts.pory"
 	lockall
 # 1014 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 1015 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_DadSoDidItWorkOut, MSGBOX_DEFAULT
 # 1016 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 1017 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_WallyThankYouBye, MSGBOX_DEFAULT
 # 1018 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1019 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1020 "data/maps/PetalburgCity_Gym/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 # 1021 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -613,13 +613,13 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 # 1028 "data/maps/PetalburgCity_Gym/scripts.pory"
 	waitmovement 0
 # 1029 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 1030 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
 # 1031 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1032 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1033 "data/maps/PetalburgCity_Gym/scripts.pory"
 	setvar VAR_PETALBURG_GYM_STATE, 2
 # 1034 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -649,7 +649,7 @@ PetalburgCity_Gym_EventScript_Norman::
 # 1046 "data/maps/PetalburgCity_Gym/scripts.pory"
 	faceplayer
 # 1047 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 1048 "data/maps/PetalburgCity_Gym/scripts.pory"
 	switch VAR_PETALBURG_GYM_STATE
 # 1049 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -671,7 +671,7 @@ PetalburgCity_Gym_EventScript_Norman::
 # 1057 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1058 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1059 "data/maps/PetalburgCity_Gym/scripts.pory"
 	switch VAR_FACING
 # 1060 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -741,23 +741,23 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 # 1092 "data/maps/PetalburgCity_Gym/scripts.pory"
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_WallyArriveWestEast
 # 1093 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 1094 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_WallyIdLikeAPokemon, MSGBOX_DEFAULT
 # 1095 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 1096 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_DadOhYoureWallyRight, MSGBOX_DEFAULT
 # 1097 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 1098 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon, MSGBOX_DEFAULT
 # 1099 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 1100 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_DadHmISee, MSGBOX_DEFAULT
 # 1101 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1102 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1103 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -769,7 +769,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 # 1106 "data/maps/PetalburgCity_Gym/scripts.pory"
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_NormanAddressPlayerEast
 # 1107 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Norman
+	setspeaker Norman
 # 1108 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_DadPlayerGoWithWally, MSGBOX_DEFAULT
 # 1109 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -783,7 +783,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 # 1113 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon, MSGBOX_DEFAULT
 # 1114 "data/maps/PetalburgCity_Gym/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 1115 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall, MSGBOX_DEFAULT
 # 1116 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -809,7 +809,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 # 1126 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1127 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1128 "data/maps/PetalburgCity_Gym/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
 # 1129 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -1053,7 +1053,7 @@ PetalburgCity_Gym_EventScript_NormanNoBadges::
 # 1248 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1249 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1250 "data/maps/PetalburgCity_Gym/scripts.pory"
 	release
 # 1251 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -1067,7 +1067,7 @@ PetalburgCity_Gym_EventScript_NormanOneBadge::
 # 1255 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1256 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1257 "data/maps/PetalburgCity_Gym/scripts.pory"
 	release
 # 1258 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -1081,7 +1081,7 @@ PetalburgCity_Gym_EventScript_NormanTwoBadges::
 # 1262 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1263 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1264 "data/maps/PetalburgCity_Gym/scripts.pory"
 	release
 # 1265 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -1095,7 +1095,7 @@ PetalburgCity_Gym_EventScript_NormanThreeBadges::
 # 1269 "data/maps/PetalburgCity_Gym/scripts.pory"
 	closemessage
 # 1270 "data/maps/PetalburgCity_Gym/scripts.pory"
-	hidenamebox
+	
 # 1271 "data/maps/PetalburgCity_Gym/scripts.pory"
 	release
 # 1272 "data/maps/PetalburgCity_Gym/scripts.pory"

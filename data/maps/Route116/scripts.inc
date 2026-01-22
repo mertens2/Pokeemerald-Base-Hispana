@@ -107,11 +107,11 @@ Route116_EventScript_DevonEmployee::
 # 54 "data/maps/Route116/scripts.pory"
 	msgbox Route116_Text_ThankYouTokenOfAppreciation, MSGBOX_DEFAULT
 # 55 "data/maps/Route116/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 56 "data/maps/Route116/scripts.pory"
 	msgbox Route116_Text_ThankYouTokenOfAppreciation2, MSGBOX_DEFAULT
 # 57 "data/maps/Route116/scripts.pory"
-	hidenamebox
+	
 # 58 "data/maps/Route116/scripts.pory"
 	goto Route116_EventScript_GiveRepeatBall
 # 59 "data/maps/Route116/scripts.pory"
@@ -127,13 +127,13 @@ Route116_EventScript_GiveRepeatBall::
 # 64 "data/maps/Route116/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_NoRoomForRepeatBall
 # 65 "data/maps/Route116/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 66 "data/maps/Route116/scripts.pory"
 	msgbox Route116_Text_NewBallAvailableAtMart, MSGBOX_DEFAULT
 # 67 "data/maps/Route116/scripts.pory"
 	closemessage
 # 68 "data/maps/Route116/scripts.pory"
-	hidenamebox
+	
 # 69 "data/maps/Route116/scripts.pory"
 	call_if_eq VAR_FACING, DIR_NORTH, Route116_EventScript_DevonEmployeeExit
 # 70 "data/maps/Route116/scripts.pory"

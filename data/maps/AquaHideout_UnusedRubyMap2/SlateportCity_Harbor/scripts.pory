@@ -42,9 +42,9 @@ script SlateportCity_Harbor_EventScript_AquaEscapeScene {
 	applymovement (LOCALID_ARCHIE, Common_Movement_WalkInPlaceDown)
     applymovement (LOCALID_GRUNT, Common_Movement_WalkInPlaceDown)
 	waitmovement (0)
-    namebox (Archie)
+    setspeaker (Archie)
     msgbox(format("¡Increíble, {PLAYER}!\nAsí que nos has seguido desde el Monte Pyre hasta aquí, ¿Eh?\pMe impresiona tu dedicación, pero es en vano. Porque, con este Submarino y el Orbe Asul en nuestro poder, ¡Despertaré al Pokémon Ancestral, {COLOR BLUE}Kyogre{COLOR DARK_GRAY}!\pNo es tarde aún para unírtenos, ¿Sabes?\lPero si sigues empeñad{OA} en detenernos, {PAUSE 15}estaré en nuestra-{PAUSE 20} "), MSGBOX_INTERRUPT)
-    namebox (Unknown)
+    setspeaker (Unknown)
     msgbox(format("¡J-Jefe!\n¡El Submarino no responde!\l¡Alguien metió mano en los controles!"))
 	fadeoutbgm (1)
     playse (SE_PIN)
@@ -52,16 +52,16 @@ script SlateportCity_Harbor_EventScript_AquaEscapeScene {
     applymovement (LOCALID_ARCHIE, Common_Movement_WalkInPlaceDown)
     applymovement (LOCALID_GRUNT, Common_Movement_WalkInPlaceDown)
     waitmovement (0)
-    namebox (Archie)
+    setspeaker (Archie)
     msgbox(format("¿¡QUÉ!?"))
-    namebox (Aqua)
+    setspeaker (Aqua)
     msgbox(format("¡D-{PAUSE 5}Deben ser esos idiotas!{PAUSE 15}\nLos que vimos en el Instituto Meteorológ-{PAUSE 25} "), MSGBOX_INTERRUPT)
     msgbox(format("¡AH!{PAUSE 15}\n¡O-{PAUSE 5}O-{PAUSE 5}O sea, quiero decir, es{EA} idiota {PAUSE 15}-- en singular --{PAUSE 15} que vimos en el Insituto Meteorológico! ¡{PLAYER}, creo que es!"))
-    namebox (Archie)
+    setspeaker (Archie)
     msgbox(format("....................\n.............\p¿Hay algo que no me estés contanto, Recluta?"))
 	applymovement (LOCALID_CAPT_STERN, Common_Movement_FaceDown)
 	waitmovement (0)
-    namebox (Unknown)
+    setspeaker (Unknown)
     msgbox(format("Meh. Así que este es el Gran Archie, ¿Eh?"))
     playse (SE_PIN)
     applymovement (LOCALID_ARCHIE, Common_Movement_ExclamationMark)
@@ -69,18 +69,18 @@ script SlateportCity_Harbor_EventScript_AquaEscapeScene {
     applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
 	waitmovement (0)
     addobject (LOCALID_DELTA)
-    namebox (Unknown)
+    setspeaker (Unknown)
     msgbox(format("Tomar control de este Submarino fue extremadamente fácil, sobretodo después de robarles información en ese Instituto.\pParece ser que usted no estaba al tanto, qué buenos resultaron ser sus Reclutas."))
     applymovement (LOCALID_DELTA, SlateportCity_Harbor_Movement_DeltaEnter)
-	namebox (Archie)
+	setspeaker (Archie)
     msgbox(format("Ese... Ese uniforme...\p¡Es del Equipo Delta!\p¿Siguen bajo operaciones? ¡Dismantelamos el Equipo hace 10 años!"))
-    namebox (Delta)
+    setspeaker (Delta)
     msgbox(format("Ah, sí, bajo orden suya y de Maxie.\pApuesto que apenas pueden verse a los ojos después de tal fr-{PAUSE 20} "), MSGBOX_INTERRUPT)
 	waitmovement (0)
-    namebox (Archie)
+    setspeaker (Archie)
     msgbox(format("¡Ahórratelo!\n¡No vuelvas a hablar así de Maxie y yo!\p¡Y no creas que te dejaré arruinar nuestros planes ni una ves más!"))
     closemessage
-    hidenamebox
+    
 	if (var(VAR_0x8008) == 1){
 		applymovement(OBJ_EVENT_ID_PLAYER, SlateportCity_Harbor_Movement_JumpLeft)
 		waitmovement (0)
@@ -89,11 +89,11 @@ script SlateportCity_Harbor_EventScript_AquaEscapeScene {
 	setobjectxy (LOCALID_SHARPEDO, 8, 12)
     addobject (LOCALID_SHARPEDO)
     playmoncry (SPECIES_SHARPEDO, CRY_MODE_NORMAL)
-    namebox (Archie)
+    setspeaker (Archie)
     msgbox(format("¡Sharpedo, {PAUSE 15}{COLOR BLUE SHADOW LIGHT_BLUE}Mega Evoluciona{COLOR DARK_GRAY SHADOW LIGHT_GRAY}!"))
     fadescreen (FADE_TO_BLACK)
     delay (16)
-    namebox (Unknown)
+    setspeaker (Unknown)
     msgbox(format("{COLOR LIGHT_GREEN}Trueno{COLOR DARK_GRAY}."))
 	playse (SE_THUNDER)
 	fadescreenspeed(FADE_FROM_WHITE,2)
@@ -101,7 +101,7 @@ script SlateportCity_Harbor_EventScript_AquaEscapeScene {
 	playse (SE_FAINT)
 	waitse
     closemessage
-    hidenamebox
+    
     removeobject (LOCALID_SHARPEDO)
 	setobjectxyperm(LOCALID_SHARPEDO,23,0)
     addobject (LOCALID_WINONA)
@@ -116,62 +116,62 @@ script SlateportCity_Harbor_EventScript_AquaEscapeScene {
     applymovement (LOCALID_GRUNT, Common_Movement_WalkInPlaceUp)
     applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp)
     waitmovement (0)
-    namebox (Archie)
+    setspeaker (Archie)
     msgbox(format("Tú... Así que nunca disolviste el Equipo, ¿Eh...?"))
 	applymovement (OBJ_EVENT_ID_CAMERA, SlateportCity_Harbor_Movement_CameraPan)
 	delay (8)
 	msgbox(format("¿... Winona?"))
 	waitmovement (0)
-    namebox (Winona)
+    setspeaker (Winona)
     msgbox(format("Puedo sentir que no estás impresionado, Archie. ¿Será que te lo veías venir?"))
-    namebox (Archie)
+    setspeaker (Archie)
     msgbox(format("No necesito el viento o los pajaritos para imaginarlo, Winona.\pNo eres la clase de marinera que se rinde al perder su primer barco."))
 	closemessage
-	hidenamebox
+	
 	applymovement (LOCALID_WINONA, SlateportCity_Harbor_Movement_WinonaDown)
 	applymovement (LOCALID_ALTARIA, SlateportCity_Harbor_Movement_WinonaDown)
 	applymovement (OBJ_EVENT_ID_CAMERA, SlateportCity_Harbor_Movement_CameraDown)
 	waitmovement(0)
-	namebox (Winona)
+	setspeaker (Winona)
     msgbox(format("¡Ja, ja ja ja!\pEres el mismo de siempre, amigo. Me alegra, significa que entenderás mis motivos."))
 	closemessage
-	hidenamebox
+	
     applymovement (LOCALID_WINONA, SlateportCity_Harbor_Movement_JumpDown)
 	delay (4)
 	fadescreenspeed (FADE_TO_WHITE, 1)
 	removeobject (LOCALID_ALTARIA)
 	playse (SE_BALL)
 	fadescreenspeed (FADE_FROM_WHITE, 1)
-	namebox (Archie)
+	setspeaker (Archie)
     msgbox(format("Los entiendo, y es por eso que no comprendo tu posición.\pEstás en contra tanto del Equipo Magma, como de nostros.\p¿Porqué?"))
-	namebox (Winona)
+	setspeaker (Winona)
     msgbox(format("Si pudieras sentirlo,{PAUSE 15} {COLOR BLUE}el dolor del mundo{COLOR DARK_GRAY}{PAUSE 30}...\pEntenderías porq-{PAUSE 30} "), MSGBOX_INTERRUPT)
 	closemessage
-	hidenamebox
+	
 	setvar (VAR_0x8004, 2) 
 	setvar (VAR_0x8005, 2)
 	setvar (VAR_0x8006, 5)
 	setvar (VAR_0x8007, 4)
 	special (ShakeCamera)
-	namebox (Winona)
+	setspeaker (Winona)
 	msgbox(format("¡MGAAAAAAAAAAAH!"))
 	closemessage
-	hidenamebox
+	
 	playse (SE_PIN)
     applymovement (LOCALID_ARCHIE, Common_Movement_ExclamationMark)
     applymovement (LOCALID_GRUNT, Common_Movement_ExclamationMark)
     applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement (0)
-	namebox (Winona)
+	setspeaker (Winona)
 	msgbox(format("¡Agh!\nMhh... {PAUSE 15}Ah...\lEstá... {PAUSE 15}Empeorando...\pBueno, Archie, perdón tener que irme tan rápido. ¿Nos vemos en Lilycove?\pAh, y, Stern, muchas gracias por el Submarino."))
 	applymovement (LOCALID_WINONA, SlateportCity_Harbor_Movement_WinonaLeave)
-	namebox (Archie)
+	setspeaker (Archie)
 	msgbox(format("¡Lilycove!\n¡Rápido, Recluta, avísale a los chicos que se preparen en la Base!\p¡Emergencia Nivel Zafiro Alfa!"))
-	namebox (Aqua)
+	setspeaker (Aqua)
 	msgbox(format("¡Entendido!"))
 	waitmovement (0)
 	closemessage
-	hidenamebox
+	
 	fadescreen (FADE_TO_BLACK)
 	delay (16)
 	setflag(FLAG_HIDE_SLATEPORT_CITY_HARBOR_DELTA)
@@ -188,10 +188,10 @@ script SlateportCity_Harbor_EventScript_AquaEscapeScene {
 	applymovement (LOCALID_ARCHIE, Common_Movement_FaceDown)
 	applymovement (LOCALID_GRUNT, Common_Movement_FaceDown)
 	waitmovement (0)
-	namebox (Archie)
+	setspeaker (Archie)
 	msgbox(format("Bueno, {PLAYER}, nuestro combate tendrá que esperar. Estaré en Lilycove, y, si necesitas algo, intentaré acudir cuanto la situación mejore, ¿Ok?\pCuídate, {PLAYER}, puedo sentir que se viene una tormenta.\pAh, y, Stern, ya hablaremos sobre tu parte en todo esto en cuanto todo mejore, ¿Entendido?"))
 	closemessage
-	hidenamebox
+	
 	fadescreen (FADE_TO_BLACK)
 	delay (16)
 	setflag(FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE)
@@ -204,18 +204,18 @@ script SlateportCity_Harbor_EventScript_AquaEscapeScene {
 	fadescreen (FADE_FROM_BLACK)
 	fadedefaultbgm
 	delay (16)
-	namebox (Stern)
+	setspeaker (Stern)
 	msgbox(format("¡Ah, {PLAYER}, hay que hacer algo!\p¡Mi... Mi Submarino, hay que recuperarlo!"))
-	namebox (Player)
+	setspeaker (Player)
 	msgbox(format("{COLOR BLUE}(¿Por usted, que ha estado trabajando para el Equipo Aqua?)\p(Ojalá pierda su trabajo.){COLOR DARK_GRAY}"))
-	namebox (Stern)
+	setspeaker (Stern)
 	msgbox(format("Eh... {PAUSE 20}N-no hablo...{PAUSE 20} Lengua de señas-{PAUSE 30} "), MSGBOX_INTERRUPT)
 	msgbox(format("¡E-EY! ¡Ese gesto es de muy mala educación!\pP-pero, ¡No importa qué pienses de mí!\p¡Cosas horribles pueden pasar si"
 				  "despiertan a Kyogre!"))
-	namebox (Player)
+	setspeaker (Player)
 	msgbox(format("...\n{COLOR BLUE}(Si no tengo de otra...){COLOR DARK_GRAY}"))
 	special (RemoveCameraObject)
-	hidenamebox
+	
 	closemessage
 	setflag (FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNTS_BLOCKING_ENTRANCE)
 	clearflag (FLAG_AQUA_HIDEOUT_SET_DELTA_DIVISION)
@@ -419,16 +419,16 @@ SlateportCity_Harbor_EventScript_CaptStern::
 	end
 
 SlateportCity_Harbor_EventScript_WhyStealSubmarine::
-	namebox Stern
+	setspeaker Stern
 	msgbox SlateportCity_Harbor_Text_TeamAquaLeftNeedDive, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 SlateportCity_Harbor_EventScript_TeamAquaLeftNeedDive::
-	namebox Stern
+	setspeaker Stern
 	msgbox SlateportCity_Harbor_Text_TeamAquaLeftNeedDive, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 

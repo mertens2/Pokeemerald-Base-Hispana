@@ -163,11 +163,11 @@ SlateportCity_EventScript_ScottScene::
 # 82 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	waitmovement 0
 # 83 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 84 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_Text_YouDroveTeamAquaAway, MSGBOX_DEFAULT
 # 85 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 86 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	closemessage
 # 87 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
@@ -177,7 +177,7 @@ SlateportCity_EventScript_ScottScene::
 # 89 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	delay 60
 # 90 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 91 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_Text_MaybeThisTrainer, MSGBOX_DEFAULT
 # 92 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
@@ -189,19 +189,19 @@ SlateportCity_EventScript_ScottScene::
 # 95 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	closemessage
 # 96 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 97 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	delay 30
 # 98 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	setflag FLAG_ENABLE_SCOTT_MATCH_CALL
 # 99 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 100 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou, MSGBOX_DEFAULT
 # 101 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	closemessage
 # 102 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 103 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExit
 # 104 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
@@ -1173,19 +1173,19 @@ SlateportCity_EventScript_CaptStern::
 # 587 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	lockall
 # 588 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 589 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_0
 # 590 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Gabby
+	setspeaker Gabby
 # 591 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_1
 # 592 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 593 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_2
 # 594 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Ty
+	setspeaker Ty
 # 595 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_3
 # 596 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
@@ -1195,7 +1195,7 @@ SlateportCity_EventScript_CaptStern::
 # 598 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	waitmovement 0
 # 599 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Ty
+	setspeaker Ty
 # 600 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_4
 # 601 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
@@ -1205,15 +1205,15 @@ SlateportCity_EventScript_CaptStern::
 # 603 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	waitmovement 0
 # 604 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 605 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_5
 # 606 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Ty
+	setspeaker Ty
 # 607 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_6
 # 608 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 609 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_7
 # 610 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
@@ -1227,21 +1227,21 @@ SlateportCity_EventScript_CaptStern::
 # 614 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	removeobject LOCALID_TY
 # 615 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 616 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_8
 # 617 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 618 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	closemessage
 # 619 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 # 620 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 621 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	msgbox SlateportCity_Text_AquaWillAssumeControlOfSubmarine, MSGBOX_DEFAULT
 # 622 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 623 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"
 	applymovement LOCALID_COOK, Common_Movement_WalkInPlaceFasterLeft
 # 624 "data/maps/AquaHideout_UnusedRubyMap2/SlateportCity/scripts.pory"

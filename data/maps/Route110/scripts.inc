@@ -813,7 +813,7 @@ Route110_EventScript_RivalScene::
 # 407 "data/maps/Route110/scripts.pory"
 	checkplayergender
 # 408 "data/maps/Route110/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 409 "data/maps/Route110/scripts.pory"
 	goto_if_eq VAR_RESULT, MALE, Route110_EventScript_MayBattle
 # 410 "data/maps/Route110/scripts.pory"
@@ -845,7 +845,7 @@ Route110_EventScript_MayBattle::
 # 423 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalLetsBattle, MSGBOX_DEFAULT
 # 424 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 425 "data/maps/Route110/scripts.pory"
 	closemessage
 # 426 "data/maps/Route110/scripts.pory"
@@ -893,13 +893,13 @@ Route110_EventScript_MayBattleMudkip::
 # 447 "data/maps/Route110/scripts.pory"
 Route110_EventScript_RivalDefeated::
 # 448 "data/maps/Route110/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 449 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalTakeThis, MSGBOX_DEFAULT
 # 450 "data/maps/Route110/scripts.pory"
 	closemessage
 # 451 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 452 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalProcess, MSGBOX_DEFAULT
 # 453 "data/maps/Route110/scripts.pory"
@@ -927,7 +927,7 @@ Route110_EventScript_RivalDefeated::
 # 464 "data/maps/Route110/scripts.pory"
 	call Route110_EventScript_GiveItemfinder
 # 465 "data/maps/Route110/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 466 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalExplainItemfinder, MSGBOX_DEFAULT
 # 467 "data/maps/Route110/scripts.pory"
@@ -939,7 +939,7 @@ Route110_EventScript_RivalDefeated::
 # 470 "data/maps/Route110/scripts.pory"
 Route110_EventScript_BrendanBattle::
 # 471 "data/maps/Route110/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 472 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalLetsBattle, MSGBOX_DEFAULT
 # 473 "data/maps/Route110/scripts.pory"
@@ -997,7 +997,7 @@ Route110_EventScript_RivalExit::
 # 499 "data/maps/Route110/scripts.pory"
 	closemessage
 # 500 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 501 "data/maps/Route110/scripts.pory"
 	call Route110_SwapRivalSprite
 # 502 "data/maps/Route110/scripts.pory"
@@ -1247,13 +1247,13 @@ Route110_EventScript_BirchScene::
 # 624 "data/maps/Route110/scripts.pory"
 	call_if_eq VAR_0x8008, 4, Route110_EventScript_BirchApproachPlayer4
 # 625 "data/maps/Route110/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 626 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_ImagineSeeingYouHere, MSGBOX_DEFAULT
 # 627 "data/maps/Route110/scripts.pory"
 	closemessage
 # 628 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 629 "data/maps/Route110/scripts.pory"
 	delay 20
 # 630 "data/maps/Route110/scripts.pory"
@@ -1275,13 +1275,13 @@ Route110_EventScript_BirchScene::
 # 638 "data/maps/Route110/scripts.pory"
 	delay 30
 # 639 "data/maps/Route110/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 640 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_HeardYouInstallMatchCall, MSGBOX_DEFAULT
 # 641 "data/maps/Route110/scripts.pory"
 	closemessage
 # 642 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 643 "data/maps/Route110/scripts.pory"
 	delay 30
 # 644 "data/maps/Route110/scripts.pory"
@@ -1297,23 +1297,23 @@ Route110_EventScript_BirchScene::
 # 649 "data/maps/Route110/scripts.pory"
 	setflag FLAG_ENABLE_PROF_BIRCH_MATCH_CALL
 # 650 "data/maps/Route110/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 651 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_KeepAnEyeOutForRival, MSGBOX_DEFAULT
 # 652 "data/maps/Route110/scripts.pory"
 	closemessage
 # 653 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 654 "data/maps/Route110/scripts.pory"
 	giveitem ITEM_POKEBLOCK_CASE
 # 655 "data/maps/Route110/scripts.pory"
-	namebox Birch
+	setspeaker Birch
 # 656 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_KeepAnEyeOutForRival2, MSGBOX_DEFAULT
 # 657 "data/maps/Route110/scripts.pory"
 	closemessage
 # 658 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 659 "data/maps/Route110/scripts.pory"
 	call_if_eq VAR_0x8008, 1, Route110_EventScript_BirchExit1
 # 660 "data/maps/Route110/scripts.pory"
@@ -1335,7 +1335,7 @@ Route110_EventScript_BirchScene::
 # 668 "data/maps/Route110/scripts.pory"
 	delay 16
 # 669 "data/maps/Route110/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 670 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalWait, MSGBOX_DEFAULT
 # 671 "data/maps/Route110/scripts.pory"
@@ -1351,7 +1351,7 @@ Route110_EventScript_BirchScene::
 # 676 "data/maps/Route110/scripts.pory"
 	closemessage
 # 677 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 678 "data/maps/Route110/scripts.pory"
 	fadeoutbgm 0
 # 679 "data/maps/Route110/scripts.pory"
@@ -1363,13 +1363,13 @@ Route110_EventScript_BirchScene::
 # 682 "data/maps/Route110/scripts.pory"
 	call_if_eq VAR_0x8008, 4, Route110_EventScript_RivalComeSeeFather1
 # 683 "data/maps/Route110/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 684 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalButIm, MSGBOX_DEFAULT
 # 685 "data/maps/Route110/scripts.pory"
 	closemessage
 # 686 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 687 "data/maps/Route110/scripts.pory"
 	delay 24
 # 688 "data/maps/Route110/scripts.pory"
@@ -1391,13 +1391,13 @@ Route110_EventScript_BirchScene::
 # 696 "data/maps/Route110/scripts.pory"
 	delay 16
 # 697 "data/maps/Route110/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 698 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalExplains, MSGBOX_DEFAULT
 # 699 "data/maps/Route110/scripts.pory"
 	closemessage
 # 700 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 701 "data/maps/Route110/scripts.pory"
 	applymovement LOCALID_RIVAL_2, Common_Movement_FaceAwayPlayer
 # 702 "data/maps/Route110/scripts.pory"
@@ -1405,11 +1405,11 @@ Route110_EventScript_BirchScene::
 # 703 "data/maps/Route110/scripts.pory"
 	delay 25
 # 704 "data/maps/Route110/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 705 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalThreeDots, MSGBOX_DEFAULT
 # 706 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 707 "data/maps/Route110/scripts.pory"
 	closemessage
 # 708 "data/maps/Route110/scripts.pory"
@@ -1419,13 +1419,13 @@ Route110_EventScript_BirchScene::
 # 710 "data/maps/Route110/scripts.pory"
 	waitmovement 0
 # 711 "data/maps/Route110/scripts.pory"
-	namebox Rival
+	setspeaker Rival
 # 712 "data/maps/Route110/scripts.pory"
 	msgbox Route110_Text_RivalGoodbye, MSGBOX_DEFAULT
 # 713 "data/maps/Route110/scripts.pory"
 	closemessage
 # 714 "data/maps/Route110/scripts.pory"
-	hidenamebox
+	
 # 715 "data/maps/Route110/scripts.pory"
 	applymovement LOCALID_RIVAL_2, Common_Movement_WalkUp6
 # 716 "data/maps/Route110/scripts.pory"

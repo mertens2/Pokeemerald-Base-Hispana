@@ -1,13 +1,11 @@
 PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText::
 # 3 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 4 "data/maps/PetalburgWoods/scripts.pory"
 	compare VAR_EVIL_TEAM_SIDE, 3
 	goto_if_lt PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText_2
 # 15 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_YouveGotSomeNerve
-# 16 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
 	return
 
 PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText_2:
@@ -19,12 +17,10 @@ PetalburgWoods_EventScript_DevonResearcherPostBattleGruntText_2:
 PetalburgWoods_EventScript_GetInvolved::
 # 21 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
-# 22 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
 # 25 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_EventScript_GetInvolved_Text_0, MSGBOX_YESNO
 # 31 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 32 "data/maps/PetalburgWoods/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq PetalburgWoods_EventScript_GetInvolved_2
@@ -33,17 +29,15 @@ PetalburgWoods_EventScript_GetInvolved::
 # 40 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_EventScript_GetInvolved_Text_1
 # 41 "data/maps/PetalburgWoods/scripts.pory"
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 # 42 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_EventScript_GetInvolved_Text_2
 # 43 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Player
+	setspeaker Player
 # 44 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_EventScript_GetInvolved_Text_3
 # 54 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
-# 55 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
 # 56 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 # 57 "data/maps/PetalburgWoods/scripts.pory"
@@ -53,7 +47,7 @@ PetalburgWoods_EventScript_GetInvolved::
 # 59 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 60 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 63 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_EventScript_GetInvolved_Text_4
 PetalburgWoods_EventScript_GetInvolved_1:
@@ -90,13 +84,13 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 # 347 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 348 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 349 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_HaveYouSeenShroomish, MSGBOX_DEFAULT
 # 350 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 351 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 352 "data/maps/PetalburgWoods/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 # 353 "data/maps/PetalburgWoods/scripts.pory"
@@ -104,11 +98,11 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 # 354 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 355 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 356 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
 # 357 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 358 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 359 "data/maps/PetalburgWoods/scripts.pory"
@@ -120,25 +114,25 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 # 362 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 363 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 364 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
 # 365 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 366 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 367 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerLeft
 # 368 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 369 "data/maps/PetalburgWoods/scripts.pory"
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 # 370 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
 # 371 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 372 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 373 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaApproachPlayer
 # 374 "data/maps/PetalburgWoods/scripts.pory"
@@ -186,7 +180,7 @@ PetalburgWoods_EventScript_DevonResearcherCenter::
 # 395 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 396 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 397 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
 # 398 "data/maps/PetalburgWoods/scripts.pory"
@@ -200,13 +194,13 @@ PetalburgWoods_EventScript_DevonResearcherCenter::
 # 402 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 403 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 404 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
 # 405 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 406 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 407 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerCenter
 # 408 "data/maps/PetalburgWoods/scripts.pory"
@@ -266,7 +260,7 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 # 435 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 436 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 437 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_IWasGoingToAmbushYou, MSGBOX_DEFAULT
 # 438 "data/maps/PetalburgWoods/scripts.pory"
@@ -280,13 +274,13 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 # 442 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 443 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 444 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_HandOverThosePapers, MSGBOX_DEFAULT
 # 445 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 446 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 447 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerRight
 # 448 "data/maps/PetalburgWoods/scripts.pory"
@@ -328,13 +322,13 @@ PetalburgWoods_EventScript_DevonResearcherIntro::
 # 466 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 467 "data/maps/PetalburgWoods/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 468 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_NotAOneToBeFound, MSGBOX_DEFAULT
 # 469 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 470 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 471 "data/maps/PetalburgWoods/scripts.pory"
 	return
 # 472 "data/maps/PetalburgWoods/scripts.pory"
@@ -346,7 +340,7 @@ PetalburgWoods_EventScript_DevonResearcherPostBattle::
 # 475 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 476 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 477 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaRunAway
 # 478 "data/maps/PetalburgWoods/scripts.pory"
@@ -358,11 +352,11 @@ PetalburgWoods_EventScript_DevonResearcherPostBattle::
 # 481 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 482 "data/maps/PetalburgWoods/scripts.pory"
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 # 483 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_ThatWasAwfullyClose, MSGBOX_DEFAULT
 # 484 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 485 "data/maps/PetalburgWoods/scripts.pory"
 	giveitem ITEM_GREAT_BALL
 # 486 "data/maps/PetalburgWoods/scripts.pory"
@@ -386,23 +380,23 @@ PetalburgWoods_EventScript_BagFull::
 # 495 "data/maps/PetalburgWoods/scripts.pory"
 PetalburgWoods_EventScript_DevonResearcherFinish::
 # 496 "data/maps/PetalburgWoods/scripts.pory"
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 # 497 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro, MSGBOX_DEFAULT
 # 498 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 499 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 500 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherStartExit
 # 501 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
 # 502 "data/maps/PetalburgWoods/scripts.pory"
-	namebox EmpleadoDevon
+	setspeaker EmpleadoDevon
 # 503 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_ICantBeWastingTime, MSGBOX_DEFAULT
 # 504 "data/maps/PetalburgWoods/scripts.pory"
-	hidenamebox
+	
 # 505 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 # 506 "data/maps/PetalburgWoods/scripts.pory"

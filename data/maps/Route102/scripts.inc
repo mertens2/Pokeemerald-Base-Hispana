@@ -114,11 +114,11 @@ Route102_WallyTutorial::
 # 217 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 218 "data/maps/Route102/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 219 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_INTERRUPT
 # 220 "data/maps/Route102/scripts.pory"
-	hidenamebox
+	
 # 221 "data/maps/Route102/scripts.pory"
 	call Route102_EventScript_RaltsAppears
 # 222 "data/maps/Route102/scripts.pory"
@@ -126,7 +126,7 @@ Route102_WallyTutorial::
 # 223 "data/maps/Route102/scripts.pory"
 	closemessage
 # 224 "data/maps/Route102/scripts.pory"
-	hidenamebox
+	
 # 225 "data/maps/Route102/scripts.pory"
 	setobjectxy LOCALID_ROUTE102_BALL, 3, 6
 # 226 "data/maps/Route102/scripts.pory"
@@ -158,7 +158,7 @@ Route102_WallyTutorial::
 # 239 "data/maps/Route102/scripts.pory"
 	delay 8
 # 240 "data/maps/Route102/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 241 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_WallyCommands
 # 242 "data/maps/Route102/scripts.pory"
@@ -168,7 +168,7 @@ Route102_WallyTutorial::
 # 244 "data/maps/Route102/scripts.pory"
 	closemessage
 # 245 "data/maps/Route102/scripts.pory"
-	hidenamebox
+	
 # 246 "data/maps/Route102/scripts.pory"
 	call Route102_EventScript_ZigzagoonAttacks
 # 247 "data/maps/Route102/scripts.pory"
@@ -248,7 +248,7 @@ Route102_WallyTutorial::
 # 284 "data/maps/Route102/scripts.pory"
 	call Route102_EventScript_BallCatchHide
 # 285 "data/maps/Route102/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 286 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
 # 287 "data/maps/Route102/scripts.pory"
@@ -258,11 +258,11 @@ Route102_WallyTutorial::
 # 289 "data/maps/Route102/scripts.pory"
 	closemessage
 # 290 "data/maps/Route102/scripts.pory"
-	hidenamebox
+	
 # 291 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_WallyZigzagoonThanks, MSGBOX_DEFAULT
 # 292 "data/maps/Route102/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 293 "data/maps/Route102/scripts.pory"
 	fadescreenswapbuffers FADE_TO_WHITE
 # 294 "data/maps/Route102/scripts.pory"
@@ -280,7 +280,7 @@ Route102_WallyTutorial::
 # 300 "data/maps/Route102/scripts.pory"
 	closemessage
 # 301 "data/maps/Route102/scripts.pory"
-	hidenamebox
+	
 # 302 "data/maps/Route102/scripts.pory"
 	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceRight
 # 303 "data/maps/Route102/scripts.pory"

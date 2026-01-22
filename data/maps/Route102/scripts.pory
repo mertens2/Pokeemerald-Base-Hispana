@@ -215,13 +215,13 @@ Route102_WallyTutorial::
 	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyTutorialWally
 	applymovement OBJ_EVENT_ID_PLAYER, Route102_Movement_WallyTutorialPlayer
 	waitmovement 0
-	namebox Wally
+	setspeaker Wally
 	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_INTERRUPT
-	hidenamebox
+	
 	call Route102_EventScript_RaltsAppears
 	msgbox Route102_Text_UnRalts, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	setobjectxy LOCALID_ROUTE102_BALL, 3, 6
 	playse SE_BALL
 	delay 16
@@ -237,12 +237,12 @@ Route102_WallyTutorial::
 	msgbox Route102_Text_Sigsa, MSGBOX_DEFAULT
 	waitmoncry
 	delay 8
-	namebox Wally
+	setspeaker Wally
 	msgbox Route102_Text_WallyCommands
 	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyJump
 	waitmovement 0
 	closemessage
-	hidenamebox
+	
 	call Route102_EventScript_ZigzagoonAttacks
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
 	msgbox Route102_Text_Sigsa, MSGBOX_DEFAULT
@@ -282,14 +282,14 @@ Route102_WallyTutorial::
 	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	call Route102_EventScript_BallCatchHide
-	namebox Wally
+	setspeaker Wally
 	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
 	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyGrabBall
 	waitmovement 0
 	closemessage
-	hidenamebox
+	
 	msgbox Route102_Text_WallyZigzagoonThanks, MSGBOX_DEFAULT
-	namebox Wally
+	setspeaker Wally
 	fadescreenswapbuffers FADE_TO_WHITE
 	removeobject LOCALID_ROUTE102_ZIGZAGOON
 	setobjectxy LOCALID_ROUTE102_BALL, 7, 6
@@ -298,7 +298,7 @@ Route102_WallyTutorial::
 	fadescreenswapbuffers FADE_FROM_WHITE
 	waitse
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	call Route102_EventScript_BallZigzaHide

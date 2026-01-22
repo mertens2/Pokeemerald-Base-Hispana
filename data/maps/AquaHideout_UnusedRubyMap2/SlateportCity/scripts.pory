@@ -80,26 +80,26 @@ SlateportCity_EventScript_ScottScene::
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerFaceScott
 	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottApproachPlayer
 	waitmovement 0
-	namebox Scott
+	setspeaker Scott
 	msgbox SlateportCity_Text_YouDroveTeamAquaAway, MSGBOX_DEFAULT
-	hidenamebox
+	
 	closemessage
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	delay 60
-	namebox Scott
+	setspeaker Scott
 	msgbox SlateportCity_Text_MaybeThisTrainer, MSGBOX_DEFAULT
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox SlateportCity_Text_LetsRegisterEachOther, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	delay 30
 	setflag FLAG_ENABLE_SCOTT_MATCH_CALL
-	namebox Scott
+	setspeaker Scott
 	msgbox SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou, MSGBOX_DEFAULT
 	closemessage
-	hidenamebox
+	
 	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExit
 	waitmovement 0
 	removeobject LOCALID_SCOTT
@@ -585,41 +585,41 @@ SlateportCity_Pokemart_PowerTMs:
 @ Scene with Capt Sterns interview and Team Aqua announcing plans to steal Submarine
 SlateportCity_EventScript_CaptStern::
 	lockall
-	namebox Stern
+	setspeaker Stern
 	msgbox SlateportCity_EventScript_CaptStern_Text_0
-	namebox Gabby
+	setspeaker Gabby
 	msgbox SlateportCity_EventScript_CaptStern_Text_1
-	namebox Stern
+	setspeaker Stern
 	msgbox SlateportCity_EventScript_CaptStern_Text_2
-	namebox Ty
+	setspeaker Ty
 	msgbox SlateportCity_EventScript_CaptStern_Text_3
 	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceRight
 	applymovement LOCALID_GABBY, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	namebox Ty
+	setspeaker Ty
 	msgbox SlateportCity_EventScript_CaptStern_Text_4
 	playse SE_PIN
 	applymovement LOCALID_CAPT_STERN, Common_Movement_ExclamationMark
 	waitmovement 0
-	namebox Stern
+	setspeaker Stern
 	msgbox SlateportCity_EventScript_CaptStern_Text_5
-	namebox Ty
+	setspeaker Ty
 	msgbox SlateportCity_EventScript_CaptStern_Text_6
-	namebox Stern
+	setspeaker Stern
 	msgbox SlateportCity_EventScript_CaptStern_Text_7
 	applymovement LOCALID_GABBY, SlateportCity_Movement_GabbyExit
 	applymovement LOCALID_TY, SlateportCity_Movement_TyExit
 	waitmovement 0
 	removeobject LOCALID_GABBY
 	removeobject LOCALID_TY
-	namebox Stern
+	setspeaker Stern
 	msgbox SlateportCity_EventScript_CaptStern_Text_8
-	hidenamebox
+	
 	closemessage
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-	namebox Unknown
+	setspeaker Unknown
 	msgbox SlateportCity_Text_AquaWillAssumeControlOfSubmarine, MSGBOX_DEFAULT
-	hidenamebox
+	
 	applymovement LOCALID_COOK, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_FAT_MAN, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_OLD_WOMAN, SlateportCity_Movement_OldWomanConcern

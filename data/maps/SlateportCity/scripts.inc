@@ -183,11 +183,11 @@ SlateportCity_EventScript_ScottScene::
 # 92 "data/maps/SlateportCity/scripts.pory"
 	waitmovement 0
 # 93 "data/maps/SlateportCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 94 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_Text_YouDroveTeamAquaAway, MSGBOX_DEFAULT
 # 95 "data/maps/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 96 "data/maps/SlateportCity/scripts.pory"
 	closemessage
 # 97 "data/maps/SlateportCity/scripts.pory"
@@ -197,7 +197,7 @@ SlateportCity_EventScript_ScottScene::
 # 99 "data/maps/SlateportCity/scripts.pory"
 	delay 60
 # 100 "data/maps/SlateportCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 101 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_Text_MaybeThisTrainer, MSGBOX_DEFAULT
 # 102 "data/maps/SlateportCity/scripts.pory"
@@ -209,19 +209,19 @@ SlateportCity_EventScript_ScottScene::
 # 105 "data/maps/SlateportCity/scripts.pory"
 	closemessage
 # 106 "data/maps/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 107 "data/maps/SlateportCity/scripts.pory"
 	delay 30
 # 108 "data/maps/SlateportCity/scripts.pory"
 	setflag FLAG_ENABLE_SCOTT_MATCH_CALL
 # 109 "data/maps/SlateportCity/scripts.pory"
-	namebox Scott
+	setspeaker Scott
 # 110 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou, MSGBOX_DEFAULT
 # 111 "data/maps/SlateportCity/scripts.pory"
 	closemessage
 # 112 "data/maps/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 113 "data/maps/SlateportCity/scripts.pory"
 	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExit
 # 114 "data/maps/SlateportCity/scripts.pory"
@@ -1193,19 +1193,19 @@ SlateportCity_EventScript_CaptStern::
 # 597 "data/maps/SlateportCity/scripts.pory"
 	lockall
 # 598 "data/maps/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 599 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_0
 # 600 "data/maps/SlateportCity/scripts.pory"
-	namebox Gabby
+	setspeaker Gabby
 # 601 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_1
 # 602 "data/maps/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 603 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_2
 # 604 "data/maps/SlateportCity/scripts.pory"
-	namebox Ty
+	setspeaker Ty
 # 605 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_3
 # 606 "data/maps/SlateportCity/scripts.pory"
@@ -1215,7 +1215,7 @@ SlateportCity_EventScript_CaptStern::
 # 608 "data/maps/SlateportCity/scripts.pory"
 	waitmovement 0
 # 609 "data/maps/SlateportCity/scripts.pory"
-	namebox Ty
+	setspeaker Ty
 # 610 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_4
 # 611 "data/maps/SlateportCity/scripts.pory"
@@ -1225,15 +1225,15 @@ SlateportCity_EventScript_CaptStern::
 # 613 "data/maps/SlateportCity/scripts.pory"
 	waitmovement 0
 # 614 "data/maps/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 615 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_5
 # 616 "data/maps/SlateportCity/scripts.pory"
-	namebox Ty
+	setspeaker Ty
 # 617 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_6
 # 618 "data/maps/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 619 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_7
 # 620 "data/maps/SlateportCity/scripts.pory"
@@ -1247,21 +1247,21 @@ SlateportCity_EventScript_CaptStern::
 # 624 "data/maps/SlateportCity/scripts.pory"
 	removeobject LOCALID_TY
 # 625 "data/maps/SlateportCity/scripts.pory"
-	namebox Stern
+	setspeaker Stern
 # 626 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_EventScript_CaptStern_Text_8
 # 627 "data/maps/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 628 "data/maps/SlateportCity/scripts.pory"
 	closemessage
 # 629 "data/maps/SlateportCity/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 # 630 "data/maps/SlateportCity/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 631 "data/maps/SlateportCity/scripts.pory"
 	msgbox SlateportCity_Text_AquaWillAssumeControlOfSubmarine, MSGBOX_DEFAULT
 # 632 "data/maps/SlateportCity/scripts.pory"
-	hidenamebox
+	
 # 633 "data/maps/SlateportCity/scripts.pory"
 	applymovement LOCALID_COOK, Common_Movement_WalkInPlaceFasterLeft
 # 634 "data/maps/SlateportCity/scripts.pory"

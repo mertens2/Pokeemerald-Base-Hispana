@@ -44,9 +44,9 @@ VerdanturfTown_EventScript_WallysMemory:
 	waitdooranim
 	applymovement LOCALID_WALLY, VerdanturfTown_Movement_WallyShopping2
 	applymovement OBJ_EVENT_ID_CAMERA, VerdanturfTown_Movement_WallyShopping2
-	namebox Wally
+	setspeaker Wally
 	msgbox VerdanturfTown_Text_WallyExplains1, MSGBOX_DEFAULT
-	hidenamebox
+	
 	closemessage
 	waitmovement 0
 	applymovement LOCALID_BULLY_1, VerdanturfTown_Movement_AttackWally

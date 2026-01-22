@@ -52,9 +52,9 @@ script RusturfTunnel_EventScript_ClearTunnelScene {
             call (RusturfTunnel_EventScript_FaceWandasBoyfriend3)
         }
     call (RusturfTunnel_EventScript_WandasBoyfriendNotice)
-    namebox (Riley)
+    setspeaker (Riley)
     msgbox(format("¡ROAR!\nE-eh, quiero decir, {PAUSE 2}¡wow!\p¡Destruíste esa roca que bloqueaba el camino! {PAUSE 2}¡Ni mis enormes músculos de constructor podían destruírla!\pComo agradecimiento de crear un atajo para ver a mi novia, ten esto."))
-    hidenamebox
+    
     switch (var(VAR_TEMP_1)) {
         case 2:
         case 3:
@@ -64,10 +64,10 @@ script RusturfTunnel_EventScript_ClearTunnelScene {
     }
     giveitem (ITEM_AGGRONITE)
 	giveitem (ITEM_HM04)
-    namebox(Riley)
+    setspeaker(Riley)
     msgbox(format("¡Es una Aggronita!\pEsa es una megapiedra que puede hacer {COLOR BLUE}megaevolucionar a un Aggron{COLOR DARK_GRAY}.\p¡Gracias a tí podré hablar y ver a mi novia cuando quiera!\p¡Ah, también te di la MO de Fuerza!"))
     closemessage
-    hidenamebox
+    
     switch (var(VAR_TEMP_1)) {
         case 1:
             call (RusturfTunnel_EventScript_BoyfriendApproachWanda1)
@@ -76,18 +76,18 @@ script RusturfTunnel_EventScript_ClearTunnelScene {
         case 3:
             call (RusturfTunnel_EventScript_BoyfriendApproachWanda3)
     }
-    namebox(Riley)
+    setspeaker(Riley)
     msgbox(format("¡Amor! {PAUSE 2}¡Hola!\nNnn… {PAUSE 2}¡ROOOAARR! {PAUSE 2}¡Estoy tan feliz!"))
-    hidenamebox
-    namebox(Wanda)
+    
+    setspeaker(Wanda)
     msgbox(format("¡Oh, Riley, amor mío!\nAl fin nos vemos otra vez."))
-    hidenamebox
-    namebox(Riley)
+    
+    setspeaker(Riley)
     msgbox(format("¡Amorcito!\nLa cosa más maravillosa ha pasado, no lo creerás.\p¡Alguien más ha reconocido el esfuerzo que hice para mantener estos músculos!"))
-    hidenamebox
-    namebox(Wanda)
+    
+    setspeaker(Wanda)
     msgbox(format("¡Qué cosa tan maravillosa, mi amor!\p¡Podemos hablar más de esa persona en mi casa!\pMe gustaría conocer gente nueva que reconozca el trabajo duro."))
-    hidenamebox
+    
     switch (var(VAR_TEMP_1)) {
         case 1:
             call (RusturfTunnel_EventScript_WandaAndBoyfriendExit1)
@@ -271,32 +271,32 @@ script RusturfTunnel_EventScript_GruntEscape {
 		applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PushPlayerAsideForGrunt)
 		applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntEscape)
 		waitmovement(0)
-		namebox(Unknown)
+		setspeaker(Unknown)
 		poryswitch(LANGUAGE){
 		ES {
 			msgbox(format("¡No te preocupes, yo lo detengo aquí!"))
 			closemessage
 			addobject (LOCALID_BRINEY)
-			hidenamebox
-			namebox(Aqua)
+			
+			setspeaker(Aqua)
 			msgbox(format("¡N-NO!\n¡ROAR!"))
 		}
 		EN {
 			msgbox(format("Don't worry, I'm stopping him from here!"))
 			closemessage
 			addobject (LOCALID_BRINEY)
-			hidenamebox
-			namebox(Aqua)
+			
+			setspeaker(Aqua)
 			msgbox(format("N-NO!\nROAR!"))
 		}
 		}
-		hidenamebox
+		
 		closemessage
 		delay (32)
 		applymovement (OBJ_EVENT_ID_PLAYER, RusturfTunnel_Movement_PlayerPursue)
 		waitmovement (0)
 		applymovement (LOCALID_GRUNT, Common_Movement_FacePlayer)
-		namebox(Aqua)
+		setspeaker(Aqua)
 		poryswitch(LANGUAGE){
 			ES {
 				msgbox(format("¡A-ARGH!\p¡B-Bueno, si tanto quieren sus Partes, derrótame!"))
@@ -312,22 +312,22 @@ script RusturfTunnel_EventScript_GruntEscape {
 			loadpartofteam
 			special (GiveBackItemsAndBerries)
 			clearflag (FLAG_STARTED_BOSS)
-			namebox(Aqua)
+			setspeaker(Aqua)
 				poryswitch(LANGUAGE){
 				ES {
 					msgbox(format("¡N-NO!\n¡No puede ser!\l¡ARGH! {PAUSE 2}¡Aquí tienes denuevo tus inútiles Pokémon!"))
-					hidenamebox
+					
 					message (format("¡Te han devuelto la mochila!"))
 				}
 				EN {
 					msgbox(format("N-NO!\nIt can't be!\lARGH! {PAUSE 2}Here, have your stupid Pokémon back!"))
-					hidenamebox
+					
 					message (format("You recovered the Bag!"))
 				}
 			}
 			
 		}
-		namebox(Aqua)
+		setspeaker(Aqua)
 		poryswitch(LANGUAGE){
 			ES {
 				msgbox(format("¡A-ARGH! {PAUSE 2}¡ROAR! {PAUSE 2}¡NOO!\p¡Tch, aquí tienen las partes!\n... ... ... Ya voy fallando dos misiones en un día.\p"
@@ -340,52 +340,52 @@ script RusturfTunnel_EventScript_GruntEscape {
 		}
 		
 		
-		hidenamebox
+		
 		giveitem (ITEM_DEVON_PARTS, 1)
 		closemessage
 		applymovement (LOCALID_GRUNT, Common_Movement_FaceDown)
 		waitmovement (0)
 		delay (16)
-		namebox(Aqua)
+		setspeaker(Aqua)
 		poryswitch(LANGUAGE){
 			ES {
 				msgbox(format("………\pEsta………\nNo fue una experiencia que quiera que se repita."))
-				hidenamebox
+				
 				applymovement (LOCALID_GRUNT, Common_Movement_WalkInPlaceDown)
 				waitmovement (0)
 				delay (16)
-				namebox(Aqua)
+				setspeaker(Aqua)
 				msgbox(format("………\pEsto que hice………\nMe uní a este Equipo para evitar ser un ladrón, y aún así..."))
-				hidenamebox
+				
 				closemessage
 				delay (16)
 				applymovement (LOCALID_BRINEY, RusturfTunnel_Movement_BrineyMove)
 				waitmovement (0)
 				applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntRegrets)
 				waitmovement (0)
-				namebox(Aqua)
+				setspeaker(Aqua)
 				msgbox(format("………\pYo………\nLo lamento, señor.\pNo. Lo que hice no tiene perdón.\p………\pDebería disculparme con el hombre que asusté antes, y decirle…"))
 			}
 			EN {
 				msgbox(format("………\pThis………\nIsn't something I want to experience again."))
-				hidenamebox
+				
 				applymovement (LOCALID_GRUNT, Common_Movement_WalkInPlaceDown)
 				waitmovement (0)
 				delay (16)
-				namebox(Aqua)
+				setspeaker(Aqua)
 				msgbox(format("………\pWhat I did today………\nI joined Team Aqua to not become a thief, and yet..."))
-				hidenamebox
+				
 				closemessage
 				delay (16)
 				applymovement (LOCALID_BRINEY, RusturfTunnel_Movement_BrineyMove)
 				waitmovement (0)
 				applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntRegrets)
 				waitmovement (0)
-				namebox(Aqua)
+				setspeaker(Aqua)
 				msgbox(format("………\pI………\nI'm so, so sorry, sir.\pNo. What I did is unforgivable.\p………\pI should also apologize to the man I scared, and tell him…"))
 			}
 		}
-		hidenamebox
+		
 		closemessage
 		applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntExit)
 		applymovement (LOCALID_BRINEY, Common_Movement_FaceDown)
@@ -404,32 +404,32 @@ script RusturfTunnel_EventScript_GruntEscape {
 		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
 		waitmovement (0)
 		delay (8)
-		namebox (Briney)
+		setspeaker (Briney)
 		msgbox(format("Wing Wingull..."))
-		hidenamebox
+		
 		applymovement (LOCALID_BRINEY, RusturfTunnel_Movement_BrineyApproachPeeko1)
 		waitmovement (0)
-		namebox (Briney)
+		setspeaker (Briney)
 		poryswitch(LANGUAGE){
 			ES {
 				msgbox(format("¡Oh, Peeko!\n¡Te extrañé tanto, mi chiquito!"))
-				hidenamebox
+				
 				applymovement (LOCALID_BRINEY, Common_Movement_FacePlayer)
 				waitmovement (0)
-				namebox (Briney)
+				setspeaker (Briney)
 				msgbox(format("¡Muchísimas gracias!\nPeeko, vamos a casa."))
 			}
 			EN {
 				msgbox(format("Oh, Peeko!\nI missed you so much, my baby!"))
-				hidenamebox
+				
 				applymovement (LOCALID_BRINEY, Common_Movement_FacePlayer)
 				waitmovement (0)
-				namebox (Briney)
+				setspeaker (Briney)
 				msgbox(format("Thank you so much!\nPeeko, let's go back home."))
 			}
 		}
 		closemessage
-		hidenamebox
+		
 		playmoncry (SPECIES_WINGULL, CRY_MODE_NORMAL)
 		waitbuttonpress
 		waitmoncry
@@ -453,17 +453,17 @@ script RusturfTunnel_EventScript_Grunt {
 	faceplayer
 	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
 	if (var(VAR_EVIL_TEAM_SIDE) < 3) {
-		namebox(Aqua)
+		setspeaker(Aqua)
 		poryswitch(LANGUAGE){
 		ES {
 			msgbox(format("¡Argh, esto no lo pensé bien!\p¡Eres tú!\nAntes estabas por dejarme llevar los planos, luego me derrotaste, ¿Y ahora qué? ¿Vas a burlarte de que terminé en esta situación?"))
-			hidenamebox
+			
 			msgbox(format("¿Qué harás?"))
 			dynmultichoice(25, 5, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Ver qué pasa", "¡Atacarlo!")
 		}
 		EN {
 			msgbox(format("Argh, I didn't think this through!\pOh, it's you!\nYou almost let me take the blueprints, but then you attacked me.\pAnd now what? Are you gonna make fun of me for getting into this mess?"))
-			hidenamebox
+			
 			msgbox(format("What will you do?"))
 			dynmultichoice(25, 5, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "See what happens", "Attack!")
 		}
@@ -471,7 +471,7 @@ script RusturfTunnel_EventScript_Grunt {
 		
 		if (var(VAR_RESULT) == 0){
 			subvar(VAR_EVIL_TEAM_SIDE, 1)
-			namebox(Aqua)
+			setspeaker(Aqua)
 			poryswitch(LANGUAGE){
 				ES {
 					msgbox (format("No comprendo.\pEl {COLOR BLUE}Jefecito{COLOR DARK_GRAY} me dijo que sería tarea fácil, {PAUSE 2}¡Pero no lo es!\p¡ARGH! {PAUSE 2}¡ROAR!\p¡Me voy, esto es demasiado!"))
@@ -481,7 +481,7 @@ script RusturfTunnel_EventScript_Grunt {
 
 				}
 			}
-			hidenamebox
+			
 			closemessage
 			playse (SE_PIN)
 			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
@@ -500,7 +500,7 @@ script RusturfTunnel_EventScript_Grunt {
 		
 	}
 	trainerbattle_no_intro (TRAINER_GRUNT_RUSTURF_TUNNEL, RusturfTunnel_Text_GruntDefeat)
-	namebox(Aqua)
+	setspeaker(Aqua)
 	poryswitch(LANGUAGE){
 		ES {
 			msgbox (format("No comprendo.\pEl {COLOR BLUE}Jefecito{COLOR DARK_GRAY} me dijo que sería tarea fácil, {PAUSE 2}¡Pero no lo es!\p¡ARGH! {PAUSE 2}¡ROAR!\p¡Tendré que hacer esto con trucos sucios!"))
@@ -509,7 +509,7 @@ script RusturfTunnel_EventScript_Grunt {
 			msgbox (format("I don't get it.\pThe {COLOR BLUE}Boss{COLOR DARK_GRAY} this'd be easy, {PAUSE 2}but far from it!\pARGH! {PAUSE 2}ROAR!\pToo much for my noggin, I'm using my dirtiest tricks!"))
 		}
 	}
-	hidenamebox
+	
 	closemessage
 	playse (SE_PIN)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
@@ -533,7 +533,7 @@ script RusturfTunnel_EventScript_Grunt {
 	applymovement (LOCALID_GRUNT, RusturfTunnel_Movement_GruntNervous)
 	waitmovement (0)
 	playbgm (MUS_HELP, FALSE)
-	namebox(Aqua)
+	setspeaker(Aqua)
 	poryswitch(LANGUAGE){
 		ES {
 			msgbox(format("¡NO IMPORTA NADA, YO ME VOY!"))
@@ -542,7 +542,7 @@ script RusturfTunnel_EventScript_Grunt {
 			msgbox(format("FUDGE THIS, I'M LEAVING!"))
 		}
 	}
-	hidenamebox
+	
 	closemessage
 	call (RusturfTunnel_EventScript_GruntEscape)  
 	releaseall

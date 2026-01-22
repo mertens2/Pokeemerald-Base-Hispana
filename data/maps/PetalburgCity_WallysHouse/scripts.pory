@@ -21,13 +21,13 @@ PetalburgCity_WallysHouse_OnFrame:
 
 PetalburgCity_WallysHouse_EventScript_GiveHM03Surf::
 	lockall
-	namebox PapaWally
+	setspeaker PapaWally
 	msgbox PetalburgCity_WallysHouse_Text_PleaseExcuseUs, MSGBOX_DEFAULT
-	hidenamebox
+	
 	giveitem ITEM_HM03
-	namebox PapaWally
+	setspeaker PapaWally
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
-	hidenamebox
+	
 	setvar VAR_PETALBURG_CITY_STATE, 5
 	releaseall
 	end
@@ -40,38 +40,38 @@ PetalburgCity_WallysHouse_EventScript_WallysDad::
 	checkitem ITEM_HM03
 	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_WallysHouse_EventScript_ReceievedHM03Surf
 	goto_if_set FLAG_THANKED_FOR_PLAYING_WITH_WALLY, PetalburgCity_WallysHouse_EventScript_PlayedWithWally
-	namebox PapaWally
+	setspeaker PapaWally
 	msgbox PetalburgCity_WallysHouse_Text_ThanksForPlayingWithWally, MSGBOX_DEFAULT
-	hidenamebox
+	
 	setflag FLAG_THANKED_FOR_PLAYING_WITH_WALLY
 	release
 	end
 
 PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewford::
-	namebox PapaWally
+	setspeaker PapaWally
 	msgbox PetalburgCity_WallysHouse_Text_WallyCantGoDewford, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 PetalburgCity_WallysHouse_EventScript_ReceievedHM03Surf::
-	namebox PapaWally
+	setspeaker PapaWally
 	msgbox PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 PetalburgCity_WallysHouse_EventScript_DefeatedWallyInVictoryRoad::
-	namebox PapaWally
+	setspeaker PapaWally
 	msgbox PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 PetalburgCity_WallysHouse_EventScript_PlayedWithWally::
-	namebox PapaWally
+	setspeaker PapaWally
 	msgbox PetalburgCity_WallysHouse_Text_WonderHowWallyIsDoing, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
@@ -81,23 +81,23 @@ PetalburgCity_WallysHouse_EventScript_WallysMom::
 	goto_if_set FLAG_HIDE_WALLY_DEWFORD_TOWN, PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewfordMom
 	checkitem ITEM_HM03
 	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_WallysHouse_EventScript_ReceivedHM03Surf
-	namebox MamaWally
+	setspeaker MamaWally
 	msgbox PetalburgCity_WallysHouse_Text_WallyWasReallyHappy, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 PetalburgCity_WallysHouse_EventScript_DefeatedWallyInDewfordMom::
-	namebox MamaWally
+	setspeaker MamaWally
 	msgbox PetalburgCity_WallysHouse_Text_WallyCanDoAnything, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 PetalburgCity_WallysHouse_EventScript_ReceivedHM03Surf::
-	namebox MamaWally
+	setspeaker MamaWally
 	msgbox PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 

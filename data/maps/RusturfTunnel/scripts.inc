@@ -77,11 +77,9 @@ RusturfTunnel_EventScript_ClearTunnelScene_1:
 # 54 "data/maps/RusturfTunnel/scripts.pory"
 	call RusturfTunnel_EventScript_WandasBoyfriendNotice
 # 55 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Riley
+	setspeaker Riley
 # 56 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_ClearTunnelScene_Text_0
-# 57 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 58 "data/maps/RusturfTunnel/scripts.pory"
 	switch VAR_TEMP_1
 # 59 "data/maps/RusturfTunnel/scripts.pory"
@@ -94,13 +92,11 @@ RusturfTunnel_EventScript_ClearTunnelScene_6:
 # 66 "data/maps/RusturfTunnel/scripts.pory"
 	giveitem ITEM_HM04
 # 67 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Riley
+	setspeaker Riley
 # 68 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_ClearTunnelScene_Text_1
 # 69 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
-# 70 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 71 "data/maps/RusturfTunnel/scripts.pory"
 	switch VAR_TEMP_1
 # 72 "data/maps/RusturfTunnel/scripts.pory"
@@ -111,29 +107,21 @@ RusturfTunnel_EventScript_ClearTunnelScene_6:
 	case 3, RusturfTunnel_EventScript_ClearTunnelScene_13
 RusturfTunnel_EventScript_ClearTunnelScene_9:
 # 79 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Riley
+	setspeaker Riley
 # 80 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_ClearTunnelScene_Text_2
-# 81 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 82 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Wanda
+	setspeaker Wanda
 # 83 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_ClearTunnelScene_Text_3
-# 84 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 85 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Riley
+	setspeaker Riley
 # 86 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_ClearTunnelScene_Text_4
-# 87 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 88 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Wanda
+	setspeaker Wanda
 # 89 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_ClearTunnelScene_Text_5
-# 90 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 91 "data/maps/RusturfTunnel/scripts.pory"
 	switch VAR_TEMP_1
 # 92 "data/maps/RusturfTunnel/scripts.pory"
@@ -543,21 +531,17 @@ RusturfTunnel_EventScript_GruntEscape::
 # 273 "data/maps/RusturfTunnel/scripts.pory"
 	waitmovement 0
 # 274 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 277 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_0
 # 278 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
 # 279 "data/maps/RusturfTunnel/scripts.pory"
 	addobject 5
-# 280 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 281 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 282 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_1
-# 293 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 294 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
 # 295 "data/maps/RusturfTunnel/scripts.pory"
@@ -569,7 +553,7 @@ RusturfTunnel_EventScript_GruntEscape::
 # 298 "data/maps/RusturfTunnel/scripts.pory"
 	applymovement 6, Common_Movement_FacePlayer
 # 299 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 302 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_2
 # 308 "data/maps/RusturfTunnel/scripts.pory"
@@ -579,11 +563,9 @@ RusturfTunnel_EventScript_GruntEscape::
 	goto_if_gt RusturfTunnel_EventScript_GruntEscape_2
 RusturfTunnel_EventScript_GruntEscape_1:
 # 330 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 333 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_5
-# 343 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 344 "data/maps/RusturfTunnel/scripts.pory"
 	giveitem ITEM_DEVON_PARTS, 1
 # 345 "data/maps/RusturfTunnel/scripts.pory"
@@ -595,11 +577,9 @@ RusturfTunnel_EventScript_GruntEscape_1:
 # 348 "data/maps/RusturfTunnel/scripts.pory"
 	delay 16
 # 349 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 352 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_6
-# 353 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 354 "data/maps/RusturfTunnel/scripts.pory"
 	applymovement 6, Common_Movement_WalkInPlaceDown
 # 355 "data/maps/RusturfTunnel/scripts.pory"
@@ -607,11 +587,9 @@ RusturfTunnel_EventScript_GruntEscape_1:
 # 356 "data/maps/RusturfTunnel/scripts.pory"
 	delay 16
 # 357 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 358 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_7
-# 359 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 360 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
 # 361 "data/maps/RusturfTunnel/scripts.pory"
@@ -625,11 +603,9 @@ RusturfTunnel_EventScript_GruntEscape_1:
 # 365 "data/maps/RusturfTunnel/scripts.pory"
 	waitmovement 0
 # 366 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 367 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_8
-# 388 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 389 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
 # 390 "data/maps/RusturfTunnel/scripts.pory"
@@ -667,33 +643,27 @@ RusturfTunnel_EventScript_GruntEscape_1:
 # 406 "data/maps/RusturfTunnel/scripts.pory"
 	delay 8
 # 407 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Briney
+	setspeaker Briney
 # 408 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_9
-# 409 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 410 "data/maps/RusturfTunnel/scripts.pory"
 	applymovement 5, RusturfTunnel_Movement_BrineyApproachPeeko1
 # 411 "data/maps/RusturfTunnel/scripts.pory"
 	waitmovement 0
 # 412 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Briney
+	setspeaker Briney
 # 415 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_10
-# 416 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 417 "data/maps/RusturfTunnel/scripts.pory"
 	applymovement 5, Common_Movement_FacePlayer
 # 418 "data/maps/RusturfTunnel/scripts.pory"
 	waitmovement 0
 # 419 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Briney
+	setspeaker Briney
 # 420 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_11
 # 431 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
-# 432 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 433 "data/maps/RusturfTunnel/scripts.pory"
 	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
 # 434 "data/maps/RusturfTunnel/scripts.pory"
@@ -738,11 +708,9 @@ RusturfTunnel_EventScript_GruntEscape_2:
 # 314 "data/maps/RusturfTunnel/scripts.pory"
 	clearflag FLAG_STARTED_BOSS
 # 315 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 318 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_GruntEscape_Text_3
-# 319 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 320 "data/maps/RusturfTunnel/scripts.pory"
 	message RusturfTunnel_EventScript_GruntEscape_Text_4
 	goto RusturfTunnel_EventScript_GruntEscape_1
@@ -762,11 +730,9 @@ RusturfTunnel_EventScript_Grunt_1:
 # 502 "data/maps/RusturfTunnel/scripts.pory"
 	trainerbattle_no_intro TRAINER_GRUNT_RUSTURF_TUNNEL, RusturfTunnel_Text_GruntDefeat
 # 503 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 506 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_Grunt_Text_5
-# 512 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 513 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
 # 514 "data/maps/RusturfTunnel/scripts.pory"
@@ -800,11 +766,9 @@ RusturfTunnel_EventScript_Grunt_1:
 # 535 "data/maps/RusturfTunnel/scripts.pory"
 	playbgm MUS_HELP, FALSE
 # 536 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 539 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_Grunt_Text_7
-# 545 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 546 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
 # 547 "data/maps/RusturfTunnel/scripts.pory"
@@ -815,11 +779,9 @@ RusturfTunnel_EventScript_Grunt_1:
 
 RusturfTunnel_EventScript_Grunt_2:
 # 456 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 459 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_Grunt_Text_0
-# 460 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 461 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_Grunt_Text_1
 # 462 "data/maps/RusturfTunnel/scripts.pory"
@@ -835,11 +797,9 @@ RusturfTunnel_EventScript_Grunt_4:
 # 473 "data/maps/RusturfTunnel/scripts.pory"
 	subvar VAR_EVIL_TEAM_SIDE, 1
 # 474 "data/maps/RusturfTunnel/scripts.pory"
-	namebox Aqua
+	setspeaker Aqua
 # 477 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_EventScript_Grunt_Text_4
-# 484 "data/maps/RusturfTunnel/scripts.pory"
-	hidenamebox
 # 485 "data/maps/RusturfTunnel/scripts.pory"
 	closemessage
 # 486 "data/maps/RusturfTunnel/scripts.pory"

@@ -628,7 +628,7 @@ u32 GetPlayerTextSpeed(void)
     return gSaveBlock2Ptr->optionsTextSpeed;
 }
 
-u8 GetPlayerTextSpeedDelay(void)
+u32 GetPlayerTextSpeedDelay(void)
 {
     u32 speed;
     if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_FASTER)

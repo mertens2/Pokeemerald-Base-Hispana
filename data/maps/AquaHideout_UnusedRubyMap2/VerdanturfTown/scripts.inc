@@ -91,11 +91,11 @@ VerdanturfTown_EventScript_WallysMemory:
 # 46 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, VerdanturfTown_Movement_WallyShopping2
 # 47 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 48 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown/scripts.pory"
 	msgbox VerdanturfTown_Text_WallyExplains1, MSGBOX_DEFAULT
 # 49 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown/scripts.pory"
-	hidenamebox
+	
 # 50 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown/scripts.pory"
 	closemessage
 # 51 "data/maps/AquaHideout_UnusedRubyMap2/VerdanturfTown/scripts.pory"

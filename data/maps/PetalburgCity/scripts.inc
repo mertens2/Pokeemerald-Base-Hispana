@@ -113,7 +113,7 @@ PetalburgCity_EventScript_WallysFlashback::
 # 57 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
 # 58 "data/maps/PetalburgCity/scripts.pory"
-	hidenamebox
+	
 # 59 "data/maps/PetalburgCity/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 60 "data/maps/PetalburgCity/scripts.pory"
@@ -133,27 +133,27 @@ PetalburgCity_EventScript_WallysFlashback::
 # 67 "data/maps/PetalburgCity/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, PetalburgCity_Movement_WallyMemoryCamera
 # 68 "data/maps/PetalburgCity/scripts.pory"
-	namebox Chico
+	setspeaker Chico
 # 69 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgCity_Text_WallysMemoryKid, MSGBOX_DEFAULT
 # 70 "data/maps/PetalburgCity/scripts.pory"
-	namebox PapaWally
+	setspeaker PapaWally
 # 71 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgCity_Text_WallysMemory2, MSGBOX_DEFAULT
 # 72 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
 # 73 "data/maps/PetalburgCity/scripts.pory"
-	hidenamebox
+	
 # 74 "data/maps/PetalburgCity/scripts.pory"
 	delay 16
 # 75 "data/maps/PetalburgCity/scripts.pory"
-	namebox Wally
+	setspeaker Wally
 # 76 "data/maps/PetalburgCity/scripts.pory"
 	msgbox PetalburgCity_Text_WallysMemory3, MSGBOX_DEFAULT
 # 77 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
 # 78 "data/maps/PetalburgCity/scripts.pory"
-	hidenamebox
+	
 # 79 "data/maps/PetalburgCity/scripts.pory"
 	waitmovement 0
 # 80 "data/maps/PetalburgCity/scripts.pory"
@@ -1179,13 +1179,13 @@ Petalburg_Leaf::
 # 590 "data/maps/PetalburgCity/scripts.pory"
 	goto_if_unset FLAG_DEFEATED_LEAF, Petalburg_Leaf_2
 # 591 "data/maps/PetalburgCity/scripts.pory"
-	namebox CampeonaLeaf
+	setspeaker CampeonaLeaf
 # 592 "data/maps/PetalburgCity/scripts.pory"
 	msgbox Petalburg_Leaf_Text_3
 # 593 "data/maps/PetalburgCity/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 594 "data/maps/PetalburgCity/scripts.pory"
-	hidenamebox
+	
 # 595 "data/maps/PetalburgCity/scripts.pory"
 	setflag FLAG_DEFEATED_LEAF
 # 596 "data/maps/PetalburgCity/scripts.pory"
@@ -1205,35 +1205,35 @@ Petalburg_Leaf_1:
 # 603 "data/maps/PetalburgCity/scripts.pory"
 Petalburg_Leaf_2:
 # 604 "data/maps/PetalburgCity/scripts.pory"
-	namebox Unknown
+	setspeaker Unknown
 # 605 "data/maps/PetalburgCity/scripts.pory"
 	msgbox Petalburg_Leaf_Text_0
 # 606 "data/maps/PetalburgCity/scripts.pory"
-	hidenamebox
+	
 # 607 "data/maps/PetalburgCity/scripts.pory"
-	namebox CampeonaLeaf
+	setspeaker CampeonaLeaf
 # 608 "data/maps/PetalburgCity/scripts.pory"
 	msgbox Petalburg_Leaf_Text_02
 # 609 "data/maps/PetalburgCity/scripts.pory"
-	hidenamebox
+	
 # 610 "data/maps/PetalburgCity/scripts.pory"
 	trainerbattle_no_intro TRAINER_LEAF, Leaf_Defeated_Message
 # 611 "data/maps/PetalburgCity/scripts.pory"
-	namebox Leaf
+	setspeaker Leaf
 # 612 "data/maps/PetalburgCity/scripts.pory"
 	msgbox Petalburg_Leaf_Text_1
 # 613 "data/maps/PetalburgCity/scripts.pory"
-	hidenamebox
+	
 # 614 "data/maps/PetalburgCity/scripts.pory"
 	giveitem ITEM_CHERISH_BALL, 30
 # 615 "data/maps/PetalburgCity/scripts.pory"
-	namebox Leaf
+	setspeaker Leaf
 # 616 "data/maps/PetalburgCity/scripts.pory"
 	msgbox Petalburg_Leaf_Text_2
 # 617 "data/maps/PetalburgCity/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 618 "data/maps/PetalburgCity/scripts.pory"
-	hidenamebox
+	
 # 619 "data/maps/PetalburgCity/scripts.pory"
 	closemessage
 # 620 "data/maps/PetalburgCity/scripts.pory"

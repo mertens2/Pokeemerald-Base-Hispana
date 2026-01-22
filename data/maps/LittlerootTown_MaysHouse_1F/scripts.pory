@@ -142,13 +142,13 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	applymovement LOCALID_RIVAL_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
-	namebox Marta
+	setspeaker Marta
 	setvar VAR_LAST_TALKED, LOCALID_RIVAL
 	call EventScript_YoureNewNeighbor_Translated
 	setflag FLAG_MET_RIVAL_MOM
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
 	closemessage
-	hidenamebox
+	
 	releaseall
 	end
 
@@ -164,31 +164,31 @@ LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
 RivalsHouse_1F_EventScript_RivalMom::
 	lock
 	faceplayer
-	namebox Marta
+	setspeaker Marta
 	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
 	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
 	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 RivalsHouse_1F_EventScript_RivalTooBusy::
 	msgbox RivalsHouse_1F_Text_TooBusyToNoticeVisit, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 RivalsHouse_1F_EventScript_RivalIsOnRoute103::
 	msgbox RivalsHouse_1F_Text_WentOutToRoute103, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
 RivalsHouse_1F_EventScript_GoHomeEverySoOften::
 	msgbox RivalsHouse_1F_Text_ShouldGoHomeEverySoOften, MSGBOX_DEFAULT
-	hidenamebox
+	
 	release
 	end
 
