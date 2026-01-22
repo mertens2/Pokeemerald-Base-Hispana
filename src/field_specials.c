@@ -1313,7 +1313,9 @@ static void PCTurnOnEffect(struct Task *task)
             dy = -1;
             break;
         }
-
+		if (FlagGet(FLAG_TEMP_1))
+			dy--;
+		FlagClear(FLAG_TEMP_1);
         // Update map
         PCTurnOnEffect_SetMetatile(task->tIsScreenOn, dx, dy);
         DrawWholeMapView();

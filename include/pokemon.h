@@ -140,54 +140,38 @@ struct BoxPokemon
     /*0x00*/ u32 personality;
     /*0x04*/ u32 otId;
     /*0x08*/ u8 nickname[min(10, POKEMON_NAME_LENGTH)];
-             u8 pokerus:1;
-             // u8 hasSpecies:1;
+             u8 metLevel:1;
              u8 isEgg:1;
              u8 markings:4; // 15 combinations as per sAnims_MarkingCombo
+    /*0x2A*/ u8 allIV:2;
     /*0x14*/ u8 otName[PLAYER_NAME_LENGTH];
-    /*0x1B*/ u8 metLocation;    // better to not limit the number of map sections. this is actually used for friendship growth, too
-    /*0x1C*/ u32 species:11;    // up to 2047 species. could probably go down to 10 bits...
-             u32 heldItem:10;   // up to 1023 items. could probably be 9 bits if hold items are limited to IDs below 511
+    // /*0x1B*/ u8 metLocation;    // better to not limit the number of map sections. this is actually used for friendship growth, too
+    /*0x1C*/u32 species:11;    // up to 2047 species. could probably go down to 10 bits...
+            u32 heldItem:10;   // up to 1023 items. could probably be 9 bits if hold items are limited to IDs below 511
 			u32 nickname11:8; // 11th character of nickname.
-             u8 metLevel:1;
-             u32 contestExp:9; // 0 - 510
-    /*0x20*/ u32 experience:21;
+    /*0x20*/u32 experience:21;
 			u16 nickname12:8; // 12th character of nickname.
-             // u32 otGender:1;
-    /*0x24*/ u32 move1:11;  // 1023 moves
-			 u16 evolutionTracker1:5;
-			 u16 evolutionTracker2:5;
+    /*0x24*/ u32 move1:11;  // 2047 moves
              u32 move2:11;  // bits 11-20
              u32 move3:11;  // bits 21-30
     /*0x28*/ u16 move4:11;  // bits 31-40
-    /*0x2A*/ u16 attackIV:2;    // 46-50
-             u16 speedIV:2;     // 56-60
-             u16 otherIV:2;   // 51-55
     /*0x2C*/ u8 ppBonuses;
     /*0x2D*/ u8 friendship;
     /*0x2E*/ u8 pokeball:6;
              u8 abilityNum:2;
-    /*0x2F*/ u8 hpEV:6;
-    /*0x30*/ u8 attackEV:6;
-    /*0x31*/ u8 defenseEV:6;
-    /*0x32*/ u8 speedEV:6;
-    /*0x33*/ u8 spAttackEV:6;
-    /*0x34*/ u8 spDefenseEV:6; 
-			 u8 coolCV:2;
-			 u8 toughCV:2;
-			 u8 smartCV:2;
-			 u8 cuteCV:2;
-			 u8 beautyCV:2;
-			 u8 hiddenNatureModifier:5; // remain 10 bits
-			 u8 hiddenPower:5; // remain 10 bits
-	/*0x35*/ u8 pp1:6;
-             u8 pp2:6;
-             u8 pp3:6;
-			 u8 pp4:6;
-			 u8 daysSinceFormChange:3; // 7 days.
-			 u16 hpLost:14; // 16383 HP.
-			u16 shinyModifier:1;
-}; /* size = 0x3C (56) bytes */
+    /*0x2F*/ u8 hpEV:4;
+    /*0x30*/ u8 attackEV:4;
+    /*0x31*/ u8 defenseEV:4;
+    /*0x32*/ u8 speedEV:4;
+    /*0x33*/ u8 spAttackEV:4;
+    /*0x34*/ u8 spDefenseEV:4; 
+			 u16 evolutionTracker1:5;
+			 u16 evolutionTracker2:5;
+			 u16 hiddenNatureModifier:5; // remain 10 bits
+			 u16 shinyModifier:1;
+			 u16 hpLost:11; // 2048 HP.
+			 u16 hiddenPower:5; // remain 10 bits
+}; /* size = 0x3C (84) bytes */
 
 struct Pokemon
 {
@@ -202,6 +186,10 @@ struct Pokemon
     u16 speed;
     u16 spAttack;
     u16 spDefense;
+	u8 pp1:7;
+	u8 pp2:7;
+	u8 pp3:7;
+	u8 pp4:7;
 };
 
 struct MonSpritesGfxManager

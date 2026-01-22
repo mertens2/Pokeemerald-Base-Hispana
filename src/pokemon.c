@@ -1009,11 +1009,19 @@ void ZeroEnemyPartyMons(void)
 void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
 {
     u32 mail;
+	u16 move, bonus;
+	u8 pp, i;
     ZeroMonData(mon);
     CreateBoxMon(&mon->box, species, level, fixedIV, hasFixedPersonality, fixedPersonality, otIdType, fixedOtId);
     SetMonData(mon, MON_DATA_LEVEL, &level);
     mail = MAIL_NONE;
     SetMonData(mon, MON_DATA_MAIL, &mail);
+	for (i=0; i < MAX_MON_MOVES; i++){
+		move = GetBoxMonData(&mon->box, MON_DATA_MOVE1+i, 0);
+		bonus = GetBoxMonData(&mon->box, MON_DATA_PP_BONUSES, 0);
+		pp = CalculatePPWithBonus(move, bonus, i);
+		SetMonData(mon, MON_DATA_PP1+i, &pp);
+	}
     CalculateMonStats(mon);
 }
 
@@ -1653,7 +1661,7 @@ void CreateEnemyEventMon(void)
 #define CALC_STAT(base, iv, ev, statIndex, field)               \
 {                                                               \
     u8 baseStat = gSpeciesInfo[species].base;                   \
-    s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
+    s32 n = (((2 * baseStat + iv * 10 + 1  + ev * 4) * level) / 100) + 5; \
     n = ModifyStatByNature(nature, n, statIndex);               \
     if (B_FRIENDSHIP_BOOST == TRUE)                             \
         n = n + ((n * 10 * friendship) / (MAX_FRIENDSHIP * 100));\
@@ -1726,11 +1734,24 @@ void CalculateMonStats(struct Pokemon *mon)
 
 void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
 {
+	u16 move;
+    u16 bonus;
+    u8 pp[MAX_MON_MOVES];
+	u8 i;
     u32 value = 0;
     dest->box = *src;
     dest->status = GetBoxMonData(&dest->box, MON_DATA_STATUS, NULL);
     dest->hp = 0;
     dest->maxHP = 0;
+	for (i=0; i < MAX_MON_MOVES; i++){
+		move = GetBoxMonData(&dest->box, MON_DATA_MOVE1+i, 0);
+		bonus = GetBoxMonData(&dest->box, MON_DATA_PP_BONUSES, 0);
+		pp[i] = CalculatePPWithBonus(move, bonus, i);
+	}
+	dest->pp1 = pp[0];
+	dest->pp2 = pp[1];
+	dest->pp3 = pp[2];
+	dest->pp4 = pp[3];
     value = MAIL_NONE;
     SetMonData(dest, MON_DATA_MAIL, &value);
     value = GetBoxMonData(&dest->box, MON_DATA_HP_LOST);
@@ -1765,7 +1786,22 @@ u8 GetLevelFromBoxMonExp(struct BoxPokemon *boxMon)
 
 u16 GiveMoveToMon(struct Pokemon *mon, u16 move)
 {
-    return GiveMoveToBoxMon(&mon->box, move);
+	s32 i;
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        u16 existingMove = GetMonData(mon, MON_DATA_MOVE1 + i, NULL);
+        if (existingMove == MOVE_NONE)
+        {
+            u32 pp = GetMovePP(move);
+            SetMonData(mon, MON_DATA_MOVE1 + i, &move);
+            SetMonData(mon, MON_DATA_PP1 + i, &pp);
+            return move;
+        }
+        if (existingMove == move)
+            return MON_ALREADY_KNOWS_MOVE;
+    }
+    return MON_HAS_MAX_MOVES;
+	
 }
 
 u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move)
@@ -1776,9 +1812,9 @@ u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move)
         u16 existingMove = GetBoxMonData(boxMon, MON_DATA_MOVE1 + i, NULL);
         if (existingMove == MOVE_NONE)
         {
-            u32 pp = GetMovePP(move);
+            // u32 pp = GetMovePP(move);
             SetBoxMonData(boxMon, MON_DATA_MOVE1 + i, &move);
-            SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp);
+            // SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp);
             return move;
         }
         if (existingMove == move)
@@ -1879,8 +1915,8 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon) //Credit: AsparagusEdua
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         SetBoxMonData(boxMon, MON_DATA_MOVE1 + i, &moves[i]);
-        u32 pp = GetMovePP(moves[i]);
-        SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp);
+        // u32 pp = GetMovePP(moves[i]);
+        // SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp);
     }
 }
 
@@ -1988,7 +2024,7 @@ void DeleteFirstMoveAndGiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         SetBoxMonData(boxMon, MON_DATA_MOVE1 + i, &moves[i]);
-        SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp[i]);
+        // SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp[i]);
     }
 
     SetBoxMonData(boxMon, MON_DATA_PP_BONUSES, &ppBonuses);
@@ -2217,6 +2253,18 @@ u32 GetMonData3(struct Pokemon *mon, s32 field, u8 *data)
     case MON_DATA_MAIL:
         ret = mon->mail;
         break;
+	case MON_DATA_PP1:
+		ret = mon->pp1;
+		break;
+	case MON_DATA_PP2:
+		ret = mon->pp2;
+		break;
+	case MON_DATA_PP3:
+		ret = mon->pp3;
+		break;
+	case MON_DATA_PP4:
+		ret = mon->pp4;
+		break;
     default:
         ret = GetBoxMonData(&mon->box, field, data);
         break;
@@ -2251,6 +2299,8 @@ static ALWAYS_INLINE bool32 IsEggOrBadEgg(struct BoxPokemon *boxMon)
 u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 {
     u32 retVal = 0;
+	u16 move, bonus;
+	u8 pp;
 
     // Any field greater than MON_DATA_ENCRYPT_SEPARATOR is encrypted and must be treated as such
     switch (field)
@@ -2337,7 +2387,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 			break;
 		}
 		case MON_DATA_DAYS_SINCE_FORM_CHANGE:
-			retVal = boxMon->daysSinceFormChange;
+			retVal = 1;
 			break;
 		case MON_DATA_LANGUAGE:
 			retVal = 0;
@@ -2401,16 +2451,28 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 			retVal = boxMon->move4;
 			break;
 		case MON_DATA_PP1:
-			retVal = boxMon->pp1;
+			move = GetBoxMonData(boxMon, MON_DATA_MOVE1, 0);
+            bonus = GetBoxMonData(boxMon, MON_DATA_PP_BONUSES, 0);
+            pp = CalculatePPWithBonus(move, bonus, 0);
+			retVal = pp;
 			break;
 		case MON_DATA_PP2:
-			retVal = boxMon->pp2;
+			move = GetBoxMonData(boxMon, MON_DATA_MOVE2, 0);
+            bonus = GetBoxMonData(boxMon, MON_DATA_PP_BONUSES, 0);
+            pp = CalculatePPWithBonus(move, bonus, 1);
+			retVal = pp;
 			break;
 		case MON_DATA_PP3:
-			retVal = boxMon->pp3;
+			move = GetBoxMonData(boxMon, MON_DATA_MOVE3, 0);
+            bonus = GetBoxMonData(boxMon, MON_DATA_PP_BONUSES, 0);
+            pp = CalculatePPWithBonus(move, bonus, 2);
+			retVal = pp;
 			break;
 		case MON_DATA_PP4:
-			retVal = boxMon->pp4;
+			move = GetBoxMonData(boxMon, MON_DATA_MOVE4, 0);
+            bonus = GetBoxMonData(boxMon, MON_DATA_PP_BONUSES, 0);
+            pp = CalculatePPWithBonus(move, bonus, 3);
+			retVal = pp;
 			break;
 		case MON_DATA_HP_EV:
 			retVal = boxMon->hpEV;
@@ -2431,46 +2493,27 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 			retVal = boxMon->spDefenseEV;
 			break;
 		case MON_DATA_COOL:
-			retVal = 0;//boxMon->cool;
-			break;
 		case MON_DATA_BEAUTY:
-			retVal = 0;//boxMon->beauty;
-			break;
 		case MON_DATA_CUTE:
-			retVal = 0;//boxMon->cute;
-			break;
 		case MON_DATA_SMART:
-			retVal = 0;//boxMon->smart;
-			break;
 		case MON_DATA_TOUGH:
-			retVal = 0;//boxMon->tough;
-			break;
-		case MON_DATA_COOL_CV:
-			retVal = boxMon->coolCV;
-			break;
 		case MON_DATA_BEAUTY_CV:
-			retVal = boxMon->beautyCV;
-			break;
 		case MON_DATA_CUTE_CV:
-			retVal = boxMon->cuteCV;
-			break;
 		case MON_DATA_SMART_CV:
-			retVal = boxMon->smartCV;
-			break;
 		case MON_DATA_TOUGH_CV:
-			retVal = boxMon->toughCV;
+			retVal = 0;
 			break;
 		case MON_DATA_CONTEST_EXP:
-			retVal = boxMon->contestExp;
+			retVal = 0;
 			break;
 		case MON_DATA_SHEEN:
 			retVal = 0;//boxMon->sheen;
 			break;
 		case MON_DATA_POKERUS:
-			retVal = boxMon->pokerus;
+			retVal = 0;
 			break;
 		case MON_DATA_MET_LOCATION:
-			retVal = boxMon->metLocation;
+			retVal = 0;
 			break;
 		case MON_DATA_MET_LEVEL:
 			retVal = boxMon->metLevel;
@@ -2487,14 +2530,10 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 		case MON_DATA_HP_IV:
 		case MON_DATA_SPDEF_IV:
 		case MON_DATA_DEF_IV:
-		case MON_DATA_SPATK_IV:
-			retVal = boxMon->otherIV;
-			break;
 		case MON_DATA_SPEED_IV:
-			retVal = boxMon->speedIV;
-			break;
 		case MON_DATA_ATK_IV:
-			retVal = boxMon->attackIV;
+		case MON_DATA_SPATK_IV:
+			retVal = boxMon->allIV;
 			break;
 		case MON_DATA_HIDDEN_POWER:
 			retVal = boxMon->hiddenPower;
@@ -2568,12 +2607,12 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 				// retVal = SPECIES_EGG;
 			// break;
 		case MON_DATA_IVS:
-			retVal = boxMon->otherIV
-				  | (boxMon->attackIV << 5)
-				  | (boxMon->otherIV << 10)
-				  | (boxMon->speedIV << 15)
-				  | (boxMon->attackIV << 20)
-				  | (boxMon->otherIV << 25);
+			retVal = boxMon->allIV
+				  | (boxMon->allIV << 5)
+				  | (boxMon->allIV << 10)
+				  | (boxMon->allIV << 15)
+				  | (boxMon->allIV << 20)
+				  | (boxMon->allIV << 25);
 			break;
 		case MON_DATA_KNOWN_MOVES:
 			if (boxMon->species && !boxMon->isEgg)
@@ -2693,6 +2732,18 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg)
         break;
     case MON_DATA_SPECIES_OR_EGG:
         break;
+	case MON_DATA_PP1:
+		SET8(mon->pp1);
+		break;
+	case MON_DATA_PP2:
+		SET8(mon->pp2);
+		break;
+	case MON_DATA_PP3:
+		SET8(mon->pp3);
+		break;
+	case MON_DATA_PP4:
+		SET8(mon->pp4);
+		break;
     default:
         SetBoxMonData(&mon->box, field, data);
         break;
@@ -2734,7 +2785,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 			break;
 		}
 		case MON_DATA_DAYS_SINCE_FORM_CHANGE:
-			SET8(boxMon->daysSinceFormChange);
 			break;
 		case MON_DATA_HP_LOST:
 			SET16(boxMon->hpLost);
@@ -2849,23 +2899,10 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 			SET16(boxMon->move4);
 			break;
 		case MON_DATA_PP1:
-			SET8(boxMon->pp1);
-			break;
 		case MON_DATA_PP2:
-			SET8(boxMon->pp2);
-			break;
 		case MON_DATA_PP3:
-			SET8(boxMon->pp3);
-			break;
 		case MON_DATA_PP4:
-			SET8(boxMon->pp4);
 			break;
-		// case MON_DATA_PP1:
-		// case MON_DATA_PP2:
-		// case MON_DATA_PP3:
-		// case MON_DATA_PP4:
-			// SetMonData(&mon, field, data);
-			// break;
 		case MON_DATA_HP_EV:
 			SET8(boxMon->hpEV);
 			break;
@@ -2885,46 +2922,18 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 			SET8(boxMon->spDefenseEV);
 			break;
 		case MON_DATA_COOL:
-			//SET8(boxMon->cool);
-			break;
 		case MON_DATA_BEAUTY:
-			//SET8(boxMon->beauty);
-			break;
 		case MON_DATA_CUTE:
-			//SET8(boxMon->cute);
-			break;
 		case MON_DATA_SMART:
-			//SET8(boxMon->smart);
-			break;
 		case MON_DATA_TOUGH:
-			//SET8(boxMon->tough);
-			break;
-		case MON_DATA_COOL_CV:
-			SET8(boxMon->coolCV);
-			break;
 		case MON_DATA_BEAUTY_CV:
-			SET8(boxMon->beautyCV);
-			break;
 		case MON_DATA_CUTE_CV:
-			SET8(boxMon->cuteCV);
-			break;
 		case MON_DATA_SMART_CV:
-			SET8(boxMon->smartCV);
-			break;
 		case MON_DATA_TOUGH_CV:
-			SET8(boxMon->toughCV);
-			break;
 		case MON_DATA_CONTEST_EXP:
-			SET32(boxMon->contestExp);
-			break;
 		case MON_DATA_SHEEN:
-			//SET8(boxMon->sheen);
-			break;
 		case MON_DATA_POKERUS:
-			SET8(boxMon->pokerus);
-			break;
 		case MON_DATA_MET_LOCATION:
-			SET8(boxMon->metLocation);
 			break;
 		case MON_DATA_MET_LEVEL:
 		{
@@ -2947,14 +2956,10 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 		case MON_DATA_HP_IV:
 		case MON_DATA_SPDEF_IV:
 		case MON_DATA_DEF_IV:
-		case MON_DATA_SPATK_IV:
-			SET32(boxMon->otherIV);
-			break;
-		case MON_DATA_ATK_IV:
-			SET32(boxMon->attackIV);
-			break;
 		case MON_DATA_SPEED_IV:
-			SET32(boxMon->speedIV);
+		case MON_DATA_ATK_IV:
+		case MON_DATA_SPATK_IV:
+			SET32(boxMon->allIV);
 			break;
 		case MON_DATA_HIDDEN_POWER:
 			SET8(boxMon->hiddenPower);
@@ -3024,12 +3029,12 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 		case MON_DATA_IVS:
 		{
 			u32 ivs = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
-			boxMon->otherIV = ivs & MAX_IV_MASK;
-			boxMon->attackIV = (ivs >> 5) & MAX_IV_MASK;
-			boxMon->otherIV = (ivs >> 10) & MAX_IV_MASK;
-			boxMon->speedIV = (ivs >> 15) & MAX_IV_MASK;
-			boxMon->attackIV = (ivs >> 20) & MAX_IV_MASK;
-			boxMon->otherIV = (ivs >> 25) & MAX_IV_MASK;
+			boxMon->allIV = ivs & MAX_IV_MASK;
+			boxMon->allIV = (ivs >> 5) & MAX_IV_MASK;
+			boxMon->allIV = (ivs >> 10) & MAX_IV_MASK;
+			boxMon->allIV = (ivs >> 15) & MAX_IV_MASK;
+			boxMon->allIV = (ivs >> 20) & MAX_IV_MASK;
+			boxMon->allIV = (ivs >> 25) & MAX_IV_MASK;
 			break;
 		}
 		case MON_DATA_EVOLUTION_TRACKER:
@@ -6124,7 +6129,18 @@ bool8 IsOtherTrainer(u32 otId, u8 *otName)
 
 void MonRestorePP(struct Pokemon *mon)
 {
-    BoxMonRestorePP(&mon->box);
+    int i;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (GetMonData(mon, MON_DATA_MOVE1 + i, 0))
+        {
+            u16 move = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+            u16 bonus = GetMonData(mon, MON_DATA_PP_BONUSES, 0);
+            u8 pp = CalculatePPWithBonus(move, bonus, i);
+            SetMonData(mon, MON_DATA_PP1 + i, &pp);
+        }
+    }
 }
 
 void BoxMonRestorePP(struct BoxPokemon *boxMon)

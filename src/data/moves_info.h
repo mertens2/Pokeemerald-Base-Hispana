@@ -1638,7 +1638,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Tormenta de hielo que\n"
         #if B_USE_FROSTBITE == TRUE
-            "puede llegar a helar.");
+            "puede llegar a helar."),
         #else
             "puede llegar a congelar."),
         #endif

@@ -93,7 +93,7 @@
 #define OW_TIMES_OF_DAY                 GEN_LATEST      // Diferentes generaciones cambian los tiempos del día en diferentes momentos.
 #define OW_USE_FAKE_RTC                 FALSE           // Cuando es TRUE, los segundos en el reloj del juego solo avanzarán una vez cada 60 playTimeVBlanks (cada 60 fotogramas).
 #define OW_ALTERED_TIME_RATIO           GEN_LATEST      // En GEN_8_PLA, el tiempo en el juego avanza 60 segundos por cada segundo en el RTC. En GEN_9, son 20 segundos. Esto no tiene efecto si OW_USE_FAKE_RTC es FALSE.
-#define OW_TIME_OF_DAY_ENCOUNTERS       FALSE           // Si está habilitada, permite al usuario utilizar diferentes tablas de encuentros con Pokémon salvajes según la hora del día.
+#define OW_TIME_OF_DAY_ENCOUNTERS       TRUE           // Si está habilitada, permite al usuario utilizar diferentes tablas de encuentros con Pokémon salvajes según la hora del día.
 #define OW_TIME_OF_DAY_DISABLE_FALLBACK FALSE           // Si está habilitada, si la tabla de encuentros con Pokémon salvajas para un mapa y tiempo específicos está vacía, el área no tendrá Pokémon en vez de utilizar las de vanilla.
 #define OW_TIME_OF_DAY_FALLBACK         TIME_MORNING    // La parte del día al que la tabla irá por defecto.
 

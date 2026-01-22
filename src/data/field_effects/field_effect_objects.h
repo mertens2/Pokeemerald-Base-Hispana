@@ -1,5 +1,6 @@
 const struct SpritePalette gSpritePalette_GeneralFieldEffect0 = {gFieldEffectObjectPalette0, FLDEFF_PAL_TAG_GENERAL_0};
 const struct SpritePalette gSpritePalette_GeneralFieldEffect1 = {gFieldEffectObjectPalette1, FLDEFF_PAL_TAG_GENERAL_1};
+const struct SpritePalette gSpritePalette_GeneralTallGrass    = {gFieldEffectObjectPaletteTallGrass, FLDEFF_PAL_TAG_TALL_GRASS};
 
 static const union AnimCmd sAnim_Shadow[] =
 {
@@ -141,12 +142,45 @@ static const union AnimCmd *const sAnimTable_TallGrass[] =
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_TallGrass = {
     .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
+    .paletteTag = FLDEFF_PAL_TAG_TALL_GRASS,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_TallGrass,
     .images = sPicTable_TallGrass,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateTallGrassFieldEffect,
+};
+
+static const struct SpriteFrameImage sPicTable_DarkGrass[] = {
+    overworld_frame(gFieldEffectObjectPic_DarkGrass, 2, 2, 0),
+    overworld_frame(gFieldEffectObjectPic_DarkGrass, 2, 2, 1),
+    overworld_frame(gFieldEffectObjectPic_DarkGrass, 2, 2, 2),
+    overworld_frame(gFieldEffectObjectPic_DarkGrass, 2, 2, 3),
+    overworld_frame(gFieldEffectObjectPic_DarkGrass, 2, 2, 4),
+};
+
+static const union AnimCmd sAnim_DarkGrass[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(2, 10),
+    ANIMCMD_FRAME(3, 10),
+    ANIMCMD_FRAME(4, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_DarkGrass[] =
+{
+    sAnim_DarkGrass,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_DarkGrass = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_TALL_GRASS,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_DarkGrass,
+    .images = sPicTable_DarkGrass,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateDarkGrassFieldEffect,
 };
 
 static const struct SpriteFrameImage sPicTable_Ripple[] = {

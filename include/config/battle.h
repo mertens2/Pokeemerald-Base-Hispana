@@ -298,16 +298,16 @@
 #define B_CATCH_SWAP_CHECK_HMS      TRUE       // Si está en TRUE, la función de intercambio al capturar mencionada encima evitará enviar a la caja a los Pokémon que conozcan movimientos MO.
 
 // Otras Configuraciones
-#define B_DOUBLE_WILD_CHANCE            0          // % de probabilidad de encontrar dos Pokémon en un Encuentro Salvaje.
+#define B_DOUBLE_WILD_CHANCE            20          // % de probabilidad de encontrar dos Pokémon en un Encuentro Salvaje.
 #define B_DOUBLE_WILD_REQUIRE_2_MONS    FALSE      // Si se establece en TRUE, las Batallas Dobles Salvajes se convertirán en Batallas Simples cuando el jugador solo tenga 1 Pokémon utilizable, ignorando B_DOUBLE_WILD_CHANCE y B_FLAG_FORCE_DOUBLE_WILD.
 #define B_MULTI_BATTLE_WHITEOUT         GEN_LATEST // En Gen4+, las batallas múltiples terminan cuando el Jugador y también su Compañero no tienen más Pokémon para luchar.
 #define B_EVOLUTION_AFTER_WHITEOUT      GEN_LATEST // En Gen6+, los Pokémon que califican para la evolución después de la batalla evolucionarán incluso si el jugador pierde.
 #define B_WILD_NATURAL_ENEMIES          TRUE       // Si se establece en TRUE, ciertas especies salvajes atacarán a otras especies cuando estén emparejadas en batallas dobles salvajes (por ejemplo, Zangoose vs Seviper).
-#define B_AFFECTION_MECHANICS           TRUE       // En Gen6+, hay una estadística llamada afecto que puede desencadenar diferentes efectos en batalla. A partir de LGPE, esos efectos usan amistad en su lugar.
+#define B_AFFECTION_MECHANICS           FALSE       // En Gen6+, hay una estadística llamada afecto que puede desencadenar diferentes efectos en batalla. A partir de LGPE, esos efectos usan amistad en su lugar.
 #define B_TRAINER_CLASS_POKE_BALLS      GEN_LATEST // En Gen7+, los entrenadores usarán ciertos tipos de Poké Balls según su clase de entrenador.
 #define B_TRAINER_MON_RANDOM_ABILITY    FALSE      // Si se establece en TRUE, se generará una habilidad legal aleatoria para un Pokémon de entrenador.
 #define B_OBEDIENCE_MECHANICS           GEN_LATEST // En PLA+ (aquí Gen8+), las restricciones de obediencia también se aplican a los Pokémon no extranjeros, aunque basadas en su nivel encontrado en lugar de nivel real.
-#define B_USE_FROSTBITE                 FALSE      // En PLA, Frostbite reemplaza a Freeze. Habilitar esta flag hace lo mismo aquí. Los movimientos aún pueden ser seleccionados para Freeze o Frostbite. Freeze-Dry, Secret Power y Tri Attack dependen de esta configuración.
+#define B_USE_FROSTBITE                 TRUE      // En PLA, Frostbite reemplaza a Freeze. Habilitar esta flag hace lo mismo aquí. Los movimientos aún pueden ser seleccionados para Freeze o Frostbite. Freeze-Dry, Secret Power y Tri Attack dependen de esta configuración.
 #define B_TOXIC_REVERSAL                GEN_LATEST // En Gen5+, el veneno grave se convierte en veneno normal al final de las batallas.
 #define B_TRY_CATCH_TRAINER_BALL        GEN_LATEST // En Gen4+, intentar capturar a un Pokémon de un entrenador no consume la Poké Ball.
 #define B_SLEEP_CLAUSE                  FALSE     //  Si está habilitado, activa la cláusula de sueño siempre, sin importar el B_FLAG_SLEEP_CLAUSE. Usa esto si quieres que sea más fácil de ajustar.
@@ -344,7 +344,7 @@
 #define SHOW_TYPES_ALWAYS   1                    // Always show types in battle
 #define SHOW_TYPES_CAUGHT   2                    // Only show types if you've caught a species of the mon.
 #define SHOW_TYPES_SEEN     3                    // Only show types if you've seen a species of the mon.
-#define B_SHOW_TYPES        SHOW_TYPES_NEVER     // When to show type indicators next to Pokémon health bars in battle, while choosing a move after selecting a target Pokémon.
+#define B_SHOW_TYPES        SHOW_TYPES_ALWAYS    // When to show type indicators next to Pokémon health bars in battle, while choosing a move after selecting a target Pokémon.
 
 #define SHOW_EFFECTIVENESS_NEVER    0           // Never show effectiveness when selecting moves.
 #define SHOW_EFFECTIVENESS_ALWAYS   1           // Always show effectiveness when selecting moves.

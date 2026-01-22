@@ -1,3 +1,6 @@
+EventScript_PC_New::
+	setflag FLAG_TEMP_1
+	goto EventScript_PC
 EventScript_PC::
 	lockall
 	setvar VAR_0x8004, PC_LOCATION_OTHER

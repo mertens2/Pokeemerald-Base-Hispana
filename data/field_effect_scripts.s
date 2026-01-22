@@ -83,6 +83,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_Defog                     @ FLDEFF_DEFOG
 	.4byte gFieldEffectScript_UseRockClimb              @ FLDEFF_USE_ROCK_CLIMB
 	.4byte gFieldEffectScript_RockClimbDust             @ FLDEFF_ROCK_CLIMB_DUST
+	.4byte gFieldEffectScript_DarkGrass		            @ FLDEFF_DARK_GRASS
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -101,7 +102,11 @@ gFieldEffectScript_Shadow::
 	field_eff_end
 
 gFieldEffectScript_TallGrass::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_TallGrass
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralTallGrass, FldEff_TallGrass
+	field_eff_end
+
+gFieldEffectScript_DarkGrass::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralTallGrass, FldEff_DarkGrass
 	field_eff_end
 
 gFieldEffectScript_Ripple::
