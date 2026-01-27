@@ -76,7 +76,7 @@
 #define FLAG_HIDE_ZIGZA_102	 				0x3E
 #define FLAG_HIDE_BALL_102   				0x3F
 #define FLAG_BALL_CATCH_102					0x40
-#define FLAG_SECONDMART      				0x41 // Unused Flag
+#define FLAG_UNUSED_0x41      				0x41 // Unused Flag
 #define FLAG_HIDE_NORMAN_SPECIAL_DADS_GYM   0x42 // Unused Flag
 #define FLAG_HIDE_PLAYER_SPECIAL_DADS_GYM   0x43 // Unused Flag
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_DELTA    0x44 // Unused Flag
@@ -655,8 +655,9 @@
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
+#define FLAG_HIDDEN_ITEM_RESPAWN                 			 (FLAG_HIDDEN_ITEMS_START + 0x70)
 
-#define FLAG_QUEST_MENU_ACTIVE  0x264 // Unused Flag
+// #define FLAG_QUEST_MENU_ACTIVE  0x264 // Unused Flag
 #define FLAG_DECORATION_1  0x265
 #define FLAG_DECORATION_2  0x266 
 #define FLAG_DECORATION_3  0x267 
@@ -685,7 +686,7 @@
 #define FLAG_DECORATION_26  0x27E 
 #define FLAG_DECORATION_27  0x27F 
 #define FLAG_DECORATION_28  0x280 
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
+#define FLAG_QUEST_MENU_ACTIVE  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag
 #define FLAG_UNUSED_0x284  0x284 // Unused Flag
@@ -1501,7 +1502,7 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
 #define FLAG_REMOVE_WARP_FADE                       (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
+#define FLAG_SYS_ORAS_DOWNSING                      (SYSTEM_FLAGS + 0x86) // Unused Flag
 #define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
 #define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
@@ -1653,6 +1654,11 @@
 #define FLAG_TEMP_REGICE_PUZZLE_FAILED          FLAG_TEMP_3
 #define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_E
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE FLAG_TEMP_11
+#define FLAG_TEMP_SECOND_MART 					FLAG_TEMP_E
+#define FLAG_TEMP_BERRIES_MART 					FLAG_TEMP_F
+#define FLAG_SECONDMART FLAG_TEMP_SECOND_MART
+#define FLAG_BAYASMART FLAG_TEMP_BERRIES_MART
+#define FLAG_TEMP_DEX_RELATED_MENU FLAG_TEMP_10
 
 #if TESTING
 #define TESTING_FLAGS_START                     0x5000

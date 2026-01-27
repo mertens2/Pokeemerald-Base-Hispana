@@ -2509,7 +2509,7 @@ PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon::
 
 PetalburgCity_Gym_Text_DadHmISee::
 # 49 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "¡No, ninguno, no te preocupes!$"
+	.string "¡No, ninguna, no te preocupes!$"
 
 PetalburgCity_Gym_Text_DadPlayerGoWithWally::
 # 60 "data/maps/PetalburgCity_Gym/scripts.pory"

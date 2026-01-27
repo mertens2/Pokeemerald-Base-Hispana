@@ -16,8 +16,6 @@ LittlerootTown_BrendansHouse_1F_OnLoad:
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes::
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
 	return
 
 LittlerootTown_BrendansHouse_1F_OnTransition:
@@ -32,12 +30,12 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs::
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_MOM, 4, 5
+	setobjectxyperm LOCALID_MOM, 3, 5
 	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
-	setobjectxyperm LOCALID_MOM, 9, 8
+	setobjectxyperm LOCALID_MOM, 10, 10
 	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
@@ -56,11 +54,10 @@ LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
 	setspeaker Mama
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 	closemessage
-	
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	applymovement LOCALID_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	waitmovement 0
-	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 7, 1
+	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 12, 2
 	waitstate
 	releaseall
 	end
@@ -93,7 +90,6 @@ LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_RIVAL_MOM, LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
-	setspeaker Marta
 	setvar VAR_LAST_TALKED, LOCALID_RIVAL
 	call EventScript_YoureNewNeighbor_Translated
 	setflag FLAG_MET_RIVAL_MOM

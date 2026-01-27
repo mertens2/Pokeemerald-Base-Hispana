@@ -536,35 +536,35 @@ static void WindowFunc_DrawDialogueFrame(u8 bg, u8 tilemapLeft, u8 tilemapTop, u
                             5,
                             DLG_WINDOW_PALETTE_NUM);
     FillBgTilemapBufferRect(bg,
-                            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 1),
+                            DLG_WINDOW_BASE_TILE_NUM + 7,
                             tilemapLeft - 2,
                             tilemapTop + height,
                             1,
                             1,
                             DLG_WINDOW_PALETTE_NUM);
     FillBgTilemapBufferRect(bg,
-                            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 3),
+                            DLG_WINDOW_BASE_TILE_NUM + 9,
                             tilemapLeft - 1,
                             tilemapTop + height,
                             1,
                             1,
                             DLG_WINDOW_PALETTE_NUM);
     FillBgTilemapBufferRect(bg,
-                            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 4),
+                            DLG_WINDOW_BASE_TILE_NUM + 9,
                             tilemapLeft,
                             tilemapTop + height,
                             width - 1,
                             1,
                             DLG_WINDOW_PALETTE_NUM);
     FillBgTilemapBufferRect(bg,
-                            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 5),
+                            DLG_WINDOW_BASE_TILE_NUM + 9,
                             tilemapLeft + width - 1,
                             tilemapTop + height,
                             1,
                             1,
                             DLG_WINDOW_PALETTE_NUM);
     FillBgTilemapBufferRect(bg,
-                            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 6),
+                            DLG_WINDOW_BASE_TILE_NUM + 10,
                             tilemapLeft + width,
                             tilemapTop + height,
                             1,
@@ -621,21 +621,21 @@ void DisplayYesNoMenuWithDefault(u8 initialCursorPos)
 }
 
 
-u32 GetPlayerTextSpeed(void)
-{
-    if (gTextFlags.forceMidTextSpeed)
-        return OPTIONS_TEXT_SPEED_MID;
-    return gSaveBlock2Ptr->optionsTextSpeed;
-}
+// u32 GetPlayerTextSpeed(void)
+// {
+    // if (gTextFlags.forceMidTextSpeed)
+        // return OPTIONS_TEXT_SPEED_MID;
+    // return gSaveBlock2Ptr->optionsTextSpeed;
+// }
 
-u32 GetPlayerTextSpeedDelay(void)
-{
-    u32 speed;
-    if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_FASTER)
-        gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
-    speed = GetPlayerTextSpeed();
-    return sTextSpeedFrameDelays[speed];
-}
+// u32 GetPlayerTextSpeedDelay(void)
+// {
+    // u32 speed;
+    // if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_FASTER)
+        // gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
+    // speed = GetPlayerTextSpeed();
+    // return sTextSpeedFrameDelays[speed];
+// }
 
 
 u8 AddStartMenuWindow(u8 numActions)

@@ -10,6 +10,7 @@
 #include "event_object_movement.h"
 #include "field_screen_effect.h"
 #include "field_weather.h"
+#include "constants/field_specials.h"
 #include "fldeff_misc.h"
 #include "gpu_regs.h"
 #include "graphics.h"
@@ -1579,13 +1580,28 @@ static void FieldTask_ReturnToPcMenu(void)
     u8 taskId;
     MainCallback vblankCb = gMain.vblankCallback;
 
-    SetVBlankCallback(NULL);
-    taskId = CreateTask(Task_PCMainMenu, 80);
-    gTasks[taskId].tState = 0;
-    gTasks[taskId].tSelectedOption = sPreviousBoxOption;
-    Task_PCMainMenu(taskId);
-    SetVBlankCallback(vblankCb);
+    // SetVBlankCallback(NULL);
+    // taskId = CreateTask(Task_PCMainMenu, 80);
+    // gTasks[taskId].tState = 0;
+    // gTasks[taskId].tSelectedOption = sPreviousBoxOption;
+    // Task_PCMainMenu(taskId);
+    // SetVBlankCallback(vblankCb);
+	if (gSpecialVar_0x8004 == PC_LOCATION_START_MENU)
+	{
+		SetVBlankCallback(NULL);
+		taskId = CreateTask(Task_PCMainMenu, 80);
+		gTasks[taskId].tState = 0;
+		gTasks[taskId].tSelectedOption = sPreviousBoxOption;
+		Task_PCMainMenu(taskId);
+		SetVBlankCallback(vblankCb);
+	}
+	else {
+		UnlockPlayerFieldControls();
+        ScriptContext_Enable();
+		SetVBlankCallback(CB2_ReturnToField);
+	}
     FadeInFromBlack();
+	
 }
 
 #undef tState

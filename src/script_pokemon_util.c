@@ -328,19 +328,7 @@ void SetTeraType(struct ScriptContext *ctx)
         SetMonData(&gPlayerParty[partyIndex], MON_DATA_TERA_TYPE, &type);
 }
 
-u32 ScriptGiveMonFull(u16 species, u8 level, u16 item, u16 ball, u8 nature, u8 abilityNum, u8 *ivs, u16 *moves)
-{
-	u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};
-	ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, nature, abilityNum, evs, ivs, moves, SHINY_MODE_RANDOM, FALSE, 0, 0);
-}
 
-u32 ScriptGiveMonCustomMoves(u16 species, u8 level, u16 item, u16 *moves) {
-    u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};
-    u8 ivs[NUM_STATS]        = {MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1,   // We pass "MAX_PER_STAT_IVS + 1" here to ensure that
-                                MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1};  // ScriptGiveMonParameterized won't touch the stats' IV.
-
-    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, SHINY_MODE_RANDOM, FALSE, NUMBER_OF_MON_TYPES, 0);
-}
 /* Creates a Pokemon via script
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
@@ -496,6 +484,49 @@ u32 ScriptGiveMon(u16 species, u8 level, u16 item)
     u8 ivs[NUM_STATS]        = {MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1,   // We pass "MAX_PER_STAT_IVS + 1" here to ensure that
                                 MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1};  // ScriptGiveMonParameterized won't touch the stats' IV.
     u16 moves[MAX_MON_MOVES] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};
+
+    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, SHINY_MODE_RANDOM, FALSE, NUMBER_OF_MON_TYPES, 0);
+}
+
+u32 ScriptGiveMonFull(u16 species, u8 level, u16 item, u16 ball, u8 nature, u8 abilityNum, u8 *ivs, u16 *moves)
+{
+	u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};
+	return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, nature, abilityNum, MON_GENDERLESS, evs, ivs, moves, SHINY_MODE_RANDOM, FALSE, 0, 0);
+}
+
+u32 ScriptGiveMonPassword(u16 species, u8 level, u16 item, u16 ball, u8 nature, u8 abilityNum, u8 gender, u32 ivs, u16 *moves, u8 isShiny)
+{
+	u8 evs[NUM_STATS]           = {0, 0, 0, 0, 0, 0};
+	u8 ivsUsed 					= (ivs != 0? ivs/6 : 15);
+	u8 ivsFull[NUM_STATS]       = {ivsUsed, ivsUsed, ivsUsed, ivsUsed, ivsUsed, ivsUsed};
+	u8 i;
+	u16 movesDefault[MAX_MON_MOVES] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};
+	if (ball == 0)
+		ball = ITEM_POKE_BALL;
+	if (gender > 1)
+		gender = MON_GENDERLESS;
+	if (nature == 0)
+		nature = NUM_NATURES;
+	for (i=0;i<3;i++){
+		if (abilityNum == gSpeciesInfo[species].abilities[i])
+			abilityNum = i;
+	}
+	if (i != abilityNum)
+		abilityNum = NUM_ABILITY_PERSONALITY;
+	if (moves == 0)
+		moves = movesDefault;
+	if (isShiny == 0)
+		isShiny = SHINY_MODE_RANDOM;
+	else 
+		isShiny = SHINY_MODE_ALWAYS;
+	
+	return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ball, nature, abilityNum, gender, evs, ivsFull, moves, isShiny, FALSE, 0, 0);
+}
+
+u32 ScriptGiveMonCustomMoves(u16 species, u8 level, u16 item, u16 *moves) {
+    u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};
+    u8 ivs[NUM_STATS]        = {MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1,   // We pass "MAX_PER_STAT_IVS + 1" here to ensure that
+                                MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1};  // ScriptGiveMonParameterized won't touch the stats' IV.
 
     return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, SHINY_MODE_RANDOM, FALSE, NUMBER_OF_MON_TYPES, 0);
 }

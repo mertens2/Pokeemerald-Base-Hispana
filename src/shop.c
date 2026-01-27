@@ -1,5 +1,6 @@
 #include "global.h"
 #include "bg.h"
+#include "event_data.h"
 #include "data.h"
 #include "decompress.h"
 #include "decoration.h"
@@ -37,6 +38,7 @@
 #include "constants/decorations.h"
 #include "constants/event_objects.h"
 #include "constants/items.h"
+#include "constants/flags.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -158,6 +160,457 @@ static void Task_HandleShopMenuBuy(u8 taskId);
 static void Task_HandleShopMenuSell(u8 taskId);
 static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, struct ListMenu *list);
 static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y);
+
+//mart badges
+static const u16 sShopInventory_ZeroBadges[] = {
+    ITEM_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_PARALYZE_HEAL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_OneBadge[] = {
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ESCAPE_ROPE,
+	ITEM_HARD_STONE,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_TwoBadges[] = {
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+	ITEM_HARD_STONE,
+	ITEM_BLACK_BELT,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_ThreeBadges[] = {
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+	ITEM_HARD_STONE,
+	ITEM_BLACK_BELT,
+	ITEM_MAGNET,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_FourBadges[] = {
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_REVIVE,
+	ITEM_HARD_STONE,
+	ITEM_BLACK_BELT,
+	ITEM_MAGNET,
+	ITEM_CHARCOAL,
+	ITEM_MIRACLE_SEED,
+	ITEM_MYSTIC_WATER,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_FiveBadges[] = {
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+    ITEM_FULL_HEAL,
+    ITEM_REVIVE,
+    ITEM_MAX_REVIVE,
+	ITEM_EXPERT_BELT,
+	ITEM_HARD_STONE,
+	ITEM_BLACK_BELT,
+	ITEM_MAGNET,
+	ITEM_CHARCOAL,
+	ITEM_MIRACLE_SEED,
+	ITEM_MYSTIC_WATER,
+	ITEM_SILK_SCARF,
+	ITEM_NEVER_MELT_ICE,
+	ITEM_SILVER_POWDER,
+	ITEM_POISON_BARB,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_SixBadges[] = {
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+	ITEM_FULL_HEAL,
+    ITEM_REVIVE,
+    ITEM_MAX_REVIVE,
+	ITEM_EXPERT_BELT,
+	ITEM_HARD_STONE,
+	ITEM_BLACK_BELT,
+	ITEM_MAGNET,
+	ITEM_CHARCOAL,
+	ITEM_MIRACLE_SEED,
+	ITEM_MYSTIC_WATER,
+	ITEM_SILK_SCARF,
+	ITEM_NEVER_MELT_ICE,
+	ITEM_SILVER_POWDER,
+	ITEM_POISON_BARB,
+	ITEM_SHARP_BEAK,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_SevenBadges[] = {
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+    ITEM_MAX_POTION,
+    ITEM_FULL_HEAL,
+    ITEM_REVIVE,
+    ITEM_MAX_REVIVE,
+	ITEM_EXPERT_BELT,
+	ITEM_HARD_STONE,
+	ITEM_BLACK_BELT,
+	ITEM_MAGNET,
+	ITEM_CHARCOAL,
+	ITEM_MIRACLE_SEED,
+	ITEM_MYSTIC_WATER,
+	ITEM_SILK_SCARF,
+	ITEM_NEVER_MELT_ICE,
+	ITEM_SILVER_POWDER,
+	ITEM_POISON_BARB,
+	ITEM_SHARP_BEAK,
+	ITEM_TWISTED_SPOON,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_EightBadges[] = {
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+    ITEM_MAX_POTION,
+    ITEM_FULL_RESTORE,
+    ITEM_FULL_HEAL,
+    ITEM_REVIVE,
+    ITEM_MAX_REVIVE,
+	ITEM_LIFE_ORB,
+	ITEM_EXPERT_BELT,
+	ITEM_HARD_STONE,
+	ITEM_BLACK_BELT,
+	ITEM_MAGNET,
+	ITEM_CHARCOAL,
+	ITEM_MIRACLE_SEED,
+	ITEM_MYSTIC_WATER,
+	ITEM_SILK_SCARF,
+	ITEM_NEVER_MELT_ICE,
+	ITEM_SILVER_POWDER,
+	ITEM_POISON_BARB,
+	ITEM_SHARP_BEAK,
+	ITEM_TWISTED_SPOON,
+	ITEM_FAIRY_FEATHER,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_ZeroBadges[] = {
+    ITEM_POKE_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_REPEL,
+	ITEM_ESCAPE_ROPE,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_OneBadge[] = {
+    ITEM_POKE_BALL,
+    ITEM_GREAT_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_HEAL_BALL,
+	ITEM_REPEL,
+	ITEM_ESCAPE_ROPE,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_TwoBadges[] = {
+    ITEM_POKE_BALL,
+    ITEM_GREAT_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_HEAL_BALL,
+	ITEM_QUICK_BALL,
+	ITEM_TIMER_BALL,
+	ITEM_REPEL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_ThreeBadges[] = {
+    ITEM_POKE_BALL,
+    ITEM_GREAT_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_HEAL_BALL,
+	ITEM_QUICK_BALL,
+	ITEM_TIMER_BALL,
+	ITEM_REPEL,
+	ITEM_HONEY,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_FourBadges[] = {
+	ITEM_POKE_BALL,
+    ITEM_GREAT_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_HEAL_BALL,
+	ITEM_REPEAT_BALL,
+	ITEM_QUICK_BALL,
+	ITEM_TIMER_BALL,
+	ITEM_PARK_BALL,
+	ITEM_SPORT_BALL,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_HONEY,
+	ITEM_LURE,
+	ITEM_POKE_DOLL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_FiveBadges[] = {
+	ITEM_POKE_BALL,
+    ITEM_GREAT_BALL,
+    ITEM_ULTRA_BALL,
+    ITEM_DIVE_BALL,
+    ITEM_DUSK_BALL,
+    ITEM_QUICK_BALL,
+    ITEM_LUXURY_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_HEAL_BALL,
+	ITEM_REPEAT_BALL,
+	ITEM_TIMER_BALL,
+	ITEM_PARK_BALL,
+	ITEM_SPORT_BALL,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_MAX_REPEL,
+	ITEM_LURE,
+	ITEM_SUPER_LURE,
+	ITEM_HONEY,
+	ITEM_POKE_DOLL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_SixBadges[] = {
+	ITEM_POKE_BALL,
+    ITEM_GREAT_BALL,
+    ITEM_ULTRA_BALL,
+    ITEM_DIVE_BALL,
+    ITEM_DUSK_BALL,
+    ITEM_QUICK_BALL,
+    ITEM_LUXURY_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_HEAL_BALL,
+	ITEM_REPEAT_BALL,
+	ITEM_TIMER_BALL,
+	ITEM_PARK_BALL,
+	ITEM_SPORT_BALL,
+	ITEM_DREAM_BALL,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_MAX_REPEL,
+	ITEM_LURE,
+	ITEM_SUPER_LURE,
+	ITEM_HONEY,
+	ITEM_POKE_DOLL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_SevenBadges[] = {
+	ITEM_POKE_BALL,
+    ITEM_GREAT_BALL,
+    ITEM_ULTRA_BALL,
+    ITEM_DIVE_BALL,
+    ITEM_DUSK_BALL,
+    ITEM_QUICK_BALL,
+    ITEM_LUXURY_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_HEAL_BALL,
+	ITEM_REPEAT_BALL,
+	ITEM_TIMER_BALL,
+	ITEM_PARK_BALL,
+	ITEM_SPORT_BALL,
+	ITEM_DREAM_BALL,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_MAX_REPEL,
+	ITEM_LURE,
+	ITEM_SUPER_LURE,
+	ITEM_HONEY,
+	ITEM_POKE_DOLL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Secondary_EightBadges[] = {
+	ITEM_POKE_BALL,
+    ITEM_GREAT_BALL,
+    ITEM_ULTRA_BALL,
+    ITEM_DIVE_BALL,
+    ITEM_DUSK_BALL,
+    ITEM_QUICK_BALL,
+    ITEM_LUXURY_BALL,
+    ITEM_NET_BALL,
+    ITEM_NEST_BALL,
+	ITEM_HEAL_BALL,
+	ITEM_REPEAT_BALL,
+	ITEM_TIMER_BALL,
+	ITEM_PARK_BALL,
+	ITEM_SPORT_BALL,
+	ITEM_DREAM_BALL,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_MAX_REPEL,
+	ITEM_LURE,
+	ITEM_SUPER_LURE,
+	ITEM_HONEY,
+	ITEM_POKE_DOLL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Berries_One[] = {
+    ITEM_ORAN_BERRY,
+    ITEM_PECHA_BERRY,
+    ITEM_CHERI_BERRY,
+    ITEM_CHESTO_BERRY,
+    ITEM_RAWST_BERRY,
+    ITEM_PERSIM_BERRY,
+    ITEM_LEPPA_BERRY,
+    ITEM_SITRUS_BERRY,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Berries_Two[] = {
+    ITEM_ORAN_BERRY,
+    ITEM_PECHA_BERRY,
+    ITEM_CHERI_BERRY,
+    ITEM_CHESTO_BERRY,
+    ITEM_RAWST_BERRY,
+    ITEM_PERSIM_BERRY,
+    ITEM_LEPPA_BERRY,
+    ITEM_SITRUS_BERRY,
+    ITEM_FIGY_BERRY,
+    ITEM_WIKI_BERRY,
+    ITEM_MAGO_BERRY,
+    ITEM_AGUAV_BERRY,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Berries_Three[] = {
+    ITEM_ORAN_BERRY,
+    ITEM_PECHA_BERRY,
+    ITEM_CHERI_BERRY,
+    ITEM_CHESTO_BERRY,
+    ITEM_RAWST_BERRY,
+    ITEM_PERSIM_BERRY,
+    ITEM_LEPPA_BERRY,
+    ITEM_SITRUS_BERRY,
+    ITEM_FIGY_BERRY,
+    ITEM_WIKI_BERRY,
+    ITEM_MAGO_BERRY,
+    ITEM_AGUAV_BERRY,
+    ITEM_IAPAPA_BERRY,
+	ITEM_OCCA_BERRY,
+	ITEM_PASSHO_BERRY,
+	ITEM_WACAN_BERRY,
+	ITEM_CHILAN_BERRY,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_Berries_Four[] = {
+    ITEM_ORAN_BERRY,
+    ITEM_PECHA_BERRY,
+    ITEM_CHERI_BERRY,
+    ITEM_CHESTO_BERRY,
+    ITEM_RAWST_BERRY,
+    ITEM_PERSIM_BERRY,
+    ITEM_LEPPA_BERRY,
+    ITEM_SITRUS_BERRY,
+    ITEM_FIGY_BERRY,
+    ITEM_WIKI_BERRY,
+    ITEM_MAGO_BERRY,
+    ITEM_AGUAV_BERRY,
+    ITEM_IAPAPA_BERRY,
+	ITEM_OCCA_BERRY,
+	ITEM_PASSHO_BERRY,
+	ITEM_WACAN_BERRY,
+	ITEM_CHILAN_BERRY,
+	ITEM_BABIRI_BERRY,
+	ITEM_COLBUR_BERRY,
+	ITEM_HABAN_BERRY,
+	ITEM_KASIB_BERRY,
+	ITEM_CHARTI_BERRY,
+	ITEM_TANGA_BERRY,
+	ITEM_PAYAPA_BERRY,
+	ITEM_COBA_BERRY,
+	ITEM_SHUCA_BERRY,
+	ITEM_KEBIA_BERRY,
+	ITEM_CHOPLE_BERRY,
+	ITEM_YACHE_BERRY,
+	ITEM_RINDO_BERRY,
+    ITEM_NONE
+};
+
+static const u16 *const sShopInventories[] = 
+{
+    sShopInventory_ZeroBadges, 
+    sShopInventory_OneBadge,
+    sShopInventory_TwoBadges,
+    sShopInventory_ThreeBadges,
+    sShopInventory_FourBadges,
+    sShopInventory_FiveBadges,
+    sShopInventory_SixBadges,
+    sShopInventory_SevenBadges,
+    sShopInventory_EightBadges
+};
+static const u16 *const sShopInventoriesSecondary[] = 
+{
+    sShopInventory_Secondary_ZeroBadges, 
+    sShopInventory_Secondary_OneBadge,
+    sShopInventory_Secondary_TwoBadges,
+    sShopInventory_Secondary_ThreeBadges,
+    sShopInventory_Secondary_FourBadges,
+    sShopInventory_Secondary_FiveBadges,
+    sShopInventory_Secondary_SixBadges,
+    sShopInventory_Secondary_SevenBadges,
+    sShopInventory_Secondary_EightBadges
+};
+
+
+static const u16 *const sShopInventoriesBerries[] = 
+{
+    sShopInventory_Berries_One, 
+    sShopInventory_Berries_One,
+    sShopInventory_Berries_Two,
+    sShopInventory_Berries_Two,
+    sShopInventory_Berries_Three,
+    sShopInventory_Berries_Four,
+    sShopInventory_Berries_Four,
+    sShopInventory_Berries_Four,
+    sShopInventory_Berries_Four
+};
 
 static const struct YesNoFuncTable sShopPurchaseYesNoFuncs =
 {
@@ -379,11 +832,37 @@ static void SetShopMenuCallback(void (*callback)(void))
     sMartInfo.callback = callback;
 }
 
+static u8 GetNumberOfBadges(void)
+{
+    u16 badgeFlag;
+    u8 count = 0;
+    
+    for (badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++)
+    {
+        if (FlagGet(badgeFlag))
+            count++;
+    }
+    
+    return count;
+}
+
 static void SetShopItemsForSale(const u16 *items)
 {
     u16 i = 0;
+	u8 badgeCount = GetNumberOfBadges();
 
-    sMartInfo.itemList = items;
+    if (items == NULL) {
+		if (FlagGet(FLAG_TEMP_SECOND_MART)) 
+			sMartInfo.itemList = sShopInventoriesSecondary[badgeCount];
+		else if (FlagGet(FLAG_TEMP_BERRIES_MART)) 
+			sMartInfo.itemList = sShopInventoriesBerries[badgeCount];
+		else 
+			sMartInfo.itemList = sShopInventories[badgeCount];
+		}
+	else
+        sMartInfo.itemList = items;
+	FlagClear(FLAG_TEMP_SECOND_MART);
+	FlagClear(FLAG_TEMP_BERRIES_MART);
     sMartInfo.itemCount = 0;
 
     // Read items until ITEM_NONE / DECOR_NONE is reached

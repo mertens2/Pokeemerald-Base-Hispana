@@ -50,7 +50,7 @@ static u32 GetGlyphWidth_Narrower(u16, bool32);
 static u32 GetGlyphWidth_SmallNarrower(u16, bool32);
 static u32 GetGlyphWidth_ShortNarrow(u16, bool32);
 static u32 GetGlyphWidth_ShortNarrower(u16, bool32);
-static bool8 AAndBCanSkip(u8 mode);
+
 
 static EWRAM_DATA struct TextPrinter sTempTextPrinter = {0};
 static EWRAM_DATA struct TextPrinter sTextPrinters[WINDOWS_MAX] = {0};
@@ -291,7 +291,7 @@ static const u8 sTextScrollSpeeds[] =
 
 static const u16 sFontBoldJapaneseGlyphs[] = INCBIN_U16("graphics/fonts/bold.hwjpnfont");
 
-static bool8 AAndBCanSkip(u8 mode){
+bool8 AAndBCanSkip(u8 mode){
 	if (gSaveBlock2Ptr->optionsTextSkip >= mode){
 		if (JOY_HELD(A_BUTTON) && JOY_HELD(B_BUTTON))
 			return TRUE;
@@ -417,6 +417,8 @@ void RunTextPrinters(void)
 {
     bool32 isInstantText = IsPlayerTextSpeedInstant();
     u32 textRepeats = GetPlayerTextSpeedModifier();
+	if (AAndBCanSkip(OPTIONS_TEXT_SKIP_NOCLOSE))
+		isInstantText = TRUE;
 
     if (gDisableTextPrinters)
         return;
@@ -1083,7 +1085,7 @@ static u16 RenderText(struct TextPrinter *textPrinter)
     switch (textPrinter->state)
     {
     case RENDER_STATE_HANDLE_CHAR:
-        if ((JOY_HELD(A_BUTTON | B_BUTTON) && subStruct->hasPrintBeenSpedUp) || IsPlayerTextSpeedInstant())
+        if ((JOY_HELD(A_BUTTON | B_BUTTON) && subStruct->hasPrintBeenSpedUp) || IsPlayerTextSpeedInstant() || AAndBCanSkip(OPTIONS_TEXT_SKIP_NOCLOSE))
             textPrinter->delayCounter = 0;
 
         if (textPrinter->delayCounter && textPrinter->textSpeed)
@@ -1117,8 +1119,6 @@ static u16 RenderText(struct TextPrinter *textPrinter)
                 repeats = 2;
                 break;
         }
-		if (AAndBCanSkip(OPTIONS_TEXT_SKIP_NOSCROLL))
-			repeats = 60;
         do {
 			currChar = *textPrinter->printerTemplate.currentChar;
 			textPrinter->printerTemplate.currentChar++;

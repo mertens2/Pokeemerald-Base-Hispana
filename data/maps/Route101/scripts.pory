@@ -20,6 +20,7 @@ script Route101_EventScript_Youngster {
 			msgbox(format("Weird to think about much things change, huh?\pLike, long ago, we used to fear Pokémon!\NCan you imagine fearing a RALTS!? Couldn't be me, HAHAHA!"))
 		}
 	}
+	closemessage
 	return
 }
 
@@ -279,11 +280,12 @@ Route101_Movement_ZigzagoonFaceBirch:
 	step_end
 
 Route101_Movement_EnterScene:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_left
+	player_run_up
+	player_run_up
+	player_run_up
+	player_run_up
+	player_run_left
+	walk_in_place_fast_left
 	step_end
 
 Route101_Movement_BirchRunInCircles:

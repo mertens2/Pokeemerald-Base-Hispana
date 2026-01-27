@@ -147,6 +147,16 @@
 
 #define FEATURE_FLAG_ASSERT(flag, id) STATIC_ASSERT(flag > TEMP_FLAGS_END || flag == 0, id)
 
+#define SET_BIT(var,bit) ( var |= bit )
+#define GET_BIT(var,bit) 	\
+({ 							\
+	u8 f; 					\
+	f = var & bit;  		\
+	f; 						\
+})
+#define CLEAR_BIT(var,bit) ( var &= (~bit) )
+#define TOGGLE_BIT(var,bit) ( var ^= bit )
+
 // NOTE: This uses hardware timers 2 and 3; this will not work during active link connections or with the eReader
 static inline void CycleCountStart()
 {

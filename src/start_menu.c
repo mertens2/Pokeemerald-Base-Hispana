@@ -30,6 +30,7 @@
 #include "party_menu.h"
 #include "pokedex.h"
 #include "pokenav.h"
+#include "pokemon_storage_system.h"
 #include "safari_zone.h"
 #include "save.h"
 #include "scanline_effect.h"
@@ -53,12 +54,15 @@
 #include "config/tutoriales.h"
 #include "tutoriales/minijuego_zubat.h"
 #include "quests.h"
+#include "naming_screen.h"
 
 // Menu actions
 enum
 {
+	MENU_ACTION_DEXRELATED,
     MENU_ACTION_POKEDEX,
     MENU_ACTION_POKEMON,
+	MENU_ACTION_PC,
     MENU_ACTION_BAG,
     MENU_ACTION_POKENAV,
     MENU_ACTION_PLAYER,
@@ -66,6 +70,9 @@ enum
     MENU_ACTION_OPTION,
     MENU_ACTION_TUTORIAL_MINIJUEGO_ZUBAT,
     MENU_ACTION_EXIT,
+	MENU_ACTION_EXIT2,
+    MENU_ACTION_RIGHT,
+    MENU_ACTION_LEFT,
     MENU_ACTION_RETIRE_SAFARI,
     MENU_ACTION_PLAYER_LINK,
     MENU_ACTION_REST_FRONTIER,
@@ -74,6 +81,8 @@ enum
     MENU_ACTION_DEBUG,
     MENU_ACTION_DEXNAV,
     MENU_ACTION_QUEST_MENU,
+    MENU_ACTION_CODES,
+	MENU_ACTION_UI_MENU
 };
 
 // Save status
@@ -105,11 +114,14 @@ EWRAM_DATA static u8 sSaveInfoWindowId = 0;
 static bool8 StartMenuPokedexCallback(void);
 static bool8 StartMenuPokemonCallback(void);
 static bool8 StartMenuBagCallback(void);
+static bool8 StartMenuPCCallback(void);
 static bool8 StartMenuPokeNavCallback(void);
 static bool8 StartMenuPlayerNameCallback(void);
 static bool8 StartMenuSaveCallback(void);
 static bool8 StartMenuOptionCallback(void);
 static bool8 StartMenuExitCallback(void);
+static bool8 StartMenuRightCallback(void);
+static bool8 StartMenuLeftCallback(void);
 static bool8 StartMenuTutorialMinijuegoZubatCallback(void);
 static bool8 StartMenuSafariZoneRetireCallback(void);
 static bool8 StartMenuLinkModePlayerNameCallback(void);
@@ -118,6 +130,10 @@ static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuDexNavCallback(void);
 static bool8 QuestMenuCallback(void);
+static bool8 PasswordCallback(void);
+static bool8 StartMenuDexRelatedCallback(void);
+static bool8 StartMenuUiMenuCallback(void);
+
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -196,18 +212,29 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
 
 static const u8 sText_MenuDebug[] = _("DEBUG");
 
-static const u8 sText_QuestMenu[] = _("QUESTS");
+static const u8 sText_QuestMenu[] = _("Misiones");
+static const u8 sText_MenuCodes[] = _("Claves");
+static const u8 gText_MenuDexRelated[] = _("Dex y Otros");
+static const u8 gText_LeftArrow[] = _("{LEFT_ARROW}");
+static const u8 gText_MenuExit2[] = _("Salir {DPAD_LEFT}");
+static const u8 gText_MenuExit3[] = _("Salir");
+static const u8 gText_MenuPC[] = _("PC");
 static const struct MenuAction sStartMenuItems[] =
 {
+	[MENU_ACTION_DEXRELATED]           		= {gText_MenuDexRelated,{.u8_void = StartMenuDexRelatedCallback}},
     [MENU_ACTION_POKEDEX]                   = {gText_MenuPokedex,   {.u8_void = StartMenuPokedexCallback}},
     [MENU_ACTION_POKEMON]                   = {gText_MenuPokemon,   {.u8_void = StartMenuPokemonCallback}},
     [MENU_ACTION_BAG]                       = {gText_MenuBag,       {.u8_void = StartMenuBagCallback}},
+	[MENU_ACTION_PC]               			= {gText_MenuPC, 		{.u8_void = StartMenuPCCallback}},
     [MENU_ACTION_POKENAV]                   = {gText_MenuPokenav,   {.u8_void = StartMenuPokeNavCallback}},
     [MENU_ACTION_PLAYER]                    = {gText_MenuPlayer,    {.u8_void = StartMenuPlayerNameCallback}},
     [MENU_ACTION_SAVE]                      = {gText_MenuSave,      {.u8_void = StartMenuSaveCallback}},
     [MENU_ACTION_OPTION]                    = {gText_MenuOption,    {.u8_void = StartMenuOptionCallback}},
     [MENU_ACTION_TUTORIAL_MINIJUEGO_ZUBAT]  = {gText_MenuTutorial,  {.u8_void = StartMenuTutorialMinijuegoZubatCallback}},
     [MENU_ACTION_EXIT]                      = {gText_MenuExit,      {.u8_void = StartMenuExitCallback}},
+	[MENU_ACTION_EXIT2]              		= {gText_MenuExit2, 	{.u8_void = StartMenuExitCallback}},
+    [MENU_ACTION_RIGHT]              		= {gText_MenuExit, 		{.u8_void = StartMenuRightCallback}},
+    [MENU_ACTION_LEFT]              		= {gText_LeftArrow, 	{.u8_void = StartMenuLeftCallback}},
     [MENU_ACTION_RETIRE_SAFARI]             = {gText_MenuRetire,    {.u8_void = StartMenuSafariZoneRetireCallback}},
     [MENU_ACTION_PLAYER_LINK]               = {gText_MenuPlayer,    {.u8_void = StartMenuLinkModePlayerNameCallback}},
     [MENU_ACTION_REST_FRONTIER]             = {gText_MenuRest,      {.u8_void = StartMenuSaveCallback}},
@@ -215,7 +242,9 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_PYRAMID_BAG]               = {gText_MenuBag,       {.u8_void = StartMenuBattlePyramidBagCallback}},
     [MENU_ACTION_DEBUG]                     = {sText_MenuDebug,     {.u8_void = StartMenuDebugCallback}},
     [MENU_ACTION_DEXNAV]                    = {gText_MenuDexNav,    {.u8_void = StartMenuDexNavCallback}},
-    [MENU_ACTION_QUEST_MENU]                = {sText_QuestMenu,   {.u8_void = QuestMenuCallback}},
+    [MENU_ACTION_QUEST_MENU]                = {sText_QuestMenu,   	{.u8_void = QuestMenuCallback}},
+    [MENU_ACTION_CODES]                		= {sText_MenuCodes,   	{.u8_void = PasswordCallback}},
+	[MENU_ACTION_UI_MENU]         			= {gText_MenuDexRelated,{.u8_void = StartMenuUiMenuCallback}}
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -289,6 +318,7 @@ static void ShowSaveInfoWindow(void);
 static void RemoveSaveInfoWindow(void);
 static void HideStartMenuWindow(void);
 static void HideStartMenuDebug(void);
+static void BuildDexRelatedStartMenu(void);
 
 void SetDexPokemonPokenavFlags(void) // unused
 {
@@ -300,18 +330,17 @@ void SetDexPokemonPokenavFlags(void) // unused
 static void BuildStartMenuActions(void)
 {
     sNumStartMenuActions = 0;
-
-    if (IsOverworldLinkActive() == TRUE)
+	if (FlagGet(FLAG_TEMP_DEX_RELATED_MENU) && GetSafariZoneFlag() == FALSE)
+	{
+		BuildDexRelatedStartMenu();
+	}
+    else if (IsOverworldLinkActive() == TRUE)
     {
         BuildLinkModeStartMenu();
     }
     else if (InUnionRoom() == TRUE)
     {
         BuildUnionRoomStartMenu();
-    }
-    else if (GetSafariZoneFlag() == TRUE)
-    {
-        BuildSafariZoneStartMenu();
     }
     else if (InBattlePike())
     {
@@ -327,7 +356,11 @@ static void BuildStartMenuActions(void)
     }
     else
     {
-        if (DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == TRUE)
+		if (GetSafariZoneFlag() == TRUE)
+		{
+			BuildSafariZoneStartMenu();
+		}
+        else if (DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == TRUE)
             BuildDebugStartMenu();
         else
             BuildNormalStartMenu();
@@ -337,6 +370,22 @@ static void BuildStartMenuActions(void)
 static void AddStartMenuAction(u8 action)
 {
     AppendToList(sCurrentStartMenuActions, &sNumStartMenuActions, action);
+}
+
+static void BuildDexRelatedStartMenu(void) {
+	if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+        AddStartMenuAction(MENU_ACTION_POKEDEX);
+	if (FlagGet(FLAG_SYS_DEXNAV_GET))
+        AddStartMenuAction(MENU_ACTION_DEXNAV);
+	if (FlagGet(FLAG_SYS_POKENAV_GET))
+		AddStartMenuAction(MENU_ACTION_POKENAV);
+	if (FlagGet(FLAG_SYS_QUEST_MENU_GET))
+		AddStartMenuAction(MENU_ACTION_QUEST_MENU);
+	if (FlagGet(FLAG_ENABLED_PC))
+		AddStartMenuAction(MENU_ACTION_PC);
+	AddStartMenuAction(MENU_ACTION_CODES);
+	AddStartMenuAction(MENU_ACTION_EXIT2);
+	
 }
 
 static void BuildNormalStartMenu(void)
@@ -362,9 +411,14 @@ static void BuildNormalStartMenu(void)
     
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
-    if (TUTORIAL_MINIJUEGO_ZUBAT)
-        AddStartMenuAction(MENU_ACTION_TUTORIAL_MINIJUEGO_ZUBAT);
-    AddStartMenuAction(MENU_ACTION_EXIT);
+    // if (TUTORIAL_MINIJUEGO_ZUBAT)
+        // AddStartMenuAction(MENU_ACTION_TUTORIAL_MINIJUEGO_ZUBAT);
+    if (!FlagGet(FLAG_SYS_POKEDEX_GET)) {
+		AddStartMenuAction(MENU_ACTION_EXIT);
+	}
+	else {
+		AddStartMenuAction(MENU_ACTION_RIGHT);
+	}
 }
 
 static void BuildDebugStartMenu(void)
@@ -386,6 +440,7 @@ static void BuildSafariZoneStartMenu(void)
 {
     AddStartMenuAction(MENU_ACTION_RETIRE_SAFARI);
     AddStartMenuAction(MENU_ACTION_POKEDEX);
+    AddStartMenuAction(MENU_ACTION_DEXNAV);
     AddStartMenuAction(MENU_ACTION_POKEMON);
     AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER);
@@ -576,6 +631,7 @@ static void StartMenuTask(u8 taskId)
         SwitchTaskToFollowupFunc(taskId);
 }
 
+
 static void CreateStartMenuTask(TaskFunc followupFunc)
 {
     u8 taskId;
@@ -676,9 +732,25 @@ static bool8 HandleStartMenuInput(void)
 
         return FALSE;
     }
-
-    if (JOY_NEW(START_BUTTON | B_BUTTON))
+	if (JOY_NEW(DPAD_RIGHT) && !FlagGet(FLAG_TEMP_DEX_RELATED_MENU) && FlagGet(FLAG_SYS_POKEDEX_GET) && (GetSafariZoneFlag() != TRUE))
+	{
+		PlayerFreeze();
+		FlagSet(FLAG_TEMP_DEX_RELATED_MENU);
+		HideStartMenu();
+		ShowStartMenu();
+		return TRUE;
+	}
+	else if (JOY_NEW(DPAD_LEFT) && FlagGet(FLAG_TEMP_DEX_RELATED_MENU) && (GetSafariZoneFlag() != TRUE))
+	{
+		PlayerFreeze();
+		HideStartMenu();
+		FlagClear(FLAG_TEMP_DEX_RELATED_MENU);
+		ShowStartMenu();
+		return TRUE;
+	}
+    else if (JOY_NEW(START_BUTTON | B_BUTTON))
     {
+		FlagClear(FLAG_TEMP_DEX_RELATED_MENU);
         RemoveExtraStartMenuWindows();
         HideStartMenu();
         return TRUE;
@@ -820,7 +892,7 @@ static bool8 StartMenuDebugCallback(void)
         Debug_ShowMainMenu();
     }
 
-return TRUE;
+	return TRUE;
 }
 
 static bool8 StartMenuSafariZoneRetireCallback(void)
@@ -858,6 +930,54 @@ static bool8 StartMenuBattlePyramidRetireCallback(void)
     gMenuCallback = BattlePyramidRetireStartCallback; // Confirm retire
 
     return FALSE;
+}
+
+static bool8 StartMenuDexRelatedCallback(void)
+{
+    if (!gPaletteFade.active)
+    {
+        RemoveExtraStartMenuWindows();
+		ShowStartMenu();
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 StartMenuPCCallback(void)
+{
+	u8 taskId;
+    if (!gPaletteFade.active)
+    {
+        PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
+		EnterPokeStorage(0);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+static bool8 StartMenuRightCallback(void)
+{
+    RemoveExtraStartMenuWindows();
+	ShowStartMenu();
+
+    return TRUE;
+}
+static bool8 StartMenuLeftCallback(void)
+{
+    RemoveExtraStartMenuWindows();
+	FlagClear(FLAG_TEMP_DEX_RELATED_MENU);
+	ShowStartMenu();
+
+    return TRUE;
+}
+
+static bool8 StartMenuUiMenuCallback(void)
+{
+    // CreateTask(Task_OpenMenuFromStartMenu, 0);
+    return TRUE;
 }
 
 // Functionally unused
@@ -1532,5 +1652,11 @@ void Script_ForceSaveGame(struct ScriptContext *ctx)
 static bool8 QuestMenuCallback(void)
 {
     CreateTask(Task_OpenQuestMenuFromStartMenu, 0);
+    return TRUE;
+}
+
+static bool8 PasswordCallback(void)
+{
+    DoPasswordNamingScreen();
     return TRUE;
 }

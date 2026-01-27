@@ -98,680 +98,688 @@ Route102_WallyTutorial::
 # 209 "data/maps/Route102/scripts.pory"
 	lockall
 # 210 "data/maps/Route102/scripts.pory"
-	addobject LOCALID_ROUTE102_WALLY
+	clearflag FLAG_HIDE_RALTS_102
 # 211 "data/maps/Route102/scripts.pory"
-	addobject LOCALID_ROUTE102_BALL
+	clearflag FLAG_HIDE_ZIGZA_102
 # 212 "data/maps/Route102/scripts.pory"
-	addobject LOCALID_ROUTE102_BALL_CATCH
+	clearflag FLAG_HIDE_BALL_102
 # 213 "data/maps/Route102/scripts.pory"
-	addobject LOCALID_ROUTE102_RALTS
+	clearflag FLAG_BALL_CATCH_102
 # 214 "data/maps/Route102/scripts.pory"
-	addobject LOCALID_ROUTE102_ZIGZAGOON
+	addobject LOCALID_ROUTE102_WALLY
 # 215 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyTutorialWally
+	addobject LOCALID_ROUTE102_BALL
 # 216 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route102_Movement_WallyTutorialPlayer
+	addobject LOCALID_ROUTE102_BALL_CATCH
 # 217 "data/maps/Route102/scripts.pory"
-	waitmovement 0
+	addobject LOCALID_ROUTE102_RALTS
 # 218 "data/maps/Route102/scripts.pory"
-	setspeaker Wally
+	addobject LOCALID_ROUTE102_ZIGZAGOON
 # 219 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_INTERRUPT
+	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyTutorialWally
 # 220 "data/maps/Route102/scripts.pory"
-	
+	applymovement OBJ_EVENT_ID_PLAYER, Route102_Movement_WallyTutorialPlayer
 # 221 "data/maps/Route102/scripts.pory"
-	call Route102_EventScript_RaltsAppears
+	waitmovement 0
 # 222 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_UnRalts, MSGBOX_DEFAULT
+	setspeaker Wally
 # 223 "data/maps/Route102/scripts.pory"
-	closemessage
+	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_INTERRUPT
 # 224 "data/maps/Route102/scripts.pory"
 	
 # 225 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_BALL, 3, 6
+	call Route102_EventScript_RaltsAppears
 # 226 "data/maps/Route102/scripts.pory"
-	playse SE_BALL
+	msgbox Route102_Text_UnRalts, MSGBOX_DEFAULT
 # 227 "data/maps/Route102/scripts.pory"
-	delay 16
+	closemessage
 # 228 "data/maps/Route102/scripts.pory"
-	playse SE_BALL_OPEN
+	
 # 229 "data/maps/Route102/scripts.pory"
-	fadescreenswapbuffers FADE_TO_WHITE
+	setobjectxy LOCALID_ROUTE102_BALL, 3, 6
 # 230 "data/maps/Route102/scripts.pory"
-	delay 16
+	playse SE_BALL
 # 231 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_BALL, 10, 7
+	delay 16
 # 232 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_ZIGZAGOON, 3, 6
+	playse SE_BALL_OPEN
 # 233 "data/maps/Route102/scripts.pory"
-	delay 8
+	fadescreenswapbuffers FADE_TO_WHITE
 # 234 "data/maps/Route102/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_WHITE
+	delay 16
 # 235 "data/maps/Route102/scripts.pory"
-	delay 8
+	setobjectxy LOCALID_ROUTE102_BALL, 10, 7
 # 236 "data/maps/Route102/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	setobjectxy LOCALID_ROUTE102_ZIGZAGOON, 3, 6
 # 237 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_Sigsa, MSGBOX_DEFAULT
+	delay 8
 # 238 "data/maps/Route102/scripts.pory"
-	waitmoncry
+	fadescreenswapbuffers FADE_FROM_WHITE
 # 239 "data/maps/Route102/scripts.pory"
 	delay 8
 # 240 "data/maps/Route102/scripts.pory"
-	setspeaker Wally
-# 241 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_WallyCommands
-# 242 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyJump
-# 243 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 244 "data/maps/Route102/scripts.pory"
-	closemessage
-# 245 "data/maps/Route102/scripts.pory"
-	
-# 246 "data/maps/Route102/scripts.pory"
-	call Route102_EventScript_ZigzagoonAttacks
-# 247 "data/maps/Route102/scripts.pory"
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-# 248 "data/maps/Route102/scripts.pory"
+# 241 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_Sigsa, MSGBOX_DEFAULT
+# 242 "data/maps/Route102/scripts.pory"
+	waitmoncry
+# 243 "data/maps/Route102/scripts.pory"
+	delay 8
+# 244 "data/maps/Route102/scripts.pory"
+	setspeaker Wally
+# 245 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_WallyCommands
+# 246 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyJump
+# 247 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 248 "data/maps/Route102/scripts.pory"
+	closemessage
 # 249 "data/maps/Route102/scripts.pory"
-	waitmoncry
+	
 # 250 "data/maps/Route102/scripts.pory"
-	closemessage
+	call Route102_EventScript_ZigzagoonAttacks
 # 251 "data/maps/Route102/scripts.pory"
-	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
 # 252 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_Ralts
+	msgbox Route102_Text_Sigsa, MSGBOX_DEFAULT
 # 253 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsTeleport
-# 254 "data/maps/Route102/scripts.pory"
-	delay 2
-# 255 "data/maps/Route102/scripts.pory"
-	fadescreenswapbuffers FADE_TO_WHITE
-# 256 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 257 "data/maps/Route102/scripts.pory"
-	delay 8
-# 258 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_RALTS, 5, 6
-# 259 "data/maps/Route102/scripts.pory"
-	delay 16
-# 260 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsTeleport2
-# 261 "data/maps/Route102/scripts.pory"
-	delay 4
-# 262 "data/maps/Route102/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_WHITE
-# 263 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 264 "data/maps/Route102/scripts.pory"
-	delay 8
-# 265 "data/maps/Route102/scripts.pory"
-	call Route102_EventScript_ZigzaSurprise
-# 266 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_ExclamationMark
-# 267 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 268 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 269 "data/maps/Route102/scripts.pory"
-	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
-# 270 "data/maps/Route102/scripts.pory"
 	waitmoncry
-# 271 "data/maps/Route102/scripts.pory"
-	call Route102_EventScript_ZigzaHurt
-# 272 "data/maps/Route102/scripts.pory"
-	delay 60
-# 273 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_PokeballVe, MSGBOX_DEFAULT
-# 274 "data/maps/Route102/scripts.pory"
+# 254 "data/maps/Route102/scripts.pory"
 	closemessage
-# 275 "data/maps/Route102/scripts.pory"
-	call Route102_EventScript_BallThrow
-# 276 "data/maps/Route102/scripts.pory"
-	delay 8
-# 277 "data/maps/Route102/scripts.pory"
-	call Route102_EventScript_BallCatch
-# 278 "data/maps/Route102/scripts.pory"
-	delay 8
-# 279 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyGrabBall
-# 280 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 281 "data/maps/Route102/scripts.pory"
-	delay 16
-# 282 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceRight
-# 283 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 284 "data/maps/Route102/scripts.pory"
-	call Route102_EventScript_BallCatchHide
-# 285 "data/maps/Route102/scripts.pory"
-	setspeaker Wally
-# 286 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
-# 287 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyGrabBall
-# 288 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 289 "data/maps/Route102/scripts.pory"
-	closemessage
-# 290 "data/maps/Route102/scripts.pory"
-	
-# 291 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_WallyZigzagoonThanks, MSGBOX_DEFAULT
-# 292 "data/maps/Route102/scripts.pory"
-	setspeaker Wally
-# 293 "data/maps/Route102/scripts.pory"
+# 255 "data/maps/Route102/scripts.pory"
+	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+# 256 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_Ralts
+# 257 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsTeleport
+# 258 "data/maps/Route102/scripts.pory"
+	delay 2
+# 259 "data/maps/Route102/scripts.pory"
 	fadescreenswapbuffers FADE_TO_WHITE
-# 294 "data/maps/Route102/scripts.pory"
-	removeobject LOCALID_ROUTE102_ZIGZAGOON
-# 295 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_BALL, 7, 6
-# 296 "data/maps/Route102/scripts.pory"
-	playse SE_BALL_OPEN
-# 297 "data/maps/Route102/scripts.pory"
-	delay 8
-# 298 "data/maps/Route102/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_WHITE
-# 299 "data/maps/Route102/scripts.pory"
-	waitse
-# 300 "data/maps/Route102/scripts.pory"
-	closemessage
-# 301 "data/maps/Route102/scripts.pory"
-	
-# 302 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceRight
-# 303 "data/maps/Route102/scripts.pory"
+# 260 "data/maps/Route102/scripts.pory"
 	waitmovement 0
-# 304 "data/maps/Route102/scripts.pory"
-	call Route102_EventScript_BallZigzaHide
-# 305 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceFasterLeft
-# 306 "data/maps/Route102/scripts.pory"
-	waitmovement LOCALID_ROUTE102_WALLY
-# 307 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
-# 308 "data/maps/Route102/scripts.pory"
+# 261 "data/maps/Route102/scripts.pory"
+	delay 8
+# 262 "data/maps/Route102/scripts.pory"
+	setobjectxy LOCALID_ROUTE102_RALTS, 5, 6
+# 263 "data/maps/Route102/scripts.pory"
+	delay 16
+# 264 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsTeleport2
+# 265 "data/maps/Route102/scripts.pory"
+	delay 4
+# 266 "data/maps/Route102/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_WHITE
+# 267 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 268 "data/maps/Route102/scripts.pory"
+	delay 8
+# 269 "data/maps/Route102/scripts.pory"
+	call Route102_EventScript_ZigzaSurprise
+# 270 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_ExclamationMark
+# 271 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 272 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 273 "data/maps/Route102/scripts.pory"
+	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+# 274 "data/maps/Route102/scripts.pory"
+	waitmoncry
+# 275 "data/maps/Route102/scripts.pory"
+	call Route102_EventScript_ZigzaHurt
+# 276 "data/maps/Route102/scripts.pory"
+	delay 60
+# 277 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_PokeballVe, MSGBOX_DEFAULT
+# 278 "data/maps/Route102/scripts.pory"
 	closemessage
+# 279 "data/maps/Route102/scripts.pory"
+	call Route102_EventScript_BallThrow
+# 280 "data/maps/Route102/scripts.pory"
+	delay 8
+# 281 "data/maps/Route102/scripts.pory"
+	call Route102_EventScript_BallCatch
+# 282 "data/maps/Route102/scripts.pory"
+	delay 8
+# 283 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyGrabBall
+# 284 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 285 "data/maps/Route102/scripts.pory"
+	delay 16
+# 286 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceRight
+# 287 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 288 "data/maps/Route102/scripts.pory"
+	call Route102_EventScript_BallCatchHide
+# 289 "data/maps/Route102/scripts.pory"
+	setspeaker Wally
+# 290 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
+# 291 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_WALLY, Route102_Movement_WallyGrabBall
+# 292 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 293 "data/maps/Route102/scripts.pory"
+	closemessage
+# 294 "data/maps/Route102/scripts.pory"
+	
+# 295 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_WallyZigzagoonThanks, MSGBOX_DEFAULT
+# 296 "data/maps/Route102/scripts.pory"
+	setspeaker Wally
+# 297 "data/maps/Route102/scripts.pory"
+	fadescreenswapbuffers FADE_TO_WHITE
+# 298 "data/maps/Route102/scripts.pory"
+	removeobject LOCALID_ROUTE102_ZIGZAGOON
+# 299 "data/maps/Route102/scripts.pory"
+	setobjectxy LOCALID_ROUTE102_BALL, 7, 6
+# 300 "data/maps/Route102/scripts.pory"
+	playse SE_BALL_OPEN
+# 301 "data/maps/Route102/scripts.pory"
+	delay 8
+# 302 "data/maps/Route102/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_WHITE
+# 303 "data/maps/Route102/scripts.pory"
+	waitse
+# 304 "data/maps/Route102/scripts.pory"
+	closemessage
+# 305 "data/maps/Route102/scripts.pory"
+	
+# 306 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceRight
+# 307 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 308 "data/maps/Route102/scripts.pory"
+	call Route102_EventScript_BallZigzaHide
 # 309 "data/maps/Route102/scripts.pory"
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	applymovement LOCALID_ROUTE102_WALLY, Common_Movement_WalkInPlaceFasterLeft
 # 310 "data/maps/Route102/scripts.pory"
-	setvar VAR_PETALBURG_CITY_STATE, 3
+	waitmovement LOCALID_ROUTE102_WALLY
 # 311 "data/maps/Route102/scripts.pory"
-	fadedefaultbgm
+	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
 # 312 "data/maps/Route102/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
+	closemessage
 # 313 "data/maps/Route102/scripts.pory"
-	setvar VAR_PETALBURG_GYM_STATE, 1
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 # 314 "data/maps/Route102/scripts.pory"
-	warp MAP_PETALBURG_CITY_GYM, 4, 108
+	setvar VAR_PETALBURG_CITY_STATE, 3
 # 315 "data/maps/Route102/scripts.pory"
-	waitstate
+	fadedefaultbgm
 # 316 "data/maps/Route102/scripts.pory"
-	releaseall
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 317 "data/maps/Route102/scripts.pory"
-	end
+	setvar VAR_PETALBURG_GYM_STATE, 1
 # 318 "data/maps/Route102/scripts.pory"
-
+	warp MAP_PETALBURG_CITY_GYM, 4, 108
 # 319 "data/maps/Route102/scripts.pory"
-Route102_Movement_WallyTutorialPlayer:
+	waitstate
 # 320 "data/maps/Route102/scripts.pory"
-	delay_8
+	releaseall
 # 321 "data/maps/Route102/scripts.pory"
-	walk_right
+	end
 # 322 "data/maps/Route102/scripts.pory"
-	walk_right
+
 # 323 "data/maps/Route102/scripts.pory"
-	walk_up
+Route102_Movement_WallyTutorialPlayer:
 # 324 "data/maps/Route102/scripts.pory"
-	walk_up
-# 325 "data/maps/Route102/scripts.pory"
-	walk_in_place_faster_right
-# 326 "data/maps/Route102/scripts.pory"
-	step_end
-# 327 "data/maps/Route102/scripts.pory"
-
-# 328 "data/maps/Route102/scripts.pory"
-Route102_Movement_WallyTutorialWally:
-# 329 "data/maps/Route102/scripts.pory"
 	delay_8
-# 330 "data/maps/Route102/scripts.pory"
+# 325 "data/maps/Route102/scripts.pory"
 	walk_right
-# 331 "data/maps/Route102/scripts.pory"
+# 326 "data/maps/Route102/scripts.pory"
+	walk_right
+# 327 "data/maps/Route102/scripts.pory"
 	walk_up
-# 332 "data/maps/Route102/scripts.pory"
+# 328 "data/maps/Route102/scripts.pory"
 	walk_up
-# 333 "data/maps/Route102/scripts.pory"
-	walk_up
-# 334 "data/maps/Route102/scripts.pory"
-	delay_16
-# 335 "data/maps/Route102/scripts.pory"
-	walk_in_place_faster_up
-# 336 "data/maps/Route102/scripts.pory"
-	delay_16
-# 337 "data/maps/Route102/scripts.pory"
-	delay_16
-# 338 "data/maps/Route102/scripts.pory"
+# 329 "data/maps/Route102/scripts.pory"
 	walk_in_place_faster_right
+# 330 "data/maps/Route102/scripts.pory"
+	step_end
+# 331 "data/maps/Route102/scripts.pory"
+
+# 332 "data/maps/Route102/scripts.pory"
+Route102_Movement_WallyTutorialWally:
+# 333 "data/maps/Route102/scripts.pory"
+	delay_8
+# 334 "data/maps/Route102/scripts.pory"
+	walk_right
+# 335 "data/maps/Route102/scripts.pory"
+	walk_up
+# 336 "data/maps/Route102/scripts.pory"
+	walk_up
+# 337 "data/maps/Route102/scripts.pory"
+	walk_up
+# 338 "data/maps/Route102/scripts.pory"
+	delay_16
 # 339 "data/maps/Route102/scripts.pory"
-	step_end
+	walk_in_place_faster_up
 # 340 "data/maps/Route102/scripts.pory"
-
+	delay_16
 # 341 "data/maps/Route102/scripts.pory"
-Route102_Movement_WallyGrabBall:
+	delay_16
 # 342 "data/maps/Route102/scripts.pory"
-	walk_right
+	walk_in_place_faster_right
 # 343 "data/maps/Route102/scripts.pory"
-	walk_right
+	step_end
 # 344 "data/maps/Route102/scripts.pory"
-	step_end
+
 # 345 "data/maps/Route102/scripts.pory"
-
+Route102_Movement_WallyGrabBall:
 # 346 "data/maps/Route102/scripts.pory"
-
+	walk_right
 # 347 "data/maps/Route102/scripts.pory"
-Route102_Movement_WallyJump::
+	walk_right
 # 348 "data/maps/Route102/scripts.pory"
-	jump_in_place_right
-# 349 "data/maps/Route102/scripts.pory"
 	step_end
+# 349 "data/maps/Route102/scripts.pory"
+
 # 350 "data/maps/Route102/scripts.pory"
 
 # 351 "data/maps/Route102/scripts.pory"
-Route102_EventScript_RaltsAppears::
+Route102_Movement_WallyJump::
 # 352 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_RALTS, 6, 6
+	jump_in_place_right
 # 353 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsJump
+	step_end
 # 354 "data/maps/Route102/scripts.pory"
-	delay 8
+
 # 355 "data/maps/Route102/scripts.pory"
-	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+Route102_EventScript_RaltsAppears::
 # 356 "data/maps/Route102/scripts.pory"
-	waitmovement 0
+	setobjectxy LOCALID_ROUTE102_RALTS, 6, 6
 # 357 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_Ralts, MSGBOX_DEFAULT
+	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsJump
 # 358 "data/maps/Route102/scripts.pory"
-	waitmoncry
-# 359 "data/maps/Route102/scripts.pory"
 	delay 8
-# 360 "data/maps/Route102/scripts.pory"
-	playbgm MUS_VS_WILD, FALSE
-# 361 "data/maps/Route102/scripts.pory"
-	return
-# 362 "data/maps/Route102/scripts.pory"
-
-# 363 "data/maps/Route102/scripts.pory"
-
-# 364 "data/maps/Route102/scripts.pory"
-	
-# 365 "data/maps/Route102/scripts.pory"
-Route102_EventScript_ZigzaSurprise::
-# 366 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_ZIGZAGOON, Common_Movement_ExclamationMark
-# 367 "data/maps/Route102/scripts.pory"
-	playse SE_PIN
-# 368 "data/maps/Route102/scripts.pory"
-	return
-# 369 "data/maps/Route102/scripts.pory"
-
-# 370 "data/maps/Route102/scripts.pory"
-Route102_EventScript_ZigzaHurt::
-# 371 "data/maps/Route102/scripts.pory"
-	playse SE_EFFECTIVE
-# 372 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_ZIGZAGOON, Route102_Movement_RaltsHurt
-# 373 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 374 "data/maps/Route102/scripts.pory"
-	return
-# 375 "data/maps/Route102/scripts.pory"
-
-# 376 "data/maps/Route102/scripts.pory"
-Route102_EventScript_BallThrow::
-# 377 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_BALL, 3, 6
-# 378 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL, Route102_Movement_BallThrow
-# 379 "data/maps/Route102/scripts.pory"
-	playse SE_BALL_THROW
-# 380 "data/maps/Route102/scripts.pory"
-	waitse
-# 381 "data/maps/Route102/scripts.pory"
-	playse SE_BALL_OPEN
-# 382 "data/maps/Route102/scripts.pory"
-	removeobject LOCALID_ROUTE102_RALTS
-# 383 "data/maps/Route102/scripts.pory"
-	waitse
-# 384 "data/maps/Route102/scripts.pory"
+# 359 "data/maps/Route102/scripts.pory"
 	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
-# 385 "data/maps/Route102/scripts.pory"
+# 360 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 361 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_Ralts, MSGBOX_DEFAULT
+# 362 "data/maps/Route102/scripts.pory"
 	waitmoncry
-# 386 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 387 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_BALL, 10, 7
-# 388 "data/maps/Route102/scripts.pory"
-	setobjectxy LOCALID_ROUTE102_BALL_CATCH, 5, 6
-# 389 "data/maps/Route102/scripts.pory"
+# 363 "data/maps/Route102/scripts.pory"
+	delay 8
+# 364 "data/maps/Route102/scripts.pory"
+	playbgm MUS_VS_WILD, FALSE
+# 365 "data/maps/Route102/scripts.pory"
 	return
-# 390 "data/maps/Route102/scripts.pory"
+# 366 "data/maps/Route102/scripts.pory"
 
+# 367 "data/maps/Route102/scripts.pory"
+
+# 368 "data/maps/Route102/scripts.pory"
+	
+# 369 "data/maps/Route102/scripts.pory"
+Route102_EventScript_ZigzaSurprise::
+# 370 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_ZIGZAGOON, Common_Movement_ExclamationMark
+# 371 "data/maps/Route102/scripts.pory"
+	playse SE_PIN
+# 372 "data/maps/Route102/scripts.pory"
+	return
+# 373 "data/maps/Route102/scripts.pory"
+
+# 374 "data/maps/Route102/scripts.pory"
+Route102_EventScript_ZigzaHurt::
+# 375 "data/maps/Route102/scripts.pory"
+	playse SE_EFFECTIVE
+# 376 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_ZIGZAGOON, Route102_Movement_RaltsHurt
+# 377 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 378 "data/maps/Route102/scripts.pory"
+	return
+# 379 "data/maps/Route102/scripts.pory"
+
+# 380 "data/maps/Route102/scripts.pory"
+Route102_EventScript_BallThrow::
+# 381 "data/maps/Route102/scripts.pory"
+	setobjectxy LOCALID_ROUTE102_BALL, 3, 6
+# 382 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_BALL, Route102_Movement_BallThrow
+# 383 "data/maps/Route102/scripts.pory"
+	playse SE_BALL_THROW
+# 384 "data/maps/Route102/scripts.pory"
+	waitse
+# 385 "data/maps/Route102/scripts.pory"
+	playse SE_BALL_OPEN
+# 386 "data/maps/Route102/scripts.pory"
+	removeobject LOCALID_ROUTE102_RALTS
+# 387 "data/maps/Route102/scripts.pory"
+	waitse
+# 388 "data/maps/Route102/scripts.pory"
+	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+# 389 "data/maps/Route102/scripts.pory"
+	waitmoncry
+# 390 "data/maps/Route102/scripts.pory"
+	waitmovement 0
 # 391 "data/maps/Route102/scripts.pory"
-Route102_EventScript_BallCatch::
+	setobjectxy LOCALID_ROUTE102_BALL, 10, 7
 # 392 "data/maps/Route102/scripts.pory"
-	playse SE_BALL
+	setobjectxy LOCALID_ROUTE102_BALL_CATCH, 5, 6
 # 393 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceUp
+	return
 # 394 "data/maps/Route102/scripts.pory"
-	waitmovement 0
+
 # 395 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
+Route102_EventScript_BallCatch::
 # 396 "data/maps/Route102/scripts.pory"
-	waitmovement 0
+	playse SE_BALL
 # 397 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceLeft
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceUp
 # 398 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 399 "data/maps/Route102/scripts.pory"
-	waitse
-# 400 "data/maps/Route102/scripts.pory"
 	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
-# 401 "data/maps/Route102/scripts.pory"
+# 400 "data/maps/Route102/scripts.pory"
 	waitmovement 0
+# 401 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceLeft
 # 402 "data/maps/Route102/scripts.pory"
-	delay 16
+	waitmovement 0
 # 403 "data/maps/Route102/scripts.pory"
-	playse SE_BALL
+	waitse
 # 404 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceUp
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
 # 405 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 406 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
+	delay 16
 # 407 "data/maps/Route102/scripts.pory"
-	waitmovement 0
+	playse SE_BALL
 # 408 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceLeft
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceUp
 # 409 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 410 "data/maps/Route102/scripts.pory"
-	waitse
-# 411 "data/maps/Route102/scripts.pory"
 	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
-# 412 "data/maps/Route102/scripts.pory"
+# 411 "data/maps/Route102/scripts.pory"
 	waitmovement 0
+# 412 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceLeft
 # 413 "data/maps/Route102/scripts.pory"
-	delay 16
+	waitmovement 0
 # 414 "data/maps/Route102/scripts.pory"
-	playse SE_BALL
+	waitse
 # 415 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceUp
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
 # 416 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 417 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
+	delay 16
 # 418 "data/maps/Route102/scripts.pory"
-	waitmovement 0
+	playse SE_BALL
 # 419 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceLeft
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceUp
 # 420 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 421 "data/maps/Route102/scripts.pory"
-	waitse
-# 422 "data/maps/Route102/scripts.pory"
 	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
-# 423 "data/maps/Route102/scripts.pory"
+# 422 "data/maps/Route102/scripts.pory"
 	waitmovement 0
+# 423 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceLeft
 # 424 "data/maps/Route102/scripts.pory"
-	delay 24
+	waitmovement 0
 # 425 "data/maps/Route102/scripts.pory"
-	playse SE_PIN
+	waitse
 # 426 "data/maps/Route102/scripts.pory"
-	waitse 
+	applymovement LOCALID_ROUTE102_BALL_CATCH, Common_Movement_FaceDown
 # 427 "data/maps/Route102/scripts.pory"
-	delay 10
+	waitmovement 0
 # 428 "data/maps/Route102/scripts.pory"
-	playfanfare MUS_EVOLVED
+	delay 24
 # 429 "data/maps/Route102/scripts.pory"
-	waitfanfare
+	playse SE_PIN
 # 430 "data/maps/Route102/scripts.pory"
-	return
+	waitse 
 # 431 "data/maps/Route102/scripts.pory"
-
+	delay 10
 # 432 "data/maps/Route102/scripts.pory"
-Route102_EventScript_BallCatchHide::
+	playfanfare MUS_EVOLVED
 # 433 "data/maps/Route102/scripts.pory"
-	removeobject LOCALID_ROUTE102_BALL_CATCH
+	waitfanfare
 # 434 "data/maps/Route102/scripts.pory"
 	return
 # 435 "data/maps/Route102/scripts.pory"
 
 # 436 "data/maps/Route102/scripts.pory"
-
+Route102_EventScript_BallCatchHide::
 # 437 "data/maps/Route102/scripts.pory"
-Route102_EventScript_BallZigzaHide::
-# 438 "data/maps/Route102/scripts.pory"
-	removeobject LOCALID_ROUTE102_BALL
-# 439 "data/maps/Route102/scripts.pory"
 	removeobject LOCALID_ROUTE102_BALL_CATCH
+# 438 "data/maps/Route102/scripts.pory"
+	return
+# 439 "data/maps/Route102/scripts.pory"
+
 # 440 "data/maps/Route102/scripts.pory"
-	removeobject LOCALID_ROUTE102_RALTS
+
 # 441 "data/maps/Route102/scripts.pory"
-	removeobject LOCALID_ROUTE102_ZIGZAGOON
+Route102_EventScript_BallZigzaHide::
 # 442 "data/maps/Route102/scripts.pory"
-	return
+	removeobject LOCALID_ROUTE102_BALL
 # 443 "data/maps/Route102/scripts.pory"
-	
+	removeobject LOCALID_ROUTE102_BALL_CATCH
 # 444 "data/maps/Route102/scripts.pory"
-
+	removeobject LOCALID_ROUTE102_RALTS
 # 445 "data/maps/Route102/scripts.pory"
-Route102_Movement_BallThrow::
+	removeobject LOCALID_ROUTE102_ZIGZAGOON
 # 446 "data/maps/Route102/scripts.pory"
-	disable_jump_landing_ground_effect
-# 447 "data/maps/Route102/scripts.pory"
-	jump_2_right
-# 448 "data/maps/Route102/scripts.pory"
-	step_end
-# 449 "data/maps/Route102/scripts.pory"
-
-# 450 "data/maps/Route102/scripts.pory"
-Route102_Movement_RaltsTeleport::
-# 451 "data/maps/Route102/scripts.pory"
-	jump_in_place_left_right
-# 452 "data/maps/Route102/scripts.pory"
-	set_invisible
-# 453 "data/maps/Route102/scripts.pory"
-	step_end
-# 454 "data/maps/Route102/scripts.pory"
-
-# 455 "data/maps/Route102/scripts.pory"
-Route102_Movement_RaltsTeleport2::
-# 456 "data/maps/Route102/scripts.pory"
-	set_visible
-# 457 "data/maps/Route102/scripts.pory"
-	jump_in_place_left_right
-# 458 "data/maps/Route102/scripts.pory"
-	face_right
-# 459 "data/maps/Route102/scripts.pory"
-	step_end
-# 460 "data/maps/Route102/scripts.pory"
-
-# 461 "data/maps/Route102/scripts.pory"
-Route102_EventScript_ZigzagoonAttacks::
-# 462 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_ZIGZAGOON, Route102_Movement_AttackRalts
-# 463 "data/maps/Route102/scripts.pory"
-	delay 24
-# 464 "data/maps/Route102/scripts.pory"
-	playse SE_EFFECTIVE
-# 465 "data/maps/Route102/scripts.pory"
-	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsHurt
-# 466 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 467 "data/maps/Route102/scripts.pory"
 	return
+# 447 "data/maps/Route102/scripts.pory"
+	
+# 448 "data/maps/Route102/scripts.pory"
+
+# 449 "data/maps/Route102/scripts.pory"
+Route102_Movement_BallThrow::
+# 450 "data/maps/Route102/scripts.pory"
+	disable_jump_landing_ground_effect
+# 451 "data/maps/Route102/scripts.pory"
+	jump_2_right
+# 452 "data/maps/Route102/scripts.pory"
+	step_end
+# 453 "data/maps/Route102/scripts.pory"
+
+# 454 "data/maps/Route102/scripts.pory"
+Route102_Movement_RaltsTeleport::
+# 455 "data/maps/Route102/scripts.pory"
+	jump_in_place_left_right
+# 456 "data/maps/Route102/scripts.pory"
+	set_invisible
+# 457 "data/maps/Route102/scripts.pory"
+	step_end
+# 458 "data/maps/Route102/scripts.pory"
+
+# 459 "data/maps/Route102/scripts.pory"
+Route102_Movement_RaltsTeleport2::
+# 460 "data/maps/Route102/scripts.pory"
+	set_visible
+# 461 "data/maps/Route102/scripts.pory"
+	jump_in_place_left_right
+# 462 "data/maps/Route102/scripts.pory"
+	face_right
+# 463 "data/maps/Route102/scripts.pory"
+	step_end
+# 464 "data/maps/Route102/scripts.pory"
+
+# 465 "data/maps/Route102/scripts.pory"
+Route102_EventScript_ZigzagoonAttacks::
+# 466 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_ROUTE102_ZIGZAGOON, Route102_Movement_AttackRalts
+# 467 "data/maps/Route102/scripts.pory"
+	delay 24
 # 468 "data/maps/Route102/scripts.pory"
-	
+	playse SE_EFFECTIVE
 # 469 "data/maps/Route102/scripts.pory"
-	
+	applymovement LOCALID_ROUTE102_RALTS, Route102_Movement_RaltsHurt
 # 470 "data/maps/Route102/scripts.pory"
-	
+	waitmovement 0
 # 471 "data/maps/Route102/scripts.pory"
-Route102_Movement_AttackRalts::
+	return
 # 472 "data/maps/Route102/scripts.pory"
-	walk_right
+	
 # 473 "data/maps/Route102/scripts.pory"
-	walk_fast_right
+	
 # 474 "data/maps/Route102/scripts.pory"
-	walk_faster_right
+	
 # 475 "data/maps/Route102/scripts.pory"
-	walk_faster_right
+Route102_Movement_AttackRalts::
 # 476 "data/maps/Route102/scripts.pory"
-	lock_facing_direction
+	walk_right
 # 477 "data/maps/Route102/scripts.pory"
-	delay_16
+	walk_fast_right
 # 478 "data/maps/Route102/scripts.pory"
-	walk_left
+	walk_faster_right
 # 479 "data/maps/Route102/scripts.pory"
-	unlock_facing_direction
+	walk_faster_right
 # 480 "data/maps/Route102/scripts.pory"
-	step_end
-# 481 "data/maps/Route102/scripts.pory"
-
-# 482 "data/maps/Route102/scripts.pory"
-Route102_Movement_RaltsHurt::
-# 483 "data/maps/Route102/scripts.pory"
-	face_left
-# 484 "data/maps/Route102/scripts.pory"
 	lock_facing_direction
-# 485 "data/maps/Route102/scripts.pory"
-	jump_right
-# 486 "data/maps/Route102/scripts.pory"
+# 481 "data/maps/Route102/scripts.pory"
+	delay_16
+# 482 "data/maps/Route102/scripts.pory"
+	walk_left
+# 483 "data/maps/Route102/scripts.pory"
 	unlock_facing_direction
-# 487 "data/maps/Route102/scripts.pory"
+# 484 "data/maps/Route102/scripts.pory"
 	step_end
-# 488 "data/maps/Route102/scripts.pory"
+# 485 "data/maps/Route102/scripts.pory"
 
+# 486 "data/maps/Route102/scripts.pory"
+Route102_Movement_RaltsHurt::
+# 487 "data/maps/Route102/scripts.pory"
+	face_left
+# 488 "data/maps/Route102/scripts.pory"
+	lock_facing_direction
 # 489 "data/maps/Route102/scripts.pory"
-Route102_Movement_RaltsJump::
+	jump_right
 # 490 "data/maps/Route102/scripts.pory"
-	jump_in_place_left
+	unlock_facing_direction
 # 491 "data/maps/Route102/scripts.pory"
 	step_end
 # 492 "data/maps/Route102/scripts.pory"
 
 # 493 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Calvin::
+Route102_Movement_RaltsJump::
 # 494 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
+	jump_in_place_left
 # 495 "data/maps/Route102/scripts.pory"
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+	step_end
 # 496 "data/maps/Route102/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
+
 # 497 "data/maps/Route102/scripts.pory"
-	setvar VAR_0x8004, TRAINER_CALVIN_1
+Route102_EventScript_Calvin::
 # 498 "data/maps/Route102/scripts.pory"
-	specialvar VAR_RESULT, IsTrainerRegistered
+	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
 # 499 "data/maps/Route102/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Route102_EventScript_CalvinTryRegister
+	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 500 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
 # 501 "data/maps/Route102/scripts.pory"
-	release
+	setvar VAR_0x8004, TRAINER_CALVIN_1
 # 502 "data/maps/Route102/scripts.pory"
-	end
+	specialvar VAR_RESULT, IsTrainerRegistered
 # 503 "data/maps/Route102/scripts.pory"
-
+	goto_if_eq VAR_RESULT, FALSE, Route102_EventScript_CalvinTryRegister
 # 504 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
-# 505 "data/maps/Route102/scripts.pory"
-	special PlayerFaceTrainerAfterBattle
-# 506 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 507 "data/maps/Route102/scripts.pory"
-	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
-# 508 "data/maps/Route102/scripts.pory"
-	release
-# 509 "data/maps/Route102/scripts.pory"
-	end
-# 510 "data/maps/Route102/scripts.pory"
-
-# 511 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinRegisterMatchCall::
-# 512 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CalvinRegisterShort, MSGBOX_DEFAULT
-# 513 "data/maps/Route102/scripts.pory"
-	register_matchcall TRAINER_CALVIN_1
-# 514 "data/maps/Route102/scripts.pory"
-	release
-# 515 "data/maps/Route102/scripts.pory"
-	end
-# 516 "data/maps/Route102/scripts.pory"
-
-# 517 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinTryRegister::
-# 518 "data/maps/Route102/scripts.pory"
-	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegister
-# 519 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
-# 520 "data/maps/Route102/scripts.pory"
+# 505 "data/maps/Route102/scripts.pory"
 	release
-# 521 "data/maps/Route102/scripts.pory"
+# 506 "data/maps/Route102/scripts.pory"
 	end
-# 522 "data/maps/Route102/scripts.pory"
+# 507 "data/maps/Route102/scripts.pory"
 
-# 523 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinRegister::
-# 524 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CalvinRegister, MSGBOX_DEFAULT
-# 525 "data/maps/Route102/scripts.pory"
+# 508 "data/maps/Route102/scripts.pory"
+Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
+# 509 "data/maps/Route102/scripts.pory"
+	special PlayerFaceTrainerAfterBattle
+# 510 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 511 "data/maps/Route102/scripts.pory"
+	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
+# 512 "data/maps/Route102/scripts.pory"
+	release
+# 513 "data/maps/Route102/scripts.pory"
+	end
+# 514 "data/maps/Route102/scripts.pory"
+
+# 515 "data/maps/Route102/scripts.pory"
+Route102_EventScript_CalvinRegisterMatchCall::
+# 516 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_CalvinRegisterShort, MSGBOX_DEFAULT
+# 517 "data/maps/Route102/scripts.pory"
 	register_matchcall TRAINER_CALVIN_1
-# 526 "data/maps/Route102/scripts.pory"
+# 518 "data/maps/Route102/scripts.pory"
 	release
+# 519 "data/maps/Route102/scripts.pory"
+	end
+# 520 "data/maps/Route102/scripts.pory"
+
+# 521 "data/maps/Route102/scripts.pory"
+Route102_EventScript_CalvinTryRegister::
+# 522 "data/maps/Route102/scripts.pory"
+	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegister
+# 523 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
+# 524 "data/maps/Route102/scripts.pory"
+	release
+# 525 "data/maps/Route102/scripts.pory"
+	end
+# 526 "data/maps/Route102/scripts.pory"
+
 # 527 "data/maps/Route102/scripts.pory"
-	end
+Route102_EventScript_CalvinRegister::
 # 528 "data/maps/Route102/scripts.pory"
-
+	msgbox Route102_Text_CalvinRegister, MSGBOX_DEFAULT
 # 529 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinRematch::
+	register_matchcall TRAINER_CALVIN_1
 # 530 "data/maps/Route102/scripts.pory"
-	trainerbattle_rematch TRAINER_CALVIN_1, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
+	release
 # 531 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 532 "data/maps/Route102/scripts.pory"
-	end
+
 # 533 "data/maps/Route102/scripts.pory"
-
+Route102_EventScript_CalvinRematch::
 # 534 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Rick::
+	trainerbattle_rematch TRAINER_CALVIN_1, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
 # 535 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
+	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
 # 536 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 537 "data/maps/Route102/scripts.pory"
-	end
+
 # 538 "data/maps/Route102/scripts.pory"
-
+Route102_EventScript_Rick::
 # 539 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Tiana::
+	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
 # 540 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
+	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 # 541 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
-# 542 "data/maps/Route102/scripts.pory"
 	end
-# 543 "data/maps/Route102/scripts.pory"
+# 542 "data/maps/Route102/scripts.pory"
 
+# 543 "data/maps/Route102/scripts.pory"
+Route102_EventScript_Tiana::
 # 544 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Allen::
+	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
 # 545 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
+	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 # 546 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 547 "data/maps/Route102/scripts.pory"
+
+# 548 "data/maps/Route102/scripts.pory"
+Route102_EventScript_Allen::
+# 549 "data/maps/Route102/scripts.pory"
+	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
+# 550 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+# 551 "data/maps/Route102/scripts.pory"
 	end
 
 Route102_EventScript_Boy_Text_0:

@@ -66,7 +66,6 @@ RivalsHouse_2F_EventScript_May::
 	setspeaker Rival
 	msgbox RivalsHouse_2F_Text_MayGettingReady, MSGBOX_DEFAULT
 	closemessage
-	hidesetspeaker
 	releaseall
 	end
 
@@ -74,7 +73,6 @@ RivalsHouse_2F_EventScript_Brendan::
 	setspeaker Rival
 	msgbox RivalsHouse_2F_Text_BrendanGettingReady, MSGBOX_DEFAULT
 	closemessage
-	hidesetspeaker
 	releaseall
 	end
 

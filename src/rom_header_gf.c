@@ -159,7 +159,7 @@ __attribute__((section(".text.header_gf"))) USED static const struct GFRomHeader
     .moves = gMovesInfo,
     .ballGfx = gBallSpriteSheets,
     .ballPalettes = gBallSpritePalettes,
-    .gcnLinkFlagsOffset = offsetof(struct SaveBlock2, gcnLinkFlags),
+    .gcnLinkFlagsOffset = 0x00000000,
     .gameClearFlag = FLAG_SYS_GAME_CLEAR,
     .ribbonFlag = FLAG_SYS_RIBBON_GET,
     .bagCountItems = BAG_ITEMS_COUNT,

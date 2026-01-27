@@ -7,6 +7,7 @@ enum PCLocation
     PC_LOCATION_OTHER,
     PC_LOCATION_BRENDANS_HOUSE,
     PC_LOCATION_MAYS_HOUSE,
+    PC_LOCATION_START_MENU,
 };
 
 // SS Tidal Locations

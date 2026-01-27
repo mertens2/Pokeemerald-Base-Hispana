@@ -16,6 +16,7 @@
 #include "event_data.h"
 #include "constants/songs.h"
 #include "pokemon_storage_system.h"
+#include "item.h"
 #include "graphics.h"
 #include "sound.h"
 #include "trig.h"
@@ -2598,115 +2599,214 @@ static const u8 gText_EquipoDeAsh5[] = _("ASHBEWI142");
 static const u8 gText_EquipoDeAsh6[] = _("ASHXYZ140");
 static const u8 gText_EquipoDeAsh7Region[] = _("Alola");
 static const u8 gText_EquipoDeAsh8[] = _("ASHMASTERS8");
-
+//primero, definamos las cantidades máximas de cosas que podremos conseguir
+#define PASSWORD_MAX_MONS 12
+#define PASSWORD_MAX_ITEMS 6
+#define PASSWORD_MAX_DECOR 6
+// segundo, definimos la estructura
 struct PasswordInfo {
 	const u8 *code;
 	const u8 *desc;
-	u16 items[6];
-	u16 itemQuantities[6];
-	struct BoxPokemon *mons[12];
+	u16 items[PASSWORD_MAX_ITEMS];
+	u16 itemQuantities[PASSWORD_MAX_ITEMS];
+	struct TrainerMon mons[PASSWORD_MAX_MONS];
 	u16 flag;
 	u16 variable[2];
-	u16 decors[6];
-	// u16 decorsQuantity[6];
-	bool8 isSpecialPassword; //just in case i wanna do something crazy with it lol
+	u16 decors[PASSWORD_MAX_DECOR]; // wip
+	// u16 decorsQuantity[6]; // wip
+	bool8 isRepeatable; // si quieres que sea repetible, pon la constante luego del 31, así no usa espacio en la variable de usadas
+	bool8 isToggable; // si quieres que además de repetible, "togglee" una flag. requiere ser repetible y tener una flag asociada
+	bool8 isSpecialPassword; // por si quieres hacer algo loco lol
 };
-enum {
+enum { // el enum de las contraseñas posibles
 	PASSWORD_LEVEL,
 	PASSWORD_CATCH,
-	// PASSWORD_,
-	PASSWORD_EVENT_1,
-	PASSWORD_EVENT_2,
-	PASSWORD_EVENT_3,
-	PASSWORD_EVENT_4,
-	PASSWORD_EVENT_5,
-	PASSWORD_EVENT_6,
-	PASSWORD_EVENT_7,
+	PASSWORD_CHEAT_RARE,
 	PASSWORD_ASH_1,
-	PASSWORD_ASH_2,
-	PASSWORD_ASH_3,
-	PASSWORD_ASH_4,
-	PASSWORD_ASH_5,
-	PASSWORD_ASH_6,
-	PASSWORD_ASH_7,
-	PASSWORD_COUNT
+	PASSWORD_TEST,
+	PASSWORD_COUNT,
 };
-const struct PasswordInfo sPasswordInfo[32] =
-{
-	/*
-	,
-	PASSWORD_CATCH,
-	// PASSWORD_,
-	PASSWORD_EVENT_1,
-	PASSWORD_EVENT_2,
-	PASSWORD_EVENT_3,
-	PASSWORD_EVENT_4,
-	PASSWORD_EVENT_5,
-	PASSWORD_EVENT_6,
-	PASSWORD_EVENT_7,
-	PASSWORD_ASH_1,
-	PASSWORD_ASH_2,
-	PASSWORD_ASH_3,
-	PASSWORD_ASH_4,
-	PASSWORD_ASH_5,
-	PASSWORD_ASH_6,
-	PASSWORD_ASH_7,
-	*/
+static const struct PasswordInfo sPasswordInfo[] = {
+	[PASSWORD_TEST] = { 
+		.code = COMPOUND_STRING("A"),
+		.desc = COMPOUND_STRING("Una Contraseña de Prueba.\pTen Pokéballs y 2 Mewtwos."),
+		.items = {ITEM_POKE_BALL, ITEM_GREAT_BALL, ITEM_ULTRA_BALL},
+		.mons = { // así se usa para dar más de un Pokémon
+			{
+				.species = SPECIES_MEWTWO,
+				.lvl = 100,
+				.item = ITEM_MASTER_BALL,
+			},
+			{
+				.species = SPECIES_MEWTWO,
+				.lvl = 100,
+				.item = ITEM_MASTER_BALL,
+			},
+		},
+		.itemQuantities = {15, 10, 5},
+	},
 	[PASSWORD_LEVEL] = {
-		.code = COMPOUND_STRING("LVLAID");
-		.desc = COMPOUND_STRING("Una banda de cosas");
-		.items[] = {ITEM_EXP_CANDY_L, ITEM_EXP_CANDY_L, ITEM_EXP_CANDY_M, ITEM_EXP_CANDY_XL, ITEM_EXP_CANDY_XS};
-		.itemQuantities[] = {5, 5, 5, 5, 5};
-		.mons[] = {
+		.code = COMPOUND_STRING("AYUDANVL"),
+		.desc = COMPOUND_STRING("Un set completo de\nCaramelos Experiencia."),
+		.items = {ITEM_EXP_CANDY_XS, ITEM_EXP_CANDY_S, ITEM_EXP_CANDY_M, ITEM_EXP_CANDY_L},
+		.itemQuantities = {15, 10, 5, 1},
+	},
+	[PASSWORD_CATCH] = {
+		.code = COMPOUND_STRING("AYUDACPTR"),
+		.desc = COMPOUND_STRING("Un set completo de Captura,\ncon Pokéballs, Bayas Leppa\ly la MT Falsotortazo."),
+		.items = {ITEM_TM52, ITEM_LEPPA_BERRY, ITEM_POKE_BALL, ITEM_GREAT_BALL, ITEM_ULTRA_BALL},
+		.itemQuantities = {1, 20, 15, 15, 15},
+	},
+	[PASSWORD_CHEAT_RARE] = {
+		.code = COMPOUND_STRING("TRCCRMLRR"),
+		.desc = COMPOUND_STRING("Es una trampa.\pContiene Caramelos Raros\nen plenitud."),
+		.items = {ITEM_RARE_CANDY, ITEM_RARE_CANDY, ITEM_RARE_CANDY, ITEM_RARE_CANDY, ITEM_RARE_CANDY},
+		.itemQuantities = {50, 50, 50, 50, 50},
+	},
+	[PASSWORD_ASH_1] = {
+		.code = COMPOUND_STRING("ASHKANTO116"),
+		.desc = COMPOUND_STRING("¡El Regalo viene del Anime!\p¡Ahora posees el Equipo que\nusó Ash en sus viajes\lpor la región Kanto!"),
+		.mons = {
 			{
-				.species = SPECIES_DEDENNE,
-				.level = 12,
-				.item = ITEM_NONE,
+				.species = SPECIES_PIKACHU_ORIGINAL,
+				.lvl = 15,
+				.heldItem = ITEM_LIGHT_BALL,
+				.ball = ITEM_POKE_BALL,
+				.ability = ABILITY_STATIC,
+				.gender = MON_MALE,
+				.moves = {MOVE_THUNDERBOLT, MOVE_QUICK_ATTACK, MOVE_AGILITY, MOVE_DOUBLE_EDGE},
+				.nature = NATURE_NAUGHTY,
+				.iv = 186,
 			},
 			{
-				.species = SPECIES_ZYGARDE,
-				.level = 12,
-				.item = ITEM_POKE_BALL,
-				.pokeball = ITEM_MASTER_BALL,
-				// .gender = MON_FEMALE,
-				.abilityNum = 2,
-				.move1 = MOVE_EARTHQUAKE,
-				.move2 = MOVE_EARTHQUAKE,
-				.move3 = MOVE_EARTHQUAKE,
-				.move4 = MOVE_EARTHQUAKE,
+				.species = SPECIES_BUTTERFREE,
+				.lvl = 15,
+				.heldItem = ITEM_GIGA_KANTONITE,
+				.ball = ITEM_LOVE_BALL,
+				.ability = ABILITY_COMPOUND_EYES,
+				.gender = MON_MALE,
+				.moves = {MOVE_STUN_SPORE, MOVE_TACKLE, MOVE_WHIRLWIND, MOVE_BUG_BITE},
+				.nature = NATURE_JOLLY,
+				.iv = 186,
+			},
+			{
+				.species = SPECIES_PIDGEOTTO,
+				.lvl = 15,
+				.heldItem = ITEM_ORAN_BERRY,
+				.ball = ITEM_POKE_BALL,
+				.ability = ABILITY_NONE,
+				.gender = MON_MALE,
+				.moves = {MOVE_GUST, MOVE_TACKLE, MOVE_WHIRLWIND, MOVE_WING_ATTACK},
+				.nature = NATURE_JOLLY,
+				.iv = 186,
+			},
+			{
+				.species = SPECIES_CHARMANDER,
+				.lvl = 15,
+				.heldItem = ITEM_ORAN_BERRY,
+				.ball = ITEM_POKE_BALL,
+				.ability = ABILITY_NONE,
+				.gender = MON_MALE,
+				.moves = {MOVE_FLAMETHROWER, MOVE_SUBMISSION, MOVE_SEISMIC_TOSS, MOVE_OUTRAGE},
 				.nature = NATURE_BOLD,
-				.ivs = {31,31,31,31,31,31},
+				.iv = 186,
 			},
-		}
-		.flag = P_FLAG_FORCE_SHINY,
-		.variable[] = {VAR_TEMP_1, 2},
+			{
+				.species = SPECIES_KRABBY,
+				.lvl = 15,
+				.heldItem = ITEM_GIGA_KANTONITE,
+				.ball = ITEM_POKE_BALL,
+				.ability = ABILITY_NONE,
+				.gender = 3,
+				.moves = {MOVE_BUBBLE, MOVE_CRABHAMMER, MOVE_VICE_GRIP, MOVE_HYPER_BEAM},
+				.nature = NATURE_QUIRKY,
+				.iv = 186,
+			},
+			{
+				.species = SPECIES_MANKEY,
+				.lvl = 15,
+				.heldItem = ITEM_ORAN_BERRY,
+				.ball = ITEM_POKE_BALL,
+				.ability = ABILITY_NONE,
+				.gender = 3,
+				.moves = {MOVE_THRASH, MOVE_SCRATCH, MOVE_MEGA_KICK, MOVE_SEISMIC_TOSS},
+				.nature = NATURE_BOLD,
+				.iv = 186,
+			},
+			{
+				.species = SPECIES_SNORLAX,
+				.lvl = 15,
+				.heldItem = ITEM_SITRUS_BERRY,
+				.ball = ITEM_POKE_BALL,
+				.ability = ABILITY_NONE,
+				.gender = 3,
+				.moves = {MOVE_ICE_PUNCH, MOVE_PROTECT, MOVE_HYPER_BEAM, MOVE_REST},
+				.nature = NATURE_LAX,
+				.iv = 186,
+			},
+			{
+				.species = SPECIES_BULBASAUR,
+				.lvl = 15,
+				.heldItem = ITEM_EVERSTONE,
+				.ball = ITEM_POKE_BALL,
+				.ability = ABILITY_NONE,
+				.gender = 3,
+				.moves = {MOVE_VINE_WHIP, MOVE_RAZOR_LEAF, MOVE_SOLAR_BEAM, MOVE_TAKE_DOWN},
+				.nature = NATURE_SERIOUS,
+				.iv = 186,
+			},
+			{
+				.species = SPECIES_TAUROS,
+				.lvl = 30,
+				.heldItem = ITEM_SAFARI_BALL,
+				.ball = ITEM_SAFARI_BALL,
+				.ability = ABILITY_NONE,
+				.gender = 3,
+				.moves = {MOVE_HORN_ATTACK, MOVE_TAKE_DOWN, MOVE_NONE, MOVE_NONE},
+				.nature = NATURE_JOLLY,
+				.iv = 186,
+			},
+			{
+				.species = SPECIES_SQUIRTLE,
+				.lvl = 15,
+				.heldItem = ITEM_BLACK_GLASSES,
+				.ball = ITEM_POKE_BALL,
+				.ability = ABILITY_NONE,
+				.gender = 3,
+				.moves = {MOVE_RAPID_SPIN, MOVE_HEADBUTT, MOVE_WATER_GUN, MOVE_HYDRO_PUMP},
+				.nature = NATURE_QUIRKY,
+				.iv = 186,
+			}
+		},
 	},
 };
-/*
-const u8 *code;
-	const u8 *desc;
-	u16 items[6];
-	u16 itemQuantities[6];
-	const struct Pokemon *mons[12];
-	u16 flag;
-	u16 variable[2];
-	*/
 
 static void CB2_HandleGivenPassword(void)
 {
-	u8 i, currPassword;
-	for (i=0;i<=PASSWORD_COUNT;i++){
-		if (StringCompare(gStringVar2, sPasswordInfo[i].code) == 0)
+	u32 i;
+	u8 j, currPassword, passwordMatch;
+	u16 movesList[4];
+	passwordMatch = FALSE;
+	for (i=0;i<PASSWORD_COUNT;i++){
+		if (!(StringCompare(gStringVar2, sPasswordInfo[i].code))){
+			currPassword = i;
+			passwordMatch = TRUE;
 			break;
+		}
 	}
-	if (i != PASSWORD_COUNT){
+	if (passwordMatch == FALSE) {
+		ScriptContext_SetupScript(PasswordFallo);
+		SetMainCallback2(CB2_ReturnToField);
+	}
+	else if ((!GET_BIT(gSaveBlock2Ptr->passwordsUsed, i) || sPasswordInfo[currPassword].isRepeatable == TRUE)) {
 		currPassword = i;
-	
-		// gSaveBlock2Ptr->passwordsUsed;
+
+		if (sPasswordInfo[currPassword].isRepeatable != TRUE)
+			SET_BIT(gSaveBlock2Ptr->passwordsUsed, i);
 		
 		// give the items
 		for (i=0;i<6;i++){
-			if (sPasswordInfo[currPassword].items[i] != NULL && sPasswordInfo[currPassword].items[i] < ITEMS_COUNT){
+			if (sPasswordInfo[currPassword].items[i] != ITEM_NONE && sPasswordInfo[currPassword].items[i] < ITEMS_COUNT){
 				if (sPasswordInfo[currPassword].itemQuantities[i] > 0)
 					AddBagItem(sPasswordInfo[currPassword].items[i], sPasswordInfo[currPassword].itemQuantities[i]);
 				else
@@ -2717,100 +2817,27 @@ static void CB2_HandleGivenPassword(void)
 		
 		// give the pokemon
 		for (i=0;i<12;i++){
-			u32 moves[4];
-			if (sPasswordInfo[currPassword].mons[i]->move1 != NULL){
-				moves[0] = sPasswordInfo[currPassword].mons[i]->move1;
-				moves[1] = sPasswordInfo[currPassword].mons[i]->move2;
-				moves[2] = sPasswordInfo[currPassword].mons[i]->move3;
-				moves[3] = sPasswordInfo[currPassword].mons[i]->move4;
-			}
-			if (sPasswordInfo[currPassword].mons[i]->species != NULL && sPasswordInfo[currPassword].mons[i]->species < SPECIES_COUNT){
-				if (sPasswordInfo[currPassword].mons[i]->abilityNum == NULL && sPasswordInfo[currPassword].mons[i]->move1 != NULL)
-					ScriptGiveMonCustomMoves(sPasswordInfo[currPassword].mons[i]->species, sPasswordInfo[currPassword].mons[i]->level, sPasswordInfo[currPassword].mons[i]->item, moves);
-				else if (sPasswordInfo[currPassword].mons[i]->abilityNum == NULL && sPasswordInfo[currPassword].mons[i]->move1 == NULL)
-					ScriptGiveMon(sPasswordInfo[currPassword].mons[i]->species, sPasswordInfo[currPassword].mons[i]->level, sPasswordInfo[currPassword].mons[i]->item);
-				else
-					ScriptGiveMonFull(sPasswordInfo[currPassword].mons[i]->species, sPasswordInfo[currPassword].mons[i]->level, sPasswordInfo[currPassword].mons[i]->item, sPasswordInfo[currPassword].mons[i]->pokeball, sPasswordInfo[currPassword].mons[i]->nature, sPasswordInfo[currPassword].mons[i]->abilityNum, sPasswordInfo[currPassword].mons[i]->ivs, moves);
+			for (j=0;j<4;j++)
+				movesList[j] = sPasswordInfo[currPassword].mons[i].moves[j];
+			if (sPasswordInfo[currPassword].mons[i].species != SPECIES_NONE && sPasswordInfo[currPassword].mons[i].species < NUM_SPECIES){
+				ScriptGiveMonPassword(sPasswordInfo[currPassword].mons[i].species, sPasswordInfo[currPassword].mons[i].lvl, sPasswordInfo[currPassword].mons[i].heldItem, sPasswordInfo[currPassword].mons[i].ball, sPasswordInfo[currPassword].mons[i].nature, sPasswordInfo[currPassword].mons[i].ability, sPasswordInfo[currPassword].mons[i].gender, sPasswordInfo[currPassword].mons[i].iv, movesList, sPasswordInfo[currPassword].mons[i].isShiny);
 			}
 		}
-		
-		if (sPasswordInfo[currPassword].flag)
+		if (sPasswordInfo[currPassword].isRepeatable == TRUE && sPasswordInfo[currPassword].flag)
+			FlagToggle(sPasswordInfo[currPassword].flag);
+		else if (sPasswordInfo[currPassword].flag)
 			FlagSet(sPasswordInfo[currPassword].flag);
 		if (sPasswordInfo[currPassword].variable[0])
 			VarSet(sPasswordInfo[currPassword].variable[0], sPasswordInfo[currPassword].variable[1]);
 		
 		StringCopy(gStringVar1, sPasswordInfo[currPassword].desc);
 		ScriptContext_SetupScript(Password1);
+		SetMainCallback2(CB2_ReturnToField);
 	}
-	else
-		ScriptContext_SetupScript(PasswordFallo);
-	
-	// switch(i)
-	// {
-		// case 
-	// }
-	// if (StringCompare(gStringVar2, gText_Contrasena1 ) == 0) {
-		// ScriptGiveMon(SPECIES_DITTO, 20, ITEM_EXP_CANDY_S, 0, 0, 0);
-		// AddBagItem(ITEM_EXP_CANDY_XS, 5);
-		// AddBagItem(ITEM_EXP_CANDY_S, 5);
-		// AddBagItem(ITEM_EXP_CANDY_M, 5);
-		// AddBagItem(ITEM_EXP_CANDY_L, 5);
-		// AddBagItem(ITEM_EXP_CANDY_XL, 5);
-		// StringAppendN(gStringVar2, GetSpeciesName(SPECIES_DITTO), 15);
-		// StringCopy(gStringVar2, gText_Recompensa1);
-		// ScriptContext_SetupScript(Password2);
-    // }
-	// else if (StringCompare(gStringVar2, gText_Contrasena2) == 0) {
-		// // ScriptGiveMon(SPECIES_ARCEUS, 100, ITEM_MASTER_BALL, 0, 0, 0);
-		// AddBagItem(ITEM_POKE_BALL, 15);
-		// AddBagItem(ITEM_GREAT_BALL,10);
-		// AddBagItem(ITEM_ULTRA_BALL, 5);
-		// CopyItemName(ITEM_POKE_BALL, gStringVar1);
-		// CopyItemName(ITEM_GREAT_BALL, gStringVar2);
-		// CopyItemName(ITEM_ULTRA_BALL, gStringVar3);
-		// ScriptContext_SetupScript(Password3);
-    // }
-	// else if (StringCompare(gStringVar2, gText_Contrasena3) == 0) {
-		// ScriptGiveMon(SPECIES_GIRATINA, 100, ITEM_MASTER_BALL, 0, 0, 0);
-		// AddBagItem(ITEM_RARE_CANDY, 151);
-		// StringAppendN(gStringVar2, GetSpeciesName(SPECIES_DITTO), 15);
-		// CopyItemName(ITEM_RARE_CANDY, gStringVar2);
-		// ScriptContext_SetupScript(Password2);
-    // }
-	// else if (StringCompare(gStringVar2, gText_Contrasena4) == 0) {
-		// ScriptGiveMon(SPECIES_RESHIRAM, 100, ITEM_MASTER_BALL, 0, 0, 0);
-		// ScriptGiveMon(SPECIES_ZEKROM, 100, ITEM_MASTER_BALL, 0, 0, 0);
-		// ScriptGiveMon(SPECIES_KYUREM, 100, ITEM_MASTER_BALL, 0, 0, 0);
-		// AddBagItem(ITEM_MASTER_BALL, 15);
-		// ScriptContext_SetupScript(PasswordMuchos);
-    // }
-	// else if (StringCompare(gStringVar2, gText_Contrasena5) == 0) {
-		// ScriptGiveMon(SPECIES_DITTO, 1, ITEM_POKE_BALL, 0, 0, 0);
-		// StringAppendN(gStringVar2, GetSpeciesName(SPECIES_DITTO), 15);
-		// ScriptContext_SetupScript(Password1);
-    // }
-	// else if (StringCompare(gStringVar2, gText_Contrasena6) == 0) {
-		// ScriptGiveMon(SPECIES_DITTO, 1, ITEM_POKE_BALL, 0, 0, 0);
-		// StringAppendN(gStringVar2, GetSpeciesName(SPECIES_DITTO), 15);
-		// ScriptContext_SetupScript(Password1);
-    // }
-	// else if (StringCompare(gStringVar2, gText_Contrasena8) == 0) {
-		// ScriptContext_SetupScript(PasswordEvento1);
-    // }
-	// else if (StringCompare(gStringVar2, COMPOUND_STRING("ASHSUMO147")) == 0) {
-		// StringCopy(gStringVar1, gText_EquipoDeAsh7Region);
-		// ScriptContext_SetupScript(PasswordAshSM1);
-	// }
-	// else if (StringCompare(gStringVar2, COMPOUND_STRING("ASHSUMO147V2")) == 0) {
-		// StringCopy(gStringVar1, gText_EquipoDeAsh7Region);
-		// ScriptContext_SetupScript(PasswordAshSM2);
-	// }
-	// else
-
-		
-
-    // gFieldCallback = FieldCB_ContinueScriptHandleMusic;
-    SetMainCallback2(CB2_ReturnToField);
+	else {
+		ScriptContext_SetupScript(Password1);
+		SetMainCallback2(CB2_ReturnToField);
+	}
 }
 
 void DoPasswordNamingScreen(void)

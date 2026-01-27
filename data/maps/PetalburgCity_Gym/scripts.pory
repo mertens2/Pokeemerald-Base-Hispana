@@ -49,7 +49,7 @@ text PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon {
 text PetalburgCity_Gym_Text_DadHmISee {
 	poryswitch(LANGUAGE) {
 		ES{
-			format("¡No, ninguno, no te preocupes!")
+			format("¡No, ninguna, no te preocupes!")
 		}
 		EN{
 			format("None at all! Don't you worry!")

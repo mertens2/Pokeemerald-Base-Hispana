@@ -7584,7 +7584,7 @@ u32 CalculateShininess(bool8 affectsShinyFlags, u8 method, u8 flagAffected, u16 
 			totalRerolls *= 4;
 			break;
 		case 3:
-			totalRerolls *= 64;
+			totalRerolls *= 4096;
 			break;
 		default:
 			totalRerolls *= 2;

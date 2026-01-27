@@ -4852,12 +4852,21 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 #if P_FAMILY_MIMIKYU
     [SPECIES_MIMIKYU_DISGUISED] =
     {
+		#if P_BUFF_SPECIES == TRUE
+		.baseHP        = 65,
+        .baseAttack    = 90, // con el cristal z de mimikyu, básicamente será una stat de 144
+        .baseDefense   = 75,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 50, // con el cristal z de mimikyu, básicamente será una stat de 84
+        .baseSpDefense = 105,
+		#else
         .baseHP        = 55,
-        .baseAttack    = 90,
+        .baseAttack    = 90, // con el cristal z de mimikyu, básicamente será una stat de 144
         .baseDefense   = 80,
         .baseSpeed     = 96,
-        .baseSpAttack  = 50,
+        .baseSpAttack  = 50, // con el cristal z de mimikyu, básicamente será una stat de 84
         .baseSpDefense = 105,
+		#endif
         .types = MON_TYPES(TYPE_GHOST, TYPE_FAIRY),
         .catchRate = 45,
         .expYield = 167,

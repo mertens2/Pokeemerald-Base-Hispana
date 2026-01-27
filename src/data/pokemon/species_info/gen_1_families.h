@@ -17808,10 +17808,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_EEVEE] =
     {
         .baseHP        = 55,
-        .baseAttack    = 55,
+        .baseAttack    = 55, // con su cristal z, será básicamente 128
         .baseDefense   = 50,
         .baseSpeed     = 55,
-        .baseSpAttack  = EEVEE_SP_ATK,
+        .baseSpAttack  = EEVEE_SP_ATK, // con su cristal z será básicamente 148
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,

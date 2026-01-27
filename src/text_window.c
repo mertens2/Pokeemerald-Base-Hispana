@@ -8,6 +8,7 @@
 #include "menu.h"
 
 const u8 gTextWindowFrame1_Gfx[] = INCBIN_U8("graphics/text_window/1.4bpp");
+static const u16 gWhiteMessageBox_Pal[] = INCBIN_U16("graphics/text_window/white_message_box.gbapal");
 static const u8 sTextWindowFrame2_Gfx[] = INCBIN_U8("graphics/text_window/2.4bpp");
 static const u8 sTextWindowFrame3_Gfx[] = INCBIN_U8("graphics/text_window/3.4bpp");
 static const u8 sTextWindowFrame4_Gfx[] = INCBIN_U8("graphics/text_window/4.4bpp");

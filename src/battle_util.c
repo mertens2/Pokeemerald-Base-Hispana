@@ -7873,8 +7873,16 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_LIGHT_BALL:
-        if (atkBaseSpeciesId == SPECIES_PIKACHU && (GetConfig(CONFIG_LIGHT_BALL_ATTACK_BOOST) >= GEN_4 || IsBattleMoveSpecial(move)))
+        if (atkBaseSpeciesId == SPECIES_PIKACHU && (GetConfig(CONFIG_LIGHT_BALL_ATTACK_BOOST) >= GEN_4 || IsBattleMoveSpecial(move) || gBattleMons[battlerAtk].item == ITEM_PIKASHUNIUM_Z || gBattleMons[battlerAtk].item == ITEM_PIKANIUM_Z))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        break;
+	case HOLD_EFFECT_Z_CRYSTAL:
+        if (atkBaseSpeciesId == SPECIES_PIKACHU && (gBattleMons[battlerAtk].item == ITEM_PIKASHUNIUM_Z || gBattleMons[battlerAtk].item == ITEM_PIKANIUM_Z))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+		else if (atkBaseSpeciesId == SPECIES_EEVEE && gBattleMons[battlerAtk].item == ITEM_EEVIUM_Z)
+			modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+		else if (atkBaseSpeciesId == SPECIES_MIMIKYU && gBattleMons[battlerAtk].item == ITEM_MIMIKIUM_Z)
+			modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5)); // es 1.5 para que la stat de 90 de mimikyu sea básicamente 144 en vez de 198
         break;
     case HOLD_EFFECT_CHOICE_BAND:
         if (IsBattleMovePhysical(move) && GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)

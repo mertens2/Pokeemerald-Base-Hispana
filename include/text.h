@@ -180,6 +180,7 @@ u32 GetGlyphWidth_Braille(u16 glyphId, bool32 isJapanese);
 u32 GetFontIdToFit(const u8 *string, u32 widestFontId, u32 letterSpacing, u32 widthPx);
 u8 *PrependFontIdToFit(u8 *start, u8 *end, u32 fontId, u32 width);
 u8 *WrapFontIdToFit(u8 *start, u8 *end, u32 fontId, u32 width);
+bool8 AAndBCanSkip(u8 mode);
 
 
 // player text speed

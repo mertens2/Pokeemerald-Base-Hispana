@@ -17,7 +17,7 @@ SkyPillar_2F_OnTransition:
 # 9 "data/maps/AquaHideout_UnusedRubyMap2/SkyPillar_2F/scripts.pory"
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_2F_EventScript_CleanFloor
 # 10 "data/maps/AquaHideout_UnusedRubyMap2/SkyPillar_2F/scripts.pory"
-	copyvar VAR_ICE_STEP_COUNT, 1
+	setvar VAR_ICE_STEP_COUNT, 1
 # 11 "data/maps/AquaHideout_UnusedRubyMap2/SkyPillar_2F/scripts.pory"
 	end
 # 12 "data/maps/AquaHideout_UnusedRubyMap2/SkyPillar_2F/scripts.pory"

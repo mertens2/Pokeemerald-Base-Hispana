@@ -207,6 +207,10 @@ Error::
 
 Route102_WallyTutorial::
 	lockall
+	clearflag FLAG_HIDE_RALTS_102
+	clearflag FLAG_HIDE_ZIGZA_102
+	clearflag FLAG_HIDE_BALL_102
+	clearflag FLAG_BALL_CATCH_102
 	addobject LOCALID_ROUTE102_WALLY
 	addobject LOCALID_ROUTE102_BALL
 	addobject LOCALID_ROUTE102_BALL_CATCH

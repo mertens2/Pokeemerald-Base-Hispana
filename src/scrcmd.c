@@ -1752,6 +1752,8 @@ bool8 ScrCmd_closemessage(struct ScriptContext *ctx)
 
 static bool8 WaitForAorBPress(void)
 {
+	if (AAndBCanSkip(OPTIONS_TEXT_SKIP_SKIPALL))
+		return TRUE;
     if (JOY_NEW(A_BUTTON))
         return TRUE;
     if (JOY_NEW(B_BUTTON))

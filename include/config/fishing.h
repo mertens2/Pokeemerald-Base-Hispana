@@ -1,13 +1,14 @@
 #ifndef GUARD_CONFIG_FISHING_H
 #define GUARD_CONFIG_FISHING_H
 
-#define I_FISHING_BITE_ODDS         GEN_LATEST // In Gen 1 and Gen 2, the Old Rod has a 100% chance for a bite, Good Rod has a 66% chance for a bite, and Super Rod has a 50% chance for a bite. In Gen 3, all rods have a base 50% chance for a bite. In Gen 4 onwards, the Old Rod has a base 25% chance for a bite, Good Rod has a 50% chance for a bite, and Super Rod has a 75% chance for a bite.
-#define I_FISHING_MINIGAME          GEN_3      // Each generation uses a variation of reeling in Pokémon once they have been hooked. NOTE: Only the Gen 1/2 and Gen 3 minigames are implemented right now!
-#define I_FISHING_ENVIRONMENT       GEN_LATEST // In Gen 3, the battle environment when fighting a hooked Pokémon is based on the tile the player is standing on. In Gen 4 onwards, the environment is based on tile that is being fished in, resulting in it usually being a water environment.
-#define I_FISHING_STICKY_BOOST      GEN_LATEST // In Gen 3, a Pokemon with Suction Cups or Sticky Hold in the first slot of the party causes the chance for a bite to increase by about 35%. In Gen 4 onwards, it doubles the base bite chance.
-#define I_FISHING_FOLLOWER_BOOST    FALSE      // In HGSS, fishing bite odds are increased depending on the friendship of the current following Pokémon.
-#define I_FISHING_CHAIN             FALSE      // Introduced in XY, hooking the same Pokémon repeatedly will increase the odds of that mon being shiny. NOTE: This implementation is an approximation of the actual feature, as XY have not been throughoutly documented or datamined.
-#define I_FISHING_PROXIMITY         FALSE      // In XY, bite chance is boosted by the number of adjacent non-surfable tiles next to your fishing line
+// Pesca
+#define I_FISHING_BITE_ODDS         GEN_LATEST  // En Gen 1 y Gen 2, la Caña vieja tiene 100% de posibilidades de que pique un Pokémon, Caña buena un 66%, y la Super caña un 50%. En Gen 3, todas tienen un 50%. De Gen 4 en adelante, la Caña vieja tiene un 25%, la Caña buena un 50% y la Super caña un 75%.
+#define I_FISHING_MINIGAME          GEN_5       // Cada generación utiliza una variación de la mecánica de pesca una vez que el Pokémon ha sido enganchado.
+#define I_FISHING_ENVIRONMENT       GEN_LATEST  // En Gen 3, el terreno de batalla cuando combates contra un Pokémon pescado depende del tile donde esté el jugador. A partir de Gen 4, el terreno depende del tile donde es pescado el Pokémon (lo que suele ser terreno de agua).
+#define I_FISHING_STICKY_BOOST      GEN_LATEST  // En Gen 3, un Pokémon con Ventosas o Viscosidad como primer miembro del equipo aumenta las posibilidades de que pique un Pokémon un 35%. De Gen 4 en adelante, dobla las posibilidades.
+#define I_FISHING_FOLLOWER_BOOST    FALSE       // En HGSS, las posibilidades de que pique un Pokémon aumentan con la felicidad del Pokémon que te sigue.
+#define I_FISHING_CHAIN             TRUE        // Introducido en XY, enganchar al mismo Pokémon repetidamente aumenta las probabilidades de que ese Pokémon sea shiny. NOTA: Esta implementación es una aproximación de la característica real, ya que XY no ha sido exhaustivamente documentado ni datamineado.
+#define I_FISHING_PROXIMITY         FALSE       // Introducido en XY, pescar lejos de otras personas en áreas cerradas aumenta las probabilidades de que un Pokémon sea enganchado. NOTA: Esta implementación es una aproximación de la característica real, ya que XY no ha sido exhaustivamente documentado ni datamineado.
 #define I_FISHING_TIME_OF_DAY_BOOST FALSE      // In XY, bite chance is boosted during morning and evening
 
 #endif // GUARD_CONFIG_FISHING_H

@@ -7532,7 +7532,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_FairiumZ,
         .iconPalette = gItemIconPalette_FairiumZ,
     },
-
+	// cristales z exclusivos
     [ITEM_PIKANIUM_Z] =
     {
         .name = ITEM_NAME("Pikastal Z"),
@@ -7540,9 +7540,9 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .holdEffect = HOLD_EFFECT_Z_CRYSTAL,
         .description = COMPOUND_STRING(
-            "Convierte Placaje eléctrico\n"
-            "de Pikachu en un\n"
-            "movimiento Z."),
+            "Tacleada de Voltios será\n"
+            "un Movimiento Z. Duplica\n"
+            "la ofensiva de Pikachu."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_Z_CRYSTAL,
         .type = ITEM_USE_BAG_MENU,
@@ -7559,9 +7559,9 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .holdEffect = HOLD_EFFECT_Z_CRYSTAL,
         .description = COMPOUND_STRING(
-            "Convierte Última baza\n"
-            "de Eevee en un\n"
-            "movimiento Z."),
+            "Última baza de Eevee\n"
+            "será un Movimiento Z y\n"
+            "duplicará su ofensiva."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_Z_CRYSTAL,
         .type = ITEM_USE_BAG_MENU,
@@ -7692,9 +7692,9 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .holdEffect = HOLD_EFFECT_Z_CRYSTAL,
         .description = COMPOUND_STRING(
-            "Convierte Carantoña\n"
-            "de Mimikyu en un\n"
-            "movimiento Z."),
+            "Juego Rudo de Mimikyu\n"
+            "será un Movimiento Z y\n"
+            "hará 50% más daño."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_Z_CRYSTAL,
         .type = ITEM_USE_BAG_MENU,
@@ -7806,8 +7806,8 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .holdEffect = HOLD_EFFECT_Z_CRYSTAL,
         .description = COMPOUND_STRING(
-            "Convierte Rayo de\n"
-            "Raichu de Alola en\n"
+            "El Atactrueno de un\n"
+            "Raichu de Alola será\n"
             "un movimiento Z."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_Z_CRYSTAL,
@@ -7820,14 +7820,14 @@ const struct Item gItemsInfo[] =
 
     [ITEM_PIKASHUNIUM_Z] =
     {
-        .name = ITEM_NAME("Ash-Pikastal Z"),
-        .pluralName = ITEM_PLURAL_NAME("Ash-Pikastales Z"),
+        .name = ITEM_NAME("Pikashtal Z"),
+        .pluralName = ITEM_PLURAL_NAME("Pikashtales Z"),
         .price = 0,
         .holdEffect = HOLD_EFFECT_Z_CRYSTAL,
         .description = COMPOUND_STRING(
-            "Convierte Rayo de\n"
-            "Pikachu con gorra en\n"
-            "un movimiento Z."),
+            "Atactrueno será un Mov. Z\n"
+            "y duplicará la ofensiva\n"
+            "del Pikachu de Ash."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_Z_CRYSTAL,
         .type = ITEM_USE_BAG_MENU,
@@ -12632,7 +12632,10 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("MT52"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "Ataque considerado que\n"
+			"deja al Rival con 1 PS.\n"
+			"Perfecto para capturas."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

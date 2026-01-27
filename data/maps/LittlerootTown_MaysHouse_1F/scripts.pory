@@ -109,7 +109,7 @@ LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock::
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
 	applymovement LOCALID_MOM, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
 	waitmovement 0
-	warp MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F, 1, 1
+	warp MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F, 2, 3
 	waitstate
 	releaseall
 	end
@@ -153,12 +153,13 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	end
 
 LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_in_place_faster_down
 	step_end
 
 RivalsHouse_1F_EventScript_RivalMom::
@@ -170,7 +171,6 @@ RivalsHouse_1F_EventScript_RivalMom::
 	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
-	
 	release
 	end
 

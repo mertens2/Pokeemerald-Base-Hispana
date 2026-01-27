@@ -4495,7 +4495,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 		.baseHP        = 90,
         .baseAttack    = 40,
         .baseDefense   = 75,
-        .baseSpeed     = 100,
+        .baseSpeed     = 140,
         .baseSpAttack  = 80,
         .baseSpDefense = 75,
 		#else
@@ -4531,7 +4531,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .speciesName = _("Delcatty"),
         .cryId = CRY_DELCATTY,
         .natDexNum = NATIONAL_DEX_DELCATTY,
-        .categoryName = _("Cursi"),
+        .categoryName = _("Fifí"),
         .height = 11,
         .weight = 326,
 		.description = COMPOUND_STRING(

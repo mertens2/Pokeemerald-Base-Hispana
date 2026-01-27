@@ -68,80 +68,76 @@ Password1::
 	end
 
 
-# 42 "data/scripts/password_system.pory"
-
-# 43 "data/scripts/password_system.pory"
-
-# 44 "data/scripts/password_system.pory"
-
-# 45 "data/scripts/password_system.pory"
 Password2::
+# 44 "data/scripts/password_system.pory"
+	lockall
+# 45 "data/scripts/password_system.pory"
+	msgbox Password2_Text_0
 # 46 "data/scripts/password_system.pory"
-	lockall
-# 47 "data/scripts/password_system.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 48 "data/scripts/password_system.pory"
-    msgbox Password2_Text, 2
-# 49 "data/scripts/password_system.pory"
-	release
-# 50 "data/scripts/password_system.pory"
-	end
-# 51 "data/scripts/password_system.pory"
-
-# 52 "data/scripts/password_system.pory"
-Password3::
-# 53 "data/scripts/password_system.pory"
-	lockall
-# 54 "data/scripts/password_system.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 55 "data/scripts/password_system.pory"
-    msgbox Password3_Text, 2
-# 56 "data/scripts/password_system.pory"
-	release
-# 57 "data/scripts/password_system.pory"
-	end
-# 58 "data/scripts/password_system.pory"
-
-# 59 "data/scripts/password_system.pory"
-PasswordMuchos::
-# 60 "data/scripts/password_system.pory"
-	lockall
-# 61 "data/scripts/password_system.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 62 "data/scripts/password_system.pory"
-    msgbox PasswordMuchos_Text, 2
-# 63 "data/scripts/password_system.pory"
-	waitmessage
-# 64 "data/scripts/password_system.pory"
-	release
-# 65 "data/scripts/password_system.pory"
-	end
-# 66 "data/scripts/password_system.pory"
-PasswordFallo::
-# 67 "data/scripts/password_system.pory"
-	lockall
-# 68 "data/scripts/password_system.pory"
-	playse SE_FAILURE
-# 69 "data/scripts/password_system.pory"
-    msgbox PasswordIncorrecta_Text, 2
-# 70 "data/scripts/password_system.pory"
-	waitmessage
-# 71 "data/scripts/password_system.pory"
-	release
-# 72 "data/scripts/password_system.pory"
-	end
-# 73 "data/scripts/password_system.pory"
-
-# 74 "data/scripts/password_system.pory"
-PasswordEvento1::
-# 75 "data/scripts/password_system.pory"
-	lockall
-# 76 "data/scripts/password_system.pory"
-	msgbox TextoEvento1
-# 77 "data/scripts/password_system.pory"
 	releaseall
-# 78 "data/scripts/password_system.pory"
+	end
+
+
+# 49 "data/scripts/password_system.pory"
+
+# 50 "data/scripts/password_system.pory"
+
+# 51 "data/scripts/password_system.pory"
+Password3::
+# 52 "data/scripts/password_system.pory"
+	lockall
+# 53 "data/scripts/password_system.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 54 "data/scripts/password_system.pory"
+    msgbox Password3_Text, 2
+# 55 "data/scripts/password_system.pory"
+	release
+# 56 "data/scripts/password_system.pory"
+	end
+# 57 "data/scripts/password_system.pory"
+
+# 58 "data/scripts/password_system.pory"
+PasswordMuchos::
+# 59 "data/scripts/password_system.pory"
+	lockall
+# 60 "data/scripts/password_system.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 61 "data/scripts/password_system.pory"
+    msgbox PasswordMuchos_Text, 2
+# 62 "data/scripts/password_system.pory"
+	waitmessage
+# 63 "data/scripts/password_system.pory"
+	release
+# 64 "data/scripts/password_system.pory"
+	end
+# 65 "data/scripts/password_system.pory"
+PasswordFallo::
+# 66 "data/scripts/password_system.pory"
+	lockall
+# 67 "data/scripts/password_system.pory"
+	playse SE_FAILURE
+# 68 "data/scripts/password_system.pory"
+    msgbox PasswordIncorrecta_Text, 2
+# 69 "data/scripts/password_system.pory"
+	waitmessage
+# 70 "data/scripts/password_system.pory"
+	release
+# 71 "data/scripts/password_system.pory"
+	end
+# 72 "data/scripts/password_system.pory"
+
+# 73 "data/scripts/password_system.pory"
+PasswordEvento1::
+# 74 "data/scripts/password_system.pory"
+	lockall
+# 75 "data/scripts/password_system.pory"
+	msgbox TextoEvento1
+# 76 "data/scripts/password_system.pory"
+	releaseall
+# 77 "data/scripts/password_system.pory"
 	return
+# 78 "data/scripts/password_system.pory"
+
 # 79 "data/scripts/password_system.pory"
 
 # 80 "data/scripts/password_system.pory"
@@ -149,52 +145,53 @@ PasswordEvento1::
 # 81 "data/scripts/password_system.pory"
 
 # 82 "data/scripts/password_system.pory"
-
-# 83 "data/scripts/password_system.pory"
 TextoEvento1:
-# 84 "data/scripts/password_system.pory"
+# 83 "data/scripts/password_system.pory"
 	.string "¡Oh, algo te indica que algo cambió en la\n"
-# 85 "data/scripts/password_system.pory"
+# 84 "data/scripts/password_system.pory"
 	.string "Ruta 101!\p"
-# 86 "data/scripts/password_system.pory"
+# 85 "data/scripts/password_system.pory"
 	.string "¡Ve para ahí!$"
+# 86 "data/scripts/password_system.pory"
+ 
 # 87 "data/scripts/password_system.pory"
  
 # 88 "data/scripts/password_system.pory"
- 
+
 # 89 "data/scripts/password_system.pory"
-
-# 90 "data/scripts/password_system.pory"
-Password2_Text::
-# 91 "data/scripts/password_system.pory"
-	.string "¡Te han enviado un Regalo Misterioso!\p¡Recibiste {STR_VAR_1}\ny {STR_VAR_2}!$"
-# 92 "data/scripts/password_system.pory"
 Password3_Text::
-# 93 "data/scripts/password_system.pory"
+# 90 "data/scripts/password_system.pory"
 	.string "¡Te han enviado un Regalo Misterioso!\p¡Recibiste {STR_VAR_1}, \n{STR_VAR_2} y {STR_VAR_3}!$"
-# 94 "data/scripts/password_system.pory"
+# 91 "data/scripts/password_system.pory"
 PasswordMuchos_Text::
-# 95 "data/scripts/password_system.pory"
+# 92 "data/scripts/password_system.pory"
 	.string "¡Te han enviado un Regalo Misterioso!\n¡Recibiste muchas cosas!$"
-# 96 "data/scripts/password_system.pory"
+# 93 "data/scripts/password_system.pory"
 PasswordRecibiste_Text::
-# 97 "data/scripts/password_system.pory"
+# 94 "data/scripts/password_system.pory"
 	.string "¡Te han enviado un Regalo Misterioso!$"
-# 98 "data/scripts/password_system.pory"
+# 95 "data/scripts/password_system.pory"
 PasswordIncorrecta_Text::
-# 99 "data/scripts/password_system.pory"
+# 96 "data/scripts/password_system.pory"
 	.string "Contraseña incorrecta.$"
-# 100 "data/scripts/password_system.pory"
+# 97 "data/scripts/password_system.pory"
 PasswordAsh_Text::
-# 101 "data/scripts/password_system.pory"
+# 98 "data/scripts/password_system.pory"
 	.string "¡Te han enviado un Regalo Misterioso!\p¡Oh!\n¡Parece que proviene del Anime!\p¡Ahora tienes los Pokémon que Ash\nKetchum usó en la Región {STR_VAR_1}!$"
-# 102 "data/scripts/password_system.pory"
+# 99 "data/scripts/password_system.pory"
 
-# 103 "data/scripts/password_system.pory"
+# 100 "data/scripts/password_system.pory"
 PasswordAsh_Text2::
-# 104 "data/scripts/password_system.pory"
+# 101 "data/scripts/password_system.pory"
 	.string "¡Te han enviado un Regalo Misterioso!\p¡Oh!\n¡Parece que proviene del Anime!\p¡Ahora tienes los Pokémon que Ash\nKetchum usó en la Región {STR_VAR_1},\llistos para usar!$"
 
 Password1_Text_0:
 # 37 "data/scripts/password_system.pory"
+	.string "¡Has recibido un Regalo Misterioso!\p"
 	.string "{STR_VAR_1}$"
+
+Password2_Text_0:
+# 45 "data/scripts/password_system.pory"
+	.string "¡Ya has conseguido este Regalo\n"
+	.string "Misterioso, intenta con otra\l"
+	.string "contraseña!$"
