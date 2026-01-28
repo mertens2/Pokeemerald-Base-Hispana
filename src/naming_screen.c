@@ -2623,7 +2623,7 @@ enum { // el enum de las contraseñas posibles
 	PASSWORD_CATCH,
 	PASSWORD_CHEAT_RARE,
 	PASSWORD_ASH_1,
-	PASSWORD_TEST,
+	PASSWORD_TEST = 32,
 	PASSWORD_COUNT,
 };
 static const struct PasswordInfo sPasswordInfo[] = {
@@ -2635,18 +2635,19 @@ static const struct PasswordInfo sPasswordInfo[] = {
 			{
 				.species = SPECIES_MEWTWO,
 				.lvl = 100,
-				.item = ITEM_MASTER_BALL,
+				.heldItem = ITEM_MASTER_BALL,
 			},
 			{
 				.species = SPECIES_MEWTWO,
 				.lvl = 100,
-				.item = ITEM_MASTER_BALL,
+				.heldItem = ITEM_MASTER_BALL,
 			},
 		},
 		.itemQuantities = {15, 10, 5},
+		.isRepeatable = TRUE,
 	},
 	[PASSWORD_LEVEL] = {
-		.code = COMPOUND_STRING("AYUDANVL"),
+		.code = COMPOUND_STRING("NVL"),
 		.desc = COMPOUND_STRING("Un set completo de\nCaramelos Experiencia."),
 		.items = {ITEM_EXP_CANDY_XS, ITEM_EXP_CANDY_S, ITEM_EXP_CANDY_M, ITEM_EXP_CANDY_L},
 		.itemQuantities = {15, 10, 5, 1},
