@@ -582,3 +582,20 @@ MauvilleCity_CommunalGarden_Text_BlackBeltYouSure::
 MauvilleCity_CommunalGarden_Text_BlackBeltFun::
 # 1385 "data/text/npc_dialogue.pory"
 	.string "¡Espero te hayas divertido!$"
+
+Route101_Text_RaltsIsEagerForBattle::
+# 1396 "data/text/npc_dialogue.pory"
+	.string "Parece que este Ralts está rebosando\n"
+	.string "con ganas de batallar… ¿Te\l"
+	.string "involucrarás?$"
+
+Route101_Text_RaltsIsMad::
+# 1407 "data/text/npc_dialogue.pory"
+	.string "Parece que este Ralts se enojó\n"
+	.string "contigo…$"
+
+Route101_Text_RaltsWasMew::
+# 1418 "data/text/npc_dialogue.pory"
+	.string "Parece que este Ralts… Era el Pokémon\n"
+	.string "Nuevaespecie…\p"
+	.string "{COLOR RED SHADOW LIGHT_RED}Mew{COLOR DARK_GRAY SHADOW LIGHT_GRAY}…$"

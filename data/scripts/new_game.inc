@@ -284,5 +284,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_ZIGZA_102
 	setflag FLAG_HIDE_BALL_102
 	setflag FLAG_BALL_CATCH_102
+	setflag FLAG_HIDE_MEW_R101
+	clearflag FLAG_HIDE_RALTS_R101
 	call EventScript_ResetAllBerries
 	end

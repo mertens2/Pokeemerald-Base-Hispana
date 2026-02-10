@@ -3646,7 +3646,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .itemRare = ITEM_MENTAL_HERB,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
-        .friendship = STANDARD_FRIENDSHIP,
+        .friendship = HIGH_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
         .abilities = { ABILITY_SWARM, ABILITY_CHLOROPHYLL, ABILITY_OVERCOAT },
@@ -3658,9 +3658,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 3,
         .weight = 25,
 		.description = COMPOUND_STRING(
-			"Recorta hojas y las teje con el líquido\n"
-			"viscoso que segrega por la boca para\n"
-			"hacerse su propia ropa."),
+			"Se crea su propia ropa hecha con\n"
+			"hojas para protegerse del clima.\n"
+			"Ésta sirve como comida de emergencia."),
         .pokemonScale = 530,
         .pokemonOffset = 15,
         .trainerScale = 256,
@@ -3699,16 +3699,16 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sSewaddleLevelUpLearnset,
         .teachableLearnset = sSewaddleTeachableLearnset,
         .eggMoveLearnset = sSewaddleEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_SWADLOON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_SWADLOON}),
     },
 
     [SPECIES_SWADLOON] =
     {
 	#if P_BUFF_SPECIES == TRUE
         .baseHP        = 60,
-        .baseAttack    = 63,
+        .baseAttack    = 65,
         .baseDefense   = 90,
-        .baseSpeed     = 42,
+        .baseSpeed     = 40,
         .baseSpAttack  = 50,
         .baseSpDefense = 80,
 	#else
@@ -3726,7 +3726,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .itemRare = ITEM_MENTAL_HERB,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
-        .friendship = STANDARD_FRIENDSHIP,
+        .friendship = HIGH_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
         .abilities = { ABILITY_LEAF_GUARD, ABILITY_CHLOROPHYLL, ABILITY_OVERCOAT },
@@ -3784,18 +3784,19 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     {
 	#if P_BUFF_SPECIES == TRUE
         .baseHP        = 90,
-        .baseAttack    = 103,
+        .baseAttack    = 110,
         .baseDefense   = 80,
-        .baseSpeed     = 97,
-        .baseSpAttack  = 50,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 20,
+		.baseSpDefense = 100,
 	#else
 		.baseHP        = 75,
         .baseAttack    = 103,
         .baseDefense   = 80,
         .baseSpeed     = 92,
         .baseSpAttack  = 70,
+		.baseSpDefense = 80,
 	#endif
-        .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 80 : 70,
         .types = MON_TYPES(TYPE_BUG, TYPE_GRASS),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -3817,7 +3818,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .speciesName = _("Leavanny"),
         .cryId = CRY_LEAVANNY,
         .natDexNum = NATIONAL_DEX_LEAVANNY,
-        .categoryName = _("Cuidador"),
+        .categoryName = _("Cultivador"),
         .height = 12,
         .weight = 205,
 		.description = COMPOUND_STRING(

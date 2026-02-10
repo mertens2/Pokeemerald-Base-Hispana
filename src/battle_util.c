@@ -7851,6 +7851,14 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
                 RecordAbilityBattle(battlerDef, ABILITY_THICK_FAT);
         }
         break;
+	// case ABILITY_OVERCOAT:
+        // if (moveType == TYPE_FIRE || moveType == TYPE_ICE)
+        // {
+            // modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.75));
+            // if (ctx->updateFlags)
+                // RecordAbilityBattle(battlerDef, ABILITY_OVERCOAT);
+        // }
+        // break;
     case ABILITY_PURIFYING_SALT:
         if (moveType == TYPE_GHOST)
         {
@@ -8319,6 +8327,13 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
     case ABILITY_MULTISCALE:
     case ABILITY_SHADOW_SHIELD:
         if (IsBattlerAtMaxHp(ctx->battlerDef))
+        {
+            modifier = UQ_4_12(0.5);
+            recordAbility = TRUE;
+        }
+        break;
+	case ABILITY_OVERCOAT:
+        if ((ctx->moveType == TYPE_FIRE || ctx->moveType == TYPE_ICE) && (ctx->typeEffectivenessModifier >= UQ_4_12(2.0)))
         {
             modifier = UQ_4_12(0.5);
             recordAbility = TRUE;

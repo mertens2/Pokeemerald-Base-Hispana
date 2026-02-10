@@ -209,6 +209,7 @@ enum __attribute__((packed)) Stat
 
 // Friendship value that the majority of species use.
 #define STANDARD_FRIENDSHIP ((P_UPDATED_FRIENDSHIP >= GEN_8) ? 50 : 70)
+#define HIGH_FRIENDSHIP ((P_UPDATED_FRIENDSHIP >= GEN_8) ? 90 : 120)
 
 #define MAX_FRIENDSHIP  255
 #define MAX_SHEEN       255
