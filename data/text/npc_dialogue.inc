@@ -206,7 +206,7 @@ MauvilleCity_Inside_Text_AromaLady::
 	.string "Odio esta ciudad, pero es la única con\n"
 	.string "electrididad gratis…\p"
 	.string "Todo es tan anti-natural aquí, ¿Y me\n"
-	.string "tiene que gustar sólo por una cuota\l"
+	.string "tiene que gustar sólo por una factura\l"
 	.string "menos?$"
 
 MauvilleCity_Inside_Text_BlackBelt::

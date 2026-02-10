@@ -1,17 +1,12 @@
+script OldaleTown_House1_EventScript_Woman {
+	lock
+	faceplayer
+	msgbox(format("¡Presionar {SELECT_BUTTON} en tu Equipo te permitirá cambiarlos de posición más rápido!\p"
+	"¡Presionar {START_BUTTON}, en cambio, te permitirá quitarles su Objeto Equipado!"))
+}
+
 raw `
 OldaleTown_House1_MapScripts::
 	.byte 0
-
-OldaleTown_House1_EventScript_Woman::
-	msgbox OldaleTown_House1_Text_LeftPokemonGoesOutFirst, MSGBOX_NPC
-	end
-
-OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
-	.string "Cuando empieza un combate POKéMON,\n"
-	.string "el que está a la izquierda de la lista\l"
-	.string "sale a luchar primero.\p"
-	.string "Así que, cuando tengas varios POKéMON\n"
-	.string "en tu equipo, prueba a cambiar el orden.\p"
-	.string "En algunos casos, podría darte ventaja.$"
 
 `

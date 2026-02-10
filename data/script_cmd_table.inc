@@ -251,9 +251,6 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_BUFFERITEMNAMEPLURAL          ScrCmd_bufferitemnameplural,        requests_effects=1  @ 0xe2
 	script_cmd_table_entry SCR_OP_DYNMULTICHOICE                ScrCmd_dynmultichoice,              requests_effects=1  @ 0xe3
 	script_cmd_table_entry SCR_OP_DYNMULTIPUSH                  ScrCmd_dynmultipush,                requests_effects=1  @ 0xe4
-	script_cmd_table_entry SCR_OP_QUESTMENU 					ScrCmd_questmenu,                   requests_effects=1  @ 0xe5
-	script_cmd_table_entry SCR_OP_NAMEBOX   					ScrCmd_namebox,                     requests_effects=1  @ 0xe5
-	script_cmd_table_entry SCR_OP_HIDENAMEBOX 					ScrCmd_hidenamebox,                 requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_CHANGEFRAME 					ScrCmd_changeframe,                 requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_CHECKPARTYTYPE 				ScrCmd_checkpartytype,              requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_SHOWMONPICSHINY 				ScrCmd_showmonpicshiny,             requests_effects=1  @ 0xe5
@@ -263,6 +260,9 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_GETLOCALWILDMON				ScrCmd_getlocalwildmon,             requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_SETWILDBATTLEVAR				ScrCmd_setwildbattlevar,            requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_HIDEFOLLOWER                  ScrCmd_hidefollower,                requests_effects=1  @ 0xe5
+	script_cmd_table_entry SCR_OP_QUESTMENU                     ScrCmd_questmenu,                   requests_effects=1   @ 0xe3
+    script_cmd_table_entry SCR_OP_SUBQUESTMENU                  ScrCmd_subquestmenu,                requests_effects=1   @ 0xe4
+    script_cmd_table_entry SCR_OP_RETURNQUESTSTATE              ScrCmd_returnqueststate,            requests_effects=1   @ 0xe5
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::

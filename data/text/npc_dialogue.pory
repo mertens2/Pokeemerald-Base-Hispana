@@ -739,7 +739,7 @@ text MauvilleCity_Inside_Text_AromaLady{
 		}
 		ES {
 			format("Odio esta ciudad, pero es la única con electrididad gratis…\p"
-			"Todo es tan anti-natural aquí, ¿Y me tiene que gustar sólo por una cuota menos?") 
+			"Todo es tan anti-natural aquí, ¿Y me tiene que gustar sólo por una factura menos?") 
 		}
 	}
 }
@@ -1389,6 +1389,39 @@ text MauvilleCity_CommunalGarden_Text_BlackBeltFun {
 		}
 		EN {
 			format("Hope you had fun!")
+		}
+	}
+}
+
+text Route101_Text_RaltsIsEagerForBattle {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Parece que este Ralts está rebosando con ganas de batallar… ¿Te involucrarás?") 
+		}
+		EN {
+			format("Looks like this Ralts is eager to battle… Will you battle it?")
+		}
+	}
+}
+
+text Route101_Text_RaltsIsMad {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Parece que este Ralts se enojó contigo…") 
+		}
+		EN {
+			format("Looks like this Ralts is mad at you now…")
+		}
+	}
+}
+
+text Route101_Text_RaltsWasMew {
+	poryswitch(LANGUAGE) {
+		ES {
+			format("Parece que este Ralts… Era el Pokémon Nuevaespecie…\p{COLOR RED SHADOW LIGHT_RED}Mew{COLOR DARK_GRAY SHADOW LIGHT_GRAY}…") 
+		}
+		EN {
+		format("Looks like this Ralts… Was the New Species Pokémon…\p{COLOR RED SHADOW LIGHT_RED}Mew{COLOR DARK_GRAY SHADOW LIGHT_GRAY}…")
 		}
 	}
 }

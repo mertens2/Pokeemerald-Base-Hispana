@@ -109,6 +109,13 @@
       "elevation": 3,
       "dest_map": "MAP_RUSTBORO_CITY",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTBORO_CITY_POKEMON_CENTER_2F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

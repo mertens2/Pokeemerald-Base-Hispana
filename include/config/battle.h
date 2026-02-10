@@ -223,7 +223,7 @@
 // Configuración de variables
 // Para usar las siguientes características en scripting, reemplaza los 0s con el ID de la variable que le asignas.
 // Ej: Reemplaza con VAR_UNUSED_0x40F7 para que puedas usar B_VAR_STARTING_STATUS para esa característica.
-#define B_VAR_STARTING_STATUS               0       // Si esta variable tiene un valor, asignar un STATUS_FIELD_xx_TERRAIN a ella antes de la batalla hace que la batalla comience con ese terreno activo.
+#define B_VAR_STARTING_STATUS               VAR_STARTING_TERRAIN       // Si esta variable tiene un valor, asignar un STATUS_FIELD_xx_TERRAIN a ella antes de la batalla hace que la batalla comience con ese terreno activo.
                                                     // Esta var no debería permanecer como un valor distinto de cero el tiempo suficiente para que el jugador guarde.
 #define B_VAR_STARTING_STATUS_TIMER         0       // Si esta variable tiene un valor mayor o igual a 1, los terrenos de campo durarán esa cantidad de turnos, de lo contrario durarán hasta que sean sobrescritos.
 #define B_VAR_WILD_AI_FLAGS                 0       // Si no es 0, puedes usar esta variable para añadir a los flags de IA salvaje predeterminados. NO usable con las flags anteriores (1 << 15)

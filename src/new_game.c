@@ -48,6 +48,7 @@
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
+#include "quests.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -213,15 +214,12 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+	QuestMenu_ResetMenuSaveData();
     gSaveBlock2Ptr->miningPlaces = 0xFFFFFFFF;
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     ResetDexNav();
-    ClearFollowerNPCData();   
-    memset(&gSaveBlock2Ptr->unlockedQuests, 0, sizeof(gSaveBlock2Ptr->unlockedQuests));
-    memset(&gSaveBlock2Ptr->completedQuests, 0, sizeof(gSaveBlock2Ptr->completedQuests));
-    gSaveBlock2Ptr->activeQuest = 0;
-
+    ClearFollowerNPCData();
 }
 
 static void ResetMiniGamesRecords(void)

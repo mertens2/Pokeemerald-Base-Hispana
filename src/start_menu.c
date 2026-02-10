@@ -55,6 +55,7 @@
 #include "tutoriales/minijuego_zubat.h"
 #include "quests.h"
 #include "naming_screen.h"
+// #include "constants/quests.h"
 
 // Menu actions
 enum
@@ -217,7 +218,7 @@ static const u8 sText_MenuCodes[] = _("Claves");
 static const u8 gText_MenuDexRelated[] = _("Dex y Otros");
 static const u8 gText_LeftArrow[] = _("{LEFT_ARROW}");
 static const u8 gText_MenuExit2[] = _("Salir {DPAD_LEFT}");
-static const u8 gText_MenuExit3[] = _("Salir");
+static const u8 gText_MenuExit3[] = _("Salir {DPAD_RIGHT}");
 static const u8 gText_MenuPC[] = _("PC");
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -233,7 +234,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_TUTORIAL_MINIJUEGO_ZUBAT]  = {gText_MenuTutorial,  {.u8_void = StartMenuTutorialMinijuegoZubatCallback}},
     [MENU_ACTION_EXIT]                      = {gText_MenuExit,      {.u8_void = StartMenuExitCallback}},
 	[MENU_ACTION_EXIT2]              		= {gText_MenuExit2, 	{.u8_void = StartMenuExitCallback}},
-    [MENU_ACTION_RIGHT]              		= {gText_MenuExit, 		{.u8_void = StartMenuRightCallback}},
+    [MENU_ACTION_RIGHT]              		= {gText_MenuExit3, 	{.u8_void = StartMenuExitCallback}},
     [MENU_ACTION_LEFT]              		= {gText_LeftArrow, 	{.u8_void = StartMenuLeftCallback}},
     [MENU_ACTION_RETIRE_SAFARI]             = {gText_MenuRetire,    {.u8_void = StartMenuSafariZoneRetireCallback}},
     [MENU_ACTION_PLAYER_LINK]               = {gText_MenuPlayer,    {.u8_void = StartMenuLinkModePlayerNameCallback}},
@@ -390,19 +391,11 @@ static void BuildDexRelatedStartMenu(void) {
 
 static void BuildNormalStartMenu(void)
 {
-    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-        AddStartMenuAction(MENU_ACTION_POKEDEX);
-
-    if (DN_FLAG_DEXNAV_GET != 0 && FlagGet(DN_FLAG_DEXNAV_GET))
-        AddStartMenuAction(MENU_ACTION_DEXNAV);
 
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
 
     AddStartMenuAction(MENU_ACTION_BAG);
-
-    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
-        AddStartMenuAction(MENU_ACTION_POKENAV);
 
     AddStartMenuAction(MENU_ACTION_PLAYER);
     
@@ -1651,7 +1644,7 @@ void Script_ForceSaveGame(struct ScriptContext *ctx)
 }
 static bool8 QuestMenuCallback(void)
 {
-    CreateTask(Task_OpenQuestMenuFromStartMenu, 0);
+    CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
     return TRUE;
 }
 

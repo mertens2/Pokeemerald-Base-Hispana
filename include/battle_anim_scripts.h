@@ -343,6 +343,7 @@ extern const u8 gBattleAnimMove_DragonClaw[];
 extern const u8 gBattleAnimMove_FrenzyPlant[];
 extern const u8 gBattleAnimMove_BulkUp[];
 extern const u8 gBattleAnimMove_Bounce[];
+extern const u8 gBattleAnimMove_FailedFlight[];
 extern const u8 gBattleAnimMove_MudShot[];
 extern const u8 gBattleAnimMove_PoisonTail[];
 extern const u8 gBattleAnimMove_Covet[];

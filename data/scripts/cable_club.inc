@@ -37,7 +37,6 @@ CableClub_EventScript_DistributeEonTicket::
 	msgbox MysteryGift_Text_TheresATicketForYou, MSGBOX_DEFAULT
 	giveitem ITEM_EON_TICKET
 	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
-	setvar VAR_DISTRIBUTE_EON_TICKET, 0
 	msgbox MysteryGift_Text_TryUsingItAtLilycovePort, MSGBOX_DEFAULT
 	release
 	end
@@ -101,7 +100,6 @@ CableClub_EventScript_OnLoadFromGameCorner::
 	end
 
 CableClub_OnFrame:
-	map_script_2 VAR_CABLE_CLUB_TUTORIAL_STATE, 1, CableClub_EventScript_Tutorial
 	map_script_2 VAR_CABLE_CLUB_STATE, USING_SINGLE_BATTLE, CableClub_EventScript_ExitLinkRoom
 	map_script_2 VAR_CABLE_CLUB_STATE, USING_DOUBLE_BATTLE, CableClub_EventScript_ExitLinkRoom
 	map_script_2 VAR_CABLE_CLUB_STATE, USING_MULTI_BATTLE, CableClub_EventScript_ExitLinkRoom
@@ -116,9 +114,7 @@ CableClub_EventScript_ExitLinkRoom::
 	lockall
 	call CableClub_EventScript_CloseLinkAndExitLinkRoom
 	call CableClub_EventScript_CloseDirectCornerBarrier
-	special DrawWholeMapView
 	playse SE_CLICK
-	erasebox 0, 0, 29, 19
 	releaseall
 	end
 
@@ -126,9 +122,7 @@ CableClub_EventScript_ExitMinigameRoom::
 	lockall
 	call CableClub_EventScript_CloseLinkAndExitLinkRoom
 	call EventScript_CloseMossdeepGameCornerBarrier
-	special DrawWholeMapView
 	playse SE_CLICK
-	erasebox 0, 0, 29, 19
 	releaseall
 	end
 
@@ -148,9 +142,7 @@ CableClub_EventScript_ExitTradeCenter::
 	lockall
 	call CableClub_EventScript_PlayerExitTradeCenter
 	call CableClub_EventScript_CloseDirectCornerBarrier
-	special DrawWholeMapView
 	playse SE_CLICK
-	erasebox 0, 0, 29, 19
 	releaseall
 	end
 
@@ -169,9 +161,7 @@ CableClub_EventScript_ExitRecordCorner::
 	lockall
 	call CableClub_EventScript_PlayerExitRecordCorner
 	call CableClub_EventScript_CloseDirectCornerBarrier
-	special DrawWholeMapView
 	playse SE_CLICK
-	erasebox 0, 0, 29, 19
 	releaseall
 	end
 
@@ -190,9 +180,7 @@ CableClub_EventScript_ExitUnionRoom::
 	lockall
 	call CableClub_EventScript_PlayerExitUnionRoom
 	call CableClub_EventScript_CloseUnionRoomBarrier
-	special DrawWholeMapView
 	playse SE_CLICK
-	erasebox 0, 0, 29, 19
 	releaseall
 	end
 
@@ -834,7 +822,6 @@ RecordCorner_EventScript_AlreadyMixed::
 EventScript_ConfirmLeaveCableClubRoom::
 	msgbox Text_TerminateLinkConfirmation, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_TerminateLink
-	erasebox 0, 0, 29, 19
 	releaseall
 	end
 

@@ -1,13 +1,13 @@
 mapscripts LittlerootTown_MLMHouse_MapScripts {}
 
 script MLMHouse_EventScript_FatMan {
-	questmenu (QUEST_MENU_CHECK_UNLOCKED SIDE_QUEST_3)
+	questmenu (QUEST_MENU_CHECK_UNLOCKED QUEST_3)
     lockall
 	faceplayer
 	setspeaker (Alex)
 	// if (var(VAR_RESULT) == TRUE){
 		// if (var(VAR_MISTERIO) >= 3) { 
-			// questmenu (QUEST_MENU_CHECK_COMPLETE SIDE_QUEST_3)
+			// questmenu (QUEST_MENU_CHECK_COMPLETE QUEST_3)
 			// if (var(VAR_RESULT) == TRUE){
 				// msgbox(format("¡Hola, {PLAYER}!\pEntonces… ¿Era un {COLOR RED}Zoroark{COLOR DARK_GRAY}?\pNunca había escuchado hablar de ese Pokémon…"))
 			// }

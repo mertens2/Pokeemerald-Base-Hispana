@@ -48,5 +48,6 @@ bool32 IsOnEffectActivation(enum HoldEffect holdEffect);
 bool32 IsForceTriggerItemActivation(enum HoldEffect holdEffect);
 bool32 IsOnBerryActivation(enum HoldEffect holdEffect);
 bool32 IsOnFlingActivation(enum HoldEffect holdEffect);
+enum ItemEffect TryVoltAbsorbTerrain(u32 battler);
 
 #endif // GUARD_BATTLE_HOLD_EFFECTS

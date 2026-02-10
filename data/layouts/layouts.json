@@ -160,7 +160,7 @@
     {
       "id": "LAYOUT_FALLARBOR_TOWN",
       "name": "FallarborTown_Layout",
-      "width": 20,
+      "width": 21,
       "height": 20,
       "border_width": 2,
       "border_height": 3,
@@ -653,7 +653,7 @@
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
       "name": "LittlerootTown_BrendansHouse_2F_Layout",
       "width": 15,
-      "height": 9,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_BuildingNew",
@@ -677,7 +677,7 @@
       "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
       "name": "LittlerootTown_MaysHouse_2F_Layout",
       "width": 15,
-      "height": 9,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_BuildingNew",
@@ -748,8 +748,8 @@
     {
       "id": "LAYOUT_MART",
       "name": "Mart_Layout",
-      "width": 16,
-      "height": 14,
+      "width": 11,
+      "height": 8,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
@@ -952,12 +952,12 @@
     {
       "id": "LAYOUT_HOUSE_WITH_BED",
       "name": "HouseWithBed_Layout",
-      "width": 10,
-      "height": 8,
+      "width": 20,
+      "height": 11,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "primary_tileset": "gTileset_BuildingNew",
+      "secondary_tileset": "gTileset_House",
       "border_filepath": "data/layouts/HouseWithBed/border.bin",
       "blockdata_filepath": "data/layouts/HouseWithBed/map.bin"
     },
@@ -5512,7 +5512,7 @@
     {
       "id": "LAYOUT_MAUVILLE_CITY_INSIDE",
       "name": "MauvilleCity_Inside_Layout",
-      "width": 51,
+      "width": 55,
       "height": 25,
       "border_width": 2,
       "border_height": 2,
@@ -5549,7 +5549,7 @@
       "id": "LAYOUT_MAUVILLE_CITY_MIDDLE",
       "name": "MauvilleCity_Middle_Layout",
       "width": 40,
-      "height": 32,
+      "height": 33,
       "border_width": 1,
       "border_height": 1,
       "primary_tileset": "gTileset_MauvilleInside",
@@ -5664,6 +5664,18 @@
       "secondary_tileset": "gTileset_MauvilleDecor",
       "border_filepath": "data/layouts/MauvilleCity_CommunalGarden/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_CommunalGarden/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_ALOLAN_BATTLE_LOBBY",
+      "name": "MauvilleCity_AlolanBattle_Lobby_Layout",
+      "width": 17,
+      "height": 11,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_MauvilleInside",
+      "secondary_tileset": "gTileset_MauvilleDecor",
+      "border_filepath": "data/layouts/MauvilleCity_AlolanBattle_Lobby/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_AlolanBattle_Lobby/map.bin"
     }
   ]
 }

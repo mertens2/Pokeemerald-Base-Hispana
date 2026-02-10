@@ -500,6 +500,34 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 99,
+      "elevation": 0,
+      "dest_map": "MAP_SLATEPORT_CITY",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 18,
+      "y": 99,
+      "elevation": 0,
+      "dest_map": "MAP_SLATEPORT_CITY",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 19,
+      "y": 99,
+      "elevation": 0,
+      "dest_map": "MAP_SLATEPORT_CITY",
+      "dest_warp_id": "14"
+    },
+    {
+      "x": 20,
+      "y": 99,
+      "elevation": 0,
+      "dest_map": "MAP_SLATEPORT_CITY",
+      "dest_warp_id": "15"
     }
   ],
   "coord_events": [
@@ -643,7 +671,7 @@
     {
       "type": "sign",
       "x": 33,
-      "y": 39,
+      "y": 40,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_TrainerTipsPrlzSleep"

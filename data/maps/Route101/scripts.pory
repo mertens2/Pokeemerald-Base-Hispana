@@ -122,6 +122,82 @@ script Route101_EventScript_LoadStaticWildMons {
 	// end
 // }
 
+script Route101_EventScript_StartMewEvent {
+	lockall
+	faceplayer
+	msgbox(Route101_Text_RaltsIsEagerForBattle, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES){
+		setflag(B_SMART_WILD_AI_FLAG)
+		setflag(B_FLAG_NO_CATCHING)
+		setwildbattle (SPECIES_RALTS, 20, ITEM_ORAN_BERRY)
+		dowildbattle
+		clearflag(B_SMART_WILD_AI_FLAG)
+		clearflag(B_FLAG_NO_CATCHING)
+		addvar(VAR_MEW_EVENT, 1)
+		applymovement(LOCALID_RALTS_R101, Route101_Movement_RevealTrueFormStart)
+		waitmovement(0)
+		removeobject(LOCALID_RALTS_R101)
+		setflag(FLAG_HIDE_RALTS_R101)
+		clearflag(FLAG_HIDE_MEW_R101)
+		addobject(LOCALID_MEW_R101)
+		applymovement(LOCALID_MEW_R101, Route101_Movement_RevealTrueForm)
+		waitmovement(0)
+		playse(SE_PIN)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		delay(32)
+		fadescreenswapbuffers(FADE_TO_WHITE)
+		removeobject(LOCALID_MEW_R101)
+		setflag(FLAG_HIDE_MEW_R101)
+		playmoncry(SPECIES_MEW, CRY_MODE_NORMAL)
+		msgbox(format("MEEEWWWW."))
+		waitmoncry
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		waitmovement(0)
+		fadescreenswapbuffers(FADE_FROM_WHITE)
+		msgbox(Route101_Text_RaltsWasMew)
+	}
+	else {
+		msgbox(Route101_Text_RaltsIsMad)
+	}
+	closemessage
+	releaseall
+}
+
+movement Route101_Movement_RevealTrueFormStart {
+	face_down
+	set_invisible
+	delay_16
+	set_visible
+	delay_16
+	set_invisible
+	delay_16
+	set_visible
+	delay_8
+	set_invisible
+	delay_8
+	set_visible
+	delay_8
+	set_invisible
+}
+
+movement Route101_Movement_RevealTrueForm {
+	face_down
+	set_visible
+	delay_8
+	set_invisible
+	delay_8
+	set_visible
+	delay_8
+	set_invisible
+	delay_16
+	set_visible
+	delay_16
+	set_invisible
+	delay_16
+	set_visible
+}
+
 raw `
 Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
@@ -149,7 +225,15 @@ Route101_OnTransition_Day:
 
 Route101_OnFrame:
 	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_HideMapNamePopup
+	map_script_2 VAR_MEW_EVENT, 0, Route101_EventScript_HideMewShowRalts
 	.2byte 0
+
+Route101_EventScript_HideMewShowRalts::
+	setflag FLAG_HIDE_MEW_R101
+	clearflag FLAG_HIDE_RALTS_R101
+	removeobject LOCALID_MEW_R101
+	addobject LOCALID_RALTS_R101
+	end
 
 Route101_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP

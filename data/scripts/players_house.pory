@@ -211,7 +211,7 @@ script EventScript_MeetRival {
 	applymovement (7, Common_Movement_FacePlayer)
 	checkplayergender
 	if (var(VAR_RESULT) == FEMALE) {
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 		waitmovement (0)
 		playbgm (MUS_ENCOUNTER_BRENDAN, TRUE)
 		call (LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer)
@@ -228,7 +228,7 @@ script EventScript_MeetRival {
 		clearflag (FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM)
 	}
 	else {
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 		playbgm (MUS_ENCOUNTER_MAY, TRUE)
 		applymovement (7, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer)
 		waitmovement (0)
@@ -719,13 +719,13 @@ PlayersHouse_1F_Movement_MomMakeRoomToSeeTVFemale:
 	step_end
 
 PlayersHouse_1F_Movement_MomReturnToSeatMale:
-	walk_right
+	walk_left
 	walk_down
 	walk_in_place_faster_right
 	step_end
 
 PlayersHouse_1F_Movement_MomReturnToSeatFemale:
-	walk_left
+	walk_right
 	walk_down
 	walk_in_place_faster_left
 	step_end
@@ -839,7 +839,6 @@ PlayersHouse_1F_EventScript_Vigoroth2::
 PlayersHouse_1F_Movement_PlayerApproachTVForGymMale:
 	player_run_down
 	player_run_down
-	player_run_left
 	player_run_left
 	player_run_left
 	player_run_left

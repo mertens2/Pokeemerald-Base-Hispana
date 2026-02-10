@@ -1431,27 +1431,53 @@ u8 GetPartyMenuType(void)
     return gPartyMenu.menuType;
 }
 
+static bool8 IsInvalidPartyMenuActionType(u8 partyMenuType)
+{
+    return (partyMenuType == PARTY_ACTION_SEND_OUT
+         || partyMenuType == PARTY_ACTION_CANT_SWITCH
+         || partyMenuType == PARTY_ACTION_USE_ITEM
+         || partyMenuType == PARTY_ACTION_ABILITY_PREVENTS
+         || partyMenuType == PARTY_ACTION_GIVE_ITEM
+         || partyMenuType == PARTY_ACTION_GIVE_PC_ITEM
+         || partyMenuType == PARTY_ACTION_GIVE_MAILBOX_MAIL
+         || partyMenuType == PARTY_ACTION_SOFTBOILED
+         || partyMenuType == PARTY_ACTION_CHOOSE_AND_CLOSE
+         || partyMenuType == PARTY_ACTION_MOVE_TUTOR
+         || partyMenuType == PARTY_ACTION_MINIGAME
+         /*|| partyMenuType == PARTY_ACTION_REUSABLE_ITEM*/);
+}
+
 void Task_HandleChooseMonInput(u8 taskId)
 {
+	struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     if (!gPaletteFade.active && MenuHelpers_ShouldWaitForLinkRecv() != TRUE)
     {
         s8 *slotPtr = GetCurrentPartySlotPtr();
 
         switch (PartyMenuButtonHandler(slotPtr))
         {
-        case A_BUTTON: // Selected mon
-            HandleChooseMonSelection(taskId, slotPtr);
-            break;
-        case B_BUTTON: // Selected Cancel / pressed B
-            HandleChooseMonCancel(taskId, slotPtr);
-            break;
-        case START_BUTTON:
-            if (sPartyMenuInternal->chooseHalf)
-            {
-                PlaySE(SE_SELECT);
-                MoveCursorToConfirm();
-            }
-            break;
+			case A_BUTTON: // Selected mon
+				HandleChooseMonSelection(taskId, slotPtr);
+				break;
+			case B_BUTTON: // Selected Cancel / pressed B
+				HandleChooseMonCancel(taskId, slotPtr);
+				break;
+			case START_BUTTON:
+				if (sPartyMenuInternal->chooseHalf)
+				{
+					PlaySE(SE_SELECT);
+					MoveCursorToConfirm();
+				}
+				else if (!IsInvalidPartyMenuActionType(gPartyMenu.action)) {
+					if (GetMonData(mon, MON_DATA_HELD_ITEM) != ITEM_NONE)
+						CursorCb_TakeItem(taskId);
+					else
+						CursorCb_Give(taskId);
+				}
+				break;
+			case SELECT_BUTTON: // Quick Swap
+				DestroyTask(taskId);
+				break;
         }
     }
 }
@@ -1724,7 +1750,9 @@ static u16 PartyMenuButtonHandler(s8 *slotPtr)
         break;
     }
 
-    if (JOY_NEW(START_BUTTON))
+    if (JOY_NEW(START_BUTTON) && gPartyMenu.action == PARTY_ACTION_SWITCH)
+		return 0;
+	else if (JOY_NEW(START_BUTTON))
         return START_BUTTON;
 
     if (movementDir && gPlayerPartyCount != 0)
@@ -1736,6 +1764,20 @@ static u16 PartyMenuButtonHandler(s8 *slotPtr)
     // Pressed Cancel
     if (JOY_NEW(A_BUTTON) && *slotPtr == PARTY_SIZE + 1)
         return B_BUTTON;
+	
+	if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() >= 2 && !IsInvalidPartyMenuActionType(gPartyMenu.action))
+    {
+        if (gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD)
+            return 0;
+        if (*slotPtr == PARTY_SIZE + 1)
+            return 0;
+        if (gPartyMenu.action != PARTY_ACTION_SWITCH)
+        {
+            CreateTask(CursorCb_Switch, 1);
+            return SELECT_BUTTON;
+        }
+        return A_BUTTON; // Select is allowed to act as the A Button while CursorCb_Switch is active.
+    }
 
     return JOY_NEW(A_BUTTON | B_BUTTON);
 }

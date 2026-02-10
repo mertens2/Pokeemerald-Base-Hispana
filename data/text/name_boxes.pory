@@ -1,6 +1,11 @@
 text Unknown {
-	format("{COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}???")
+	format("{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}???")
 }
+
+text Rydel {
+	format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Rydel")
+}
+
 text Birch {
 	poryswitch(LANGUAGE){
 		ES:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Profesor Birch")

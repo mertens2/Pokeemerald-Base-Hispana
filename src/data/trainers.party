@@ -6435,11 +6435,21 @@ AI: Check Bad Move
 
 Zorua
 Level: 3
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Bite
+- Growl
 
 Sewaddle
 Level: 3
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Bug Bite
+- String Shot
+
+Ralts
+Level: 3
+- Confusion
+- Fairy Wind
+
 
 === TRAINER_BILLY ===
 Name: BILLY
@@ -6991,8 +7001,8 @@ Tentacruel
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ELLIOT_2 ===
-Name: ELLIOT
+=== TRAINER_ALOLAN_FISHERMAN ===
+Name: Poseidon
 Class: Fisherman
 Pic: Fisherman
 Gender: Male
@@ -7000,92 +7010,168 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bruxish
+Level: 20
+EVs: 252 HP
+- Psychic Fangs
+- Recover
+- Thunder Fang
+- Ice Fang
 
-Gyarados
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dewpider @ Mystic Water
+Level: 20
+IVs: 9 HP
+EVs: 64 HP
+- Bug Bite
+- Water Gun
+- Powder Snow
 
-Gyarados
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lana (Brionne) @ Waterium Z
+Level: 20
+IVs: 10 HP
+EVs: 128 HP
+- Bubble Beam
+- Ice Beam
+- Disarming Voice
 
-=== TRAINER_ELLIOT_3 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
-Gender: Male
-Music: Hiker
+=== TRAINER_ALOLAN_BEAUTY ===
+Name: Lusamine
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Gyarados
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gladion (Pawniard)
+Level: 20
+EVs: 12 Atk
+- Night Slash
+- Metal Claw
+- Hone Claws
 
-Carvanha
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Salandit
+Level: 20
+EVs: 64 Spe
+Ability: Merciless
+- Toxic
+- Venoshock
+- Ember
 
-Tentacool
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lillie (Clefable) @ Fairium Z
+Level: 20
+- Magic Beatdown
+- Amnesia
+- Return
 
-Gyarados
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ELLIOT_4 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
-Gender: Male
-Music: Hiker
-Double Battle: No
+=== TRAINER_ALOLAN_BREEDER ===
+Name: Joy
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Female
+Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Normal
 
-Gyarados
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Oricorio-Sensu 
+Level:20
+- Skill Swap
+- Feather Dance
+- Quiver Dance
+- Revelation Dance
 
-Carvanha
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Maestro (Oranguru)
+Level: 20
+- Instruct
+- Psychic
+- Calm Mind
+- Common Blast
 
-Tentacruel
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Audino
+Level: 20
+- Work Up
+- Return
+- Psychic
+- Common Blast
 
-Gyarados
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Comfey @ Fairium Z
+Level: 20
+Ability: Triage
+- Recover
+- Absorb
+- Draining Kiss
+- Fairy Wind
 
-=== TRAINER_ELLIOT_5 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+=== TRAINER_ALOLAN_BREEDER ===
+Name: Joy
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Hard
+
+Oricorio-Sensu 
+Level:20
+- Skill Swap
+- Feather Dance
+- Quiver Dance
+- Revelation Dance
+
+Maestro (Oranguru)
+Level: 20
+- Instruct
+- Psychic
+- Calm Mind
+- Common Blast
+
+Audino
+Level: 20
+- Attract
+- Disarming Voice
+- Heal Pulse
+- Calm Mind
+
+Comfey @ Fairium Z
+Level: 20
+Ability: Triage
+- Recover
+- Absorb
+- Draining Kiss
+- Fairy Wind
+
+
+=== TRAINER_ALOLAN_BACKPACKER ===
+Name: David
+Class: Hiker
+Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Gyarados
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magby
+Level: 20
+- Smokescreen
+- Ember
+- Sunny Day
+- Solar Beam
 
-Sharpedo
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Salandit
+Level: 20
+- Will O Wisp
+- Ember
+- Venoshock
 
-Gyarados
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Tentacruel
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kiawe (Marowak-Alola) @ Firium Z
+Level: 14
+- Hex
+- Will O Wisp
+- Flame Wheel
+- Brick Break
 
 === TRAINER_RONALD ===
 Name: RONALD
@@ -7171,31 +7257,77 @@ Raichu-Alola
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BENJAMIN_2 ===
-Name: BENJAMIN
-Class: Triathlete
-Pic: Cycling Triathlete M
+=== TRAINER_ALOLAN_BLACK_BELT ===
+Name: Hala
+Class: Black Belt
+Pic: Black Belt
 Gender: Male
 Music: Male
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
-Magnemite
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Stufful
+Level: 20
+- Brick Break
+- Magic Beatdown
+- Take Down
+- Bite
 
-=== TRAINER_BENJAMIN_3 ===
-Name: BENJAMIN
+Passimian
+Level: 20
+- Baton Pass
+- Work Up
+- Bulk Up
+- Drain Punch
+
+Jangmo-O
+Level: 14
+- Dragon Dance
+- Dragon Breath
+- Arm Thrust
+
+Hau (Crabrawler) @ Fightinium Z
+Level: 20
+- Dynamic Punch
+- Bullet Punch
+- Smack Down
+- Ice Punch
+
+
+=== TRAINER_ALOLAN_TRIATHLETE ===
+Name: Kahili
 Class: Triathlete
-Pic: Cycling Triathlete M
-Gender: Male
-Music: Male
-Double Battle: No
+Pic: Cycling Triathlete F
+Gender: Female
+Music: Female
+Double Battle: Yes
 AI: Check Bad Move
 
-Magnemite
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Oricorio
+Level: 20
+- Feather Dance
+- Quiver Dance
+- Pluck
+
+Oricorio-Sensu
+Level: 20
+- Feather Dance
+- Quiver Dance
+- Pluck
+
+Dartrix
+Level: 20
+- Feather Dance
+- Pluck
+- Razor Leaf
+- Hone Claws
+
+Touckey (Trumbeak) @ Flyinium Z
+Level: 20
+- Tailwind
+- Pluck
+- Blaze Kick
+- Bulldoze
 
 === TRAINER_BENJAMIN_4 ===
 Name: BENJAMIN
@@ -11740,14 +11872,25 @@ Double Battle: No
 AI: Check Bad Move
 
 Budew
-Level: 4
+Level: 5
 IVs: 31 HP / 0 Atk / 31 Def / 0 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 128 Def / 128 SpD
+- Absorb
+- Splash
 
 Zigzagoon-Galar
 Level: 4
 IVs: 31 HP / 0 Atk / 31 Def / 0 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 128 Def / 128 SpD
+- Tackle
+- Lick
+
+Spritzee
+Level: 3
+- Failed Flight
+- Fairy Wind
+
+Spinarak
+Level: 5
+- String Shot
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -11756,22 +11899,265 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: No
+Difficulty: Normal
 AI: Check Bad Move
 
-Scorpio (Gligar) (M)
-Level: 9
-EVs: 64 Atk / 64 Spe
+Scorpio (Gligar) (M) @ Lagging Tail
+Level: 7
 - Tackle
 - Bug Bite
 
-Hydro (Marill) (M) @ Mystic Water
-Level: 9
+Hydro (Marill) (M) @ Lagging Tail
+Level: 7
 Ability: Huge Power
-EVs: 128 Atk
-- Defense Curl
-- Rollout
+EVs: 64 Atk
 - Glitter Punch
 - Aqua Jet
+
+Sub-Zero (Sneasel) (M) @ Lagging Tail
+Level: 7
+- Pursuit
+- Powder Snow
+
+=== TRAINER_HALEY_1 ===
+Name: HALEY
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+Difficulty: Easy
+AI: Check Bad Move
+
+Scorpio (Gligar) (M) @ Lagging Tail
+Level: 4
+- Tackle
+- Bug Bite
+
+Hydro (Marill) (M) @ Lagging Tail
+Level: 4
+Ability: Swift Swim
+EVs: 8 Atk
+- Glitter Punch
+- Aqua Jet
+
+Sub-Zero (Sneasel) (M) @ Lagging Tail
+Level: 4
+- Pursuit
+- Powder Snow
+
+=== TRAINER_MAY_ROUTE_103_ALL_STARTERS ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Mudkip
+Level: 3
+Ball: Friend Ball
+- Tackle
+
+Torchic
+Level: 3
+Ball: Friend Ball
+- Scratch
+
+Treecko
+Level: 3
+Ball: Friend Ball
+- Pound
+
+=== TRAINER_MAY_ROUTE_110_ALL_STARTERS ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Mr. Mime-Galar
+Level: 18
+Ball: Friend Ball
+- Powder Snow
+- Chilly Reception
+- Confusion
+
+Treecko
+Level: 15
+Ball: Friend Ball
+- Pound
+- Absorb
+- Pursuit
+
+Torchic
+Level: 15
+Ball: Friend Ball
+- Scratch
+- Peck
+- Ember
+
+Mudkip
+Level: 15
+Ball: Friend Ball
+- Tackle
+- Water Gun
+- Bide
+
+=== TRAINER_MAY_ROUTE_119_ALL_STARTERS ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+
+Mr. Rime
+Ability: Screen Cleaner
+Level: 32
+Ball: Friend Ball
+EVs: 128 Atk / 128 SpA
+- Chilly Reception
+- Psychic Terrain
+- Metal Bend
+- Expanding Force
+
+Marshtomp
+Level: 30
+Ball: Friend Ball
+- Ice Beam
+- Surf
+- Rock Smash
+- Bulldoze
+
+Grovyle
+Level: 30
+EVs: 128 Atk
+Ball: Friend Ball
+- Leaf Blade
+- Quick Attack
+- Cut
+- Pursuit
+
+Combusken
+Level: 30
+EVs: 128 SpA
+Ball: Friend Ball
+- Flamethrower
+- Double Kick
+- Failed Flight
+- Detect
+
+=== TRAINER_BRENDAN_ROUTE_103_ALL_STARTERS ===
+Name: Brendan
+Class: Rival
+Pic: Brendan
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Mudkip
+Level: 3
+Ball: Friend Ball
+- Tackle
+
+Torchic
+Level: 3
+Ball: Friend Ball
+- Scratch
+
+Treecko
+Level: 3
+Ball: Friend Ball
+- Pound
+
+=== TRAINER_BRENDAN_ROUTE_110_ALL_STARTERS ===
+Name: Brendan
+Class: Rival
+Pic: Brendan
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Mr. Mime-Galar
+Level: 18
+Ball: Friend Ball
+- Powder Snow
+- Chilly Reception
+- Confusion
+
+Treecko
+Level: 15
+Ball: Friend Ball
+- Pound
+- Absorb
+- Pursuit
+
+Torchic
+Level: 15
+Ball: Friend Ball
+- Scratch
+- Peck
+- Ember
+
+Mudkip
+Level: 15
+Ball: Friend Ball
+- Tackle
+- Water Gun
+- Bide
+
+=== TRAINER_BRENDAN_ROUTE_119_ALL_STARTERS ===
+Name: Brendan
+Class: Rival
+Pic: Brendan
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+
+Mr. Rime
+Ability: Screen Cleaner
+Level: 32
+Ball: Friend Ball
+EVs: 128 Atk / 128 SpA
+- Chilly Reception
+- Psychic Terrain
+- Metal Bend
+- Expanding Force
+
+Marshtomp
+Level: 30
+Ball: Friend Ball
+- Ice Beam
+- Surf
+- Rock Smash
+- Bulldoze
+
+Grovyle
+Level: 30
+EVs: 128 Atk
+Ball: Friend Ball
+- Leaf Blade
+- Quick Attack
+- Cut
+- Pursuit
+
+Combusken
+Level: 30
+EVs: 128 SpA
+Ball: Friend Ball
+- Flamethrower
+- Double Kick
+- Failed Flight
+- Detect
+
 
 === TRAINER_JANICE ===
 Name: JANICE

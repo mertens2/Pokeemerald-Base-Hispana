@@ -15216,6 +15216,13 @@ void BS_SetTerrain(void)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_ELECTRIC;
         }
         break;
+	case EFFECT_THUNDER_TERRAIN:
+        if (!(gFieldStatuses & STATUS_FIELD_THUNDER_TERRAIN))
+        {
+            statusFlag = STATUS_FIELD_THUNDER_TERRAIN;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_THUNDER;
+        }
+        break;
     case EFFECT_PSYCHIC_TERRAIN:
         if (!(gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN))
         {

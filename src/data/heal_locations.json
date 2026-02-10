@@ -23,15 +23,15 @@
     {
       "id": "HEAL_LOCATION_PETALBURG_CITY",
       "map": "MAP_PETALBURG_CITY",
-      "x": 20,
-      "y": 17,
+      "x": 23,
+      "y": 19,
       "respawn_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_PETALBURG_NURSE"
     },
     {
       "id": "HEAL_LOCATION_SLATEPORT_CITY",
       "map": "MAP_SLATEPORT_CITY",
-      "x": 19,
+      "x": 18,
       "y": 20,
       "respawn_map": "MAP_SLATEPORT_CITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_SLATEPORT_NURSE"
@@ -48,7 +48,7 @@
       "id": "HEAL_LOCATION_RUSTBORO_CITY",
       "map": "MAP_RUSTBORO_CITY",
       "x": 16,
-      "y": 39,
+      "y": 47,
       "respawn_map": "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_RUSTBORO_NURSE"
     },
@@ -115,8 +115,8 @@
     {
       "id": "HEAL_LOCATION_OLDALE_TOWN",
       "map": "MAP_OLDALE_TOWN",
-      "x": 6,
-      "y": 17,
+      "x": 8,
+      "y": 25,
       "respawn_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_OLDALE_NURSE"
     },
@@ -132,14 +132,14 @@
       "id": "HEAL_LOCATION_LAVARIDGE_TOWN",
       "map": "MAP_LAVARIDGE_TOWN",
       "x": 9,
-      "y": 7,
+      "y": 6,
       "respawn_map": "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_LAVARIDGE_NURSE"
     },
     {
       "id": "HEAL_LOCATION_FALLARBOR_TOWN",
       "map": "MAP_FALLARBOR_TOWN",
-      "x": 14,
+      "x": 15,
       "y": 8,
       "respawn_map": "MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_FALLARBOR_NURSE"
@@ -176,6 +176,7 @@
       "x": 15,
       "y": 20,
       "respawn_map": "MAP_SOUTHERN_ISLAND_EXTERIOR",
+      "respawn_npc": "LOCALID_SOUTHERN_ISLAND_SAILOR",
       "respawn_x": 15,
       "respawn_y": 20
     },

@@ -4,7 +4,7 @@
   "layout": "LAYOUT_GRANITE_CAVE_B1F",
   "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_GRANITE_CAVE",
-  "requires_flash": true,
+  "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
@@ -80,5 +80,22 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "GraniteCave_B1F_EventScript_RedRock2"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "GraniteCave_B1F_EventScript_RedRock3"
+    }
+  ]
 }

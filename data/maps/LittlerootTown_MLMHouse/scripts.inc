@@ -4,7 +4,7 @@ LittlerootTown_MLMHouse_MapScripts::
 
 MLMHouse_EventScript_FatMan::
 # 4 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
-	questmenu QUEST_MENU_CHECK_UNLOCKED SIDE_QUEST_3
+	questmenu QUEST_MENU_CHECK_UNLOCKED QUEST_3
 # 5 "data/maps/LittlerootTown_MLMHouse/scripts.pory"
 	lockall
 # 6 "data/maps/LittlerootTown_MLMHouse/scripts.pory"

@@ -885,10 +885,11 @@ static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEven
 
 static const struct UCoords8 sMauvilleGymSwitchCoords[] =
 {
-    { 0 + MAP_OFFSET, 15 + MAP_OFFSET},
-    { 4 + MAP_OFFSET, 12 + MAP_OFFSET},
-    { 3 + MAP_OFFSET,  9 + MAP_OFFSET},
-    { 8 + MAP_OFFSET,  9 + MAP_OFFSET}
+    { 1 + MAP_OFFSET, 22 + MAP_OFFSET},
+    { 5 + MAP_OFFSET, 13 + MAP_OFFSET},
+    { 4 + MAP_OFFSET, 10 + MAP_OFFSET},
+    { 9 + MAP_OFFSET, 10 + MAP_OFFSET},
+    { 7 + MAP_OFFSET, 16 + MAP_OFFSET}
 };
 
 // Presses the stepped-on switch and raises the rest
@@ -909,9 +910,9 @@ void MauvilleGymSetDefaultBarriers(void)
 {
     int x, y;
     // All switches/barriers are within these coord ranges
-    for (y = 5 + MAP_OFFSET; y < 17 + MAP_OFFSET; y++)
+    for (y = 6 + MAP_OFFSET; y < 21 + MAP_OFFSET; y++)
     {
-        for (x = 0 + MAP_OFFSET; x < 9 + MAP_OFFSET; x++)
+        for (x = 0 + MAP_OFFSET; x < 12 + MAP_OFFSET; x++)
         {
             switch (MapGridGetMetatileIdAt(x, y))
             {
@@ -3863,10 +3864,7 @@ bool32 IsTrainerRegistered(void)
 // Always returns FALSE
 bool32 ShouldDistributeEonTicket(void)
 {
-    if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
-        return FALSE;
-
-    return TRUE;
+    return FALSE;
 }
 
 #define tState data[0]

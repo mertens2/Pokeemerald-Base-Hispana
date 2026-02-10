@@ -1,3 +1,19 @@
+script MauvilleCity_GameCorner_EventScript_Woman2 {
+	lockall
+	faceplayer
+	if(checkitem(ITEM_HM_ROCK_SMASH)){
+		msgbox(format("¡Hola, soy la {COLOR SHADOW RED LIGHT_RED}Aniquiladora{COLOR DARK_GRAY LIGHT_GRAY}!\p"
+		"Hace tiempo, era conocida como el {COLOR SHADOW RED LIGHT_RED}Maestro Golpe Roca{COLOR DARK_GRAY LIGHT_GRAY}, ¡Pero ya no más!\p"
+		"Pero en lo que no cambié, es en mi generosidad. ¡Toma esto!"))
+		giveitem(ITEM_HM_ROCK_SMASH)
+		msgbox(format("¡Úsala bien, y buena suerte en el Casino!"))
+	}
+	else {
+		msgbox(format("¡Usa esa MO Golpe Roca bien, y buena suerte en el Casino!"))
+	}
+	releaseall
+}
+
 raw `
 MauvilleCity_GameCorner_MapScripts::
 	.byte 0
@@ -604,10 +620,6 @@ MauvilleCity_GameCorner_EventScript_CancelTMSelect::
 	msgbox MauvilleCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT
 	hidecoinsbox 0, 0
 	release
-	end
-
-MauvilleCity_GameCorner_EventScript_Woman2::
-	msgbox MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay, MSGBOX_NPC
 	end
 
 MauvilleCity_GameCorner_EventScript_Gentleman::

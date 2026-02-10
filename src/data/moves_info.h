@@ -288,7 +288,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Puñetazo ardiente.\n"
             "Puede quemar."),
         .effect = EFFECT_HIT,
-        .power = 75,
+        .power = 90,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 15,
@@ -320,7 +320,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Puede congelar."),
         #endif
         .effect = EFFECT_HIT,
-        .power = 75,
+        .power = 90,
         .type = TYPE_ICE,
         .accuracy = 100,
         .pp = 15,
@@ -348,7 +348,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Puñetazo eléctrico.\n"
             "Puede paralizar."),
         .effect = EFFECT_HIT,
-        .power = 75,
+        .power = 90,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 15,
@@ -972,7 +972,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_TACKLE] =
     {
-        .name = COMPOUND_STRING("Placaje"),
+        .name = COMPOUND_STRING("Tacleada"),
         .description = COMPOUND_STRING(
             "Embiste con todo\n"
             "el cuerpo."),
@@ -1483,7 +1483,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_EMBER] =
     {
-        .name = COMPOUND_STRING("Ascuas"),
+        .name = COMPOUND_STRING("Brasas"),
         .description = COMPOUND_STRING(
             "Débil ataque de fuego\n"
             "que puede quemar."),
@@ -3317,9 +3317,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Lengüetazo"),
         .description = COMPOUND_STRING(
             "Usa la lengua para atacar.\n"
-            "Puede causar parálisis."),
+            "50% de causar parálisis."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 30 : 20,
+        .power = 40,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 30,
@@ -3329,7 +3329,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PARALYSIS,
-            .chance = 30,
+            .chance = 50,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_CUTE : CONTEST_CATEGORY_TOUGH,
@@ -5649,7 +5649,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Ataque eléctrico que puede\n"
             "llegar a paralizar."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 60,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 20,
@@ -8700,7 +8700,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Puñetazo ineludible\n"
             "procedente de las sombras."),
         .effect = EFFECT_HIT,
-        .power = 60,
+        .power = 90,
         .type = TYPE_GHOST,
         .accuracy = 0,
         .pp = 20,
@@ -8996,7 +8996,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Araña al rival con garras\n"
             "afiladas."),
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 90,
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = 15,
@@ -9179,18 +9179,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_VOLT_TACKLE] =
     {
-        .name = COMPOUND_STRING("Placaje eléctrico"),
+        .name = COMPOUND_STRING("Tacleada de Voltios"),
         #if B_UPDATED_MOVE_DATA >= GEN_4
         .description = COMPOUND_STRING(
-            "Hiere al atacante, pero\n"
-            "puede paralizar."),
+            "Causa un 33% de daño de\n"
+            "retroceso, con 10% de paralizar."),
         #else
         .description = COMPOUND_STRING(
             "Placaje de alto riesgo que\n"
             "hiere un poco al atacante."),
         #endif
         .effect = EFFECT_RECOIL,
-        .power = 120,
+        .power = 160,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 15,
@@ -10453,12 +10453,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_AURA_SPHERE] =
     {
-        .name = COMPOUND_STRING("Esfera aural"),
+        .name = COMPOUND_STRING("Auraesfera"),
         .description = COMPOUND_STRING(
             "Esfera imbuida en aura\n"
             "totalmente ineludible."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 80 : 90,
+        .power = 90,
         .type = TYPE_FIGHTING,
         .accuracy = 0,
         .pp = 20,
@@ -10751,7 +10751,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Ataca con rayos de luz que\n"
             "brillan como diamantes."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 80 : 70,
+        .power = 90,
         .type = TYPE_ROCK,
         .accuracy = 100,
         .pp = 20,
@@ -10816,9 +10816,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Ataque a plena potencia.\n"
             "Puede bajar defensa especial."),
         .effect = EFFECT_HIT,
-        .power = 120,
+        .power = 140,
         .type = TYPE_FIGHTING,
-        .accuracy = 70,
+        .accuracy = 90,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -11055,7 +11055,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Golpea con una garra umbría.\n"
             "Probabilidad de crítico."),
         .effect = EFFECT_HIT,
-        .power = 70,
+        .power = 80,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
@@ -11078,9 +11078,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Puede hacer retroceder o\n"
             "paralizar al enemigo."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 70,
         .type = TYPE_ELECTRIC,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -11113,9 +11113,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "congelar al enemigo."),
         #endif
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 70,
         .type = TYPE_ICE,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -11144,9 +11144,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Puede hacer retroceder o\n"
             "quemar al enemigo."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 70,
         .type = TYPE_FIRE,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -11248,7 +11248,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_PSYCHIC,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -11272,9 +11272,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Emite una luz cegadora que\n"
             "baja la precisión."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 70,
         .type = TYPE_STEEL,
-        .accuracy = 85,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -11297,7 +11297,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Golpe luminoso que puede\n"
             "bajar defensa especial."),
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 90,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 10,
@@ -13659,7 +13659,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Embestida eléctrica que\n"
             "también hiere al agresor."),
         .effect = EFFECT_RECOIL,
-        .power = 90,
+        .power = 140,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 15,
@@ -13705,9 +13705,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
            "Ataca brutalmente y golpea\n"
             "dos veces."),
         .effect = EFFECT_HIT,
-        .power = 40,
+        .power = 45,
         .type = TYPE_DRAGON,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -13723,12 +13723,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_HEART_STAMP] =
     {
-        .name = COMPOUND_STRING("Arrumaco"),
+        .name = COMPOUND_STRING("Sello Corazón"),
         .description = COMPOUND_STRING(
-            "Golpe por sorpresa que\n"
-            "puede hacer retroceder."),
+            "Golpe por sorpresa con\n"
+            "30% de atemorizar."),
         .effect = EFFECT_HIT,
-        .power = 60,
+        .power = 80,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .pp = 25,
@@ -13918,21 +13918,21 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_NIGHT_DAZE] =
     {
-        .name = COMPOUND_STRING("Pulso noche"),
+        .name = COMPOUND_STRING("Pulso nocturno"),
         .description = COMPOUND_STRING(
             "Lanza una onda oscura.\n"
-            "Puede bajar la precisión."),
+            "30% de bajar la precisión."),
         .effect = EFFECT_HIT,
-        .power = 85,
+        .power = 90,
         .type = TYPE_DARK,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
-            .chance = 40,
+            .chance = 30,
         }),
         .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -15019,14 +15019,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_PLAY_ROUGH] =
     {
-        .name = COMPOUND_STRING("Carantoña"),
+        .name = COMPOUND_STRING("Juego Rudo"),
         .description = COMPOUND_STRING(
             "Hace una jugarreta y puede\n"
             "bajar el ataque."),
         .effect = EFFECT_HIT,
         .power = 90,
         .type = TYPE_FAIRY,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -15677,7 +15677,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Frota las mejillas contra\n"
             "enemigo, paralizándolo."),
         .effect = EFFECT_HIT,
-        .power = 20,
+        .power = 40,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 20,
@@ -16951,7 +16951,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Muerde con colmillos\n"
             "psíquicos. Destruye barreas."),
         .effect = EFFECT_BRICK_BREAK,
-        .power = 85,
+        .power = 90,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .pp = 15,
@@ -17330,12 +17330,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_ZIPPY_ZAP] =
     {
-        .name = COMPOUND_STRING("Pikaturbo"),
+        .name = COMPOUND_STRING("Turbo trueno"),
         .description = COMPOUND_STRING(
             "Ráfaga eléctrica prioritaria\n"
             "que siempre es crítica."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_8 ? 80 : 50,
+        .power = 50,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA >= GEN_8 ? 10 : 15,
@@ -17346,12 +17346,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .mirrorMoveBanned = B_UPDATED_MOVE_FLAGS < GEN_8,
         .alwaysCriticalHit = TRUE,
         .metronomeBanned = TRUE,
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_EVS_PLUS_1,
-            .self = TRUE,
-        }),
-        #endif
         .battleAnimScript = gBattleAnimMove_ZippyZap,
     },
 
@@ -18602,9 +18596,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Ataque de 2 turnos que sube\n"
             "ataque especial antes de atacar."),
         .effect = EFFECT_TWO_TURNS_ATTACK,
-        .power = 120,
+        .power = 140,
         .type = TYPE_ROCK,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -19495,10 +19489,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_HEADLONG_RUSH] =
     {
-        .name = COMPOUND_STRING("Arremetida"),
+        .name = COMPOUND_STRING("Asalto frontal"),
         .description = COMPOUND_STRING(
-            "Golpe con un placaje de cuerpo.\n"
-            "completo que reduce defensa."),
+            "Arremete con el cuerpo entero\n"
+            "y baja ambas defensas en 1 nivel."),
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_9 ? 120 : 100,
         .type = TYPE_GROUND,
@@ -21292,6 +21286,289 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .chance = 50,
         }),
         .battleAnimScript = gBattleAnimMove_MalignantChain,
+    },
+	[MOVE_SHORT_CIRCUIT] =
+    {
+        .name = COMPOUND_STRING("Cortocircuito"),
+        .description = COMPOUND_STRING(
+            "Causa daño súper efectivo\n"
+            "a los de Tipo Eléctrico."),
+        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
+		.argument = { .type = TYPE_ELECTRIC },
+        .power = 80,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+		.makesContact = TRUE,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_WildCharge,
+    },
+	[MOVE_ELECTRO_CRASH] =
+    {
+        .name = COMPOUND_STRING("Arrayometida"),
+        .description = COMPOUND_STRING(
+            "Arremetida con 15% de\n"
+            "paralizar o aterrorizar."),
+        .effect = EFFECT_HIT,
+		.power = 90,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+		.makesContact = TRUE,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+		.additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PARALYSIS,
+            .chance = 15,
+        },
+		{
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 15,
+        }),
+        .battleAnimScript = gBattleAnimMove_ZippyZap,
+    },
+	[MOVE_METAL_BEND] =
+    {
+        .name = COMPOUND_STRING("Doblametales"),
+        .description = COMPOUND_STRING(
+            "Causa daño súper efectivo\n"
+            "a los de Tipo Acero."),
+        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
+		.argument = { .type = TYPE_STEEL },
+        .power = 80,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+		.makesContact = FALSE,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_Extrasensory,
+    },
+	[MOVE_SPOON_THROW] =
+    {
+        .name = COMPOUND_STRING("Cucharazón"),
+        .description = COMPOUND_STRING(
+            "Lanza cucharas al enemigo.\n"
+            "¡Con la mente uUuUuUuUu!"),
+        .effect = EFFECT_HIT,
+		.power = 40,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 35,
+        .target = MOVE_TARGET_SELECTED,
+		.makesContact = FALSE,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+		.ballisticMove = TRUE,
+        .battleAnimScript = gBattleAnimMove_Kinesis,
+    },
+	[MOVE_PRETEND_PUNCH] =
+    {
+        .name = COMPOUND_STRING("Puño Imaginario"),
+        .description = COMPOUND_STRING(
+            "Golpea al enemigo en su\n"
+            "propia mente. Nunca falla."),
+        .effect = EFFECT_HIT,
+		.power = 90,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 0,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+		.makesContact = FALSE,
+        .priority = 0,
+		.punchingMove = TRUE,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_Psystrike,
+    },
+	[MOVE_FAES_FURY] =
+    {
+        .name = COMPOUND_STRING("Furia Feérica"),
+        .description = COMPOUND_STRING(
+            "Daña al usuario por\n"
+            "33% del daño causado."),
+        .effect = EFFECT_RECOIL,
+		.argument = { .recoilPercentage = 33 },
+        .power = 140,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_ChipAway,
+    },
+	[MOVE_MAGIC_BEATDOWN] =
+    {
+        .name = COMPOUND_STRING("Paliza Mágica"),
+        .description = COMPOUND_STRING(
+            "Duplica su potencia\n"
+            "si el Rival ya atacó."),
+        .effect = EFFECT_PAYBACK,
+        .power = 60,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_CloseCombat,
+    },
+	[MOVE_HUNDRED_ATHMOSPHERES] =
+    {
+        .name = COMPOUND_STRING("Cien Atmósferas"),
+        .description = COMPOUND_STRING(
+            "No puede ser usado dos\n"
+            "veces seguidas."),
+        .effect = EFFECT_HIT,
+        .power = 160,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+		.windMove = TRUE,
+		.cantUseTwice = TRUE,
+        .battleAnimScript = gBattleAnimMove_Gravity,
+    },
+	[MOVE_COMPRESSION_CUT] =
+    {
+        .name = COMPOUND_STRING("Cortecompacto"),
+        .description = COMPOUND_STRING(
+            "Comprime el aire para\n"
+            "aventarlo al rival."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+		.slicingMove = TRUE,
+		.windMove = TRUE,
+        .battleAnimScript = gBattleAnimMove_AirSlash,
+    },
+	[MOVE_FAILED_FLIGHT] =
+    {
+        .name = COMPOUND_STRING("Fallo Aéreo"),
+        .description = COMPOUND_STRING(
+            "El usuario intenta volar, pero\n"
+            "cae rápidamente sobre el Rival."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 35,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+		.makesContact = TRUE,
+        .battleAnimScript = gBattleAnimMove_FailedFlight,
+    },
+	[MOVE_AURA_SHOT] =
+    {
+        .name = COMPOUND_STRING("Dispara Aura"),
+        .description = COMPOUND_STRING(
+            "Dispara aura, con alta\n"
+            "prioridad y chance de crítico."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+		.ballisticMove = TRUE,
+        .battleAnimScript = gBattleAnimMove_SnipeShot,
+    },
+	[MOVE_CHAKRA_CRACK] =
+    {
+        .name = COMPOUND_STRING("Rompe Chakras"),
+        .description = COMPOUND_STRING(
+            "Rompe los chakras del Rival,\n"
+            "anulando curación por dos turnos."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+		.ballisticMove = TRUE,
+		.makesContact = TRUE,
+		.additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PSYCHIC_NOISE,
+            .chance = 100,
+        }),
+        .battleAnimScript = gBattleAnimMove_Psystrike,
+    },
+	[MOVE_LIQUID_AMBER] =
+    {
+        .name = COMPOUND_STRING("Ámbar Líquido"),
+        .description = COMPOUND_STRING(
+            "Tiene 20% de quemar o\n"
+            "bajar la Velocidad del Rival."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+		.additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BURN,
+            .chance = 20,
+        },
+		{
+            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+            .chance = 20,
+        }),
+        .battleAnimScript = gBattleAnimMove_MudShot,
+    },
+	[MOVE_ROCKSTAR] =
+    {
+        .name = COMPOUND_STRING("Poder del Rock"),
+        .description = COMPOUND_STRING(
+            "Canta a todo pulmón, con\n"
+            "20% de confundir al rival."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+		.soundMove = TRUE,
+		.additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 20,
+        }),
+        .battleAnimScript = gBattleAnimMove_HyperVoice,
+    },
+	[MOVE_COMMON_BLAST] =
+    {
+        .name = COMPOUND_STRING("Disparo Común"),
+        .description = COMPOUND_STRING(
+            "Lanza un concepto\n"
+            "común al Rival."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .battleAnimScript = gBattleAnimMove_WeatherBall,
     },
 
     // Z-Moves

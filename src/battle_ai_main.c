@@ -3628,7 +3628,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_ENTRAINMENT:
             case EFFECT_GASTRO_ACID:
             case EFFECT_ROLE_PLAY:
-            case EFFECT_SKILL_SWAP:
+            // case EFFECT_SKILL_SWAP:
             case EFFECT_OVERWRITE_ABILITY:
                 AbilityChangeScore(battlerAtk, battlerAtkPartner, move, &score, aiData);
                 return score;
@@ -3714,8 +3714,26 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     {
                         RETURN_SCORE_PLUS(WEAK_EFFECT);
                     }
+					// AI_IsAbilityOnSide(battlerAtk, ABILITY_AROMA_VEIL) aiData->abilities[battlerAtk] == ABILITY_NATURAL_CURE
+					if (instructedMove != MOVE_NONE
+                      && !IsBattleMoveStatus(instructedMove)
+                      && (IsDanceMove(instructedMove) && aiData->abilities[battlerAtk] == ABILITY_DANCER)) // Use instruct to repeat a partner's dancing move we can repeat
+                    {
+                        RETURN_SCORE_PLUS(GOOD_EFFECT);
+                    }
                 }
                 break;
+			case EFFECT_SKILL_SWAP:
+				{
+					AbilityChangeScore(battlerAtk, battlerAtkPartner, move, &score, aiData);
+					// return score;
+					// AI_IsAbilityOnSide(battlerAtk, ABILITY_AROMA_VEIL) aiData->abilities[battlerAtk] == ABILITY_NATURAL_CURE
+					if (aiData->abilities[battlerAtk] == ABILITY_DANCER && aiData->abilities[battlerAtkPartner] != ABILITY_DANCER) // Give dancer to a partner that doesn't have it
+                    {
+                        RETURN_SCORE_PLUS(GOOD_EFFECT);
+                    }
+				}
+				break;
             case EFFECT_AFTER_YOU:
                 if (!(gFieldStatuses & STATUS_FIELD_TRICK_ROOM) && HasMoveWithEffect(battlerAtkPartner, EFFECT_TRICK_ROOM))
                     ADJUST_SCORE(DECENT_EFFECT);

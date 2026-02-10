@@ -2935,7 +2935,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 		case MON_DATA_SPEED_IV:
 		case MON_DATA_ATK_IV:
 		case MON_DATA_SPATK_IV:
-			SET32(boxMon->allIV);
+			boxMon->allIV = (boxMon->allIV/4 >= 7) ? 7: boxMon->allIV/4;
 			break;
 		case MON_DATA_HIDDEN_POWER:
 			SET8(boxMon->hiddenPower);
@@ -3005,12 +3005,22 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 		case MON_DATA_IVS:
 		{
 			u32 ivs = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
-			boxMon->allIV = ivs & MAX_IV_MASK;
-			boxMon->allIV = (ivs >> 5) & MAX_IV_MASK;
-			boxMon->allIV = (ivs >> 10) & MAX_IV_MASK;
-			boxMon->allIV = (ivs >> 15) & MAX_IV_MASK;
-			boxMon->allIV = (ivs >> 20) & MAX_IV_MASK;
-			boxMon->allIV = (ivs >> 25) & MAX_IV_MASK;
+			u32 ivsStats[6];
+			u8 i;
+			for (i=0;i<6;i++){
+				if (i>1)
+					ivsStats[i] = ivs >> (5*i) & MAX_IV_MASK;
+				else
+					ivsStats[i] = ivs & MAX_IV_MASK;
+			}
+			ivs = ivsStats[0];
+			for (i=0;i<6;i++){
+				if (i>1){
+					if (ivsStats[i-1] < ivsStats[i])
+						ivs = ivsStats[i];
+				}
+			}
+			boxMon->allIV = ivs/4;
 			break;
 		}
 		case MON_DATA_EVOLUTION_TRACKER:

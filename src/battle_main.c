@@ -1922,6 +1922,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 abilityNum = 0;
+			u32 evs[6];
+			u8 j;
+			for (j=0;j<6;j++)
+				evs[j] = (partyData[monIndex].ev[j] / 4);
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
                 personalityValue = 0x80;
@@ -1962,12 +1966,12 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             SetMonData(&party[i], MON_DATA_IVS, &(partyData[monIndex].iv));
             if (partyData[monIndex].ev != NULL)
             {
-                SetMonData(&party[i], MON_DATA_HP_EV, &(partyData[monIndex].ev[0]));
-                SetMonData(&party[i], MON_DATA_ATK_EV, &(partyData[monIndex].ev[1]));
-                SetMonData(&party[i], MON_DATA_DEF_EV, &(partyData[monIndex].ev[2]));
-                SetMonData(&party[i], MON_DATA_SPATK_EV, &(partyData[monIndex].ev[3]));
-                SetMonData(&party[i], MON_DATA_SPDEF_EV, &(partyData[monIndex].ev[4]));
-                SetMonData(&party[i], MON_DATA_SPEED_EV, &(partyData[monIndex].ev[5]));
+                SetMonData(&party[i], MON_DATA_HP_EV, &(evs[0]));
+                SetMonData(&party[i], MON_DATA_ATK_EV, &(evs[1]));
+                SetMonData(&party[i], MON_DATA_DEF_EV, &(evs[2]));
+                SetMonData(&party[i], MON_DATA_SPATK_EV, &(evs[3]));
+                SetMonData(&party[i], MON_DATA_SPDEF_EV, &(evs[4]));
+                SetMonData(&party[i], MON_DATA_SPEED_EV, &(evs[5]));
             }
             if (partyData[monIndex].ability != ABILITY_NONE)
             {

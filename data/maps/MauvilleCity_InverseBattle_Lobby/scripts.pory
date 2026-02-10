@@ -41,32 +41,32 @@ script MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle {
 	switch(var(VAR_INVERSE_BATTLE_FOE)){
 		case 1:
 			cleartrainerflag(TRAINER_VALERIE_1)
-			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
 			cleartrainerflag(TRAINER_VALERIE_1)
 			break
 		case 2:
 			cleartrainerflag(TRAINER_CINDY_2)
-			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_CINDY_2, "¡Mi estrategia te paralizará!", "Ah, pues nada.", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_CINDY_2, "¡Mi estrategia te paralizará!", "Ah, pues nada.", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
 			cleartrainerflag(TRAINER_CINDY_2)
 			break
 		case 3:
 			cleartrainerflag(TRAINER_GRUNT_SPACE_CENTER_2)
-			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_GRUNT_SPACE_CENTER_2, "¿Qué? ¡Tengo hobbies!", "Soy terrible en mis\nhobbies…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_GRUNT_SPACE_CENTER_2, "¿Qué? ¡Tengo hobbies!", "Soy terrible en mis\nhobbies…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
 			cleartrainerflag(TRAINER_GRUNT_SPACE_CENTER_2)
 			break
 		case 4:
 			cleartrainerflag(TRAINER_ROSE_1)
-			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_ROSE_1, "¡Estoy aquí para redimirme!", "La redención…\nNo la merezco…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_ROSE_1, "¡Estoy aquí para redimirme!", "La redención…\nNo la merezco…", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
 			cleartrainerflag(TRAINER_ROSE_1)
 			break
 		case 5:
 			cleartrainerflag(TRAINER_DALTON_1)
-			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_DALTON_1, "¡Aplaudan fuerte, gente bonita!", "¡Aplausos fuertes para\nnuestr{OA} ganador{A}!\p¡Vamo', vamo', vamo'!", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_DALTON_1, "¡Aplaudan fuerte, gente bonita!", "¡Aplausos fuertes para\nnuestr{OA} ganador{A}!\p¡Vamo', vamo', vamo'!", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
 			cleartrainerflag(TRAINER_DALTON_1)
 			break
 		case 6:
 			cleartrainerflag(TRAINER_DEREK)
-			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_DEREK, "Bichos… ¡Aprenderás a temerles!", "Bichos… ¡Aprendí a fallarles!", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
+			trainerbattle (TRAINER_BATTLE_SINGLE, 2, TRAINER_DEREK, "Bichos… ¡Aprenderás a temerles!", "Bichos… ¡Aprendí a fallarles!", MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE)
 			cleartrainerflag(TRAINER_DEREK)
 			break
 	}

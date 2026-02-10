@@ -15932,12 +15932,21 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_MR_RIME] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 100,
+        .baseAttack    = 90,
+        .baseDefense   = 80,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 100,
+		#else
         .baseHP        = 80,
         .baseAttack    = 85,
         .baseDefense   = 75,
         .baseSpeed     = 70,
         .baseSpAttack  = 110,
         .baseSpDefense = 100,
+		#endif
         .types = MON_TYPES(TYPE_ICE, TYPE_PSYCHIC),
         .catchRate = 45,
         .expYield = 182,

@@ -6719,8 +6719,8 @@ const struct Item gItemsInfo[] =
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
-            "que Floette megaevolucione\n"
-            "en batalla."),
+            "que Floette Flor Eterna\n"
+            "megaevolucione en batalla."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
@@ -9915,7 +9915,7 @@ const struct Item gItemsInfo[] =
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 10,
+        .flingPower = 100,
         .iconPic = gItemIcon_LaggingTail,
         .iconPalette = gItemIconPalette_LaggingTail,
     },
@@ -12640,7 +12640,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_FALSE_SWIPE, // Todo
     },
 
     [ITEM_TM53] =

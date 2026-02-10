@@ -153,12 +153,10 @@
 	var |= flagIndex;		\
 })
 
-#define GET_BIT(var,bit) 	\
+#define GET_BIT(var,bit,store) 	\
 ({ 							\
-	u8 f; 					\
 	u32 flagIndex = 1 << (bit - 1);\
-	f = var & flagIndex;  	\
-	f; 						\
+	store = var & flagIndex;  	\
 })
 
 #define CLEAR_BIT(var,bit) ({ 		\
@@ -596,7 +594,6 @@ struct RankingHall2P
 
 // quest menu
 #include "constants/quests.h"
-#define SIDE_QUEST_FLAGS_COUNT     ((SIDE_QUEST_COUNT / 8) + ((SIDE_QUEST_COUNT % 8) ? 1 : 0))
 
 struct SaveBlock2
 {
@@ -653,9 +650,12 @@ struct SaveBlock2
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
               u32 miningPlaces;
-    /*0x0F2C*/ u8 unlockedQuests[SIDE_QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 completedQuests[SIDE_QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 activeQuest;
+			  #define QUEST_FLAGS_COUNT ROUND_BITS_TO_BYTES(QUEST_COUNT)
+		      #define SUB_FLAGS_COUNT ROUND_BITS_TO_BYTES(SUB_QUEST_COUNT)
+		      #define QUEST_STATES 5 //Number of different quest states tracked in the saveblock
+  
+			   u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
+			   u8 subQuests[SUB_FLAGS_COUNT];
 			   u8 playerPronouns; //pronombres duh
 			   u8 cafeTrainers[4];
 }; 

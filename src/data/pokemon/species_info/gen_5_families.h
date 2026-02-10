@@ -12191,7 +12191,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sDeinoLevelUpLearnset,
         .teachableLearnset = sDeinoTeachableLearnset,
         .eggMoveLearnset = sDeinoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_ZWEILOUS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ZWEILOUS}),
     },
 
     [SPECIES_ZWEILOUS] =
@@ -12257,17 +12257,26 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sZweilousLevelUpLearnset,
         .teachableLearnset = sZweilousTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 64, SPECIES_HYDREIGON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_HYDREIGON}),
     },
 
     [SPECIES_HYDREIGON] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 90,
+        .baseAttack    = 105,
+        .baseDefense   = 90,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 125,
+        .baseSpDefense = 90,
+		#else
         .baseHP        = 92,
         .baseAttack    = 105,
         .baseDefense   = 90,
         .baseSpeed     = 98,
         .baseSpAttack  = 125,
         .baseSpDefense = 90,
+		#endif
         .types = MON_TYPES(TYPE_DARK, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
@@ -12407,7 +12416,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sLarvestaLevelUpLearnset,
         .teachableLearnset = sLarvestaTeachableLearnset,
         .eggMoveLearnset = sLarvestaEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 59, SPECIES_VOLCARONA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_VOLCARONA}),
     },
 
     [SPECIES_VOLCARONA] =

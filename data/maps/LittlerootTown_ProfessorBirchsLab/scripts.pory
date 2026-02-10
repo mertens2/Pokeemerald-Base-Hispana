@@ -52,11 +52,11 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival {
 			setspeaker (Birch)
 			msgbox (format("¿Sabes qué creo?\nQue sería buena idea que vayas a combatir contra {RIVAL} en la Ruta 103.\p¡Seguro les sirve de aprendizaje!"))
 			
-			questmenu (QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_1)
+			questmenu (QUEST_MENU_UNLOCK_QUEST QUEST_1)
 			setflag (FLAG_SYS_QUEST_MENU_GET)
 			playfanfare (MUS_OBTAIN_ITEM)
-			questmenu (QUEST_MENU_SET_ACTIVE SIDE_QUEST_1)
-			questmenu (QUEST_MENU_BUFFER_QUEST_NAME SIDE_QUEST_1)
+			questmenu (QUEST_MENU_SET_ACTIVE QUEST_1)
+			questmenu (QUEST_MENU_BUFFER_QUEST_NAME QUEST_1)
 			message (format("La misión {COLOR LIGHT_RED SHADOW RED}“{STR_VAR_1}”{COLOR DARK_GRAY SHADOW LIGHT_GRAY} ha sido desbloqueada!"))
 			waitfanfare
 			setspeaker (Birch)
@@ -67,11 +67,11 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival {
 		EN{
 			msgbox (format("You know what I think?\nI think it'll be good learning experience to go battle {RIVAL} in Route 103."))
 			
-			questmenu (QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_1)
+			questmenu (QUEST_MENU_UNLOCK_QUEST QUEST_1)
 			setflag (FLAG_SYS_QUEST_MENU_GET)
 			playfanfare (MUS_OBTAIN_ITEM)
-			questmenu (QUEST_MENU_SET_ACTIVE SIDE_QUEST_1)
-			questmenu (QUEST_MENU_BUFFER_QUEST_NAME SIDE_QUEST_1)
+			questmenu (QUEST_MENU_SET_ACTIVE QUEST_1)
+			questmenu (QUEST_MENU_BUFFER_QUEST_NAME QUEST_1)
 			message (format("The Quest {COLOR LIGHT_RED SHADOW RED}“{STR_VAR_1}”{COLOR DARK_GRAY SHADOW LIGHT_GRAY} was unlocked!"))
 			waitfanfare
 			setspeaker (Birch)
@@ -122,11 +122,11 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex {
 	}
 	
 	giveitem (ITEM_EXP_SHARE)
-	questmenu (QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_2)
-	questmenu (QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_5)
-	questmenu (QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_6)
-	questmenu (QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_8)
-	questmenu (QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_11)
+	questmenu (QUEST_MENU_UNLOCK_QUEST QUEST_2)
+	questmenu (QUEST_MENU_UNLOCK_QUEST QUEST_5)
+	questmenu (QUEST_MENU_UNLOCK_QUEST QUEST_6)
+	questmenu (QUEST_MENU_UNLOCK_QUEST QUEST_8)
+	questmenu (QUEST_MENU_UNLOCK_QUEST QUEST_11)
 	setflag (FLAG_QUEST_MENU_ACTIVE)
 	setflag (FLAG_ENABLED_PC)
 	poryswitch(LANGUAGE){
@@ -465,6 +465,7 @@ LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForJohtoStarter:
 
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Aide::
+	faceplayer
 	lockall
 	compare VAR_BIRCH_LAB_STATE, 3
 	goto_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_ProfessorBirchsLab_EventScript_Aide_5
@@ -482,7 +483,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Aide_2:
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_Aide_1
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Aide_5:
-	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_Aide_Text_0
+	msgbox LittlerootTown_ProfessorBirchsLab_EventScript_Aide_Text_0, MSGBOX_INTERRUPT
 	fadescreen FADE_TO_BLACK
 	closemessage
 	delay 120
@@ -794,10 +795,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Book::
-	questmenu QUEST_MENU_CHECK_COMPLETE SIDE_QUEST_3  
+	questmenu QUEST_MENU_CHECK_COMPLETE QUEST_3  
 	goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_Book_ReRead
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead, MSGBOX_SIGN
-	questmenu QUEST_MENU_UNLOCK_QUEST SIDE_QUEST_3
+	questmenu QUEST_MENU_UNLOCK_QUEST QUEST_3
 	msgbox Descubrire_Verdad, MSGBOX_SIGN
 	end
 

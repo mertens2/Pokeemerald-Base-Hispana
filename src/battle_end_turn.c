@@ -397,6 +397,28 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         gBattleStruct->eventState.endTurnBattler++;
         break;
     }
+	if (GetBattlerAbility(battler) == ABILITY_VOLT_ABSORB && IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN)){
+		if (TryVoltAbsorbTerrain(battler)){
+			effect = TRUE;
+			gBattleStruct->eventState.endTurnBlock = 0;
+			gBattleStruct->eventState.endTurnBattler++;
+		}
+	}
+	// wip, make motordrive and lightning rod also activate at the end of the turn if thunder terrain is up
+	// else if (GetBattlerAbility(battler) == ABILITY_MOTOR_DRIVE && IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN)){
+		// if (TryVoltAbsorbTerrain(battler)){
+			// effect = TRUE;
+			// gBattleStruct->eventState.endTurnBlock = 0;
+			// gBattleStruct->eventState.endTurnBattler++;
+		// }
+	// }
+	// else if (GetBattlerAbility(battler) == ABILITY_LIGHTNING_ROD && IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN)){
+		// if (TryVoltAbsorbTerrain(battler)){
+			// effect = TRUE;
+			// gBattleStruct->eventState.endTurnBlock = 0;
+			// gBattleStruct->eventState.endTurnBattler++;
+		// }
+	// }
 
     return effect;
 }

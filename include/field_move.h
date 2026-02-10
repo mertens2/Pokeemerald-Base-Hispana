@@ -8,6 +8,7 @@ struct FieldMoveInfo
 {
     bool32 (*fieldMoveFunc)(void);
     bool32 (*isUnlockedFunc)(void);
+	u16 itemID;
     u16 moveID;
     u8 partyMsgID;
 };
@@ -17,6 +18,11 @@ extern const struct FieldMoveInfo gFieldMoveInfo[];
 static inline bool32 SetUpFieldMove(enum FieldMove fieldMove)
 {
     return gFieldMoveInfo[fieldMove].fieldMoveFunc();
+}
+
+static inline bool32 GetFieldMoveHMTM(enum FieldMove fieldMove)
+{
+    return gFieldMoveInfo[fieldMove].itemID;
 }
 
 static inline bool32 IsFieldMoveUnlocked(enum FieldMove fieldMove)

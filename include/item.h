@@ -14,7 +14,7 @@
  * {
  *   ITEM_TM_FOCUS_PUNCH = ITEM_TM01,
  *   ...
- *   ITEM_HM_CUT = ITM_HM01,
+ *   ITEM_HM_CUT = ITM_HM01, 
  *   ...
  * }; */
 #define ENUM_TM(n, id) CAT(ITEM_TM_, id) = CAT(ITEM_TM, n),

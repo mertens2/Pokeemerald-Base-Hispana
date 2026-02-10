@@ -96,7 +96,7 @@
 #define VAR_REGICE_STEPS_2                               0x404C
 #define VAR_REGICE_STEPS_3                               0x404D
 #define VAR_ALTERING_CAVE_WILD_SET                       0x404E
-#define VAR_DISTRIBUTE_EON_TICKET                        0x404F // This var is read and written, but is always zero. The only way to obtain the Eon Ticket in Emerald is via Record Mixing
+#define VAR_MEW_EVENT		                        	 0x404F
 #define VAR_DAYS                                         0x4050
 #define VAR_FANCLUB_FAN_COUNTER                          0x4051
 #define VAR_FANCLUB_LOSE_FAN_TIMER                       0x4052
@@ -136,13 +136,13 @@
 #define VAR_INVERSE_BATTLE_TYPE                          0x4074
 #define VAR_INVERSE_BATTLE_FOE                           0x4075
 #define VAR_WINNING_STREAK                               0x4076 // used for new tournaments to decide your placement
-#define VAR_ROUTE108_STATE                               0x4077 // Unused Var
-#define VAR_ROUTE109_STATE                               0x4078 // Unused Var
+#define VAR_ALOLAN_STREAK                                0x4077 // used for the overall streak in alolan tournaments
+#define VAR_STARTING_TERRAIN                             0x4078 // Unused Var
 #define VAR_ROUTE110_STATE                               0x4079
-#define VAR_ROUTE111_STATE                               0x407A // Unused Var
-#define VAR_ROUTE112_STATE                               0x407B // Unused Var
-#define VAR_ROUTE113_STATE                               0x407C // Unused Var
-#define VAR_ROUTE114_STATE                               0x407D // Unused Var
+#define VAR_TOURNAMENT_OPPONENT_1                        0x407A // Unused Var
+#define VAR_TOURNAMENT_OPPONENT_2                        0x407B // Unused Var
+#define VAR_TOURNAMENT_OPPONENT_3                        0x407C // Unused Var
+#define VAR_ROUTE111_STATE                               0x407D // Unused Var
 #define VAR_ROUTE115_STATE                               0x407E // Unused Var
 #define VAR_ROUTE116_STATE                               0x407F
 #define VAR_ROUTE117_STATE                               0x4080 // Unused Var

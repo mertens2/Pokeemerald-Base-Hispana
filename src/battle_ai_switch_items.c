@@ -1713,6 +1713,14 @@ static u32 GetSwitchinRecurringHealing(void)
             healing = 1;
         recurringHealing += healing;
     }
+	if (ability == ABILITY_VOLT_ABSORB && (gFieldStatuses & STATUS_FIELD_THUNDER_TERRAIN))
+    {
+        u32 healing = maxHP / 16;
+        if (healing == 0)
+            healing = 1;
+        recurringHealing += healing;
+    }
+	
     return recurringHealing;
 }
 

@@ -1278,3 +1278,7 @@ Decline:
 
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/MauvilleCity_AlolanBattle/scripts.inc"
+
+	.include "data/maps/MauvilleCity_AlolanBattle_Lobby/scripts.inc"

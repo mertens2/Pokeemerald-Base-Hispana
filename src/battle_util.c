@@ -61,6 +61,7 @@ functions instead of at the top of the file with the other declarations.
 */
 
 static bool32 TryRemoveScreens(u32 battler);
+static bool32 TrySetUpScreens(u32 battler);
 static bool32 IsUnnerveAbilityOnOpposingSide(u32 battler);
 static u32 GetFlingPowerFromItemId(u32 itemId);
 static void SetRandomMultiHitCounter();
@@ -3338,7 +3339,7 @@ bool32 ChangeTypeBasedOnTerrain(u32 battler)
 {
     enum Type battlerType;
 
-    if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+    if (gFieldStatuses & (STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_THUNDER_TERRAIN))
         battlerType = TYPE_ELECTRIC;
     else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
         battlerType = TYPE_GRASS;
@@ -3693,6 +3694,14 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
             effect = SetStartingFieldStatus(
                         STATUS_FIELD_ELECTRIC_TERRAIN,
                         B_MSG_TERRAIN_SET_ELECTRIC,
+                        0,
+                        &gFieldTimers.terrainTimer);
+            isTerrain = TRUE;
+            break;
+		case STARTING_STATUS_THUNDER_TERRAIN:
+            effect = SetStartingFieldStatus(
+                        STATUS_FIELD_THUNDER_TERRAIN,
+                        B_MSG_TERRAIN_SET_THUNDER,
                         0,
                         &gFieldTimers.terrainTimer);
             isTerrain = TRUE;
@@ -4232,10 +4241,18 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
-        case ABILITY_SCREEN_CLEANER:
-            if (!gSpecialStatuses[battler].switchInAbilityDone && TryRemoveScreens(battler))
+        // case ABILITY_SCREEN_CLEANER:
+            // if (!gSpecialStatuses[battler].switchInAbilityDone && TryRemoveScreens(battler))
+            // {
+                // gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SCREENCLEANER;
+                // gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                // BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                // effect++;
+            // }
+            // break;
+		case ABILITY_SCREEN_CLEANER:
+            if (!gSpecialStatuses[battler].switchInAbilityDone && TrySetUpScreens(battler))
             {
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SCREENCLEANER;
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
                 effect++;
@@ -6157,6 +6174,10 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, enum Ability abil
         {
             battleScript = BattleScript_ElectricTerrainPrevents;
         }
+		else if (IsBattlerTerrainAffected(battlerDef, abilityDef, GetBattlerHoldEffect(battlerDef), STATUS_FIELD_THUNDER_TERRAIN))
+        {
+            battleScript = BattleScript_ElectricTerrainPrevents;	
+        }
         else if ((sideBattler = IsAbilityOnSide(battlerDef, ABILITY_SWEET_VEIL)))
         {
             abilityAffected = TRUE;
@@ -7227,7 +7248,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower = uq4_12_multiply(basePower, UQ_4_12(1.5));
         break;
     case EFFECT_RISING_VOLTAGE:
-        if (IsBattlerTerrainAffected(battlerDef, ctx->abilityDef, ctx->holdEffectDef, STATUS_FIELD_ELECTRIC_TERRAIN))
+        if ((IsBattlerTerrainAffected(battlerDef, ctx->abilityDef, ctx->holdEffectDef, STATUS_FIELD_ELECTRIC_TERRAIN)) || (IsBattlerTerrainAffected(battlerDef, ctx->abilityDef, ctx->holdEffectDef, STATUS_FIELD_THUNDER_TERRAIN)))
             basePower *= 2;
         break;
     case EFFECT_BEAT_UP:
@@ -7235,7 +7256,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower = CalcBeatUpPower();
         break;
     case EFFECT_PSYBLADE:
-        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+        if ((gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN) || (gFieldStatuses & STATUS_FIELD_THUNDER_TERRAIN))
             basePower = uq4_12_multiply(basePower, UQ_4_12(1.5));
         break;
     case EFFECT_MAX_MOVE:
@@ -7341,6 +7362,8 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     if (IsBattlerTerrainAffected(battlerDef, ctx->abilityDef, ctx->holdEffectDef, STATUS_FIELD_MISTY_TERRAIN) && moveType == TYPE_DRAGON)
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
     if (IsBattlerTerrainAffected(battlerAtk, ctx->abilityAtk, ctx->holdEffectAtk, STATUS_FIELD_ELECTRIC_TERRAIN) && moveType == TYPE_ELECTRIC)
+        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
+	if (IsBattlerTerrainAffected(battlerAtk, ctx->abilityAtk, ctx->holdEffectAtk, STATUS_FIELD_THUNDER_TERRAIN) && moveType == TYPE_ELECTRIC)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
     if (IsBattlerTerrainAffected(battlerAtk, ctx->abilityAtk, ctx->holdEffectAtk, STATUS_FIELD_PSYCHIC_TERRAIN) && moveType == TYPE_PSYCHIC)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
@@ -11299,4 +11322,57 @@ bool32 IsMimikyuDisguised(u32 battler)
 {
     return gBattleMons[battler].species == SPECIES_MIMIKYU_DISGUISED
         || gBattleMons[battler].species == SPECIES_MIMIKYU_TOTEM_DISGUISED;
+}
+
+static bool32 TrySetUpScreens(u32 battler)
+{
+	
+	u32 statId, opposingBattler, i;
+	u32 opposingAtk = 0, opposingSpAtk = 0;
+	bool32 activated = FALSE;
+    u8 battlerSide = GetBattlerSide(battler);
+    u8 enemySide;
+	opposingBattler = BATTLE_OPPOSITE(battler);
+	enemySide = GetBattlerSide(opposingBattler);
+	
+	for (i = 0; i < 2; opposingBattler ^= BIT_FLANK, i++)
+	{
+		if (IsBattlerAlive(opposingBattler))
+		{
+			opposingAtk += gBattleMons[opposingBattler].attack
+						* gStatStageRatios[gBattleMons[opposingBattler].statStages[STAT_ATK]][0]
+						/ gStatStageRatios[gBattleMons[opposingBattler].statStages[STAT_ATK]][1];
+			opposingSpAtk += gBattleMons[opposingBattler].spAttack
+						  * gStatStageRatios[gBattleMons[opposingBattler].statStages[STAT_SPATK]][0]
+						  / gStatStageRatios[gBattleMons[opposingBattler].statStages[STAT_SPATK]][1];
+		}
+	}
+
+	if (opposingAtk > opposingSpAtk)
+		{
+			if (!(gSideStatuses[battlerSide] & (SIDE_STATUS_REFLECT))){
+				gSideStatuses[battlerSide] |= SIDE_STATUS_REFLECT;
+				if (GetBattlerHoldEffect(gBattlerAttacker) == HOLD_EFFECT_LIGHT_CLAY)
+					gSideTimers[battlerSide].reflectTimer = 8;
+				else
+					gSideTimers[battlerSide].reflectTimer = 5;
+				// gSideTimers[battlerSide].lightscreenBattlerId = gBattlerAttacker;
+				gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SCREENCLEANERREFLECT;
+				activated = TRUE;
+			}
+	}
+	else {
+		if (!(gSideStatuses[battlerSide] & (SIDE_STATUS_LIGHTSCREEN))){
+			gSideStatuses[battlerSide] |= SIDE_STATUS_LIGHTSCREEN;
+			if (GetBattlerHoldEffect(gBattlerAttacker) == HOLD_EFFECT_LIGHT_CLAY)
+				gSideTimers[battlerSide].lightscreenTimer = 8;
+			else
+				gSideTimers[battlerSide].lightscreenTimer = 5;
+			// gSideTimers[battlerSide].lightscreenBattlerId = gBattlerAttacker;
+			gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SCREENCLEANER;
+			activated = TRUE;
+		}
+	}
+
+    return activated;
 }

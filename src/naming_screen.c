@@ -2787,6 +2787,7 @@ static void CB2_HandleGivenPassword(void)
 	u32 i;
 	u8 j, currPassword, passwordMatch;
 	u16 movesList[4];
+	u32 flagIndex;
 	passwordMatch = FALSE;
 	for (i=0;i<PASSWORD_COUNT;i++){
 		if (!(StringCompare(gStringVar2, sPasswordInfo[i].code))){
@@ -2795,15 +2796,15 @@ static void CB2_HandleGivenPassword(void)
 			break;
 		}
 	}
+	flagIndex = 1 << (i);
 	if (passwordMatch == FALSE) {
 		ScriptContext_SetupScript(PasswordFallo);
 		SetMainCallback2(CB2_ReturnToField);
 	}
-	else if ((!GET_BIT(gSaveBlock2Ptr->passwordsUsed, i) || sPasswordInfo[currPassword].isRepeatable == TRUE)) {
-		currPassword = i;
-
+	else if ((!(gSaveBlock2Ptr->passwordsUsed & flagIndex) || sPasswordInfo[currPassword].isRepeatable == TRUE)) {
+		
 		if (sPasswordInfo[currPassword].isRepeatable != TRUE)
-			SET_BIT(gSaveBlock2Ptr->passwordsUsed, i);
+			gSaveBlock2Ptr->passwordsUsed |= flagIndex;
 		
 		// give the items
 		for (i=0;i<6;i++){
@@ -2830,13 +2831,12 @@ static void CB2_HandleGivenPassword(void)
 			FlagSet(sPasswordInfo[currPassword].flag);
 		if (sPasswordInfo[currPassword].variable[0])
 			VarSet(sPasswordInfo[currPassword].variable[0], sPasswordInfo[currPassword].variable[1]);
-		
 		StringCopy(gStringVar1, sPasswordInfo[currPassword].desc);
 		ScriptContext_SetupScript(Password1);
 		SetMainCallback2(CB2_ReturnToField);
 	}
 	else {
-		ScriptContext_SetupScript(Password1);
+		ScriptContext_SetupScript(Password2);
 		SetMainCallback2(CB2_ReturnToField);
 	}
 }

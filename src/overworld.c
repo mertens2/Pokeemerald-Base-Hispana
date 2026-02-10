@@ -369,11 +369,25 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
     MovementStatusHandler_TryAdvanceScript,
 };
 
+static void ClearWhiteOutFlagsAndVars(void){
+	VarSet(VAR_STARTING_TERRAIN, 0);
+	if (!FlagGet(FLAG_RECIEVED_Z_RING)) {
+		RemoveBagItem(ITEM_Z_POWER_RING, 1);
+	}
+	VarSet(VAR_TOURNAMENT_OPPONENT_1, 0);
+	VarSet(VAR_TOURNAMENT_OPPONENT_2, 0);
+	VarSet(VAR_TOURNAMENT_OPPONENT_3, 0);
+	VarSet(VAR_INVERSE_BATTLE_FOE, 0);
+	VarSet(VAR_WINNING_STREAK, 0);
+	VarSet(VAR_ALOLAN_STREAK, 0);
+}
+
 // code
 void DoWhiteOut(void)
 {
     RunScriptImmediately(EventScript_WhiteOut);
     HealPlayerParty();
+	ClearWhiteOutFlagsAndVars();
     Overworld_ResetStateAfterWhiteOut();
     SetWarpDestinationToLastHealLocation();
     WarpIntoMap();

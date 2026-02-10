@@ -24,13 +24,13 @@
     },
     {
       "x": 20,
-      "y": 2,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
       "dest_warp_id": "11"
     },
     {
-      "x": 28,
+      "x": 30,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_GYM",
@@ -38,9 +38,16 @@
     },
     {
       "x": 13,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_ALOLAN_BATTLE",
       "dest_warp_id": "0"
     }
   ],

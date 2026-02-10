@@ -27075,10 +27075,29 @@ FlyUnleash:
 	blendoff
 	goto FlyEnd
 
+gBattleAnimMove_FailedFlight::
+	loadspritegfx ANIM_TAG_ROUND_SHADOW
+	loadspritegfx ANIM_TAG_IMPACT
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	createsprite gBounceBallShrinkSpriteTemplate, ANIM_ATTACKER, 2, 0, 0
+	monbg ANIM_DEF_PARTNER
+	setalpha 12, 8
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_TARGET
+	createsprite gBounceBallLandSpriteTemplate, ANIM_TARGET, 3
+	delay 7
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 5, 11, 1
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	goto BounceEnd
+
 gBattleAnimMove_Bounce::
 	loadspritegfx ANIM_TAG_ROUND_SHADOW
 	loadspritegfx ANIM_TAG_IMPACT
 	choosetwoturnanim BounceSetUp, BounceUnleash
+	
 BounceEnd:
 	end
 

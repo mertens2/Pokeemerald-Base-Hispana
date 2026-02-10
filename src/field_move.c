@@ -4,6 +4,7 @@
 #include "fldeff.h"
 #include "fldeff_misc.h"
 #include "party_menu.h"
+#include "item.h"
 #include "constants/field_move.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
@@ -104,6 +105,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_Cut,
         .isUnlockedFunc = IsFieldMoveUnlocked_Cut,
         .moveID = MOVE_CUT,
+		.itemID = ITEM_HM_CUT,
         .partyMsgID = PARTY_MSG_NOTHING_TO_CUT,
     },
 
@@ -112,6 +114,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_Flash,
         .isUnlockedFunc = IsFieldMoveUnlocked_Flash,
         .moveID = MOVE_FLASH,
+		.itemID = ITEM_HM_FLASH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 
@@ -120,6 +123,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_RockSmash,
         .isUnlockedFunc = IsFieldMoveUnlocked_RockSmash,
         .moveID = MOVE_ROCK_SMASH,
+		.itemID = ITEM_HM_ROCK_SMASH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 
@@ -128,6 +132,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_Strength,
         .isUnlockedFunc = IsFieldMoveUnlocked_Strength,
         .moveID = MOVE_STRENGTH,
+		.itemID = ITEM_HM_STRENGTH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 
@@ -136,6 +141,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_Surf,
         .isUnlockedFunc = IsFieldMoveUnlocked_Surf,
         .moveID = MOVE_SURF,
+		.itemID = ITEM_HM_SURF,
         .partyMsgID = PARTY_MSG_CANT_SURF_HERE,
     },
 
@@ -144,6 +150,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_Fly,
         .isUnlockedFunc = IsFieldMoveUnlocked_Fly,
         .moveID = MOVE_FLY,
+		.itemID = ITEM_HM_FLY,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 
@@ -152,6 +159,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_Dive,
         .isUnlockedFunc = IsFieldMoveUnlocked_Dive,
         .moveID = MOVE_DIVE,
+		.itemID = ITEM_HM_DIVE,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 
@@ -160,6 +168,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_Waterfall,
         .isUnlockedFunc = IsFieldMoveUnlocked_Waterfall,
         .moveID = MOVE_WATERFALL,
+		.itemID = ITEM_HM_WATERFALL,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 
@@ -184,6 +193,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .fieldMoveFunc = SetUpFieldMove_SecretPower,
         .isUnlockedFunc = IsFieldMoveUnlocked_SecretPower,
         .moveID = MOVE_SECRET_POWER,
+		.itemID = ITEM_TM_SECRET_POWER,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 

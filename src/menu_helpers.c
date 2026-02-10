@@ -467,3 +467,5 @@ void UpdateSwapLineSpritesPos(u8 *spriteIds, u8 count, s16 x, u16 y)
         gSprites[spriteIds[i]].y = 1 + y;
     }
 }
+
+

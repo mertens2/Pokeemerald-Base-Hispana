@@ -93,7 +93,7 @@ MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_15:
 # 43 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_VALERIE_1
 # 44 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
 # 45 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_VALERIE_1
 	goto MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_13
@@ -102,7 +102,7 @@ MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_16:
 # 48 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_CINDY_2
 # 49 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_CINDY_2, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_1, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_2, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_CINDY_2, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_1, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_2, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
 # 50 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_CINDY_2
 	goto MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_13
@@ -111,7 +111,7 @@ MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_17:
 # 53 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_GRUNT_SPACE_CENTER_2
 # 54 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_GRUNT_SPACE_CENTER_2, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_3, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_4, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_GRUNT_SPACE_CENTER_2, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_3, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_4, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
 # 55 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_GRUNT_SPACE_CENTER_2
 	goto MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_13
@@ -120,7 +120,7 @@ MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_18:
 # 58 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_ROSE_1
 # 59 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_ROSE_1, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_5, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_6, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_ROSE_1, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_5, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_6, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
 # 60 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_ROSE_1
 	goto MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_13
@@ -129,7 +129,7 @@ MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_19:
 # 63 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_DALTON_1
 # 64 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_DALTON_1, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_7, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_8, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_DALTON_1, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_7, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_8, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
 # 65 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_DALTON_1
 	goto MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_13
@@ -138,7 +138,7 @@ MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_20:
 # 68 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_DEREK
 # 69 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
-	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_DEREK, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_9, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_10, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_SINGLE, 2, TRAINER_DEREK, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_9, MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_Text_10, MauvilleCity_InverseBattle_Lobby_Scripts_EndBattle, 2, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
 # 70 "data/maps/MauvilleCity_InverseBattle_Lobby/scripts.pory"
 	cleartrainerflag TRAINER_DEREK
 	goto MauvilleCity_InverseBattle_Lobby_Scripts_StartBattle_13
