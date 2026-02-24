@@ -38,6 +38,7 @@ void ItemUseOutOfBattle_Fusion(u8 taskId);
 void ItemUseOutOfBattle_Honey(u8 taskId);
 void ItemUseOutOfBattle_CannotUse(u8 taskId);
 void ItemUseOutOfBattle_ExpShare(u8 taskId);
+void ItemUseOutOfBattle_TmCase(u8);
 void ItemUseInBattle_BagMenu(u8 taskId);
 void ItemUseInBattle_PartyMenu(u8 taskId);
 void ItemUseInBattle_PartyMenuChooseMove(u8 taskId);
@@ -51,6 +52,7 @@ void ItemUseOutOfBattle_PokeFlute(u8 taskId);
 void ItemUseOutOfBattle_TownMap(u8 taskId);
 bool8 ItemfinderCheckForHiddenItems(const struct MapEvents *, u8);
 u8 GetDirectionToHiddenItem(s16, s16);
+
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

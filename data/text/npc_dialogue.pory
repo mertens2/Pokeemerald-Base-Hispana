@@ -1,3 +1,16 @@
+// pkmn center
+
+text gText_HealPokemonTraditionally {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Help me heal this Trainer's Pokémon!")
+		}
+		ES {
+			format("¡Ayúdenme a curar a los Pokémon de est{EA} Entrenador{A}!")
+		}
+	}
+}
+
 
 // // abandoned ship
 // text AbandonedShip_Rooms2_1F_Text_DanIntro{

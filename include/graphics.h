@@ -3411,20 +3411,22 @@ extern const u16 gBattleIcons_Pal1[];
 extern const u16 gBattleIcons_Pal2[];
 
 //Tutoriales
-    //Iconos de tipos
-    extern const u32 gIconosTipos_Gfx[];
-    extern const u16 gIconosTipos_Pal[];
+//Iconos de tipos
+extern const u32 gIconosTipos_Gfx[];
+extern const u16 gIconosTipos_Pal[];
 
-    //Minijuego de Zubat
-    extern const u32 TutorialBG1_Tileset[];
-    extern const u32 TutorialBG1_Tilemap[];
-    extern const u32 TutorialBG2_Tileset[];
-    extern const u32 TutorialBG2_Tilemap[];
-    extern const u16 TutorialBG_Palette[];
-    extern const u8 ZubatSprite[];
-    extern const u8 KoffingSprite[];
-    extern const u8 BeamSprite[];
-    extern const u8 ZubatIcon[];
-    extern const u16 ZubatKoffing_Palette[];
+//Minijuego de Zubat
+extern const u32 TutorialBG1_Tileset[];
+extern const u32 TutorialBG1_Tilemap[];
+extern const u32 TutorialBG2_Tileset[];
+extern const u32 TutorialBG2_Tilemap[];
+extern const u16 TutorialBG_Palette[];
+extern const u8 ZubatSprite[];
+extern const u8 KoffingSprite[];
+extern const u8 BeamSprite[];
+extern const u8 ZubatIcon[];
+extern const u16 ZubatKoffing_Palette[];
+
+
 
 #endif //GUARD_GRAPHICS_H

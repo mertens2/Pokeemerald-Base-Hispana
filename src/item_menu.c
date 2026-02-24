@@ -956,14 +956,7 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
         StringExpandPlaceholders(dest, gText_NumberItem_TMBerry);
         break;
     default:
-		// if (itemId == ITEM_TM_CASE)
-			// {
-				// CopyItemName(itemId, gStringVar2);
-				// StringExpandPlaceholders(dest, gText_TMCase_Blue);
-			// }
-			// else
-            // CopyItemName(itemId, dest);
-        end = CopyItemName(itemId, dest);
+		end = CopyItemName(itemId, dest);
         PrependFontIdToFit(dest, end, FONT_NARROW, 88);
         break;
     }

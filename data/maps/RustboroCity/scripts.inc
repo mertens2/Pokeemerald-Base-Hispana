@@ -935,13 +935,13 @@ RustboroCity_EventScript_Twin::
 # 846 "data/maps/RustboroCity/scripts.pory"
 RustboroCity_EventScript_NinjaBoy::
 # 847 "data/maps/RustboroCity/scripts.pory"
-	checkitem ITEM_TM70
+	checkitem ITEM_TM_SUBSTITUTE
 # 848 "data/maps/RustboroCity/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_EventScript_NinjaBoy2
 # 849 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_CatchRarePokemonIfIGoToSchool, MSGBOX_SIGN
 # 850 "data/maps/RustboroCity/scripts.pory"
-	giveitem ITEM_TM70
+	giveitem ITEM_TM_SUBSTITUTE
 # 851 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_NinjaSubstitueAtSchool, MSGBOX_SIGN
 # 852 "data/maps/RustboroCity/scripts.pory"

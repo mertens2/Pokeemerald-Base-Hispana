@@ -1,3 +1,44 @@
+script PetalburgCity_PokemonCenter_1F_EventScript_BonesBuyer {
+	lockall
+	faceplayer
+	setspeaker(Collector)
+	msgbox(format("¡Hola, ¿cómo estás?!\p¡Soy un Coleccionista, y me encanta coleccionar {COLOR RED}Huesos{COLOR DARK_GRAY}!"))
+	while (checkitem(ITEM_RARE_BONE) == TRUE) {
+		setspeaker(Collector)
+		msgbox(format("¡Ah, veo que tienes un {COLOR RED}Hueso Raro{COLOR DARK_GRAY}!\p¿Te gustaría vendérmelo por {COLOR RED}¥10.000{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES){
+			removeitem(ITEM_RARE_BONE, 1)
+			addmoney(10000)
+			msgbox("Le has vendido un {COLOR RED}Hueso Raro{COLOR DARK_GRAY} al Coleccionista.")
+			setspeaker(Collector)
+			msgbox(format("¡Muchas gracias!\p¡Ah, qué emoción! ¡Ojalá vuelvas pronto!"))
+		}
+		else {
+			setspeaker(Collector)
+			msgbox(format("Oh… Está bien, no pasa nada…"))
+			break
+		}
+	}
+	while (checkitem(ITEM_THICK_CLUB) == TRUE) {
+		setspeaker(Collector)
+		msgbox(format("¡Ah, veo que tienes un {COLOR RED}Hueso Grueso{COLOR DARK_GRAY}!\p¿Te gustaría vendérmelo por {COLOR RED}¥2.000{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES){
+			removeitem(ITEM_THICK_CLUB, 1)
+			addmoney(2000)
+			msgbox("Le has vendido un {COLOR RED}Hueso Grueso{COLOR DARK_GRAY} al Coleccionista.")
+			setspeaker(Collector)
+			msgbox(format("¡Muchas gracias!\p¡Ah, qué emoción! ¡Ojalá vuelvas pronto!"))
+		}
+		else {
+			setspeaker(Collector)
+			msgbox(format("Oh… Está bien, no pasa nada…"))
+			break
+		}
+	}
+	closemessage
+	releaseall
+}
+
 raw `
 .set LOCALID_NURSE, 1
 

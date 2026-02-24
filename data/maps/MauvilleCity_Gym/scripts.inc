@@ -117,7 +117,7 @@ MauvilleCity_Gym_EventScript_DeactivatePuzzle::
 # 59 "data/maps/MauvilleCity_Gym/scripts.pory"
 MauvilleCity_Gym_EventScript_Wattson::
 # 60 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_STARTING_TERRAIN, STATUS_FIELD_THUNDER_TERRAIN
+	setvar B_VAR_STARTING_STATUS, STARTING_STATUS_THUNDER_TERRAIN
 # 61 "data/maps/MauvilleCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
 # 62 "data/maps/MauvilleCity_Gym/scripts.pory"
@@ -141,7 +141,7 @@ MauvilleCity_Gym_EventScript_Wattson::
 # 71 "data/maps/MauvilleCity_Gym/scripts.pory"
 MauvilleCity_Gym_EventScript_WattsonDefeated::
 # 72 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_STARTING_TERRAIN, 0
+	setvar B_VAR_STARTING_STATUS, 0
 # 73 "data/maps/MauvilleCity_Gym/scripts.pory"
 	message MauvilleCity_Gym_Text_ReceivedDynamoBadge
 # 74 "data/maps/MauvilleCity_Gym/scripts.pory"
@@ -237,7 +237,7 @@ MauvilleCity_Gym_EventScript_WattsonRematch::
 # 119 "data/maps/MauvilleCity_Gym/scripts.pory"
 	trainerbattle_rematch_double TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
 # 120 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_STARTING_TERRAIN, STATUS_FIELD_THUNDER_TERRAIN
+	setvar B_VAR_STARTING_STATUS, STARTING_STATUS_THUNDER_TERRAIN
 # 121 "data/maps/MauvilleCity_Gym/scripts.pory"
 	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
 # 122 "data/maps/MauvilleCity_Gym/scripts.pory"

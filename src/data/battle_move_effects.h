@@ -564,6 +564,12 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleScript = BattleScript_EffectMinimize,
         .battleTvScore = 1,
     },
+	
+	[EFFECT_BULLYING] =
+    {
+        .battleScript = BattleScript_EffectBullying,
+        .battleTvScore = 1,
+    },
 
     [EFFECT_CURSE] =
     {

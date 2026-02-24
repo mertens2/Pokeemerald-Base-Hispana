@@ -1664,6 +1664,8 @@
 #define SPECIES_ZYGARDE_MEGA                            1547
 #define SPECIES_DRAMPA_MEGA                             1548
 #define SPECIES_FALINKS_MEGA                            1549
+// #define SPECIES_DWEBBLE_SHELLESS                        1550
+// #define SPECIES_CRUSTLE_SHELLESS                        1551
 
 #define SPECIES_EGG                                     (SPECIES_FALINKS_MEGA + 1)
 

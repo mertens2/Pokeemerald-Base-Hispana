@@ -13,15 +13,15 @@ SSTidalRooms_EventScript_SnatchGiver::
 # 7 "data/maps/SSTidalRooms/scripts.pory"
 	faceplayer
 # 8 "data/maps/SSTidalRooms/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_SNATCH, SSTidalRooms_EventScript_ExplainSnatch
+	checkitem ITEM_TM_FREEZE_DRY
 # 9 "data/maps/SSTidalRooms/scripts.pory"
-	msgbox SSTidalRooms_Text_NotSuspiciousTakeThis, MSGBOX_DEFAULT
+	goto_if_eq VAR_RESULT, TRUE, SSTidalRooms_EventScript_ExplainSnatch
 # 10 "data/maps/SSTidalRooms/scripts.pory"
-	giveitem ITEM_TM_SNATCH
+	msgbox SSTidalRooms_Text_NotSuspiciousTakeThis, MSGBOX_DEFAULT
 # 11 "data/maps/SSTidalRooms/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	giveitem ITEM_TM_FREEZE_DRY
 # 12 "data/maps/SSTidalRooms/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SNATCH
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 13 "data/maps/SSTidalRooms/scripts.pory"
 	msgbox SSTidalRooms_Text_ExplainSnatch, MSGBOX_DEFAULT
 # 14 "data/maps/SSTidalRooms/scripts.pory"

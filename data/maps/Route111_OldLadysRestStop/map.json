@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 6,
-      "y": 3,
+      "x": 5,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -30,15 +30,15 @@
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 7,
+      "x": 2,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ROUTE111",
       "dest_warp_id": "2"
     },
     {
-      "x": 4,
-      "y": 7,
+      "x": 3,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ROUTE111",
       "dest_warp_id": "2"

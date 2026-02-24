@@ -9062,6 +9062,8 @@ void AnimTask_TerrainPulse(u8 taskId)
     {
         if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
             gBattleAnimArgs[0] = TYPE_ELECTRIC;
+		else if (gFieldStatuses & STATUS_FIELD_THUNDER_TERRAIN)
+            gBattleAnimArgs[0] = TYPE_ELECTRIC;
         else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
             gBattleAnimArgs[0] = TYPE_GRASS;
         else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)

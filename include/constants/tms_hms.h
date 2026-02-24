@@ -2,24 +2,24 @@
 #define GUARD_CONSTANTS_TMS_HMS_H
 
 #define FOREACH_TM(F) \
-    F(FOCUS_PUNCH) \
+    F(NASTY_PLOT) \
     F(DRAGON_CLAW) \
-    F(WATER_PULSE) \
+    F(BUG_BUZZ) \
     F(CALM_MIND) \
-    F(ROAR) \
+    F(ROTOTILLER) \
     F(TOXIC) \
-    F(HAIL) \
+    F(SUBSTITUTE) \
     F(BULK_UP) \
     F(BULLET_SEED) \
     F(HIDDEN_POWER) \
-    F(SUNNY_DAY) \
+    F(POWER_UP_PUNCH) \
     F(TAUNT) \
     F(ICE_BEAM) \
     F(BLIZZARD) \
     F(HYPER_BEAM) \
     F(LIGHT_SCREEN) \
     F(PROTECT) \
-    F(RAIN_DANCE) \
+    F(AQUA_CUTTER) \
     F(GIGA_DRAIN) \
     F(SAFEGUARD) \
     F(FRUSTRATION) \
@@ -35,10 +35,10 @@
     F(BRICK_BREAK) \
     F(DOUBLE_TEAM) \
     F(REFLECT) \
-    F(SHOCK_WAVE) \
+    F(CHARGE_BEAM) \
     F(FLAMETHROWER) \
     F(SLUDGE_BOMB) \
-    F(SANDSTORM) \
+    F(BULLYING) \
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
     F(AERIAL_ACE) \
@@ -46,14 +46,62 @@
     F(FACADE) \
     F(SECRET_POWER) \
     F(REST) \
-    F(ATTRACT) \
+    F(TAILWIND) \
     F(THIEF) \
     F(STEEL_WING) \
     F(SKILL_SWAP) \
-    F(SNATCH) \
+    F(BURNING_BULWARK) \
     F(OVERHEAT) \
-    F(ROUND) \
-    F(FALSE_SWIPE) 
+    F(U_TURN) \
+    F(FALSE_SWIPE) \
+    F(ROOST) \
+    F(MAGIC_BEATDOWN) \
+    F(PRETEND_PUNCH) \
+    F(SHORT_CIRCUIT) \
+    F(COMPRESSION_CUT) \
+    F(AURA_SHOT) \
+    F(CHAKRA_CRACK) \
+    F(ROCKSTAR) \
+    F(ENERGY_BALL) \
+    F(AVALANCHE) \
+    F(FOUL_PLAY) \
+    F(DRAGON_PULSE) \
+    F(DRAIN_PUNCH) \
+    F(WILL_O_WISP) \
+    F(SILVER_WIND) \
+    F(SHADOW_CLAW) \
+    F(STONE_EDGE) \
+    F(THUNDER_WAVE) \
+    F(SWORDS_DANCE) \
+    F(STEALTH_ROCK) \
+    F(X_SCISSOR) \
+    F(POISON_JAB) \
+    F(SMART_STRIKE) \
+    F(STOMPING_TANTRUM) \
+    F(LIQUIDATION) \
+    F(METAL_BEND) \
+    F(FAES_FURY) \
+    F(LIQUID_AMBER) \
+    F(NOBLE_ROAR) \
+    F(TRAILBLAZE) \
+    F(MORTAL_SPIN) \
+    F(PLUCK) \
+    F(HEX) \
+    F(BURNING_JEALOUSY) \
+    F(CHILLING_WATER) \
+    F(POUNCE) \
+    F(FREEZE_DRY) \
+    F(BREAKING_SWIPE) \
+    F(LASH_OUT) \
+    F(PLAY_ROUGH) \
+    F(MOONBLAST) \
+    F(POISON_FANG) \
+    F(EARTH_POWER) \
+    F(SHADOW_PUNCH) \
+    F(BLAZE_KICK) \
+    F(PSYCHIC_NOISE) \
+    F(PUNISHMENT) \
+    F(DRACO_METEOR)
 
 #define FOREACH_HM(F) \
     F(CUT) \

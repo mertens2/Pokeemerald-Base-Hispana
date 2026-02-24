@@ -670,7 +670,7 @@ enum ItemEffect TryVoltAbsorbTerrain(u32 battler)
      && !(B_HEAL_BLOCKING >= GEN_5 && gBattleMons[battler].volatiles.healBlock))
     {
         SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
-        BattleScriptExecute(BattleScript_ItemHealHP_End2);
+        BattleScriptExecute(BattleScript_AbilityHpHeal2);
         effect = ITEM_HP_CHANGE;
     }
 

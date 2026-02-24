@@ -3628,6 +3628,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
                 moveEffect = MOVE_EFFECT_SLEEP;
                 break;
             case STATUS_FIELD_ELECTRIC_TERRAIN:
+            case STATUS_FIELD_THUNDER_TERRAIN:
                 moveEffect = MOVE_EFFECT_PARALYSIS;
                 break;
             case STATUS_FIELD_PSYCHIC_TERRAIN:
@@ -10632,6 +10633,26 @@ bool32 TryResetBattlerStatChanges(u8 battler)
             ret = TRUE; // returns TRUE if any stat was reset
 
         gBattleMons[battler].statStages[j] = DEFAULT_STAT_STAGE;
+    }
+
+    return ret;
+}
+
+bool32 TryResetBattlerSpecificStatChanges(u32 battler, u32 stat, bool32 resetAlsoLowered)
+{
+    u32 j;
+    bool32 ret = FALSE;
+
+    gDisableStructs[battler].stockpileDef = 0;
+    gDisableStructs[battler].stockpileSpDef = 0;
+    for (j = 0; j < NUM_BATTLE_STATS; j++)
+    {
+        // if (gBattleMons[battler].statStages[j] != DEFAULT_STAT_STAGE)
+            // ret = TRUE; // returns TRUE if any stat was reset
+		if ((j == stat && gBattleMons[battler].statStages[j] >= DEFAULT_STAT_STAGE) || (j == stat && resetAlsoLowered)){
+			gBattleMons[battler].statStages[j] = DEFAULT_STAT_STAGE;
+			ret = TRUE;
+		}
     }
 
     return ret;

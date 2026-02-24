@@ -70,6 +70,7 @@ static bool32 CanSleepDueToSleepClause(u32 battlerAtk, u32 battlerDef, enum Func
 static bool32 IsOpposingSideEmpty(u32 battler);
 static void ResetParadoxWeatherStat(u32 battler);
 static void ResetParadoxTerrainStat(u32 battler);
+static bool32 ResetThunderTerrainStat(u32 battler);
 static bool32 CanBattlerFormChange(u32 battler, enum FormChanges method);
 
 // Submoves
@@ -3250,6 +3251,7 @@ bool32 TryChangeBattleWeather(u32 battler, u32 battleWeatherId, u32 ability)
 
 bool32 TryChangeBattleTerrain(u32 battler, u32 statusFlag)
 {
+	u32 lastTerrain = gFieldStatuses;
     if (gBattleStruct->isSkyBattle)
         return FALSE;
 
@@ -3261,6 +3263,12 @@ bool32 TryChangeBattleTerrain(u32 battler, u32 statusFlag)
         {
             gDisableStructs[i].terrainAbilityDone = FALSE;
             ResetParadoxTerrainStat(i);
+			if (statusFlag != STATUS_FIELD_THUNDER_TERRAIN && lastTerrain & STATUS_FIELD_THUNDER_TERRAIN) {
+				if (ResetThunderTerrainStat(i))
+					StringCopy(gStringVar1, COMPOUND_STRING("\p¡Los truenos ya no azotan\nel campo de batalla!\p¡Las estadísticas mejoradas\ngracias a él se revirtieron!"));
+				else
+					StringCopy(gStringVar1, COMPOUND_STRING(" "));
+			}
         }
         if (GetBattlerHoldEffect(battler) == HOLD_EFFECT_TERRAIN_EXTENDER)
             gFieldTimers.terrainTimer = 8;
@@ -4318,6 +4326,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             break;
         case ABILITY_ELECTRIC_SURGE:
         case ABILITY_HADRON_ENGINE:
+		if (STATUS_FIELD_THUNDER_TERRAIN)
             if (TryChangeBattleTerrain(battler, STATUS_FIELD_ELECTRIC_TERRAIN))
             {
                 BattleScriptPushCursorAndCallback(BattleScript_ElectricSurgeActivates);
@@ -4725,6 +4734,36 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                     effect++;
                 }
                 break;
+			case ABILITY_MOTOR_DRIVE:
+                if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility) && gDisableStructs[battler].isFirstTurn != 2 && IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN))
+                {
+                    SaveBattlerAttacker(gBattlerAttacker);
+                    SET_STATCHANGER(STAT_SPEED, 1, FALSE);
+                    BattleScriptExecute(BattleScript_AttackerAbilityStatRaiseEnd2);
+                    gBattleScripting.battler = battler;
+                    effect++;
+                }
+                break;
+			case ABILITY_LIGHTNING_ROD:
+                if (CompareStat(battler, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility) && gDisableStructs[battler].isFirstTurn != 2 && IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN))
+                {
+                    SaveBattlerAttacker(gBattlerAttacker);
+                    SET_STATCHANGER(STAT_SPATK, 1, FALSE);
+                    BattleScriptExecute(BattleScript_AttackerAbilityStatRaiseEnd2);
+                    gBattleScripting.battler = battler;
+                    effect++;
+                }
+                break;
+				case ABILITY_VOLT_ABSORB:
+					if (IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN)){
+						if (!(gBattleMons[battler].volatiles.healBlock) && gBattleMons[battler].hp < gBattleMons[battler].maxHP){
+							s32 healAmount = 16;
+							SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / healAmount);
+							BattleScriptExecute(BattleScript_RainDishActivates);
+							effect++;
+						}
+					}
+				break;
             case ABILITY_MOODY:
                 if (gDisableStructs[battler].isFirstTurn != 2)
                 {
@@ -5986,6 +6025,15 @@ static void ResetParadoxTerrainStat(u32 battler)
     if (gBattleMons[battler].ability == ABILITY_QUARK_DRIVE
      && !gDisableStructs[battler].boosterEnergyActivated)
         gDisableStructs[battler].paradoxBoostedStat = 0;
+}
+
+static bool32 ResetThunderTerrainStat(u32 battler)
+{
+    if (gBattleMons[battler].ability == ABILITY_MOTOR_DRIVE)
+		return TryResetBattlerSpecificStatChanges(battler, STAT_SPEED, FALSE);
+	if (gBattleMons[battler].ability == ABILITY_LIGHTNING_ROD)
+		return TryResetBattlerSpecificStatChanges(battler, STAT_SPATK, FALSE);
+	return FALSE;
 }
 
 u32 GetParadoxBoostedStatId(u32 battler)
@@ -11214,6 +11262,8 @@ u32 GetNaturePowerMove(u32 battler)
     if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
         move = MOVE_MOONBLAST;
     else if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+        move = MOVE_THUNDERBOLT;
+	else if (gFieldStatuses & STATUS_FIELD_THUNDER_TERRAIN)
         move = MOVE_THUNDERBOLT;
     else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
         move = MOVE_ENERGY_BALL;

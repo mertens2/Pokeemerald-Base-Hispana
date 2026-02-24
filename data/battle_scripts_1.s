@@ -3414,6 +3414,15 @@ BattleScript_EffectMinimizeGen4:
 	setstatchanger STAT_EVASION, 1, FALSE
 	goto BattleScript_EffectStatUpAfterAtkCanceler
 
+BattleScript_EffectBullying::
+	attackanimation
+	waitanimation
+	attackcanceler
+	setvolatile BS_TARGET, VOLATILE_MINIMIZE
+	printstring STRINGID_TARGETISMALLNOW
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectCurse::
 	jumpiftype BS_ATTACKER, TYPE_GHOST, BattleScript_GhostCurse
 	attackcanceler
@@ -6606,6 +6615,18 @@ BattleScript_ReceiverActivates::
 	switchinabilities BS_ABILITY_BATTLER
 	return
 
+BattleScript_AbilityHpHeal2::
+	call BattleScript_AbilityHpHealItself
+	end2
+
+BattleScript_AbilityHpHealItself:
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNSXRESTOREDHPALITTLE2
+	waitmessage B_WAIT_TIME_LONG
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	return
+
 BattleScript_AbilityHpHeal:
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXRESTOREDHPALITTLE2
@@ -6613,6 +6634,11 @@ BattleScript_AbilityHpHeal:
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	return
+
+BattleScript_ThunderTerrainStatsReset::
+	printstring STRINGID_FIELDTHUNDERTERRAINSTATSRESET
+	waitmessage B_WAIT_TIME_LONG
+	end2
 
 BattleScript_RainDishActivates::
 	call BattleScript_AbilityHpHeal
@@ -7747,6 +7773,8 @@ BattleScript_BerryPPHealEnd2::
 BattleScript_ItemHealHP_End2::
 	call BattleScript_ItemHealHP_Ret
 	end2
+
+
 
 BattleScript_AirBalloonMsgIn::
 	printstring STRINGID_AIRBALLOONFLOAT

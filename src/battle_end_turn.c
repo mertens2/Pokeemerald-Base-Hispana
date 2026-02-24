@@ -381,6 +381,7 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         case ABILITY_HEALER:
         case ABILITY_HYDRATION:
         case ABILITY_SHED_SKIN:
+        case ABILITY_VOLT_ABSORB:
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;
             break;
@@ -397,28 +398,6 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         gBattleStruct->eventState.endTurnBattler++;
         break;
     }
-	if (GetBattlerAbility(battler) == ABILITY_VOLT_ABSORB && IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN)){
-		if (TryVoltAbsorbTerrain(battler)){
-			effect = TRUE;
-			gBattleStruct->eventState.endTurnBlock = 0;
-			gBattleStruct->eventState.endTurnBattler++;
-		}
-	}
-	// wip, make motordrive and lightning rod also activate at the end of the turn if thunder terrain is up
-	// else if (GetBattlerAbility(battler) == ABILITY_MOTOR_DRIVE && IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN)){
-		// if (TryVoltAbsorbTerrain(battler)){
-			// effect = TRUE;
-			// gBattleStruct->eventState.endTurnBlock = 0;
-			// gBattleStruct->eventState.endTurnBattler++;
-		// }
-	// }
-	// else if (GetBattlerAbility(battler) == ABILITY_LIGHTNING_ROD && IsBattlerTerrainAffected(battler, GetBattlerAbility(battler), gAiLogicData->holdEffects[battler], STATUS_FIELD_THUNDER_TERRAIN)){
-		// if (TryVoltAbsorbTerrain(battler)){
-			// effect = TRUE;
-			// gBattleStruct->eventState.endTurnBlock = 0;
-			// gBattleStruct->eventState.endTurnBattler++;
-		// }
-	// }
 
     return effect;
 }
@@ -1306,6 +1285,8 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         case ABILITY_MOODY:
         case ABILITY_PICKUP:
         case ABILITY_SPEED_BOOST:
+		case ABILITY_MOTOR_DRIVE:
+		case ABILITY_LIGHTNING_ROD:
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;
             break;

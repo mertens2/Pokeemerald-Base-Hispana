@@ -1,7 +1,7 @@
 {
   "id": "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F",
   "name": "DewfordTown_PokemonCenter_1F",
-  "layout": "LAYOUT_POKEMON_CENTER_1F",
+  "layout": "LAYOUT_WOODEN_POKEMON_CENTER_1F",
   "music": "MUS_POKE_CENTER",
   "region_map_section": "MAPSEC_DEWFORD_TOWN",
   "requires_flash": false,
@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_DEWFORD_NURSE",
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
-      "x": 7,
-      "y": 2,
+      "x": 6,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -30,8 +30,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 10,
-      "y": 6,
+      "x": 20,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -43,8 +43,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 5,
-      "y": 5,
+      "x": 4,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 2,
@@ -57,10 +57,10 @@
     {
       "local_id": "LOCALID_DEWFORD_MART_CLERK",
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 14,
-      "y": 6,
+      "x": 17,
+      "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -70,36 +70,62 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN",
-      "x": 14,
-      "y": 7,
+      "x": 19,
+      "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_PkmnCenter_Clerk_2",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMFEY)",
+      "x": 5,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Common_EventScript_Comfey",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Common_EventScript_Chansey",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
       "x": 7,
-      "y": 8,
+      "y": 11,
       "elevation": 3,
       "dest_map": "MAP_DEWFORD_TOWN",
       "dest_warp_id": "1"
     },
     {
       "x": 6,
-      "y": 8,
+      "y": 11,
       "elevation": 3,
       "dest_map": "MAP_DEWFORD_TOWN",
       "dest_warp_id": "1"
     },
     {
       "x": 1,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN_POKEMON_CENTER_2F",
       "dest_warp_id": "0"

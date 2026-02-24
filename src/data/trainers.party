@@ -5135,22 +5135,24 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: No
+Difficulty: Normal
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
 
-Voltorb-Hisui
+Lanturn
 Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 31 SpD / 0 Spe
+Ability: Volt Absorb
 Ball: Luxury Ball
-- Energy Ball
-- Spark
-- Self Destruct
-- Shock Wave
+- Surf
+- Signal Beam
+- Powder Snow
+- Short Circuit
 
 Tynamo @ Electric Gem
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Ultra Ball
-- Shock Wave
+- Short Circuit
 - Ice Fang
 - Quick Attack
 - Howl
@@ -5160,18 +5162,161 @@ Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Ultra Ball
 - Light Screen
-- Shock Wave
+- Short Circuit
 - Recover
 - Gyro Ball
 
-Manectric @ Electric Gem
+Manectric @ Electrium Z
 Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 0 Spe
 Ball: Friend Ball
+Ability: Lightning Rod
+- Ice Beam
+- Thunder Wave
+- Short Circuit
+- Work Up
+
+=== TRAINER_WATTSON_1 ===
+Name: Wattson
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: Yes
+Difficulty: Hard
+Party Size: 5
+Pool Rules: Basic
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Lanturn @ Leftovers
+Level: 22
+IVs: 15 HP / 15 SpA / 15 SpD
+EVs: 128 HP / 64 SpD
+Ability: Volt Absorb
+Ball: Luxury Ball
+Tags: Lead
+- Surf
+- Signal Beam
+- Powder Snow
+- Short Circuit
+
+Lanturn @ Life Orb
+Level: 22
+IVs: 15 HP / 15 SpA / 15 SpD
+EVs: 128 HP / 64 SpD
+Ability: Volt Absorb
+Ball: Luxury Ball
+Tags: Lead
+- Surf
+- Signal Beam
+- Powder Snow
+- Short Circuit
+
+Charjabug @ Eviolite
+Level: 22
+IVs: 31 HP / 31 Def / 31 SpD
+EVs: 252 HP / 128 Def / 128 SpD
+Ability: Battery
+Tags: Lead / Support
+- Short Circuit
+- Light Screen
+- Reflect
+- Recover
+
+Tynamo @ Electric Gem
+Level: 22
+IVs: 15 Atk / 15 Spe
+EVs: 64 Atk / 64 SpA
+Ball: Ultra Ball
+- Short Circuit
 - Ice Fang
-- Thunder Fang
-- Shock Wave
+- Quick Attack
 - Howl
+
+Toxtricity @ Throat Spray
+Level: 22
+IVs: 15 SpA / 15 Spe
+EVs: 64 SpA / 64 SpA
+Ability: Punk Rock
+Ball: Ultra Ball
+- Short Circuit
+- Rockstar
+- Overdrive
+- Sludge Bomb
+
+Magneton @ Eviolite
+Level: 22
+IVs: 15 Def / 15 SpD
+EVs: 128 Def / 128 SpD
+Ball: Ultra Ball
+Ability: Analytic
+- Signal Beam
+- Short Circuit
+- Recover
+- Gyro Ball
+
+Electivire @ Electric Seed
+Level: 22
+IVs: 31 Atk / 31 Spe
+Ball: Ultra Ball
+Tags: Ace
+- Electro Crash
+- Short Circuit
+- Close Combat
+- Ice Punch
+
+Manectric @ Electrium Z
+Level: 24
+IVs: 31 SpA / 31 Spe
+EVs: 252 SpA / 252 Spe
+Ball: Friend Ball
+Ability: Lightning Rod
+Tags: Ace
+- Ice Beam
+- Thunder Wave
+- Short Circuit
+- Work Up
+
+=== TRAINER_WATTSON_1 ===
+Name: Wattson
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: No
+Difficulty: Easy
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Lanturn
+Level: 18
+Ability: Water Absorb
+Ball: Luxury Ball
+- Bubble Beam
+- Signal Beam
+- Short Circuit
+
+Tynamo
+Level: 18
+Ball: Ultra Ball
+- Short Circuit
+- Quick Attack
+- Howl
+
+Magneton
+Level: 21
+Ball: Ultra Ball
+- Light Screen
+- Short Circuit
+- Recover
+- Gyro Ball
+
+Manectric @ Electrium Z
+Level: 22
+Ball: Friend Ball
+Ability: Lightning Rod
+- Ice Beam
+- Short Circuit
+- Work Up
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
@@ -7009,14 +7154,27 @@ Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
+Party Size: 3
+Pool Rules: Basic
+
 
 Bruxish
 Level: 20
 EVs: 252 HP
+Tags: Lead
 - Psychic Fangs
 - Recover
 - Thunder Fang
 - Ice Fang
+
+Bruxish
+Level: 20
+EVs: 252 HP
+Tags: Lead
+- Psychic Fangs
+- Recover
+- Fire Fang
+- Poison Fang
 
 Dewpider @ Mystic Water
 Level: 20
@@ -7026,13 +7184,32 @@ EVs: 64 HP
 - Water Gun
 - Powder Snow
 
+Pyukumuku
+Level: 20
+IVs: 9 HP
+EVs: 64 HP
+- Counter
+- Water Gun
+- Recover
+- Toxic
+
 Lana (Brionne) @ Waterium Z
 Level: 20
 IVs: 10 HP
 EVs: 128 HP
+Tags: Ace
 - Bubble Beam
 - Ice Beam
 - Disarming Voice
+
+Lana (Wishiwashi) @ Waterium Z
+Level: 20
+IVs: 10 HP
+EVs: 128 HP
+Tags: Ace
+- Bubble Beam
+- Ice Beam
+- Aqua Ring
 
 === TRAINER_ALOLAN_BEAUTY ===
 Name: Lusamine
@@ -7042,13 +7219,26 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Party Size: 3
+Pool Rules: Basic
+
 
 Gladion (Pawniard)
 Level: 20
 EVs: 12 Atk
+Tags: Lead
 - Night Slash
 - Metal Claw
 - Hone Claws
+
+Gladion (Zorua)
+Level: 20
+EVs: 12 Atk
+Tags: Lead
+- Night Daze
+- Baby Doll Eyes
+- Hone Claws
+- Quick Attack
 
 Salandit
 Level: 20
@@ -7058,8 +7248,23 @@ Ability: Merciless
 - Venoshock
 - Ember
 
-Lillie (Clefable) @ Fairium Z
+Bounsweet
 Level: 20
+EVs: 64 Spe
+- Magical Leaf
+- Tackle
+- Rapid Spin
+
+Lillie (Clefable) @ Fairium Z
+Level: 14
+Tags: Ace
+- Magic Beatdown
+- Amnesia
+- Return
+
+Lillie (Clefairy) @ Fairium Z
+Level: 20
+Tags: Ace
 - Magic Beatdown
 - Amnesia
 - Return
@@ -7152,12 +7357,24 @@ Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move / Try To Faint
+Party Size: 3
+Pool Rules: Basic
+
 
 Magby
 Level: 20
+Tags: Lead / Weather Setter
 - Smokescreen
 - Ember
 - Sunny Day
+- Solar Beam
+
+Vulpix
+Level: 20
+Ability: Drought
+Tags: Lead / Weather Setter
+- Bite
+- Ember
 - Solar Beam
 
 Salandit
@@ -7166,8 +7383,15 @@ Level: 20
 - Ember
 - Venoshock
 
+Cubone
+Level: 20
+- Bonemerang
+- Tackle
+- Accelerock
+
 Kiawe (Marowak-Alola) @ Firium Z
 Level: 14
+Tags: Ace
 - Hex
 - Will O Wisp
 - Flame Wheel
@@ -11955,6 +12179,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
+
 Mudkip
 Level: 3
 Ball: Friend Ball
@@ -11978,10 +12203,25 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Party Size: 4
+Pool Rules: Weather Singles
+
+
 
 Mr. Mime-Galar
+Tags: Lead / Weather Setter
 Level: 18
 Ball: Friend Ball
+Ability: Slush Rush
+- Powder Snow
+- Chilly Reception
+- Confusion
+
+Mr. Mime-Galar
+Tags: Lead / Weather Setter
+Level: 18
+Ball: Friend Ball
+Ability: Screen Cleaner
 - Powder Snow
 - Chilly Reception
 - Confusion
@@ -12002,6 +12242,7 @@ Ball: Friend Ball
 
 Mudkip
 Level: 15
+Tags: Ace
 Ball: Friend Ball
 - Tackle
 - Water Gun
@@ -12015,29 +12256,74 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Check Bad Move
+Party Size: 5
+Pool Rules: Weather Doubles
+
 
 Mr. Rime
 Ability: Screen Cleaner
 Level: 32
 Ball: Friend Ball
 EVs: 128 Atk / 128 SpA
+Tags: Lead / Weather Setter
 - Chilly Reception
-- Psychic Terrain
+- Chilling Water
 - Metal Bend
 - Expanding Force
+
+Mr. Rime
+Ability: Slush Rush
+Level: 32
+Ball: Friend Ball
+EVs: 128 Atk / 128 SpA
+Tags: Lead / Weather Setter
+- Chilly Reception
+- Chilling Water
+- Metal Bend
+- Expanding Force
+
+Indeedee-F
+Ability: Psychic Surge
+Level: 28
+Ball: Friend Ball
+Tags: Lead
+- Helping Hand
+- Moonblast
+- Metal Bend
+- Expanding Force
+
+Indeedee-F @ Terrain Extender
+Ability: Psychic Surge
+Level: 26
+Ball: Friend Ball
+Tags: Lead
+- Helping Hand
+- Confusion
+- Fairy Wind
 
 Marshtomp
 Level: 30
 Ball: Friend Ball
+Tags: Weather Abuser
 - Ice Beam
 - Surf
 - Rock Smash
 - Bulldoze
 
+Marshtomp
+Level: 30
+Ball: Friend Ball
+Tags: Weather Abuser
+- Powder Snow
+- Strength
+- Rock Smash
+- Earth Power
+
 Grovyle
 Level: 30
 EVs: 128 Atk
 Ball: Friend Ball
+Tags: Ace
 - Leaf Blade
 - Quick Attack
 - Cut
@@ -12047,6 +12333,7 @@ Combusken
 Level: 30
 EVs: 128 SpA
 Ball: Friend Ball
+Tags: Ace
 - Flamethrower
 - Double Kick
 - Failed Flight

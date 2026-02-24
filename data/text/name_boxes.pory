@@ -12,6 +12,13 @@ text Birch {
 		EN:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Professor Birch")
 	}
 }
+
+text Collector {
+	poryswitch(LANGUAGE){
+		ES:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Coleccionista")
+		EN:format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Collector")
+	}
+}
 text BirchEng {
 	format("{COLOR LIGHT_BLUE}{SHADOW BLUE}Professor Birch")
 }

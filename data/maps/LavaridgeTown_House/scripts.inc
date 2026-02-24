@@ -49,4 +49,4 @@ LavaridgeTown_House_Text_WifeWarmingEggInHotSprings:
 # 25 "data/maps/LavaridgeTown_House/scripts.pory"
 LavaridgeTown_House_Text_Zigzagoon:
 # 26 "data/maps/LavaridgeTown_House/scripts.pory"
-	.string "ZIGZAGOON: ¡Zigzaaaa!$"
+	.string "¡Hoooo!$"

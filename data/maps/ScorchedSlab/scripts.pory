@@ -8,3 +8,45 @@ ScorchedSlab_OnTransition:
 	end
 
 `
+
+script ScorchedSlab_EventScript_Volcarona {
+	faceplayer
+	lockall
+	msgbox(format("Un Volcarona. Parece muy poderoso, pero ansía una buena batalla.\p"
+	"¿Se la darás?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		closemessage
+		releaseall
+		end
+	}
+	playmoncry(SPECIES_VOLCARONA, CRY_MODE_ENCOUNTER)
+	setwildbattle (SPECIES_VOLCARONA, 50)
+	delay (40)
+	waitmoncry
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	dowildbattle
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	specialvar (VAR_RESULT, GetBattleOutcome)
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+		removeobject(LOCALID_VOLCARONA_SCORCHED)
+		setflag(FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY)
+		msgbox(format("Volcarona parecía satisfecho.\p"
+		"¡Por satisfacer sus ganas de una batalla digna, Volcarona soltó…!"))
+		giveitem(ITEM_TM_BURNING_BULWARK)
+	}
+	elif ((var(VAR_RESULT) == B_OUTCOME_RAN) || ((var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED))){
+		addobject(LOCALID_VOLCARONA_SCORCHED)
+		clearflag(FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY)
+		msgbox(format("Parece que Volcarona quiere una batalla digna.\p"
+		"Te esperará hasta que tengas el nivel que necesitas."))
+	}
+	else {
+		addobject(LOCALID_VOLCARONA_SCORCHED)
+		clearflag(FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY)
+		msgbox(format("Parece que Volcarona quiere una batalla digna.\p"
+		"Te esperará hasta que tengas el nivel que necesitas."))
+	}
+	closemessage
+	releaseall
+	end
+}

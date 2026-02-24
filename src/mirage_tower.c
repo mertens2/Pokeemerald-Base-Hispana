@@ -161,7 +161,7 @@ static const struct SpriteTemplate sSpriteTemplate_FallingFossil =
 
 const struct PulseBlendSettings gMirageTowerPulseBlendSettings = {
     .blendColor = RGB(27, 25, 16),
-    .paletteOffset = BG_PLTT_ID(6) + 1,
+    .paletteOffset = BG_PLTT_ID(10) + 1,
     .numColors = 15,
     .delay = 5,
     .numFadeCycles = -1,
@@ -279,22 +279,22 @@ void ClearMirageTowerPulseBlend(void)
 
 void TryStartMirageTowerPulseBlendEffect(void)
 {
-    if (sMirageTowerPulseBlend)
-    {
+    // // if (sMirageTowerPulseBlend)
+    // {
         sMirageTowerPulseBlend = NULL;
         return;
-    }
+    // }
 
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ROUTE111)
-     || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE))
-        return;
+    // if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
+     // || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ROUTE111)
+     // || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE))
+        // return;
 
-    sMirageTowerPulseBlend = AllocZeroed(sizeof(*sMirageTowerPulseBlend));
-    InitPulseBlend(&sMirageTowerPulseBlend->pulseBlend);
-    InitPulseBlendPaletteSettings(&sMirageTowerPulseBlend->pulseBlend, &gMirageTowerPulseBlendSettings);
-    MarkUsedPulseBlendPalettes(&sMirageTowerPulseBlend->pulseBlend, 0x1, TRUE);
-    sMirageTowerPulseBlend->taskId = CreateTask(UpdateMirageTowerPulseBlend, 0xFF);
+    // sMirageTowerPulseBlend = AllocZeroed(sizeof(*sMirageTowerPulseBlend));
+    // InitPulseBlend(&sMirageTowerPulseBlend->pulseBlend);
+    // InitPulseBlendPaletteSettings(&sMirageTowerPulseBlend->pulseBlend, &gMirageTowerPulseBlendSettings);
+    // MarkUsedPulseBlendPalettes(&sMirageTowerPulseBlend->pulseBlend, 0x1, TRUE);
+    // sMirageTowerPulseBlend->taskId = CreateTask(UpdateMirageTowerPulseBlend, 0xFF);
 }
 
 void ClearMirageTowerPulseBlendEffect(void)

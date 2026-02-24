@@ -625,11 +625,11 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNBLEWAWAYSTEALTHROCK]              = COMPOUND_STRING("¡{B_ATK_NAME_WITH_PREFIX} ha retirado las piedras puntiagudas!"),
     [STRINGID_IONDELUGEON]                          = COMPOUND_STRING("¡Una lluvia de electrones cae sobre el terreno de combate!"),
     [STRINGID_TOPSYTURVYSWITCHEDSTATS]              = COMPOUND_STRING("¡Se han invertido los cambios en las características de {B_DEF_NAME_WITH_PREFIX}!"),
-    [STRINGID_TERRAINBECOMESMISTY]                  = COMPOUND_STRING("¡La niebla ha envuelto el terreno de combate!"),
-    [STRINGID_TERRAINBECOMESGRASSY]                 = COMPOUND_STRING("¡El terreno de combate se ha cubierto de hierba!"),
-    [STRINGID_TERRAINBECOMESELECTRIC]               = COMPOUND_STRING("¡Se ha formado un campo de\ncorriente eléctrica en el terreno de combate!"),
+    [STRINGID_TERRAINBECOMESMISTY]                  = COMPOUND_STRING("¡La niebla ha envuelto el terreno de combate!{STR_VAR_1}"),
+    [STRINGID_TERRAINBECOMESGRASSY]                 = COMPOUND_STRING("¡El terreno de combate se ha cubierto de hierba!{STR_VAR_1}"),
+    [STRINGID_TERRAINBECOMESELECTRIC]               = COMPOUND_STRING("¡Se ha formado un campo de\ncorriente eléctrica en el terreno de combate!{STR_VAR_1}"),
     [STRINGID_TERRAINBECOMESTHUNDER]                = COMPOUND_STRING("¡Se ha formado un campo de\ntruenos en el terreno de combate!"),
-    [STRINGID_TERRAINBECOMESPSYCHIC]                = COMPOUND_STRING("¡El terreno de combate se ha vuelto muy extraño!"),
+    [STRINGID_TERRAINBECOMESPSYCHIC]                = COMPOUND_STRING("¡El terreno de combate se ha vuelto muy extraño!{STR_VAR_1}"),
     [STRINGID_TARGETELECTRIFIED]                    = COMPOUND_STRING("¡Electrificación hace que el siguiente movimiento de {B_DEF_NAME_WITH_PREFIX} sea de tipo Eléctrico!"),
     [STRINGID_MEGAEVOREACTING]                      = COMPOUND_STRING("¡{B_LAST_ITEM} de {B_ATK_NAME_WITH_PREFIX} reacciona ante el Mega Aro de {B_ATK_TRAINER_NAME}!"), //realmente muestra el tipo de Mega Anillo en el inventario, pero no lo implementamos :(
     [STRINGID_MEGAEVOEVOLVED]                       = COMPOUND_STRING("¡{B_ATK_NAME_WITH_PREFIX} ha evolucionado a Mega-{B_BUFF1}!"),
@@ -866,6 +866,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_POWERCONSTRUCTPRESENCEOFMANY]         = COMPOUND_STRING("¡Sientes la presencia de muchos!"),
     [STRINGID_POWERCONSTRUCTTRANSFORM]              = COMPOUND_STRING("¡{B_ATK_NAME_WITH_PREFIX} se transformó en su Forma Completa!"),
     [STRINGID_ABILITYSHIELDPROTECTS]                = COMPOUND_STRING("¡La habilidad de {B_ATK_NAME_WITH_PREFIX} está protegida por los efectos de su {B_LAST_ITEM}!"),
+    [STRINGID_TARGETISMALLNOW]                      = COMPOUND_STRING("¡{B_ATK_NAME_WITH_PREFIX} le hizo bullying a\n{B_DEF_NAME_WITH_PREFIX}!\p¡El ego de {B_DEF_NAME_WITH_PREFIX} fue\ndestruído, y se ha vuelto más pequeño!\p¡Ahora ataques aplastantes causarán más daño!"),
+    [STRINGID_FIELDTHUNDERTERRAINSTATSRESET]        = COMPOUND_STRING("¡Los truenos ya no azotan\nel campo de batalla!\p¡Las estadísticas mejoradas\ngracias a él se revirtieron!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1260,6 +1262,7 @@ const u16 gTerrainStartsStringIds[] =
     [B_MSG_TERRAIN_SET_ELECTRIC] = STRINGID_ELECTRICCURRENTISRUNNING,
     [B_MSG_TERRAIN_SET_PSYCHIC]  = STRINGID_SEEMSWEIRD,
     [B_MSG_TERRAIN_SET_GRASSY]   = STRINGID_ISCOVEREDWITHGRASS,
+    [B_MSG_TERRAIN_SET_THUNDER]  = STRINGID_THUNDERCURRENTISRUNNING,
 };
 
 const u16 gPrimalWeatherBlocksStringIds[] =

@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 6,
-      "y": 5,
+      "x": 2,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -30,7 +30,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
       "x": 2,
-      "y": 3,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -43,15 +43,15 @@
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 8,
+      "x": 2,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN",
       "dest_warp_id": "4"
     },
     {
-      "x": 4,
-      "y": 8,
+      "x": 3,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN",
       "dest_warp_id": "4"

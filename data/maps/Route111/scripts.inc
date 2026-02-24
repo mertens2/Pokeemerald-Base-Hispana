@@ -53,41 +53,41 @@ Route111_EventScript_CloseDesertRuins::
 # 29 "data/maps/Route111/scripts.pory"
 Route111_EventScript_ShowTemporaryMirageTower::
 # 30 "data/maps/Route111/scripts.pory"
-	setmetatile 18, 53, METATILE_Mauville_MirageTower_Tile0, FALSE
+	setmetatile 18, 53, METATILE_Route111_MirageTower_Tile0, FALSE
 # 31 "data/maps/Route111/scripts.pory"
-	setmetatile 19, 53, METATILE_Mauville_MirageTower_Tile1, FALSE
+	setmetatile 19, 53, METATILE_Route111_MirageTower_Tile1, FALSE
 # 32 "data/maps/Route111/scripts.pory"
-	setmetatile 20, 53, METATILE_Mauville_MirageTower_Tile2, FALSE
+	setmetatile 20, 53, METATILE_Route111_MirageTower_Tile2, FALSE
 # 33 "data/maps/Route111/scripts.pory"
-	setmetatile 18, 54, METATILE_Mauville_MirageTower_Tile3, FALSE
+	setmetatile 18, 54, METATILE_Route111_MirageTower_Tile3, FALSE
 # 34 "data/maps/Route111/scripts.pory"
-	setmetatile 19, 54, METATILE_Mauville_MirageTower_Tile4, FALSE
+	setmetatile 19, 54, METATILE_Route111_MirageTower_Tile4, FALSE
 # 35 "data/maps/Route111/scripts.pory"
-	setmetatile 20, 54, METATILE_Mauville_MirageTower_Tile5, FALSE
+	setmetatile 20, 54, METATILE_Route111_MirageTower_Tile5, FALSE
 # 36 "data/maps/Route111/scripts.pory"
-	setmetatile 18, 55, METATILE_Mauville_MirageTower_Tile6, FALSE
+	setmetatile 18, 55, METATILE_Route111_MirageTower_Tile6, FALSE
 # 37 "data/maps/Route111/scripts.pory"
-	setmetatile 19, 55, METATILE_Mauville_MirageTower_Tile7, FALSE
+	setmetatile 19, 55, METATILE_Route111_MirageTower_Tile7, FALSE
 # 38 "data/maps/Route111/scripts.pory"
-	setmetatile 20, 55, METATILE_Mauville_MirageTower_Tile8, FALSE
+	setmetatile 20, 55, METATILE_Route111_MirageTower_Tile8, FALSE
 # 39 "data/maps/Route111/scripts.pory"
-	setmetatile 18, 56, METATILE_Mauville_MirageTower_Tile9, FALSE
+	setmetatile 18, 56, METATILE_Route111_MirageTower_Tile9, FALSE
 # 40 "data/maps/Route111/scripts.pory"
-	setmetatile 19, 56, METATILE_Mauville_MirageTower_TileA, FALSE
+	setmetatile 19, 56, METATILE_Route111_MirageTower_TileA, FALSE
 # 41 "data/maps/Route111/scripts.pory"
-	setmetatile 20, 56, METATILE_Mauville_MirageTower_TileB, FALSE
+	setmetatile 20, 56, METATILE_Route111_MirageTower_TileB, FALSE
 # 42 "data/maps/Route111/scripts.pory"
-	setmetatile 18, 57, METATILE_Mauville_MirageTower_TileC, FALSE
+	setmetatile 18, 57, METATILE_Route111_MirageTower_TileC, FALSE
 # 43 "data/maps/Route111/scripts.pory"
-	setmetatile 19, 57, METATILE_Mauville_MirageTower_TileD, FALSE
+	setmetatile 19, 57, METATILE_Route111_MirageTower_TileD, FALSE
 # 44 "data/maps/Route111/scripts.pory"
-	setmetatile 20, 57, METATILE_Mauville_MirageTower_TileE, FALSE
+	setmetatile 20, 57, METATILE_Route111_MirageTower_TileE, FALSE
 # 45 "data/maps/Route111/scripts.pory"
-	setmetatile 18, 58, METATILE_Mauville_MirageTower_TileF, FALSE
+	setmetatile 18, 58, METATILE_Route111_MirageTower_TileF, FALSE
 # 46 "data/maps/Route111/scripts.pory"
-	setmetatile 19, 58, METATILE_Mauville_MirageTower_Tile10, FALSE
+	setmetatile 19, 58, METATILE_Route111_MirageTower_Tile10, FALSE
 # 47 "data/maps/Route111/scripts.pory"
-	setmetatile 20, 58, METATILE_Mauville_MirageTower_Tile11, FALSE
+	setmetatile 20, 58, METATILE_Route111_MirageTower_Tile11, FALSE
 # 48 "data/maps/Route111/scripts.pory"
 	return
 # 49 "data/maps/Route111/scripts.pory"

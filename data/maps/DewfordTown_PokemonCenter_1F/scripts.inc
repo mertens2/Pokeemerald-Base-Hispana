@@ -29,7 +29,7 @@ DewfordTown_PokemonCenter_1F_EventScript_Nurse::
 # 15 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
 	setvar VAR_0x800B, LOCALID_NURSE
 # 16 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
-	call Common_EventScript_PkmnCenterNurse
+	call Common_EventScript_TraditionalPkmnCenterNurse
 # 17 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
 	waitmessage
 # 18 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
@@ -59,20 +59,10 @@ DewfordTown_PokemonCenter_1F_EventScript_Man::
 # 30 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
 DewfordTown_PokemonCenter_1F_Text_StoneCavern:
 # 31 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
-	.string "There's a stone cavern at the edge\n"
+	.string "Amo pararme en las mesas.$"
 # 32 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
-	.string "of town.\p"
-# 33 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
-	.string "I've heard you can find rare stones\n"
-# 34 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
-	.string "there.$"
-# 35 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
 
-# 36 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
+# 33 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
 DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM:
-# 37 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
-	.string "Even if a POKéMON faints and can't\n"
-# 38 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
-	.string "battle, it can still use a move learned\l"
-# 39 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
-	.string "from a HIDDEN MACHINE (HM).$"
+# 34 "data/maps/DewfordTown_PokemonCenter_1F/scripts.pory"
+	.string "Amo sentarme en las sillas.$"

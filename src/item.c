@@ -361,12 +361,6 @@ bool32 AddBagItem(u16 itemId, u16 count)
     // check Battle Pyramid Bag
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) == TRUE)
         return AddPyramidBagItem(itemId, count);
-	
-	if (GetItemPocket(itemId) == TMHM_POCKET)
-	{
-		if (!CheckBagHasItem(ITEM_TM_CASE, 1))
-			AddBagItem(ITEM_TM_CASE, 1);
-	}
 
     return BagPocket_AddItem(&gBagPockets[GetItemPocket(itemId)], itemId, count);
 }

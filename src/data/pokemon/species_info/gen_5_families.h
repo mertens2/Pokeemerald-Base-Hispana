@@ -3938,17 +3938,26 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sVenipedeLevelUpLearnset,
         .teachableLearnset = sVenipedeTeachableLearnset,
         .eggMoveLearnset = sVenipedeEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_WHIRLIPEDE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_WHIRLIPEDE}),
     },
 
     [SPECIES_WHIRLIPEDE] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 40,
+        .baseAttack    = 65,
+        .baseDefense   = 99,
+        .baseSpeed     = 47,
+        .baseSpAttack  = 25,
+        .baseSpDefense = 84,
+		#else
         .baseHP        = 40,
         .baseAttack    = 55,
         .baseDefense   = 99,
         .baseSpeed     = 47,
         .baseSpAttack  = 40,
         .baseSpDefense = 79,
+		#endif
         .types = MON_TYPES(TYPE_BUG, TYPE_POISON),
         .catchRate = 120,
         .expYield = 126,
@@ -4018,12 +4027,21 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_SCOLIPEDE] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 65,
+        .baseAttack    = 100,
+        .baseDefense   = 90,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 35,
+        .baseSpDefense = 85,
+		#else
         .baseHP        = 60,
-        .baseAttack    = P_UPDATED_STATS >= GEN_6 ? 100 : 90,
+        .baseAttack    = 100,
         .baseDefense   = 89,
         .baseSpeed     = 112,
         .baseSpAttack  = 55,
         .baseSpDefense = 69,
+		#endif
         .types = MON_TYPES(TYPE_BUG, TYPE_POISON),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8

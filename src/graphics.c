@@ -2070,3 +2070,4 @@ const u8 BeamSprite[] = INCBIN_U8("graphics/tutoriales/minijuego_zubat/sprites/b
 const u8 ZubatIcon[] = INCBIN_U8("graphics/tutoriales/minijuego_zubat/sprites/zubat_icon.4bpp");
 const u16 ZubatKoffing_Palette[] = INCBIN_U16("graphics/tutoriales/minijuego_zubat/sprites/pal.gbapal");
 #endif //TUTORIAL_MINIJUEGO_ZUBAT
+

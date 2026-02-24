@@ -100,6 +100,8 @@ bool32 FieldStatusChecker(u32 battler, u32 fieldStatus, enum FieldEffectOutcome 
         // terrains
         if (fieldStatus & STATUS_FIELD_ELECTRIC_TERRAIN)
             result = BenefitsFromElectricTerrain(battler);
+		if (fieldStatus & STATUS_FIELD_THUNDER_TERRAIN)
+            result = BenefitsFromElectricTerrain(battler);
         if (fieldStatus & STATUS_FIELD_GRASSY_TERRAIN)
             result = BenefitsFromGrassyTerrain(battler);
         if (fieldStatus & STATUS_FIELD_MISTY_TERRAIN)

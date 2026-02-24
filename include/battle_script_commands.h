@@ -63,6 +63,7 @@ u32 IsLeafGuardProtected(u32 battler, enum Ability ability);
 bool32 IsShieldsDownProtected(u32 battler, enum Ability ability);
 u32 IsAbilityStatusProtected(u32 battler, enum Ability ability);
 bool32 TryResetBattlerStatChanges(u8 battler);
+bool32 TryResetBattlerSpecificStatChanges(u32 battler, u32 stat, bool32 resetAlsoLowered);
 bool32 CanCamouflage(u8 battlerId);
 void StealTargetItem(u8 battlerStealer, u8 battlerItem);
 u8 GetCatchingBattler(void);

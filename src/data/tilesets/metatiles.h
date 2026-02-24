@@ -239,3 +239,12 @@ const u16 gMetatileAttributes_House[] = INCBIN_U16("data/tilesets/secondary/hous
 
 const u16 gMetatiles_BuildingNew[] = INCBIN_U16("data/tilesets/primary/building_new/metatiles.bin");
 const u16 gMetatileAttributes_BuildingNew[] = INCBIN_U16("data/tilesets/primary/building_new/metatile_attributes.bin");
+
+const u16 gMetatiles_Route111[] = INCBIN_U16("data/tilesets/secondary/route_111/metatiles.bin");
+const u16 gMetatileAttributes_Route111[] = INCBIN_U16("data/tilesets/secondary/route_111/metatile_attributes.bin");
+
+const u16 gMetatiles_WoodenHouse[] = INCBIN_U16("data/tilesets/secondary/wooden_house/metatiles.bin");
+const u16 gMetatileAttributes_WoodenHouse[] = INCBIN_U16("data/tilesets/secondary/wooden_house/metatile_attributes.bin");
+
+const u16 gMetatiles_PokeCenter[] = INCBIN_U16("data/tilesets/secondary/poke_center/metatiles.bin");
+const u16 gMetatileAttributes_PokeCenter[] = INCBIN_U16("data/tilesets/secondary/poke_center/metatile_attributes.bin");

@@ -188,6 +188,11 @@
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
 #define METATILE_Fallarbor_RedRockWall               0x269
 
+// gTileset_FallarborNew
+#define METATILE_FallarborNew_AshField     0x211
+#define METATILE_FallarborNew_AshGrass     0x20C
+#define METATILE_FallarborNew_NormalGrass  0x213
+
 // gTileset_Fortree
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
 #define METATILE_Fortree_BridgeOverGrass_Raised            0x24E
@@ -431,6 +436,26 @@
 #define METATILE_PokemonCenter_Floor_Plain_Alt           0x2E4
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
+
+// gTileset_Route111
+#define METATILE_Route111_MirageTower_Tile0   0x2EB
+#define METATILE_Route111_MirageTower_Tile1   0x2EC
+#define METATILE_Route111_MirageTower_Tile10  0x314
+#define METATILE_Route111_MirageTower_Tile11  0x315
+#define METATILE_Route111_MirageTower_Tile2   0x2ED
+#define METATILE_Route111_MirageTower_Tile3   0x2F3
+#define METATILE_Route111_MirageTower_Tile4   0x2F4
+#define METATILE_Route111_MirageTower_Tile5   0x2F5
+#define METATILE_Route111_MirageTower_Tile6   0x2FB
+#define METATILE_Route111_MirageTower_Tile7   0x2FC
+#define METATILE_Route111_MirageTower_Tile8   0x2FD
+#define METATILE_Route111_MirageTower_Tile9   0x303
+#define METATILE_Route111_MirageTower_TileA   0x304
+#define METATILE_Route111_MirageTower_TileB   0x305
+#define METATILE_Route111_MirageTower_TileC   0x30B
+#define METATILE_Route111_MirageTower_TileD   0x30C
+#define METATILE_Route111_MirageTower_TileE   0x30D
+#define METATILE_Route111_MirageTower_TileF   0x313
 
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
