@@ -1,0 +1,191 @@
+mapscripts DewfordTownTrainingZone_MapScripts {}
+
+script DewfordTrainingZone_EventScript_Brawly {
+	setspeaker(Brawly)
+	trainerbattle_single (TRAINER_BRAWLY_TRAINING_ZONE, DewfordTrainingZone_Text_Brawly, DewfordTrainingZone_Text_BrawlyDefeat, DewfordTrainingZone_EventScript_BrawlyDefeat)
+	goto (DewfordTrainingZone_EventScript_BrawlyDefeat)
+}
+script DewfordTrainingZone_EventScript_BrawlyDefeat {
+	setspeaker(Brawly)
+	if (!checkitem(ITEM_SUPER_ROD)) {		
+		msgbox(DewfordTrainingZone_Text_BrawlyPostBattle)
+		giveitem(ITEM_SUPER_ROD)
+		closemessage
+	}
+	setspeaker(Brawly)
+	msgbox(DewfordTrainingZone_Text_BrawlyGaveYouSuperRod)
+	closemessage
+	releaseall
+	end
+}
+script DewfordTrainingZone_EventScript_Hariyama {
+	faceplayer
+	lockall
+	playmoncry (SPECIES_HARIYAMA, CRY_MODE_NORMAL)
+	msgbox("¡Ha…Ri…Yama!")
+	waitmoncry
+	closemessage
+	releaseall
+	end
+}
+
+script DewfordTrainingZone_EventScript_Markus {
+	trainerbattle_single (TRAINER_MARKUS, DewfordTrainingZone_Text_MarkusIntro, DewfordTrainingZone_Text_MarkusDefeat, DewfordTrainingZone_EventScript_MarkusDefeat)
+	goto (DewfordTrainingZone_EventScript_MarkusDefeat)
+}
+
+script DewfordTrainingZone_EventScript_MarkusDefeat {
+	lockall
+	faceplayer
+	msgbox(DewfordTrainingZone_Text_MarkusPostBattle)
+	releaseall
+	end
+}
+ // TRAINER_DUSTY_2
+
+script DewfordTrainingZone_EventScript_Lola {
+	trainerbattle_single (TRAINER_LOLA, DewfordTrainingZone_Text_LolaIntro, DewfordTrainingZone_Text_LolaDefeat, DewfordTrainingZone_EventScript_LolaDefeat)
+	goto (DewfordTrainingZone_EventScript_LolaDefeat)
+}
+
+script DewfordTrainingZone_EventScript_LolaDefeat {
+	lockall
+	faceplayer
+	msgbox(DewfordTrainingZone_Text_LolaPostBattle)
+	releaseall
+	end
+}
+ // TRAINER_DUSTY_2
+
+text DewfordTrainingZone_Text_Brawly{
+	poryswitch(LANGUAGE){
+		EN {
+			format("You've made it!\p"
+			"Do you like it? This is my own Private Training Zone!\p"
+			"I've been using it to train some of my strongest apprentices to replace me in the Gym in case I ever had to step down.\p"
+			"But! More importantly, bro!\pI'm not at the Gym right now, am I? We can have a full-force battle, no Gym rules attached!\p"
+			"A Type-advantage won't save you now!")
+		}
+		ES {
+			format("¡You've made it!\p"
+			"¿Te gusta? ¡Es mi propia Zona de Entrenamiento Privada!\p"
+			"La uso para entrenar a mis aprendices más poderosos para que estén listos para reemplazarme en el Gimnasio de ser necesario.\p"
+			"¡Pero! ¡Más importante, bro!\pNo estoy en el Gimnasio ahora, ¿Am I? ¡Podemos tener una batalla a todo poder, sin tontas reglas de la Liga Pokémon!\p"
+			"¡No te salvará un Equipo con Ventaja de Tipos!")
+		}
+	}
+}
+
+text DewfordTrainingZone_Text_BrawlyDefeat{
+	poryswitch(LANGUAGE){
+		EN {
+			format("Woah! That splash of power is unprecedented!")
+		}
+		ES {
+			format("¡Woah! ¡Esa salpicadura de poder es inaudita!")
+		}
+	}
+}
+
+text DewfordTrainingZone_Text_BrawlyPostBattle{
+	poryswitch(LANGUAGE){
+		EN {
+			format("You were able to defeat my unrestricted Team, not bad!\p"
+			"Keep on going like this, and you'll become the strongest in no time!\p"
+			"Can't give you a Badge outside the Gym, but I can give you this for sure!")
+		}
+		ES {
+			format("¡Pudiste derrotar a mi Equipo no restringido, not bad!\p"
+			"Sigue así, ¡Y serás {ELLA} mejor, mejor que nadie más in no time!\p"
+			"No puedo darte una Medalla fuera del Gimnasio, ¡Pero ésto puedo darte!")
+		}
+	}
+}
+
+text DewfordTrainingZone_Text_BrawlyGaveYouSuperRod{
+	poryswitch(LANGUAGE){
+		EN {
+			format("It's the Super Rod!\p"
+			"With this Item, no fished-up Pokémon will evade you, you'll be able to fish them all up!\p"
+			"Be careful, however, some of them can be quite strong, oh yeah!\pMy best wishes!")
+		}
+		ES {
+			format("¡Es la Súpercaña!\p"
+			"¡Con ella, ningún Pokémon evitará ser pescado por tí!\p"
+			"Pero ciudadito, muchos pueden ser bien fuertes, ¡Oh yeah!\p¡My best wishes!")
+		}
+	}
+}
+
+
+text DewfordTrainingZone_Text_LolaIntro{
+	poryswitch(LANGUAGE){
+		EN {
+			format("I've intensively trained under Brawly to accomplish my goal of becoming {COLOR LIGHT_RED SHADOW RED}Dewford Town{COLOR DARK_GRAY SHADOW LIGHT_GRAY}'s next {COLOR LIGHT_RED SHADOW RED}Gym Leader{COLOR DARK_GRAY SHADOW LIGHT_GRAY}!")
+		}
+		ES {
+			format("¡He entrenado hasta el cansancio con Brawly para convertirme en la siguiente {COLOR LIGHT_RED SHADOW RED}Líder de Gimnasio{COLOR DARK_GRAY SHADOW LIGHT_GRAY} de {COLOR LIGHT_RED SHADOW RED}Pueblo Dewford{COLOR DARK_GRAY SHADOW LIGHT_GRAY}!")
+		}
+	}
+}
+
+text DewfordTrainingZone_Text_LolaDefeat{
+	poryswitch(LANGUAGE){
+		EN {
+			format("I've still got fighting in me! Attack! Now!\p"
+			"Huh? What do you mean battle's over already?")
+		}
+		ES {
+			format("¡Aún doy para más! ¡Ataca, ahora!\p"
+			"¿Eh? ¿Cómo que ya terminó la batalla?")
+		}
+	}
+}
+
+text DewfordTrainingZone_Text_LolaPostBattle{
+	poryswitch(LANGUAGE){
+		EN {
+			format("Thanks to Brawly I've learned to take every loss as its own small victory.\p"
+			"But it sure as Distortion World doesn't feel like that!")
+		}
+		ES {
+			format("Brawly me enseñó a tomarme cada derrota como una pequeña victoria.\p"
+			"¡Pero, Carvanho, nunca se siente así!")
+		}
+	}
+}
+
+text DewfordTrainingZone_Text_MarkusIntro{
+	poryswitch(LANGUAGE){
+		EN {
+			format("I WILL become a {COLOR LIGHT_RED SHADOW RED}Gym Leader{COLOR DARK_GRAY SHADOW LIGHT_GRAY}!\pJust you watch!")
+		}
+		ES {
+			format("¡Me convertiré en {COLOR LIGHT_RED SHADOW RED}Líder de Gimnasio{COLOR DARK_GRAY SHADOW LIGHT_GRAY} SÍ O SÍ!\p¡Ya verás!")
+		}
+	}
+}
+
+text DewfordTrainingZone_Text_MarkusDefeat{
+	poryswitch(LANGUAGE){
+		EN {
+			format("A step backwards… But three steps forward!")
+		}
+		ES {
+			format("Un paso hacia atrás… ¡Y tres para adelante!")
+		}
+	}
+}
+
+text DewfordTrainingZone_Text_MarkusPostBattle{
+	poryswitch(LANGUAGE){
+		EN {
+			format("It doesn't matter how much I lose.\NEvery loss teaches me something, and I'm closer and closer to my goal.\p"
+			"Is that not how a Gym Leader should think?")
+		}
+		ES {
+			format("No importa qué tanto pierda.\nCada derrota me enseña algo, y me acerca a mi meta.\p"
+			"¿No debería ser esa la filosofía de un Líder de Gimnasio?")
+		}
+	}
+}

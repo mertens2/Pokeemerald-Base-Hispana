@@ -1031,3 +1031,25 @@ const struct Tileset gTileset_PokeCenter =
     .metatileAttributes = gMetatileAttributes_PokeCenter,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_LavaridgeNew =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LavaridgeNew,
+    .palettes = gTilesetPalettes_LavaridgeNew,
+    .metatiles = gMetatiles_LavaridgeNew,
+    .metatileAttributes = gMetatileAttributes_LavaridgeNew,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_VolcanoOutside =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_VolcanoOutside,
+    .palettes = gTilesetPalettes_VolcanoOutside,
+    .metatiles = gMetatiles_VolcanoOutside,
+    .metatileAttributes = gMetatileAttributes_VolcanoOutside,
+    .callback = NULL,
+};

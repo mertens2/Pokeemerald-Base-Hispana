@@ -2580,17 +2580,6 @@ static const struct SpritePalette sSpritePalettes[] =
 };
 
 //contraseñas pueden tener hasta 15 caracteres
-static const u8 gText_TextoInicialContra[] = _("");
-static const u8 gText_Recompensa1[] = _("un Paquete de Caramelos EXP");
-static const u8 gText_Contrasena1[] = _("LEVELUPAID");
-static const u8 gText_Contrasena2[] = _("CATCHINGAID");
-static const u8 gText_Contrasena3[] = _("PASSWORD");
-static const u8 gText_Contrasena4[] = _("RECIEVEPOKEMON");
-static const u8 gText_Contrasena5[] = _("ABCDEFG");
-static const u8 gText_Contrasena6[] = _("POKEMON");
-static const u8 gText_Contrasena7[] = _("A");
-static const u8 gText_Contrasena8[] = _("B");
-static const u8 gText_Contrasena9[] = _("CODE");
 static const u8 gText_EquipoDeAsh1[] = _("ASHKANTO116");
 static const u8 gText_EquipoDeAsh2[] = _("ASHJOHTO158");
 static const u8 gText_EquipoDeAsh3[] = _("ASHADVANCE192");
@@ -2621,7 +2610,11 @@ struct PasswordInfo {
 enum { // el enum de las contraseñas posibles
 	PASSWORD_LEVEL,
 	PASSWORD_CATCH,
+	// PASSWORD_EVENT_ROCKRUFF,
+	// PASSWORD_EVENT_FLOETTE,
 	PASSWORD_CHEAT_RARE,
+	PASSWORD_CHEAT_SHINY,
+	PASSWORD_CHEAT_OVAL,
 	PASSWORD_ASH_1,
 	PASSWORD_TEST = 32,
 	PASSWORD_COUNT,
@@ -2647,7 +2640,7 @@ static const struct PasswordInfo sPasswordInfo[] = {
 		.isRepeatable = TRUE,
 	},
 	[PASSWORD_LEVEL] = {
-		.code = COMPOUND_STRING("NVL"),
+		.code = COMPOUND_STRING("AYUDANVL"),
 		.desc = COMPOUND_STRING("Un set completo de\nCaramelos Experiencia."),
 		.items = {ITEM_EXP_CANDY_XS, ITEM_EXP_CANDY_S, ITEM_EXP_CANDY_M, ITEM_EXP_CANDY_L},
 		.itemQuantities = {15, 10, 5, 1},
@@ -2663,6 +2656,19 @@ static const struct PasswordInfo sPasswordInfo[] = {
 		.desc = COMPOUND_STRING("Es una trampa.\pContiene Caramelos Raros\nen plenitud."),
 		.items = {ITEM_RARE_CANDY, ITEM_RARE_CANDY, ITEM_RARE_CANDY, ITEM_RARE_CANDY, ITEM_RARE_CANDY},
 		.itemQuantities = {50, 50, 50, 50, 50},
+		.isRepeatable = TRUE,
+	},
+	[PASSWORD_CHEAT_SHINY] = {
+		.code = COMPOUND_STRING("TRCAMLTIRIS"),
+		.desc = COMPOUND_STRING("Es una trampa.\pContiene el Amuleto Iris."),
+		.items = {ITEM_SHINY_CHARM},
+		.itemQuantities = {1},
+	},
+	[PASSWORD_CHEAT_OVAL] = {
+		.code = COMPOUND_STRING("TRCAMLTOVAL"),
+		.desc = COMPOUND_STRING("Es una trampa.\pContiene el Amuleto Oval."),
+		.items = {ITEM_OVAL_CHARM},
+		.itemQuantities = {1},
 	},
 	[PASSWORD_ASH_1] = {
 		.code = COMPOUND_STRING("ASHKANTO116"),
@@ -2803,7 +2809,7 @@ static void CB2_HandleGivenPassword(void)
 	}
 	else if ((!(gSaveBlock2Ptr->passwordsUsed & flagIndex) || sPasswordInfo[currPassword].isRepeatable == TRUE)) {
 		
-		if (sPasswordInfo[currPassword].isRepeatable != TRUE)
+		if (sPasswordInfo[currPassword].isRepeatable != TRUE || currPassword < 32)
 			gSaveBlock2Ptr->passwordsUsed |= flagIndex;
 		
 		// give the items

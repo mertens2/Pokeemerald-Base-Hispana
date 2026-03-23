@@ -1,0 +1,27 @@
+mapscripts LavaridgeTown_House_3_MapScripts {}
+
+script LavaridgeTown_House_3_EventScript_Skitty {
+	moncryscript(SPECIES_SKITTY, "¡Skiiiiii!")
+}
+
+script LavaridgeTown_House_3_EventScript_Delcatty {
+	moncryscript(SPECIES_DELCATTY, "¡Catty, catty!")
+}
+
+script LavaridgeTown_House_3_EventScript_Purrloin {
+	moncryscript(SPECIES_PURRLOIN, "¡Puurrrrrr!")
+}
+
+script LavaridgeTown_House_3_EventScript_Wife1 {
+	faceplayer
+	lockall
+	msgbox(LavaridgeTown_House_3_Text_Wife1)
+	releaseall
+}
+
+script LavaridgeTown_House_3_EventScript_Wife2 {
+	faceplayer
+	lockall
+	msgbox(LavaridgeTown_House_3_Text_Wife2)
+	releaseall
+}

@@ -1207,6 +1207,10 @@ Reject:
 Decline:
 	.string "¡Espero que vuelva pronto!$"
 
+Text_MonCryScript::
+	.string "{STR_VAR_2}: {STR_VAR_3}$"
+
+
 
 .include "data/maps/LittlerootTown_MLMHouse/scripts.inc"
 
@@ -1282,3 +1286,9 @@ Decline:
 	.include "data/maps/MauvilleCity_AlolanBattle/scripts.inc"
 
 	.include "data/maps/MauvilleCity_AlolanBattle_Lobby/scripts.inc"
+
+	.include "data/maps/DewfordTownTrainingZone/scripts.inc"
+
+	.include "data/maps/LavaridgeTown_House_2/scripts.inc"
+
+	.include "data/maps/LavaridgeTown_House_3/scripts.inc"

@@ -1225,13 +1225,23 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_LEDIAN] =
     {
+		#if P_BUFF_SPECIES // yeah fuck it im minmaxing this guy to the moon who gaf
+		.baseHP        = 80,
+        .baseAttack    = 100,
+        .baseDefense   = 50,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 10,
+        .baseSpDefense = 110,
+		.types = MON_TYPES(TYPE_BUG, TYPE_ELECTRIC), // i promised myself i wouldn't but c'mon, this guy is just SAD
+		#else
         .baseHP        = 55,
         .baseAttack    = 35,
         .baseDefense   = 50,
         .baseSpeed     = 85,
         .baseSpAttack  = 55,
         .baseSpDefense = 110,
-        .types = MON_TYPES(TYPE_BUG, TYPE_FLYING),
+		.types = MON_TYPES(TYPE_BUG, TYPE_FLYING),
+		#endif
         .catchRate = 90,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 137 : 134,
         .evYield_SpDefense = 2,
@@ -1240,7 +1250,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_EARLY_BIRD, ABILITY_IRON_FIST },
+        .abilities = { ABILITY_IRON_FIST, ABILITY_GALVANIZE, ABILITY_SURGE_SURFER },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Ledian"),
         .cryId = CRY_LEDIAN,

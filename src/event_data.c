@@ -73,6 +73,7 @@ void ClearTempFieldEventData(void)
 void ClearDailyFlags(void)
 {
     memset(&gSaveBlock1Ptr->flags[DAILY_FLAGS_START / 8], 0, DAILY_FLAGS_SIZE);
+    FlagClear(FLAG_HIDDEN_ITEM_RESPAWN);
 }
 
 void DisableNationalPokedex(void)

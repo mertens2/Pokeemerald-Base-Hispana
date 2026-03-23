@@ -204,6 +204,11 @@ const u8 *const gPocketNamesStringsTable[] =
     [POCKET_BERRIES] =  COMPOUND_STRING("Bayas"),
     [POCKET_KEY_ITEMS] = COMPOUND_STRING("Obj. clave")
 };
+#if LANGUAGE_SPANISH == LANGUAGE_SPANISH
+const u8 gText_AshQty[] = _("Ceniza en el Saco Hollín:\n{STR_VAR_1}{PAUSE_UNTIL_PRESS}");
+#else
+const u8 gText_AshQty[] = _("Ash in the Soot Sack:\n{STR_VAR_1}{PAUSE_UNTIL_PRESS}");
+#endif
 
 const u8 gText_NumberItem_TMBerry[] = _("Nº{STR_VAR_1}{CLEAR 0x03}{STR_VAR_2}");
 const u8 gText_NumberItem_HM[] = _("{CLEAR_TO 0x11}{STR_VAR_1}{CLEAR 0x05}{STR_VAR_2}");
@@ -235,6 +240,8 @@ const u8 gText_HowManyToSell[] = _("¿{STR_VAR_2}?\n¿Cuántas unidades quieres 
 const u8 gText_ICanPayVar1[] = _("Puedo pagarte {STR_VAR_1}¥.\n¿Te parece bien?");
 const u8 gText_TurnedOverVar1ForVar2[] = _("Recibiste {STR_VAR_1}¥\npor la venta.");
 const u8 gText_PokedollarVar1[] = _("{STR_VAR_1}¥");
+const u8 gText_PokeMartVar1Var2[] = _("{STR_VAR_1} {STR_VAR_2}");
+const u8 gText_YouDontHaveVar2[] = _("No tienes suficientes {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
 const u8 gText_HP3[] = _("PS");
 const u8 gText_SpAtk3[] = _("At. Esp.");
 const u8 gText_SpDef3[] = _("Def. Esp.");
@@ -388,6 +395,7 @@ const u8 gText_PkmnSkills[] = _("Habil. Pokémon");
 const u8 gText_BattleMoves[] = _("Mov. combate");
 const u8 gText_ContestMoves[] = _("Mov. concurso");
 const u8 gText_Info[] = _("Info.");
+
 const u8 gText_EggWillTakeALongTime[] = _("Parece que a este huevo le\nva a costar mucho abrirse.");
 const u8 gText_EggWillTakeSomeTime[] = _("¿Qué saldrá de éste?\nAún le queda para abrirse…");
 const u8 gText_EggWillHatchSoon[] = _(
@@ -399,64 +407,159 @@ const u8 gText_EggAboutToHatch[] = _(
         "Está haciendo ruidos.\n"
         "¡Va a abrirse ya!");
 const u8 gText_HMMovesCantBeForgotten2[] = _("Los movimientos MO no \nse pueden olvidar así.");
-const u8 gText_XNatureMetAtYZ[] = _("Naturaleza {DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}. Visto\nen {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1},\ncon {LV} {DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
-const u8 gText_XNatureHatchedAtYZ[] = _("Naturaleza {DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}.\nAbierto con {LV} {DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1},\nen {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}.");
-const u8 gText_XNatureObtainedInTrade[] = _("Naturaleza {DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}.\nRecibido por intercambio.");
-const u8 gText_XNatureFatefulEncounter[] = _("Naturaleza {DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}.\nObtenido de forma curiosa,\ncon {LV}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
-const u8 gText_XNatureProbablyMetAt[] = _("Naturaleza {DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}.\nVisto, según parece, en\n{LV}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1},\n{DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}.");
-const u8 gText_XNature[] = _("Naturaleza {DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}.");
-const u8 gText_XNatureMetSomewhereAt[] = _("Naturaleza {DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}.\nVisto en algún lugar,\ncon {LV}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
-const u8 gText_XNatureHatchedSomewhereAt[] = _("Naturaleza {DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}.\nAbierto en algún lugar,\ncon {LV}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
-const u8 gText_OddEggFoundByCouple[] = _(
-        "Extraño huevo que\n"
-        "te dieron en la\n"
-        "guardería.");
-const u8 gText_PeculiarEggNicePlace[] = _("Extraño huevo de Pokémon\nhallado en un lugar bonito.");
-const u8 gText_PeculiarEggTrade[] = _("Extraño huevo de Pokémon\nrecibido por intercambio.");
-const u8 gText_EggFromHotSprings[] = _(
-        "Huevo Pokémon\n"
-        "que conseguiste\n"
-        "en tu aventura.");
-const u8 gText_EggFromTraveler[] = _("Extraño huevo de Pokémon,\nregalo de un viajante.");
-const u8 gText_ApostropheSBase[] = _("Base de {STR_VAR_1}");
-const u8 gText_OkayToDeleteFromRegistry[] = _("¿Te parece bien borrar\n{STR_VAR_1} del registro?");
-const u8 gText_RegisteredDataDeleted[] = _("Datos registrados eliminados.{PAUSE_UNTIL_PRESS}");
-const u8 gText_NoRegistry[] = _("No hay ningún registro.{PAUSE_UNTIL_PRESS}");
-const u8 gText_DelRegist[] = _("Borrar reg.");
+#if GAME_LANGUAGE == LANGUAGE_SPANISH
+const u8 gText_XNatureMetAtYZ[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, capturado en\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}. ");
+
+const u8 gText_XNatureHatchedAtYZ[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, nacido en\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}. ");
+
+
+const u8 gText_XNatureObtainedInTrade[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, conocido\ppor un intercambio. ");
+
+
+const u8 gText_XNatureFatefulEncounter[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, el destino\nlos unió en un lugar misterioso. ");
+
+const u8 gText_XNatureFatefulEncounterAtYZ[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, el destino\nlos unió en {DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}. ");
+
+
+const u8 gText_XNatureProbablyMetAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, capturado, quizá en\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}. ");
+
+
+const u8 gText_XNature[] = _("{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}");
+
+const u8 gText_XNatureMetSomewhereAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, capturado\nen algún lado. ");
+
+
+const u8 gText_XNatureHatchedSomewhereAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, nacido en\nalgún lado. ");
+
+const u8 gText_OddEggFoundByCouple[] = _("Un Huevo Extraño encontrado\nen la Guardería.");
+const u8 gText_PeculiarEggNicePlace[] = _("Un Huevo peculiar obtenido\npor cosa del destino.");
+const u8 gText_PeculiarEggTrade[] = _("Un Huevo peculiar obtenido\nen un Intercambio.");
+const u8 gText_EggFromHotSprings[] = _("Un Huevo Extraño obtenido\nen las aguas termales.");
+const u8 gText_EggFromTraveler[] = _("Un Huevo obtenido de\nun viajero desconocido.");
+const u8 gText_ApostropheSBase[] = _("Base de ");
+const u8 gText_OkayToDeleteFromRegistry[] = _("¿Te parece bien borrar los\ndatos de {STR_VAR_1}?");
+const u8 gText_RegisteredDataDeleted[] = _("Los datos se han borrado.{PAUSE_UNTIL_PRESS}");
+const u8 gText_NoRegistry[] = _("No hay datos.{PAUSE_UNTIL_PRESS}");
+const u8 gText_DelRegist[] = _("Borrar Datos");
+const u8 gText_Var3Var1SlashVar2[] = _("{STR_VAR_3}{STR_VAR_1}/{STR_VAR_2}"); // Unused
 const u8 gText_Decorate[] = _("Decorar");
 const u8 gText_PutAway[] = _("Guardar");
 const u8 gText_Toss2[] = _("Tirar");
 const u8 gText_Color161Shadow161[] = _("{COLOR 161}{SHADOW 161}");
-const u8 gText_PutOutSelectedDecorItem[] = _("Escoger un objeto para decorar.");
-const u8 gText_StoreChosenDecorInPC[] = _("Guardar el adorno escogido en el PC.");
-const u8 gText_ThrowAwayUnwantedDecors[] = _("Eliminar los adornos no deseados.");
-const u8 gText_NoDecorations[] = _("No hay objetos para decorar.{PAUSE_UNTIL_PRESS}");
+const u8 gText_PutOutSelectedDecorItem[] = _("Guarda el objeto.");
+const u8 gText_StoreChosenDecorInPC[] = _("Mueve el objeto al PC.");
+const u8 gText_ThrowAwayUnwantedDecors[] = _("Deshácete de objetos indeseados.");
+const u8 gText_NoDecorations[] = _("No hay decoraciones.{PAUSE_UNTIL_PRESS}");
 const u8 gText_Desk[] = _("Mesa");
 const u8 gText_Chair[] = _("Silla");
 const u8 gText_Plant[] = _("Planta");
-const u8 gText_Ornament[] = _("Adorno");
-const u8 gText_Mat[] = _("Tapete");
+const u8 gText_Ornament[] = _("???");
+const u8 gText_Mat[] = _("Alfombra");
 const u8 gText_Poster[] = _("Póster");
-const u8 gText_Doll[] = _("Muñeco");
-const u8 gText_Cushion[] = _("Cojín");
+const u8 gText_Doll[] = _("Peluche");
+const u8 gText_Cushion[] = _("Almohadón");
 const u8 gText_Gold[] = _("Oro");
 const u8 gText_Silver[] = _("Plata");
-const u8 gText_PlaceItHere[] = _("¿Lo colocas aquí?");
-const u8 gText_CantBePlacedHere[] = _("Aquí no se puede colocar.");
-const u8 gText_CancelDecorating[] = _("¿Quieres dejar de decorar?");
-const u8 gText_InUseAlready[] = _("Ya se está utilizando.");
-const u8 gText_NoMoreDecorations[] = _("No se pueden colocar más adornos.\nLa cantidad máxima permitida es {STR_VAR_1}.");
-const u8 gText_NoMoreDecorations2[] = _("No se pueden colocar más adornos.\nLa cantidad máxima permitida es {STR_VAR_1}.");
-const u8 gText_MustBePlacedOnDesk[] = _("This can't be placed here.\nIt must be on a Desk, etc.");
-const u8 gText_CantPlaceInRoom[] = _("Este adorno no se puede colocar\nen tu habitación.");
-const u8 gText_CantThrowAwayInUse[] = _("Este adorno se está usando.\nNo se puede tirar.");
-const u8 gText_DecorationWillBeDiscarded[] = _("¿Seguro que quieres \ntirar {STR_VAR_1}?");
-const u8 gText_DecorationThrownAway[] = _("Has tirado el adorno.");
-const u8 gText_StopPuttingAwayDecorations[] = _("¿Quieres dejar de guardar adornos?");
-const u8 gText_NoDecorationHere[] = _("Aquí no hay adornos.");
-const u8 gText_ReturnDecorationToPC[] = _("¿Vuelves a guardarlo en el PC?");
-const u8 gText_DecorationReturnedToPC[] = _("Se ha devuelto el adorno al PC.");
-const u8 gText_NoDecorationsInUse[] = _("No se están usando adornos.{PAUSE_UNTIL_PRESS}");
+const u8 gText_PlaceItHere[] = _("¿Ponerlo aquí?");
+const u8 gText_CantBePlacedHere[] = _("No puedes dejarlo aquí.");
+const u8 gText_CancelDecorating[] = _("¿Dejar de decorar?");
+const u8 gText_InUseAlready[] = _("Ya lo estás usando.");
+const u8 gText_NoMoreDecorations[] = _("Si usas una decoración más, el piso\nse romperá. El máximo son {STR_VAR_1}.");
+const u8 gText_NoMoreDecorations2[] = _("Si usas una decoración más, el piso\nse romperá. El máximo son {STR_VAR_1}.");
+const u8 gText_CantPlaceInRoom[] = _("No puedes ponerlo en tu cuarto.");
+const u8 gText_CantThrowAwayInUse[] = _("Estás usando este objeto.\nNo puedes tirarlo así.");
+const u8 gText_DecorationWillBeDiscarded[] = _("Vas a tirar este {STR_VAR_1}.\n¿Te parece bien?");
+const u8 gText_DecorationThrownAway[] = _("La decoración fue desechada.");
+const u8 gText_StopPuttingAwayDecorations[] = _("¿Dejar de guardar objetos?");
+const u8 gText_NoDecorationHere[] = _("No hay nada aquí.");
+const u8 gText_ReturnDecorationToPC[] = _("¿Guardar esta decoración?");
+const u8 gText_DecorationReturnedToPC[] = _("La decoración fue guardada en el PC.");
+const u8 gText_NoDecorationsInUse[] = _("No hay ninguna decoración.{PAUSE_UNTIL_PRESS}");
+#else
+	
+const u8 gText_XNatureMetAtYZ[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, met in\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}. ");
+
+const u8 gText_XNatureHatchedAtYZ[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, hatched in\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}. ");
+
+
+const u8 gText_XNatureObtainedInTrade[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, met\pon a trade. ");
+
+
+const u8 gText_XNatureFatefulEncounter[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, met in\na fateful encounter in a mysterious place. ");
+
+const u8 gText_XNatureFatefulEncounterAtYZ[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, met in\na fateful encounter at {DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}. ");
+
+
+const u8 gText_XNatureProbablyMetAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, met, it seems,\nin {DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}. ");
+
+
+const u8 gText_XNature[] = _("{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}");
+
+const u8 gText_XNatureMetSomewhereAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, met\nsomewhere. ");
+
+
+const u8 gText_XNatureHatchedSomewhereAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07}, hatched\nsomewhere. ");
+
+const u8 gText_OddEggFoundByCouple[] = _("An odd POKéMON EGG found\nby the DAY CARE couple.");
+const u8 gText_PeculiarEggNicePlace[] = _("A peculiar POKéMON EGG\nobtained at the nice place.");
+const u8 gText_PeculiarEggTrade[] = _("A peculiar POKéMON EGG\nobtained in a trade.");
+const u8 gText_EggFromHotSprings[] = _("A POKéMON EGG obtained\nat the hot springs.");
+const u8 gText_EggFromTraveler[] = _("An odd POKéMON EGG\nobtained from a traveler.");
+const u8 gText_ApostropheSBase[] = _("'s BASE");
+const u8 gText_OkayToDeleteFromRegistry[] = _("Is it okay to delete {STR_VAR_1}\nfrom the REGISTRY?");
+const u8 gText_RegisteredDataDeleted[] = _("The registered data was deleted.{PAUSE_UNTIL_PRESS}");
+const u8 gText_NoRegistry[] = _("There is no REGISTRY.{PAUSE_UNTIL_PRESS}");
+const u8 gText_DelRegist[] = _("DEL REGIST.");
+const u8 gText_Var3Var1SlashVar2[] = _("{STR_VAR_3}{STR_VAR_1}/{STR_VAR_2}"); // Unused
+const u8 gText_Decorate[] = _("DECORATE");
+const u8 gText_PutAway[] = _("PUT AWAY");
+const u8 gText_Toss2[] = _("TOSS");
+const u8 gText_Color161Shadow161[] = _("{COLOR 161}{SHADOW 161}");
+const u8 gText_PutOutSelectedDecorItem[] = _("Put out the selected decoration item.");
+const u8 gText_StoreChosenDecorInPC[] = _("Store the chosen decoration in the PC.");
+const u8 gText_ThrowAwayUnwantedDecors[] = _("Throw away unwanted decorations.");
+const u8 gText_NoDecorations[] = _("There are no decorations.{PAUSE_UNTIL_PRESS}");
+const u8 gText_Desk[] = _("DESK");
+const u8 gText_Chair[] = _("CHAIR");
+const u8 gText_Plant[] = _("PLANT");
+const u8 gText_Ornament[] = _("ORNAMENT");
+const u8 gText_Mat[] = _("MAT");
+const u8 gText_Poster[] = _("POSTER");
+const u8 gText_Doll[] = _("DOLL");
+const u8 gText_Cushion[] = _("CUSHION");
+const u8 gText_Gold[] = _("GOLD");
+const u8 gText_Silver[] = _("SILVER");
+const u8 gText_PlaceItHere[] = _("Place it here?");
+const u8 gText_CantBePlacedHere[] = _("It can't be placed here.");
+const u8 gText_CancelDecorating[] = _("Cancel decorating?");
+const u8 gText_InUseAlready[] = _("This is in use already.");
+const u8 gText_NoMoreDecorations[] = _("No more decorations can be placed.\nThe most that can be placed are {STR_VAR_1}.");
+const u8 gText_CantPlaceInRoom[] = _("This decoration can't be placed in\nyour own room.");
+const u8 gText_CantThrowAwayInUse[] = _("This decoration is in use.\nIt can't be thrown away.");
+const u8 gText_DecorationWillBeDiscarded[] = _("This {STR_VAR_1} will be discarded.\nIs that okay?");
+const u8 gText_DecorationThrownAway[] = _("The decoration item was thrown away.");
+const u8 gText_StopPuttingAwayDecorations[] = _("Stop putting away decorations?");
+const u8 gText_NoDecorationHere[] = _("There is no decoration item here.");
+const u8 gText_ReturnDecorationToPC[] = _("Return this decoration to the PC?");
+const u8 gText_DecorationReturnedToPC[] = _("The decoration was returned to the PC.");
+const u8 gText_NoDecorationsInUse[] = _("There are no decorations in use.{PAUSE_UNTIL_PRESS}");
+#endif
 const u8 gText_Tristan[] = _("Fernando");
 const u8 gText_Philip[] = _("Alejandro");
 const u8 gText_Dennis[] = _("Flavio");
@@ -1289,7 +1392,7 @@ const u8 gText_QuestComplete[] =_("completada");
 const u8 gText_QuestActive[] =_("activada");
 
 //names
-const u8 gText_SideQuestName_1[] = _("Side Quest 1");
+const u8 gText_SideQuestName_1[] = _("¡Batalla contra {RIVAL}!");
 const u8 gText_SideQuestName_2[] = _("Side Quest 2");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
 const u8 gText_SideQuestName_4[] = _("Side Quest 4");
@@ -1321,7 +1424,7 @@ const u8 gText_SideQuestName_29[] = _("Side Quest 29");
 const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
-const u8 gText_SideQuestDesc_1[] = _("Description 1");
+const u8 gText_SideQuestDesc_1[] = _("Encuentra a {RIVAL} en ");
 const u8 gText_SideQuestDesc_2[] = _("Description 2");
 const u8 gText_SideQuestDesc_3[] = _("Description 3");
 const u8 gText_SideQuestDesc_4[] = _("Description 4");

@@ -123,7 +123,7 @@
     {
       "id": "HEAL_LOCATION_DEWFORD_TOWN",
       "map": "MAP_DEWFORD_TOWN",
-      "x": 8,
+      "x": 22,
       "y": 14,
       "respawn_map": "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_DEWFORD_NURSE"
@@ -131,16 +131,16 @@
     {
       "id": "HEAL_LOCATION_LAVARIDGE_TOWN",
       "map": "MAP_LAVARIDGE_TOWN",
-      "x": 9,
-      "y": 6,
+      "x": 17,
+      "y": 10,
       "respawn_map": "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_LAVARIDGE_NURSE"
     },
     {
       "id": "HEAL_LOCATION_FALLARBOR_TOWN",
       "map": "MAP_FALLARBOR_TOWN",
-      "x": 15,
-      "y": 8,
+      "x": 17,
+      "y": 7,
       "respawn_map": "MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_FALLARBOR_NURSE"
     },

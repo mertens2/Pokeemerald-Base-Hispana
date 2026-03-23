@@ -303,72 +303,77 @@ static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
 // [TRAINER_CLASS_XYZ] = { _("name"), <money=5>, <ball=BALL_POKE> }
 const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 {
-    [TRAINER_CLASS_PKMN_TRAINER_1] = { _("ENTRENADOR") },
-    [TRAINER_CLASS_PKMN_TRAINER_2] = { _("ENTRENADOR") },
-    [TRAINER_CLASS_HIKER] = { _("MONTAÑERO"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
-    [TRAINER_CLASS_TEAM_AQUA] = { _("EQUIPO AQUA") },
-    [TRAINER_CLASS_PKMN_BREEDER] = { _("CRIAPOKéMON"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_HEAL : BALL_FRIEND },
-    [TRAINER_CLASS_COOLTRAINER] = { _("ENTRE. GUAY"), 12, BALL_ULTRA },
-    [TRAINER_CLASS_BIRD_KEEPER] = { _("ORNITÓLOGO"), 8 },
-    [TRAINER_CLASS_COLLECTOR] = { _("POKéCOLECTOR"), 15, BALL_PREMIER },
-    [TRAINER_CLASS_SWIMMER_M] = { _("NADADOR"), 2, BALL_DIVE },
-    [TRAINER_CLASS_TEAM_MAGMA] = { _("EQUIPO MAGMA") },
-    [TRAINER_CLASS_EXPERT] = { _("POKéABU"), 10 },
-    [TRAINER_CLASS_AQUA_ADMIN] = { _("ADMIN. AQUA"), 10 },
-    [TRAINER_CLASS_BLACK_BELT] = { _("KARATEKA"), 8, BALL_ULTRA },
-    [TRAINER_CLASS_AQUA_LEADER] = { _("LÍDER AQUA"), 20, BALL_MASTER },
-    [TRAINER_CLASS_HEX_MANIAC] = { _("BRUJITA"), 6 },
-    [TRAINER_CLASS_AROMA_LADY] = { _("SRTA. AROMA"), 10 },
-    [TRAINER_CLASS_RUIN_MANIAC] = { _("RUINAMANÍACO"), 15 },
-    [TRAINER_CLASS_INTERVIEWER] = { _("PERIODISTAS"), 12 },
-    [TRAINER_CLASS_TUBER_F] = { _("PLAYERA"), 1 },
-    [TRAINER_CLASS_TUBER_M] = { _("PLAYERO"), 1 },
-    [TRAINER_CLASS_LADY] = { _("DAMISELA"), 50 },
-    [TRAINER_CLASS_BEAUTY] = { _("BELLA"), 20, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_GREAT : BALL_POKE },
-    [TRAINER_CLASS_RICH_BOY] = { _("NIÑO BIEN"), 50 },
-    [TRAINER_CLASS_POKEMANIAC] = { _("POKéMANÍACO"), 15 },
-    [TRAINER_CLASS_GUITARIST] = { _("GUITARRISTA"), 8 },
-    [TRAINER_CLASS_KINDLER] = { _("FOGONERO"), 8 },
-    [TRAINER_CLASS_CAMPER] = { _("CAMPISTA"), 4 },
-    [TRAINER_CLASS_PICNICKER] = { _("DOMINGUERA"), 4 },
-    [TRAINER_CLASS_BUG_MANIAC] = { _("BICHOMANÍACO"), 15 },
-    [TRAINER_CLASS_PSYCHIC] = { _("MÉDIUM"), 6 },
-    [TRAINER_CLASS_GENTLEMAN] = { _("CABALLERO"), 20, BALL_LUXURY },
-    [TRAINER_CLASS_ELITE_FOUR] = { _("ALTO MANDO"), 25, BALL_ULTRA },
-    [TRAINER_CLASS_LEADER] = { _("LÍDER"), 25, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
-    [TRAINER_CLASS_SCHOOL_KID] = { _("ESCOLAR") },
-    [TRAINER_CLASS_SR_AND_JR] = { _("ESTUDIANTES"), 4 },
-    [TRAINER_CLASS_WINSTRATE] = { _("ESTRATEGA"), 10 },
-    [TRAINER_CLASS_POKEFAN] = { _("POKéFAN"), 20 },
-    [TRAINER_CLASS_YOUNGSTER] = { _("JOVEN"), 4 },
-    [TRAINER_CLASS_CHAMPION] = { _("CAMPEÓN"), 50, BALL_ULTRA },
-    [TRAINER_CLASS_FISHERMAN] = { _("PESCADOR"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_DIVE : BALL_LURE },
-    [TRAINER_CLASS_TRIATHLETE] = { _("TRIATLETA"), 10 },
-    [TRAINER_CLASS_DRAGON_TAMER] = { _("DOMADRAGÓN"), 12 },
-    [TRAINER_CLASS_NINJA_BOY] = { _("CHICO NINJA"), 3 },
-    [TRAINER_CLASS_BATTLE_GIRL] = { _("LUCHADORA"), 6 },
-    [TRAINER_CLASS_PARASOL_LADY] = { _("DAMA PARASOL"), 10 },
-    [TRAINER_CLASS_SWIMMER_F] = { _("NADADORA"), 2, BALL_DIVE },
-    [TRAINER_CLASS_TWINS] = { _("GEMELAS"), 3 },
-    [TRAINER_CLASS_SAILOR] = { _("MARINERO"), 8 },
-    [TRAINER_CLASS_COOLTRAINER_2] = { _("ENTRE. GUAY"), 5, BALL_ULTRA },
-    [TRAINER_CLASS_MAGMA_ADMIN] = { _("ADMIN. MAGMA"), 10 },
-    [TRAINER_CLASS_RIVAL] = { _("ENTRENADOR"), 15 },
-    [TRAINER_CLASS_BUG_CATCHER] = { _("CAZABICHOS"), 4 },
-    [TRAINER_CLASS_PKMN_RANGER] = { _("POKéGUARDA"), 12 },
-    [TRAINER_CLASS_MAGMA_LEADER] = { _("JEFE MAGMA"), 20, BALL_MASTER },
-    [TRAINER_CLASS_LASS] = { _("CHICA"), 4 },
-    [TRAINER_CLASS_YOUNG_COUPLE] = { _("PAREJA JOVEN"), 8 },
-    [TRAINER_CLASS_OLD_COUPLE] = { _("PAREJA MAYOR"), 10 },
-    [TRAINER_CLASS_SIS_AND_BRO] = { _("HERMANOS"), 3 },
-    [TRAINER_CLASS_SALON_MAIDEN] = { _("DAMA TORRE"), 5, BALL_ULTRA },
-    [TRAINER_CLASS_DOME_ACE] = { _("ASTRO CÚPULA") },
-    [TRAINER_CLASS_PALACE_MAVEN] = { _("AMO PALACIO") },
-    [TRAINER_CLASS_ARENA_TYCOON] = { _("MAESTRA DOJO") },
-    [TRAINER_CLASS_FACTORY_HEAD] = { _("JEFE FÁBRICA") },
-    [TRAINER_CLASS_PIKE_QUEEN] = { _("REINA SIERPE") },
-    [TRAINER_CLASS_PYRAMID_KING] = { _("REY PIRÁMIDE") },
-    [TRAINER_CLASS_RS_PROTAG] = { _("ENTRENADOR") },
+    [TRAINER_CLASS_PKMN_TRAINER_1] = { _("Entrenador") },
+    [TRAINER_CLASS_PKMN_TRAINER_2] = { _("Entrenadora") },
+    [TRAINER_CLASS_HIKER] = { _("Montañero"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
+    [TRAINER_CLASS_TEAM_AQUA] = { _("Recluta del") },
+    [TRAINER_CLASS_PKMN_BREEDER] = { _("Criapokémon"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_HEAL : BALL_FRIEND },
+    [TRAINER_CLASS_COOLTRAINER] = { _("Entrenador de Élite"), 12, BALL_ULTRA },
+    [TRAINER_CLASS_BIRD_KEEPER] = { _("Ornitólogo"), 8 },
+    [TRAINER_CLASS_COLLECTOR] = { _("Pokécolector"), 15, BALL_PREMIER },
+    [TRAINER_CLASS_SWIMMER_M] = { _("Nadador"), 2, BALL_DIVE },
+    [TRAINER_CLASS_TEAM_MAGMA] = { _("Recluta del") },
+    [TRAINER_CLASS_EXPERT] = { _("Especialista Pokémon"), 10 },
+    [TRAINER_CLASS_AQUA_ADMIN] = { _("Admin Aqua"), 15 },
+    [TRAINER_CLASS_BLACK_BELT] = { _("Rey del Kárate"), 8, BALL_ULTRA },
+    [TRAINER_CLASS_AQUA_LEADER] = { _("Líder Aqua"), 20, BALL_DIVE },
+    [TRAINER_CLASS_HEX_MANIAC] = { _("Ocultomaníaca"), 6 , BALL_DUSK },
+    [TRAINER_CLASS_AROMA_LADY] = { _("Lady Aroma"), 10 },
+    [TRAINER_CLASS_RUIN_MANIAC] = { _("Ruinamaníaco"), 15 },
+    [TRAINER_CLASS_INTERVIEWER] = { _("Periodistas"), 12 },
+    [TRAINER_CLASS_TUBER_F] = { _("Niña Flotadores"), 1 },
+    [TRAINER_CLASS_TUBER_M] = { _("Niño Flotadores"), 1 },
+    [TRAINER_CLASS_LADY] = { _("Damisela"), 50 },
+    [TRAINER_CLASS_BEAUTY] = { _("Modelo"), 20, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_GREAT : BALL_POKE },
+    [TRAINER_CLASS_RICH_BOY] = { _("Ricachón"), 50 },
+    [TRAINER_CLASS_POKEMANIAC] = { _("Pokémaníaco"), 15 },
+    [TRAINER_CLASS_GUITARIST] = { _("Guitarrista"), 8 },
+    [TRAINER_CLASS_KINDLER] = { _("Prendefuegos"), 8 },
+    [TRAINER_CLASS_CAMPER] = { _("Campista"), 4 },
+    [TRAINER_CLASS_PICNICKER] = { _("Dominguera"), 4 },
+    [TRAINER_CLASS_BUG_MANIAC] = { _("Bichomaníaco"), 15 },
+    [TRAINER_CLASS_PSYCHIC] = { _("Médium"), 6 },
+    [TRAINER_CLASS_GENTLEMAN] = { _("Caballero"), 20, BALL_LUXURY },
+    [TRAINER_CLASS_ELITE_FOUR] = { _("Élite Cuatro"), 25, BALL_ULTRA },
+    [TRAINER_CLASS_LEADER] = { _("Líder de Gimnasio"), 25, BALL_ULTRA },
+    [TRAINER_CLASS_SCHOOL_KID] = { _("Escolar") },
+    [TRAINER_CLASS_SR_AND_JR] = { _("Pareja Estudiantil"), 4 },
+    [TRAINER_CLASS_WINSTRATE] = { _("Estratega"), 10 },
+    [TRAINER_CLASS_POKEFAN] = { _("Pokéfan"), 20 },
+    [TRAINER_CLASS_YOUNGSTER] = { _("Jóven"), 4 },
+    [TRAINER_CLASS_CHAMPION] = { _("Campeón Regional"), 50, BALL_ULTRA },
+    [TRAINER_CLASS_FISHERMAN] = { _("Pescador"), 10, BALL_LURE },
+    [TRAINER_CLASS_TRIATHLETE] = { _("Triatleta"), 10 },
+    [TRAINER_CLASS_DRAGON_TAMER] = { _("Domadragón"), 12 },
+    [TRAINER_CLASS_NINJA_BOY] = { _("Chico Ninja"), 3 },
+    [TRAINER_CLASS_BATTLE_GIRL] = { _("Luchadora"), 6 },
+    [TRAINER_CLASS_PARASOL_LADY] = { _("Lady Parasol"), 10 },
+    [TRAINER_CLASS_SWIMMER_F] = { _("Nadadora"), 2, BALL_DIVE },
+    [TRAINER_CLASS_TWINS] = { _("Gemelas"), 3 },
+    [TRAINER_CLASS_SAILOR] = { _("Marinero"), 8 },
+    [TRAINER_CLASS_COOLTRAINER_2] = { _("Entrenadora de Élite"), 5, BALL_ULTRA },
+    [TRAINER_CLASS_MAGMA_ADMIN] = { _("Admin Magma"), 15 },
+    [TRAINER_CLASS_RIVAL] = { _("Rival"), 15 },
+    [TRAINER_CLASS_BUG_CATCHER] = { _("Cazabichos"), 4 },
+    [TRAINER_CLASS_PKMN_RANGER] = { _("Pokémon Ranger"), 12 },
+    [TRAINER_CLASS_MAGMA_LEADER] = { _("Líder Magma"), 20, BALL_MASTER },
+    [TRAINER_CLASS_LASS] = { _("Chica"), 4 },
+    [TRAINER_CLASS_YOUNG_COUPLE] = { _("Pareja Joven"), 8 },
+    [TRAINER_CLASS_OLD_COUPLE] = { _("Pareja Mayor"), 10 },
+    [TRAINER_CLASS_SIS_AND_BRO] = { _("Hermanos"), 3 },
+    [TRAINER_CLASS_SALON_MAIDEN] = { _("Dama Torre"), 5, BALL_ULTRA },
+    [TRAINER_CLASS_DOME_ACE] = { _("Astro Cúpula") },
+    [TRAINER_CLASS_PALACE_MAVEN] = { _("Amo Palacio") },
+    [TRAINER_CLASS_ARENA_TYCOON] = { _("Maestra Dojo") },
+    [TRAINER_CLASS_FACTORY_HEAD] = { _("Jefe Fábrica") },
+    [TRAINER_CLASS_PIKE_QUEEN] = { _("Reina Sierpe") },
+    [TRAINER_CLASS_PYRAMID_KING] = { _("Rey Pirámide") },
+    [TRAINER_CLASS_RS_PROTAG] = { _("Protagonista") },
+    [TRAINER_CLASS_DELTA_GRUNT] = { _("Miembro de la"), 15, BALL_QUICK },
+    [TRAINER_CLASS_DELTA_ADMIN] = { _("Alto Rango Delta"), 20, BALL_QUICK },
+    [TRAINER_CLASS_DELTA_LEADER] = { _("Élite Delta"), 40, BALL_QUICK },
+    [TRAINER_CLASS_LEADER_CANDIDATE] = { _("Aspirante a Líder"), 10, BALL_DUSK },
+    [TRAINER_CLASS_HIGH_RANKING_GRUNT] = { _("Alto Rango del"), 10, BALL_ULTRA },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
@@ -1842,48 +1847,74 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
-u8 GetLevelCap(u8 currLevel){
-	u8 badgeCount = 0;
-    u32 i;
+struct LevelCap {
+	u8 level;
+};
 
-    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
+static const struct LevelCap BadgeCaps[9] = {
+	[0] = { .level = 10,},
+	[1] = { .level = 15,},
+	[2] = { .level = 18,},
+	[3] = { .level = 22,},
+	[4] = { .level = 30,},
+	[5] = { .level = 34,},
+	[6] = { .level = 40,},
+	[7] = { .level = 46,},
+	[8] = { .level = 54,},
+};
+
+u8 GetLevelCap(u8 currLevel, u32 levelModifier, const struct Trainer *trainer){
+	u8 badgeCount = 0;
+	u8 oldLevel, levelDifference;
+    u32 i;
+	s8 levelVariance = 0;
+	oldLevel = currLevel;
+	levelDifference = 0;
+	if (Random()%2) // give some variety to Pokémon in enemy parties
+		levelVariance -= Random()%3; // either 1 or 2 levels below usual
+	else
+		levelVariance += Random()%3; // or 1 or 2 levels above
+	
+    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++) // count badges
     {
         if (FlagGet(i))
             badgeCount++;
     }
-	if (gSaveBlock2Ptr->optionsBadgeScaling) {
-		switch(badgeCount)
-		{
-			case 0:
-				break;
-			case 1:
-				currLevel = LEVEL_CAP_GYM_1;
-				break;
-			case 2:
-				currLevel = LEVEL_CAP_GYM_2;
-				break;
-			case 3:
-				currLevel = LEVEL_CAP_GYM_3;
-				break;
-			case 4:
-				currLevel = LEVEL_CAP_GYM_4;
-				break;
-			case 5:
-				currLevel = LEVEL_CAP_GYM_5;
-				break;
-			case 6:
-				currLevel = LEVEL_CAP_GYM_6;
-				break;
-			case 7:
-				currLevel = LEVEL_CAP_GYM_7;
-				break;
-			case 8:
-				currLevel = LEVEL_CAP_GYM_8;
-				break;
-		}
+	if (badgeCount == 0){ // if no badges have been gotten, skip the entire function, available trainers are already balanced around this
+		return currLevel;
 	}
-	// if (gSaveBlock2Ptr->optionsLevelScaling == 1 && currLevel < )
-	return currLevel;
+	if (gSaveBlock2Ptr->optionsBadgeScaling) { // if badge balancing is on, get the level cap from BadgeCaps
+		currLevel = BadgeCaps[badgeCount].level;
+	}
+	else {
+		return currLevel; // if the badge balancing is off, however, skip the rest of the function and return the input level
+	}
+	
+	switch (trainer->trainerClass)
+	{
+		case TRAINER_CLASS_ELITE_FOUR:
+		case TRAINER_CLASS_CHAMPION:
+			return oldLevel; // champions and elite four members are already balanced
+		// case TRAINER_CLASS_AQUA_ADMIN:
+		// case TRAINER_CLASS_AQUA_LEADER:
+		// case TRAINER_CLASS_MAGMA_ADMIN:
+		// case TRAINER_CLASS_MAGMA_LEADER:
+		case TRAINER_CLASS_LEADER: // gym leaders are the level cap, so only balancing needed is setting them to the level cap
+			break;
+		default: // anybody else
+			for (i=0;i<9;i++){ // search through badges...
+				if (oldLevel <= BadgeCaps[i].level){ // ... and stop once the current level is lower than the level cap
+					break;
+				}
+				if (oldLevel >= BadgeCaps[i].level){ // if the trainer's original is a higher level than a level cap...
+					levelDifference = (oldLevel - BadgeCaps[i].level); // ... calculate the level difference between this level cap and the trainer's level
+				}
+			}
+			currLevel += levelDifference; // to give a sense of progression compared to the current level cap
+			break;
+	}
+	currLevel += levelVariance; // add in the previously calculated level variance
+	return currLevel + levelModifier; // and lastly, add a level modifier in case specific level gap between trainer and player is always needed
 }
 
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
@@ -1924,6 +1955,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 abilityNum = 0;
 			u32 evs[6];
 			u8 j;
+			u8 level;
+			
+				
 			for (j=0;j<6;j++)
 				evs[j] = (partyData[monIndex].ev[j] / 4);
 
@@ -1942,24 +1976,26 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (partyData[monIndex].gender == TRAINER_MON_RANDOM_GENDER)
                 personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(Random() & 1 ? MON_MALE : MON_FEMALE, partyData[monIndex].species);
             ModifyPersonalityForNature(&personalityValue, partyData[monIndex].nature);
-            if (partyData[monIndex].isShiny)
+            if (partyData[monIndex].isShiny || (FlagGet(P_FLAG_FORCE_SHINY) && VarGet(VAR_SHINY_FIRST_CHOICE) == partyData[monIndex].species))
             {
+				FlagClear(P_FLAG_FORCE_SHINY);
+				VarSet(VAR_SHINY_FIRST_CHOICE, 0);
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-			switch (trainer->trainerClass)
-			{
-			case TRAINER_CLASS_ELITE_FOUR:
-			case TRAINER_CLASS_CHAMPION:
-			case TRAINER_CLASS_AQUA_ADMIN:
-			case TRAINER_CLASS_AQUA_LEADER:
-			case TRAINER_CLASS_MAGMA_ADMIN:
-			case TRAINER_CLASS_MAGMA_LEADER:
-			case TRAINER_CLASS_LEADER:
-				GetLevelCap(partyData[monIndex].lvl);
-				break;
-			}
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+			// switch (trainer->trainerClass)
+			// {
+			// case TRAINER_CLASS_ELITE_FOUR:
+			// case TRAINER_CLASS_CHAMPION:
+			// case TRAINER_CLASS_AQUA_ADMIN:
+			// case TRAINER_CLASS_AQUA_LEADER:
+			// case TRAINER_CLASS_MAGMA_ADMIN:
+			// case TRAINER_CLASS_MAGMA_LEADER:
+			// case TRAINER_CLASS_LEADER:
+				level = GetLevelCap(partyData[monIndex].lvl, VarGet(VAR_LEVEL_CAP_MODIFIER), trainer);
+				// break;
+			// }
+            CreateMon(&party[i], partyData[monIndex].species, level, 0, TRUE, personalityValue, otIdType, fixedOtId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);

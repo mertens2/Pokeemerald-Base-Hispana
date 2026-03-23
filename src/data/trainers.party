@@ -105,7 +105,7 @@ Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -118,7 +118,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -131,7 +131,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -144,7 +144,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -190,7 +190,7 @@ Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_PETALBURG_WOODS ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -259,7 +259,7 @@ Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_4 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -285,7 +285,7 @@ Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -298,7 +298,7 @@ Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -327,7 +327,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Aqua Tail
 
 === TRAINER_GRUNT_WEATHER_INST_2 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -360,7 +360,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Aqua Jet
 
 === TRAINER_GRUNT_WEATHER_INST_3 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -381,7 +381,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MUSEUM_1 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -408,7 +408,7 @@ Shiny: Yes
 - Bind
 
 === TRAINER_GRUNT_MUSEUM_2 ===
-Name: Reclutas
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -451,7 +451,7 @@ Shiny: Yes
 - Icy Wind
 
 === TRAINER_GRUNT_SPACE_CENTER_1 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -464,7 +464,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_1 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -472,12 +472,12 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Qwilfish-Hisui
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_2 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -490,7 +490,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_3 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -498,29 +498,45 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
+Croconaw
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
+Cloyster
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_4 ===
-Name: Recluta
-Class: Team Aqua
+Name: Equipo Aqua
+Class: High Ranking Grunt
 Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magikarp @ Mystic Water
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Swift Swim
+- Hydro Pump
+- Flail
+- Splash
+- Hurricane
+
+Feebas @ Leftovers
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Adaptability
+- Hydro Pump
+- Ice Beam
+- Splash
+- Rain Dance
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_5 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -533,7 +549,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -903,7 +919,7 @@ Roselia
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DUSTY_1 ===
+=== TRAINER_DUSTY ===
 Name: DUSTY
 Class: Ruin Maniac
 Pic: Ruin Maniac
@@ -978,56 +994,212 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sand Attack
 - Poison Sting
 
-=== TRAINER_DUSTY_2 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_MARKUS ===
+Name: Markus
+Class: Leader Candidate
+Pic: Hiker
 Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
+Music: Intense
+Double Battle: Yes
+Party Size: 2
+Pool Rules: Weather Doubles
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 
-Sandslash
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
 
-=== TRAINER_DUSTY_3 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Riolu
+Level: 18
+Ability: Prankster
+Tags: Weather Abuser
+IVs: 15 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 0 Spe
+EVs: 252 SpA
+- Aura Shot
+- Chakra Crack
+- Calm Mind
+- Taunt
+
+Riolu
+Level: 18
+Ability: Prankster
+Tags: Weather Abuser
+IVs: 15 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 0 Spe
+EVs: 252 SpA
+- Aura Shot
+- Chakra Crack
+- Roar
+- Growl
+
+Clobbopus
+Level: 18
+Ability: Technician
+Tags: Weather Setter
+IVs: 31 Atk
+EVs: 252 Atk
+- Aqua Jet
+- Rock Smash
+- Rock Throw
+- Throat Chop
+
+Clobbopus
+Level: 18
+Ability: Technician
+Tags: Weather Setter
+IVs: 0 Atk
+EVs: 0 Atk
+- Aqua Jet
+- Rock Smash
+- Thunder Punch
+- Ice Punch
+
+=== TRAINER_LOLA ===
+Name: Lola
+Class: Leader Candidate
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: Yes
+Party Size: 2
+Pool Rules: Weather Doubles
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Pancham
+Level: 18
+Ability: Iron Fist
+IVs: 15 Atk
+EVs: 128 Atk / 128 HP
+Tags: Weather Abuser
+- Bullet Punch
+- Pretend Punch
+- Power Up Punch
+- Mach Punch
+
+Pancham
+Level: 18
+Ability: Iron Fist
+IVs: 15 HP
+EVs: 252 HP
+Tags: Weather Abuser
+- Bullet Punch
+- Pretend Punch
+- Drain Punch
+- Mach Punch
+
+Pulseman  (Ledian) (M)
+Level: 18
+Ability: Galvanize
+IVs: 15 Atk
+EVs: 128 Atk / 128 SpD
+Tags: Weather Setter
+- Take Down
+- Quick Attack
+- Power Up Punch
+- Bug Bite
+
+Pulseman (Ledian) (M) @ Terrain Extender
+Level: 18
+Ability: Surge Surfer
+IVs: 15 Atk
+EVs: 128 Atk / 128 SpD
+Tags: Weather Setter
+- Electric Terrain
+- Short Circuit
+- Power Up Punch
+- Bug Bite
+
+
+
+=== TRAINER_BRAWLY_TRAINING_ZONE ===
+Name: Brawly
+Class: Cooltrainer
+Pic: Leader Brawly
 Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
+Music: Intense
+Double Battle: Yes
+Party Size: 4
+Pool Rules: Weather Doubles
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 
-Sandslash
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Raichu-Alola @ Electric Seed
+Tags: Lead / Weather Abuser
+Level: 18
+IVs: 15 SpA
+EVs: 128 SpA
+- Thundershock
+- Confusion
+- Signal Beam
+- Thunder Wave
 
-=== TRAINER_DUSTY_4 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
+Raichu-Alola @ Weakness Policy
+Tags: Lead / Weather Abuser
+Level: 18
+IVs: 15 SpA
+EVs: 128 SpA
+- Thundershock
+- Confusion
+- Signal Beam
+- Magnet Rise
 
-Sandslash
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Pincurchin @ Terrain Extender
+Ability: Electric Surge
+Tags: Lead / Weather Setter
+Level: 18
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Toxic
+- Water Gun
+- Soak
+- Recover
+
+Indeedee-F @ Terrain Extender
+Ability: Psychic Surge
+Tags: Lead / Weather Setter
+Level: 18
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Expanding Force
+- Heal Pulse
+- Soak
+- Common Blast
+
+Hariyama @ Flame Orb
+Ability: Guts
+Tags: Ace
+Level: 20
+IVs: 31 HP
+EVs: 64 HP
+- Bulk Up
+- Power Up Punch
+- Fire Punch
+- Slack Off
+
+Hariyama @ Flame Orb
+Ability: Guts
+Tags: Ace
+Level: 20
+IVs: 31 HP
+EVs: 64 HP
+- Bulk Up
+- Power Up Punch
+- Ice Punch
+- Slack Off
+
+Mantine @ Leftovers
+Ability: Water Absorb
+Level: 20
+IVs: 31 HP
+EVs: 64 HP
+- Surf
+- Compression Cut
+- Recover
+- Aqua Jet
+
+Goomy @ Leftovers
+Ability: Sap Sipper
+Level: 20
+IVs: 31 HP
+EVs: 64 HP
+- Surf
+- Dragon Rage
+- Recover
+- Energy Ball
+
 
 === TRAINER_DUSTY_5 ===
 Name: DUSTY
@@ -1156,8 +1328,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Supersonic
 - Hyper Voice
 
-=== TRAINER_LOLA_1 ===
-Name: LOLA
+=== TRAINER_MARIA_JOSE ===
+Name: María José
 Class: Tuber F
 Pic: Tuber F
 Gender: Female
@@ -1197,74 +1369,6 @@ AI: Check Bad Move
 
 Marill
 Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_LOLA_2 ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
-Double Battle: No
-AI: Check Bad Move
-
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_LOLA_3 ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
-Double Battle: No
-AI: Check Bad Move
-
-Marill
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Marill
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_LOLA_4 ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
-Double Battle: No
-AI: Check Bad Move
-
-Marill
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Marill
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_LOLA_5 ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
-Double Battle: No
-AI: Check Bad Move
-
-Azumarill
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Azumarill
-Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RICKY_1 ===
@@ -2295,7 +2399,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Water Pulse
 
 === TRAINER_GRUNT_SPACE_CENTER_2 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -2818,7 +2922,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_1 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -5108,6 +5212,7 @@ Pic: Leader Brawly
 Gender: Male
 Music: Male
 Double Battle: No
+Difficulty: Normal
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
 
 Meditite @ Oran Berry
@@ -5121,12 +5226,173 @@ Ball: Dive Ball
 
 Makuhita @ Flame Orb
 Level: 18
+Ability: Guts
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Dive Ball
 - Drain Punch
 - Knock Off
 - Bulk Up
 - Throat Chop
+
+
+=== TRAINER_BRAWLY_GYM_3 ===
+Name: Brawly
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Difficulty: Normal
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Meditite @ Oran Berry
+Level: 20
+IVs: 15 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dive Ball
+- Drain Punch
+- Light Screen
+- Reflect
+- Bulk Up
+
+Makuhita @ Flame Orb
+Ability: Guts
+Level: 22
+IVs: 15 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dive Ball
+- Drain Punch
+- Knock Off
+- Bulk Up
+- Throat Chop
+
+=== TRAINER_BRAWLY_GYM_3 ===
+Name: Brawly
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Difficulty: Easy
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Meditite @ Oran Berry
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dive Ball
+- Focus Punch
+- Light Screen
+- Reflect
+- Bulk Up
+
+Makuhita @ Flame Orb
+Ability: Thick Fat
+Level: 20
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dive Ball
+- Drain Punch
+- Knock Off
+- Bulk Up
+
+=== TRAINER_BRAWLY_GYM_4 ===
+Name: Brawly
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Difficulty: Normal
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Meditite @ Sitrus Berry
+Level: 28
+IVs: 31 HP / 0 Atk / 31 Def / 0 SpA / 31 SpD / 0 Spe
+Ball: Dive Ball
+- Baton Pass
+- Light Screen
+- Reflect
+- Bulk Up
+
+Sneasel-Hisui @ Sitrus Berry
+Level: 28
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dive Ball
+- Dire Claw
+- Brick Break
+- Venoshock
+- Bulk Up
+
+Hariyama @ Flame Orb
+Ability: Guts
+Level: 30
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dive Ball
+- Drain Punch
+- Knock Off
+- Bulk Up
+- Thunder Punch
+
+=== TRAINER_BRAWLY_GYM_4 ===
+Name: Brawly
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Difficulty: Easy
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Medicham @ Sitrus Berry
+Level: 28
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dive Ball
+- Pretend Punch
+- Light Screen
+- Reflect
+- Focus Punch
+
+Hariyama @ Flame Orb
+Ability: Thick Fat
+Level: 28
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Dive Ball
+- Drain Punch
+- Knock Off
+- Bulk Up
+
+=== TRAINER_WATTSON_1 ===
+Name: Wattson
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: No
+Difficulty: Easy
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Lanturn
+Level: 20
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 31 SpD / 0 Spe
+Ability: Volt Absorb
+Ball: Luxury Ball
+- Bubble
+- Signal Beam
+- Powder Snow
+- Short Circuit
+
+Magneton @ Oran Berry
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Short Circuit
+- Gyro Ball
+
+Manectric @ Sitrus Berry
+Level: 20
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Friend Ball
+Ability: Lightning Rod
+- Ice Fang
+- Short Circuit
+- Work Up
 
 === TRAINER_WATTSON_1 ===
 Name: Wattson
@@ -5277,7 +5543,7 @@ Tags: Ace
 - Short Circuit
 - Work Up
 
-=== TRAINER_WATTSON_1 ===
+=== TRAINER_WATTSON_GYM_2 ===
 Name: Wattson
 Class: Leader
 Pic: Leader Wattson
@@ -5285,36 +5551,184 @@ Gender: Male
 Music: Male
 Double Battle: No
 Difficulty: Easy
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
 
-Lanturn
-Level: 18
-Ability: Water Absorb
+Chinchou
+Level: 16
+IVs: 31 HP / 0 Atk / 0 Def / 0 SpA / 31 SpD / 0 Spe
+Ability: Volt Absorb
 Ball: Luxury Ball
-- Bubble Beam
-- Signal Beam
+- Water Gun
+- Silver Wind
+- Powder Snow
 - Short Circuit
 
-Tynamo
-Level: 18
+Magnemite @ Oran Berry
+Level: 16
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Ultra Ball
 - Short Circuit
+- Gyro Ball
+
+Electrike @ Oran Berry
+Level: 16
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Friend Ball
+Ability: Lightning Rod
+- Ice Fang
+- Short Circuit
+
+=== TRAINER_WATTSON_GYM_4 ===
+Name: Wattson
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: Yes
+Difficulty: Normal
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Lanturn
+Level: 28
+IVs: 15 HP / 15 SpA / 15 SpD
+EVs: 128 HP / 64 SpD
+Ability: Volt Absorb
+Ball: Luxury Ball
+- Surf
+- Signal Beam
+- Powder Snow
+- Short Circuit
+
+Charjabug @ Eviolite
+Level: 28
+IVs: 31 HP / 31 Def / 31 SpD
+EVs: 252 HP / 128 Def / 128 SpD
+Ability: Battery
+- Short Circuit
+- Light Screen
+- Reflect
+- Recover
+
+Toxtricity @ Throat Spray
+Level: 28
+IVs: 15 Spe
+EVs: 64 SpA
+Ability: Punk Rock
+Ball: Ultra Ball
+- Short Circuit
+- Rockstar
+- Overdrive
+- Sludge Bomb
+
+Manectric @ Electrium Z
+Level: 30
+IVs: 31 SpA / 31 Spe
+EVs: 252 SpA / 252 Spe
+Ball: Friend Ball
+Ability: Lightning Rod
+- Ice Beam
+- Thunder Wave
+- Short Circuit
+- Work Up
+
+=== TRAINER_WATTSON_GYM_4 ===
+Name: Wattson
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Double Battle: Yes
+Difficulty: Hard
+Party Size: 6
+Pool Rules: Weather Doubles
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Lanturn @ Leftovers
+Level: 32
+IVs: 15 HP / 15 SpA / 15 SpD
+EVs: 128 HP / 64 SpD
+Ability: Volt Absorb
+Ball: Luxury Ball
+Tags: Lead / Weather Abuser
+- Surf
+- Signal Beam
+- Powder Snow
+- Short Circuit
+
+Lanturn @ Life Orb
+Level: 32
+IVs: 15 HP / 15 SpA / 15 SpD
+EVs: 128 HP / 64 SpD
+Ability: Volt Absorb
+Ball: Luxury Ball
+Tags: Lead / Weather Abuser
+- Surf
+- Signal Beam
+- Powder Snow
+- Short Circuit
+
+Charjabug @ Eviolite
+Level: 32
+IVs: 31 HP / 31 Def / 31 SpD
+EVs: 252 HP / 128 Def / 128 SpD
+Ability: Battery
+Tags: Lead / Weather Setter
+- Short Circuit
+- Light Screen
+- Reflect
+- Recover
+
+Eelektrik @ Electric Gem
+Level: 32
+IVs: 15 Atk / 15 Spe
+EVs: 64 Atk / 64 SpA
+Ball: Ultra Ball
+- Short Circuit
+- Ice Fang
 - Quick Attack
 - Howl
 
-Magneton
-Level: 21
+Toxtricity @ Throat Spray
+Level: 32
+IVs: 15 SpA / 15 Spe
+EVs: 64 SpA / 64 SpA
+Ability: Punk Rock
 Ball: Ultra Ball
-- Light Screen
+- Short Circuit
+- Rockstar
+- Overdrive
+- Sludge Bomb
+
+Magneton @ Eviolite
+Level: 32
+IVs: 15 Def / 15 SpD
+EVs: 128 Def / 128 SpD
+Ball: Ultra Ball
+Ability: Analytic
+- Signal Beam
 - Short Circuit
 - Recover
 - Gyro Ball
 
+Electivire @ Electric Seed
+Level: 32
+IVs: 31 Atk / 31 Spe
+Ball: Ultra Ball
+Tags: Ace
+- Electro Crash
+- Short Circuit
+- Close Combat
+- Ice Punch
+
 Manectric @ Electrium Z
-Level: 22
+Level: 32
+IVs: 31 SpA / 31 Spe
+EVs: 252 SpA / 252 Spe
 Ball: Friend Ball
 Ability: Lightning Rod
+Tags: Ace
 - Ice Beam
+- Thunder Wave
 - Short Circuit
 - Work Up
 
@@ -5356,6 +5770,96 @@ Ball: Ultra Ball
 
 Camerupt @ Cameruptite
 Level: 30
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Overheat
+- Earth Power
+- Solar Beam
+- Attract
+
+=== TRAINER_FLANNERY_GYM_2 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Double Battle: No
+Difficulty: Normal
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Litwick @ Fire Gem
+Level: 19
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Overheat
+- Absorb
+- Hex
+
+Growlithe-Hisui @ Fire Gem
+Level: 19
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Ember
+- Earth Power
+- Rock Throw
+
+Torkoal @ White Herb
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Overheat
+- Solar Beam
+- Protect
+- Body Press
+
+Numel @ Firium Z
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Overheat
+- Earth Power
+- Solar Beam
+- Attract
+
+=== TRAINER_FLANNERY_GYM_3 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Double Battle: No
+Difficulty: Normal
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Force Setup First Turn
+
+Litwick @ Fire Gem
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Overheat
+- Energy Ball
+- Will O Wisp
+- Hex
+
+Growlithe-Hisui @ Fire Gem
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Flamethrower
+- Earth Power
+- Rock Throw
+
+Torkoal @ White Herb
+Level: 24
+Ability: Drought
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ball: Ultra Ball
+- Overheat
+- Solar Beam
+- Protect
+- Body Press
+
+Numel @ Firium Z
+Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ball: Ultra Ball
 - Overheat
@@ -11407,7 +11911,7 @@ Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_5 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -11424,7 +11928,7 @@ Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_UNUSED ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Aqua Grunt F
 Gender: Female
@@ -11441,7 +11945,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -11458,7 +11962,7 @@ Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_JAGGED_PASS ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -11621,7 +12125,7 @@ Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_2 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -11712,7 +12216,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_3 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -11729,7 +12233,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_4 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -11742,7 +12246,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_5 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -11755,7 +12259,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_6 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -11768,7 +12272,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_7 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -11874,7 +12378,7 @@ Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_5 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -12126,22 +12630,57 @@ Double Battle: No
 Difficulty: Normal
 AI: Check Bad Move
 
-Scorpio (Gligar) (M) @ Lagging Tail
+Scorpio (Gligar) (M) @ Ring Target
 Level: 7
 - Tackle
 - Bug Bite
 
-Hydro (Marill) (M) @ Lagging Tail
+Hydro (Marill) (M) @ Ring Target
 Level: 7
 Ability: Huge Power
 EVs: 64 Atk
 - Glitter Punch
 - Aqua Jet
 
-Sub-Zero (Sneasel) (M) @ Lagging Tail
+Sub-Zero (Sneasel) (M) @ Ring Target
 Level: 7
 - Pursuit
 - Powder Snow
+
+=== TRAINER_HALEY_1 ===
+Name: Asesina
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+Difficulty: Hard
+AI: Check Bad Move
+
+Hydro (Marill) (M) @ Wide Lens
+Level: 7
+Ability: Huge Power
+EVs: 64 Atk
+- Glitter Punch
+- Aqua Jet
+- Rollout
+- Tackle
+
+Sub-Zero (Sneasel) (M) @ Ring Target
+Level: 6
+- Pursuit
+- Powder Snow
+- Pretend Punch
+- Mud Slap
+
+Scorpio (Gligar) (M) @ Metronome
+Level: 8
+EVs: 64 HP
+- Fury Cutter
+- Bug Bite
+- Mud Slap
+- Failed Flight
+
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -12153,19 +12692,19 @@ Double Battle: No
 Difficulty: Easy
 AI: Check Bad Move
 
-Scorpio (Gligar) (M) @ Lagging Tail
-Level: 4
+Scorpio (Gligar) (M) @ Ring Target
+Level: 7
 - Tackle
-- Bug Bite
 
-Hydro (Marill) (M) @ Lagging Tail
+
+Hydro (Marill) (M) @ Ring Target
 Level: 4
 Ability: Swift Swim
 EVs: 8 Atk
 - Glitter Punch
 - Aqua Jet
 
-Sub-Zero (Sneasel) (M) @ Lagging Tail
+Sub-Zero (Sneasel) (M) @ Ring Target
 Level: 4
 - Pursuit
 - Powder Snow
@@ -14762,7 +15301,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Thunderbolt
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_4 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14779,7 +15318,7 @@ Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_5 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14796,7 +15335,7 @@ Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_6 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14809,7 +15348,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_7 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14822,7 +15361,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_8 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14835,7 +15374,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_9 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14848,7 +15387,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_10 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14861,7 +15400,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_11 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14874,7 +15413,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_12 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14887,7 +15426,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_13 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -14900,7 +15439,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_14 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -14913,7 +15452,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_15 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -14926,7 +15465,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_16 ===
-Name: Recluta
+Name: Equipo Magma
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -17558,7 +18097,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ANDRES_2 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Male
@@ -17581,7 +18120,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Water Pulse
 
 === TRAINER_ANDRES_3 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Male
@@ -17607,7 +18146,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Ice Punch
 
 === TRAINER_ANDRES_4 ===
-Name: Recluta
+Name: Equipo Aqua
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Male

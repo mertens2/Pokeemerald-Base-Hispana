@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_LAVARIDGE_TOWN",
-      "offset": 40,
+      "offset": 36,
       "direction": "left"
     },
     {
@@ -252,7 +252,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 22,
+      "x": 23,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_FIERY_PATH",
@@ -271,8 +271,8 @@
     },
     {
       "type": "sign",
-      "x": 22,
-      "y": 37,
+      "x": 30,
+      "y": 27,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route112_EventScript_MtChimneyCableCarSign"

@@ -9,8 +9,25 @@ script Common_EventScript_PkmnCenterNursePlaceholder {
 		goto (EventScript_PkmnCenterNurse_CheckPokerus)
 	}
 	goto(EventScript_PkmnCenterNurse_ReturnPkmn)
+	closemessage
 	end
 }
+
+script Common_Trigger_SetMartMusic {
+	playbgm (MUS_POKE_MART, FALSE)
+	applymoveplayer(Common_Movement_WalkRight)
+	setvar(VAR_TEMP_0, 1)
+	releaseall
+	return
+}
+script Common_Trigger_SetCenterMusic {
+	playbgm (MUS_POKE_CENTER, FALSE)
+	applymoveplayer(Common_Movement_WalkLeft)
+	setvar(VAR_TEMP_0, 0)
+	releaseall
+	return
+}
+
 
 script Common_EventScript_TraditionalPkmnCenterNurse {
 	lock
@@ -47,6 +64,7 @@ script Common_EventScript_TraditionalPkmnCenterNurse {
 	else {
 		goto(EventScript_PkmnCenterNurse_Goodbye)
 	}
+	closemessage
 	releaseall
 	end
 }
@@ -125,7 +143,7 @@ EventScript_PkmnCenterNurse_IllTakeYourPkmn2::
 
 EventScript_PkmnCenterNurse_TakeAndHealPkmn::
 	hidefollower 0
-	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Turn
+	applymovement VAR_0x800B, Common_Movement_WalkLeft
 	waitmovement 0
 	dofieldeffect FLDEFF_POKECENTER_HEAL
 .if OW_UNION_DISABLE_CHECK == FALSE && OW_FLAG_MOVE_UNION_ROOM_CHECK != 0
@@ -134,6 +152,8 @@ EventScript_PkmnCenterNurse_TakeAndHealPkmn::
 	clearflag OW_FLAG_MOVE_UNION_ROOM_CHECK
 .endif
 	waitfieldeffect FLDEFF_POKECENTER_HEAL
+	applymovement VAR_0x800B, Common_Movement_WalkRight
+	waitmovement 0
 	applymovement VAR_0x800B, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	special HealPlayerParty
@@ -157,6 +177,7 @@ EventScript_PkmnCenterNurse_ReturnPkmn::
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
 	message gText_WeHopeToSeeYouAgain
+	closemessage
 	return
 
 EventScript_PkmnCenterNurse_ReturnPkmn2::
@@ -165,6 +186,7 @@ EventScript_PkmnCenterNurse_ReturnPkmn2::
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
 	message gText_WeHopeToSeeYouAgain2
+	closemessage
 	return
 
 EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
@@ -176,6 +198,7 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
 	message gText_WeHopeToSeeYouAgain
+	closemessage
 	return
 
 EventScript_PkmnCenterNurse_CheckPokerus::
@@ -201,12 +224,14 @@ EventScript_PkmnCenterNurse_GoldCard::
 	msgbox gText_NoticesGoldCard, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_GoldCardHealPkmn
 	message gText_WeHopeToSeeYouAgain2
+	closemessage
 	return
 
 EventScript_PkmnCenterNurse_AskForUsual::
 	msgbox gText_YouWantTheUsual, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_GoldCardHealPkmn
 	message gText_WeHopeToSeeYouAgain2
+	closemessage
 	return
 
 EventScript_PkmnCenterNurse_GoldCardHealPkmn::
@@ -226,21 +251,27 @@ Movement_PkmnCenterNurse_Turn:
 EventScript_PkmnCenter_Clerk_1::
 	lock
 	faceplayer
+	playbgm MUS_POKE_MART, FALSE
 	message gText_HowMayIServeYou
 	waitmessage
 	pokemart 0
 	closemessage
+	fadeoutbgm 0
+	playbgm MUS_POKE_CENTER, FALSE
 	end
 
 EventScript_PkmnCenter_Clerk_2::
 	lock
 	faceplayer
+	playbgm MUS_POKE_MART, FALSE
 	setflag FLAG_SECONDMART
 	message gText_HowMayIServeYou
 	waitmessage
 	pokemart 0
 	closemessage
 	clearflag FLAG_SECONDMART
+	fadeoutbgm 0
+	playbgm MUS_POKE_CENTER, FALSE
 	end
 `
 

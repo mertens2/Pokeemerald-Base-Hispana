@@ -217,7 +217,7 @@
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40C5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40C6 // Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40C7
-#define VAR_UNUSED_0x40C8                                0x40C8 // Unused Var
+#define VAR_LEVEL_CAP_MODIFIER                           0x40C8
 #define VAR_MT_PYRE_STATE                                0x40C9
 #define VAR_NEW_MAUVILLE_STATE                           0x40CA
 #define VAR_UNUSED_0x40CB                                0x40CB // Unused Var

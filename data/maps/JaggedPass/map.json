@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 10,
+      "x": 17,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -29,12 +29,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 16,
-      "y": 35,
+      "x": 26,
+      "y": 45,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 6,
+      "movement_range_y": 6,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "JaggedPass_EventScript_Ethan",
@@ -42,23 +42,23 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 23,
-      "y": 24,
+      "x": 34,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_BURN_HEAL",
+      "trainer_sight_or_berry_tree_id": "ITEM_DUSK_BALL",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_JAGGED_PASS_BURN_HEAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 9,
-      "y": 21,
+      "x": 14,
+      "y": 32,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -69,7 +69,7 @@
     {
       "local_id": "LOCALID_MAGMA_HIDEOUT_GUARD",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
-      "x": 16,
+      "x": 23,
       "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -82,8 +82,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 14,
-      "y": 25,
+      "x": 13,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -96,7 +96,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 18,
-      "y": 25,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -105,39 +105,147 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "JaggedPass_EventScript_Julio",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_JAGGED_ABSOL",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ABSOL)",
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JaggedPass_EventScript_Absol",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "local_id": "LOCALID_JAGGED_ABSOL_SHINY",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_SHINY(ABSOL)",
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JaggedPass_EventScript_ShinyAbsol",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TIMBURR)",
+      "x": 38,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TIMBURR)",
+      "x": 39,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PHANPY)",
+      "x": 23,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHUCKLE)",
+      "x": 37,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_JAGGED_TURTONATOR",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TURTONATOR)",
+      "x": 30,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JaggedPass_EventScript_Turtonator",
+      "flag": "FLAG_TEMP_3"
+    },
+    {
+      "local_id": "LOCALID_JAGGED_TURTONATOR_SHINY",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_SHINY(TURTONATOR)",
+      "x": 30,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JaggedPass_EventScript_ShinyTurtonator",
+      "flag": "FLAG_TEMP_4"
     }
   ],
   "warp_events": [
     {
-      "x": 14,
-      "y": 40,
+      "x": 18,
+      "y": 52,
       "elevation": 3,
       "dest_map": "MAP_ROUTE112",
       "dest_warp_id": "2"
     },
     {
-      "x": 15,
-      "y": 40,
+      "x": 19,
+      "y": 52,
       "elevation": 3,
       "dest_map": "MAP_ROUTE112",
       "dest_warp_id": "3"
     },
     {
-      "x": 13,
+      "x": 20,
       "y": 5,
       "elevation": 3,
       "dest_map": "MAP_MT_CHIMNEY",
       "dest_warp_id": "2"
     },
     {
-      "x": 14,
+      "x": 21,
       "y": 5,
       "elevation": 3,
       "dest_map": "MAP_MT_CHIMNEY",
       "dest_warp_id": "3"
     },
     {
-      "x": 16,
+      "x": 23,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_MAGMA_HIDEOUT_1F",
@@ -147,42 +255,42 @@
   "coord_events": [
     {
       "type": "weather",
-      "x": 13,
+      "x": 20,
       "y": 15,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY"
     },
     {
       "type": "weather",
-      "x": 21,
+      "x": 28,
       "y": 12,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_VOLCANIC_ASH"
     },
     {
       "type": "weather",
-      "x": 14,
+      "x": 21,
       "y": 15,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY"
     },
     {
       "type": "weather",
-      "x": 18,
+      "x": 25,
       "y": 17,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY"
     },
     {
       "type": "weather",
-      "x": 22,
+      "x": 29,
       "y": 19,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY"
     },
     {
       "type": "trigger",
-      "x": 21,
+      "x": 28,
       "y": 15,
       "elevation": 3,
       "var": "VAR_JAGGED_PASS_STATE",
@@ -191,7 +299,16 @@
     },
     {
       "type": "trigger",
-      "x": 22,
+      "x": 29,
+      "y": 20,
+      "elevation": 3,
+      "var": "VAR_JAGGED_PASS_STATE",
+      "var_value": "1",
+      "script": "JaggedPass_EventScript_OpenMagmaHideout"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
       "y": 20,
       "elevation": 3,
       "var": "VAR_JAGGED_PASS_STATE",
@@ -201,15 +318,6 @@
     {
       "type": "trigger",
       "x": 21,
-      "y": 20,
-      "elevation": 3,
-      "var": "VAR_JAGGED_PASS_STATE",
-      "var_value": "1",
-      "script": "JaggedPass_EventScript_OpenMagmaHideout"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
       "y": 15,
       "elevation": 3,
       "var": "VAR_JAGGED_PASS_STATE",
@@ -218,7 +326,7 @@
     },
     {
       "type": "trigger",
-      "x": 13,
+      "x": 20,
       "y": 15,
       "elevation": 3,
       "var": "VAR_JAGGED_PASS_STATE",
@@ -229,16 +337,16 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 8,
-      "y": 10,
+      "x": 34,
+      "y": 36,
       "elevation": 3,
       "item": "ITEM_FULL_HEAL",
       "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL"
     },
     {
       "type": "hidden_item",
-      "x": 7,
-      "y": 29,
+      "x": 8,
+      "y": 22,
       "elevation": 3,
       "item": "ITEM_GREAT_BALL",
       "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL"

@@ -278,6 +278,11 @@
 #define METATILE_Lavaridge_NormalGrass          0x206
 #define METATILE_Lavaridge_RockWall             0x274
 
+// gTileset_LavaridgeNew
+#define METATILE_LavaridgeNew_AshGrass    0x300
+#define METATILE_LavaridgeNew_CleanGrass  0x301
+#define METATILE_LavaridgeNew_RockWall    0x219
+
 // gTileset_Lilycove
 #define METATILE_Lilycove_Door             0x246
 #define METATILE_Lilycove_Door_DeptStore   0x30C
@@ -375,6 +380,14 @@
 
 // gTileset_MossdeepGym
 #define METATILE_MossdeepGym_YellowArrow_Right  0x250
+
+// gTileset_NatureAlt
+#define METATILE_NatureAlt_MountainDoor          0x0DB
+#define METATILE_NatureAlt_MountainDoorLeft      0x0E9
+#define METATILE_NatureAlt_MountainDoorRight     0x0DC
+#define METATILE_NatureAlt_MountainTopDoor       0x0F3
+#define METATILE_NatureAlt_MountainTopDoorLeft   0x0F2
+#define METATILE_NatureAlt_MountainTopDoorRight  0x0F4
 
 // gTileset_Pacifidlog
 #define METATILE_Pacifidlog_Door                               0x21A

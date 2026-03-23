@@ -747,6 +747,7 @@ extern const u8 gText_XNatureHatchedSomewhereAt[];
 extern const u8 gText_XNatureMetAtYZ[];
 extern const u8 gText_XNatureMetSomewhereAt[];
 extern const u8 gText_XNatureFatefulEncounter[];
+extern const u8 gText_XNatureFatefulEncounterAtYZ[];
 extern const u8 gText_XNatureProbablyMetAt[];
 extern const u8 gText_XNatureObtainedInTrade[];
 extern const u8 gText_EmptyString5[];
@@ -781,7 +782,9 @@ extern const u8 gText_CanIHelpWithAnythingElse[];
 extern const u8 gText_AnythingElseICanHelp[];
 extern const u8 gText_QuitShopping[];
 extern const u8 gText_PokedollarVar1[];
+extern const u8 gText_PokeMartVar1Var2[];
 extern const u8 gText_YouDontHaveMoney[];
+extern const u8 gText_YouDontHaveVar2[];
 extern const u8 gText_Var1CertainlyHowMany2[];
 extern const u8 gText_Var1CertainlyHowMany[];
 extern const u8 gText_Var1IsItThatllBeVar2[];
@@ -2680,7 +2683,7 @@ extern const u8 gText_SubQuest2_Desc17[];
 extern const u8 gText_SubQuest2_Desc18[];
 extern const u8 gText_SubQuest2_Desc19[];
 extern const u8 gText_SubQuest2_Desc20[];
-
+extern const u8 gText_AshQty[];
 
 
 #endif // GUARD_STRINGS_H

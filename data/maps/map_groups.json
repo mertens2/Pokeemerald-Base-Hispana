@@ -128,7 +128,9 @@
     "LavaridgeTown_House",
     "LavaridgeTown_Mart",
     "LavaridgeTown_PokemonCenter_1F",
-    "LavaridgeTown_PokemonCenter_2F"
+    "LavaridgeTown_PokemonCenter_2F",
+    "LavaridgeTown_House_2",
+    "LavaridgeTown_House_3"
   ],
   "gMapGroup_IndoorFallarbor": [
     "FallarborTown_Mart",
@@ -459,7 +461,8 @@
     "GraniteCave_SecretRoom1",
     "MirageTower_SecretRoom",
     "MirageTower_SecretRoomRegieleki",
-    "ShoalCave_LowTideIceRoom_DragoTomb"
+    "ShoalCave_LowTideIceRoom_DragoTomb",
+    "DewfordTownTrainingZone"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

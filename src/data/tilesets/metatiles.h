@@ -248,3 +248,9 @@ const u16 gMetatileAttributes_WoodenHouse[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_PokeCenter[] = INCBIN_U16("data/tilesets/secondary/poke_center/metatiles.bin");
 const u16 gMetatileAttributes_PokeCenter[] = INCBIN_U16("data/tilesets/secondary/poke_center/metatile_attributes.bin");
+
+const u16 gMetatiles_LavaridgeNew[] = INCBIN_U16("data/tilesets/secondary/lavaridge_new/metatiles.bin");
+const u16 gMetatileAttributes_LavaridgeNew[] = INCBIN_U16("data/tilesets/secondary/lavaridge_new/metatile_attributes.bin");
+
+const u16 gMetatiles_VolcanoOutside[] = INCBIN_U16("data/tilesets/secondary/volcano_outside/metatiles.bin");
+const u16 gMetatileAttributes_VolcanoOutside[] = INCBIN_U16("data/tilesets/secondary/volcano_outside/metatile_attributes.bin");

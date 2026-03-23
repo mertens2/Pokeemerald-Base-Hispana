@@ -47,48 +47,52 @@ OldaleTown_Mart_EventScript_Boy::
 	faceplayer
 # 29 "data/maps/OldaleTown_Mart/scripts.pory"
 	msgbox OldaleTown_Mart_EventScript_Boy_Text_0
+# 31 "data/maps/OldaleTown_Mart/scripts.pory"
+	closemessage
+# 32 "data/maps/OldaleTown_Mart/scripts.pory"
+	release
 	return
 
 
 	.align 2
-# 33 "data/maps/OldaleTown_Mart/scripts.pory"
-OldaleTown_Mart_Pokemart_Basic:
-# 34 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_POTION
 # 35 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_ANTIDOTE
+OldaleTown_Mart_Pokemart_Basic:
 # 36 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_POTION
 # 37 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_AWAKENING
+	.2byte ITEM_ANTIDOTE
 # 38 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_PARALYZE_HEAL
+# 39 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_AWAKENING
+# 40 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_ORANGE_MAIL
 	.2byte ITEM_NONE
 
 	.align 2
-# 41 "data/maps/OldaleTown_Mart/scripts.pory"
-OldaleTown_Mart_Pokemart_Balls:
-# 42 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_POKE_BALL
 # 43 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_POTION
+OldaleTown_Mart_Pokemart_Balls:
 # 44 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_POKE_BALL
 # 45 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_POTION
 # 46 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_AWAKENING
+	.2byte ITEM_ANTIDOTE
 # 47 "data/maps/OldaleTown_Mart/scripts.pory"
-	.2byte ITEM_ORANGE_MAIL
+	.2byte ITEM_PARALYZE_HEAL
 # 48 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_AWAKENING
+# 49 "data/maps/OldaleTown_Mart/scripts.pory"
+	.2byte ITEM_ORANGE_MAIL
+# 50 "data/maps/OldaleTown_Mart/scripts.pory"
 	.2byte ITEM_WAVE_MAIL
 	.2byte ITEM_NONE
 
-# 51 "data/maps/OldaleTown_Mart/scripts.pory"
-
-# 52 "data/maps/OldaleTown_Mart/scripts.pory"
-OldaleTown_Mart_MapScripts::
 # 53 "data/maps/OldaleTown_Mart/scripts.pory"
+
+# 54 "data/maps/OldaleTown_Mart/scripts.pory"
+OldaleTown_Mart_MapScripts::
+# 55 "data/maps/OldaleTown_Mart/scripts.pory"
 	.byte 0
 
 OldaleTown_Mart_EventScript_Woman_Text_0:

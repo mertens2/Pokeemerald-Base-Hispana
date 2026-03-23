@@ -1,3 +1,19 @@
+script MauvilleCity_Gym_EventScript_WattsonBattle {
+	if (flag(FLAG_BADGE03_GET)){
+		return
+	}
+	if(flag(FLAG_BADGE02_GET) && flag(FLAG_BADGE04_GET)){
+		trainerbattle_single (TRAINER_WATTSON_GYM_4, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC)
+	}
+	elif (flag(FLAG_BADGE02_GET) || flag(FLAG_BADGE04_GET)){ // if i dont have both, then i must have at most one of them. no need to check anything else
+		trainerbattle_single (TRAINER_WATTSON_GYM_3, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC)
+	}
+	else {
+		trainerbattle_single (TRAINER_WATTSON_GYM_2, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC)
+	}
+	return
+}
+
 raw `
 MauvilleCity_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MauvilleCity_Gym_OnLoad
@@ -58,7 +74,7 @@ MauvilleCity_Gym_EventScript_DeactivatePuzzle::
 
 MauvilleCity_Gym_EventScript_Wattson::
 	setvar B_VAR_STARTING_STATUS, STARTING_STATUS_THUNDER_TERRAIN
-	trainerbattle_single TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
+	call MauvilleCity_Gym_EventScript_WattsonBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonRematch
 	checkitem ITEM_TM34

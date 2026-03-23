@@ -42,7 +42,7 @@
 #define OW_BERRY_GROWTH_RATE           GEN_3      // Preajustes para cuánto tiempo tarda cada planta de baya en crecer.
 #define OW_BERRY_YIELD_RATE            GEN_3      // Preajustes para cuántas bayas puede producir cada planta.
 #define OW_BERRY_DRAIN_RATE            GEN_6_ORAS // Si OW_BERRY_MOISTURE está habilitado, esta configuración cambia la rapidez con la que se seca el suelo. GEN_4 usa una tasa de drenaje dependiente de la baya, GEN_6_XY se seca en 24 horas (4 horas con el Abono relevante) y GEN_6_ORAS se seca en 4 horas. Otros valores son ilegales.
-#define OW_BERRY_IMMORTAL              FALSE      // Si está habilitado, una vez que un árbol de bayas haya crecido una baya, el árbol no desaparecerá hasta que el jugador la recoja.
+#define OW_BERRY_IMMORTAL              TRUE       // Si está habilitado, una vez que un árbol de bayas haya crecido una baya, el árbol no desaparecerá hasta que el jugador la recoja.
 
 // Pokémon en el mundo exterior
 #define OW_POKEMON_OBJECT_EVENTS       TRUE       // Agrega campos de Evento de Objeto para cada especie. Puede ser utilizado para NPCs usando el macro OBJ_EVENT_GFX_SPECIES (por ejemplo, OBJ_EVENT_GFX_SPECIES(BULBASAUR))

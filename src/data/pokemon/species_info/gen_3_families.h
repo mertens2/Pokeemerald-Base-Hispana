@@ -7962,12 +7962,21 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_ZANGOOSE
     [SPECIES_ZANGOOSE] =
     {
+		#if P_BUFF_SPECIES
+		.baseHP        = 80,
+        .baseAttack    = 115,
+        .baseDefense   = 80,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 60,
+		#else
         .baseHP        = 73,
         .baseAttack    = 115,
         .baseDefense   = 60,
         .baseSpeed     = 90,
         .baseSpAttack  = 60,
         .baseSpDefense = 60,
+		#endif
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 90,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 160 : 165,
@@ -7988,10 +7997,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 13,
         .weight = 403,
 		.description = COMPOUND_STRING(
-			"Cuando lucha, se yergue sobre las patas\n"
-			"traseras y ataca con sus afiladas zarpas.\n"
-			"El pelaje se le eriza si se encuentra\n"
-			"con un Seviper."),
+			"Se adaptó perfectamente para atacar el\n"
+			"punto débil de su enemigo, Seviper.\n"
+			"Si llega a perder contra él, no dudará\n"
+			"en lastimarse con sus afiladas garras."),
         .pokemonScale = 256,
         .pokemonOffset = 3,
         .trainerScale = 256,
@@ -8038,12 +8047,21 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_SEVIPER
     [SPECIES_SEVIPER] =
     {
+		#if P_BUFF_SPECIES
+        .baseHP        = 80,
+        .baseAttack    = 40,
+        .baseDefense   = 60,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 80,
+		#else
         .baseHP        = 73,
         .baseAttack    = 100,
         .baseDefense   = 60,
         .baseSpeed     = 65,
         .baseSpAttack  = 100,
         .baseSpDefense = 60,
+		#endif
         .types = MON_TYPES(TYPE_POISON),
         .catchRate = 90,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 160 : 165,
@@ -8066,9 +8084,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .weight = 525,
 		.description = COMPOUND_STRING(
 			"Seviper y Zangoose son rivales eternos.\n"
-			"Contrarresta la gran agilidad de Zangoose\n"
-			"con una cola en forma de espada que\n"
-			"además rezuma un veneno terrible."),
+			"Ataca a Zangoose en sus heridas abiertas\n"
+			"con su cola en forma de guadaña para\n"
+			"asestar golpes críticos con facilidad."),
         .pokemonScale = 275,
         .pokemonOffset = 7,
         .trainerScale = 256,

@@ -10241,9 +10241,9 @@ const struct Item gItemsInfo[] =
         .holdEffect = HOLD_EFFECT_RING_TARGET,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
-            "Movimientos que normalmente\n"
-            "no tendrían efecto sí\n"
-            "afectarán al portador."),
+            "Este objeto ignora las\n"
+            "inmunidades de tipo\n"
+            "del portador."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
@@ -13987,12 +13987,12 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "Un saco usado para\n"
-            "recoger y guardar\n"
+            "guardar hasta 50.000\n"
             "cenizas volcánicas."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SootSack,
         .iconPic = gItemIcon_SootSack,
         .iconPalette = gItemIconPalette_SootSack,
     },

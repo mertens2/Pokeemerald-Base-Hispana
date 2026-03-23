@@ -218,7 +218,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 {
 	[CAFE_TRAINER_HIKER] = {
 		.graphicsId = OBJ_EVENT_GFX_HIKER,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¿Hm? ¿Quieres un combate?\n¡Pues vamos!"),
 		.lossText = COMPOUND_STRING("¡Increíble!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto! ¡Te servirá\ncuando vayas por cuevas!"),
@@ -258,7 +258,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_WIVES]         =  {
 		.graphicsId = OBJ_EVENT_GFX_WOMAN_1,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -268,7 +268,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_TV] =  {
 		.graphicsId = OBJ_EVENT_GFX_REPORTER_F,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -278,7 +278,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_RIVAL]         =  {
 		.graphicsId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -288,7 +288,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_WALLY_SISTER] =  {
 		.graphicsId = OBJ_EVENT_GFX_WOMAN_2,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -298,7 +298,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_POLY_1] =  {
 		.graphicsId = OBJ_EVENT_GFX_BLACK_BELT,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -307,7 +307,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_POLY_2] =  {
 		.graphicsId = OBJ_EVENT_GFX_AQUA_MEMBER_M,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -317,7 +317,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_OLD_LADY]      =  {
 		.graphicsId = OBJ_EVENT_GFX_EXPERT_F,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -327,7 +327,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_OLD_MAN]       =  {
 		.graphicsId = OBJ_EVENT_GFX_EXPERT_M,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -337,7 +337,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_BEAUTY]        =  {
 		.graphicsId = OBJ_EVENT_GFX_BEAUTY,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -347,7 +347,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_PARASOL_LADY]  =  {
 		.graphicsId = OBJ_EVENT_GFX_WOMAN_4,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),
@@ -357,7 +357,7 @@ const struct CafeTrainer sCafeTrainers[BATTLE_CAFE_SPECIAL_TRAINERS_START + 1] =
 	},
 	[CAFE_TRAINER_LASS]          =  {
 		.graphicsId = OBJ_EVENT_GFX_LASS,
-		.trainerPartyId = TRAINER_DUSTY_1,
+		.trainerPartyId = TRAINER_DUSTY,
 		.introText = COMPOUND_STRING("¡Ah! ¡Luchemos!"),
 		.lossText = COMPOUND_STRING("¡Ah! ¡Perdí!"),
 		.afterBattleText = COMPOUND_STRING("¡Ten esto!"),

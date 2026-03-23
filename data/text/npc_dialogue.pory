@@ -1,3 +1,183 @@
+// lavaridge 
+
+text LavaridgeTown_House_2_Text_FlanneryGrandma {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Flannery has been working her sanity off to be a good Gym Leader.\p"
+			"Without my husband's guidance… She has been going too far…\p"
+			"I worry she might get to meet Arceus soon if she keeps ignoring her body's warnings…")
+		}
+		ES {
+			format("Flannery se ha estado sobre-esforzando para ser una buena Líder de Gimnasio.\p"
+			"Sin la guianza de mi esposo… Se está pasando…\p"
+			"Me preocupa que vaya a conocer a Arceus si continúa ignorando las plegarias de su cuerpo…")
+		}
+	}
+}
+
+text LavaridgeTown_House_2_Text_FlanneryGrandmaRelieved {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Lately, Flannery seems way more relaxed. It's like she's another person!\p"
+			"Or, rather… She's the version of herself that she dreamed she was…\p"
+			"Strong, fiery, and most importantly, someone who takes good care of herself.\p"
+			"I bet she could be a good mentor to a younger Trainer one day!")
+		}
+		ES {
+			format("Últimamente, Flannery está más tranquila. ¡Hasta parece otra!\p"
+			"O, más bien… Es la versión suya que siempre quiso ser…\p"
+			"Fuerte, apasionada como las llamas, y alguien que se cuida bien.\p"
+			"¡Seguro será una buena mentora para algún jóven Entrenador un día!")
+		}
+	}
+}
+
+text LavaridgeTown_House_2_Text_FlanneryGrandmaProud {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("You won't believe it!\nFlannery came earlier today to tell me she mentored a young Trainer today!\p"
+			"I told her that her grandpa would be just as, if not more, proud than I am of her right now.\p"
+			"She looked like she was using Waterfall with her eyes! Hahahaha!")
+		}
+		ES {
+			format("¡No me lo vas a creer!\n¡Flannery vino temprano a decirme que ayudó a un jóven Entrenador hoy!\p"
+			"Le dije que su abuelo estaría tan, si no es que más, orgulloso de lo que yo estoy de ella.\p"
+			"¡Parecía que sus ojos estaban usando Cascada, jajajaja!\N¡Deberías haberla visto!")
+		}
+	}
+}
+
+text LavaridgeTown_House_2_Text_FlanneryBrother {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("My focus growing up was always acting.\p"
+			"Flannery and I would play pretend movies…\n"
+			"And she would ALWAYS ignore the script and beat me in the battles!")
+		}
+		ES {
+			format("Desde pequeño siempre me gustó la actuación.\p"
+			"Flannery y yo jugábamos a los actores…\p"
+			"¡Y ella SIEMPRE ignoraba el guión para no perder las batallas!")
+		}
+	}
+}
+
+text LavaridgeTown_House_2_Text_FlanneryBrotherPostWally {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Earlier today, Flannery came to pitch me a movie script…\p"
+			"How odd! I'm the one that always has to make them!\p"
+			"It, unsurprisingly, wasn't very good. But I liked the premise:\p"
+			"A Trainer that, despite her illness, becomes a formidable Champion!")
+		}
+		ES {
+			format("Hoy temprano, Flannery vino a plantearme un guión para una película…\p"
+			"¡Cosa rara! ¡Siempre tuve que hacerlas yo!\p"
+			"Claramente, no era muy bueno. Pero la premisa me gustó:\p"
+			"¡Una Entrenadora que se convierte en Campeona a pesar de su enfermedad!")
+		}
+	}
+}
+
+text LavaridgeTown_House_3_Text_Wife1 {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("My wife and I have been through quite a lot…\p"
+			"But our dear Delcatty have been there for us through it all!")
+		}
+		ES {
+			format("Pasamos muchos dolores con mi esposa…\p"
+			"¡Pero nuestros queridos Delcatty siempre estuvieron para nosotras!")
+		}
+	}
+}
+
+text LavaridgeTown_House_3_Text_Wife2 {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("It was quite the surprise when my wife's Delcatty's latest Egg turned out to be a Shiny Pokémon!\p"
+			"Oh, they're just like us, you know? A couple from vastly different regions who still managed to meet and fall in love!")
+		}
+		ES {
+			format("¡Fue una gran sorpresa cuando del Huevo del Delcatty de mi mujer salió un Pokémon Shiny!\p"
+			"Ah, son como nosotras, ¿Sabes? ¡Dos personas nacidas en Regiones distintas que lograron conocerse y enamorarse!")
+		}
+	}
+}
+
+
+
+// mt chimney
+text MtChimney_Text_KeepMakingMoreLand {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Forget about Pokémon!\p"
+			"I'M BEATING YOU UP WITH MY BARE HANDS!")
+		}
+		ES {
+			format("¡A la Muk los Pokémon!\p"
+			"¡TE VOY A PARTIR LA MADRE CON MIS PROPIAS MANOS!")
+		}
+	}
+}
+text MtChimney_Text_LessHabitatForWaterPokemon {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("Oh, yeah? You want a fight!?\p"
+			"I AIN'T HOLDIN' ANYTHING BACK! FIGHT ME!")
+		}
+		ES {
+			format("¿Ah, sí? ¿¡Quieres pelea!?\p"
+			"¡NO VOY A CONTENERME! ¡VAMOS A PELEAR!")
+		}
+	}
+}
+
+text MtChimney_Text_AquasNameSimilar {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("FIRST! He steals my wife!\p"
+			"AND NOW HE STEALS MY TEAM?!\p"
+			"OOOOHHH NOW I'M PISSED!")
+		}
+		ES {
+			format("¡PRIMERO! ¡Éste me roba a mi esposa!\p"
+			"¡¿Y AHORA ME ROBA LA IDEA DEL EQUIPO?!\p"
+			"¡OOOOHH, ME TIENE PODRIDO!")
+		}
+	}
+}
+
+text MtChimney_Text_MagmasNameSimilar {
+	poryswitch(LANGUAGE) {
+		EN {
+			format("FIRST! He steals my husband!\p"
+			"AND NOW HE STEALS MY TEAM?!\p"
+			"OOOOHHH NOW I'M PISSED!")
+		}
+		ES {
+			format("¡PRIMERO! ¡Éste me roba a mi marido!\p"
+			"¡¿Y AHORA ME ROBA LA IDEA DEL EQUIPO?!\p"
+			"¡OOOOHH, ME TIENE PODRIDO!")
+		}
+	}
+}
+
+
+
+// text MtChimney_Text_MagmasNameSimilar {
+	// poryswitch(LANGUAGE) {
+		// EN {
+			// format("Forget about Pokémon!\p"
+			// "I'M BEATING YOU UP WITH MY BARE HANDS!")
+		// }
+		// ES {
+			// format("¡A la Muk los Pokémon!\p"
+			// "¡TE VOY A PARTIR LA MADRE CON MIS PROPIAS MANOS!")
+		// }
+	// }
+// }
+
 // pkmn center
 
 text gText_HealPokemonTraditionally {

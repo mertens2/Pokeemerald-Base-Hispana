@@ -56,7 +56,76 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 {
     [DIFFICULTY_NORMAL] =
     {
-    },
+		// brawly
+		[TRAINER_BRAWLY_GYM_2] = {
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡Woah! ¡Talk about luck!\p¡Pero eso no es suficiente para derrotarnos!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¿Aún en pie? ¡A ver si aguantas esta ola!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡C'mon, buddy! ¡Con todo!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Vamos, compañero, vamos…\p¡We can still win!"),
+		},
+		[TRAINER_BRAWLY_GYM_3] = {
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡Woah! ¡Talk about luck!\p¡Pero eso no es suficiente para derrotarnos!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¿Aún en pie? ¡A ver si aguantas esta ola!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡C'mon, buddy! ¡Con todo!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Vamos, compañero, vamos…\p¡We can still win!"),
+		},
+		[TRAINER_BRAWLY_GYM_4] = {
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡Woah! ¡Talk about luck!\p¡Pero eso no es suficiente para derrotarnos!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¿Aún en pie? ¡A ver si aguantas esta ola!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡C'mon, buddy! ¡Con todo!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Vamos, compañero, vamos…\p¡We can still win!"),
+		},
+		// wattson
+		[TRAINER_WATTSON_GYM_2] = {
+			[TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("¡JAJAJAJAJA!\n¿Qué piensas de mí ahora, eh?\p¡Este es mi propio Campo!\n¡Campo Trueno!\p¡Prepárate a perder!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡JAJAJAJAJA!\n¿Un crítico? ¡No te bastará sólo\lcon suerte para ganarme!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Luchaste bien, amigo Pokémon,\n¡Pero aún falta mucho combate!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡A ver si puedes con este Pokémon!"),
+			[TRAINER_SLIDE_Z_MOVE] = COMPOUND_STRING("¡Ésta seguro no te la esperabas!\p¡MOVIMIENTO Z!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Aún con nuestro Campo Trueno…\p¡Pero no me rendiré todavía, JAJAJAJAJA!"),
+		},
+		[TRAINER_WATTSON_GYM_3] = {
+			[TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("¡JAJAJAJAJA!\n¿Qué piensas de mí ahora, eh?\p¡Este es mi propio Campo!\n¡Campo Trueno!\p¡Prepárate a perder!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡JAJAJAJAJA!\n¿Un crítico? ¡No te bastará sólo\lcon suerte para ganarme!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Luchaste bien, amigo Pokémon,\n¡Pero aún falta mucho combate!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡A ver si puedes con este Pokémon!"),
+			[TRAINER_SLIDE_Z_MOVE] = COMPOUND_STRING("¡Ésta seguro no te la esperabas!\p¡MOVIMIENTO Z!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Aún con nuestro Campo Trueno…\p¡Pero no me rendiré todavía, JAJAJAJAJA!"),
+		},
+		[TRAINER_WATTSON_GYM_4] = {
+			[TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("¡JAJAJAJAJA!\n¿Qué piensas de mí ahora, eh?\p¡Este es mi propio Campo!\n¡Campo Trueno!\p¡Prepárate a perder!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡JAJAJAJAJA!\n¿Un crítico? ¡No te bastará sólo\lcon suerte para ganarme!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Luchaste bien, amigo Pokémon,\n¡Pero aún falta mucho combate!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡A ver si puedes con este Pokémon!"),
+			[TRAINER_SLIDE_Z_MOVE] = COMPOUND_STRING("¡Ésta seguro no te la esperabas!\p¡MOVIMIENTO Z!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Aún con nuestro Campo Trueno…\p¡Pero no me rendiré todavía, JAJAJAJAJA!"),
+		},
+		// flannery
+		[TRAINER_FLANNERY_GYM_2] = {
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡Críticos!\n¡Eh, em, uy!\p¡No me preparé para los críticos!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Ay, no!\pEh- Em… ¡DIGO!\p¡NO HAS GANADO AÚN, TODAVÍA\nNOS QUEDA MUCHA FUERZA!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡Aún tenemos una última sorpresa! ¡No te confíes!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("¡No puedes cantar victoria todavía!\p¡No has visto lo último de nosotros!"),
+			[TRAINER_SLIDE_Z_MOVE] = COMPOUND_STRING("Desde la lejana Alola…\nUn inigualable poder…\p¡El zénit de nuestra fuerza, PODER Z!"),
+			[TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Generación tras generación…\nLíder tras líder…\pEste poder, ¡Es el de mis ancestros!\p¡MEGA EVOLUCIONA, CAMERUPT!"),
+		},
+		[TRAINER_FLANNERY_GYM_3] = {
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡Críticos!\n¡Eh, em, uy!\p¡No me preparé para los críticos!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Ay, no!\pEh- Em… ¡DIGO!\p¡NO HAS GANADO AÚN, TODAVÍA\nNOS QUEDA MUCHA FUERZA!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡Aún tenemos una última sorpresa! ¡No te confíes!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("¡No puedes cantar victoria todavía!\p¡No has visto lo último de nosotros!"),
+			[TRAINER_SLIDE_Z_MOVE] = COMPOUND_STRING("Desde la lejana Alola…\nUn inigualable poder…\p¡El zénit de nuestra fuerza, PODER Z!"),
+			[TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Generación tras generación…\nLíder tras líder…\pEste poder, ¡Es el de mis ancestros!\p¡MEGA EVOLUCIONA, CAMERUPT!"),
+		},
+		[TRAINER_FLANNERY_GYM_4] = {
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡Críticos!\n¡Eh, em, uy!\p¡No me preparé para los críticos!"),
+			[TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Ay, no!\pEh- Em… ¡DIGO!\p¡NO HAS GANADO AÚN, TODAVÍA\nNOS QUEDA MUCHA FUERZA!"),
+			[TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¡Aún tenemos una última sorpresa! ¡No te confíes!"),
+			[TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("¡No puedes cantar victoria todavía!\p¡No has visto lo último de nosotros!"),
+			[TRAINER_SLIDE_Z_MOVE] = COMPOUND_STRING("Desde la lejana Alola…\nUn inigualable poder…\p¡El zénit de nuestra fuerza, PODER Z!"),
+			[TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Generación tras generación…\nLíder tras líder…\pEste poder, ¡Es el de mis ancestros!\p¡MEGA EVOLUCIONA, CAMERUPT!"),
+		},
+	},
 };
 
 static const u8* const sFrontierTrainerSlides[DIFFICULTY_COUNT][FRONTIER_TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =

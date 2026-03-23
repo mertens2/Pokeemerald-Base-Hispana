@@ -68,7 +68,7 @@ struct TrainerBacksprite
 #define LEVEL_CAP_POST_GAME_4 	80
 #define LEVEL_CAP_POST_GAME_5 	84
 
-u8 GetLevelCap(u8 currLevel);
+u8 GetLevelCap(u8 currLevel, u32 levelModifier, const struct Trainer *trainer);
 
 #define MON_COORDS_SIZE(width, height) (DIV_ROUND_UP(width, 8) << 4 | DIV_ROUND_UP(height, 8))
 #define GET_MON_COORDS_WIDTH(size) ((size >> 4) * 8)
@@ -133,7 +133,7 @@ struct Trainer
 
 struct TrainerClass
 {
-    u8 name[13];
+    u8 name[26];
     u8 money;
     u16 ball;
 };

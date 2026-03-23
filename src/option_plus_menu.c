@@ -32,7 +32,7 @@ enum
 {
     // MENUITEM_MAIN_FONT,
     MENUITEM_MAIN_SOUND,
-    MENUITEM_MAIN_BUTTONMODE,
+    // MENUITEM_MAIN_BUTTONMODE,
     MENUITEM_MAIN_UNIT_SYSTEM,
     MENUITEM_MAIN_FRAMETYPE,
     MENUITEM_MAIN_SHINY_ODDS,
@@ -43,7 +43,7 @@ enum
 enum
 {
     MENUITEM_BATTLE_DIFFICULTY,
-    MENUITEM_BATTLE_LEVEL_SCALING,
+    // MENUITEM_BATTLE_LEVEL_SCALING,
     MENUITEM_BATTLE_BADGE_SCALING,
     MENUITEM_BATTLE_BATTLESTYLE,
     MENUITEM_BATTLE_TRAINING_MODE,
@@ -193,14 +193,14 @@ static void DrawChoices_TextSkipping(int selection, int y);
 static void DrawChoices_BattleScene(int selection, int y);
 static void DrawChoices_BattleStyle(int selection, int y);
 static void DrawChoices_Sound(int selection, int y);
-static void DrawChoices_ButtonMode(int selection, int y);
+// static void DrawChoices_ButtonMode(int selection, int y);
 static void DrawChoices_BarSpeed(int selection, int y); //HP and EXP
 static void DrawChoices_UnitSystem(int selection, int y);
 // static void DrawChoices_Font(int selection, int y);
 static void DrawChoices_FrameType(int selection, int y);
 static void DrawChoices_MatchCall(int selection, int y);
 static void DrawChoices_BadgeScaling(int selection, int y);
-static void DrawChoices_LevelScaling(int selection, int y);
+// static void DrawChoices_LevelScaling(int selection, int y);
 static void DrawChoices_Difficulty(int selection, int y);
 static void DrawChoices_EnemyPotionUse(int selection, int y);
 static void DrawChoices_PlayerItemUse(int selection, int y);
@@ -239,9 +239,9 @@ static const u8 sText_Desc_BattleStyle_Shift[]  = _("Permite cambiar a tus Poké
 static const u8 sText_Desc_BattleStyle_Set[]    = _("Debilitar al Pokémon rival\nNO te da un cambio libre.");
 static const u8 sText_Desc_SoundMono[]          = _("Mismo audio en ambos canales.\nLo mejor para hardware original.");
 static const u8 sText_Desc_SoundStereo[]        = _("Los canales der. e izq. suenan\nseparados. Para jugar con auriculares.");
-static const u8 sText_Desc_ButtonMode[]         = _("All buttons work as normal.");
-static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
-static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
+// static const u8 sText_Desc_ButtonMode[]         = _("Los botones funcionarán como\nsiempre lo hicieron.");
+// static const u8 sText_Desc_ButtonMode_LR[]      = _("{L_BUTTON} y {R_BUTTON} agilizarán la\nnavegación en algunas pantallas.");
+// static const u8 sText_Desc_ButtonMode_LA[]      = _("{L_BUTTON} funcionará como {A_BUTTON}.");
 static const u8 sText_Desc_UnitSystemImperial[] = _("Mostrar el tamaño y peso\nen libras y pulgadas.");
 static const u8 sText_Desc_UnitSystemMetric[]   = _("Mostrar el tamaño y peso\nen kilos y metros.");
 static const u8 sText_Desc_FrameType[]          = _("Elije el marco de las ventanas.");
@@ -254,13 +254,13 @@ static const u8 sText_Desc_ShinyOdds4092[] 		= _("Los Shinies serán tan raros c
 static const u8 sText_Desc_ShinyOdds2048[] 		= _("Los Shinies serán 2 veces más\ncomunes que en las Gens 6-9.");
 static const u8 sText_Desc_ShinyOdds1024[] 		= _("Los Shinies serán 4 veces más\ncomunes que en las Gens 6-9.");
 static const u8 sText_Desc_DifficultyEasy[]     = _("Dificultad similar a\nlos juegos oficiales.");
-static const u8 sText_Desc_DifficultyNormal[]   = _("Los Jefes usarán equipos competentes\ny tendrán EVs e IVs perfectos.");
-static const u8 sText_Desc_DifficultyHard[]     = _("Los Jefes tendrán muy buenos equipos,\ncon estrategias nuevas y competitivas.");
-static const u8 sText_Desc_DifficultyHardcore[] = _("Las estrategias de los jefes serán\nalgo injustas y tendrán EVs imposibles.");
-static const u8 sText_Desc_LevelScalingOff[] 	= _("El nivel de los jefes no cambia.");
-static const u8 sText_Desc_LevelScalingUp[] 	= _("El nivel de los jefes se subirá a tu\nnivel actual si te sobre-leveleas.");
-static const u8 sText_Desc_LevelScalingDown[] 	= _("El nivel de los jefes se bajará a tu\nnivel actual si son muy fuertes.");
-static const u8 sText_Desc_LevelScalingAlways[] = _("El nivel de los jefes será siempre\ntu nivel actual. No recomendado.");
+static const u8 sText_Desc_DifficultyNormal[]   = _("Jefes usarán equipos fuertes, con\nbuenas estrategias.");
+static const u8 sText_Desc_DifficultyHard[]     = _("Jefes usaran muy buenos equipos, con\ntácticas nuevas y competitivas.");
+static const u8 sText_Desc_DifficultyHardcore[] = _("Los equipos de los jefes serán algo\ninjustos y tendrán EVs imposibles.");
+// static const u8 sText_Desc_LevelScalingOff[] 	= _("El nivel de los jefes no cambia.");
+// static const u8 sText_Desc_LevelScalingUp[] 	= _("El nivel de los jefes se subirá a tu\nnivel actual si te sobre-leveleas.");
+// static const u8 sText_Desc_LevelScalingDown[] 	= _("El nivel de los jefes se bajará a tu\nnivel actual si son muy fuertes.");
+// static const u8 sText_Desc_LevelScalingAlways[] = _("El nivel de los jefes será siempre\ntu nivel actual. No recomendado.");
 static const u8 sText_Desc_BadgeScaling[] 		= _("El nivel de los jefes se ajustará a tus\nmedallas. Perfecto para Nuzlockes.");
 static const u8 sText_Desc_EnemyPotionUse[] 	= _("Permite o no a los rivales\nusar objetos curativos.");
 static const u8 sText_Desc_PlayerItemUse[] 	    = _("Permite o no al jugador usar\nobjetos en batalla.");
@@ -299,9 +299,9 @@ static const u8 sText_Desc_BattleStyle_Shift[]  = _("Get the option to switch yo
 static const u8 sText_Desc_BattleStyle_Set[]    = _("No free switch after fainting the\nenemies POKéMON.");
 static const u8 sText_Desc_SoundMono[]          = _("Sound is the same in all speakers.\nRecommended for original hardware.");
 static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
-static const u8 sText_Desc_ButtonMode[]         = _("All buttons work as normal.");
-static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
-static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
+// static const u8 sText_Desc_ButtonMode[]         = _("All buttons work as normal.");
+// static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
+// static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
 static const u8 sText_Desc_UnitSystemImperial[] = _("Display BERRY and POKéMON weight\nand size in pounds and inches.");
 static const u8 sText_Desc_UnitSystemMetric[]   = _("Display BERRY and POKéMON weight\nand size in kilograms and meters.");
 static const u8 sText_Desc_FrameType[]          = _("Choose the frame surrounding the\nwindows.");
@@ -314,13 +314,13 @@ static const u8 sText_Desc_ShinyOdds4092[] 		= _("Shiny odds will be the same th
 static const u8 sText_Desc_ShinyOdds2048[] 		= _("Shiny odds will be halved\ncompared to Gens 6-9.");
 static const u8 sText_Desc_ShinyOdds1024[] 		= _("Shinies will be four times easier\nto get than in Gens 6-9.");
 static const u8 sText_Desc_DifficultyEasy[]     = _("Similar difficulty to\nthat of official games.");
-static const u8 sText_Desc_DifficultyNormal[]   = _("Bosses will use competent strategies\nand have perfect EVs and IVs.");
-static const u8 sText_Desc_DifficultyHard[]     = _("Bosses will use unique tactics, both\ncompetitive and exclusive to PKMN Bismuth.");
+static const u8 sText_Desc_DifficultyNormal[]   = _("Bosses will use competent strategies\nand pretty strong Pokémon.");
+static const u8 sText_Desc_DifficultyHard[]     = _("Bosses will use both competitive and\nexclusive to PKMN Bismuth tactics.");
 static const u8 sText_Desc_DifficultyHardcore[] = _("Bosses will use slightly unfair tactics,\npacked with impossible EV sets.");
-static const u8 sText_Desc_LevelScalingOff[] 	= _("Boss Pokémon's levels won't scale.");
-static const u8 sText_Desc_LevelScalingUp[] 	= _("Boss Pokémon's levels scale up to\nyours if you over-level.");
-static const u8 sText_Desc_LevelScalingDown[] 	= _("Boss Pokémon's levels scale down to\nyours if you're too under-leveled.");
-static const u8 sText_Desc_LevelScalingAlways[] = _("Boss Pokémon's levels will always\nequal yours. Not recommended.");
+// static const u8 sText_Desc_LevelScalingOff[] 	= _("Boss Pokémon's levels won't scale.");
+// static const u8 sText_Desc_LevelScalingUp[] 	= _("Boss Pokémon's levels scale up to\nyours if you over-level.");
+// static const u8 sText_Desc_LevelScalingDown[] 	= _("Boss Pokémon's levels scale down to\nyours if you're too under-leveled.");
+// static const u8 sText_Desc_LevelScalingAlways[] = _("Boss Pokémon's levels will always\nequal yours. Not recommended.");
 static const u8 sText_Desc_BadgeScaling[] 		= _("Boss levels will scale\nto your current badge.");
 static const u8 sText_Desc_EnemyPotionUse[] 	= _("Allow or disallow foes from\nusing healing items in battle.");
 static const u8 sText_Desc_PlayerItemUse[] 	    = _("Allow or disallow yourself\nfrom using items in battle.");
@@ -375,7 +375,7 @@ struct // MENU_MAIN
 {
    
     [MENUITEM_MAIN_SOUND]          = {DrawChoices_Sound,       ProcessInput_Options_Two},
-    [MENUITEM_MAIN_BUTTONMODE]     = {DrawChoices_ButtonMode,  ProcessInput_Options_Three},
+    // [MENUITEM_MAIN_BUTTONMODE]     = {DrawChoices_ButtonMode,  ProcessInput_Options_Three},
     [MENUITEM_MAIN_UNIT_SYSTEM]    = {DrawChoices_UnitSystem,  ProcessInput_Options_Two},
     // [MENUITEM_MAIN_FONT]           = {DrawChoices_Font,        ProcessInput_Options_Two}, 
     [MENUITEM_MAIN_SHINY_ODDS]     = {DrawChoices_ShinyOdds,   ProcessInput_Options_Four}, 
@@ -406,7 +406,7 @@ struct // MENU_SPEED
 {
     [MENUITEM_BATTLE_BATTLESTYLE]  			= {DrawChoices_BattleStyle, 		ProcessInput_Options_Two},
     [MENUITEM_BATTLE_BADGE_SCALING]         = {DrawChoices_BadgeScaling,        ProcessInput_Options_Two},
-    [MENUITEM_BATTLE_LEVEL_SCALING]     	= {DrawChoices_LevelScaling,  		ProcessInput_Options_Four},
+    // [MENUITEM_BATTLE_LEVEL_SCALING]     	= {DrawChoices_LevelScaling,  		ProcessInput_Options_Four},
     [MENUITEM_BATTLE_DIFFICULTY]    		= {DrawChoices_Difficulty,  		ProcessInput_Options_Four},
     [MENUITEM_BATTLE_ENEMY_POTION_USE]      = {DrawChoices_EnemyPotionUse,      ProcessInput_Options_Two}, 
     [MENUITEM_BATTLE_PLAYER_ITEM_USE]      	= {DrawChoices_PlayerItemUse,   	ProcessInput_Options_Two},
@@ -423,7 +423,7 @@ static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
 {
     // [MENUITEM_MAIN_FONT]        = gText_Font,
     [MENUITEM_MAIN_SOUND]       = gText_Sound,
-    [MENUITEM_MAIN_BUTTONMODE]  = gText_ButtonMode,
+    // [MENUITEM_MAIN_BUTTONMODE]  = gText_ButtonMode,
     [MENUITEM_MAIN_UNIT_SYSTEM] = sText_UnitSystem,
     [MENUITEM_MAIN_FRAMETYPE]   = gText_Frame,
     [MENUITEM_MAIN_SHINY_ODDS]  = sText_ShinyOdds,
@@ -444,7 +444,7 @@ static const u8 *const sOptionMenuItemsNamesSpeed[MENUITEM_SPEED_COUNT] =
 static const u8 *const sOptionMenuItemsNamesBattle[MENUITEM_BATTLE_COUNT] =
 {
 	[MENUITEM_BATTLE_DIFFICULTY]       = sText_Difficulty,
-	[MENUITEM_BATTLE_LEVEL_SCALING]    = sText_LevelScaling,
+	// [MENUITEM_BATTLE_LEVEL_SCALING]    = sText_LevelScaling,
 	[MENUITEM_BATTLE_BADGE_SCALING]    = sText_BadgeScaling,
 	[MENUITEM_BATTLE_BATTLESTYLE]      = gText_BattleStyle,
 	[MENUITEM_BATTLE_TRAINING_MODE]    = sText_TrainingMode,
@@ -476,7 +476,7 @@ static bool8 CheckConditions(int selection)
         {
 		// case MENUITEM_MAIN_FONT:            return TRUE;
         case MENUITEM_MAIN_SOUND:           return TRUE;
-        case MENUITEM_MAIN_BUTTONMODE:      return TRUE;
+        // case MENUITEM_MAIN_BUTTONMODE:      return TRUE;
         case MENUITEM_MAIN_UNIT_SYSTEM:     return TRUE;
         case MENUITEM_MAIN_FRAMETYPE:       return TRUE;
         case MENUITEM_MAIN_CANCEL:          return TRUE;
@@ -500,7 +500,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_BATTLE_BADGE_SCALING:     return TRUE;
         case MENUITEM_BATTLE_DIFFICULTY:	    return TRUE;
         case MENUITEM_BATTLE_ENEMY_POTION_USE:  return TRUE;
-        case MENUITEM_BATTLE_LEVEL_SCALING:     return TRUE;
+        // case MENUITEM_BATTLE_LEVEL_SCALING:     return TRUE;
         case MENUITEM_BATTLE_PLAYER_ITEM_USE:   return TRUE;
         case MENUITEM_BATTLE_TRAINING_MODE:     return TRUE;
         case MENUITEM_BATTLE_CANCEL:            return TRUE;
@@ -516,7 +516,7 @@ static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][4] =
 {
     // [MENUITEM_MAIN_FONT]          = {sText_Desc_FontType,             sText_Desc_FontType},
     [MENUITEM_MAIN_SOUND]         = {sText_Desc_SoundMono,            sText_Desc_SoundStereo,     sText_Empty},
-    [MENUITEM_MAIN_BUTTONMODE]    = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA},
+    // [MENUITEM_MAIN_BUTTONMODE]    = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,   sText_Desc_ButtonMode_LA},
     [MENUITEM_MAIN_UNIT_SYSTEM]   = {sText_Desc_UnitSystemImperial,   sText_Desc_UnitSystemMetric,sText_Empty},
     [MENUITEM_MAIN_FRAMETYPE]     = {sText_Desc_FrameType,            sText_Empty,                sText_Empty},
     [MENUITEM_MAIN_SHINY_ODDS]    = {sText_Desc_ShinyOdds8196,        sText_Desc_ShinyOdds4092, sText_Desc_ShinyOdds2048, sText_Desc_ShinyOdds1024},
@@ -539,7 +539,7 @@ static const u8 *const sOptionMenuItemDescriptionsBattle[MENUITEM_BATTLE_COUNT][
 {
 	[MENUITEM_BATTLE_BATTLESTYLE] 		= {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set, sText_Empty},
 	[MENUITEM_BATTLE_BADGE_SCALING] 	= {sText_Desc_BadgeScaling,    sText_Desc_BadgeScaling},
-	[MENUITEM_BATTLE_LEVEL_SCALING] 	= {sText_Desc_LevelScalingOff,    sText_Desc_LevelScalingUp, sText_Desc_LevelScalingDown, sText_Desc_LevelScalingAlways},
+	// [MENUITEM_BATTLE_LEVEL_SCALING] 	= {sText_Desc_LevelScalingOff,    sText_Desc_LevelScalingUp, sText_Desc_LevelScalingDown, sText_Desc_LevelScalingAlways},
 	[MENUITEM_BATTLE_DIFFICULTY] 		= {sText_Desc_DifficultyEasy, sText_Desc_DifficultyNormal, sText_Desc_DifficultyHard, sText_Desc_DifficultyHardcore},
 	[MENUITEM_BATTLE_ENEMY_POTION_USE] 	= {sText_Desc_EnemyPotionUse,    sText_Desc_EnemyPotionUse},
 	[MENUITEM_BATTLE_PLAYER_ITEM_USE] 	= {sText_Desc_PlayerItemUse,    sText_Desc_PlayerItemUse},
@@ -882,7 +882,7 @@ void CB2_InitOptionPlusMenu(void)
         break;
     case 6:
         sOptions->sel[MENUITEM_MAIN_SOUND]       = gSaveBlock2Ptr->optionsSound;
-        sOptions->sel[MENUITEM_MAIN_BUTTONMODE]  = gSaveBlock2Ptr->optionsButtonMode;
+        // sOptions->sel[MENUITEM_MAIN_BUTTONMODE]  = gSaveBlock2Ptr->optionsButtonMode;
         sOptions->sel[MENUITEM_MAIN_UNIT_SYSTEM] = gSaveBlock2Ptr->optionsUnitSystem;
         sOptions->sel[MENUITEM_MAIN_FRAMETYPE]   = gSaveBlock2Ptr->optionsWindowFrameType;
         sOptions->sel[MENUITEM_MAIN_SHINY_ODDS]   = gSaveBlock2Ptr->optionsShinyOdds;
@@ -891,7 +891,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_battle[MENUITEM_BATTLE_BADGE_SCALING]   = gSaveBlock2Ptr->optionsBadgeScaling;
         sOptions->sel_battle[MENUITEM_BATTLE_DIFFICULTY]   = gSaveBlock2Ptr->optionsDifficulty;
         sOptions->sel_battle[MENUITEM_BATTLE_ENEMY_POTION_USE]   = gSaveBlock2Ptr->optionsEnemyPotionUse;
-        sOptions->sel_battle[MENUITEM_BATTLE_LEVEL_SCALING]   = gSaveBlock2Ptr->optionsLevelScaling;
+        // sOptions->sel_battle[MENUITEM_BATTLE_LEVEL_SCALING]   = gSaveBlock2Ptr->optionsLevelScaling;
         sOptions->sel_battle[MENUITEM_BATTLE_PLAYER_ITEM_USE]   = gSaveBlock2Ptr->optionsPLayerItemUse;
         sOptions->sel_battle[MENUITEM_BATTLE_TRAINING_MODE]   = gSaveBlock2Ptr->optionsTrainingMode;
 
@@ -1117,7 +1117,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 static void Task_OptionMenuSave(u8 taskId)
 {
     gSaveBlock2Ptr->optionsSound            = sOptions->sel[MENUITEM_MAIN_SOUND];
-    gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel[MENUITEM_MAIN_BUTTONMODE];
+    // gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel[MENUITEM_MAIN_BUTTONMODE];
     gSaveBlock2Ptr->optionsUnitSystem       = sOptions->sel[MENUITEM_MAIN_UNIT_SYSTEM];
     gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel[MENUITEM_MAIN_FRAMETYPE];
     gSaveBlock2Ptr->optionsShinyOdds  		= sOptions->sel[MENUITEM_MAIN_SHINY_ODDS];
@@ -1127,7 +1127,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsBadgeScaling  	= sOptions->sel_battle[MENUITEM_BATTLE_BADGE_SCALING];
     gSaveBlock2Ptr->optionsDifficulty  		= sOptions->sel_battle[MENUITEM_BATTLE_DIFFICULTY];
     gSaveBlock2Ptr->optionsEnemyPotionUse  	= sOptions->sel_battle[MENUITEM_BATTLE_ENEMY_POTION_USE];
-    gSaveBlock2Ptr->optionsLevelScaling  	= sOptions->sel_battle[MENUITEM_BATTLE_LEVEL_SCALING];
+    // gSaveBlock2Ptr->optionsLevelScaling  	= sOptions->sel_battle[MENUITEM_BATTLE_LEVEL_SCALING];
     gSaveBlock2Ptr->optionsPLayerItemUse  	= sOptions->sel_battle[MENUITEM_BATTLE_PLAYER_ITEM_USE];
     gSaveBlock2Ptr->optionsTrainingMode  	= sOptions->sel_battle[MENUITEM_BATTLE_TRAINING_MODE];
 
@@ -1388,10 +1388,10 @@ static const u8 sText_SkipBox[] = _("Caja");
 static const u8 sText_SkipAll[] = _("Todo");
 static const u8 sText_Activate[] = _("On");
 static const u8 sText_Disable[] = _("Off");
-static const u8 sText_DifficultyEasy[] = _("Fácil");
-static const u8 sText_DifficultyNormal[] = _("Medio");
-static const u8 sText_DifficultyHard[] = _("Difícil");
-static const u8 sText_DifficultyHardcore[] = _("Hardcore");
+static const u8 sText_DifficultyEasy[] = _("Fácil {RIGHT_ARROW}");
+static const u8 sText_DifficultyNormal[] = _("{LEFT_ARROW} Medio {RIGHT_ARROW}");
+static const u8 sText_DifficultyHard[] = _("{LEFT_ARROW} Difícil {RIGHT_ARROW}");
+static const u8 sText_DifficultyHardcore[] = _("{LEFT_ARROW} Hardcore");
 static const u8 sText_LevelUpOnly[] = _("Subir");
 static const u8 sText_LevelDownOnly[] = _("Bajar");
 static const u8 sText_LevelAllSameLevel[] = _("Igualar");
@@ -1402,7 +1402,7 @@ static const u8 sText_Shiny1024[] = _("1024");
 static const u8 *const sTextSpeedStrings[] = 		{gText_TextSpeedSlow, gText_TextSpeedMid, gText_TextSpeedFast, sText_Faster};
 static const u8 *const sTextSkippingStrings[] = 	{sText_SkipNone, sText_SkipScroll, sText_SkipBox, sText_SkipAll};
 static const u8 *const sTextDifficultyStrings[] = 	{sText_DifficultyEasy, sText_DifficultyNormal, sText_DifficultyHard, sText_DifficultyHardcore};
-static const u8 *const sTextLevelScalingStrings[] = {sText_Disable, sText_LevelUpOnly, sText_LevelDownOnly, sText_LevelAllSameLevel};
+// static const u8 *const sTextLevelScalingStrings[] = {sText_Disable, sText_LevelUpOnly, sText_LevelDownOnly, sText_LevelAllSameLevel};
 static const u8 *const sTextShinyOddsStrings[] = 	{sText_Shiny8192, sText_Shiny4096, sText_Shiny2048, sText_Shiny1024};
 
 static void DrawChoices_TextSpeed(int selection, int y)
@@ -1423,16 +1423,17 @@ static void DrawChoices_ShinyOdds(int selection, int y)
     DrawChoices_Options_Four(sTextShinyOddsStrings, selection, y, active);
 }
 
-static void DrawChoices_LevelScaling(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_BATTLE_LEVEL_SCALING);
-    DrawChoices_Options_Four(sTextLevelScalingStrings, selection, y, active);
-}
+// static void DrawChoices_LevelScaling(int selection, int y)
+// {
+    // bool8 active = CheckConditions(MENUITEM_BATTLE_LEVEL_SCALING);
+    // DrawChoices_Options_Four(sTextLevelScalingStrings, selection, y, active);
+// }
 
 static void DrawChoices_Difficulty(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_BATTLE_DIFFICULTY);
-    DrawChoices_Options_Four(sTextDifficultyStrings, selection, y, active);
+	// u8 *textDifficulty = sTextDifficultyStrings[selection];
+	DrawOptionMenuChoice(sTextDifficultyStrings[selection], 104, y, 1, active);
 }
 
 static void DrawChoices_BattleScene(int selection, int y)
@@ -1516,17 +1517,17 @@ static void DrawChoices_Sound(int selection, int y)
     DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_NORMAL, gText_SoundStereo, 198), y, styles[1], active);
 }
 
-static void DrawChoices_ButtonMode(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_MAIN_BUTTONMODE);
-    u8 styles[3] = {0};
-    int xMid = GetMiddleX(gText_ButtonTypeNormal, gText_ButtonTypeLR, gText_ButtonTypeLEqualsA);
-    styles[selection] = 1;
+// static void DrawChoices_ButtonMode(int selection, int y)
+// {
+    // bool8 active = CheckConditions(MENUITEM_MAIN_BUTTONMODE);
+    // u8 styles[3] = {0};
+    // int xMid = GetMiddleX(gText_ButtonTypeNormal, gText_ButtonTypeLR, gText_ButtonTypeLEqualsA);
+    // styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_ButtonTypeNormal, 104, y, styles[0], active);
-    DrawOptionMenuChoice(gText_ButtonTypeLR, xMid, y, styles[1], active);
-    DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(1, gText_ButtonTypeLEqualsA, 198), y, styles[2], active);
-}
+    // DrawOptionMenuChoice(gText_ButtonTypeNormal, 104, y, styles[0], active);
+    // DrawOptionMenuChoice(gText_ButtonTypeLR, xMid, y, styles[1], active);
+    // DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(1, gText_ButtonTypeLEqualsA, 198), y, styles[2], active);
+// }
 
 static const u8 sText_Normal[] = _("NORMAL");
 static void DrawChoices_BarSpeed(int selection, int y) //HP and EXP

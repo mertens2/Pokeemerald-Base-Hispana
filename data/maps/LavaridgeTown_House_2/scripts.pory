@@ -1,0 +1,31 @@
+mapscripts LavaridgeTown_House_2_MapScripts {}
+
+
+script LavaridgeTown_House_2_EventScript_FlanneryGrandma {
+	lockall
+	faceplayer
+	if (!flag(FLAG_BADGE03_GET)) {
+		msgbox(LavaridgeTown_House_2_Text_FlanneryGrandma)
+	}
+	elif (!flag(FLAG_HIDE_WALLY_LAVARIDGE)) {
+		msgbox(LavaridgeTown_House_2_Text_FlanneryGrandmaRelieved)
+	}
+	else {
+		msgbox(LavaridgeTown_House_2_Text_FlanneryGrandmaProud)
+	}
+	releaseall
+}
+
+
+script LavaridgeTown_House_2_EventScript_FlanneryBrother {
+	lockall
+	faceplayer
+	if (flag(FLAG_HIDE_WALLY_LAVARIDGE)) {
+		msgbox(LavaridgeTown_House_2_Text_FlanneryBrotherPostWally)
+	}
+	else {
+		msgbox(LavaridgeTown_House_2_Text_FlanneryBrother)
+	}
+	releaseall
+}
+

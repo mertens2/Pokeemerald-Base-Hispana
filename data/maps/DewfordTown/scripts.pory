@@ -323,6 +323,16 @@ text DewfordTown_EventScript_Trigger_Text_0 {
 	}
 	
 }
+
+script DewfordTown_EventScript_Tuber {
+	lockall
+	faceplayer
+	msgbox(format("La arena es más profunda aquí, así que aparecen Pokémon salvajes.\p"
+			"Parece que también hay algo más allá de los árboles, ¡Pero me da miedito adentrarme!"))
+	closemessage
+	releaseall
+	end
+}
 raw `
 
 DewfordTown_MapScripts::

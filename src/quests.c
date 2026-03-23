@@ -203,9 +203,9 @@ static void Task_QuestMenuTurnOff2(u8 taskId);
 static const u32 sQuestMenuTiles[] =
         INCBIN_U32("graphics/quest_menu/menu.4bpp.smol");
 static const u32 sQuestMenuBgPals[] =
-        INCBIN_U32("graphics/quest_menu/menu.gbapal.smol");
+        INCBIN_U32("graphics/quest_menu/menu.gbapal");
 static const u32 sQuestMenuTilemap[] =
-        INCBIN_U32("graphics/quest_menu/menu.bin.smol");
+        INCBIN_U32("graphics/quest_menu/menu.bin.smolTM");
 
 //Strings used for the Quest Menu
 static const u8 sText_Empty[] = _("");
@@ -562,18 +562,18 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
 	side_quest(
-	      gText_SideQuestName_1,
-	      gText_SideQuestDesc_1,
-	      gText_SideQuestDoneDesc_1,
-	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
+	      COMPOUND_STRING("¡Batalla contra tu rival!"),
+	      COMPOUND_STRING("{RIVAL} está en la Ruta 103,\n¡A batallar!"),
+	      COMPOUND_STRING("¡Vuelve con el Profesor Birch!"),
+	      COMPOUND_STRING("Ruta 103"),
+	      OBJ_EVENT_GFX_PROF_BIRCH,
 	      OBJECT,
 	      NULL,
 	      0
 	),
 	side_quest(
-	      gText_SideQuestName_2,
-	      gText_SideQuestDesc_2,
+	      COMPOUND_STRING("El Camino de Groudon"),
+	      COMPOUND_STRING("¡Ayuda al Equipo Magma a\nacabar con el Equipo Aqua!"),
 	      gText_SideQuestDoneDesc_2,
 	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_WALLY,
@@ -582,7 +582,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      QUEST_1_SUB_COUNT
 	),
 	side_quest(
-	      gText_SideQuestName_3,
+	      COMPOUND_STRING("Río Abajo Hacia Kyogre"),
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
 	      gText_SideQuestMap3,

@@ -13683,22 +13683,28 @@ static void Cmd_handleballthrow(void)
             case BALL_ULTRA:
                 ballMultiplier = 200;
                 break;
-            case BALL_SPORT:
-                if (B_SPORT_BALL_MODIFIER <= GEN_7)
-                    ballMultiplier = 150;
+            case BALL_SPORT: // kinda op so i gave it a huge disadvantage if it doesn't meet requirements
+                const struct Evolution *evolutions = GetSpeciesEvolutions(gBattleMons[gBattlerTarget].species);
+                if (evolutions == NULL)
+					ballAddition = -20;
+				else {
+					ballMultiplier = 400;
+				}
+                break;
+			case BALL_PARK:
+                if (IS_BATTLER_ANY_TYPE(gBattlerTarget, TYPE_STEEL, TYPE_DRAGON)){
+					ballMultiplier = 400;
+				}
                 break;
             case BALL_GREAT:
                 ballMultiplier = 150;
                 break;
             case BALL_SAFARI:
-                if (B_SAFARI_BALL_MODIFIER <= GEN_7)
-                    ballMultiplier = 150;
-                else if (B_SAFARI_BALL_MODIFIER == GEN_1)
-                    ballMultiplier = 200;
+                ballMultiplier = 400;
                 break;
             case BALL_NET:
                 if (IS_BATTLER_ANY_TYPE(gBattlerTarget, TYPE_WATER, TYPE_BUG))
-                    ballMultiplier = B_NET_BALL_MODIFIER >= GEN_7 ? 350 : 300;
+                    ballMultiplier = 400;
                 break;
             case BALL_DIVE:
                 if (GetCurrentMapType() == MAP_TYPE_UNDERWATER
@@ -13729,11 +13735,13 @@ static void Cmd_handleballthrow(void)
             case BALL_REPEAT:
                 if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), FLAG_GET_CAUGHT))
                     ballMultiplier = (B_REPEAT_BALL_MODIFIER >= GEN_7 ? 350 : 300);
+				if (gBattleMons[gBattlerTarget].species == SPECIES_FALINKS)
+					ballMultiplier += 800;
                 break;
             case BALL_TIMER:
                 ballMultiplier = 100 + (gBattleResults.battleTurnCounter * (B_TIMER_BALL_MODIFIER >= GEN_5 ? 30 : 10));
-                if (ballMultiplier > 400)
-                    ballMultiplier = 400;
+                if (ballMultiplier > 500)
+                    ballMultiplier = 500;
                 break;
             case BALL_DUSK:
                 i = GetTimeOfDay();
@@ -13766,25 +13774,22 @@ static void Cmd_handleballthrow(void)
             case BALL_MOON:
             {
                 const struct Evolution *evolutions = GetSpeciesEvolutions(gBattleMons[gBattlerTarget].species);
-                if (evolutions == NULL)
-                    break;
-                for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
-                {
-                    if (evolutions[i].method == EVO_ITEM
-                        && evolutions[i].param == ITEM_MOON_STONE)
-                        ballMultiplier = 400;
-                }
+                if (IS_BATTLER_ANY_TYPE(gBattlerTarget, TYPE_FAIRY, TYPE_PSYCHIC)){
+					ballMultiplier = 400;
+				}
+                else {
+					for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+					{
+						if (evolutions[i].method == EVO_ITEM
+							&& evolutions[i].param == ITEM_MOON_STONE)
+							ballMultiplier = 400;
+					}
+				}
             }
             break;
             case BALL_LOVE:
-                if (gBattleMons[gBattlerTarget].species == gBattleMons[gBattlerAttacker].species)
-                {
-                    u8 gender1 = GetMonGender(GetBattlerMon(gBattlerTarget));
-                    u8 gender2 = GetMonGender(GetBattlerMon(gBattlerAttacker));
-
-                    if (gender1 != gender2 && gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS)
-                        ballMultiplier = 800;
-                }
+                if (gBattleMons[gBattlerTarget].volatiles.infatuation != 0)
+                    ballMultiplier = 800;
                 break;
             case BALL_FAST:
                 if (GetSpeciesBaseSpeed(gBattleMons[gBattlerTarget].species) >= 100)
@@ -13832,6 +13837,9 @@ static void Cmd_handleballthrow(void)
                 if (B_DREAM_BALL_MODIFIER >= GEN_8 && (gBattleMons[gBattlerTarget].status1 & STATUS1_SLEEP || GetBattlerAbility(gBattlerTarget) == ABILITY_COMATOSE))
                     ballMultiplier = 400;
                 break;
+			case BALL_CHERISH:
+				if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isLegendary || gSpeciesInfo[gBattleMons[gBattlerTarget].species].isMythical)
+					ballMultiplier = 400;
             case BALL_BEAST:
                 ballMultiplier = 10;
                 break;
@@ -13903,7 +13911,7 @@ static void Cmd_handleballthrow(void)
 
             if (ballId == BALL_MASTER)
             {
-                shakes = maxShakes;
+                shakes = BALL_1_SHAKE;
             }
             else
             {
@@ -13922,7 +13930,7 @@ static void Cmd_handleballthrow(void)
             if (shakes == maxShakes) // mon caught, copy of the code above
             {
                 enum NationalDexOrder natDexNo = SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species);
-                if ((B_CRITICAL_CAPTURE_IF_OWNED >= GEN_9 && GetSetPokedexFlag(natDexNo, FLAG_GET_CAUGHT))
+                if ((GetSetPokedexFlag(natDexNo, FLAG_GET_CAUGHT))
                  || IsCriticalCapture())
                 {
                     gBattleSpritesDataPtr->animationData->isCriticalCapture = TRUE;
@@ -14695,23 +14703,21 @@ static bool32 CriticalCapture(u32 odds)
         charmBoost = (100 + B_CATCHING_CHARM_BOOST) / 100;
 
     numCaught = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-    if (numCaught > (totalDexCount * 600) / 650)
-        odds = (odds * (250 * charmBoost)) / 100;
-    else if (numCaught > (totalDexCount * 450) / 650)
-        odds = (odds * (200 * charmBoost)) / 100;
-    else if (numCaught > (totalDexCount * 300) / 650)
-        odds = (odds * (150 * charmBoost)) / 100;
-    else if (numCaught > (totalDexCount * 150) / 650)
-        odds = (odds * (100 * charmBoost)) / 100;
-    else if (numCaught > (totalDexCount * 30) / 650)
-        odds = (odds * (50 * charmBoost)) / 100;
+    if (numCaught > (totalDexCount * 350) / 950)
+        odds = (odds * (600 * charmBoost)) / 100;
+    else if (numCaught > (totalDexCount * 250) / 950)
+        odds = (odds * (450 * charmBoost)) / 100;
+    else if (numCaught > (totalDexCount * 150) / 950)
+        odds = (odds * (400 * charmBoost)) / 100;
+    else if (numCaught > (totalDexCount * 50) / 950)
+        odds = (odds * (350 * charmBoost)) / 100;
     else
-        return FALSE;
+        odds = (odds * (300 * charmBoost)) / 100;
 
-    if (odds > 255)
-        odds = 255;
+    if (odds > 900)
+        odds = 900;
 
-    odds /= 6;
+    odds /= 4;
     if (RandomUniform(RNG_BALLTHROW_CRITICAL, 0, MAX_u8) < odds)
         return TRUE;
 

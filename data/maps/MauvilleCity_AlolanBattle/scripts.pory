@@ -1,6 +1,6 @@
 mapscripts MauvilleCity_AlolanBattle_MapScripts {}
 
-script MauvilleCity_AlolanBattle_Scripts_Psychic {
+script MauvilleCity_AlolanBattle_Scripts_Attendant {
 	lockall
 	msgbox(format("¡Hola, bienvenid{OA}!\p¡Este es el Torneo de Batallas de Alola!\p¿Necesitas algo?"))
 	// dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Solitario", "Con Amigos", "¿Qué es esto?", "Nada, disculpe")
@@ -29,12 +29,47 @@ script MauvilleCity_AlolanBattle_Scripts_Psychic {
 			end
 			break
 		case 2:
-			goto (MauvilleCity_AlolanBattle_Scripts_PsychicEnd)
+			goto (MauvilleCity_AlolanBattle_Scripts_AttendantEnd)
 			
 	}
 }
 
-script MauvilleCity_AlolanBattle_Scripts_PsychicEnd {
+script MauvilleCity_AlolanBattle_Scripts_Shop {
+	lockall
+	if (flag(FLAG_RECIEVED_Z_RING)){
+		msgbox(format("¡Oh, tienes una Súperpulsera Z!\N"
+		"¡Bienvenid{OA} a la Tienda de Cristales, entonces!\p"
+		"¿Qué necesitabas?"))
+		//normastal, lucha, veneno tierra volador bicho roca fantasma
+		//acero, hielo psiquico dragon siniestro hada
+		tradepokemart (MauvilleCity_AlolanBattle_Mart)
+		// dynmultichoice(15, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Pirostal Z (20 Partes Rojas)", "Fitostal Z (20 Partes Verdes)", "Hidrostal Z (20 Partes Azules)", "Electrostal Z (20 Partes Amarillas)", "Electrostal Z (20 Partes Amarillas)")
+		// switch (var(VAR_RESULT)) {
+		// }
+	}
+	else {
+		msgbox(format("¡Vuelve cuando tengas una Súperpulsera Z!\p"
+		"¡Podré venderte algo genial!"))
+	}
+	closemessage
+	releaseall
+
+}
+
+raw `
+	.align 2
+MauvilleCity_AlolanBattle_Mart:
+	.2byte ITEM_WATERIUM_Z, ITEM_GREEN_SHARD, 20
+	.2byte ITEM_GRASSIUM_Z, ITEM_GREEN_SHARD, 20
+	.2byte ITEM_FIRIUM_Z, ITEM_RED_SHARD, 20
+	.2byte ITEM_ELECTRIUM_Z, ITEM_YELLOW_SHARD, 20
+    .2byte ITEM_NONE
+    release
+    end
+
+`
+
+script MauvilleCity_AlolanBattle_Scripts_AttendantEnd {
 	msgbox(format("¡No pasa nada, vuelva pronto!"))
 	closemessage
 	releaseall

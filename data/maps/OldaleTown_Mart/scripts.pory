@@ -28,6 +28,8 @@ script OldaleTown_Mart_EventScript_Boy {
 	faceplayer
 	msgbox(format("Las Tiendas Pokémon solían ser su propio edificio hasta hace unos años.\p"
 	"¡Por suerte, la generosa Devon contrató a los mismos empleados para la fusión con los Centros Pokémon!"))
+	closemessage
+	release
 }
 
 mart OldaleTown_Mart_Pokemart_Basic {

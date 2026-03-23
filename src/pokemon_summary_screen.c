@@ -636,18 +636,18 @@ static const struct WindowTemplate sPageInfoTemplate[] =
         .tilemapLeft = 11,
         .tilemapTop = 9,
         .width = 18,
-        .height = 4,
+        .height = 6,
         .paletteNum = 6,
         .baseBlock = 503,
     },
     [PSS_DATA_WINDOW_INFO_MEMO] = {
         .bg = 0,
         .tilemapLeft = 11,
-        .tilemapTop = 14,
+        .tilemapTop = 16,
         .width = 18,
         .height = 6,
         .paletteNum = 6,
-        .baseBlock = 575,
+        .baseBlock = 618,
     },
 };
 static const struct WindowTemplate sPageSkillsTemplate[] =
@@ -3691,7 +3691,20 @@ static void PrintMonAbilityName(void)
 static void PrintMonAbilityDescription(void)
 {
     enum Ability ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindowToFit(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilitiesInfo[ability].description, 0, 17, 0, 0);
+u8 count;
+	const u8 lineBreak[] = _("\n");
+	// gStringVar1 = gAbilityDescriptionPointers[ability];
+	for (count=0;count<=32;count++){
+		if (gAbilitiesInfo[ability].description[count] == *lineBreak)
+			break;
+	}
+	if (count > 25)
+		PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilitiesInfo[ability].description, 0, 16, 0, 0, FONT_NARROW);
+	else if (count > 29)
+		PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilitiesInfo[ability].description, 0, 16, 0, 0, FONT_NARROWER);
+	else
+		PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilitiesInfo[ability].description, 0, 16, 0, 0);
+    // PrintTextOnWindowToFit(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilitiesInfo[ability].description, 0, 16, 0, 0);
 }
 
 static void BufferMonTrainerMemo(void)
@@ -3724,8 +3737,10 @@ static void BufferMonTrainerMemo(void)
         {
             if (sum->metLevel == 0)
                 text = (sum->metLocation >= MAPSEC_NONE) ? gText_XNatureHatchedSomewhereAt : gText_XNatureHatchedAtYZ;
-            else
+            else if (gSpeciesInfo[sum->species].isLegendary != TRUE || gSpeciesInfo[sum->species].isMythical != TRUE || gSpeciesInfo[sum->species].isUltraBeast != TRUE)
                 text = (sum->metLocation >= MAPSEC_NONE) ? gText_XNatureMetSomewhereAt : gText_XNatureMetAtYZ;
+			else
+				text = (sum->metLocation >= MAPSEC_NONE) ? gText_XNatureFatefulEncounter : gText_XNatureFatefulEncounterAtYZ;
         }
         else if (sum->metLocation == METLOC_FATEFUL_ENCOUNTER)
         {
@@ -4495,21 +4510,27 @@ void SetTypeSpritePosAndPal(enum Type typeId, u8 x, u8 y, u8 spriteArrayId)
 static void SetMonTypeIcons(void)
 {
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
-
-    SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[0], 120, 48, SPRITE_ARR_ID_TYPE);
-    if (gSpeciesInfo[summary->species].types[0] != gSpeciesInfo[summary->species].types[1])
-    {
-        SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[1], 160, 48, SPRITE_ARR_ID_TYPE + 1);
-        SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, FALSE);
-    }
-    else
-    {
-        SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, TRUE);
-    }
-    if (P_SHOW_TERA_TYPE >= GEN_9)
-    {
-        SetTypeSpritePosAndPal(summary->teraType, 200, 48, SPRITE_ARR_ID_TYPE + 2);
-    }
+	if (summary->isEgg == TRUE)
+	{
+		SetTypeSpritePosAndPal(TYPE_MYSTERY, 120, 48, SPRITE_ARR_ID_TYPE);
+		SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, TRUE);
+	}
+	else {
+		SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[0], 120, 48, SPRITE_ARR_ID_TYPE);
+		if (gSpeciesInfo[summary->species].types[0] != gSpeciesInfo[summary->species].types[1])
+		{
+			SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[1], 160, 48, SPRITE_ARR_ID_TYPE + 1);
+			SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, FALSE);
+		}
+		else
+		{
+			SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, TRUE);
+		}
+		if (P_SHOW_TERA_TYPE >= GEN_9)
+		{
+			SetTypeSpritePosAndPal(summary->teraType, 200, 48, SPRITE_ARR_ID_TYPE + 2);
+		}
+	}
 }
 
 static void SetMoveTypeIcons(void)

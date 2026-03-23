@@ -2559,7 +2559,22 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
+    
     CreatePokemartMenu(ptr);
+	
+    ScriptContext_Stop();
+    return TRUE;
+}
+
+bool8 ScrCmd_tradepokemart(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    
+    CreateTradePokemartMenu(ptr);
+	
     ScriptContext_Stop();
     return TRUE;
 }
@@ -3686,3 +3701,7 @@ bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
 
     return FALSE;
 }
+
+
+
+
